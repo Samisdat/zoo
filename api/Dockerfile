@@ -10,8 +10,7 @@ ENV https_proxy ${HTTP_PROXY}
 RUN npm config set proxy $HTTP_PROXY -g
 RUN npm config set https-proxy $HTTP_PROXY -g
 
-RUN apk update &&
-  apk add curl tree shadow jq git
+RUN apk update && apk add curl tree shadow jq git
 
 USER node
 

@@ -13,12 +13,22 @@ RUN npm config set https-proxy $HTTP_PROXY -g
 RUN apk update && \
     apk add curl tree shadow jq git
 
-RUN mkdir /app
+RUN npm install -g @loopback/cli --verbose
 
-RUN npm install -g @loopback/cli
+USER node
 
-WORKDIR /app
+RUN mkdir -p /home/node/app
+WORKDIR /home/node/app
+
+COPY --chown=node package*.json ./
+
+RUN npm install
+
+COPY --chown=node . .
+
+RUN npm run build
+
+ENV HOST=0.0.0.0 PORT=3000
+EXPOSE ${PORT}
 
 CMD tail -f /dev/null
-
-EXPOSE 8082

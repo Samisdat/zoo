@@ -17,3 +17,9 @@ services:
         environment:
             ME_CONFIG_MONGODB_ADMINUSERNAME: root
             ME_CONFIG_MONGODB_ADMINPASSWORD: example
+    api:
+        image: zoo:latest
+        volumes: 
+            - /home/dev/projects/samisdat/zoo/api:/app 
+        ports:
+            - 8082:8082

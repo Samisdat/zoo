@@ -24,3 +24,5 @@ services:
             - /home/dev/projects/samisdat/zoo/api:/home/node/app
         ports:
             - 3000:3000
+        links:
+            - mongo:mongo

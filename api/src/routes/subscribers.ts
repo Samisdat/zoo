@@ -44,7 +44,7 @@ router.patch('/:id', getSubscriber, async (req, res) => {
   try {
     const updatedSubscriber = await res.subscriber.save()
     res.json(updatedSubscriber)
-  } catch {
+  } catch(err) {
     res.status(400).json({ message: err.message })
   }
 
@@ -61,6 +61,7 @@ router.delete('/:id', getSubscriber, async (req, res) => {
 
 // Middleware function for gettig subscriber object by ID
 async function getSubscriber(req, res, next) {
+  let subscriber
   try {
     subscriber = await Subscriber.findById(req.params.id)
     if (subscriber == null) {

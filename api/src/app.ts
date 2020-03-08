@@ -4,8 +4,9 @@ import cors from 'cors';
 import express from 'express';
 import mongoose from 'mongoose';
 import {DATABASE_URL} from "./constants";
-import {Controller} from "./controller/subscriber";
-import {PokeService} from "./service/pokemon.service";
+import {Controller} from "./controller/building";
+import {BuildingService} from "./service/building.service";
+
 class App {
     public app: Application;
     public pokeController: Controller;
@@ -15,7 +16,7 @@ class App {
         this._setConfig();
         this._setMongoConfig();
 
-        this.pokeController = new Controller(this.app, new PokeService());
+        this.pokeController = new Controller(this.app, new BuildingService());
     }
 
     private _setConfig() {

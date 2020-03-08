@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 
-export interface IPokemonService {
+export interface BuildingServiceInterface {
+
     welcomeMessage(req: Request, res: Response): void;
 
     getAllPokemon(req: Request, res: Response): void;
@@ -10,4 +11,5 @@ export interface IPokemonService {
     deletePokemon(req: Request, res: Response): void;
 
     updatePokemon(req: Request, res: Response): void;
+
 }

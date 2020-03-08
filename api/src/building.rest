@@ -1,0 +1,31 @@
+GET http://localhost:3000/
+
+###
+
+GET http://localhost:3000/buildings
+
+###
+
+GET http://localhost:3000/building/5e655cc3f4c61c000d0068a4
+
+###
+
+POST http://localhost:3000/building
+Content-Type: application/json
+
+{
+  "name": "BPe"
+}
+
+###
+DELETE http://localhost:3000/building/5e65759231af1a0252120d75
+
+###
+PUT http://localhost:3000/building/5e65792bf02c9e030225002e
+Content-Type: application/json 
+
+{
+  "name": "Tommy"
+}
+
+###

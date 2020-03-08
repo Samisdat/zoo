@@ -1,16 +1,17 @@
 import { Document, Mongoose, MongooseDocument } from 'mongoose';
 import { Request, Response } from 'express';
-import {IPokemonService} from "./pokemon.service-interface";
-import {WELCOME_MESSAGE} from "../constants";
-import {Pokemon} from "../models/pokemon";
 
-export class PokeService implements IPokemonService {
+import {WELCOME_MESSAGE} from "../constants";
+import {Building} from "../model/building";
+import {BuildingServiceInterface} from "./building.service.interface";
+
+export class BuildingService implements BuildingServiceInterface {
     public welcomeMessage(req: Request, res: Response) {
         res.status(200).send(WELCOME_MESSAGE);
     }
 
     public getAllPokemon(req: Request, res: Response) {
-        Pokemon.find({}, (error: Error, pokemon: MongooseDocument) => {
+        Building.find({}, (error: Error, pokemon: MongooseDocument) => {
             if (error) {
                 res.send(error);
             }
@@ -19,7 +20,7 @@ export class PokeService implements IPokemonService {
     }
 
     public addNewPokemon(req: Request, res: Response) {
-        const newPokemon = new Pokemon(req.body);
+        const newPokemon = new Building(req.body);
         newPokemon.save((error: Error, pokemon: MongooseDocument) => {
             if (error) {
                 res.send(error);
@@ -30,7 +31,7 @@ export class PokeService implements IPokemonService {
 
     public deletePokemon(req: Request, res: Response) {
         const pokemonID = req.params.id;
-        Pokemon.findByIdAndDelete(pokemonID, (error: Error, deleted: any) => {
+        Building.findByIdAndDelete(pokemonID, (error: Error, deleted: any) => {
             if (error) {
                 res.send(error);
             }
@@ -41,7 +42,7 @@ export class PokeService implements IPokemonService {
 
     public updatePokemon(req: Request, res: Response) {
         const pokemonId = req.params.id;
-        Pokemon.findByIdAndUpdate(
+        Building.findByIdAndUpdate(
             pokemonId,
             req.body,
             (error: Error, pokemon: any) => {

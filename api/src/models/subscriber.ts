@@ -25,4 +25,4 @@ subscriberSchema.set('toJSON', {
   }
 });
 
-module.exports = model('Subscriber', subscriberSchema)
+export const Subscriber = model('Subscriber', subscriberSchema);

@@ -4,7 +4,9 @@
   "description": "",
   "keywords": [],
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "nodemon app.js"
+  },
   "repository": {
     "type": "git"
   },
@@ -13,5 +15,7 @@
   "dependencies": {
     "express": "^4.17.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }

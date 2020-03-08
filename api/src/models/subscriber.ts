@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
+import { Schema, model } from 'mongoose';
 
-const subscriberSchema = new mongoose.Schema({
+const subscriberSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -14,6 +14,15 @@ const subscriberSchema = new mongoose.Schema({
     required: true,
     default: Date.now
   }
-})
+},
+{ versionKey: false }
+)
 
-module.exports = mongoose.model('Subscriber', subscriberSchema)
+subscriberSchema.set('toJSON', {
+  transform: function(doc: any, ret: any, options: any) {
+    ret.id = ret._id;
+    delete ret._id;
+  }
+});
+
+module.exports = model('Subscriber', subscriberSchema)

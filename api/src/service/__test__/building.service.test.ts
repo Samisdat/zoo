@@ -1,77 +1,75 @@
-import { Request } from 'jest-express/lib/request';
-import { Response } from 'jest-express/lib/response';
-
-import {BuildingService} from "../building.service";
-import {DATABASE_URL, WELCOME_MESSAGE} from "../../constants";
+import app from "../../app";
+import {WELCOME_MESSAGE} from "../../constants";
+const supertest = require('supertest')
+const request = supertest(app)
 import mongoose from 'mongoose';
-import {Building} from "../../model/building";
 
-describe('BasketCardComponent', () => {
+describe('Buildings', () => {
 
-    let buildingService:BuildingService
-
-    let request:any;
-    let response:any;
-
+    async function removeAllCollections () {
+        const collections = Object.keys(mongoose.connection.collections)
+        for (const collectionName of collections) {
+            const collection = mongoose.connection.collections[collectionName]
+            await collection.deleteMany({})
+        }
+    }
     beforeAll(async ()=>{
 
         await mongoose.connect('mongodb://mongo/jest', { useNewUrlParser: true });
 
-        await Building.remove({})
-        buildingService = new BuildingService();
+        await removeAllCollections();
+
     })
 
-    beforeEach(() => {
 
-        request = new Request('/users?sort=desc', {
-            headers: {
-                Accept: 'text/html'
-            }
-        });
+    afterAll(async () => {
+        await removeAllCollections()
+    })
 
-        response = new Response();
+    test ('Gets the test endpoint', async (done) => {
 
-    });
+        const response = await request.get('/')
 
-    afterEach(() => {
-        request.resetMocked();
-        response.resetMocked();
+        expect(response.status).toBe(200)
+        expect(response.body.message).toBe(WELCOME_MESSAGE)
+        done()
 
     });
 
-    test ('welcome message', async () => {
+    test ('getAllBuildings', async (done) => {
 
-        await buildingService.welcomeMessage(request, response);
+        const response = await request.get('/buildings')
 
-        expect(response.status).toBeCalledWith(200);
-        expect(response.send).toBeCalledWith(WELCOME_MESSAGE);
+        expect(response.status).toBe(200)
 
-    });
-
-    test ('getAllBuildings', async () => {
-
-        await buildingService.getAllBuildings(request, response);
-
-        const buildings = response.json.mock.calls[0][0];
-        console.log(buildings)
+        const buildings = response.body;
 
         expect(buildings.length).toBe(0);
 
-    });
-
-    test.only ('addNewBuilding', async () => {
-
-        request.setBody({
-            "name": "JEST"
-        });
-
-        await buildingService.addNewBuilding(request, response);
-
-        const building = response.json.mock.calls[0];
-        console.log(building)
-
-        expect(building.name).toBe('Jest');
+        done();
 
     });
 
-});
+    test ('addNewBuilding', async done => {
+        const res = await request.post('/building')
+            .send({
+                name: 'JEST SUPERTEST',
+            })
+        done()
+    })
+
+    test ('getAllBuildings', async (done) => {
+
+        const response = await request.get('/buildings')
+
+        expect(response.status).toBe(200)
+
+        const buildings = response.body;
+
+        expect(buildings.length).toBe(1)
+
+        done();
+
+    });
+
+})

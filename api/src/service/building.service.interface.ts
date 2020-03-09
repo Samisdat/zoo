@@ -7,9 +7,9 @@ export interface BuildingServiceInterface {
     getAllBuildings(req: Request, res: Response): void;
 
     addNewBuilding(req: Request, res: Response): void;
-/*
+
     deleteBuilding(req: Request, res: Response): void;
 
     updateBuilding(req: Request, res: Response): void;
-*/
+
 }

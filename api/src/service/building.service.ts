@@ -6,8 +6,9 @@ import {Building} from "../model/building";
 import {BuildingServiceInterface} from "./building.service.interface";
 
 export class BuildingService implements BuildingServiceInterface {
-    public welcomeMessage(req: Request, res: Response) {
-        res.status(200).send(WELCOME_MESSAGE);
+    public async welcomeMessage(req: Request, res: Response) {
+        res.status(200);
+        res.json({message: WELCOME_MESSAGE});
     }
 
     public async getAllBuildings(req: Request, res: Response) {
@@ -34,7 +35,7 @@ export class BuildingService implements BuildingServiceInterface {
 
 
     }
-    /*
+
     public async deleteBuilding(req: Request, res: Response) {
         const buildingID = req.params.id;
         await Building.findByIdAndDelete(buildingID, (error: Error, deleted: any) => {
@@ -62,6 +63,4 @@ export class BuildingService implements BuildingServiceInterface {
             }
         );
     }
-
-     */
 }

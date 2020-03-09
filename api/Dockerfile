@@ -1,4 +1,5 @@
 FROM node:13.8.0-alpine3.10
+
 MAINTAINER samisdat
 
 ARG HTTP_PROXY=http://139.7.95.74:8080
@@ -19,7 +20,7 @@ WORKDIR /home/node/app
 
 COPY --chown=node package*.json ./
 
-RUN npm install
+RUN npm install --verbose
 
 COPY --chown=node . .
 

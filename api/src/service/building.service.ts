@@ -1,4 +1,4 @@
-import { Document, Mongoose, MongooseDocument } from 'mongoose';
+import { MongooseDocument } from 'mongoose';
 import { Request, Response } from 'express';
 
 import {WELCOME_MESSAGE} from "../constants";

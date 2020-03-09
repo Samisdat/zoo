@@ -4,12 +4,12 @@ export interface BuildingServiceInterface {
 
     welcomeMessage(req: Request, res: Response): void;
 
-    getAllPokemon(req: Request, res: Response): void;
+    getAllBuildings(req: Request, res: Response): void;
 
-    addNewPokemon(req: Request, res: Response): void;
+    addNewBuilding(req: Request, res: Response): void;
+/*
+    deleteBuilding(req: Request, res: Response): void;
 
-    deletePokemon(req: Request, res: Response): void;
-
-    updatePokemon(req: Request, res: Response): void;
-
+    updateBuilding(req: Request, res: Response): void;
+*/
 }

@@ -10,13 +10,13 @@ export class Controller {
     public routes() {
         this.app.route('/').get(this.buildingService.welcomeMessage);
 
-        this.app.route('/buildings').get(this.buildingService.getAllPokemon);
+        this.app.route('/buildings').get(this.buildingService.getAllBuildings);
 
-        this.app.route('/building').post(this.buildingService.addNewPokemon);
+        this.app.route('/building').post(this.buildingService.addNewBuilding);
 
         this.app
             .route('/building/:id')
-            .delete(this.buildingService.deletePokemon)
-            .put(this.buildingService.updatePokemon);
+            .delete(this.buildingService.deleteBuilding)
+            .put(this.buildingService.updateBuilding);
     }
 }

@@ -10,50 +10,58 @@ export class BuildingService implements BuildingServiceInterface {
         res.status(200).send(WELCOME_MESSAGE);
     }
 
-    public getAllPokemon(req: Request, res: Response) {
-        Building.find({}, (error: Error, pokemon: MongooseDocument) => {
+    public async getAllBuildings(req: Request, res: Response) {
+        await Building.find({}, (error: Error, building: MongooseDocument) => {
             if (error) {
                 res.send(error);
             }
-            res.json(pokemon);
+            res.json(building);
         });
     }
 
-    public addNewPokemon(req: Request, res: Response) {
-        const newPokemon = new Building(req.body);
-        newPokemon.save((error: Error, pokemon: MongooseDocument) => {
-            if (error) {
-                res.send(error);
-            }
-            res.json(pokemon);
-        });
-    }
+    public async addNewBuilding(req: Request, res: Response) {
 
-    public deletePokemon(req: Request, res: Response) {
-        const pokemonID = req.params.id;
-        Building.findByIdAndDelete(pokemonID, (error: Error, deleted: any) => {
+        const building = new Building(req.body);
+
+
+        await building.save((error: Error, building: MongooseDocument) => {
             if (error) {
                 res.send(error);
             }
-            const message = deleted ? 'Deleted successfully' : 'Pokemon not found :(';
+
+            res.json(building);
+        });
+
+
+    }
+    /*
+    public async deleteBuilding(req: Request, res: Response) {
+        const buildingID = req.params.id;
+        await Building.findByIdAndDelete(buildingID, (error: Error, deleted: any) => {
+            if (error) {
+                res.send(error);
+            }
+            const message = deleted ? 'Deleted successfully' : 'building not found :(';
             res.status(200).send(message);
         });
     }
 
-    public updatePokemon(req: Request, res: Response) {
-        const pokemonId = req.params.id;
+    public updateBuilding(req: Request, res: Response) {
+        const buildingId = req.params.id;
         Building.findByIdAndUpdate(
-            pokemonId,
+            buildingId,
             req.body,
-            (error: Error, pokemon: any) => {
+            (error: Error, building: any) => {
                 if (error) {
                     res.send(error);
                 }
-                const message = pokemon
+                const message = building
                     ? 'Updated successfully'
-                    : 'Pokemon not found :(';
+                    : 'building not found :(';
                 res.send(message);
             }
         );
     }
+
+     */
 }

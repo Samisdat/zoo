@@ -20,6 +20,7 @@
     "mongoose": "^5.6.4"
   },
   "devDependencies": {
+    "fast-xml-parser": "^3.16.0",
     "jest": "^25.1.0",
     "nodemon": "^1.19.4",
     "supertest": "^4.0.2"

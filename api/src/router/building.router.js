@@ -26,15 +26,45 @@ router.get('/:id', async (req, res) => {
     const id = req.params.id;
 
     try {
-        const subscribers = await Building.findById(id);
+        const building = await Building.findById(id);
 
         res.status(200);
-        res.json(subscribers);
+        res.json(building);
 
     } catch (err) {
         res.status(500).json({ message: err.message })
     }
 });
+
+router.get('/near/:lng,:lat', async (req, res) => {
+
+    const lng = req.params.lng;
+    const lat = req.params.lat;
+
+    try {
+
+        const buildings = await Building.find({
+            location: {
+                $near: {
+                    $maxDistance: 160 * 10 * 1000,
+                    $geometry: {
+                        type: "Point",
+                        coordinates: [lng, lat]
+                    }
+                }
+            }
+        });
+
+        res.status(200);
+        res.json(buildings);
+
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({ message: err.message })
+    }
+
+});
+
 
 router.post('/', async (req, res) => {
 

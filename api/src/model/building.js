@@ -2,10 +2,16 @@ const mongoose = require('mongoose')
 
 const buildingSchema = new mongoose.Schema(
     {
-        name: String
+        name: String,
+        location: {
+            type: { type: String },
+            coordinates: []
+        },
     },
     { versionKey: false }
 );
+
+buildingSchema.index({ location: "2dsphere" });
 /*
 buildingSchema.set('toJSON', {
     transform: function(doc, ret, options) {

@@ -1,20 +1,42 @@
 {
-  "buidings": [
-    {
-      "_id": "5e67ad5e2d12a710aa530f2d",
-      "name": "Südamerikahaus"
-    },
-    {
-      "_id": "5e67ad8c4f13cf10d3b2e5f3",
-      "name": "Freiflughalle"
-    },
-    {
-      "_id": "5e67ad8c4f13cf10d3b2e5f4",
-      "name": "Elefantenhaus"
-    },
-    {
-      "_id": "5e67ad8c4f13cf10d3b2e5f5",
-      "name": "Großes Affenhaus"
-    }
-  ]
+    "buidings": [
+        {
+            "_id": "5e67ad5e2d12a710aa530f2d",
+            "name": "Südamerikahaus",
+            "location": {
+                "type": "Point",
+                "coordinates":[-10,-10]
+            }
+        },
+        {
+            "_id": "5e67ad8c4f13cf10d3b2e5f3",
+            "name": "Freiflughalle",
+            "location": {
+                "type": "Point",
+                "coordinates":[
+                    -10, 10
+                ]
+            }
+        },
+        {
+            "_id": "5e67ad8c4f13cf10d3b2e5f4",
+            "name": "Elefantenhaus",
+            "location": {
+                "type": "Point",
+                "coordinates":[
+                    10,-10
+                ]
+            }
+        },
+        {
+            "_id": "5e67ad8c4f13cf10d3b2e5f5",
+            "name": "Großes Affenhaus",
+            "location": {
+                "type": "Point",
+                "coordinates":[
+                    10,10
+                ]
+            }
+        }
+    ]
 }

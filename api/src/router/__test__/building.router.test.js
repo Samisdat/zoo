@@ -50,6 +50,46 @@ describe('Buildings', () => {
 
     });
 
+    test ('get nearby - in the middle', async () => {
+
+        const response = await request.get('/building/near/0,0');
+
+        expect(response.status).toBe(200)
+
+        expect(response.body).toHaveLength(4);
+
+    });
+
+    test ('get nearby - below the middle', async () => {
+
+        const response = await request.get('/building/near/-5,0');
+
+        expect(response.status).toBe(200)
+
+        console.log(response.body)
+
+        expect(response.body).toStrictEqual([
+            seedData.buidings[0],
+            seedData.buidings[1]
+        ]);
+
+    });
+
+    test ('get nearby - up the middle', async () => {
+
+        const response = await request.get('/building/near/5,0');
+
+        expect(response.status).toBe(200)
+
+        console.log(response.body)
+
+        expect(response.body).toStrictEqual([
+            seedData.buidings[3],
+            seedData.buidings[2]
+        ]);
+
+    });
+
     test ('create one', async () => {
 
         const name = 'Jest-' + randomString();
@@ -86,7 +126,7 @@ describe('Buildings', () => {
         const ghostBuilding = await Building.findById(id);
 
         expect(ghostBuilding).toBeNull();
-        
+
     });
 
     test ('update one', async () => {

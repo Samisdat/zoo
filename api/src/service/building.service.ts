@@ -43,13 +43,14 @@ export class BuildingService implements BuildingServiceInterface {
                 res.send(error);
             }
             const message = deleted ? 'Deleted successfully' : 'building not found :(';
-            res.status(200).send(message);
+            res.status(200);
+            res.json({message: message});
         });
     }
 
-    public updateBuilding(req: Request, res: Response) {
+    public async updateBuilding(req: Request, res: Response) {
         const buildingId = req.params.id;
-        Building.findByIdAndUpdate(
+        await Building.findByIdAndUpdate(
             buildingId,
             req.body,
             (error: Error, building: any) => {
@@ -59,7 +60,7 @@ export class BuildingService implements BuildingServiceInterface {
                 const message = building
                     ? 'Updated successfully'
                     : 'building not found :(';
-                res.send(message);
+                res.json({message: message});
             }
         );
     }

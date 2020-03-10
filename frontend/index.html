@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple Polylines</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+
+      // This example creates a 2-pixel-wide red polyline showing the path of
+      // the first trans-Pacific flight between Oakland, CA, and Brisbane,
+      // Australia which was made by Charles Kingsford Smith.
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,
+          center: {lat: 51.2388266, lng: 7.1073193},
+          mapTypeId: 'terrain'
+        });
+
+        var flightPlanCoordinates = [
+          {"lng":7.1078728,"lat":51.2409631},{"lng":7.1078441,"lat":51.2406187},{"lng":7.1078071,"lat":51.2402079},{"lng":7.1076339,"lat":51.239976},{"lng":7.1074717,"lat":51.2399659},{"lng":7.1074462,"lat":51.2399424},{"lng":7.1072471,"lat":51.2400118},{"lng":7.1072153,"lat":51.2400564},{"lng":7.10721,"lat":51.2402423},{"lng":7.1069446,"lat":51.2399004},{"lng":7.1069119,"lat":51.2397249},{"lng":7.1064958,"lat":51.2395727},{"lng":7.1068797,"lat":51.2386674},{"lng":7.1071635,"lat":51.2386783},{"lng":7.1074634,"lat":51.2386567},{"lng":7.1074262,"lat":51.2385525},{"lng":7.1077665,"lat":51.2384377},{"lng":7.1080121,"lat":51.2384631},{"lng":7.1088968,"lat":51.2383665},{"lng":7.1092229,"lat":51.2383343},{"lng":7.1098811,"lat":51.2383133},{"lng":7.1109568,"lat":51.2382275},{"lng":7.1115919,"lat":51.2377583},{"lng":7.1118658,"lat":51.2374161},{"lng":7.1106353,"lat":51.2373866},{"lng":7.110661,"lat":51.2371462},{"lng":7.1148006,"lat":51.2368794},{"lng":7.1151575,"lat":51.2382294},{"lng":7.115294,"lat":51.2392646},{"lng":7.1141207,"lat":51.2390924},{"lng":7.114155,"lat":51.23949},{"lng":7.114258,"lat":51.239893},{"lng":7.1144039,"lat":51.2402692},{"lng":7.1144039,"lat":51.2406507},{"lng":7.1143524,"lat":51.2409731},{"lng":7.1141807,"lat":51.2413546},{"lng":7.1140189,"lat":51.2415666},{"lng":7.1139475,"lat":51.2416647},{"lng":7.1118964,"lat":51.2416469},{"lng":7.1108029,"lat":51.2416502},{"lng":7.1104412,"lat":51.2416736},{"lng":7.1101155,"lat":51.2416759},{"lng":7.1100282,"lat":51.2415866},{"lng":7.1090371,"lat":51.2412114},{"lng":7.1092307,"lat":51.2410425},{"lng":7.1090588,"lat":51.2409705},{"lng":7.1090312,"lat":51.240959},{"lng":7.108917,"lat":51.2410521},{"lng":7.1088362,"lat":51.2410184},{"lng":7.1087485,"lat":51.2410855},{"lng":7.1085642,"lat":51.2410137},{"lng":7.1078728,"lat":51.2409631}
+        ];
+        var flightPath = new google.maps.Polyline({
+          path: flightPlanCoordinates,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        flightPath.setMap(map);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHBAikcRasPAxQ9rohryp1rE83_n3NYpM&callback=initMap">
+    </script>
+  </body>
+</html>

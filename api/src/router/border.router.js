@@ -19,4 +19,27 @@ router.get('/', async (req, res) => {
 
 });
 
+router.get('/gmap', async (req, res) => {
+
+    try {
+
+        const border = await Border.find();
+
+        const coordinates = border[0].location.coordinates[0].map( (coordinate) => {
+            return{
+                lng: (coordinate[0] * 1),
+                lat: (coordinate[1] * 1)
+
+            }
+        })
+
+        res.status(200);
+        res.json(coordinates);
+
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+
+});
+
 module.exports = router;

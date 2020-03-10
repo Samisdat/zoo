@@ -14,9 +14,11 @@ services:
 
     api:
         image: zoo:latest
-        volumes: 
+        volumes:
             - /home/dev/projects/samisdat/zoo/api:/home/node/app
+            - /home/dev/projects/samisdat/zoo/frontend:/home/node/frontend
         ports:
             - 3000:3000
+            - 3001:3001
         links:
             - mongo:mongo

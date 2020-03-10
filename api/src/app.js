@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 //import {Controller} from "./controller/building";
 //import {BuildingService} from "./service/building.service";
 
+var border = require('./router/border.router');
 var building = require('./router/building.router');
 
 var app = express();
@@ -24,6 +25,7 @@ const initMongose = async (databaseUrl) => {
 
 };
 
+app.use('/border', border);
 app.use('/building', building);
 
 module.exports = {

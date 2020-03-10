@@ -5,7 +5,8 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon",
+    "test": "jest"
   },
   "repository": {
     "type": "git"

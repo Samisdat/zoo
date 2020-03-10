@@ -1,4 +1,4 @@
-const DATABASE_URL = 'mongodb://mongo/zoo';
+const DATABASE_URL = 'mongodb://mongo/jest';
 const PORT = 3000;
 
 const WELCOME_MESSAGE = "Welcome";

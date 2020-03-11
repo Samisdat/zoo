@@ -3,6 +3,8 @@ var router = express.Router();
 
 const Building = require('../model/building')
 
+const Polygon = require('../model/polygon');
+
 // middleware that is specific to this router
 router.use(function timeLog(req, res, next) {
     console.log('Time: ', Date.now());
@@ -11,16 +13,49 @@ router.use(function timeLog(req, res, next) {
 router.get('/', async (req, res) => {
 
     try {
-       const subscribers = await Building.find();
+       const buildings = await Polygon.find({type:'building'});;
 
         res.status(200);
-        res.json(subscribers);
+        res.json(buildings);
 
     } catch (err) {
         res.status(500).json({ message: err.message })
     }
 
 });
+
+router.get('/gmap', async (req, res) => {
+
+    try {
+
+        const buildings = await Polygon.find({type:'building'});
+
+        const buildingsJson =  buildings.map((building)=>{
+
+            return {
+                name: building.name,
+                coordinate: building.location.coordinates[0].map( (coordinate) => {
+                    return{
+                        lng: (coordinate[0] * 1),
+                        lat: (coordinate[1] * 1)
+
+                    }
+                })
+            };
+
+        })
+
+
+
+        res.status(200);
+        res.json(buildingsJson);
+
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+
+});
+
 
 router.get('/:id', async (req, res) => {
     const id = req.params.id;
@@ -53,7 +88,7 @@ router.get('/near/:lng,:lat', async (req, res) => {
                     }
                 }
             }
-        });
+        });l
 
         res.status(200);
         res.json(buildings);

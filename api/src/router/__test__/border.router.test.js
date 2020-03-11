@@ -1,14 +1,10 @@
 const app = require( '../../app').app;
-const initMongose = require( '../../app').initMongose;
 
 const supertest = require('supertest')
 
-const randomString = require('../../test/random-string')
-const seed = require('../../test/seed-db')
+const seed = require('../../test/seed')
 
 const seedData = require('../../test/seed');
-
-const Building = require('../../model/building');
 
 describe('Border', () => {
 
@@ -16,25 +12,45 @@ describe('Border', () => {
 
     beforeAll(async ()=>{
 
-        await initMongose('mongodb://mongo/jest');
+        await seed.starting();
 
         request = supertest(app);
 
     });
 
-    beforeEach( async () => {
+    afterAll(async ()=>{
 
-        await seed();
+        await seed.stoping();
 
     });
 
-    test ('get all', async () => {
+    beforeEach( async () => {
+
+        await seed.doing();
+
+    });
+
+    test ('raw', async () => {
 
         const response = await request.get('/border/')
 
         expect(response.status).toBe(200)
 
-        expect(response.body).toEqual(seedData.border);
+        console.log(response.body)
+
+        //expect(response.body).toEqual(seedData.border);
+
+    });
+
+    test ('gmap', async () => {
+
+        const response = await request.get('/border/gmap/')
+
+        expect(response.status).toBe(200)
+
+        console.log(response.body)
+
+        //expect(response.body).toEqual(seedData.border);
 
     });
 

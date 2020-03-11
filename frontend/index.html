@@ -21,45 +21,14 @@
   <body>
     <div id="map"></div>
     <script>
-
-      // This example creates a 2-pixel-wide red polyline showing the path of
-      // the first trans-Pacific flight between Oakland, CA, and Brisbane,
-      // Australia which was made by Charles Kingsford Smith.
-
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 16,
-          center: {lat: 51.2388266, lng: 7.1073193},
-          mapTypeId: 'terrain'
-        });
-
-        var xhr = new XMLHttpRequest();
-
-        xhr.open('GET', 'http://127.0.0.1:3000/border/gmap', false);
-        xhr.onload = function() {
-
-          const border = JSON.parse(this.responseText);
-
-          var zooBorder = new google.maps.Polyline({
-            path: border,
-            geodesic: true,
-            strokeColor: '#FF0000',
-            strokeOpacity: 1.0,
-            strokeWeight: 2
-          });
-
-          zooBorder.setMap(map);
-        }
-        xhr.onerror = function() {
-          console.log('Error ' + this.status);
-        }
-        xhr.send();
-
-
-      }
+      const samisdat = {
+        'global':'yeah'
+      };
     </script>
+    <script src="./index.js"></script>
+
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHBAikcRasPAxQ9rohryp1rE83_n3NYpM&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHBAikcRasPAxQ9rohryp1rE83_n3NYpM&callback=start">
     </script>
   </body>
 </html>

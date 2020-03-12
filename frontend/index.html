@@ -5,11 +5,40 @@
     <meta charset="utf-8">
     <title>Simple Polylines</title>
     <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
+
+      .wrapper{
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 100%;
         height: 100%;
       }
+      #map {
+        position: absolute;
+        top:0px;
+        left:0px;
+        width: 70%;
+        height: 100%;
+      }
+      #list {
+        position: absolute;
+        top:0px;
+        left:70%;
+        width: 30%;
+        height: 100%;
+        overflow: scroll;
+      }
+      #list div{
+        margin-left: 10px;
+        padding-left: 10px;
+        padding-top: 10px;
+        border-left:10px solid lightblue;
+      }
+
+      #list div.active{
+        border-left:10px solid blue;
+      }
+
       /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
@@ -19,7 +48,10 @@
     </style>
   </head>
   <body>
-    <div id="map"></div>
+    <div class="wrapper">
+      <div id="map"></div>
+      <div id="list"></div>
+    </div>
     <script>
       const samisdat = {
         'global':'yeah'
@@ -28,7 +60,7 @@
     <script src="./index.js"></script>
 
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHBAikcRasPAxQ9rohryp1rE83_n3NYpM&callback=start">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtIjAV_E5nOE691HilK34f1iRw_FF1NHI&callback=start">
     </script>
   </body>
 </html>

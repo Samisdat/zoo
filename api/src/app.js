@@ -3,11 +3,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
 
-//import {Controller} from "./controller/building";
-//import {BuildingService} from "./service/building.service";
-
-var border = require('./router/border.router');
-var building = require('./router/building.router');
+var polygonRouter = require('./router/polygon.router');
 
 var app = express();
 
@@ -25,8 +21,7 @@ const initMongose = async (databaseUrl) => {
 
 };
 
-app.use('/border', border);
-app.use('/building', building);
+app.use('/polygon', polygonRouter);
 
 module.exports = {
     app,

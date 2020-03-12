@@ -332,23 +332,91 @@ const extractPolygonFromOsm = (name, wayId, type) => {
 
 };
 
-let  polygones = mapPolygons.map((mapPolygon)=>{
+let  polygons = mapPolygons.map((mapPolygon)=>{
 
     return extractPolygonFromOsm(mapPolygon.name, mapPolygon.id, mapPolygon.type);
 
 });
 
-polygones = JSON.stringify(
-    polygones,
+const isFootway = (way) => {
+
+    if( undefined === way.tag){
+        return false;
+    }
+
+    const checkTag = (tag) =>{
+
+        if(undefined === tag['@_v']){
+            return false;
+        }
+        if('footway' === tag['@_v']){
+            return true;
+        }
+
+        return false;
+    };
+
+    if( undefined === way.tag.length){
+
+        return checkTag(way.tag);
+
+    }
+
+    for(const tag of way.tag){
+
+        if( true === checkTag(tag)){
+            return true;
+        }
+
+    }
+    return false;
+
+}
+
+const getAllWays = () => {
+
+    const footwaysWays = mapData.way.filter((way)=>{
+
+        const isFootpath = isFootway(way)
+
+        return isFootpath;
+
+    });
+
+
+    let footways = footwaysWays.map((footwayWay, index)=>{
+
+        const footway = {
+            'name':'Weg ' + index,
+            'id':footwayWay['@_id'],
+            'type':'way'
+        }
+
+
+        return extractPolygonFromOsm(footway.name, footway.id, footway.type);
+
+    });
+
+    return footways;
+
+};
+
+const allWays = getAllWays();
+
+
+polygons = polygons.concat(allWays);
+
+polygons = JSON.stringify(
+    polygons,
     null,
     4
 );
 
-console.log(polygones)
+console.log(polygons)
 
 fs.writeFileSync(
     './export/polygon.json',
-    polygones
+    polygons
 );
 
 

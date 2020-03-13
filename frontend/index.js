@@ -50,7 +50,7 @@ const plotPolygone = () =>{
         if(active === polygon.id){
             opacity = 1;
         }
-        console.log(opacity)
+
 
         mapPolygons[polygon.id] = new google.maps.Polyline({
             path: polygon.coordinate,
@@ -71,6 +71,7 @@ const plotPolygone = () =>{
         marker.addListener('click', (marker) => {
 
             active = polygon.id;
+            console.log(active)
             setMapOnAll(null)
             plotPolygone();
 
@@ -80,13 +81,21 @@ const plotPolygone = () =>{
 
         mapPolygons[polygon.id].setMap(map);
 
+        if(active === polygon.id){
+            map.setCenter(
+                marker.getPosition()
+            )
+        }
+
+
     }
 
 };
 
 const setActive = (newAcive) => {
     if(undefined !== active){
-        document.getElementById(active).classList.remove('active')
+        document.getElementById(active).className = '';
+        console.log(document.getElementById(active))
     }
 
     active = newAcive;
@@ -214,7 +223,7 @@ const start = () => {
 
     initMap();
 
-    loadPolygon('way');
+    loadPolygon('enclosure');
 
 };
 

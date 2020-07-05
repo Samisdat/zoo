@@ -22,3 +22,12 @@ services:
             - 3001:3001
         links:
             - mongo:mongo
+
+    backend:
+        image: zoo-backend:latest
+        volumes:
+            - /Users/samisdat/repos/zoo/backend:/home/node/app
+        ports:
+            - 3003:3003
+        links:
+            - mongo:mongo

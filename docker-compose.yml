@@ -4,7 +4,7 @@ services:
         image: mongo:3.6.17-xenial
         restart: always
         volumes:
-            - /home/dev/projects/samisdat/zoo/mongo-data:/data/db
+            - /Users/samisdat/repos/zoo/mongo-data:/data/db
 
     mongo-express:
         image: mongo-express
@@ -15,8 +15,8 @@ services:
     api:
         image: zoo:latest
         volumes:
-            - /home/dev/projects/samisdat/zoo/api:/home/node/app
-            - /home/dev/projects/samisdat/zoo/frontend:/home/node/frontend
+            - /Users/samisdat/repos/zoo/api:/home/node/app
+            - /Users/samisdat/repos/zoo/frontend:/home/node/frontend
         ports:
             - 3000:3000
             - 3001:3001

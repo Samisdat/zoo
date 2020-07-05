@@ -1,5 +1,7 @@
 var records = [
-    { id: 1, username: 'samisdat', password: 'foo', displayName: 'Bastian', emails: [ { value: 'bastian@pertz.eu' } ] }];
+    { id: 1, username: 'samisdat', password: 'foo', displayName: 'Bastian', email: 'bastian@pertz.eu' }
+
+];
 
 exports.findById = function(id, cb) {
   process.nextTick(function() {

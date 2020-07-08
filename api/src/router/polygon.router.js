@@ -39,7 +39,16 @@ router.get('/:type', async (req, res) => {
 
     try {
 
-        const polygons = await Polygon.find({type:type});
+        let polygons = await Polygon.find({type:type});
+
+        polygons = polygons.sort((a, b) => {
+
+            var nameA = a.name.toUpperCase();
+            var nameB = b.name.toUpperCase();
+
+            return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
+            
+        });
 
         const responseJson =  polygons.map((polygon)=>{
 

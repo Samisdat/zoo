@@ -13,6 +13,31 @@ export default class EnclosureForm extends React.Component {
         submitted: false,
     }
 
+    componentDidUpdate(prevProps) {
+
+        console.log('componentDidUpdate', prevProps, this.props)
+        const formData = {
+            id: this.props.active.id,
+                name: this.props.active.name,
+                slug: slugify(this.props.active.name),
+        };
+
+        //this.setState({ formData });
+    }
+
+    static getDerivedStateFromProps(nextProps, prevState) {
+
+        return {
+            formData: {
+                id: nextProps.active.id,
+                name: nextProps.active.name,
+                slug: slugify(nextProps.active.name),
+            },
+            submitted: false,
+
+        };
+    }
+
     handleChange = (event) => {
         const { formData } = this.state;
         formData[event.target.name] = event.target.value;
@@ -27,6 +52,7 @@ export default class EnclosureForm extends React.Component {
 
     render() {
 
+        console.log(this.props.active.name)
 
         const { formData, submitted } = this.state;
 

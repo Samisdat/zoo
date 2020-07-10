@@ -153,11 +153,20 @@ router.delete('/:id', async (req, res) => {
 
 });
 
-router.put('/:id', function(req, res) {
+router.put('/:id', async(req, res) =>{
     const id = req.params.id;
 
-    res.status(200);
-    res.json({message: 'update building with id ' + id});
+    try {
+        const polygon = await Polygon.findById(id);
+        const update = req.body;
+        polygon.name = update.name;
+        await polygon.save();
+        res.status(200);
+        res.json(update);
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+
 });
 
 module.exports = router;

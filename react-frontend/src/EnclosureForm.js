@@ -12,19 +12,11 @@ export default class EnclosureForm extends React.Component {
         submitted: false,
     }
 
-    componentDidUpdate(prevProps) {
-
-        console.log('componentDidUpdate', prevProps, this.props)
-        const formData = {
-            id: this.props.active.id,
-                name: this.props.active.name,
-                slug: slugify(this.props.active.name),
-        };
-
-        //this.setState({ formData });
-    }
-
     static getDerivedStateFromProps(nextProps, prevState) {
+
+        if(nextProps.active.id === prevState.formData.id){
+            return prevState;
+        }
 
         return {
             formData: {
@@ -43,19 +35,44 @@ export default class EnclosureForm extends React.Component {
         this.setState({ formData });
     }
 
-    handleSubmit = () => {
-        this.setState({ submitted: true }, () => {
-            setTimeout(() => this.setState({ submitted: false }), 5000);
+    handleSubmit = (event) => {
+
+        this.setState({ submitted: true }, async () => {
+
+            const data = new FormData(event.target);
+
+            console.log(data.getAll('name'))
+
+            const response = await fetch('http://127.0.0.1:3000/polygon/' + this.state.formData.id, {
+                method: 'PUT',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(this.state.formData),
+            });
+
+            if (response.ok) { // if HTTP-status is 200-299
+                               // get the response body (the method explained below)
+                let json = await response.json();
+                console.log('json', json);
+                this.setState({ submitted: false });
+            } else {
+                console.log("HTTP-Error: " + response.status);
+            }
+
+
         });
+
+
     }
 
     render() {
 
-        console.log(this.props.active.name)
-
         const { formData, submitted } = this.state;
 
-        console.log(formData)
+        const input = '# This is a header\n\nAnd this is a paragraph'
+
 
         return (
             <ValidatorForm

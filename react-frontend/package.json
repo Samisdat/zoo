@@ -17,6 +17,7 @@
     "next": "^9.4.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-markdown": "^4.3.1",
     "react-material-ui-form-validator": "^2.0.10"
   }
 }

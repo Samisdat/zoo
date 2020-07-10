@@ -55,6 +55,7 @@ router.get('/:type', async (req, res) => {
             return {
                 id: polygon._id,
                 name: polygon.name,
+                slug: polygon.slug,
                 coordinate: polygon.location.coordinates[0].map( (coordinate) => {
                     return{
                         lng: (coordinate[0] * 1),

@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router'
 import {makeStyles} from "@material-ui/core/styles";
-import Navigation from "../../../src/Navigation";
+import Navigation from "../../src/Navigation";
 import Grid from "@material-ui/core/Grid";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import Link from "../../../src/Link";
+import Link from "../../src/Link";
 import ListItemText from "@material-ui/core/ListItemText";
 import Paper from "@material-ui/core/Paper";
 import Tooltip from "@material-ui/core/Tooltip";
@@ -12,7 +12,7 @@ import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import React from "react";
 
-import EnclosureForm from '../../../src/EnclosureForm';
+import EnclosureForm from '../../src/EnclosureForm';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -62,7 +62,7 @@ const Gehege = (props) => {
                 <Grid item xs={4}>
                     <List component="nav">
                         {enclosures.map((enclosure) => (
-                            <ListItem button  component={Link} naked href="/gehege/[id]/[slug]" as={`/gehege/${enclosure.id}/${enclosure.name}`} >
+                            <ListItem button  component={Link} naked href="/gehege/[slug]" as={`/gehege/${enclosure.slug}`} >
                                 <ListItemText primary={enclosure.name} />
                             </ListItem>
                         ))}
@@ -91,15 +91,18 @@ export async function getStaticProps({ params, preview = false, previewData }) {
     const enclosures = json.map((enclosure)=>{
         return{
             id: enclosure.id,
-            name: enclosure.name
+            name: enclosure.name,
+            slug: enclosure.slug
         };
     });
 
     const active = json.find((enclosure)=>{
 
-        return (enclosure.id === params.id);
+        return (enclosure.slug === params.slug);
 
     });
+
+    console.log(active)
 
     return {
         props: {
@@ -116,8 +119,7 @@ export async function getStaticPaths() {
     const paths = enclosures.map((enclosure)=>{
         return {
             params: {
-                id: enclosure.id,
-                slug: enclosure.name
+                slug: enclosure.slug
             }
         };
     });

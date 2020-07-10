@@ -1,3 +1,4 @@
+const mongooseSlugPlugin = require('mongoose-slug-plugin');
 const mongoose = require('mongoose')
 
 const polygonSchema = new mongoose.Schema(
@@ -13,6 +14,8 @@ const polygonSchema = new mongoose.Schema(
     },
     { versionKey: false }
 );
+
+polygonSchema.plugin(mongooseSlugPlugin, { tmpl: '<%=name%>' });
 
 polygonSchema.index({ geometry: "2dsphere" });
 

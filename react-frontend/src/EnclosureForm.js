@@ -1,14 +1,13 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
-const slugify = require('@sindresorhus/slugify');
 
 export default class EnclosureForm extends React.Component {
     state = {
         formData: {
             id: this.props.active.id,
             name: this.props.active.name,
-            slug: slugify(this.props.active.name),
+            slug: this.props.active.slug,
         },
         submitted: false,
     }
@@ -31,7 +30,7 @@ export default class EnclosureForm extends React.Component {
             formData: {
                 id: nextProps.active.id,
                 name: nextProps.active.name,
-                slug: slugify(nextProps.active.name),
+                slug: nextProps.active.slug,
             },
             submitted: false,
 

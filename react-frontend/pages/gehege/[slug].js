@@ -14,6 +14,12 @@ import React from "react";
 
 import EnclosureForm from '../../src/EnclosureForm';
 
+import dynamic from 'next/dynamic';
+
+const MapWithNoSSR = dynamic(() => import('../../src/map/Map'), {
+    ssr: false
+});
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -48,7 +54,8 @@ const Gehege = (props) => {
 
     const enclosures = props.enclosures;
 
-    console.log('props', props.active.name)
+    console.log('props', props.active.coordinate)
+
 
 
     const handleChange = (event) => {
@@ -56,20 +63,22 @@ const Gehege = (props) => {
     };
 
     return (
+
         <div className={classes.root}>
             <Navigation></Navigation>
             <Grid container spacing={3}>
                 <Grid item xs={4}>
                     <List component="nav">
                         {enclosures.map((enclosure) => (
-                            <ListItem button  component={Link} naked href="/gehege/[slug]" as={`/gehege/${enclosure.slug}`} >
+                            <ListItem button component={Link} naked href="/gehege/[slug]" as={`/gehege/${enclosure.slug}`} >
                                 <ListItemText primary={enclosure.name} />
                             </ListItem>
                         ))}
                     </List>
                 </Grid>
                 <Grid xs={7}>
-                    <EnclosureForm {...props}></EnclosureForm>
+                    <h1>{props.active.name}</h1>
+                    <MapWithNoSSR {...props}/>
                 </Grid>
             </Grid>
 
@@ -92,7 +101,9 @@ export async function getStaticProps({ params, preview = false, previewData }) {
         return{
             id: enclosure.id,
             name: enclosure.name,
-            slug: enclosure.slug
+            slug: enclosure.slug,
+            coordinate: enclosure.coordinate,
+
         };
     });
 
@@ -101,8 +112,6 @@ export async function getStaticProps({ params, preview = false, previewData }) {
         return (enclosure.slug === params.slug);
 
     });
-
-    console.log(active)
 
     return {
         props: {

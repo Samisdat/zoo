@@ -7,6 +7,9 @@ import Typography from '@material-ui/core/Typography';
 import {makeStyles} from "@material-ui/core/styles";
 import IconButton from '@material-ui/core/IconButton';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Link from "./Link";
+import ListItem from "@material-ui/core/ListItem";
+import React from "react";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -46,7 +49,9 @@ function Navigation() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
-                        News
+                        <Link component={Link} naked href="/gehege/[slug]" as={`/gehege/biber`} >
+                            Gehege
+                        </Link>
                     </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>

@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 
 const polygonSchema = new mongoose.Schema(
     {
+        zooId: String,
         name:String,
         type:String,
         osmId:String,

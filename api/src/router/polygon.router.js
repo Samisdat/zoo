@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const fetch = require('node-fetch');
 
 const Building = require('../model/building')
 
@@ -168,5 +169,68 @@ router.put('/:id', async(req, res) =>{
     }
 
 });
+
+router.post('/:type/import-osm', async (req, res) => {
+
+    const { osmId, zooId, type } = req.body;
+    let { name } = req.body;
+
+    // check if already with way id
+    let polygon = await Polygon.findOne({
+        osmId: osmId
+    });
+
+    if(null === polygon){
+        polygon = new Polygon();
+    }
+
+    // update from osm
+
+    const openStreetMapApiWay = `https://www.openstreetmap.org/api/0.6/way/${osmId}.json`;
+
+    const response = await fetch(openStreetMapApiWay);
+
+    const json = await response.json();
+
+    // es scheint möglich, dass ein way wiederum mehrerer ways in sich hat. fürs erste ignoriere ich das weg
+    const way = json.elements[0];
+
+    if(!name && undefined !== way.tags && undefined !== way.tags.name){
+        name = way.tags.name;
+    }
+
+    const osmNodeIds = way.nodes;
+    const coordinates = [];
+
+    for(let i = 0, x = osmNodeIds.length; i < x; i +=1){
+
+        const openStreetMapApiNode = `https://www.openstreetmap.org/api/0.6/node/${osmNodeIds[i]}.json`;
+
+        const response = await fetch(openStreetMapApiNode);
+
+        const json = await response.json();
+
+        coordinates.push(
+            [
+                json.elements[0].lon,
+                json.elements[0].lat
+            ]
+        );
+
+    }
+
+    polygon.location.coordinates =  [coordinates]
+
+    polygon.name = name;
+    polygon.type = type;
+    polygon.zooId = zooId;
+
+    res.status(200);
+
+    await polygon.save()
+    res.json(polygon);
+
+});
+
 
 module.exports = router;

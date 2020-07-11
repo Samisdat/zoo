@@ -10,16 +10,12 @@ export default class SimpleExample extends Component {
     state = {
         lat: 51.23925648995369,
         lng: 7.11062378150634421,
-        zoom: 17,
+        zoom: 18,
     }
 
 
     render() {
         const position = [this.state.lat, this.state.lng]
-
-        console.log('Map', this.props)
-
-        const polyline = [this.props.coordinate];
 
         return (
             <Map center={position} zoom={this.state.zoom} style={{
@@ -31,9 +27,22 @@ export default class SimpleExample extends Component {
                 />
 
                 {this.props.enclosures.map((enclosure) => (
-                    <Polyline color="lime" positions={enclosure.coordinate} />
+                    <Polyline color={enclosure.color} positions={enclosure.coordinate} />
                 ))}
 
+                {this.props.buildings.map((buildings) => (
+                    <Polyline color={buildings.color} positions={buildings.coordinate}>
+                        <Popup>Popup in CircleMarker</Popup>
+                    </Polyline>
+                ))}
+
+                {this.props.borders.map((border) => (
+                    <Polyline color={border.color} positions={border.coordinate} />
+                ))}
+
+                {this.props.playgrounds.map((playground) => (
+                    <Polyline color={playground.color} positions={playground.coordinate} />
+                ))}
 
             </Map>
         )

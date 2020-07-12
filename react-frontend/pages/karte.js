@@ -127,12 +127,26 @@ export async function getStaticProps({ params, preview = false, previewData }) {
         };
     });
 
+    const responseWater = await fetch('http://127.0.0.1:3000/polygon/water')
+    let jsonWater = await responseWater.json();
+
+    const waters = jsonWater.map((water)=>{
+        return{
+            id: water.id,
+            name: water.name,
+            slug: water.slug,
+            coordinate: water.coordinate,
+            color: 'blue'
+        };
+    });
+
     return {
         props: {
             enclosures,
             buildings,
             borders,
-            playgrounds
+            playgrounds,
+            waters
         },
     }
 }

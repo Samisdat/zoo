@@ -8,7 +8,8 @@ const POLYGON_TYPES = [
     'building',
     'enclosure',
     'way',
-    'playground'
+    'playground',
+    'water'
 ]
 
 module.exports = {

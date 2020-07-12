@@ -44,6 +44,10 @@ export default class SimpleExample extends Component {
                     <Polyline color={playground.color} positions={playground.coordinate} />
                 ))}
 
+                {this.props.waters.map((water) => (
+                    <Polyline color={water.color} positions={water.coordinate} />
+                ))}
+
             </Map>
         )
     }

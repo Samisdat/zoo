@@ -4,6 +4,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 
 var polygonRouter = require('./router/polygon.router');
+var animalRouter = require('./router/animal.router');
 
 var app = express();
 
@@ -22,6 +23,7 @@ const initMongose = async (databaseUrl) => {
 };
 
 app.use('/polygon', polygonRouter);
+app.use('/animal', animalRouter);
 
 module.exports = {
     app,

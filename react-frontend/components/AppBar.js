@@ -84,48 +84,16 @@ export default function s() {
     const classes = useStyles();
 
     const [state, setState] = React.useState({
-        top: false,
-        left: false,
-        bottom: false,
-        right: false,
+        sidebar: false
     });
 
-    const toggleDrawer = (anchor, open) => (event) => {
+    const toggleDrawer = (open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
         }
 
-        setState({ ...state, [anchor]: open });
+        setState({ ...state, ['sidebar']: open });
     };
-
-    const list = (anchor) => (
-        <div
-            className={clsx(classes.list, {
-                [classes.fullList]: anchor === 'top' || anchor === 'bottom',
-            })}
-            role="presentation"
-            onClick={toggleDrawer(anchor, false)}
-            onKeyDown={toggleDrawer(anchor, false)}
-        >
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-            <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-        </div>
-    );
 
     return (
         <div className={classes.root}>
@@ -136,13 +104,40 @@ export default function s() {
                         className={classes.menuButton}
                         color="inherit"
                         aria-label="open drawer"
-                        onClick={toggleDrawer('left', true)}
+                        onClick={toggleDrawer( true)}
                     >
                         <MenuIcon />
                     </IconButton>
                     <Typography className={classes.title} variant="h6" noWrap>
                         Zoo Wuppertal
                     </Typography>
+
+                    <Drawer open={state['sidebar']} onClose={toggleDrawer( false)}>
+                        <div
+                            role="presentation"
+                            onClick={toggleDrawer( false)}
+                            onKeyDown={toggleDrawer( false)}
+                        >
+                            <List>
+                                {['Karte', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                                    <ListItem button key={text}>
+                                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                                        <ListItemText primary={text} />
+                                    </ListItem>
+                                ))}
+                            </List>
+                            <Divider />
+                            <List>
+                                {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                                    <ListItem button key={text}>
+                                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                                        <ListItemText primary={text} />
+                                    </ListItem>
+                                ))}
+                            </List>
+                        </div>
+                    </Drawer>
+
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
                             <SearchIcon />

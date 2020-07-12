@@ -2,8 +2,6 @@ var express = require('express');
 var router = express.Router();
 const fetch = require('node-fetch');
 
-const Building = require('../model/building')
-
 const Polygon = require('../model/polygon');
 
 const POLYGON_TYPES = require('../constants').POLYGON_TYPES;

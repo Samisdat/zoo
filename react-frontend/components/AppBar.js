@@ -18,10 +18,13 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import MapIcon from '@material-ui/icons/Map';
+import Badge from '@material-ui/core/Badge';
 
+import NotificationsIcon from '@material-ui/icons/Notifications';
 const useStyles = makeStyles((theme) => ({
     list: {
-        width: 250,
+        width: 300,
     },
     fullList: {
         width: 'auto',
@@ -119,21 +122,25 @@ export default function s() {
                             onKeyDown={toggleDrawer( false)}
                         >
                             <List>
-                                {['Karte', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                                    <ListItem button key={text}>
-                                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                                        <ListItemText primary={text} />
-                                    </ListItem>
-                                ))}
+                                <ListItem button key="Karte">
+                                    <ListItemIcon><MapIcon /></ListItemIcon>
+                                    <ListItemText primary="Karte" />
+                                </ListItem>
+                                <ListItem button key="Rundwege">
+                                    <ListItemIcon><MapIcon /></ListItemIcon>
+                                    <ListItemText primary="Rundwege" />
+                                </ListItem>
+                                <ListItem button key="Tiere">
+                                    <ListItemIcon><MapIcon /></ListItemIcon>
+                                    <ListItemText primary="Tiere" />
+                                </ListItem>
                             </List>
                             <Divider />
                             <List>
-                                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                                    <ListItem button key={text}>
-                                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                                        <ListItemText primary={text} />
-                                    </ListItem>
-                                ))}
+                                <ListItem button key="Neuigkeiten">
+                                    <ListItemIcon><MapIcon /></ListItemIcon>
+                                    <ListItemText primary="Neuigkeiten" />
+                                </ListItem>
                             </List>
                         </div>
                     </Drawer>
@@ -151,6 +158,11 @@ export default function s() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
+                    <IconButton aria-label="show 17 new notifications" color="inherit">
+                        <Badge badgeContent={17} color="secondary">
+                            <NotificationsIcon />
+                        </Badge>
+                    </IconButton>
                 </Toolbar>
             </AppBar>
         </div>

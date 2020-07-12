@@ -1,24 +1,16 @@
 import { useRouter } from 'next/router'
 import {makeStyles} from "@material-ui/core/styles";
-import Navigation from "../../src/Navigation";
+import Navigation from "../src/Navigation";
 import Grid from "@material-ui/core/Grid";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import Link from "../../src/Link";
+import Link from "../src/Link";
 import ListItemText from "@material-ui/core/ListItemText";
 import Paper from "@material-ui/core/Paper";
 import Tooltip from "@material-ui/core/Tooltip";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import React from "react";
-
-import EnclosureForm from '../../src/EnclosureForm';
-
-import dynamic from 'next/dynamic';
-
-const MapWithNoSSR = dynamic(() => import('../../src/map/Map'), {
-    ssr: false
-});
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -54,9 +46,6 @@ const Gehege = (props) => {
 
     const enclosures = props.enclosures;
 
-    console.log('props', props.active.coordinate)
-
-
 
     const handleChange = (event) => {
         this.setState({value: event.target.value});
@@ -77,7 +66,7 @@ const Gehege = (props) => {
                     </List>
                 </Grid>
                 <Grid xs={7}>
-                    <h1>{props.active.name}</h1>
+                    <h1>Gehege</h1>
                 </Grid>
             </Grid>
 
@@ -106,36 +95,11 @@ export async function getStaticProps({ params, preview = false, previewData }) {
         };
     });
 
-    const active = json.find((enclosure)=>{
-
-        return (enclosure.slug === params.slug);
-
-    });
-
     return {
         props: {
-            active,
             enclosures
         },
     }
-}
-export async function getStaticPaths() {
-
-    const res = await fetch('http://127.0.0.1:3000/polygon/enclosure')
-    let enclosures = await res.json();
-    
-    const paths = enclosures.map((enclosure)=>{
-        return {
-            params: {
-                slug: enclosure.slug
-            }
-        };
-    });
-
-    return {
-        paths: paths,
-        fallback: false
-    };
 }
 
 export default Gehege

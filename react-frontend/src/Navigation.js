@@ -49,8 +49,13 @@ function Navigation() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
-                        <Link component={Link} naked href="/gehege/[slug]" as={`/gehege/biber`} >
+                        <Link component={Link} naked href="/gehege" as={`/gehege`} >
                             Gehege
+                        </Link>
+                    </Typography>
+                    <Typography variant="h6" className={classes.title}>
+                        <Link component={Link} naked href="/tiere" as={`/tiere`} >
+                            Tiere
                         </Link>
                     </Typography>
                     <Button color="inherit">Login</Button>

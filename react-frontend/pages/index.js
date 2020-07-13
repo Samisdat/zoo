@@ -1,18 +1,22 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
-
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-
-import DeleteIcon from '@material-ui/icons/Delete';
-import Tooltip from '@material-ui/core/Tooltip';
-
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-
+import { useRouter } from 'next/router'
+import {makeStyles} from "@material-ui/core/styles";
 import Navigation from "../src/Navigation";
+import Grid from "@material-ui/core/Grid";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import Link from "../src/Link";
+import ListItemText from "@material-ui/core/ListItemText";
+import Tooltip from "@material-ui/core/Tooltip";
+import IconButton from "@material-ui/core/IconButton";
+import DeleteIcon from "@material-ui/icons/Delete";
+import React from "react";
+
+import dynamic from 'next/dynamic';
+
+const MapWithNoSSR = dynamic(() => import('../src/map/Map'), {
+    ssr: false
+});
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -39,62 +43,112 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function ListItemLink(props) {
+const Index = (props) => {
+    const router = useRouter()
+    const { slug } = router.query
 
-    return <ListItem button component="a" {...props} />;
-}
-
-export default function ButtonAppBar({ enclosures }) {
     const classes = useStyles();
 
-    console.log('enclosures', enclosures)
+    const enclosures = props.enclosures;
+
+
+
+    const handleChange = (event) => {
+        this.setState({value: event.target.value});
+    };
 
     return (
+
         <div className={classes.root}>
             <Navigation></Navigation>
-
             <Grid container spacing={3}>
-                <Grid item xs={4}>
-
-                    <List component="nav">
-                        {enclosures.map((enclosure) => (
-                            <ListItemLink href="#simple-list" name={enclosure.name} id={enclosure.id} >
-                                <ListItemText primary={enclosure.name} />
-                            </ListItemLink>
-                        ))}
-                    </List>
-                </Grid>
-                <Grid item xs={8}>
-                    <Paper className={classes.paper}>xs=8</Paper>
+                <Grid xs={2}></Grid>
+                <Grid xs={8}>
+                    <h1>Karte</h1>
+                    <MapWithNoSSR {...props}/>
                 </Grid>
             </Grid>
-
-        <Tooltip title="Delete">
-        <IconButton aria-label="delete">
-        <DeleteIcon />
-        </IconButton>
-        </Tooltip>
-
         </div>
-);
+    );
 }
 
+export async function getStaticProps({ params, preview = false, previewData }) {
 
-export async function getStaticProps() {
+    const responseEnclosure = await fetch('http://127.0.0.1:3000/polygon/enclosure')
+    let jsonEnclosure = await responseEnclosure.json();
 
-    const res = await fetch('http://127.0.0.1:3000/polygon/enclosure')
-    let enclosures = await res.json();
-
-    enclosures = enclosures.map((enclosure)=>{
+    const enclosures = jsonEnclosure.map((enclosure)=>{
         return{
             id: enclosure.id,
-            name: enclosure.name
+            name: enclosure.name,
+            slug: enclosure.slug,
+            coordinate: enclosure.coordinate,
+            color: 'lime'
+
+        };
+    });
+
+    const responseBuildings = await fetch('http://127.0.0.1:3000/polygon/building')
+    let jsonBuilding = await responseBuildings.json();
+
+    const buildings = jsonBuilding.map((building)=>{
+        return{
+            id: building.id,
+            name: building.name,
+            slug: building.slug,
+            coordinate: building.coordinate,
+            color: 'purple'
+        };
+    });
+
+    const responseBorder = await fetch('http://127.0.0.1:3000/polygon/border')
+    let jsonBorder = await responseBorder.json();
+
+    const borders = jsonBorder.map((border)=>{
+        return{
+            id: border.id,
+            name: border.name,
+            slug: border.slug,
+            coordinate: border.coordinate,
+            color: 'red'
+        };
+    });
+
+    const responsePlayground = await fetch('http://127.0.0.1:3000/polygon/playground')
+    let jsonPlayground = await responsePlayground.json();
+
+    const playgrounds = jsonPlayground.map((playground)=>{
+        return{
+            id: playground.id,
+            name: playground.name,
+            slug: playground.slug,
+            coordinate: playground.coordinate,
+            color: 'yellow'
+        };
+    });
+
+    const responseWater = await fetch('http://127.0.0.1:3000/polygon/water')
+    let jsonWater = await responseWater.json();
+
+    const waters = jsonWater.map((water)=>{
+        return{
+            id: water.id,
+            name: water.name,
+            slug: water.slug,
+            coordinate: water.coordinate,
+            color: 'blue'
         };
     });
 
     return {
-        props:{
-            enclosures
-        }
+        props: {
+            enclosures,
+            buildings,
+            borders,
+            playgrounds,
+            waters
+        },
     }
 }
+
+export default Index

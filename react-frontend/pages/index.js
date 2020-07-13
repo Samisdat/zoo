@@ -1,14 +1,6 @@
-import { useRouter } from 'next/router'
 import {makeStyles} from "@material-ui/core/styles";
 import Navigation from "../src/Navigation";
 import Grid from "@material-ui/core/Grid";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import Link from "../src/Link";
-import ListItemText from "@material-ui/core/ListItemText";
-import Tooltip from "@material-ui/core/Tooltip";
-import IconButton from "@material-ui/core/IconButton";
-import DeleteIcon from "@material-ui/icons/Delete";
 import React from "react";
 
 import dynamic from 'next/dynamic';
@@ -44,18 +36,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Index = (props) => {
-    const router = useRouter()
-    const { slug } = router.query
-
     const classes = useStyles();
-
-    const enclosures = props.enclosures;
-
-
-
-    const handleChange = (event) => {
-        this.setState({value: event.target.value});
-    };
 
     return (
 

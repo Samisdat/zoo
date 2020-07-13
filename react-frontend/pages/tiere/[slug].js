@@ -84,11 +84,21 @@ export async function getStaticProps({ params, preview = false, previewData }) {
         };
     });
 
-    const active = json.find((animal)=>{
+    let active = undefined;
 
-        return (animal.slug === params.slug);
+    if('index' === params.slug){
 
-    });
+        active = animals[0];
+    }
+    else{
+
+        active = animals.find((animal)=>{
+
+            return (animal.slug === params.slug);
+
+        });
+
+    }
 
     return {
         props: {
@@ -110,7 +120,11 @@ export async function getStaticPaths() {
         };
     });
 
-    console.log(animals)
+    paths.push({
+        params: {
+            slug: 'index'
+        }
+    });
 
     return {
         paths: paths,

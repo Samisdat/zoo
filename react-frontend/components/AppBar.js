@@ -22,6 +22,7 @@ import MapIcon from '@material-ui/icons/Map';
 import Badge from '@material-ui/core/Badge';
 
 import NotificationsIcon from '@material-ui/icons/Notifications';
+import Link from "../src/Link";
 const useStyles = makeStyles((theme) => ({
     list: {
         width: 300,
@@ -83,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function s() {
+export default function s(props) {
     const classes = useStyles();
 
     const [state, setState] = React.useState({
@@ -122,7 +123,7 @@ export default function s() {
                             onKeyDown={toggleDrawer( false)}
                         >
                             <List>
-                                <ListItem button key="Karte">
+                                <ListItem button key="Karte" component={Link} naked href="/karte" as={`/karte`} >
                                     <ListItemIcon><MapIcon /></ListItemIcon>
                                     <ListItemText primary="Karte" />
                                 </ListItem>
@@ -134,13 +135,18 @@ export default function s() {
                                     <ListItemIcon><MapIcon /></ListItemIcon>
                                     <ListItemText primary="Tiere" />
                                 </ListItem>
-                            </List>
-                            <Divider />
-                            <List>
                                 <ListItem button key="Neuigkeiten">
                                     <ListItemIcon><MapIcon /></ListItemIcon>
                                     <ListItemText primary="Neuigkeiten" />
                                 </ListItem>
+                            </List>
+                            <Divider />
+                            <List>
+                                {props.navigation.map((item) => (
+                                    <ListItem button key="Neuigkeiten">
+                                        <ListItemText primary={item.text} />
+                                    </ListItem>
+                                ))}
                             </List>
                         </div>
                     </Drawer>

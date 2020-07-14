@@ -18,5 +18,6 @@
 * Außengehege Kraniche
 * Außengehege Ameisenbär
 * Haus Tiger
+* Weg innen im Vogelhaus
 
 

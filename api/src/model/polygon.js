@@ -7,6 +7,7 @@ const polygonSchema = new mongoose.Schema(
         name:String,
         type:String,
         osmId:String,
+        tags:{},
         location: {
             type: { type: String },
             coordinates: []

@@ -250,6 +250,7 @@ router.post('/:type/import-osm', async (req, res) => {
     polygon.name = name;
     polygon.type = type;
     polygon.zooId = zooId;
+    polygon.tags = way.tags;
 
     res.status(200);
 

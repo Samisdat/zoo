@@ -123,9 +123,9 @@ export default function s(props) {
                             onKeyDown={toggleDrawer( false)}
                         >
                             <List>
-                                <ListItem button key="Karte" component={Link} naked href="/karte" as={`/karte`} >
+                                <ListItem button key="Index" component={Link} naked href="/" as={`/`} >
                                     <ListItemIcon><MapIcon /></ListItemIcon>
-                                    <ListItemText primary="Karte" />
+                                    <ListItemText primary="Index" />
                                 </ListItem>
                                 <ListItem button key="Rundwege">
                                     <ListItemIcon><MapIcon /></ListItemIcon>

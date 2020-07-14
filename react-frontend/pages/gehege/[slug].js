@@ -16,7 +16,7 @@ import EnclosureForm from '../../src/EnclosureForm';
 
 import dynamic from 'next/dynamic';
 
-const MapWithNoSSR = dynamic(() => import('../../src/map/Map'), {
+const MapWithNoSSR = dynamic(() => import('../../components/Map'), {
     ssr: false
 });
 

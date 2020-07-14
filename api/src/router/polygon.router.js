@@ -6,6 +6,30 @@ const Polygon = require('../model/polygon');
 
 const POLYGON_TYPES = require('../constants').POLYGON_TYPES;
 
+const extractRequestTypes = (typesString) =>{
+
+    if(undefined === typesString){
+        return undefined;
+    }
+
+    typesString = typesString.split(',');
+
+    const types = [];
+
+    for(let i = 0, x = typesString.length; i < x; i+= 1){
+
+        if(false === POLYGON_TYPES.includes(typesString[i])){
+            continue;
+        }
+
+        types.push(typesString[i]);
+
+    }
+
+    return types;
+
+};
+
 // middleware that is specific to this router
 router.use(function timeLog(req, res, next) {
 
@@ -15,30 +39,35 @@ router.use(function timeLog(req, res, next) {
     next();
 });
 
-router.get('/:type', (req, res, next) => {
+router.get('/:type?', async (req, res) => {
 
-    const type = req.params.type;
 
-    if(false === POLYGON_TYPES.includes(type)){
-        res.status(501);
-        res.json({
-            error: '[type='+ type + '] is invalid'
-        });
-        return;
+    const types = extractRequestTypes(req.params.type);
+    console.log(types)
+
+    let find = {};
+
+    if(undefined !== types){
+
+        if(1 === types.length){
+            find = {type:types[0]};
+        }
+        else {
+            find = {
+                $or:types.map((type)=>{
+                    return {
+                        type: type
+                    }
+                })
+            };
+
+        }
+
     }
-
-    next();
-
-});
-
-router.get('/:type', async (req, res) => {
-
-    const type = req.params.type;
-
 
     try {
 
-        let polygons = await Polygon.find({type:type});
+        let polygons = await Polygon.find(find);
 
         polygons = polygons.sort((a, b) => {
 
@@ -55,6 +84,7 @@ router.get('/:type', async (req, res) => {
                 id: polygon._id,
                 name: polygon.name,
                 slug: polygon.slug,
+                type: polygon.type,
                 coordinate: polygon.location.coordinates[0].map( (coordinate) => {
                     return{
                         lng: (coordinate[0] * 1),
@@ -65,8 +95,6 @@ router.get('/:type', async (req, res) => {
             };
 
         })
-
-
 
         res.status(200);
         res.json(responseJson);

@@ -1,23 +1,21 @@
-import {makeStyles} from "@material-ui/core/styles";
-import Navigation from "../src/Navigation";
-import Grid from "@material-ui/core/Grid";
 import React from "react";
 
-import dynamic from 'next/dynamic';
+import {makeStyles} from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
 
-const MapWithNoSSR = dynamic(() => import('../src/map/Map'), {
+import SimpleBreadcrumbs from '../components/Breadcrumb'
+import AppBar from '../components/AppBar'
+
+import dynamic from 'next/dynamic';
+import Paper from "@material-ui/core/Paper";
+import Box from "@material-ui/core/Box";
+
+const MapWithNoSSR = dynamic(() => import('../components/Map'), {
     ssr: false
 });
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.paper,
-    },
-    menuButton: {
-        marginRight: theme.spacing(2),
-    },
-    title: {
         flexGrow: 1,
     },
     paper: {
@@ -25,109 +23,116 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         color: theme.palette.text.secondary,
     },
-    fab: {
-        margin: theme.spacing(2),
-    },
-    absolute: {
-        position: 'absolute',
-        bottom: theme.spacing(2),
-        right: theme.spacing(3),
-    },
 }));
 
 const Index = (props) => {
     const classes = useStyles();
 
     return (
-
         <div className={classes.root}>
-            <Navigation></Navigation>
-            <Grid container spacing={3}>
-                <Grid xs={2}></Grid>
-                <Grid xs={8}>
+            <Grid container>
+                <Grid item xs={12}>
+                    <AppBar {...props}></AppBar>
+                </Grid>
+                <Grid item xs={6} sm={3}>
+                    <Paper className={classes.paper}>xs=6 sm=3</Paper>
+                </Grid>
+                <Grid item xs={6} sm={3}>
+                    <Paper className={classes.paper}>xs=6 sm=3</Paper>
+                </Grid>
+                <Box width="100%"></Box>
+                <Grid item xs={12}>
+                    <Paper square className={classes.paper}>
+                        <SimpleBreadcrumbs></SimpleBreadcrumbs>
+                    </Paper>
+                </Grid>
+                <Grid item xs={12}>
                     <h1>Karte</h1>
                     <MapWithNoSSR {...props}/>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                    <Paper className={classes.paper}>
+                        xs=12 sm=6
+                    </Paper>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                    <Paper className={classes.paper}>xs=12 sm=6</Paper>
+                </Grid>
+                <Grid item xs={6} sm={3}>
+                    <Paper className={classes.paper}>xs=6 sm=3</Paper>
+                </Grid>
+                <Grid item xs={6} sm={3}>
+                    <Paper className={classes.paper}>xs=6 sm=3</Paper>
+                </Grid>
+                <Grid item xs={6} sm={3}>
+                    <Paper className={classes.paper}>xs=6 sm=3</Paper>
+                </Grid>
+                <Grid item xs={6} sm={3}>
+                    <Paper className={classes.paper}>xs=6 sm=3</Paper>
                 </Grid>
             </Grid>
         </div>
     );
+
 }
 
 export async function getStaticProps({ params, preview = false, previewData }) {
 
-    const responseEnclosure = await fetch('http://127.0.0.1:3000/polygon/enclosure')
-    let jsonEnclosure = await responseEnclosure.json();
+    const getPolygonColor = (type) => {
 
-    const enclosures = jsonEnclosure.map((enclosure)=>{
+        if('enclosure' === type){
+            return 'lime';
+        }
+
+        if('building' === type){
+            return 'purple';
+        }
+
+        if('border' === type){
+            return 'red';
+        }
+
+        if('playground' === type){
+            return 'yellow';
+        }
+
+        if('water' === type){
+            return 'blue';
+        }
+
+        if('way' === type){
+            return 'black';
+        }
+
+    };
+
+    const response = await fetch('http://127.0.0.1:3000/polygon/enclosure,building,border,playground,water,way')
+    let json = await response.json();
+
+    const polygons = json.map((polygon)=>{
         return{
-            id: enclosure.id,
-            name: enclosure.name,
-            slug: enclosure.slug,
-            coordinate: enclosure.coordinate,
-            color: 'lime'
-
+            id: polygon.id,
+            name: polygon.name,
+            slug: polygon.slug,
+            coordinate: polygon.coordinate,
+            color: getPolygonColor(polygon.type)
         };
     });
 
-    const responseBuildings = await fetch('http://127.0.0.1:3000/polygon/building')
-    let jsonBuilding = await responseBuildings.json();
+    const responseAnimals = await fetch('http://127.0.0.1:3000/animal/')
+    let jsonAnimals = await responseAnimals.json();
 
-    const buildings = jsonBuilding.map((building)=>{
+    const navigation = jsonAnimals.map((animal)=>{
         return{
-            id: building.id,
-            name: building.name,
-            slug: building.slug,
-            coordinate: building.coordinate,
-            color: 'purple'
-        };
-    });
-
-    const responseBorder = await fetch('http://127.0.0.1:3000/polygon/border')
-    let jsonBorder = await responseBorder.json();
-
-    const borders = jsonBorder.map((border)=>{
-        return{
-            id: border.id,
-            name: border.name,
-            slug: border.slug,
-            coordinate: border.coordinate,
-            color: 'red'
-        };
-    });
-
-    const responsePlayground = await fetch('http://127.0.0.1:3000/polygon/playground')
-    let jsonPlayground = await responsePlayground.json();
-
-    const playgrounds = jsonPlayground.map((playground)=>{
-        return{
-            id: playground.id,
-            name: playground.name,
-            slug: playground.slug,
-            coordinate: playground.coordinate,
-            color: 'yellow'
-        };
-    });
-
-    const responseWater = await fetch('http://127.0.0.1:3000/polygon/water')
-    let jsonWater = await responseWater.json();
-
-    const waters = jsonWater.map((water)=>{
-        return{
-            id: water.id,
-            name: water.name,
-            slug: water.slug,
-            coordinate: water.coordinate,
-            color: 'blue'
+            slug: animal.slug,
+            text: animal.species,
         };
     });
 
     return {
         props: {
-            enclosures,
-            buildings,
-            borders,
-            playgrounds,
-            waters
+            polygons,
+            navigation
         },
     }
 }

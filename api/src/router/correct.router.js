@@ -39,31 +39,9 @@ router.use(function timeLog(req, res, next) {
     next();
 });
 
-router.get('/:type?', async (req, res) => {
+router.get('/', async (req, res) => {
 
-
-    const types = extractRequestTypes(req.params.type);
-    console.log(types)
-
-    let find = {};
-
-    if(undefined !== types){
-
-        if(1 === types.length){
-            find = {type:types[0]};
-        }
-        else {
-            find = {
-                $or:types.map((type)=>{
-                    return {
-                        type: type
-                    }
-                })
-            };
-
-        }
-
-    }
+    let find = {type: "way"};
 
     try {
 
@@ -80,20 +58,7 @@ router.get('/:type?', async (req, res) => {
 
         const responseJson =  polygons.map((polygon)=>{
 
-            return {
-                id: polygon._id,
-                name: polygon.name,
-                slug: polygon.slug,
-                osmId: polygon.osmId,
-                type: polygon.type,
-                coordinate: polygon.location.coordinates[0].map( (coordinate) => {
-                    return{
-                        lng: (coordinate[0] * 1),
-                        lat: (coordinate[1] * 1)
-
-                    }
-                })
-            };
+            return polygon;
 
         })
 
@@ -106,15 +71,70 @@ router.get('/:type?', async (req, res) => {
 
 });
 
+const updateJson = async (id) => {
 
+    const polygon = await Polygon.findById(id);
+
+    const openStreetMapApiWay = `https://www.openstreetmap.org/api/0.6/way/${polygon.name}.json`;
+
+    const response = await fetch(openStreetMapApiWay);
+
+    const json = await response.json();
+
+    const way = json.elements[0];
+
+    const nodes = way.nodes;
+
+    polygon.osmId = way.id;
+    polygon.osmNodeIds = nodes;
+
+    await polygon.save();
+
+    return polygon;
+};
+
+/*
 router.get('/:id', async (req, res) => {
+
     const id = req.params.id;
 
+    const polygon = await updateJson(id);
+
     try {
-        const building = await Building.findById(id);
 
         res.status(200);
-        res.json(building);
+        res.json(polygon);
+
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+});
+*/
+router.get('/bulk', async (req, res) => {
+
+    let find = {
+        type: "way",
+        osmNodeIds:[]
+    };
+    let polygons = await Polygon.find(find).limit(20);;
+
+    //osmNodeIds
+
+    for(let i = 0, x = polygons.length; i < x; i += 1){
+
+        //console.log(polygons[i].name, parseInt(polygons[i].name,10).toString());
+
+        if(parseInt(polygons[i].name,10).toString() !== polygons[i].name){
+            continue;
+        }
+
+        polygons[i] = await updateJson(polygons[i].id);
+
+    }
+    try {
+
+        res.status(200);
+        res.json(polygons);
 
     } catch (err) {
         res.status(500).json({ message: err.message })
@@ -255,8 +275,6 @@ router.post('/:type/import-osm', async (req, res) => {
 
     polygon.name = name;
     polygon.type = type;
-    polygon.osmId = way.id;
-    polygon.osmNodeIds = osmNodeIds;
     polygon.zooId = zooId;
     polygon.tags = way.tags;
 

@@ -2,74 +2,15 @@ var express = require('express');
 var router = express.Router();
 const fetch = require('node-fetch');
 
-const Polygon = require('../model/polygon');
+const Way = require('../model/way');
 
-const POLYGON_TYPES = require('../constants').POLYGON_TYPES;
-
-const extractRequestTypes = (typesString) =>{
-
-    if(undefined === typesString){
-        return undefined;
-    }
-
-    typesString = typesString.split(',');
-
-    const types = [];
-
-    for(let i = 0, x = typesString.length; i < x; i+= 1){
-
-        if(false === POLYGON_TYPES.includes(typesString[i])){
-            continue;
-        }
-
-        types.push(typesString[i]);
-
-    }
-
-    return types;
-
-};
-
-// middleware that is specific to this router
-router.use(function timeLog(req, res, next) {
-
-    console.log(req.params)
-
-    console.log('Time: ', Date.now());
-    next();
-});
-
-router.get('/:type?', async (req, res) => {
-
-
-    const types = extractRequestTypes(req.params.type);
-    console.log(types)
-
-    let find = {};
-
-    if(undefined !== types){
-
-        if(1 === types.length){
-            find = {type:types[0]};
-        }
-        else {
-            find = {
-                $or:types.map((type)=>{
-                    return {
-                        type: type
-                    }
-                })
-            };
-
-        }
-
-    }
-
+router.get('/', async (req, res) => {
+    
     try {
 
-        let polygons = await Polygon.find(find);
+        let ways = await Way.find({});
 
-        polygons = polygons.sort((a, b) => {
+        ways = ways.sort((a, b) => {
 
             var nameA = a.name.toUpperCase();
             var nameB = b.name.toUpperCase();
@@ -78,15 +19,15 @@ router.get('/:type?', async (req, res) => {
             
         });
 
-        const responseJson =  polygons.map((polygon)=>{
+        const responseJson =  ways.map((way)=>{
 
             return {
-                id: polygon._id,
-                name: polygon.name,
-                slug: polygon.slug,
-                osmId: polygon.osmId,
-                type: polygon.type,
-                coordinate: polygon.location.coordinates[0].map( (coordinate) => {
+                id: way._id,
+                name: way.name,
+                slug: way.slug,
+                osmId: way.osmId,
+                type: way.type,
+                coordinate: way.location.coordinates[0].map( (coordinate) => {
                     return{
                         lng: (coordinate[0] * 1),
                         lat: (coordinate[1] * 1)

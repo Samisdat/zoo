@@ -5,6 +5,8 @@ const mongoose = require('mongoose')
 
 var polygonRouter = require('./router/polygon.router');
 var animalRouter = require('./router/animal.router');
+var wayRouter = require('./router/way.router');
+//var correctRouter = require('./router/correct.router');
 
 var app = express();
 
@@ -24,6 +26,8 @@ const initMongose = async (databaseUrl) => {
 
 app.use('/polygon', polygonRouter);
 app.use('/animal', animalRouter);
+app.use('/way', wayRouter);
+//app.use('/correct', correctRouter);
 
 module.exports = {
     app,

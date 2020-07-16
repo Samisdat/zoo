@@ -39,10 +39,7 @@ const Index = (props) => {
                         <SimpleBreadcrumbs></SimpleBreadcrumbs>
                     </Paper>
                 </Grid>
-                <Grid item xs={12}>
-                    <h1>Karte</h1>
-                    <WayMap {...props}/>
-                </Grid>
+                <WayMap {...props}/>
             </Grid>
         </div>
     );
@@ -85,6 +82,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
     const polygons = json.map((polygon)=>{
         return{
             id: polygon.id,
+            osmId: polygon.osmId,
             name: polygon.name,
             slug: polygon.slug,
             coordinate: polygon.coordinate,

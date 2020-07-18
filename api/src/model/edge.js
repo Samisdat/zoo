@@ -9,6 +9,7 @@ const edgeSchema = new mongoose.Schema(
             type: { type: String },
             coordinates: []
         },
+        nodes: [],
         osmNodeIds: []
     },
     { versionKey: false }

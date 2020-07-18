@@ -89,6 +89,29 @@ const getLengthOfEdge = (coordinates) => {
 
 };
 
+router.get('/edge/', async (req, res) => {
+
+    let edges = await Edge.find({});
+
+    /*
+    for(const edge of edges){
+
+        const length = getLengthOfEdge(edge.location.coordinates[0]);
+
+        edge.length = length;
+
+        await edge.save();
+
+    }
+     */
+
+    res.status(200);
+    res.json({
+        edges
+    });
+
+});
+
 router.get('/edge/:id', async (req, res) => {
 
     const id = req.params.id;

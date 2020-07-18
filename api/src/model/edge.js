@@ -10,7 +10,8 @@ const edgeSchema = new mongoose.Schema(
             coordinates: []
         },
         nodes: [],
-        osmNodeIds: []
+        osmNodeIds: [],
+        length: Number
     },
     { versionKey: false }
 );

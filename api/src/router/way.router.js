@@ -112,18 +112,16 @@ router.get('/edge/', async (req, res) => {
 
 });
 
+
 router.get('/edge/:id', async (req, res) => {
 
     const id = req.params.id;
 
     let edge = await Edge.findById(id);
 
-    const length = getLengthOfEdge(edge.location.coordinates[0]);
-
     res.status(200);
     res.json({
-        edge,
-        length:length
+        edge
     });
 
 });
@@ -201,27 +199,76 @@ const findRoute = async (routes) =>{
 
         const way = lastWays[i];
 
-        const nextNodes = await getNextNode(way[(way.length - 1)]);
+        if(way[way.length - 1] === routes.endNode){
+            continue;
+        }
+
+        const nextNodes = await getNextNode(way.nodes[(way.nodes.length - 1)]);
 
         for(const nextNode of nextNodes){
             //console.log(nextNode)
 
 
-            if(false === way.includes(nextNode)){
+            if(false === way.nodes.includes(nextNode)){
 
-                const nextWay = way.map((node)=>{return node;});
+                const nextWay = way.nodes.map((node)=>{return node;});
 
-                nextWay.push(nextNode)
+                nextWay.push(nextNode);
 
-                console.log(nextWay)
-                nextWays.push(nextWay);
+                let length = way.length;
+
+                const lastTwo = [
+                    (nextWay[nextWay.length - 2]),
+                    (nextWay[nextWay.length - 1])
+                ];
+
+                console.log(nextWay.length, nextWay, lastTwo);
+
+                let edge = await Edge.findOne({
+                    '$or':[
+                        {
+                            'nodes': [lastTwo[0],lastTwo[1]]
+                        },
+                        {
+                            'nodes': [lastTwo[1],lastTwo[0]],
+                        }
+                    ]
+                });
+
+                length += edge.length;
+
+                if(length > routes.length){
+                    continue;
+                }
+
+                console.log(nextWay[nextWay.length - 1] === routes.endNode)
+
+                nextWays.push({
+                    nodes:nextWay,
+                    length:length
+                });
+
+                if(nextNode === routes.endNode){
+                    routes.founds.push({
+                        nodes:nextWay,
+                        length:length
+                    });
+
+                    if(undefined === routes.length || routes.length > length){
+                        routes.length = length;
+                    }
+                }
+
+                console.log(nextNode, routes.endNode, );
 
                 if(nextNode === routes.endNode){
                     console.log('bing we had a treffer')
                 }
 
             }
-
+            else{
+                console.log('Sackgasse oder roundtrip', nextNode)
+            }
 
         }
 
@@ -234,10 +281,12 @@ const findRoute = async (routes) =>{
     //console.log(routes.ways);
 
     if(10 > routes.counter){
-        findRoute(routes);
+        await findRoute(routes);
     }
+    return routes;
 
 };
+
 
 /*
 
@@ -258,16 +307,17 @@ router.get('/shortest/:start/:end', async (req, res) => {
     const endNode = await Node.findById(end);
 
     const initialRoutes = {
-        ways: [
-            [parseInt(startNode.osmNodeId, 10)]
-        ],
+        ways: [{
+            nodes: [parseInt(startNode.osmNodeId, 10)],
+            length: 0
+        }],
         founds:[],
         endNode: parseInt(endNode.osmNodeId, 10),
         counter:0,
-        distance:undefined,
+        length:undefined,
     };
 
-    findRoute(initialRoutes);
+    await findRoute(initialRoutes);
 
 
     /*

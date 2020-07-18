@@ -192,6 +192,62 @@ const getWays = async (routes, endNode) => {
 
 };
 
+const findRoute = async (routes) =>{
+
+    const lastWays = routes.ways;
+    const nextWays = [];
+
+    for(let i = 0, x = lastWays.length; i < x; i += 1){
+
+        const way = lastWays[i];
+
+        const nextNodes = await getNextNode(way[(way.length - 1)]);
+
+        for(const nextNode of nextNodes){
+            //console.log(nextNode)
+
+
+            if(false === way.includes(nextNode)){
+
+                const nextWay = way.map((node)=>{return node;});
+
+                nextWay.push(nextNode)
+
+                console.log(nextWay)
+                nextWays.push(nextWay);
+
+                if(nextNode === routes.endNode){
+                    console.log('bing we had a treffer')
+                }
+
+            }
+
+
+        }
+
+    }
+
+    routes.counter += 1;
+
+    routes.ways = nextWays;
+
+    //console.log(routes.ways);
+
+    if(10 > routes.counter){
+        findRoute(routes);
+    }
+
+};
+
+/*
+
+Gesucht wird der kürzeste Weg zwischen zwei Nodes
+
+1) Ein Weg darf keinen Punkt doppelt haben
+2) Sackgassen werden aussortiert
+3) Sobald ein Weg gefunden ist der am Endpunkt endet, werden alle weiteren Wege gegen diese Länge gematcht
+    3.
+*/
 router.get('/shortest/:start/:end', async (req, res) => {
 
     const start = req.params.start;
@@ -201,11 +257,20 @@ router.get('/shortest/:start/:end', async (req, res) => {
     const startNode = await Node.findById(start);
     const endNode = await Node.findById(end);
 
-    const initialRoutes = [
-        [parseInt(startNode.osmNodeId, 10)]
-    ];
+    const initialRoutes = {
+        ways: [
+            [parseInt(startNode.osmNodeId, 10)]
+        ],
+        founds:[],
+        endNode: parseInt(endNode.osmNodeId, 10),
+        counter:0,
+        distance:undefined,
+    };
+
+    findRoute(initialRoutes);
 
 
+    /*
     const nextRoutes = await getWays(initialRoutes, endNode);
 
     const nextNextRoutes = [];
@@ -249,7 +314,7 @@ router.get('/shortest/:start/:end', async (req, res) => {
     res.json({
         startNode,
         endNode,
-        nextRoutes
+        initialRoutes
     });
 
 });

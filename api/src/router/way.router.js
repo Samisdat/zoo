@@ -2,44 +2,55 @@ var express = require('express');
 var router = express.Router();
 const fetch = require('node-fetch');
 
-const Way = require('../model/way');
+const Edge = require('../model/edge');
+const Node = require('../model/node');
 
 router.get('/', async (req, res) => {
     
     try {
 
-        let ways = await Way.find({});
+        let edges = await Edge.find({});
+        let nodes = await Node.find({});
 
-        ways = ways.sort((a, b) => {
-
-            var nameA = a.name.toUpperCase();
-            var nameB = b.name.toUpperCase();
-
-            return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
-            
-        });
-
-        const responseJson =  ways.map((way)=>{
+        edges = edges.map((edge)=>{
 
             return {
-                id: way._id,
-                name: way.name,
-                slug: way.slug,
-                osmId: way.osmId,
-                type: way.type,
-                coordinate: way.location.coordinates[0].map( (coordinate) => {
+                name: edge.name,
+                steps: edge.steps,
+                nodes: edge.nodes,
+                osmNodeIds: edge.osmNodeIds,
+                coordinate: edge.location.coordinates[0].map( (coordinate, index) => {
                     return{
                         lng: (coordinate[0] * 1),
-                        lat: (coordinate[1] * 1)
-
+                        lat: (coordinate[1] * 1),
+                        osmId: edge.osmNodeIds[index]
                     }
                 })
             };
 
-        })
+        });
+
+        nodes = nodes.map((node)=>{
+
+            return {
+                name: node.name,
+                osmNodeId: node.osmNodeId,
+
+                coordinate: {
+                    lng: (node.location.coordinates[0] * 1),
+                    lat: (node.location.coordinates[1] * 1),
+                    osmId: node.osmNodeId
+                }
+
+            };
+
+        });
 
         res.status(200);
-        res.json(responseJson);
+        res.json({
+            edges,
+            nodes,
+        });
 
     } catch (err) {
         res.status(500).json({ message: err.message })
@@ -47,47 +58,176 @@ router.get('/', async (req, res) => {
 
 });
 
+const distanceBetweenPoints = (lat1, lon1, lat2, lon2) => {
+    var R = 6371; // Radius of the earth in km
+    var dLat = (lat2 - lat1) * Math.PI / 180;  // deg2rad below
+    var dLon = (lon2 - lon1) * Math.PI / 180;
+    var a =
+        0.5 - Math.cos(dLat)/2 +
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+        (1 - Math.cos(dLon))/2;
 
-router.get('/:id', async (req, res) => {
+    return R * 2 * Math.asin(Math.sqrt(a)) * 1000;
+}
+
+const getLengthOfEdge = (coordinates) => {
+
+    let length = 0;
+
+    for(var i = 0, x = coordinates.length - 1; i < x; i += 1){
+
+        const pointOne = coordinates[i];
+        const pointTwo = coordinates[i + 1];
+
+        const between = distanceBetweenPoints(pointOne[1], pointOne[0], pointTwo[1], pointTwo[0]);
+
+        length += between;
+
+    }
+
+    return length;
+
+};
+
+router.get('/edge/:id', async (req, res) => {
+
     const id = req.params.id;
 
-    try {
-        const building = await Building.findById(id);
+    let edge = await Edge.findById(id);
 
-        res.status(200);
-        res.json(building);
+    const length = getLengthOfEdge(edge.location.coordinates[0]);
 
-    } catch (err) {
-        res.status(500).json({ message: err.message })
-    }
+    res.status(200);
+    res.json({
+        edge,
+        length:length
+    });
+
 });
 
-router.get('/near/:lng,:lat', async (req, res) => {
+const getNextNode = async (startNodeId) => {
 
-    const lng = req.params.lng;
-    const lat = req.params.lat;
+    let edges = await Edge.find(
+        { nodes: parseInt(startNodeId, 10)}
+    );
 
-    try {
+    const nextNodes = [];
 
-        const buildings = await Building.find({
-            location: {
-                $near: {
-                    $maxDistance: 160 * 10 * 1000,
-                    $geometry: {
-                        type: "Point",
-                        coordinates: [lng, lat]
-                    }
-                }
-            }
-        });l
+    for(let i = 0, x = edges.length; i < x; i += 1){
 
-        res.status(200);
-        res.json(buildings);
+        if(startNodeId !== edges[i].nodes[0]){
+            nextNodes.push(edges[i].nodes[0])
+        }
+        else if(startNodeId !== edges[i].nodes[1]){
+            nextNodes.push(edges[i].nodes[1])
+        }
 
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({ message: err.message })
     }
+
+    return nextNodes;
+
+}
+
+const getWays = async (routes, endNode) => {
+
+    const nextRoutes = [];
+
+    for(const route of routes){
+
+        if(parseInt(endNode.osmNodeId, 10) === route[(route.length - 1)]){
+
+            console.log('yeah')
+            continue;
+        }
+
+        const nextNodes = await getNextNode(route[(route.length - 1)]);
+
+        for(const nextNode of nextNodes){
+
+            // wenn schon drin, dann sackgasse
+            if(false === route.includes(nextNode)){
+
+                const nextRoute = route.map((nodeId)=>{
+                    return nodeId;
+                });
+
+                nextRoute.push(nextNode)
+                nextRoutes.push(nextRoute);
+            }
+            else{
+                console.log('sackgasse', route, nextNode);
+            }
+
+        }
+
+        return nextRoutes;
+
+    }
+
+
+
+
+};
+
+router.get('/shortest/:start/:end', async (req, res) => {
+
+    const start = req.params.start;
+    const end = req.params.end;
+
+
+    const startNode = await Node.findById(start);
+    const endNode = await Node.findById(end);
+
+    const initialRoutes = [
+        [parseInt(startNode.osmNodeId, 10)]
+    ];
+
+
+    const nextRoutes = await getWays(initialRoutes, endNode);
+
+    const nextNextRoutes = [];
+
+    for(let i = 0, x = nextRoutes.length; i < x; i += 1){
+
+        console.log('nextRoutes[i]', nextRoutes[i])
+
+        const foo = await getWays([nextRoutes[i]], endNode);
+
+        nextNextRoutes.push(foo);
+
+    }
+
+    const nextNextNextRoutes = [];
+
+    for(let i = 0, x = nextNextRoutes.length; i < x; i += 1) {
+
+        for(const nextNextRoute of nextNextRoutes[i]){
+
+            const foo = await getWays([nextNextRoute], endNode);
+
+            nextNextNextRoutes.push(foo);
+
+
+        }
+
+    }
+
+    console.log(nextNextNextRoutes);
+
+    /*
+    const id = req.params.id;
+
+    let edge = await Edge.findById(id);
+
+    const length = getLengthOfEdge(edge.location.coordinates[0]);
+    */
+
+    res.status(200);
+    res.json({
+        startNode,
+        endNode,
+        nextRoutes
+    });
 
 });
 
@@ -108,103 +248,147 @@ router.post('/', async (req, res) => {
 
 });
 
-router.delete('/:id', async (req, res) => {
-    const id = req.params.id;
-
-    try {
-        await Polygon.findByIdAndDelete(id);
-        res.status(200);
-        res.json({"message": "polygon with [_id=" + id + '] has been deleted'});
-
-    } catch (err) {
-        res.status(500).json({ message: err.message })
-    }
-
-});
-
-router.put('/:id', async(req, res) =>{
-    const id = req.params.id;
-
-    try {
-        const polygon = await Polygon.findById(id);
-        const update = req.body;
-        polygon.name = update.name;
-        await polygon.save();
-        res.status(200);
-        res.json(update);
-    } catch (err) {
-        res.status(500).json({ message: err.message })
-    }
-
-});
-
-router.post('/:type/import-osm', async (req, res) => {
-
-    const { osmId, zooId, type } = req.body;
-    let { name } = req.body;
+const getNode = async (osmId, name)=>{
 
     // check if already with way id
-    let polygon = await Polygon.findOne({
-        osmId: osmId
+    let node = await Node.findOne({
+        osmNodeId: osmId
     });
 
-    if(null === polygon){
-        polygon = new Polygon();
-    }
+    if(null === node){
+        node = new Node();
+        node.osmNodeId = osmId;
 
-    // update from osm
-
-    const openStreetMapApiWay = `https://www.openstreetmap.org/api/0.6/way/${osmId}.json`;
-
-    const response = await fetch(openStreetMapApiWay);
-
-    const json = await response.json();
-
-    // es scheint möglich, dass ein way wiederum mehrerer ways in sich hat. fürs erste ignoriere ich das weg
-    const way = json.elements[0];
-
-    if(!name && undefined !== way.tags && undefined !== way.tags.name){
-        name = way.tags.name;
-    }
-
-    if(!name){
-        name = way.id;
-    }
-
-    const osmNodeIds = way.nodes;
-
-    const coordinates = [];
-
-    for(let i = 0, x = osmNodeIds.length; i < x; i +=1){
-
-        const openStreetMapApiNode = `https://www.openstreetmap.org/api/0.6/node/${osmNodeIds[i]}.json`;
+        const openStreetMapApiNode = `https://www.openstreetmap.org/api/0.6/node/${osmId}.json`;
 
         const response = await fetch(openStreetMapApiNode);
 
         const json = await response.json();
 
-        coordinates.push(
-            [
+        node.location = {
+            type: 'Point',
+            coordinates: [
                 json.elements[0].lon,
                 json.elements[0].lat
             ]
-        );
+        };
+    }
+
+    if(undefined !== name && '' !== name){
+
+        if(undefined === node.name || node.osmNodeId === node.name){
+            node.name = name;
+        }
+    }
+    else{
+        node.name = osmId;
+    }
+
+    return node;
+
+};
+
+const getEdge = async (points, steps) => {
+
+    // is there already an edge that start/ends with the very same nodes
+
+    let edge = await Edge.findOne({
+        '$or':[
+            {
+                'nodes': [points[0], points[(points.length - 1)]]
+            },
+            {
+                'nodes': [points[(points.length - 1)], points[0]],
+            }
+            ]
+    });
+
+    if(null === edge){
+        edge = new Edge();
+
+        edge.osmNodeIds = points;
+
+        edge.nodes = [
+            points[0],
+            points[(points.length - 1)],
+        ];
+
+        const coordinates = [];
+
+        for(let i = 0, x = points.length; i < x; i +=1){
+
+            const openStreetMapApiNode = `https://www.openstreetmap.org/api/0.6/node/${points[i]}.json`;
+
+            const response = await fetch(openStreetMapApiNode);
+
+            const json = await response.json();
+
+            coordinates.push(
+                [
+                    json.elements[0].lon,
+                    json.elements[0].lat
+                ]
+            );
+
+        }
+
+        edge.location.type = 'LineString';
+        edge.location.coordinates =  [coordinates]
 
     }
 
-    polygon.location.coordinates =  [coordinates]
+    edge.steps = steps;
 
-    polygon.name = name;
-    polygon.type = type;
-    polygon.osmId = way.id;
-    polygon.osmNodeIds = osmNodeIds;
-    polygon.zooId = zooId;
-    polygon.tags = way.tags;
+    return edge;
+
+
+}
+
+router.get('/save', async (req, res)=>{
+
+    req.body = {"nameStart":"Eingang","nameEnd":"","steps":false,"points":["507350957","76146790"],"lat":"51.24083029088075","lng":"7.1092499792575845","zoom":"19","submitted":true};
+
+    const { nameStart, nameEnd, steps, points} = req.body;
+
+    const startNode = await getNode(points[0], nameStart);
+    await startNode.save()
+
+    const endNode = await getNode(points[(points.length - 1)], nameEnd);
+    await endNode.save()
+
+    const edge = await getEdge(points, steps);
+    await edge.save()
 
     res.status(200);
 
-    await polygon.save()
-    res.json(polygon);
+    res.json({
+        startNode,
+        endNode,
+        edge
+    });
+
+});
+
+router.post('/save', async (req, res) => {
+
+    const { nameStart, nameEnd, steps, points} = req.body;
+
+    const startNode = await getNode(points[0], nameStart);
+    await startNode.save()
+
+    const endNode = await getNode(points[(points.length - 1)], nameEnd);
+    await endNode.save()
+
+    const edge = await getEdge(points, steps);
+    await edge.save()
+
+    res.status(200);
+
+    res.json({
+        startNode,
+        endNode,
+        edge
+    });
 
 });
 

@@ -86,11 +86,12 @@ router.get('/:type?', async (req, res) => {
                 slug: polygon.slug,
                 osmId: polygon.osmId,
                 type: polygon.type,
-                coordinate: polygon.location.coordinates[0].map( (coordinate) => {
+
+                coordinate: polygon.location.coordinates[0].map( (coordinate, index) => {
                     return{
                         lng: (coordinate[0] * 1),
-                        lat: (coordinate[1] * 1)
-
+                        lat: (coordinate[1] * 1),
+                        osmId: polygon.osmNodeIds[index]
                     }
                 })
             };

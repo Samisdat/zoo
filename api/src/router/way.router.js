@@ -149,47 +149,6 @@ const getNextNode = async (startNodeId) => {
 
 }
 
-const getWays = async (routes, endNode) => {
-
-    const nextRoutes = [];
-
-    for(const route of routes){
-
-        if(parseInt(endNode.osmNodeId, 10) === route[(route.length - 1)]){
-
-            console.log('yeah')
-            continue;
-        }
-
-        const nextNodes = await getNextNode(route[(route.length - 1)]);
-
-        for(const nextNode of nextNodes){
-
-            // wenn schon drin, dann sackgasse
-            if(false === route.includes(nextNode)){
-
-                const nextRoute = route.map((nodeId)=>{
-                    return nodeId;
-                });
-
-                nextRoute.push(nextNode)
-                nextRoutes.push(nextRoute);
-            }
-            else{
-                console.log('sackgasse', route, nextNode);
-            }
-
-        }
-
-        return nextRoutes;
-
-    }
-
-
-
-
-};
-
 const findRoute = async (routes) =>{
 
     const lastWays = routes.ways;
@@ -259,8 +218,6 @@ const findRoute = async (routes) =>{
                     }
                 }
 
-                console.log(nextNode, routes.endNode, );
-
                 if(nextNode === routes.endNode){
                     console.log('bing we had a treffer')
                 }
@@ -278,9 +235,7 @@ const findRoute = async (routes) =>{
 
     routes.ways = nextWays;
 
-    //console.log(routes.ways);
-
-    if(10 > routes.counter){
+    if(0 !== routes.ways.length || 50 > routes.counter){
         await findRoute(routes);
     }
     return routes;
@@ -319,52 +274,36 @@ router.get('/shortest/:start/:end', async (req, res) => {
 
     await findRoute(initialRoutes);
 
+    console.log(initialRoutes.founds)
 
-    /*
-    const nextRoutes = await getWays(initialRoutes, endNode);
+    const edges = [];
 
-    const nextNextRoutes = [];
+    for(let i = 0, x = initialRoutes.founds[0].nodes.length - 1; i < x; i += 1){
 
-    for(let i = 0, x = nextRoutes.length; i < x; i += 1){
+        const first = initialRoutes.founds[0].nodes[i];
+        const second = initialRoutes.founds[0].nodes[i + 1];
 
-        console.log('nextRoutes[i]', nextRoutes[i])
+        let edge = await Edge.findOne({
+            '$or':[
+                {
+                    'nodes': [first, second]
+                },
+                {
+                    'nodes': [second, first],
+                }
+            ]
+        });
 
-        const foo = await getWays([nextRoutes[i]], endNode);
-
-        nextNextRoutes.push(foo);
-
+        edges.push(edge)
     }
-
-    const nextNextNextRoutes = [];
-
-    for(let i = 0, x = nextNextRoutes.length; i < x; i += 1) {
-
-        for(const nextNextRoute of nextNextRoutes[i]){
-
-            const foo = await getWays([nextNextRoute], endNode);
-
-            nextNextNextRoutes.push(foo);
-
-
-        }
-
-    }
-
-    console.log(nextNextNextRoutes);
-
-    /*
-    const id = req.params.id;
-
-    let edge = await Edge.findById(id);
-
-    const length = getLengthOfEdge(edge.location.coordinates[0]);
-    */
 
     res.status(200);
     res.json({
+        edges,
         startNode,
         endNode,
-        initialRoutes
+        nodes: initialRoutes.founds[0].nodes,
+        length:initialRoutes.founds[0].length
     });
 
 });

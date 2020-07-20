@@ -23,7 +23,12 @@ export default class WayEditor extends React.Component {
             lat: localStorage.getItem('lat') || 51.23925648995369,
             lng: localStorage.getItem('lng') || 7.110623781506344,
             zoom: localStorage.getItem('zoom') || 20,
+            startPoint: undefined,
+            endPoint: undefined,
+            shortestRoute:undefined
         };
+
+        this.onMarkerClick = this.onMarkerClick.bind(this);
 
     }
 
@@ -51,9 +56,65 @@ export default class WayEditor extends React.Component {
 
     };
 
+    onMarkerClick = async (event) => {
+
+        const point = event.sourceTarget.options['data-mongodbid'];
+
+        if(undefined === this.state.startPoint){
+            this.setState({'startPoint': point});
+        }
+        else if(undefined === this.state.endPoint){
+            this.setState({'endPoint': point});
+        }
+
+        if(undefined === this.state.startPoint || undefined === this.state.endPoint){
+            return;
+        }
+
+        const url = `http://127.0.1:3000/way/shortest/${this.state.startPoint}/${this.state.endPoint}`;
+
+        const response = await fetch(url);
+        const json = await response.json();
+        const edges = json.edges;
+
+        this.setState({'shortestRoute': edges});
+        this.setState({'startPoint': undefined});
+        this.setState({'endPoint': undefined});
+
+    };
+
+
     render() {
 
         const position = [this.state.lat, this.state.lng];
+
+        let edges = this.props.edges;
+
+        if(undefined !== this.state.shortestRoute){
+
+            for(const edge of edges){
+                edge.color = 'black';
+
+                for(const partOfShortestRoute of this.state.shortestRoute){
+                    
+                    if(edge.id === partOfShortestRoute._id){
+                        edge.color = 'red';
+                    }
+
+                }
+
+            }
+
+            //console.log(this.state.shortestRoute);
+            //http://127.0.0.1:3000/way/shortest/5f119eb259c98e1230b957e0/5f11aa6ac3cfb2123dc16680
+        }
+        else{
+
+            for(const edge of edges){
+                edge.color = 'black';
+            }
+
+        }
 
         return (
             <Grid container>
@@ -74,12 +135,12 @@ export default class WayEditor extends React.Component {
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
 
-                        {this.props.edges.map((edge) => (
-                            <Polyline color="black" positions={edge.coordinate}></Polyline>
+                        {edges.map((edge) => (
+                            <Polyline color={edge.color} positions={edge.coordinate}></Polyline>
                         ))}
 
                         {this.props.nodes.map((node) => (
-                            <Marker data-osmid={node.osmId} position={node.coordinate}>
+                            <Marker data-osmid={node.coordinate.osmId} data-mongodbid={node.id} position={node.coordinate} onClick={this.onMarkerClick}>
                                 <Popup>
                                     {node.name}
                                 </Popup>

@@ -10,7 +10,7 @@ import dynamic from 'next/dynamic';
 import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 
-const WayMap = dynamic(() => import('../components/WayMap'), {
+const WayEditor = dynamic(() => import('../components/WayEditor'), {
     ssr: false
 });
 
@@ -39,12 +39,14 @@ const Index = (props) => {
                         <SimpleBreadcrumbs></SimpleBreadcrumbs>
                     </Paper>
                 </Grid>
-                <WayMap {...props}/>
+                <WayEditor {...props}/>
             </Grid>
         </div>
     );
 
 }
+
+//<WayMap {...props}/>
 
 export async function getStaticProps({ params, preview = false, previewData }) {
 
@@ -80,6 +82,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
     let json = await response.json();
 
     const polygons = json.map((polygon)=>{
+
         return{
             id: polygon.id,
             osmId: polygon.osmId,
@@ -90,20 +93,12 @@ export async function getStaticProps({ params, preview = false, previewData }) {
         };
     });
 
-    const responseAnimals = await fetch('http://127.0.0.1:3000/animal/')
-    let jsonAnimals = await responseAnimals.json();
 
-    const navigation = jsonAnimals.map((animal)=>{
-        return{
-            slug: animal.slug,
-            text: animal.species,
-        };
-    });
 
     return {
         props: {
             polygons,
-            navigation
+            navigation: []
         },
     }
 }

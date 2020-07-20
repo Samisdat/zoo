@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
         edges = edges.map((edge)=>{
 
             return {
+                id: edge.id,
                 name: edge.name,
                 steps: edge.steps,
                 nodes: edge.nodes,
@@ -33,6 +34,7 @@ router.get('/', async (req, res) => {
         nodes = nodes.map((node)=>{
 
             return {
+                id: node._id,
                 name: node.name,
                 osmNodeId: node.osmNodeId,
 

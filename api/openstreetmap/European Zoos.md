@@ -37,8 +37,19 @@ KÖLN
 [https://www.koelnerzoo.de][12]
 
 ARNHEIM
+
+https://www.burgerszoo.de/
+
 BUDAPEST
+
+https://www.zoobudapest.com/en/plan-your-visit/zoo-map
+
 PAIRI DAIZA
+
+https://www.pairidaiza.eu/en#pairi-daiza-resort
+
+
+
 AMSTERDAM
 HAMBURG
 HANNOVE

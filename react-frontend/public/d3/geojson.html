@@ -7,11 +7,10 @@
 
 </head>
 <body>
-<svg id="foo"></svg>
+<svg id="foo" style="border: 10px solid red"></svg>
 <script>
 
-
-    const bosNeighborhoods = {
+    const bosNeighborhoods1 = {
         "type"    : "FeatureCollection",
         "creator" : "svg2geojson v0.7.1",
         "features": [
@@ -101,7 +100,14 @@
                         ]
                     ]
                 }
-            },
+            }
+        ]
+    };
+
+    const bosNeighborhoods2 = {
+        "type"    : "FeatureCollection",
+        "creator" : "svg2geojson v0.7.1",
+        "features": [
             {
                 "type"      : "Feature",
                 "properties": null,
@@ -5540,22 +5546,40 @@
         .projection( bosProjection );
 
     var svg = d3.select("body").append("svg")
-        .attr("width", width)
-        .attr("height", height);
+        .attr("width", width + 'px')
+        .attr("height", height + 'px')
+        .attr("style", 'border: 10px solid red');
 
-// Append empty placeholder g element to the SVG
-// g will contain geometry elements
+
+    const addGeoJson = (data, fill)=>{
+
         let g = svg.append("g");
 
-// Classic D3... Select non-existent elements, bind the data, append the elements, and apply attributes
         g.selectAll( "path" )
-            .data( bosNeighborhoods.features )
+            .data( data)
             .enter()
             .append( "path" )
-            .attr( "fill", "#ccc" )
-            .attr( "stroke", "#333")
+            .attr( "fill", fill )
+            /*.attr( "stroke", "#333")*/
             .attr( "d", bos_geoPath );
 
+    }
+
+    //addGeoJson(bosNeighborhoods1.features, '#CEEBB0')
+    //addGeoJson(bosNeighborhoods2.features, '#F2EFE9')
+
+
+    d3.json('/geojson/borders.geojson', (data)=> {
+        addGeoJson(data.features, '#CEEBB0')
+    });
+
+    d3.json('/geojson/ways.geojson', (data)=> {
+        addGeoJson(data.features, '#F2EFE9')
+    });
+
+    d3.json('/geojson/buildings.geojson', (data)=> {
+        addGeoJson(data.features, '#D8D0C9')
+    });
 
 </script>
 </body>

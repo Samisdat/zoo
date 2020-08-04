@@ -1,3 +1,4 @@
+/*
 const mongoose = require('mongoose');
 
 const seedData = require('./seed');
@@ -28,6 +29,6 @@ const seed = async () => {
 };
 
 module.exports = seed;
-
+*/
 
 

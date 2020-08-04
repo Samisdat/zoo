@@ -2,3 +2,6 @@ mongo-data/
 node_modules/
 .idea/
 coverage/
+.DS_Store
+.Ulysses-Group.plist
+package-lock.json

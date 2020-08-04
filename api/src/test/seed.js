@@ -1,3 +1,4 @@
+/*
 const mongoose = require('mongoose');
 
 const seedPolygons = require('../../openstreetmap/export/polygon');
@@ -60,4 +61,5 @@ module.exports = {
     doing,
     stoping
 };
+ */
 

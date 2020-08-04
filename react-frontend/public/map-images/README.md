@@ -1,0 +1,5 @@
+http://geoportal.wuppertal.de/control?rpc=%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3CmethodCall%3E%3CmethodName%3EmapClient:contextSwitch%3C/methodName%3E%3Cparams%3E%3Cparam%3E%3Cvalue%3E%3Cstruct%3E%3Cmember%3E%3Cname%3EmapContext%3C/name%3E%3Cvalue%3E%3Cstring%3Ewmc_STADTPLANGRUPPE.xml%3C/string%3E%3C/value%3E%3C/member%3E%3Cmember%3E%3Cname%3EboundingBox%3C/name%3E%3Cvalue%3E%3Cstruct%3E%3Cmember%3E%3Cname%3Eminx%3C/name%3E%3Cvalue%3E%3Cdouble%3E369568.68036625365%3C/double%3E%3C/value%3E%3C/member%3E%3Cmember%3E%3Cname%3Eminy%3C/name%3E%3Cvalue%3E%3Cdouble%3E5679321.184344423%3C/double%3E%3C/value%3E%3C/member%3E%3Cmember%3E%3Cname%3Emaxx%3C/name%3E%3Cvalue%3E%3Cdouble%3E371492.28036625363%3C/double%3E%3C/value%3E%3C/member%3E%3Cmember%3E%3Cname%3Emaxy%3C/name%3E%3Cvalue%3E%3Cdouble%3E5680754.784344423%3C/double%3E%3C/value%3E%3C/member%3E%3C/struct%3E%3C/value%3E%3C/member%3E%3C/struct%3E%3C/value%3E%3C/param%3E%3C/params%3E%3C/methodCall%3E
+
+Stadtplan farbig
+
+1:500

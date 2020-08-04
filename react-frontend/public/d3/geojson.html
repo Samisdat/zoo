@@ -26,6 +26,8 @@
         .center([0, centerLat])
         .translate([width / 2, height / 2]);
 
+    projection.angle(90)
+
     const geoPath = d3.geoPath()
         .projection(projection);
 

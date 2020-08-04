@@ -9,13 +9,24 @@
 <body>
 <script>
 
-    const width = 700;
+    const width = 800;
     const height = 580;
 
+    const bound = {
+        south: 51.236776961813064,
+        west: 7.105611562728882,
+        north: 51.24177020918754,
+        east: 7.115809321403503
+    };
+
+    const centerLat = (bound.south + bound.north) / 2;
+    const centerLng = (bound.west + bound.east) / 2;
+
+
     bosProjection = d3.geoMercator()
-        .scale( 1900000 )
-        .rotate( [-7.110557,0] )
-        .center( [0, 51.241664] )
+        .scale( 4000000 )
+        .rotate( [-1 * centerLng, 0] )
+        .center( [0, centerLat] )
         .translate( [width/2,height/2] );
 
     bos_geoPath = d3.geoPath()
@@ -25,7 +36,7 @@
         .attr("width", width + 'px')
         .attr("height", height + 'px')
         .attr("style", 'border: 10px solid red');
-    
+
     const addGeoJson = (data, fill)=>{
 
         let g = svg.append("g");

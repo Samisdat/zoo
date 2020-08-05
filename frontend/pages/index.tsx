@@ -1,65 +1,99 @@
-  import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import React from "react";
 
-export default function Home() {
+import {makeStyles} from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+
+import dynamic from 'next/dynamic';
+import Paper from "@material-ui/core/Paper";
+import Box from "@material-ui/core/Box";
+
+/*
+const MapWithNoSSR = dynamic(() => import('../components/Map'), {
+  ssr: false
+});
+*/
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+}));
+
+const Index = (props) => {
+  const classes = useStyles();
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <div>
+        Super Index
+      </div>
+  );
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
 }
+
+/*
+export async function getStaticProps({ params, preview = false, previewData }) {
+
+  const getPolygonColor = (type) => {
+
+    if('enclosure' === type){
+      return 'lime';
+    }
+
+    if('building' === type){
+      return 'purple';
+    }
+
+    if('border' === type){
+      return 'red';
+    }
+
+    if('playground' === type){
+      return 'yellow';
+    }
+
+    if('water' === type){
+      return 'blue';
+    }
+
+    if('way' === type){
+      return 'black';
+    }
+
+  };
+
+  const response = await fetch('http://127.0.0.1:3000/polygon/enclosure,building,border,playground,water,way')
+  let json = await response.json();
+
+  const polygons = json.map((polygon)=>{
+    return{
+      id: polygon.id,
+      name: polygon.name,
+      slug: polygon.slug,
+      coordinate: polygon.coordinate,
+      color: getPolygonColor(polygon.type)
+    };
+  });
+
+  const responseAnimals = await fetch('http://127.0.0.1:3000/animal/')
+  let jsonAnimals = await responseAnimals.json();
+
+  const navigation = jsonAnimals.map((animal)=>{
+    return{
+      slug: animal.slug,
+      text: animal.species,
+    };
+  });
+
+  return {
+    props: {
+      polygons,
+      navigation
+    },
+  }
+}
+*/
+export default Index

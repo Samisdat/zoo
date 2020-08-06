@@ -52,10 +52,7 @@ export default function Index(props) {
 
   const classes = useStyles();
 
-    const group = props.species
-        .sort((a, b) => {
-            a.species.localeCompare(b.species)
-        })
+    let group = props.species
         .reduce((r, e) => {
             let firstLetter = e.species[0].toLowerCase();
 
@@ -75,21 +72,27 @@ export default function Index(props) {
 
         }, {});
 
-  return (
+
+    const ordered = {};
+    Object.keys(group).sort().forEach(function(key) {
+        ordered[key] = group[key];
+    });
+
+    return (
   <List className={classes.list}>
 
-      {Object.entries(group)
+      {Object.entries(ordered)
           .map(([key, value], i) => {
               return <React.Fragment>
-                  <ListSubheader className={classes.subheader}>{key}</ListSubheader>
+                  <ListSubheader className={classes.subheader}>{key.toUpperCase()}</ListSubheader>
                   {group[key].map(( species: Species ) => (
                           <ListItem button>
-                              <ListItemText primary={species.species} secondary={species.species} />
+                              <ListItemText primary={species.species} />
                           </ListItem>
                   ))}
               </React.Fragment>
           })}
-          
+
   </List>
   );
 }
@@ -99,22 +102,6 @@ export async function getStaticProps({ params, preview = false, previewData }) {
 
     const response = await fetch('http://127.0.0.1:8080/api/species')
     let json = await response.json();
-
-    /*
-    const species:any = {};
-
-    for(const aSpecies of json){
-
-        const firstLetter = aSpecies.species.charAt(0)
-
-        if(undefined === species[firstLetter]){
-            species[firstLetter] = [];
-        }
-
-        species[firstLetter].push(aSpecies)
-
-    }
-    */
     return {
         props: {
             species: json,

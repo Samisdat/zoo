@@ -7,7 +7,7 @@ import theme from '../theme';
 
 import '../styles/styles.css'
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
+import TopNavigation from "../components/TopNavigation";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -43,14 +43,11 @@ export default function ZooBackend(props) {
             <ThemeProvider theme={theme}>
                 {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                 <CssBaseline />
-                <Grid container>
-                    <Grid item xs={12}>
-                        Hello
-                    </Grid>x
-                    <Grid item xs={12} sm={6}>
-                        <Component {...pageProps} />
-                    </Grid>
-                </Grid>
+
+                <Component {...pageProps} />
+
+                s
+
             </ThemeProvider>
         </React.Fragment>
     );

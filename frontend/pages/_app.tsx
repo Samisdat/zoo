@@ -30,13 +30,9 @@ export default function MyApp(props) {
         <CssBaseline />
           <Grid container>
               <Grid item xs={12}>
-                  hei
-              </Grid>
-              <Grid item xs={12}>
-                Hei
+                  <Component {...pageProps} />
               </Grid>
           </Grid>
-        <Component {...pageProps} />
         <TopNavigation {...props}></TopNavigation>
       </ThemeProvider>
     </React.Fragment>

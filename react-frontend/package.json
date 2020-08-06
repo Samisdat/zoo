@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next -p 8080",
+    "dev": "next -p 8082",
     "build": "next build && next export",
     "start": "next start"
   },

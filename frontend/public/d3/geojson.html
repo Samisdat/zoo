@@ -50,19 +50,19 @@
 
     }
 
-    d3.json('/geojson/borders.geojson').then((data) => {
+    d3.json('/api/geojson/borders').then((data) => {
         addGeoJson(data.features, '#CEEBB0')
     });
 
-    d3.json('/geojson/ways.geojson').then((data) => {
+    d3.json('/api/geojson/ways').then((data) => {
         addGeoJson(data.features, '#F2EFE9')
     });
 
-    d3.json('/geojson/water.geojson').then((data) => {
+    d3.json('/api/geojson/water').then((data) => {
         addGeoJson(data.features, '#AAD4DE')
     });
 
-    d3.json('/geojson/buildings.geojson').then((data) => {
+    d3.json('/api/geojson/buildings').then((data) => {
         addGeoJson(data.features, '#D8D0C9')
     });
 

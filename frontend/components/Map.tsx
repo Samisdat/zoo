@@ -8,11 +8,14 @@ export default function ZooMap() {
 
     const mapId = 'zoo-map';
 
-    const [count, setCount] = usePersistedState('count', 0);
+    const [marker, setMarker] = usePersistedState('marker', {
+        lat: 51.23943863918227,
+        lng: 7.111485600471497
+    });
 
 
     useEffect(() => {
-        const width = 400;
+        const width = 800;
         const height = 580;
 
         const bound = {
@@ -36,19 +39,16 @@ export default function ZooMap() {
         const geoPath = d3.geoPath()
             .projection(projection);
 
+        document.getElementById(mapId).innerHTML = '';
+
         var svg = d3.select(`#${mapId}`).append("svg")
             .attr("width", width + 'px')
             .attr("height", height + 'px')
-            .attr("style", 'border: 10px solid red');
+        ;
 
         console.log(svg)
 
-        var circle = svg.append("circle")
-                                 .attr("cx", 30)
-                                 .attr("cy", 30)
-                                 .attr("r", 20);
-
-        const addGeoJson = async (data, fill) => {
+        const addGeoJson = (data, fill) => {
 
             let g = svg.append("g");
 
@@ -62,31 +62,56 @@ export default function ZooMap() {
 
         }
 
-        d3.json('/api/geojson/borders').then((data) => {
-            addGeoJson(data.features, '#B6E2B6')
-        });
+        const addCurrentPosition = () => {
 
-        d3.json('/api/geojson/ways').then((data) => {
-            addGeoJson(data.features, '#fff')
-        });
+            var currentPositionCollection = {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "geometry": { "type": "Point", "coordinates": [
+                                marker.lng,
+                                marker.lat ] }
+                    }
+                ]
+            };
 
-        d3.json('/api/geojson/water').then((data) => {
-            addGeoJson(data.features, '#AADAFF')
-        });
 
-        d3.json('/api/geojson/buildings').then((data) => {
-            addGeoJson(data.features, '#C7C7B4')
-        });
+            var rodents = svg.append( "g" );
+
+            rodents.selectAll( "path" )
+                .data( currentPositionCollection.features )
+                .enter()
+                .append( "path" )
+                .attr( "fill", "#900" )
+                .attr( "stroke", "#999" )
+                .attr( "d", geoPath )
+            ;
+
+        };
+
+        Promise.all([
+            d3.json('/api/geojson/borders'),
+            d3.json('/api/geojson/ways'),
+            d3.json('/api/geojson/water'),
+            d3.json('/api/geojson/buildings')
+        ]).then(function(files) {
+
+            addGeoJson(files[0].features, '#B6E2B6')
+            addGeoJson(files[1].features, '#fff')
+            addGeoJson(files[2].features, '#AADAFF')
+            addGeoJson(files[3].features, '#C7C7B4')
+
+            addCurrentPosition();
+
+        }).catch(function(err) {
+            // handle error here
+        })
 
     }, []);
 
         return (
-            <div>
-                <p>You clicked {count} times</p>
-                <div id={mapId}></div>
-
-            </div>
-
+            <div id={mapId}></div>
         );
 
 }

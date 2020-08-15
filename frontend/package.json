@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "^4.9.1",
+    "@react-google-maps/api": "^1.9.12",
     "clsx": "latest",
     "d3": "^5.16.0",
     "d3-geo": "^1.12.1",

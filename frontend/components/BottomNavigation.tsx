@@ -2,10 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import FolderIcon from '@material-ui/icons/Folder';
-import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 import MapIcon from '@material-ui/icons/Map';
 import PetsIcon from '@material-ui/icons/Pets';
@@ -18,6 +14,15 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
+import clsx from 'clsx';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+
 const useStyles = makeStyles({
     root: {
         left:'20px',
@@ -29,11 +34,63 @@ const useStyles = makeStyles({
         borderRadius: '3px',
         boxShadow: '0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)'
     },
+    list: {
+        width: 250,
+    },
+    fullList: {
+        width: 'auto',
+    },
 });
+
+type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
 export default function LabelBottomNavigation() {
     const classes = useStyles();
     const [value, setValue] = React.useState('map');
+
+    const [state, setState] = React.useState({
+        top: false,
+        left: false,
+        bottom: false,
+        right: false,
+    });
+
+    const toggleDrawer = (anchor: Anchor, open: boolean) => (
+        event: React.KeyboardEvent | React.MouseEvent,
+    ) => {
+        if (
+            event &&
+            event.type === 'keydown' &&
+            ((event as React.KeyboardEvent).key === 'Tab' ||
+                (event as React.KeyboardEvent).key === 'Shift')
+        ) {
+            return;
+        }
+
+        setState({ ...state, [anchor]: open });
+    };
+
+    const list = (anchor: Anchor) => (
+        <div
+            className={clsx(classes.list, {
+                [classes.fullList]: true,
+            })}
+            role="presentation"
+            onClick={toggleDrawer(anchor, false)}
+            onKeyDown={toggleDrawer(anchor, false)}
+        >
+            <List>
+                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                    <ListItem button key={text}>
+                        <ListItemIcon><InboxIcon /></ListItemIcon>
+                        <ListItemText primary={text} />
+                    </ListItem>
+                ))}
+            </List>
+            <Divider />
+            <br/><br/><br/><br/>
+        </div>
+    );
 
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
@@ -50,36 +107,53 @@ export default function LabelBottomNavigation() {
     };
 
     return (
-        <BottomNavigation
-            value={value}
-            onChange={handleChange}
-            className={classes.root}
-            showLabels
-        >
-            <BottomNavigationAction label="Karte" value="map" icon={<MapIcon />} />
-            <BottomNavigationAction label="Tiere" value="animals" icon={<PetsIcon />} />
-            <BottomNavigationAction label="Routen" value="direction" icon={<DirectionsWalkIcon />} onClick={handleClick}    />
-            <Menu
-                id="simple-menu"
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
+        <React.Fragment>
+
+            <SwipeableDrawer
+                anchor='bottom'
+                open={state['bottom']}
+                onClose={toggleDrawer('bottom', false)}
+                onOpen={toggleDrawer('bottom', true)}
             >
-                <MenuItem onClick={handleClose}>
-                    <DirectionsIcon /> Rundweg
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
-                    <FastfoodIcon/>Essen
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
-                    <WcIcon /> Toiletten
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
-                    Spielplätze
-                </MenuItem>
-            </Menu>
-            <BottomNavigationAction label="Menu" value="menu" icon={<MenuIcon />} />
-        </BottomNavigation>
+                {list('bottom')}
+            </SwipeableDrawer>
+
+            <BottomNavigation
+                value={value}
+                onChange={handleChange}
+                className={classes.root}
+                showLabels
+            >
+                <BottomNavigationAction label="Karte" value="map" icon={<MapIcon />} />
+                <BottomNavigationAction label="Tiere" value="animals" icon={<PetsIcon />} />
+                <BottomNavigationAction label="Routen" value="direction" icon={<DirectionsWalkIcon />} onClick={handleClick}    />
+                <Menu
+                    id="simple-menu"
+                    anchorEl={anchorEl}
+                    keepMounted
+                    open={Boolean(anchorEl)}
+                    onClose={handleClose}
+                >
+                    <MenuItem onClick={handleClose}>
+                        <DirectionsIcon /> Rundweg
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                        <FastfoodIcon/>Essen
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                        <WcIcon /> Toiletten
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                        Spielplätze
+                    </MenuItem>
+                </Menu>
+                <BottomNavigationAction
+                    onClick={toggleDrawer('bottom', true)}
+                    label="Menu"
+                    value="menu"
+                    icon={<MenuIcon />}
+                />
+            </BottomNavigation>
+        </React.Fragment>
     );
 }

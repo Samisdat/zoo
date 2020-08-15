@@ -1,10 +1,16 @@
 import React from 'react';
 
 import {usePersistedState} from "../hooks/persisted-state";
-import GoogleMapReact from 'google-map-react';
-import {GoogleMapMarkers} from 'google-map-react';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
+
+import { Marker } from '@react-google-maps/api';
+
+
+const containerStyle = {
+    width: '400px',
+    height: '400px'
+};
 
 export default function ZooMap() {
 
@@ -55,34 +61,33 @@ export default function ZooMap() {
 
     };
 
-    const bootstrapURLKeys = { key: 'AIzaSyDtIjAV_E5nOE691HilK34f1iRw_FF1NHI' };
+    const onLoad = React.useCallback(function callback(map) {
+        console.log('onLoad')
+    }, [])
+
+    const onUnmount = React.useCallback(function callback(map) {
+        console.log('onUnmount')
+    }, [])
 
     return (
 
-        <div style={{ height: '100vh', width: '100%' }}>
-            <GoogleMapReact
-                bootstrapURLKeys={bootstrapURLKeys}
+        <LoadScript
+            googleMapsApiKey="AIzaSyDtIjAV_E5nOE691HilK34f1iRw_FF1NHI"
+        >
+            <GoogleMap
+                mapContainerStyle={containerStyle}
                 center={center}
                 zoom={zoom}
-                onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
+                onLoad={onLoad}
+                onUnmount={onUnmount}
             >
+                { /* Child components, such as markers, info windows, etc. */ }
+                <Marker
 
-            <AnyReactComponent
-                lat={marker.lat}
-                lng={marker.lng}
-                text="hei   "
-                style={{
-                    opacity:0.5,
-                    background:'red',
-                    width: '20px',
-                    height: '520x'
-                }}
-            />
-            </GoogleMapReact>
-        </div>
-
-
-
+                    position={marker}
+                />
+            </GoogleMap>
+        </LoadScript>
     );
 
 }

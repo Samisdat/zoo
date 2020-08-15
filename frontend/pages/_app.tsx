@@ -6,7 +6,7 @@ import Grid from "@material-ui/core/Grid";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
 
-import TopNavigation from '../components/TopNavigation';
+import LabelBottomNavigation from '../components/BottomNavigation';
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -34,7 +34,7 @@ export default function MyApp(props) {
                   <Component {...pageProps} />
               </Grid>
           </Grid>
-        <TopNavigation {...props}></TopNavigation>
+        <LabelBottomNavigation{...props}></LabelBottomNavigation>
       </ThemeProvider>
     </React.Fragment>
   );

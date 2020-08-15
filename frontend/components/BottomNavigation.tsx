@@ -22,6 +22,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
+import Link from "../src/Link";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles({
     root: {
@@ -80,12 +82,24 @@ export default function LabelBottomNavigation() {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon><InboxIcon /></ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+                <ListItem button key='about'>
+                    <ListItemIcon><InboxIcon /></ListItemIcon>
+                    <Link href="/about" color="secondary">
+                        <ListItemText primary='about' />
+                    </Link>
+                </ListItem>
+                <ListItem button key='gmap'>
+                    <ListItemIcon><InboxIcon /></ListItemIcon>
+                    <Link href="/gmap" color="secondary">
+                        <ListItemText primary='Google Maps' />
+                    </Link>
+                </ListItem>
+                <ListItem button key='leaflet'>
+                    <ListItemIcon><InboxIcon /></ListItemIcon>
+                    <Link href="/leaflet" color="secondary">
+                        <ListItemText primary='leaflet' />
+                    </Link>
+                </ListItem>
             </List>
             <Divider />
             <br/><br/><br/><br/>

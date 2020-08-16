@@ -19,6 +19,8 @@ export default function MyApp(props) {
     }
   }, []);
 
+  /* <LabelBottomNavigation{...props}></LabelBottomNavigation> */
+
   return (
     <React.Fragment>
       <Head>
@@ -34,7 +36,7 @@ export default function MyApp(props) {
                   <Component {...pageProps} />
               </Grid>
           </Grid>
-        <LabelBottomNavigation{...props}></LabelBottomNavigation>
+
       </ThemeProvider>
     </React.Fragment>
   );

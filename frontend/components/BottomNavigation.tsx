@@ -138,8 +138,8 @@ export default function LabelBottomNavigation() {
                 className={classes.root}
                 showLabels
             >
-                <BottomNavigationAction label="Karte" value="map" icon={<MapIcon />} />
-                <BottomNavigationAction label="Tiere" value="animals" icon={<PetsIcon />} />
+                <BottomNavigationAction href="/" label="Karte" value="map" icon={<MapIcon />} />
+                <BottomNavigationAction href="/species" label="Tiere" value="animals" icon={<PetsIcon />} />
                 <BottomNavigationAction label="Routen" value="direction" icon={<DirectionsWalkIcon />} onClick={handleClick}    />
                 <Menu
                     id="simple-menu"

@@ -1,0 +1,130 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin=""></script>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <style>
+        .leaflet-overlay-pane svg path{
+            pointer-events: auto;
+        }
+        #mapid { height: 600px; }
+    </style>
+</head>
+
+<body>
+
+<div id="mapid"></div>
+
+<script>
+
+
+    Promise.all([
+        d3.json('/d3/VancouverAreaSize.json'),
+        d3.json('/api/geojson/borders'),
+        d3.json('/api/geojson/ways'),
+        d3.json('/api/geojson/water'),
+        d3.json('/api/geojson/buildings')
+    ]).then(function(files) {
+
+        const VanAreas = files[2];
+
+        /*
+        <GeoItem X="0" Y="0" Latitude="51.24177020918754" Longitude="7.105611562728882"/>
+        <GeoItem X="2550" Y="1994" Latitude="51.236776961813064" Longitude="7.115809321403503"/>
+        */
+
+        const reactangle = {
+            "type":"Feature",
+            "geometry":{
+                "type":"Polygon",
+                "coordinates":[
+                    [
+                        [7.105611562728882, 51.24177020918754],
+                        [7.115809321403503, 51.24177020918754],
+                        [7.115809321403503, 51.236776961813064],
+                        [7.105611562728882, 51.236776961813064],
+                        [7.105611562728882, 51.24177020918754],
+                    ]
+                ]
+            },
+            "properties":{
+                "MAPID":"ZOO",
+                "NAME":"Zoo",
+                "localArea":4026970,
+                "population":13370,
+                "density":0.15421930136057632
+            }
+        };
+
+        //VanAreas.features.push(reactangle);
+
+        let map = L.map('mapid').setView([51.23925648995369, 7.11062378150634421], 16);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.geoJson(reactangle, {
+            weight: 2,
+            color: "#00f",
+        }).bindPopup(function (Layer) {
+            return Layer.feature.properties.NAME;
+        }).addTo(map);
+
+        L.svg({clickable:true}).addTo(map)
+
+        const overlay = d3.select(map.getPanes().overlayPane)
+        const svg = overlay.select('svg').attr("pointer-events", "auto")
+
+        const g = svg.append('g').attr('class', 'leaflet-zoom-hide')
+
+        const projectPoint = function(x, y) {
+            const point = map.latLngToLayerPoint(new L.LatLng(y, x))
+            this.stream.point(point.x, point.y)
+        }
+
+        const projection = d3.geoTransform({point: projectPoint})
+
+        const pathCreator = d3.geoPath().projection(projection)
+
+        const areaPaths = g.selectAll('path')
+            .data(VanAreas.features)
+            .join('path')
+            .attr('fill-opacity', 0)
+            .attr('stroke', 'black')
+            .attr("z-index", 3000)
+            .attr('stroke-width', 2.5)
+            .on("mouseover", function(d){
+                d3.select(this).attr("fill", "red")
+            })
+            .on("mouseout", function(d){
+                d3.select(this).attr("fill", "black")
+            })
+
+        const onZoom = () => areaPaths.attr('d', pathCreator)
+
+        onZoom()
+
+        map.on('zoomend', onZoom)
+
+    }).catch((err) => {
+        // handle error here
+    })
+
+</script>
+
+</body>
+
+</html>

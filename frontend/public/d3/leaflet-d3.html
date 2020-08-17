@@ -13,7 +13,12 @@
             integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
             crossorigin=""></script>
 
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
     <style>
+        .leaflet-overlay-pane svg path{
+            pointer-events: auto;
+        }
         #mapid { height: 600px; }
     </style>
 </head>
@@ -49,19 +54,51 @@
             {"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-123.07702519488561,49.290249009170225],[-123.06778936948677,49.290102648899364],[-123.06261350846634,49.28953347006822],[-123.06242356861239,49.29086697475832],[-123.05648794817611,49.293485197381585],[-123.05658291810309,49.26218036166872],[-123.07747630203876,49.2623429841919],[-123.07740507459353,49.265140091590666],[-123.07702519488561,49.290249009170225]]]},"properties":{"MAPID":"GW","NAME":"Grandview-Woodland","localArea":4757978,"population":28250,"density":0.27579204863914886}}
         ]}
 
-    let map = L.map('mapid'); // initializes the map, sets zoom & coordinates
+    let map = L.map('mapid').setView([49.2527, -123.1207], 11.5);
     let osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map); //This adds the tile layer to the map. The map dynamically loads tiles based on current view the
 
-    let VanAreasLayer = L.geoJson(VanAreas, { //instantiates a new geoJson layer using built in geoJson handling
-        weight: 2, //Attributes of polygons including the weight of boundaries and colors of map.
-        color: "#432",
-    }).bindPopup(function (Layer) { //binds a popup when clicking on each polygon to access underlying data
-        return Layer.feature.properties.NAME;
-    }).addTo(map); //Adds the layer to the map.
+    L.svg({clickable:true}).addTo(map) // we have to make the svg layer clickable
+    //Create selection using D3
+    const overlay = d3.select(map.getPanes().overlayPane)
+    const svg = overlay.select('svg').attr("pointer-events", "auto")
+    // create a group that is hidden during zooming
+    const g = svg.append('g').attr('class', 'leaflet-zoom-hide')
 
-    map.fitBounds(VanAreasLayer.getBounds()); //finds bounds of polygon and automatically gets map view to fit (useful
+    // Use Leaflets projection API for drawing svg path (creates a stream of projected points)
+    const projectPoint = function(x, y) {
+        const point = map.latLngToLayerPoint(new L.LatLng(y, x))
+        this.stream.point(point.x, point.y)
+    }
+
+
+    // Use d3's custom geo transform method to implement the above
+    const projection = d3.geoTransform({point: projectPoint})
+    // creates geopath from projected points (SVG)
+    const pathCreator = d3.geoPath().projection(projection)
+
+    const areaPaths = g.selectAll('path')
+        .data(VanAreas.features)
+        .join('path')
+        .attr('fill-opacity', 0.3)
+        .attr('stroke', 'black')
+        .attr("z-index", 3000)
+        .attr('stroke-width', 2.5)
+        .on("mouseover", function(d){
+            d3.select(this).attr("fill", "red")
+        })
+        .on("mouseout", function(d){
+            d3.select(this).attr("fill", "black")
+        })
+
+    // Function to place svg based on zoom
+    const onZoom = () => areaPaths.attr('d', pathCreator)
+    // initialize positioning
+    onZoom()
+    // reset whenever map is moved
+    map.on('zoomend', onZoom)
+
 
 
 

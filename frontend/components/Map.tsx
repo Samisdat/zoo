@@ -14,6 +14,8 @@ export default function ZooMap() {
         lng: 7.107757
     });
 
+    console.log(marker);
+
     const [center, setCenter] = usePersistedState('center', {
         lat: 51.23925648995369,
         lng: 7.11062378150634421,
@@ -26,9 +28,10 @@ export default function ZooMap() {
         });
     }
 
+
     getPosition({})
     .then((position) => {
-        console.log(position);
+        //console.log(position);
     })
     .catch((err) => {
         console.error(err.message);
@@ -45,15 +48,30 @@ export default function ZooMap() {
         const height = 500;
 
         const projection = d3.geoMercator()
-            .scale(3000000)
-            .rotate([0, 0, 0])
-            .center([center.lng, center.lat])
+            //.scale(3000000)
+            //.rotate([0, 0, 0])
+            //.center([center.lng, center.lat])
             .translate([width / 2, height / 2]);
 
-        // projection.angle(181.5)
+        //projection.angle(181.5)
 
         const geoPath = d3.geoPath()
             .projection(projection);
+
+        var bounds = d3.geoBounds(borders),
+            center = d3.geoCentroid(borders);
+
+        // Compute the angular distance between bound corners
+        var distance = d3.geoDistance(bounds[0], bounds[1]);
+        var scale = height / distance / Math.sqrt(2);
+
+
+
+        projection
+            .scale(3000000)
+            .center(center)
+        console.log(bounds, center, scale)
+
 
         document.getElementById(mapId).innerHTML = '';
 
@@ -66,7 +84,6 @@ export default function ZooMap() {
         const addGeoJson = (data, fill) => {
 
             let g = svg.append("g");
-            console.log(data)
 
             g.selectAll("path")
                 .data(data)
@@ -96,18 +113,15 @@ export default function ZooMap() {
                 ]
             };
 
-            var rodents = svg.append( "g" );
+            let g = svg.append("g");
 
-            rodents.selectAll( "path" )
-                .data( currentPositionCollection.features )
+            g.selectAll("path")
+                .data(currentPositionCollection.features)
                 .enter()
-                .append( "path" )
-                .attr( "fill", "#900" )
-                .attr( "stroke", "#999" )
-                .attr( "opacity", 0.5 )
-                .attr( "d", geoPath )
-            ;
-
+                .append("path")
+                .attr("fill", 900)
+                /*.attr( "stroke", "#333")*/
+                .attr("d", geoPath);
         };
 
         addGeoJson(borders.features, '#B6E2B6')

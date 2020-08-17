@@ -22,8 +22,8 @@ export default function ZooMap() {
     const [zoom, setZoom] = usePersistedState('zoom', 17);
 
     const [marker, setMarker] = usePersistedState('marker', {
-        lat: 51.23943863918227,
-        lng: 7.111485600471497
+        lat: 51.238741,
+        lng: 7.107757
     });
 
     const onClick = (event:any) => {

@@ -5,8 +5,6 @@ import {usePersistedState} from "../hooks/persisted-state";
 
 export default function ZooMap(props) {
 
-    console.log(props)
-
     const [center, setCenter] = usePersistedState('center', {
         lat: 51.23925648995369,
         lng: 7.11062378150634421,
@@ -15,9 +13,11 @@ export default function ZooMap(props) {
     const [zoom, setZoom] = usePersistedState('zoom', 17);
 
     const [marker, setMarker] = usePersistedState('marker', {
-        lat: 51.23943863918227,
-        lng: 7.111485600471497
+        lat: 51.238741,
+        lng: 7.107757
     });
+
+    console.log(marker);
 
     const onClick = (event:any) => {
 
@@ -49,32 +49,6 @@ export default function ZooMap(props) {
 
     let key = 0;
 
-    let mysteriosLng = 7.110321521759034 - 7.108728
-    let mysteriosLat = 51.240815597945485 - 51.24077
-
-    console.log(props.buildingsGeoJson)
-
-    const polygons = props.buildingsGeoJson.features.map( (feature)=>{
-
-        key += 1;
-
-        return {
-            key: 'key' + key,
-            coordinate: feature.geometry.coordinates[0].map((coordinate)=>{
-                return{
-                    lng: coordinate[0] + 0.0011,
-                    lat: coordinate[1] - 0.0002
-                }
-            })
-        };
-    });
-
-    /**
-        {polygons.map((polygon) => (
-            <Polyline key={polygon.key} color="black" positions={polygon.coordinate}></Polyline>
-        ))}
-     */
-
     let bounds = {
         south: 51.236776961813064,
         west: 7.105611562728882,
@@ -86,7 +60,6 @@ export default function ZooMap(props) {
         [bounds.north, bounds.west],
         [bounds.south, bounds.east]
     ];
-
 
     return (
 
@@ -105,15 +78,12 @@ export default function ZooMap(props) {
             <ImageOverlay
                 url="http://127.0.0.1:8080/luftaufnahme.png"
                 bounds={boundsLeaftlet}
-                opacity="0.5"
+                opacity="0"
             />
 
             <Marker position={marker}></Marker>
 
-
         </Map>
-
-
 
     );
 

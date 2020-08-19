@@ -90,7 +90,9 @@ export default function ZooMap() {
                 .attr("fill", (d)=>{
                     return d.properties.fill;
                 })
-                /*.attr( "stroke", "#333")*/
+                .attr("stroke", (d)=>{
+                    return d.properties.stroke;
+                })
                 .attr("d", geoPath);
 
         }

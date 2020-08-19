@@ -100,6 +100,18 @@ export default function LabelBottomNavigation() {
                         <ListItemText primary='leaflet' />
                     </Link>
                 </ListItem>
+                <ListItem button key='geojson/list'>
+                    <ListItemIcon><InboxIcon /></ListItemIcon>
+                    <Link href="/geojson/list" color="secondary">
+                        <ListItemText primary='geojson/list' />
+                    </Link>
+                </ListItem>
+                <ListItem button key='geojson/new'>
+                    <ListItemIcon><InboxIcon /></ListItemIcon>
+                    <Link href="/geojson/new" color="secondary">
+                        <ListItemText primary='geojson/new' />
+                    </Link>
+                </ListItem>
             </List>
             <Divider />
             <br/><br/><br/><br/>

@@ -6,7 +6,8 @@ import fs from 'fs';
 import urlSlug from 'url-slug'
 
 const allowList = [
-    'aussengrenze'
+    'aussengrenze',
+    'wege'
 ];
 
 export default async (req: NextApiRequest, res: NextApiResponse<any[]>) => {
@@ -17,20 +18,36 @@ export default async (req: NextApiRequest, res: NextApiResponse<any[]>) => {
         return file.replace('.json', '');
     });
 
+    slugs = slugs.reverse();
+
     slugs = slugs.filter((slug)=>{
         return (allowList.includes(slug));
     });
 
-    const features = slugs.map((slug) => {
+    let features = slugs.map((slug) => {
 
         const geojson = JSON.parse(fs.readFileSync(dataDir + '/' + slug + '/geo.json', {encoding: 'utf8'}));
 
-        return geojson.features;
+        return geojson.features[0];
     })
+
+    features = features.sort((a, b) =>{
+
+        if(a.properties.zIndex > b.properties.zIndex){
+            return 1;
+        }
+
+        if(a.properties.zIndex < b.properties.zIndex){
+            return -1;
+        }
+
+        return 0;
+
+    });
 
     const geojson = {
         "type": "FeatureCollection",
-        features: features[0]
+        features: features
     };
 
     res.status(200).json(geojson);

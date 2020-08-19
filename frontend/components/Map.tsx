@@ -79,6 +79,10 @@ export default function ZooMap() {
             .attr("style", 'background:red')
         ;
 
+        var tooltip = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
         const addGeoJson = (data) => {
 
             let g = svg.append("g");
@@ -93,7 +97,21 @@ export default function ZooMap() {
                 .attr("stroke", (d)=>{
                     return d.properties.stroke;
                 })
-                .attr("d", geoPath);
+                .attr("d", geoPath)
+                .on("mouseover", (d) => {
+                    tooltip.transition()
+                        .duration(200)
+                        .style("opacity", .9);
+                    tooltip.html(d.properties.name)
+                        .style("left", (d3.event.pageX) + "px")
+                        .style("top", (d3.event.pageY - 28) + "px");
+                })
+                .on("mouseout", (d) => {
+                    tooltip.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+                });
+
 
         }
 

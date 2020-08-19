@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import * as d3 from 'd3';
 
 import {usePersistedState} from "../hooks/persisted-state";
-import {createReadStream} from "fs";
 
 export default function ZooMap() {
 
@@ -37,13 +36,16 @@ export default function ZooMap() {
         console.error(err.message);
     });
 
-    const createMap = (jsons) => {
+    const createMap = (geojson) => {
 
-        const borders = jsons[0];
-        const ways = jsons[1];
-        const water = jsons[2];
-        const buildings = jsons[3];
+        const border = geojson.features.find((feature)=>{
 
+            return ('aussengrenze' === feature.properties.slug)
+
+        })
+
+        console.log(border)
+        
         const width = 600;
         const height = 500;
 
@@ -58,20 +60,16 @@ export default function ZooMap() {
         const geoPath = d3.geoPath()
             .projection(projection);
 
-        var bounds = d3.geoBounds(borders),
-            center = d3.geoCentroid(borders);
+        var bounds = d3.geoBounds(border),
+            center = d3.geoCentroid(border);
 
         // Compute the angular distance between bound corners
         var distance = d3.geoDistance(bounds[0], bounds[1]);
         var scale = height / distance / Math.sqrt(2);
 
-
-
         projection
             .scale(3000000)
             .center(center)
-        console.log(bounds, center, scale)
-
 
         document.getElementById(mapId).innerHTML = '';
 
@@ -81,7 +79,7 @@ export default function ZooMap() {
             .attr("style", 'background:red')
         ;
 
-        const addGeoJson = (data, fill) => {
+        const addGeoJson = (data) => {
 
             let g = svg.append("g");
 
@@ -89,7 +87,9 @@ export default function ZooMap() {
                 .data(data)
                 .enter()
                 .append("path")
-                .attr("fill", fill)
+                .attr("fill", (d)=>{
+                    return d.properties.fill;
+                })
                 /*.attr( "stroke", "#333")*/
                 .attr("d", geoPath);
 
@@ -124,10 +124,7 @@ export default function ZooMap() {
                 .attr("d", geoPath);
         };
 
-        addGeoJson(borders.features, '#B6E2B6')
-        addGeoJson(water.features, '#AADAFF')
-        addGeoJson(ways.features, '#fff')
-        addGeoJson(buildings.features, '#C7C7B4')
+        addGeoJson(geojson.features)
 
         addCurrentPosition();
 
@@ -142,16 +139,13 @@ export default function ZooMap() {
 
         svg.call(zoom);
 
+
     };
 
     useEffect(() => {
 
-        Promise.all([
-            d3.json('/api/geojson/borders'),
-            d3.json('/api/geojson/ways'),
-            d3.json('/api/geojson/water'),
-            d3.json('/api/geojson/buildings')
-        ]).then(function(files) {
+        d3.json('/api/geojson/remove-later/geojson')
+        .then(function(files) {
 
             createMap(files);
 

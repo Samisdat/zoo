@@ -15,7 +15,7 @@
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-leaflet": "^2.7.0"
+    "svg2geojson": "^0.7.1"
   },
   "scripts": {
     "dev": "next dev -p 8080",

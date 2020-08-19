@@ -46,8 +46,8 @@ export default function ZooMap() {
 
         console.log(border)
         
-        const width = 600;
-        const height = 500;
+        const width = 1000;
+        const height = 800;
 
         const projection = d3.geoMercator()
             //.scale(3000000)

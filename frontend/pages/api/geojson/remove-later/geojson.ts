@@ -9,7 +9,8 @@ const allowList = [
     'aussengrenze',
     'wege',
     'ententeich',
-    'gibbons'
+    'gibbons',
+    'elefanten'
 ];
 
 export default async (req: NextApiRequest, res: NextApiResponse<any[]>) => {

@@ -139,14 +139,49 @@ export default function ZooMap() {
                 .data(currentPositionCollection.features)
                 .enter()
                 .append("path")
-                .attr("fill", 900)
-                /*.attr( "stroke", "#333")*/
+                .attr("fill", 'green')
                 .attr("d", geoPath);
         };
 
         addGeoJson(geojson.features)
 
         addCurrentPosition();
+
+        function mousemoved() {
+            var m = d3.mouse(this);
+
+            const position = projection.invert(d3.mouse(this))
+            console.log(position)
+
+            var currentPositionCollection = {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "geometry": { "type": "Point", "coordinates": [
+                                position ] }
+                    },
+
+                ]
+            };
+
+
+            console.log(currentPositionCollection);
+
+            g.selectAll("path")
+                .data(currentPositionCollection.features)
+                .enter()
+                .append("path")
+                .attr("fill", 'green')
+                /*.attr( "stroke", "#333")*/
+                .attr("d", geoPath);
+
+
+
+        }
+
+            svg.on("mousemove", mousemoved);
+
 
         var g = svg.selectAll('g');
         var zoom = d3.zoom()

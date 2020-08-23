@@ -446,7 +446,7 @@
             "type": "Feature",
             "properties": {
                 "name": "Elefanten",
-                "slug": "elefanten",
+                "slug": "elefanten-bad",
                 "zIndex": 20,
                 "fill": "#AADAFF"
             },
@@ -570,9 +570,9 @@
             "type": "Feature",
             "properties": {
                 "name": "Elefanten",
-                "slug": "elefanten",
+                "slug": "elefanten-bad",
                 "zIndex": 20,
-                "fill": "#D3DDAB"
+                "fill": "darkgrey"
             },
             "geometry": {
                 "type": "Polygon",

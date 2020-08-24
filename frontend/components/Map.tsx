@@ -13,8 +13,6 @@ export default function ZooMap() {
         lng: 7.107757
     });
 
-    console.log(marker);
-
     const [center, setCenter] = usePersistedState('center', {
         lat: 51.23925648995369,
         lng: 7.11062378150634421,
@@ -44,15 +42,10 @@ export default function ZooMap() {
 
         })
 
-        console.log(border)
-        
         const width = 1000;
         const height = 800;
 
         const projection = d3.geoMercator()
-            //.scale(3000000)
-            //.rotate([0, 0, 0])
-            //.center([center.lng, center.lat])
             .translate([width / 2, height / 2]);
 
         //projection.angle(181.5)
@@ -60,12 +53,7 @@ export default function ZooMap() {
         const geoPath = d3.geoPath()
             .projection(projection);
 
-        var bounds = d3.geoBounds(border),
-            center = d3.geoCentroid(border);
-
-        // Compute the angular distance between bound corners
-        var distance = d3.geoDistance(bounds[0], bounds[1]);
-        var scale = height / distance / Math.sqrt(2);
+        var center = d3.geoCentroid(border);
 
         projection
             .scale(3000000)
@@ -79,13 +67,15 @@ export default function ZooMap() {
             .attr("style", 'background:red')
         ;
 
+        var g = svg.append("g");
+
+
         var tooltip = d3.select("body").append("div")
             .attr("class", "tooltip")
             .style("opacity", 0);
 
         const addGeoJson = (data) => {
 
-            let g = svg.append("g");
 
             g.selectAll("path")
                 .data(data)
@@ -99,6 +89,11 @@ export default function ZooMap() {
                 })
                 .attr("d", geoPath)
                 .on("mouseover", (d) => {
+
+                    if(undefined === d.properties || undefined === d.properties.name){
+                        return;
+                    }
+
                     tooltip.transition()
                         .duration(200)
                         .style("opacity", .9);
@@ -115,75 +110,59 @@ export default function ZooMap() {
 
         }
 
-        const addCurrentPosition = () => {
+        const addPosition = (lat, lng) => {
 
-            let lng = marker.lng;
-            let lat = marker.lat;
-
-            var currentPositionCollection = {
-                "type": "FeatureCollection",
-                "features": [
-                    {
-                        "type": "Feature",
-                        "geometry": { "type": "Point", "coordinates": [
-                                lng,
-                                lat ] }
-                    },
-
-                ]
+            const currentPosition = {
+                "type": "Feature",
+                "properties":{
+                    name: "Aktuelle Position",
+                    slug: "current-position",
+                    zIndex: 100,
+                    fill: "black"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        lng,
+                        lat
+                    ]
+                }
             };
 
-            let g = svg.append("g");
+            const found = geojson.features.find((features) => {
+                return 'current-position' === features.properties.slug
+            });
 
-            g.selectAll("path")
-                .data(currentPositionCollection.features)
-                .enter()
-                .append("path")
-                .attr("fill", 'green')
-                .attr("d", geoPath);
+            if(undefined === found){
+                geojson.features.push(currentPosition);
+            }
+            else{
+
+                found.properties.name = "Aktuelle Position geupdatd";
+                found.geometry.coordinates = [
+                    lng,
+                    lat
+                ];
+            }
+
         };
 
+        addPosition(marker.lat, marker.lng);
         addGeoJson(geojson.features)
 
-        addCurrentPosition();
-
         function mousemoved() {
-            var m = d3.mouse(this);
 
             const position = projection.invert(d3.mouse(this))
-            console.log(position)
 
-            var currentPositionCollection = {
-                "type": "FeatureCollection",
-                "features": [
-                    {
-                        "type": "Feature",
-                        "geometry": { "type": "Point", "coordinates": [
-                                position ] }
-                    },
+            addPosition(position[1], position[0]);
 
-                ]
-            };
-
-
-            console.log(currentPositionCollection);
-
-            g.selectAll("path")
-                .data(currentPositionCollection.features)
-                .enter()
-                .append("path")
-                .attr("fill", 'green')
-                /*.attr( "stroke", "#333")*/
-                .attr("d", geoPath);
-
-
+            addGeoJson(geojson.features)
 
         }
 
-            svg.on("mousemove", mousemoved);
+        svg.on("mousemove", mousemoved);
 
 
-        var g = svg.selectAll('g');
         var zoom = d3.zoom()
             .scaleExtent([0.5, 8])
             .on('zoom', function() {

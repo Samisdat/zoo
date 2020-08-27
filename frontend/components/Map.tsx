@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import * as d3 from 'd3';
 
 import {usePersistedState} from "../hooks/persisted-state";
+import {currentPosition} from "../helper/getCurrentPosition";
 
 export default function ZooMap() {
 
@@ -69,7 +70,6 @@ export default function ZooMap() {
 
         var g = svg.append("g");
 
-
         var tooltip = d3.select("body").append("div")
             .attr("class", "tooltip")
             .style("opacity", 0)
@@ -85,8 +85,7 @@ export default function ZooMap() {
             .style("border-radius", "8px")
         ;
 
-        const addGeoJson = (data) => {
-
+        const plotGeoJson = (data) => {
 
             g.selectAll("path")
                 .data(data)
@@ -121,57 +120,70 @@ export default function ZooMap() {
 
         }
 
-        const addPosition = (lat, lng) => {
+        //plotGeoJson(geojson.features)
 
-            const currentPosition = {
-                "type": "Feature",
-                "properties":{
-                    name: "Aktuelle Position",
-                    slug: "current-position",
-                    zIndex: 100,
-                    fill: "black"
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        lng,
-                        lat
-                    ]
-                }
+        currentPosition('initial', marker, svg, geoPath);
+
+        setTimeout(()=>{
+            const updated = {
+                lng:7.113693823487721,
+                lat: 51.24023589826753
             };
 
-            const found = geojson.features.find((features) => {
-                return 'current-position' === features.properties.slug
-            });
+            currentPosition('updated', updated, svg, geoPath);
 
-            if(undefined === found){
-                geojson.features.push(currentPosition);
-            }
-            else{
+        }, 500);
 
-                found.properties.name = "Aktuelle Position geupdatd";
-                found.geometry.coordinates = [
-                    lng,
-                    lat
-                ];
-            }
 
-        };
+        setTimeout(()=>{
+            const updated = {
+                lat: 51.23925648995369,
+                lng: 7.11062378150634421,
+            };
 
-        addPosition(marker.lat, marker.lng);
-        addGeoJson(geojson.features)
+            currentPosition('updated2', updated, svg, geoPath);
+
+        }, 1000);
+
+
+
+        const data = [1, 1, 1];
+
+        const circleRadius = 60;
+        const circleDiameter = circleRadius * 2;
+
 
         function mousemoved() {
 
             const position = projection.invert(d3.mouse(this))
 
-            addPosition(position[1], position[0]);
+            console.log(position)
 
-            addGeoJson(geojson.features)
+            /*
+            const currentPosition = [getCurrentPosition(position[1], position[0])];
+
+            const gPos = currentPositionGroup();
+
+
+            gPos.selectAll("path")
+                .data(currentPosition)
+                .enter()
+                .append("path")
+                .attr("fill", (d)=>{
+                    return d.properties.fill;
+                })
+                .attr("stroke", (d)=>{
+                    return d.properties.stroke;
+                })
+                .attr("d", geoPath)
+
+            gPos.selectAll("path").exit()
+                    .remove();
+                    */
 
         }
 
-        svg.on("mousemove", mousemoved);
+        //svg.on("mousemove", mousemoved);
 
 
         var zoom = d3.zoom()
@@ -206,6 +218,7 @@ export default function ZooMap() {
                     position:'static'
                 }}
             >
+                <div id="debug"></div>
                 <div style={{
                     position:'absolute',
                     top:0,

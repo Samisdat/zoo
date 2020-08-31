@@ -1,55 +1,40 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 
 import * as d3 from 'd3';
 
 import {usePersistedState} from "../hooks/persisted-state";
-import {currentPosition} from "../helper/getCurrentPosition";
+import {
+    getCurrentPositionGeoJson
+} from "../helper/getCurrentPosition";
 
-export default function ZooMap() {
+export default function ZooMap(props) {
 
-    const mapId = 'zoo-map';
+    const svgId = 'main-svg';
+    const mapId = 'main-map';
+    const mapElementId = 'main-elements';
+    const positionId = 'main-position';
 
     const [marker, setMarker] = usePersistedState('marker', {
         lat: 51.238741,
         lng: 7.107757
     });
 
-    const [center, setCenter] = usePersistedState('center', {
-        lat: 51.23925648995369,
-        lng: 7.11062378150634421,
-    });
+    const [data, setData] = useState([1, 1, 1]);
 
+    const renderSvg = () => {
 
-    var getPosition = function (options) {
-        return new Promise(function (resolve, reject) {
-            navigator.geolocation.getCurrentPosition(resolve, reject, options);
-        });
-    }
-
-
-    getPosition({})
-    .then((position) => {
-        //console.log(position);
-    })
-    .catch((err) => {
-        console.error(err.message);
-    });
-
-    const createMap = (geojson) => {
-
-        const border = geojson.features.find((feature)=>{
+        const border = props.features.find((feature)=>{
 
             return ('aussengrenze' === feature.properties.slug)
 
         })
 
-        const width = 1000;
-        const height = 800;
+        let viewportWidth = window.innerWidth;
+        let viewportHeight = window.innerHeight;
+
 
         const projection = d3.geoMercator()
-            .translate([width / 2, height / 2]);
-
-        //projection.angle(181.5)
+            .translate([viewportWidth / 2, viewportHeight / 2]);
 
         const geoPath = d3.geoPath()
             .projection(projection);
@@ -57,188 +42,107 @@ export default function ZooMap() {
         var center = d3.geoCentroid(border);
 
         projection
-            .scale(3000000)
+            .scale(2000000)
             .center(center)
 
-        document.getElementById(mapId).innerHTML = '';
-
-        var svg = d3.select(`#${mapId}`).append("svg")
-            .attr("width", width + 'px')
-            .attr("height", height + 'px')
-            .attr("style", 'background:red')
+        var mapSvg = d3.select(`#${svgId}`)
+            .attr("width", viewportWidth + 'px')
+            .attr("height", viewportHeight + 'px')
+            .attr("style", 'background:blue')
         ;
 
-        var g = svg.append("g");
+        const mapGroup = mapSvg.select(`#${mapId}`);
 
-        var tooltip = d3.select("body").append("div")
-            .attr("class", "tooltip")
-            .style("opacity", 0)
-            .style("opacity", 0)
-            .style("position", "absolute")
-            .style("text-align", "center")
-            .style("width", "100px")
-            .style("height", "28px")
-            .style("padding", "2px")
-            .style("font", "12px sans-serif")
-            .style("background", "lightsteelblue")
-            .style("border", "0px")
-            .style("border-radius", "8px")
+        var elementsGroup = mapSvg.select(`#${mapElementId}`);
+        elementsGroup.selectAll("path")
+            .data(props.features)
+            .enter()
+            .append("path")
+            .attr("fill", (d)=>{
+                return d.properties.fill;
+            })
+            .attr("stroke", (d)=>{
+                return d.properties.stroke;
+            })
+            .attr("d", geoPath)
+            .attr('title', (d) => {
+                if(undefined === d.properties || undefined === d.properties.name){
+                    return;
+                }
+
+                return  d.properties.name;
+            })
+
+
+        var positionGroup = mapSvg.select(`#${positionId}`);
+        const currentPosition = getCurrentPositionGeoJson('initial', marker.lat, marker.lng);
+
+        let update = positionGroup.selectAll("circle")
+            .data(currentPosition)
+            .join("circle")
+
+            .attr("transform", function(d) { return "translate(" + geoPath.centroid(d) + ")"; })
+            .attr("title", (d)=>{
+                return d.properties.slug;
+            })
+            .attr("fill", (d, i)=>{
+                return d.properties.fill;
+            })
+            .attr("stroke", (d)=>{
+                return d.properties.stroke;
+            })
+            .attr("d", geoPath)
+            .attr("r", 5)
+
         ;
 
-        const plotGeoJson = (data) => {
-
-            g.selectAll("path")
-                .data(data)
-                .enter()
-                .append("path")
-                .attr("fill", (d)=>{
-                    return d.properties.fill;
-                })
-                .attr("stroke", (d)=>{
-                    return d.properties.stroke;
-                })
-                .attr("d", geoPath)
-                .on("mouseover", (d) => {
-
-                    if(undefined === d.properties || undefined === d.properties.name){
-                        return;
-                    }
-
-                    tooltip.transition()
-                        .duration(200)
-                        .style("opacity", .9);
-                    tooltip.html(d.properties.name)
-                        .style("left", (d3.event.pageX) + "px")
-                        .style("top", (d3.event.pageY - 28) + "px");
-                })
-                .on("mouseout", (d) => {
-                    tooltip.transition()
-                        .duration(500)
-                        .style("opacity", 0);
-                });
-
-
-        }
-
-        //plotGeoJson(geojson.features)
-
-        currentPosition('initial', marker, svg, geoPath);
-
-        setTimeout(()=>{
-            const updated = {
-                lng:7.113693823487721,
-                lat: 51.24023589826753
-            };
-
-            currentPosition('updated', updated, svg, geoPath);
-
-        }, 500);
-
-
-        setTimeout(()=>{
-            const updated = {
-                lat: 51.23925648995369,
-                lng: 7.11062378150634421,
-            };
-
-            currentPosition('updated2', updated, svg, geoPath);
-
-        }, 1000);
-
-
-
-        const data = [1, 1, 1];
-
-        const circleRadius = 60;
-        const circleDiameter = circleRadius * 2;
-
-
-        function mousemoved() {
+        function onClick() {
 
             const position = projection.invert(d3.mouse(this))
 
-            console.log(position)
+            setMarker({
+                lng: position[0],
+                lat: position[1]
+            })
+            console.log(marker)
 
-            /*
-            const currentPosition = [getCurrentPosition(position[1], position[0])];
 
-            const gPos = currentPositionGroup();
+        };
 
-
-            gPos.selectAll("path")
-                .data(currentPosition)
-                .enter()
-                .append("path")
-                .attr("fill", (d)=>{
-                    return d.properties.fill;
-                })
-                .attr("stroke", (d)=>{
-                    return d.properties.stroke;
-                })
-                .attr("d", geoPath)
-
-            gPos.selectAll("path").exit()
-                    .remove();
-                    */
-
-        }
-
-        //svg.on("mousemove", mousemoved);
-
+        mapSvg.on("click", onClick);
 
         var zoom = d3.zoom()
             .scaleExtent([0.5, 8])
             .on('zoom', function() {
-                g.selectAll('path')
+                mapGroup
                     .attr('transform', d3.event.transform);
 
             });
 
-        svg.call(zoom);
+        mapSvg.call(zoom);
 
 
     };
 
     useEffect(() => {
+        renderSvg();
+    });
 
-        d3.json('/api/geojson/remove-later/geojson')
-        .then(function(files) {
-
-            createMap(files);
-
-        }).catch(function(err) {
-            // handle error here
-        })
-
-    }, []);
-
-        return (
-            <div
-                style={{
-                    position:'static'
-                }}
+    return (
+        <div>
+            <svg id={svgId} style={{
+                width: '100%',
+                height: '100%',
+                background: 'red'
+            }}
             >
-                <div id="debug"></div>
-                <div style={{
-                    position:'absolute',
-                    top:0,
-                    left:0,
-                    width: '800px',
-                    height: '700px',
-                    opacity:0,
-                    background: 'url(/luftaufnahme.png)',
-                    backgroundSize: 'cover',
-                }}></div>
-                <div id={mapId} style={{
-                    position:'absolute',
-                    top:0,
-                    left:0,
-                    opacity:1,
-                    width: '800px',
-                    height: '700px'
-                }}
-                ></div>
-            </div>
-        );
+                <g id={mapId}>
+                    <g id={mapElementId}></g>
+                    <g id={positionId}></g>
+                </g>
+            </svg>
+
+        </div>
+    );
 
 }

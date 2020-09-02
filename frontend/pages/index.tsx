@@ -42,14 +42,27 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 
-export default function Index() {
+export default function Index(props) {
 
   const classes = useStyles();
 
   return (
       <div>
-        <Map></Map>
+        <Map {...props.geojson}></Map>
       </div>
 
   );
+}
+
+export async function getStaticProps({ params, preview = false, previewData }) {
+
+
+    const response = await fetch('http://127.0.0.1:8080/api/geojson/remove-later/geojson')
+    let geojson = await response.json();
+
+    return {
+        props: {
+            geojson: geojson,
+        },
+    }
 }

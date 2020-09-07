@@ -15,12 +15,18 @@ export default function ZooMap(props) {
     const mapElementId = 'main-elements';
     const positionId = 'main-position';
 
+    const simplePath = 'main-Voronoi';
+
     const [marker, setMarker] = usePersistedState('marker', {
         lat: 51.238741,
         lng: 7.107757
     });
 
-    const [data, setData] = useState([1, 1, 1]);
+    const [transform, setTransform] = usePersistedState('zoom', {
+        k:1,
+        x:0,
+        y:0
+    });
 
     const renderSvg = () => {
 
@@ -33,6 +39,25 @@ export default function ZooMap(props) {
         let viewportWidth = window.innerWidth;
         let viewportHeight = window.innerHeight;
 
+        let simpleWay = props.features.find((feature)=>{
+
+            return ('way-simple' === feature.properties.slug)
+
+        })
+
+        let simpleWayCollection = {
+            type: "FeatureCollection",
+            features: simpleWay.geometry.coordinates.map((coordinate)=>{
+
+                return     {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": coordinate
+                    }
+                }
+            })
+        };
 
         const projection = d3.geoMercator()
             .translate([viewportWidth / 2, viewportHeight / 2]);
@@ -53,8 +78,9 @@ export default function ZooMap(props) {
         ;
 
         const mapGroup = mapSvg.select(`#${mapId}`);
-
         var elementsGroup = mapSvg.select(`#${mapElementId}`);
+
+        /*
         elementsGroup.selectAll("path")
             .data(props.features)
             .enter()
@@ -72,7 +98,98 @@ export default function ZooMap(props) {
                 }
 
                 return  d.properties.name;
+            });
+        */
+        /*
+        7.105611562728882
+        51.24177020918754
+
+        7.115809321403503
+        51.236776961813064
+        */
+
+        const left = 7.105611562728882;
+        const right = 7.115809321403503;
+
+        const top = 51.24177020918754;
+        const bottom = 51.236776961813064;
+
+
+        let boundCollection = {
+            type: "FeatureCollection",
+            features: [
+                {
+                    type: "Feature",
+                    properties: {
+                        name: "Außengrenze",
+                        slug: "aussengrenze",
+                        zIndex: 1,
+                        fill: "#000fff"
+                    },
+                    geometry: {
+                        type: "LineString",
+                        coordinates: [
+                            [
+                                left,
+                                top,
+                            ],
+                            [
+                                right,
+                                top,
+                            ],
+                            [
+                                right,
+                                bottom,
+                            ],
+                            [
+                                left,
+                                bottom,
+                            ],
+                        ]
+                    }
+                },
+
+            ]
+        };
+
+        elementsGroup.selectAll("path")
+            .data(boundCollection.features)
+            .enter()
+            .append("path")
+            .attr("fill", 'lime')
+            .attr("stroke", 'red')
+            .attr("opacity", '0.4')
+            .attr("id", 'bound')
+            .attr("d", geoPath)
+        ;
+
+        const bound = mapSvg.select(`#bound`);
+        console.log(bound.node().getBBox())
+        const boundingBox = bound.node().getBBox();
+
+        console.log(boundingBox.width / 2550)
+
+        const graficElementGroup = mapSvg.select(`#${graficElementId}`);
+        console.log(graficElementGroup);
+        graficElementGroup
+            .attr("transform", "translate(" + boundingBox.x + "," + boundingBox.y + ") scale(0.20939347809436273)");
+
+        var voronoiGroup = mapSvg.select(`#${simplePath}`);
+                console.log()
+
+        let points = voronoiGroup.selectAll("circle")
+            .data(simpleWayCollection.features)
+            .enter()
+            .append("circle")
+            .attr("transform", function(d) { return "translate(" + geoPath.centroid(d) + ")"; })
+            .attr("fill", (d)=>{
+                return '#f00';
             })
+            .attr("stroke", (d)=>{
+                return '#0f0';
+            })
+            .attr("d", geoPath)
+            .attr("r", 5);
 
 
         var positionGroup = mapSvg.select(`#${positionId}`);
@@ -105,23 +222,62 @@ export default function ZooMap(props) {
                 lng: position[0],
                 lat: position[1]
             })
-            console.log(marker)
-
 
         };
 
+
+        simpleWayCollection.features.forEach((feature)=>{
+
+            //console.log(feature.geometry.coordinates[0])
+
+            //console.log(d3.geoDistance([marker.lng, marker.lat], feature.geometry.coordinates))
+
+            //
+        })
+
+
         mapSvg.on("click", onClick);
 
-        var zoom = d3.zoom()
+        var zooming = d3.zoom()
             .scaleExtent([0.5, 8])
-            .on('zoom', function() {
+            .on('zoom', () => {
+
                 mapGroup
                     .attr('transform', d3.event.transform);
 
-            });
+            })
+            .on('end', () => {
 
-        mapSvg.call(zoom);
+                console.log(d3.event.transform)
 
+                setTransform(d3.event.transform);
+
+            })
+
+        ;
+
+
+        mapSvg.call(zooming);
+
+        /*
+        mapSvg.transition().duration(2500).call(
+            zooming.transform,
+            d3.zoomIdentity.translate(transform.x, transform.y).scale(transform.k)
+        );
+        */
+
+        //var t = d3.zoomIdentity.translate(1, 2).scale(3);
+        //console.log(t)
+
+        //mapGroup.call(zooming.scaleTo,transform);
+
+        //var zoomOutTransform = d3.zoomIdentity.translate(0, 0).scale(4);
+
+        console.log(transform)
+
+        mapGroup
+            //.attr('transform', transform);
+            //.attr('transform', 'translate(' + zooming.transform.x + ', ' + zooming.transform.y + ')' + ' scale(' + zooming.transform.k + ')');
 
     };
 
@@ -138,7 +294,7 @@ export default function ZooMap(props) {
             }}
             >
                 <g id={mapId}>
-                    {/*<g id={graficElementId}>
+                    <g id={graficElementId}>
                         <path id="Außengrenze" d="M1135.98,42.969l936.876,28.688l29.753,68.103l17.205,45.545l54.206,164.683l-19.045,198.811l-6.701,44.86l4.266,171.165l4.295,173.515l-8.97,142.052l85.588,-47.05l200.304,-20.057l-26.98,123.035l-16.017,108.629l-5.525,40.04l-18.286,114.402l-31.678,138.872l-24.872,103.91l-28.506,137.987l-25.064,195.836l-112.793,-18.029l-220.187,-33.441l-538.381,-74.199l-157.458,-24.765l0.757,-89.209l301.673,-10.639l89.98,-105.094l-1.173,-20.429l-12.483,-26.991l-38.669,-11.673l-132.203,-40.396l-84.428,-25.5l-116.544,37.629l-131.389,41.041l-76.941,18.94l-38.361,0.766l-53.093,-28.168l-13.825,-22.789l-23.328,-99.999l-9.023,-14.244l-8.916,-7.399l-8.747,-6.121l-62.624,-22.012l-80.923,-16.648l-48.7,-11.973l-82.247,-27.58l-63.158,-30.178l-20.794,-10.652l-28.014,-16.189l-48.608,-23.736l-0.517,-21.545l-39.165,3.778l-86.685,22.323l-65.98,26.186l-40.315,29.123l-11.824,-12.179l24.402,-38.339l42.968,-81.032l28.222,-64.747l-1.676,-26.3l-20.711,-57.315l-28.646,-57.179l21.08,-1.301l-5.892,-37.549l-18.793,-5.911l-4.362,-3.843l-20.737,-67.795l4.758,-21.693l100.563,-43.227l190.08,-106.026l45.155,-93.219l13.57,-162.561l10.759,-135.698l162.829,-16.347l400.668,-240.953Z" style={{fill:'#c6cb84'}}/>
                         <path d="M1664.76,948.998c0.518,-0.206 1.085,-0.306 1.711,-0.277c4.609,0.129 6.318,9.334 18.43,22.927c6.439,8.806 23.292,24.402 25.14,29.499c-1.051,5.805 -10.876,7.45 -19.88,7.489c-13.23,0.237 -13.892,-3.528 -19.838,-6.109c-15.616,-8.681 -29.594,3.072 -32.649,-15.94c-0.842,-8.757 8.605,-12.633 15.123,-19.547l4.173,4.71l15.658,-13.871l-7.868,-8.881Z" style={{fill:'#0079ff'}}/>
                         <path d="M1596.94,978.215c3.422,-8.772 7.777,-12.551 12.51,-12.538c6.48,-0.121 7.286,6.266 6.879,10.142c-0.624,9.164 -3.541,10.626 -10.958,10.65c-4.072,0.045 -10.126,-0.852 -8.431,-8.254Z" style={{fill:'#0079ff'}}/>
@@ -231,8 +387,9 @@ export default function ZooMap(props) {
                         <path id="Musikmuschel" d="M1068.69,538.482c-1.4,1.078 -24.018,18.179 -35.995,5.818c-10.109,-9.711 1.556,-33.21 1.556,-33.21l34.507,27.338l-0.068,0.054Zm4.328,-3.503l-36.628,-29.019l-3.322,4.193l36.629,29.019l3.321,-4.193Z" style={{fill:'#e1bfa9'}}/>
                         <path id="WC-Spielplatz" d="M400.176,1129.7l-0.148,-2.172l23.983,-1.638l2.926,42.858l-112.173,7.659l-2.778,-40.686l88.19,-6.021Z" style={{fill:'#e1bfa9'}}/>
                         <path id="Zooschule" d="M286.19,950.196l32.942,-13.845l-10.138,-24.121l-32.941,13.845l10.137,24.121Zm-11.463,-47.056l-9.126,3.835l7.229,17.2l9.126,-3.836l-7.229,-17.199Zm-0.268,-0.639l19.669,-8.267l6.755,16.073l-19.669,8.266l-6.755,-16.072Zm41.151,-94.251l-26.041,10.945l28.659,68.189l26.041,-10.945l-28.659,-68.189Z" style={{fill:'#e1bfa9'}}/>
-                    </g>*/}
+                    </g>
                     <g id={mapElementId}></g>
+                    <g id={simplePath}></g>
                     <g id={positionId}></g>
                 </g>
             </svg>

@@ -8,7 +8,7 @@
                 "name": "Wege",
                 "slug": "wege",
                 "zIndex": 10,
-                "fill": "#ffffff"
+                "fill": "#ff0000"
             },
             "geometry": {
                 "type": "Polygon",

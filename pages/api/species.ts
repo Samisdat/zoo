@@ -295,7 +295,7 @@ export type Species = {
     species: string,
 };
 
-export default (req: NextApiRequest, res: NextApiResponse<Species[]>) => {
+export const getSpecies = ()=>{
 
     const species:Species[] = listOfSpecies.map((aSpecies)=>{
         return{
@@ -305,6 +305,13 @@ export default (req: NextApiRequest, res: NextApiResponse<Species[]>) => {
             species: aSpecies[3],
         }
     });
+
+    return species;
+}
+
+export default (req: NextApiRequest, res: NextApiResponse<Species[]>) => {
+
+    const species = getSpecies();
 
     res.status(200).json(species)
 

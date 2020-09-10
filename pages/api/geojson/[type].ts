@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import path from 'path';
-import fs from 'fs';
+import * as path from 'path';
+import * as fs from 'fs';
 
 export default async (req: NextApiRequest, res: NextApiResponse<any[]>) => {
 
@@ -14,12 +14,15 @@ export default async (req: NextApiRequest, res: NextApiResponse<any[]>) => {
 
     return new Promise((resolve, reject) => {
 
-        fs.stat(geojson, function(err, stats) {
+        fs.stat(geojson, function(err:NodeJS.ErrnoException) {
 
             if(err){
-                res.status(400).json({
-                    msg: err.message
-                });
+
+                const errorReponse:any[] = [
+                    err.message
+                ];
+
+                res.status(400).json(errorReponse);
 
                 reject(err.message);
             }

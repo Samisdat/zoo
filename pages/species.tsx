@@ -3,7 +3,6 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import ProTip from '../src/ProTip';
-import Link from '../src/Link';
 import Copyright from '../src/Copyright';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 
@@ -13,7 +12,7 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import Avatar from '@material-ui/core/Avatar';
-import {Species} from "./api/species";
+import {getSpecies, Species} from "./api/species";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -99,12 +98,11 @@ export default function Index(props) {
 
 export async function getStaticProps({ params, preview = false, previewData }) {
 
+    const species = getSpecies();
 
-    const response = await fetch('http://127.0.0.1:8080/api/species')
-    let json = await response.json();
     return {
         props: {
-            species: json,
+            species: species,
         },
     }
 }

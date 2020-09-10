@@ -8,7 +8,7 @@ import theme from '../src/theme';
 
 import LabelBottomNavigation from '../components/BottomNavigation';
 
-export default function MyApp(props) {
+export default function ZooWuppertal(props) {
   const { Component, pageProps } = props;
 
   React.useEffect(() => {
@@ -40,7 +40,7 @@ export default function MyApp(props) {
   );
 }
 
-MyApp.propTypes = {
+ZooWuppertal.propTypes = {
   Component: PropTypes.elementType.isRequired,
   pageProps: PropTypes.object.isRequired,
 };

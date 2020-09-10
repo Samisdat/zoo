@@ -57,7 +57,7 @@ export default function LabelBottomNavigation() {
         right: false,
     });
 
-    const toggleDrawer = (anchor: Anchor, open: boolean) => (
+    const toggleDrawer = (open: boolean) => (
         event: React.KeyboardEvent | React.MouseEvent,
     ) => {
         if (
@@ -69,17 +69,17 @@ export default function LabelBottomNavigation() {
             return;
         }
 
-        setState({ ...state, [anchor]: open });
+        setState({ ...state, ['bottom']: open });
     };
 
-    const list = (anchor: Anchor) => (
+    const list = () => (
         <div
             className={clsx(classes.list, {
                 [classes.fullList]: true,
             })}
             role="presentation"
-            onClick={toggleDrawer(anchor, false)}
-            onKeyDown={toggleDrawer(anchor, false)}
+            onClick={toggleDrawer( false)}
+            onKeyDown={toggleDrawer( false)}
         >
             <List>
                 <ListItem button key='about'>
@@ -138,10 +138,10 @@ export default function LabelBottomNavigation() {
             <SwipeableDrawer
                 anchor='bottom'
                 open={state['bottom']}
-                onClose={toggleDrawer('bottom', false)}
-                onOpen={toggleDrawer('bottom', true)}
+                onClose={toggleDrawer( false)}
+                onOpen={toggleDrawer( true)}
             >
-                {list('bottom')}
+                {list()}
             </SwipeableDrawer>
 
             <BottomNavigation
@@ -174,7 +174,7 @@ export default function LabelBottomNavigation() {
                     </MenuItem>
                 </Menu>
                 <BottomNavigationAction
-                    onClick={toggleDrawer('bottom', true)}
+                    onClick={toggleDrawer( true)}
                     label="Menu"
                     value="menu"
                     icon={<MenuIcon />}

@@ -3,6 +3,7 @@ import React from 'react';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 
 import dynamic from 'next/dynamic';
+import {getGeoJson} from "./api/geojson/remove-later/geojson";
 
 const Map = dynamic(() => import('../components/Map-Main'), {
   ssr: false
@@ -54,12 +55,9 @@ export default function Index(props) {
   );
 }
 
-export async function getStaticProps({ params, preview = false, previewData }) {
+export async function getStaticProps(context) {
 
-    console.log(process.env);
-    
-    const response = await fetch('http://127.0.0.1:8080/api/geojson/remove-later/geojson')
-    let geojson = await response.json();
+    let geojson = await getGeoJson();
 
     return {
         props: {

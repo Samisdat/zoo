@@ -15,7 +15,7 @@ let allowList = [
     'way-simple'
 ];
 
-export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
+export const getGeoJson = async () => {
 
     const dataDir = path.resolve(process.env.PWD + '/pages/api/data');
 
@@ -53,10 +53,16 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
 
     });
 
-    const geojson = {
+    return {
         "type": "FeatureCollection",
         features: features
     };
+
+}
+
+export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
+
+    const geojson = await getGeoJson();
 
     res.status(200).json(geojson);
 

@@ -19,10 +19,10 @@ export default async (req: NextApiRequest, res: NextApiResponse<any[]>) => {
         setTimeout(()=>{
 
 
-            res.status(200).json({
-                msg: 'top',
-                slug: urlSlug('Hei there')
-            });
+            res.status(200).json([
+                {msg: 'top'},
+                {slug: urlSlug('Hei there')}
+            ]);
 
             //fs.createReadStream(geojson).pipe(res);
             resolve();

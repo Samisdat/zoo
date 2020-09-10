@@ -2,9 +2,7 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
 import ProTip from '../src/ProTip';
-import Link from '../src/Link';
 import Copyright from '../src/Copyright';
 
 export default function About() {
@@ -14,9 +12,9 @@ export default function About() {
         <Typography variant="h4" component="h1" gutterBottom>
           Next.js example
         </Typography>
-        <Button variant="contained" color="primary" component={Link} naked href="/">
-          Go to the main page
-        </Button>
+        <a className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary" tabIndex={0}
+           role="button" aria-disabled="false" href="/"><span
+            className="MuiButton-label">Go to the main page</span><span className="MuiTouchRipple-root"></span></a>
         <ProTip />
         <Copyright />
       </Box>

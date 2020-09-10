@@ -5,15 +5,17 @@ import fs from 'fs';
 
 import urlSlug from 'url-slug'
 
-const allowList = [
+let allowList = [
+    'bounding-box',
     'aussengrenze',
     'wege',
     'ententeich',
     'gibbons',
-    'elefanten'
+    'elefanten',
+    'way-simple'
 ];
 
-export default async (req: NextApiRequest, res: NextApiResponse<any[]>) => {
+export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
 
     const dataDir = path.resolve(process.env.PWD + '/pages/api/data');
 

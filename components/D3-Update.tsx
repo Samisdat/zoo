@@ -4,8 +4,7 @@ import * as d3 from 'd3';
 
 import {usePersistedState} from "../hooks/persisted-state";
 import {
-    getCurrentPositionGeoJson,
-    updateCurrentPosition
+    getCurrentPositionGeoJson
 } from "../helper/getCurrentPosition";
 import {width} from "@material-ui/system";
 

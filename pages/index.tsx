@@ -4,7 +4,7 @@ import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 
 import dynamic from 'next/dynamic';
 
-const Map = dynamic(() => import('../components/Map'), {
+const Map = dynamic(() => import('../components/Map-Main'), {
   ssr: false
 });
 

@@ -18,12 +18,6 @@ import clsx from 'clsx';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import Link from "../src/Link";
-import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles({
     root: {
@@ -82,36 +76,51 @@ export default function LabelBottomNavigation() {
             onKeyDown={toggleDrawer( false)}
         >
             <List>
-                <ListItem button key='about'>
-                    <ListItemIcon><InboxIcon /></ListItemIcon>
-                    <Link href="/about" color="secondary">
-                        <ListItemText primary='about' />
-                    </Link>
-                </ListItem>
-                <ListItem button key='gmap'>
-                    <ListItemIcon><InboxIcon /></ListItemIcon>
-                    <Link href="/gmap" color="secondary">
-                        <ListItemText primary='Google Maps' />
-                    </Link>
-                </ListItem>
-                <ListItem button key='leaflet'>
-                    <ListItemIcon><InboxIcon /></ListItemIcon>
-                    <Link href="/leaflet" color="secondary">
-                        <ListItemText primary='leaflet' />
-                    </Link>
-                </ListItem>
-                <ListItem button key='geojson/list'>
-                    <ListItemIcon><InboxIcon /></ListItemIcon>
-                    <Link href="/geojson/list" color="secondary">
-                        <ListItemText primary='geojson/list' />
-                    </Link>
-                </ListItem>
-                <ListItem button key='geojson/new'>
-                    <ListItemIcon><InboxIcon /></ListItemIcon>
-                    <Link href="/geojson/new" color="secondary">
-                        <ListItemText primary='geojson/new' />
-                    </Link>
-                </ListItem>
+                <div className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button" tabIndex={0} role="button" aria-disabled="false">
+                    <a className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorSecondary"
+                       href="/about">
+                        <div className="MuiListItemText-root"><span
+                            className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock">about</span>
+                        </div>
+                    </a><span className="MuiTouchRipple-root"></span>
+                </div>
+
+                <div className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button" tabIndex={0} role="button" aria-disabled="false">
+                    <a className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorSecondary"
+                       href="/gmap">
+                        <div className="MuiListItemText-root"><span
+                            className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock">google map</span>
+                        </div>
+                    </a><span className="MuiTouchRipple-root"></span>
+                </div>
+
+                <div className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button" tabIndex={0} role="button" aria-disabled="false">
+                    <a className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorSecondary"
+                       href="/leaflet">
+                        <div className="MuiListItemText-root"><span
+                            className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock">leaflet</span>
+                        </div>
+                    </a><span className="MuiTouchRipple-root"></span>
+                </div>
+
+                <div className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button" tabIndex={0} role="button" aria-disabled="false">
+                    <a className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorSecondary"
+                       href="/geojson/list">
+                        <div className="MuiListItemText-root"><span
+                            className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock">geojson/list</span>
+                        </div>
+                    </a><span className="MuiTouchRipple-root"></span>
+                </div>
+
+                <div className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button" tabIndex={0} role="button" aria-disabled="false">
+                    <a className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorSecondary"
+                       href="/geojson/new">
+                        <div className="MuiListItemText-root"><span
+                            className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock">geojson/new</span>
+                        </div>
+                    </a><span className="MuiTouchRipple-root"></span>
+                </div>
+
             </List>
             <Divider />
             <br/><br/><br/><br/>

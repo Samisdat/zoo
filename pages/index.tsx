@@ -56,7 +56,8 @@ export default function Index(props) {
 
 export async function getStaticProps({ params, preview = false, previewData }) {
 
-
+    console.log(process.env);
+    
     const response = await fetch('http://127.0.0.1:8080/api/geojson/remove-later/geojson')
     let geojson = await response.json();
 

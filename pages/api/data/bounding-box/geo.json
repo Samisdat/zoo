@@ -1,0 +1,36 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Boundingbox",
+        "slug": "bounding-box",
+        "zIndex": 1,
+        "fill": "#f0f0f0",
+        "opacity": "0.3"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.105611562728882,
+            51.24177020918754
+          ],
+          [
+            7.115809321403503,
+            51.24177020918754
+          ],
+          [
+            7.115809321403503,
+            51.236776961813064
+          ],
+          [
+            7.105611562728882,
+            51.236776961813064
+          ]
+        ]
+      }
+    }
+  ]
+}

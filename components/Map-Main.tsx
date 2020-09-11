@@ -34,36 +34,8 @@ export default function ZooMap(props) {
 
     const renderSvg = () => {
 
-        console.log('renderSvg', 2)
-
-        const border = props.features.find((feature)=>{
-
-            return ('aussengrenze' === feature.properties.slug)
-
-        })
-
         let viewportWidth = window.innerWidth;
         let viewportHeight = window.innerHeight;
-
-        let simpleWay = props.features.find((feature)=>{
-
-            return ('way-simple' === feature.properties.slug)
-
-        })
-
-        let simpleWayCollection = {
-            type: "FeatureCollection",
-            features: simpleWay.geometry.coordinates.map((coordinate)=>{
-
-                return     {
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": coordinate
-                    }
-                }
-            })
-        };
 
         const projection = d3.geoMercator()
             .translate([viewportWidth / 2, viewportHeight / 2]);
@@ -71,7 +43,7 @@ export default function ZooMap(props) {
         const geoPath = d3.geoPath()
             .projection(projection);
 
-        var center = d3.geoCentroid(border);
+        var center = d3.geoCentroid(props.border);
 
         projection
             .scale(3000000)
@@ -87,7 +59,7 @@ export default function ZooMap(props) {
         var elementsGroup = mapSvg.select(`#${mapElementId}`);
 
         elementsGroup.selectAll("path")
-            .data(props.features)
+            .data(props.boundingBox.features)
             .enter()
             .append("path")
             .attr("fill", (d)=>{
@@ -101,7 +73,6 @@ export default function ZooMap(props) {
                 return d.properties.opacity;
             })
             .attr("id", (d)=>{
-                console.log(d.properties.slug)
                 return d.properties.slug;
             })
             .attr("d", geoPath)
@@ -113,85 +84,21 @@ export default function ZooMap(props) {
                 return  d.properties.name;
             });
 
-        /*
-        7.105611562728882
-        51.24177020918754
-
-        7.115809321403503
-        51.236776961813064
-        */
-
-        /*
-        const left = 7.105611562728882;
-        const right = 7.115809321403503;
-
-        const top = 51.24177020918754;
-        const bottom = 51.236776961813064;
-
-
-        let boundCollection = {
-            type: "FeatureCollection",
-            features: [
-                {
-                    type: "Feature",
-                    properties: {
-                        name: "Außengrenze",
-                        slug: "aussengrenze",
-                        zIndex: 1,
-                        fill: "#000fff"
-                    },
-                    geometry: {
-                        type: "LineString",
-                        coordinates: [
-                            [
-                                left,
-                                top,
-                            ],
-                            [
-                                right,
-                                top,
-                            ],
-                            [
-                                right,
-                                bottom,
-                            ],
-                            [
-                                left,
-                                bottom,
-                            ],
-                        ]
-                    }
-                },
-
-            ]
-        };
-
-        elementsGroup.selectAll("path")
-            .data(boundCollection.features)
-            .enter()
-            .append("path")
-            .attr("fill", 'lime')
-            .attr("stroke", 'red')
-            .attr("opacity", '0.4')
-            .attr("id", 'bound')
-            .attr("d", geoPath)
-        ;
-         */
-
         const bound = mapSvg.select(`#bounding-box`);
+
         const boundingBox = bound.node().getBBox();
 
         //console.log(boundingBox.width / 2550)
 
         const graficElementGroup = mapSvg.select(`#${graficElementId}`);
+
         graficElementGroup
             .attr("transform", "translate(" + boundingBox.x + "," + boundingBox.y + ") scale(0.20939347809436273)");
 
-        var voronoiGroup = mapSvg.select(`#${simplePath}`);
-                console.log()
+        var simplePathGroup = mapSvg.select(`#${simplePath}`);
 
-        let points = voronoiGroup.selectAll("circle")
-            .data(simpleWayCollection.features)
+        let points = simplePathGroup.selectAll("circle")
+            .data(props.ways.features)
             .enter()
             .append("circle")
             .attr("transform", function(d) { return "translate(" + geoPath.centroid(d) + ")"; })
@@ -229,6 +136,7 @@ export default function ZooMap(props) {
 
         function onClick() {
 
+            console.log(d3.mouse(this))
             const position = projection.invert(d3.mouse(this))
 
             setMarker({
@@ -239,7 +147,7 @@ export default function ZooMap(props) {
         };
 
 
-        simpleWayCollection.features.forEach((feature)=>{
+        props.ways.features.forEach((feature)=>{
 
             //console.log(feature.geometry.coordinates[0])
 
@@ -260,7 +168,6 @@ export default function ZooMap(props) {
 
             })
             .on('end', () => {
-
 
                 setTransform(d3.event.transform);
 
@@ -284,7 +191,6 @@ export default function ZooMap(props) {
         //mapGroup.call(zooming.scaleTo,transform);
 
         //var zoomOutTransform = d3.zoomIdentity.translate(0, 0).scale(4);
-
 
         mapGroup
             //.attr('transform', transform);

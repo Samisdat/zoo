@@ -11,6 +11,8 @@ import MapDrawed from './Map-Drawed'
 
 export default function ZooMap(props) {
 
+    console.log(props)
+
     const svgId = 'main-svg';
     const mapId = 'main-map';
     const graficElementId = 'main-grafik';
@@ -177,13 +179,11 @@ export default function ZooMap(props) {
          */
 
         const bound = mapSvg.select(`#bounding-box`);
-        console.log(bound.node().getBBox())
         const boundingBox = bound.node().getBBox();
 
-        console.log(boundingBox.width / 2550)
+        //console.log(boundingBox.width / 2550)
 
         const graficElementGroup = mapSvg.select(`#${graficElementId}`);
-        console.log(graficElementGroup);
         graficElementGroup
             .attr("transform", "translate(" + boundingBox.x + "," + boundingBox.y + ") scale(0.20939347809436273)");
 
@@ -261,7 +261,6 @@ export default function ZooMap(props) {
             })
             .on('end', () => {
 
-                console.log(d3.event.transform)
 
                 setTransform(d3.event.transform);
 
@@ -286,7 +285,6 @@ export default function ZooMap(props) {
 
         //var zoomOutTransform = d3.zoomIdentity.translate(0, 0).scale(4);
 
-        console.log(transform)
 
         mapGroup
             //.attr('transform', transform);

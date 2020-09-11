@@ -6,7 +6,8 @@ export default function MapDrawed(props) {
 
     const scaleToBound = () => {
 
-        console.log('scaleToBound')
+        console.log('scaleToBound');
+
     };
 
     useEffect(() => {

@@ -17,8 +17,6 @@ export default function ZooMap(props) {
         lng: 7.107757
     });
 
-    console.log(marker);
-
     const onClick = (event:any) => {
 
         const { lat, lng } = event.latlng;

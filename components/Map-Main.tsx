@@ -8,8 +8,9 @@ import {
 } from "../helper/getCurrentPosition";
 
 import MapDrawed from './Map-Drawed'
+import MapPosition from "./Map-Position";
 
-export default function ZooMap(props) {
+export default function MapMain(props) {
 
     console.log(props)
 
@@ -21,16 +22,36 @@ export default function ZooMap(props) {
 
     const simplePath = 'main-Voronoi';
 
+    let geoPath = undefined;
+
     const [marker, setMarker] = usePersistedState('marker', {
         lat: 51.238741,
-        lng: 7.107757
+        lng: 7.107757,
+        isWithin: true,
+        text: 'Map Marker Text'
     });
+
+    const changeMarker = (text:string) => {
+        console.log('Call from child', text);
+
+        setMarker(
+            {
+                ...marker,
+                text:text
+            }
+        )
+    }
+
 
     const [transform, setTransform] = usePersistedState('zoom', {
         k:1,
         x:0,
         y:0
     });
+
+    const [mainText, setMainText] = usePersistedState('main-text', 'Map Main State');
+
+    console.log(mainText)
 
     const renderSvg = () => {
 
@@ -40,7 +61,7 @@ export default function ZooMap(props) {
         const projection = d3.geoMercator()
             .translate([viewportWidth / 2, viewportHeight / 2]);
 
-        const geoPath = d3.geoPath()
+        geoPath = d3.geoPath()
             .projection(projection);
 
         var center = d3.geoCentroid(props.border);
@@ -111,7 +132,7 @@ export default function ZooMap(props) {
             .attr("d", geoPath)
             .attr("r", 5);
 
-
+        /*
         var positionGroup = mapSvg.select(`#${positionId}`);
         const currentPosition = getCurrentPositionGeoJson('initial', marker.lat, marker.lng);
 
@@ -134,15 +155,20 @@ export default function ZooMap(props) {
 
         ;
 
+         */
+
         function onClick() {
 
-            console.log(d3.mouse(this))
             const position = projection.invert(d3.mouse(this))
 
             setMarker({
                 lng: position[0],
-                lat: position[1]
+                lat: position[1],
+                isWithin: d3.geoContains(props.border, position),
+                text: 'Map Marker Text Update'
             })
+
+            console.log(marker)
 
         };
 
@@ -214,7 +240,12 @@ export default function ZooMap(props) {
                     <MapDrawed {...props}></MapDrawed>
                     <g id={mapElementId}></g>
                     <g id={simplePath}></g>
-                    <g id={positionId}></g>
+
+                    <text id="eins" x="10" y="120" style={{
+                        color: '#fff',
+                        fontWeight: 'bold'
+                    }}>{mainText}</text>
+                    <MapPosition callback={changeMarker} geoPath={geoPath} {...marker} />
                 </g>
             </svg>
 

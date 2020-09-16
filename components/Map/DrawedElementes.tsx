@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 
-export default function MapDrawed(props) {
+export default function DrawedElementes(props) {
 
     const graficElementId = 'main-grafik';
 

@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 import {getGeoJson} from "./api/geojson/remove-later/geojson";
 import {Feature, FeatureCollection, LineString, Polygon} from "geojson";
 
-const Map = dynamic(() => import('../components/Map-Main'), {
+const MainMap = dynamic(() => import('components/Map/MainMap'), {
   ssr: false
 });
 
@@ -58,7 +58,7 @@ export default function Index(props) {
 
   return (
       <div>
-        <Map {...props}></Map>
+        <MainMap {...props}></MainMap>
       </div>
 
   );

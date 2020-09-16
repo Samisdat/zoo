@@ -2,15 +2,20 @@ import {useEffect, useState} from 'react';
 
 import * as d3 from 'd3';
 
-import {usePersistedState} from "../hooks/persisted-state";
+import {usePersistedState} from "hooks/persisted-state";
 import {
     getCurrentPositionGeoJson
-} from "../helper/getCurrentPosition";
+} from "helper/getCurrentPosition";
 
-import MapDrawed from './Map-Drawed'
-import MapPosition from "./Map-Position";
+import DrawedElementes from 'components/Map/DrawedElementes';
+import dynamic from "next/dynamic";
 
-export default function MapMain(props) {
+const CurrentPosition = dynamic(() => import('components/Map/CurrentPosition'), {
+    ssr: false
+});
+
+
+export default function MainMap(props) {
 
     console.log(props)
 
@@ -23,6 +28,7 @@ export default function MapMain(props) {
     const simplePath = 'main-Voronoi';
 
     let geoPath = undefined;
+    let foobar = undefined;
 
     const [marker, setMarker] = usePersistedState('marker', {
         lat: 51.238741,
@@ -54,6 +60,8 @@ export default function MapMain(props) {
     console.log(mainText)
 
     const renderSvg = () => {
+
+        foobar = 'super';
 
         let viewportWidth = window.innerWidth;
         let viewportHeight = window.innerHeight;
@@ -226,6 +234,10 @@ export default function MapMain(props) {
 
     useEffect(() => {
         renderSvg();
+
+        console.log('geopath', geoPath)
+
+        console.log('foobar', foobar)
     });
 
     return (
@@ -237,7 +249,7 @@ export default function MapMain(props) {
             }}
             >
                 <g id={mapId}>
-                    <MapDrawed {...props}></MapDrawed>
+                    <DrawedElementes {...props}></DrawedElementes>
                     <g id={mapElementId}></g>
                     <g id={simplePath}></g>
 
@@ -245,7 +257,7 @@ export default function MapMain(props) {
                         color: '#fff',
                         fontWeight: 'bold'
                     }}>{mainText}</text>
-                    <MapPosition callback={changeMarker} geoPath={geoPath} {...marker} />
+                    <CurrentPosition foobar={foobar} callback={changeMarker} geoPath={geoPath} {...marker} />
                 </g>
             </svg>
 

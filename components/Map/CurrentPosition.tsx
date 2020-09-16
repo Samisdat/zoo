@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
 
 import * as d3 from 'd3';
-import {getCurrentPositionGeoJson} from "../helper/getCurrentPosition";
+import {getCurrentPositionGeoJson} from "helper/getCurrentPosition";
 
-export default function MapPosition(props) {
+export default function CurrentPosition(props) {
 
     const svgId = 'main-svg';
 
@@ -27,7 +27,7 @@ export default function MapPosition(props) {
             .data(currentPosition)
             .join("circle")
 
-            .attr("transform", function(d) { return "translate(" + geoPath.centroid(d) + ")"; })
+            .attr("transform", function(d) { return "translate(" + props.geoPath.centroid(d) + ")"; })
             .attr("title", (d)=>{
                 return d.properties.slug;
             })
@@ -37,7 +37,7 @@ export default function MapPosition(props) {
             .attr("stroke", (d)=>{
                 return d.properties.stroke;
             })
-            .attr("d", geoPath)
+            .attr("d", props.geoPath)
             .attr("r", 5)
 
         ;
@@ -54,6 +54,8 @@ export default function MapPosition(props) {
     const onClick = () => {
         props.callback('An update from child');
     };
+
+
 
     return (
         <React.Fragment>

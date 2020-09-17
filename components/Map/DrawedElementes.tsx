@@ -1,12 +1,65 @@
-import {useEffect} from 'react';
+import * as d3 from 'd3';
+
+import React, {useEffect} from 'react';
+import {MapContext} from "./Context";
 
 export default function DrawedElementes(props) {
 
-    const graficElementId = 'main-grafik';
+        const svgId = 'main-svg';
+        const mapId = 'main-map';
+
+        const mapElementId = 'main-elements';
+
+        const graficElementId = 'main-grafik';
 
     const scaleToBound = () => {
 
-        console.log('scaleToBound');
+            const geoPath = MapContext.Consumer.geoPath;
+
+            if(undefined === geoPath){
+                    return;
+            }
+
+            var mapSvg = d3.select(`#${svgId}`)
+        
+            var elementsGroup = mapSvg.select(`#${mapElementId}`);
+
+            elementsGroup.selectAll("path")
+                .data(props.boundingBox.features)
+                .enter()
+                .append("path")
+                .attr("fill", (d)=>{
+                        return d.properties.fill;
+                })
+                .attr("stroke", (d)=>{
+                        return d.properties.stroke;
+                })
+                .attr("opacity", (d)=>{
+                        return 0.3;
+                        return d.properties.opacity;
+                })
+                .attr("id", (d)=>{
+                        return d.properties.slug;
+                })
+                .attr("d", geoPath)
+                .attr('title', (d) => {
+                        if(undefined === d.properties || undefined === d.properties.name){
+                                return;
+                        }
+
+                        return  d.properties.name;
+                });
+
+            const bound = mapSvg.select(`#bounding-box`);
+
+            const boundingBox = bound.node().getBBox();
+
+            //console.log(boundingBox.width / 2550)
+
+            const graficElementGroup = mapSvg.select(`#${graficElementId}`);
+
+            graficElementGroup
+                .attr("transform", "translate(" + boundingBox.x + "," + boundingBox.y + ") scale(0.20939347809436273)");
 
     };
 
@@ -15,6 +68,8 @@ export default function DrawedElementes(props) {
     });
 
     return (
+        <React.Fragment>
+        <g id={mapElementId}></g>
         <g id={graficElementId}>
             <path id="Außengrenze" d="M1135.98,42.969l936.876,28.688l29.753,68.103l17.205,45.545l54.206,164.683l-19.045,198.811l-6.701,44.86l4.266,171.165l4.295,173.515l-8.97,142.052l85.588,-47.05l200.304,-20.057l-26.98,123.035l-16.017,108.629l-5.525,40.04l-18.286,114.402l-31.678,138.872l-24.872,103.91l-28.506,137.987l-25.064,195.836l-112.793,-18.029l-220.187,-33.441l-538.381,-74.199l-157.458,-24.765l0.757,-89.209l301.673,-10.639l89.98,-105.094l-1.173,-20.429l-12.483,-26.991l-38.669,-11.673l-132.203,-40.396l-84.428,-25.5l-116.544,37.629l-131.389,41.041l-76.941,18.94l-38.361,0.766l-53.093,-28.168l-13.825,-22.789l-23.328,-99.999l-9.023,-14.244l-8.916,-7.399l-8.747,-6.121l-62.624,-22.012l-80.923,-16.648l-48.7,-11.973l-82.247,-27.58l-63.158,-30.178l-20.794,-10.652l-28.014,-16.189l-48.608,-23.736l-0.517,-21.545l-39.165,3.778l-86.685,22.323l-65.98,26.186l-40.315,29.123l-11.824,-12.179l24.402,-38.339l42.968,-81.032l28.222,-64.747l-1.676,-26.3l-20.711,-57.315l-28.646,-57.179l21.08,-1.301l-5.892,-37.549l-18.793,-5.911l-4.362,-3.843l-20.737,-67.795l4.758,-21.693l100.563,-43.227l190.08,-106.026l45.155,-93.219l13.57,-162.561l10.759,-135.698l162.829,-16.347l400.668,-240.953Z" style={{fill:'#c6cb84'}}/>
             <path d="M1664.76,948.998c0.518,-0.206 1.085,-0.306 1.711,-0.277c4.609,0.129 6.318,9.334 18.43,22.927c6.439,8.806 23.292,24.402 25.14,29.499c-1.051,5.805 -10.876,7.45 -19.88,7.489c-13.23,0.237 -13.892,-3.528 -19.838,-6.109c-15.616,-8.681 -29.594,3.072 -32.649,-15.94c-0.842,-8.757 8.605,-12.633 15.123,-19.547l4.173,4.71l15.658,-13.871l-7.868,-8.881Z" style={{fill:'#0079ff'}}/>
@@ -109,6 +164,7 @@ export default function DrawedElementes(props) {
             <path id="WC-Spielplatz" d="M400.176,1129.7l-0.148,-2.172l23.983,-1.638l2.926,42.858l-112.173,7.659l-2.778,-40.686l88.19,-6.021Z" style={{fill:'#e1bfa9'}}/>
             <path id="Zooschule" d="M286.19,950.196l32.942,-13.845l-10.138,-24.121l-32.941,13.845l10.137,24.121Zm-11.463,-47.056l-9.126,3.835l7.229,17.2l9.126,-3.836l-7.229,-17.199Zm-0.268,-0.639l19.669,-8.267l6.755,16.073l-19.669,8.266l-6.755,-16.072Zm41.151,-94.251l-26.041,10.945l28.659,68.189l26.041,-10.945l-28.659,-68.189Z" style={{fill:'#e1bfa9'}}/>
         </g>
+        </React.Fragment>
     );
 
 }

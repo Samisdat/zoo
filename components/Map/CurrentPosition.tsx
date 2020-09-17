@@ -9,8 +9,6 @@ export default function CurrentPosition(props) {
 
     const svgId = 'main-svg';
 
-    console.log(props)
-
     const positionId = 'main-position';
 
     const scaleToBound = () => {
@@ -22,12 +20,11 @@ export default function CurrentPosition(props) {
         }
 
         var mapSvg = d3.select(`#${svgId}`)
-        console.log('scaleToBound');
 
         var positionGroup = mapSvg.select(`#${positionId}`);
         const currentPosition = getCurrentPositionGeoJson('initial', props.lat, props.lng);
 
-        let update = positionGroup.selectAll("circle")
+        positionGroup.selectAll("circle")
             .data(currentPosition)
             .join("circle")
 
@@ -42,11 +39,7 @@ export default function CurrentPosition(props) {
                 return d.properties.stroke;
             })
             .attr("d", geoPath)
-            .attr("r", 5)
-
-        ;
-
-
+            .attr("r", 5);
     };
 
     useEffect(() => {

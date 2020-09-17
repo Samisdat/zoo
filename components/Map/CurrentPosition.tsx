@@ -3,6 +3,8 @@ import React, {useEffect} from 'react';
 import * as d3 from 'd3';
 import {getCurrentPositionGeoJson} from "helper/getCurrentPosition";
 
+import {MapContext} from 'components/Map/Context';
+
 export default function CurrentPosition(props) {
 
     const svgId = 'main-svg';
@@ -13,7 +15,9 @@ export default function CurrentPosition(props) {
 
     const scaleToBound = () => {
 
-        if(undefined === props.geoPath){
+        const geoPath = MapContext.Consumer.geoPath;
+
+        if(undefined === geoPath){
             return;
         }
 
@@ -27,7 +31,7 @@ export default function CurrentPosition(props) {
             .data(currentPosition)
             .join("circle")
 
-            .attr("transform", function(d) { return "translate(" + props.geoPath.centroid(d) + ")"; })
+            .attr("transform", function(d) { return "translate(" + geoPath.centroid(d) + ")"; })
             .attr("title", (d)=>{
                 return d.properties.slug;
             })
@@ -37,7 +41,7 @@ export default function CurrentPosition(props) {
             .attr("stroke", (d)=>{
                 return d.properties.stroke;
             })
-            .attr("d", props.geoPath)
+            .attr("d", geoPath)
             .attr("r", 5)
 
         ;
@@ -46,8 +50,8 @@ export default function CurrentPosition(props) {
     };
 
     useEffect(() => {
-        scaleToBound();
 
+        scaleToBound();
 
     });
 

@@ -15,9 +15,9 @@ const CurrentPosition = dynamic(() => import('components/Map/CurrentPosition'), 
 });
 
 
-export default function MainMap(props) {
+import {MapContext} from 'components/Map/Context';
 
-    console.log(props)
+export default function MainMap(props) {
 
     const svgId = 'main-svg';
     const mapId = 'main-map';
@@ -71,6 +71,9 @@ export default function MainMap(props) {
 
         geoPath = d3.geoPath()
             .projection(projection);
+
+        MapContext.Consumer.geoPath = geoPath;
+        console.log(MapContext.Consumer.geoPath)
 
         var center = d3.geoCentroid(props.border);
 
@@ -234,10 +237,6 @@ export default function MainMap(props) {
 
     useEffect(() => {
         renderSvg();
-
-        console.log('geopath', geoPath)
-
-        console.log('foobar', foobar)
     });
 
     return (
@@ -257,7 +256,7 @@ export default function MainMap(props) {
                         color: '#fff',
                         fontWeight: 'bold'
                     }}>{mainText}</text>
-                    <CurrentPosition foobar={foobar} callback={changeMarker} geoPath={geoPath} {...marker} />
+                    <CurrentPosition callback={changeMarker} {...marker} />
                 </g>
             </svg>
 

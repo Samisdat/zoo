@@ -19,7 +19,13 @@ export default function MainMap(props) {
 
     let geoPath = undefined;
 
-    const [marker, setMarker] = usePersistedState('marker', {
+    const [dimension, setDimension] = usePersistedState('dimension', {
+        width:320,
+        height:568
+    });
+
+
+    const [currentPosition, setCurrentPosition] = usePersistedState('currentPosition', {
         lat: 51.238741,
         lng: 7.107757,
         isWithin: true,
@@ -29,9 +35,9 @@ export default function MainMap(props) {
     const changeMarker = (text:string) => {
         console.log('Call from child', text);
 
-        setMarker(
+        setCurrentPosition(
             {
-                ...marker,
+                ...currentPosition,
                 text:text
             }
         )
@@ -80,7 +86,7 @@ export default function MainMap(props) {
 
             const position = projection.invert(d3.mouse(this))
 
-            setMarker({
+            setCurrentPosition({
                 lng: position[0],
                 lat: position[1],
                 isWithin: d3.geoContains(props.border, position),
@@ -111,16 +117,33 @@ export default function MainMap(props) {
 
     useEffect(() => {
         renderSvg();
+        console.log(document.getElementById(svgId));
     });
+
+    let viewportWidth = window.innerWidth;
+    let viewportHeight = window.innerHeight;
+
+    console.log(viewportWidth, viewportHeight);
+
+    const onWindowSize = () => {
+
+        let viewportWidth = window.innerWidth;
+        let viewportHeight = window.innerHeight;
+
+        console.log(viewportWidth, viewportHeight);
+
+        setDimension({
+            width: viewportWidth,
+            height: viewportHeight,
+        });
+
+    };
+
+    window.onresize = onWindowSize;
 
     return (
         <div>
-            <svg id={svgId} style={{
-                width: '100%',
-                height: '100%',
-                background: 'red'
-            }}
-            >
+            <svg id={svgId}>
                 <g id={mapId}>
                     <DrawedElementes {...props}></DrawedElementes>
                     <Ways {...props.ways}></Ways>
@@ -128,7 +151,7 @@ export default function MainMap(props) {
                         color: '#fff',
                         fontWeight: 'bold'
                     }}>{mainText}</text>
-                    <CurrentPosition callback={changeMarker} {...marker} />
+                    <CurrentPosition callback={changeMarker} {...currentPosition} />
                 </g>
             </svg>
 

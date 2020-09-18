@@ -3,7 +3,10 @@ import {useEffect, useState} from 'react';
 import * as d3 from 'd3';
 
 import {usePersistedState} from "hooks/persisted-state";
+
+import Sketched from 'components/D3/Sketched';
 import CurrentPosition from 'components/D3/CurrentPosition';
+import Ways from "components/D3/Ways";
 
 export default function Parent(props) {
 
@@ -75,7 +78,12 @@ export default function Parent(props) {
             width: width,
             height: height,
             geoPath: geoPath,
-            marker: marker
+            marker: marker,
+            transform: {
+                k:1,
+                x:0,
+                y:0
+            }
         };
 
         setD3PropertiesState(d3Properties);
@@ -100,7 +108,11 @@ export default function Parent(props) {
                 background: 'red'
             }}
             >
-                <CurrentPosition d3PropertiesState={d3PropertiesState}></CurrentPosition>
+                <g id={mapId}>
+                    <Sketched d3PropertiesState={d3PropertiesState} {...props}></Sketched>
+                    <Ways  d3PropertiesState={d3PropertiesState} {...props.ways}></Ways>
+                    <CurrentPosition d3PropertiesState={d3PropertiesState}></CurrentPosition>
+                </g>
             </svg>
 
 

@@ -110,7 +110,7 @@ export default function Parent(props) {
             >
                 <g id={mapId}>
                     <Sketched d3PropertiesState={d3PropertiesState} {...props}></Sketched>
-                    <Ways  d3PropertiesState={d3PropertiesState} {...props.ways}></Ways>
+                    <Ways  d3PropertiesState={d3PropertiesState} simpleWay={props.simpleWay}{...props.ways}></Ways>
                     <CurrentPosition d3PropertiesState={d3PropertiesState}></CurrentPosition>
                 </g>
             </svg>

@@ -7,6 +7,7 @@ import Map from 'components/D3/Map';
 interface IndexProps{
     border: Feature<Polygon>;
     ways: FeatureCollection<LineString>;
+    simpleWay: FeatureCollection<LineString>;
     boundingBox: FeatureCollection<LineString>;
 }
 
@@ -64,6 +65,7 @@ export async function getStaticProps(context) {
     const indexProps:IndexProps = {
         border: border,
         ways: simpleWayCollection,
+        simpleWay: simpleWay,
         boundingBox:boundingBoxCollection
     };
 

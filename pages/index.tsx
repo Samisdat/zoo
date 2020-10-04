@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {getGeoJson} from './api/geojson/remove-later/geojson';
+import {getGeoJson} from './api/geojson/geojson';
 import {Feature, FeatureCollection, LineString, Polygon} from 'geojson';
 import Map from 'components/D3/Map';
 

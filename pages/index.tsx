@@ -1,64 +1,21 @@
 import React from 'react';
 
-import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
-
-import dynamic from 'next/dynamic';
-import {getGeoJson} from "./api/geojson/remove-later/geojson";
-import {Feature, FeatureCollection, LineString, Polygon} from "geojson";
-
-const MainMap = dynamic(() => import('components/Map/MainMap'), {
-  ssr: false
-});
-
-
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-      text: {
-        padding: theme.spacing(2, 2, 0),
-      },
-      paper: {
-        paddingBottom: 50,
-      },
-      list: {
-        marginBottom: theme.spacing(2),
-      },
-      subheader: {
-        backgroundColor: theme.palette.background.paper,
-      },
-      appBar: {
-        top: 'auto',
-        bottom: 0,
-      },
-      grow: {
-        flexGrow: 1,
-      },
-      fabButton: {
-        position: 'absolute',
-        zIndex: 1,
-        top: -30,
-        left: 0,
-        right: 0,
-        margin: '0 auto',
-      },
-    }),
-);
-
+import {getGeoJson} from './api/geojson/remove-later/geojson';
+import {Feature, FeatureCollection, LineString, Polygon} from 'geojson';
+import Map from 'components/D3/Map';
 
 interface IndexProps{
     border: Feature<Polygon>;
     ways: FeatureCollection<LineString>;
+    simpleWay: FeatureCollection<LineString>;
     boundingBox: FeatureCollection<LineString>;
 }
 
 export default function Index(props) {
 
-  console.log(props)
-
-  const classes = useStyles();
-
   return (
       <div>
-        <MainMap {...props}></MainMap>
+        <Map {...props}></Map>
       </div>
 
   );
@@ -108,6 +65,7 @@ export async function getStaticProps(context) {
     const indexProps:IndexProps = {
         border: border,
         ways: simpleWayCollection,
+        simpleWay: simpleWay,
         boundingBox:boundingBoxCollection
     };
 

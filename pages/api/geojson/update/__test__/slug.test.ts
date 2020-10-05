@@ -1,6 +1,55 @@
 import {addMetaInfo} from "../[slug]";
 
-describe('update/create geojson ', () => {
+import http, {Server} from 'http'
+import fetch from 'isomorphic-unfetch'
+import listen from 'test-listen'
+import { apiResolver } from 'next/dist/next-server/server/api-utils'
+import handler from "../[slug]";
+
+describe('Integrations tests for geojson/update endpoint', () => {
+    let server: Server
+    let url: string
+
+    const apiPreviewPropsMock = {
+        previewModeId: "id",
+        previewModeEncryptionKey: "key",
+        previewModeSigningKey: "key",
+    };
+
+    beforeAll(async (done) => {
+        server = http.createServer((req, res) => apiResolver(
+            req,
+            res,
+            undefined,
+            handler,
+            apiPreviewPropsMock,
+            false
+        ))
+        url = await listen(server)
+        done()
+    })
+
+    afterAll(async (done) => {
+        server.close(done)
+    })
+
+    test('Should return 200 informing internet status if OK', async () => {
+
+        const response = await fetch('http://127.0.0.1:8080/api/geojson/update/aussengrenze')
+        const jsonResult = await response.json()
+
+        expect(response.status).toBe(200);
+        expect(jsonResult).toMatchObject({
+            name: "Außengrenze",
+            slug: "aussengrenze",
+            zIndex: 1,
+            fill: "#B6E2B6"
+        })
+    })
+
+});
+
+describe.skip('update/create geojson ', () => {
 
     it('adds meta info to svg if not yet present - multiline', ()=>{
 
@@ -65,7 +114,7 @@ describe('update/create geojson ', () => {
 
     });
 
-
-
 });
+
+
 

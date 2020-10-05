@@ -49,7 +49,7 @@ describe('Integrations tests for geojson/update endpoint', () => {
 
 });
 
-describe.skip('update/create geojson ', () => {
+describe('update/create geojson ', () => {
 
     it('adds meta info to svg if not yet present - multiline', ()=>{
 

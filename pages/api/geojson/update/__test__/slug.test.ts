@@ -1,12 +1,28 @@
 import {addMetaInfo} from "../[slug]";
 
-import { apiResolver } from 'next/dist/next-server/server/api-utils'
-import handler from "../[slug]";
-
 import { createMocks } from 'node-mocks-http';
 import handleUpdate from '../[slug]';
 
 describe('geojson/update endpoint', () => {
+
+    it('returns status 400 if slug is undefined', async () => {
+        const { req, res } = createMocks({
+            method: 'GET',
+            query: {},
+        });
+
+        await handleUpdate(req, res);
+
+        expect(res._getStatusCode()).toBe(400);
+
+        const responseJson = JSON.parse(res._getData());
+
+        console.log(responseJson);
+
+        expect(responseJson).toEqual(
+            { msg: 'slug not defined' }
+        );
+    });
 
     it('returns status 200 and an object for valid slug', async () => {
         const { req, res } = createMocks({
@@ -20,12 +36,13 @@ describe('geojson/update endpoint', () => {
 
         expect(res._getStatusCode()).toBe(200);
 
-        expect(JSON.parse(res._getData())).toEqual(
-            expect.objectContaining(
-                {"fill": "#B6E2B6", "name": "Außengrenze", "slug": "aussengrenze", "zIndex": 1}
-            ),
+        const responseJson = JSON.parse(res._getData());
+
+        expect(responseJson).toEqual(
+            {"fill": "#B6E2B6", "name": "Außengrenze", "slug": "aussengrenze", "zIndex": 1}
         );
     });
+
 });
 
 describe('update/create geojson ', () => {

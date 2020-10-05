@@ -23,12 +23,16 @@ export const addMetaInfo = (svg:string):string => {
 
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse<any[]>) => {
+export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
 
     const {
         query: { slug },
-    } = req
+    } = req;
 
+    if(undefined === slug){
+        res.status(400).json({msg:'slug not defined'});
+        return;
+    }
     const dataDir = path.resolve(process.env.PWD + '/pages/api/data');
 
     const json = JSON.parse(fs.readFileSync(dataDir + '/' + slug + '/data.json', {encoding: 'utf8'}));

@@ -1,52 +1,31 @@
 import {addMetaInfo} from "../[slug]";
 
-import http, {Server} from 'http'
-import fetch from 'isomorphic-unfetch'
-import listen from 'test-listen'
 import { apiResolver } from 'next/dist/next-server/server/api-utils'
 import handler from "../[slug]";
 
-describe('Integrations tests for geojson/update endpoint', () => {
-    let server: Server
-    let url: string
+import { createMocks } from 'node-mocks-http';
+import handleUpdate from '../[slug]';
 
-    const apiPreviewPropsMock = {
-        previewModeId: "id",
-        previewModeEncryptionKey: "key",
-        previewModeSigningKey: "key",
-    };
+describe('geojson/update endpoint', () => {
 
-    beforeAll(async (done) => {
-        server = http.createServer((req, res) => apiResolver(
-            req,
-            res,
-            undefined,
-            handler,
-            apiPreviewPropsMock,
-            false
-        ))
-        url = await listen(server)
-        done()
-    })
+    it('returns status 200 and an object for valid slug', async () => {
+        const { req, res } = createMocks({
+            method: 'GET',
+            query: {
+                slug: 'aussengrenze',
+            },
+        });
 
-    afterAll(async (done) => {
-        server.close(done)
-    })
+        await handleUpdate(req, res);
 
-    test('Should return 200 informing internet status if OK', async () => {
+        expect(res._getStatusCode()).toBe(200);
 
-        const response = await fetch('http://127.0.0.1:8080/api/geojson/update/aussengrenze')
-        const jsonResult = await response.json()
-
-        expect(response.status).toBe(200);
-        expect(jsonResult).toMatchObject({
-            name: "Außengrenze",
-            slug: "aussengrenze",
-            zIndex: 1,
-            fill: "#B6E2B6"
-        })
-    })
-
+        expect(JSON.parse(res._getData())).toEqual(
+            expect.objectContaining(
+                {"fill": "#B6E2B6", "name": "Außengrenze", "slug": "aussengrenze", "zIndex": 1}
+            ),
+        );
+    });
 });
 
 describe('update/create geojson ', () => {

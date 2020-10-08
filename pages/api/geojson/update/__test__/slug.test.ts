@@ -5,7 +5,7 @@ import handleUpdate from '../[slug]';
 
 describe('geojson/update endpoint', () => {
 
-    it('returns status 400 if slug is undefined', async () => {
+    it('returns status 400 and error message if slug is undefined', async () => {
         const { req, res } = createMocks({
             method: 'GET',
             query: {},
@@ -17,10 +17,28 @@ describe('geojson/update endpoint', () => {
 
         const responseJson = JSON.parse(res._getData());
 
-        console.log(responseJson);
-
         expect(responseJson).toEqual(
             { msg: 'slug not defined' }
+        );
+    });
+
+    it  ('returns status 400 and error message if slug can not be resolved', async () => {
+
+        const { req, res } = createMocks({
+            method: 'GET',
+            query: {
+                slug: 'not-existing',
+            },
+        });
+
+        await handleUpdate(req, res);
+
+        expect(res._getStatusCode()).toBe(400);
+
+        const responseJson = JSON.parse(res._getData());
+
+        expect(responseJson).toEqual(
+            { msg: 'slug can not be resolved' }
         );
     });
 

@@ -33,16 +33,26 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
         res.status(400).json({msg:'slug not defined'});
         return;
     }
-    const dataDir = path.resolve(process.env.PWD + '/pages/api/data');
 
-    const json = JSON.parse(fs.readFileSync(dataDir + '/' + slug + '/data.json', {encoding: 'utf8'}));
+    const dataDir = path.resolve(process.env.PWD + '/pages/api/data');
+    const dataFile = path.resolve(dataDir, slug + '/data.json');
+    const svgFile = path.resolve(dataDir, slug + '/data.svg');
+
+    if(false === fs.existsSync(dataFile)){
+        res.status(400).json({msg:'slug can not be resolved'});
+        return;
+    }
+
+    const dataJson = fs.readFileSync(dataFile , {encoding: 'utf8'});
+
+    const json = JSON.parse(dataJson);
     json.slug = slug;
 
-    let svg = fs.readFileSync(dataDir + '/' + slug + '/data.svg', {encoding: 'utf8'});
+    let svg = fs.readFileSync(svgFile, {encoding: 'utf8'});
 
     svg = addMetaInfo(svg);
 
-    fs.writeFileSync(dataDir + '/' + slug + '/data.svg', svg, {encoding: 'utf8'});
+    fs.writeFileSync(svgFile, svg, {encoding: 'utf8'});
 
     geoFromSVGXML( svg, (geoJson:any) => {
 

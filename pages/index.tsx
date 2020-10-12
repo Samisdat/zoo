@@ -2,22 +2,18 @@ import React from 'react';
 
 import {getGeoJson} from './api/geojson/geojson';
 import {Feature, FeatureCollection, LineString, Polygon} from 'geojson';
-import Map from 'components/D3/Map';
+import {Map} from 'components/D3/Map';
 
 interface IndexProps{
     border: Feature<Polygon>;
-    ways: FeatureCollection<LineString>;
-    simpleWay: FeatureCollection<LineString>;
+    simpleWays: FeatureCollection<LineString>[];
     boundingBox: FeatureCollection<LineString>;
 }
 
 export default function Index(props) {
 
   return (
-      <div>
-        <Map {...props}></Map>
-      </div>
-
+      <Map {...props}></Map>
   );
 }
 
@@ -37,23 +33,22 @@ export async function getStaticProps(context) {
 
     };
 
+    const extractWays = () => {
+
+        const extracted = geoJson.features.filter((feature)=>{
+
+            return ('way-simple' === feature.properties.slug)
+
+        });
+
+        return extracted;
+
+
+    };
+
     const border:Feature<Polygon> = extractCollection('aussengrenze');
 
-    let simpleWay = extractCollection('way-simple');
-
-    let simpleWayCollection:FeatureCollection<LineString> = {
-        type: "FeatureCollection",
-        features: simpleWay.geometry.coordinates.map((coordinate)=>{
-
-            return     {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": coordinate
-                }
-            }
-        })
-    };
+    let simpleWay = extractWays();
 
     let boundingBox = extractCollection('bounding-box');
 
@@ -64,8 +59,7 @@ export async function getStaticProps(context) {
 
     const indexProps:IndexProps = {
         border: border,
-        ways: simpleWayCollection,
-        simpleWay: simpleWay,
+        simpleWays: simpleWay,
         boundingBox:boundingBoxCollection
     };
 

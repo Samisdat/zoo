@@ -22,7 +22,7 @@ describe('geojson/update endpoint', () => {
         );
     });
 
-    it  ('returns status 400 and error message if slug can not be resolved', async () => {
+    it('returns status 400 and error message if slug can not be resolved', async () => {
 
         const { req, res } = createMocks({
             method: 'GET',
@@ -46,7 +46,7 @@ describe('geojson/update endpoint', () => {
         const { req, res } = createMocks({
             method: 'GET',
             query: {
-                slug: 'aussengrenze',
+                slug: 'ententeich',
             },
         });
 
@@ -57,7 +57,36 @@ describe('geojson/update endpoint', () => {
         const responseJson = JSON.parse(res._getData());
 
         expect(responseJson).toEqual(
-            {"fill": "#B6E2B6", "name": "Außengrenze", "slug": "aussengrenze", "zIndex": 1}
+            {
+                "fill": "#AADAFF",
+                "name": "Ententeich",
+                "slug": "ententeich",
+                "zIndex": 9,
+            }
+        );
+    });
+
+    it.only('returns status 200 and an object for valid slug', async () => {
+        const { req, res } = createMocks({
+            method: 'GET',
+            query: {
+                slug: 'way-simple',
+            },
+        });
+
+        await handleUpdate(req, res);
+
+        expect(res._getStatusCode()).toBe(200);
+
+        const responseJson = JSON.parse(res._getData());
+
+        expect(responseJson).toEqual(
+            {
+                "fill": "none",
+                "name": "Wege Simple",
+                "slug": "way-simple",
+                "zIndex": 10,
+            }
         );
     });
 

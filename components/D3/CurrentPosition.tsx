@@ -1,19 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import * as d3 from 'd3';
 
 import {getCurrentPositionGeoJson} from 'helper/getCurrentPosition';
 
-
-export default function CurrentPosition(props) {
+export const CurrentPosition = (props) => {
 
     const svgId = 'main-svg';
 
     const positionId = 'main-position';
 
     useEffect(() => {
-
-        console.log('start usefx current pos');
-
 
         if(undefined === props.d3PropertiesState){
             return;
@@ -24,27 +20,26 @@ export default function CurrentPosition(props) {
         var positionGroup = mapSvg.select(`#${positionId}`);
         const currentPosition = getCurrentPositionGeoJson('initial', props.d3PropertiesState.marker.lat, props.d3PropertiesState.marker.lng);
 
-        positionGroup.selectAll("circle")
+        positionGroup.selectAll('circle')
             .data(currentPosition)
-            .join("circle")
+            .join('circle')
 
-            .attr("transform", function(d) { return "translate(" + props.d3PropertiesState.geoPath.centroid(d) + ")"; })
-            .attr("title", (d)=>{
+            .attr('transform', function(d) { return 'translate(' + props.d3PropertiesState.geoPath.centroid(d) + ')'; })
+            .attr('title', (d)=>{
                 return d.properties.slug;
             })
-            .attr("fill", (d, i)=>{
+            .attr('fill', (d, i)=>{
                 return d.properties.fill;
             })
-            .attr("stroke", (d)=>{
+            .attr('stroke', (d)=>{
                 return d.properties.stroke;
             })
-            .attr("d", props.d3PropertiesState.geoPath)
-            .attr("r", 5);
+            .attr('d', props.d3PropertiesState.geoPath)
+            .attr('r', 5);
 
 
     });
 
-    const text = 'Kind'
     return (
         <g id={positionId}></g>
     );

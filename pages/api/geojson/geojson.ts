@@ -8,10 +8,6 @@ import urlSlug from 'url-slug'
 let allowList = [
     'bounding-box',
     'aussengrenze',
-    'wege',
-    'ententeich',
-    'gibbons',
-    'elefanten',
     'way-simple'
 ];
 
@@ -32,7 +28,6 @@ export const getGeoJson = async () => {
     slugs.forEach((slug)=>{
 
         const geojson = JSON.parse(fs.readFileSync(dataDir + '/' + slug + '/geo.json', {encoding: 'utf8'}));
-
         geojson.features.forEach((feature)=>{
             features.push(feature);
         });

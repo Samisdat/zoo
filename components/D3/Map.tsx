@@ -1,14 +1,14 @@
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 
 import * as d3 from 'd3';
 
 import {usePersistedState} from "hooks/persisted-state";
 
-import Sketched from 'components/D3/Sketched';
-import CurrentPosition from 'components/D3/CurrentPosition';
-import Ways from "components/D3/Ways";
+import {Sketched} from 'components/D3/Sketched';
+import {CurrentPosition} from 'components/D3/CurrentPosition';
+import {Ways} from "components/D3/Ways";
 
-export default function Parent(props) {
+export const Map = (props) => {
 
     const svgId = 'main-svg';
     const mapId = 'main-map';
@@ -16,7 +16,6 @@ export default function Parent(props) {
     const [d3PropertiesState, setD3PropertiesState] = usePersistedState('d3',undefined);
 
     const createD3Map = ()=> {
-        console.log('createD3Map')
 
         const width = window.innerWidth;
         const height = window.innerHeight;
@@ -43,8 +42,6 @@ export default function Parent(props) {
         function onClick() {
 
             const position = projection.invert(d3.mouse(this))
-
-            console.log(position)
 
         };
 
@@ -91,7 +88,6 @@ export default function Parent(props) {
     };
 
     useEffect(() => {
-        console.log('parent useEffect');
 
         if(undefined === d3PropertiesState){
             createD3Map();
@@ -99,24 +95,19 @@ export default function Parent(props) {
 
     });
 
-
     return (
-        <div>
-            <svg id={svgId} style={{
-                width: '100%',
-                height: '100%',
-                background: 'red'
-            }}
-            >
-                <g id={mapId}>
-                    <Sketched d3PropertiesState={d3PropertiesState} {...props}></Sketched>
-                    <Ways  d3PropertiesState={d3PropertiesState} simpleWay={props.simpleWay}{...props.ways}></Ways>
-                    <CurrentPosition d3PropertiesState={d3PropertiesState}></CurrentPosition>
-                </g>
-            </svg>
-
-
-        </div>
+        <svg id={svgId} style={{
+            width: '100%',
+            height: '100%',
+            background: 'red'
+        }}
+        >
+            <g id={mapId}>
+                <Sketched d3PropertiesState={d3PropertiesState} {...props}></Sketched>
+                <Ways  d3PropertiesState={d3PropertiesState} simpleWays={props.simpleWays}></Ways>
+                <CurrentPosition d3PropertiesState={d3PropertiesState}></CurrentPosition>
+            </g>
+        </svg>
     );
 
 }

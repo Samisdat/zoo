@@ -1,11 +1,11 @@
 import * as d3 from 'd3';
 
 import React, {useEffect} from 'react';
+import {Feature} from "geojson";
 
-export default function DrawedElementes(props) {
+export const Sketched = (props) => {
 
     const svgId = 'main-svg';
-    const mapId = 'main-map';
 
     const mapElementId = 'main-elements';
 
@@ -25,33 +25,21 @@ export default function DrawedElementes(props) {
             .data(props.boundingBox.features)
             .enter()
             .append("path")
-            .attr("fill", (d)=>{
+            .attr("fill", (d:Feature)=>{
                 return d.properties.fill;
             })
-            .attr("stroke", (d)=>{
-                return d.properties.stroke;
+            .attr("opacity", (d:Feature)=>{
+                return 0.5;
             })
-            .attr("opacity", (d)=>{
-                return 0.3;
-                return d.properties.opacity;
-            })
-            .attr("id", (d)=>{
+            .attr("id", (d:Feature)=>{
                 return d.properties.slug;
             })
             .attr("d", props.d3PropertiesState.geoPath)
-            .attr('title', (d) => {
-                if(undefined === d.properties || undefined === d.properties.name){
-                    return;
-                }
-
-                return  d.properties.name;
-            });
+;
 
         const bound = mapSvg.select(`#bounding-box`);
 
         const boundingBox = bound.node().getBBox();
-
-        //console.log(boundingBox.width / 2550)
 
         const graficElementGroup = mapSvg.select(`#${graficElementId}`);
 

@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 
 import * as d3 from 'd3';
 
-export default function Ways(props) {
+export const Ways = (props) => {
 
     const svgId = 'main-svg';
 
@@ -19,7 +19,7 @@ export default function Ways(props) {
         var simplePathGroup = mapSvg.select(`#${simplePathId}`);
 
         simplePathGroup.selectAll("path")
-            .data([props.simpleWay])
+            .data(props.simpleWays)
             .enter()
             .append("path")
             .attr("fill", (d)=>{
@@ -31,6 +31,8 @@ export default function Ways(props) {
             .attr("d", props.d3PropertiesState.geoPath)
             .attr("r", 5);
 
+        /*
+         commented out is findining nearest point on path
         const path = simplePathGroup.select("path");
 
         var line = simplePathGroup.append("line");
@@ -100,21 +102,8 @@ export default function Ways(props) {
             .attr('style', 'fill: none; cursor: crosshair; pointer-events: all')
             .on("mousemove", mousemoved);
 
-    /*
-        simplePathGroup.selectAll("circle")
-            .data(props.features)
-            .enter()
-            .append("circle")
-            .attr("transform", function(d) { return "translate(" + props.d3PropertiesState.geoPath.centroid(d) + ")"; })
-            .attr("fill", (d)=>{
-                return '#f00';
-            })
-            .attr("stroke", (d)=>{
-                return '#0f0';
-            })
-            .attr("d", props.d3PropertiesState.geoPath)
-            .attr("r", 5);
-            */
+        */
+
     };
 
     useEffect(() => {

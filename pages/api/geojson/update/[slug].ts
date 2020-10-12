@@ -23,6 +23,41 @@ export const addMetaInfo = (svg:string):string => {
 
 }
 
+export const getPathIds = (svg:string):string[] => {
+
+    const pathIds:string[] = [];
+
+    let pathRegEx = /<path id="(.*?)"(?: serif:id="(.*?)")*/gm;
+
+    let index = 0;
+
+    let matches;
+
+    while ((matches = pathRegEx.exec(svg)) !== null) {
+
+        if (matches.index === pathRegEx.lastIndex) {
+            pathRegEx.lastIndex++;
+        }
+
+        matches.forEach((match, groupIndex) => {
+            if(1 === groupIndex){
+                pathIds[index] = match;
+                console.log(`Found match, group ${groupIndex}: ${match}`);
+            }
+            if(2 === groupIndex && undefined !== match){
+                pathIds[index] = match;
+                console.log(`Found match, group ${groupIndex}: ${match}`);
+            }
+        });
+
+        index += 1;
+
+    }
+
+    return pathIds;
+
+};
+
 export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
 
     const {
@@ -52,13 +87,23 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
 
     svg = addMetaInfo(svg);
 
+    const pathIds = getPathIds(svg);
+
+
     fs.writeFileSync(svgFile, svg, {encoding: 'utf8'});
 
     geoFromSVGXML( svg, (geoJson:any) => {
 
-        geoJson.features[0].properties = json;
+        for(let i = 0, x = geoJson.features.length; i < x; i += 1){
+            geoJson.features[i].properties = {
+                ...json
+            };
 
-        console.log(geoJson.features[0].properties, geoJson.features[0].type);
+            geoJson.features[i].properties.name = pathIds[i];
+
+            console.log(geoJson.features[i].properties.name);
+
+        }
 
         fs.writeFileSync(dataDir + '/' + slug + '/geo.json', JSON.stringify(geoJson, null, 4), {encoding: 'utf8'});
 

@@ -5,7 +5,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Wege Simple",
+                "name": "Teich außen 0",
                 "slug": "way-simple",
                 "zIndex": 10,
                 "fill": "none"
@@ -179,8 +179,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Wege Simple",
-                "slug": "way-simple-1",
+                "name": "Teich außen 2",
+                "slug": "way-simple",
                 "zIndex": 10,
                 "fill": "none"
             },
@@ -289,8 +289,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Wege Simple",
-                "slug": "way-simple-1",
+                "name": "Teich außen",
+                "slug": "way-simple",
                 "zIndex": 10,
                 "fill": "none"
             },
@@ -451,8 +451,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Wege Simple",
-                "slug": "way-simple-1",
+                "name": "Hängebrücke",
+                "slug": "way-simple",
                 "zIndex": 10,
                 "fill": "none"
             },
@@ -485,8 +485,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Wege Simple",
-                "slug": "way-simple-1",
+                "name": "Gibbon - Hängebrücke",
+                "slug": "way-simple",
                 "zIndex": 10,
                 "fill": "none"
             },
@@ -523,8 +523,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Wege Simple",
-                "slug": "way-simple-1",
+                "name": "Gibbon außen",
+                "slug": "way-simple",
                 "zIndex": 10,
                 "fill": "none"
             },
@@ -589,8 +589,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Wege Simple",
-                "slug": "way-simple-1",
+                "name": "Gibbon innen",
+                "slug": "way-simple",
                 "zIndex": 10,
                 "fill": "none"
             },

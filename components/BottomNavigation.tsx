@@ -158,6 +158,9 @@ export default function LabelBottomNavigation() {
                 onChange={handleChange}
                 className={classes.root}
                 showLabels
+                style={{
+                    zIndex:2000
+                }}
             >
                 <BottomNavigationAction href="/" label="Karte" value="map" icon={<MapIcon />} />
                 <BottomNavigationAction href="/species" label="Tiere" value="animals" icon={<PetsIcon />} />

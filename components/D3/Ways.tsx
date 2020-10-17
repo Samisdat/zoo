@@ -113,9 +113,7 @@ export const Ways = (props) => {
     });
 
     return (
-        <React.Fragment>
             <g id={simplePathId}></g>
-        </React.Fragment>
     );
 
 }

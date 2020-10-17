@@ -8,6 +8,21 @@ import {Sketched} from 'components/D3/Sketched';
 import {CurrentPosition} from 'components/D3/CurrentPosition';
 import {Ways} from "components/D3/Ways";
 
+interface Marker {
+    lat: number;
+    lng: number;
+    isWithin: boolean;
+    text: string;
+}
+
+interface D3MapProperties {
+    width: number;
+    height: number;
+    geoPath: any;
+    marker: Marker;
+    transform: { x: number; y: number; k: number };
+}
+
 export const Map = (props) => {
 
     const svgId = 'main-svg';
@@ -63,19 +78,19 @@ export const Map = (props) => {
 
         mapSvg.call(zooming);
 
-        const marker = {
-            lat: 51.238741,
-            lng: 7.107757,
+        const markerProperty: Marker = {
+            lat: marker.lat,
+            lng: marker.lng,
             isWithin: true,
             text: 'Map Marker Text'
         };
 
 
-        const d3Properties = {
+        const d3Properties: D3MapProperties = {
             width: width,
             height: height,
             geoPath: geoPath,
-            marker: marker,
+            marker: markerProperty,
             transform: {
                 k:1,
                 x:0,

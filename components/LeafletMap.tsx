@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Map, TileLayer,    Marker, ImageOverlay, Polyline } from 'react-leaflet'
 import {usePersistedState} from "../hooks/persisted-state";
+import createPersistedState from 'use-persisted-state';
+const useMarkerState = createPersistedState('marker');
 
 export default function ZooMap(props) {
 
@@ -12,7 +14,7 @@ export default function ZooMap(props) {
 
     const [zoom, setZoom] = usePersistedState('zoom', 17);
 
-    const [marker, setMarker] = usePersistedState('marker', {
+    const [marker, setMarker] = useMarkerState({
         lat: 51.238741,
         lng: 7.107757
     });
@@ -25,6 +27,8 @@ export default function ZooMap(props) {
             lat,
             lng,
         });
+
+        console.log(marker)
 
     };
 

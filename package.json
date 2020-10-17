@@ -19,7 +19,8 @@
     "react-leaflet": "^2.7.0",
     "react-material-ui-form-validator": "^2.1.1",
     "svg2geojson": "^0.7.1",
-    "url-slug": "^2.3.2"
+    "url-slug": "^2.3.2",
+    "use-persisted-state": "^0.3.0"
   },
   "scripts": {
     "dev": "next dev -p 8080",

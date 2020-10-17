@@ -8,6 +8,9 @@ import {Sketched} from 'components/D3/Sketched';
 import {CurrentPosition} from 'components/D3/CurrentPosition';
 import {Ways} from "components/D3/Ways";
 
+import createPersistedState from 'use-persisted-state';
+const useMarkerState = createPersistedState('marker');
+
 interface Marker {
     lat: number;
     lng: number;
@@ -29,6 +32,11 @@ export const Map = (props) => {
     const mapId = 'main-map';
 
     const [d3PropertiesState, setD3PropertiesState] = usePersistedState('d3',undefined);
+
+    const [marker, setMarker] = useMarkerState({
+        lat: 51.238741,
+        lng: 7.107757
+    });
 
     const createD3Map = ()=> {
 
@@ -103,6 +111,8 @@ export const Map = (props) => {
     };
 
     useEffect(() => {
+
+        console.log(marker)
 
         if(undefined === d3PropertiesState){
             createD3Map();

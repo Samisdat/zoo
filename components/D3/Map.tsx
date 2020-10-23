@@ -11,20 +11,41 @@ import {Ways} from "components/D3/Ways";
 import createPersistedState from 'use-persisted-state';
 const useMarkerState = createPersistedState('marker');
 
-interface Marker {
+const useD3State = createPersistedState('d3');
+
+export interface Marker {
     lat: number;
     lng: number;
     isWithin: boolean;
     text: string;
 }
 
-interface D3MapProperties {
+export interface D3MapProperties {
     width: number;
     height: number;
     geoPath: any;
     marker: Marker;
     transform: { x: number; y: number; k: number };
 }
+
+const markerPropertyDefault: Marker = {
+    lat: 51.238741,
+    lng: 7.107757,
+    isWithin: true,
+    text: 'Map Marker Text'
+};
+
+export const d3PropertiesDefault: D3MapProperties = {
+    width: 500,
+    height: 500,
+    geoPath: undefined,
+    marker: markerPropertyDefault,
+    transform: {
+        k:1,
+        x:0,
+        y:0
+    }
+};
 
 export const Map = (props) => {
 
@@ -114,7 +135,7 @@ export const Map = (props) => {
 
         console.log(marker)
 
-        if(undefined === d3PropertiesState){
+        if(undefined === d3PropertiesState || undefined === d3PropertiesState.geoPath){
             createD3Map();
         }
 

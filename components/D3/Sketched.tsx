@@ -13,7 +13,15 @@ export const Sketched = (props) => {
 
     const scaleToBound = () => {
 
-        if(undefined === props.d3PropertiesState){
+        if(undefined === props || null === props){
+            return;
+        }
+
+        if(undefined === props.d3PropertiesState || null === props.d3PropertiesState){
+            return;
+        }
+
+        if(undefined === props.d3PropertiesState.geoPath || null === props.d3PropertiesState.geoPath){
             return;
         }
 

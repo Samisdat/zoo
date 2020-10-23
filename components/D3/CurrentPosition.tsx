@@ -15,6 +15,10 @@ export const CurrentPosition = (props) => {
             return;
         }
 
+        if(undefined === props.d3PropertiesState.geoPath){
+            return;
+        }
+
         var mapSvg = d3.select(`#${svgId}`)
 
         var positionGroup = mapSvg.select(`#${positionId}`);

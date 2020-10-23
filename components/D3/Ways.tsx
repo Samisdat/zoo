@@ -14,6 +14,10 @@ export const Ways = (props) => {
             return;
         }
 
+        if(undefined === props.d3PropertiesState.geoPath){
+            return;
+        }
+
         var mapSvg = d3.select(`#${svgId}`)
 
         var simplePathGroup = mapSvg.select(`#${simplePathId}`);

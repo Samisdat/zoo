@@ -48,7 +48,7 @@ export const Map = (props) => {
     const svgId = 'main-svg';
     const mapId = 'main-map';
 
-    const [d3PropertiesState, setD3PropertiesState] = useD3State(undefined);
+    const [d3PropertiesState, setD3PropertiesState] = useD3State(d3PropertiesDefault);
 
     const createD3Map = ()=> {
 
@@ -82,6 +82,8 @@ export const Map = (props) => {
 
         mapSvg.on("click", onClick);
 
+        mapGroup.attr("transform","translate(" + d3PropertiesState.transform.x + ", " + d3PropertiesState.transform.y + ") scale(" + d3PropertiesState.transform.k + ")")
+
         var zooming = d3.zoom()
             .scaleExtent([0.5, 8])
             .on('zoom', () => {
@@ -91,8 +93,18 @@ export const Map = (props) => {
 
             })
             .on('end', () => {
-                console.log(d3.event.transform);
-                //setTransform(d3.event.transform);
+
+
+                const updateD3 = {
+                    ...d3PropertiesState,
+                    transform: {
+                        k: d3.event.transform.k,
+                        x: d3.event.transform.x,
+                        y: d3.event.transform.y
+                    }
+                };
+
+                setD3PropertiesState(updateD3);
 
             });
 
@@ -112,9 +124,9 @@ export const Map = (props) => {
             geoPath: geoPath,
             marker: markerProperty,
             transform: {
-                k:1,
-                x:0,
-                y:0
+                k: d3PropertiesState.transform.k,
+                x: d3PropertiesState.transform.x,
+                y: d3PropertiesState.transform.y
             }
         };
 

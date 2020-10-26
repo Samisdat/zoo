@@ -2,15 +2,11 @@ import {useEffect} from 'react';
 
 import * as d3 from 'd3';
 
-import {usePersistedState} from "hooks/persisted-state";
-
 import {Sketched} from 'components/D3/Sketched';
 import {CurrentPosition} from 'components/D3/CurrentPosition';
 import {Ways} from "components/D3/Ways";
 
 import createPersistedState from 'use-persisted-state';
-const useMarkerState = createPersistedState('marker');
-
 const useD3State = createPersistedState('d3');
 
 export interface Marker {
@@ -52,12 +48,7 @@ export const Map = (props) => {
     const svgId = 'main-svg';
     const mapId = 'main-map';
 
-    const [d3PropertiesState, setD3PropertiesState] = usePersistedState('d3',undefined);
-
-    const [marker, setMarker] = useMarkerState({
-        lat: 51.238741,
-        lng: 7.107757
-    });
+    const [d3PropertiesState, setD3PropertiesState] = useD3State(undefined);
 
     const createD3Map = ()=> {
 
@@ -108,8 +99,8 @@ export const Map = (props) => {
         mapSvg.call(zooming);
 
         const markerProperty: Marker = {
-            lat: marker.lat,
-            lng: marker.lng,
+            lat: d3PropertiesState.marker.lat,
+            lng: d3PropertiesState.marker.lng,
             isWithin: true,
             text: 'Map Marker Text'
         };
@@ -132,8 +123,6 @@ export const Map = (props) => {
     };
 
     useEffect(() => {
-
-        console.log(marker)
 
         if(undefined === d3PropertiesState || undefined === d3PropertiesState.geoPath){
             createD3Map();

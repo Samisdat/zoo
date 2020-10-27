@@ -81,9 +81,7 @@ export const Map = (props) => {
         };
 
         mapSvg.on("click", onClick);
-
-        mapGroup.attr("transform","translate(" + d3PropertiesState.transform.x + ", " + d3PropertiesState.transform.y + ") scale(" + d3PropertiesState.transform.k + ")")
-
+        
         var zooming = d3.zoom()
             .scaleExtent([0.5, 8])
             .on('zoom', () => {
@@ -107,6 +105,13 @@ export const Map = (props) => {
                 setD3PropertiesState(updateD3);
 
             });
+
+        var t = d3.zoomIdentity.translate(
+            d3PropertiesState.transform.x,
+            d3PropertiesState.transform.y)
+        .scale(d3PropertiesState.transform.k);
+
+        mapSvg.call(zooming.transform, t);
 
         mapSvg.call(zooming);
 

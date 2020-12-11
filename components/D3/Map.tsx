@@ -80,10 +80,25 @@ export const Map = (props) => {
 
             const position = projection.invert(d3.mouse(this))
 
+            const updateD3State = {
+                ...d3PropertiesState,
+                marker:{
+                    lat: position[1],
+                    lng: position[0],
+                    // always within
+                    isWithin: true,
+                    text: 'Super'
+                }
+            };
+
+            console.log(updateD3State)
+            setD3PropertiesState(updateD3State);
+
+
         };
 
         mapSvg.on("click", onClick);
-        
+
         var zooming = d3.zoom()
             .scaleExtent([0.5, 15])
             .on('zoom', () => {

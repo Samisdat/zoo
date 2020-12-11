@@ -1,41 +1,40 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from "react";
 
-import * as d3 from 'd3';
+import * as d3 from "d3";
 
 export const Ways = (props) => {
+  const svgId = "main-svg";
 
-    const svgId = 'main-svg';
+  const simplePathId = "main-ways";
 
-    const simplePathId = 'main-ways';
+  const scaleToBound = () => {
+    if (undefined === props.d3PropertiesState) {
+      return;
+    }
 
-    const scaleToBound = () => {
+    if (undefined === props.d3PropertiesState.geoPath) {
+      return;
+    }
 
-        if(undefined === props.d3PropertiesState){
-            return;
-        }
+    var mapSvg = d3.select(`#${svgId}`);
 
-        if(undefined === props.d3PropertiesState.geoPath){
-            return;
-        }
+    var simplePathGroup = mapSvg.select(`#${simplePathId}`);
 
-        var mapSvg = d3.select(`#${svgId}`)
+    simplePathGroup
+      .selectAll("path")
+      .data(props.simpleWays)
+      .enter()
+      .append("path")
+      .attr("fill", (d) => {
+        return "none";
+      })
+      .attr("stroke", (d) => {
+        return "#000";
+      })
+      .attr("d", props.d3PropertiesState.geoPath)
+      .attr("r", 5);
 
-        var simplePathGroup = mapSvg.select(`#${simplePathId}`);
-
-        simplePathGroup.selectAll("path")
-            .data(props.simpleWays)
-            .enter()
-            .append("path")
-            .attr("fill", (d)=>{
-                return 'none';
-            })
-            .attr("stroke", (d)=>{
-                return '#000';
-            })
-            .attr("d", props.d3PropertiesState.geoPath)
-            .attr("r", 5);
-
-        /*
+    /*
          commented out is findining nearest point on path
         const path = simplePathGroup.select("path");
 
@@ -107,17 +106,11 @@ export const Ways = (props) => {
             .on("mousemove", mousemoved);
 
         */
+  };
 
-    };
+  useEffect(() => {
+    scaleToBound();
+  });
 
-    useEffect(() => {
-
-        scaleToBound();
-
-    });
-
-    return (
-            <g id={simplePathId}></g>
-    );
-
-}
+  return <g id={simplePathId}></g>;
+};

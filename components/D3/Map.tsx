@@ -85,7 +85,7 @@ export const Map = (props) => {
         mapSvg.on("click", onClick);
         
         var zooming = d3.zoom()
-            .scaleExtent([0.5, 8])
+            .scaleExtent([0.5, 15])
             .on('zoom', () => {
 
                 mapGroup

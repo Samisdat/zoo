@@ -56,7 +56,9 @@ export const Map = (props) => {
         const height = window.innerHeight;
 
         const projection = d3.geoMercator()
-            .translate([width / 2, height / 2]);
+            .translate([width / 2, height / 2])
+            .angle(180)
+        ;
 
         const geoPath =  d3.geoPath().projection(projection);
 

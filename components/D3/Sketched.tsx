@@ -51,8 +51,16 @@ export const Sketched = (props) => {
 
         const graficElementGroup = mapSvg.select(`#${graficElementId}`);
 
+        const center = {
+            y: 997,
+            x: 1275
+        };
+
+        const angle = 180
+
+        const rotate = `rotate(${angle} ${center.x} ${center.y})`;
         graficElementGroup
-            .attr("transform", "translate(" + boundingBox.x + "," + boundingBox.y + ") scale(0.20939347809436273)")
+            .attr("transform", "translate(" + boundingBox.x + "," + boundingBox.y + ") scale(0.20939347809436273) " + rotate)
             .attr('visibility', 'visible')
         ;
 

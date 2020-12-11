@@ -8,7 +8,8 @@ import urlSlug from 'url-slug'
 let allowList = [
     'bounding-box',
     'aussengrenze',
-    'way-simple'
+    'way-simple',
+    'zoom',
 ];
 
 export const getGeoJson = async () => {

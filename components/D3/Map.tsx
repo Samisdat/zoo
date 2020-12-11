@@ -97,7 +97,26 @@ export const Map = (props) => {
 
         };
 
-        mapSvg.on("click", onClick);
+        function onClick2(d) {
+
+            var x, y, k;
+
+            var centroid = geoPath.centroid(props.zoomBoxes);
+            x = centroid[0];
+            y = centroid[1];
+            k = 4;
+
+            console.log(centroid)
+
+
+            mapGroup.transition()
+                .duration(750)
+                .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
+                .style("stroke-width", 1.5 / k + "px");
+
+        }
+
+        mapSvg.on("click", onClick2);
 
         var zooming = d3.zoom()
             .scaleExtent([0.5, 15])

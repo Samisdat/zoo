@@ -8,6 +8,7 @@ interface IndexProps{
     border: Feature<Polygon>;
     simpleWays: FeatureCollection<LineString>[];
     boundingBox: FeatureCollection<LineString>;
+    zoomBoxes?: FeatureCollection<Polygon>
 }
 
 export default function Index(props) {
@@ -57,10 +58,13 @@ export async function getStaticProps(context) {
         features: [boundingBox]
     };
 
+    let zoomBoxes = extractCollection('zoom');
+
     const indexProps:IndexProps = {
         border: border,
         simpleWays: simpleWay,
-        boundingBox:boundingBoxCollection
+        boundingBox:boundingBoxCollection,
+        zoomBoxes:zoomBoxes,
     };
 
     return {

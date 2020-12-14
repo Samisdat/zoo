@@ -6,7 +6,13 @@ import Grid from "@material-ui/core/Grid";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
 
-import LabelBottomNavigation from '../components/BottomNavigation';
+import NavigationMain from '../components/Navigation/Main';
+
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+    offset: theme.mixins.toolbar,
+}))
 
 export default function ZooWuppertal(props) {
   const { Component, pageProps } = props;
@@ -19,6 +25,7 @@ export default function ZooWuppertal(props) {
     }
   }, []);
 
+  const classes = useStyles();
   return (
     <React.Fragment>
       <Head>
@@ -34,7 +41,7 @@ export default function ZooWuppertal(props) {
                   <Component {...pageProps} />
               </Grid>
           </Grid>
-          <LabelBottomNavigation{...props}></LabelBottomNavigation>
+          <NavigationMain{...props}></NavigationMain>
       </ThemeProvider>
     </React.Fragment>
   );

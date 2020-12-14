@@ -1,8 +1,6 @@
 import React from 'react';
-import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
@@ -20,59 +18,85 @@ const useStyles = makeStyles({
     },
 });
 
-type Anchor = 'top' | 'left' | 'bottom' | 'right';
-
 export default function TemporaryDrawer(props) {
 
-    const classes = useStyles();
-    const [state, setState] = React.useState(false);
-
-    const toggleDrawer = (open: boolean) => (
-        event: React.KeyboardEvent | React.MouseEvent,
-    ) => {
-        if (
-            event.type === 'keydown' &&
-            ((event as React.KeyboardEvent).key === 'Tab' ||
-                (event as React.KeyboardEvent).key === 'Shift')
-        ) {
-            return;
-        }
-
-        setState(open);
-    };
-
-    const list = (anchor: Anchor) => (
-        <div
-            className={clsx(classes.list, {
-                [classes.fullList]: false,
-            })}
-            role="presentation"
-            onClick={toggleDrawer(false)}
-            onKeyDown={toggleDrawer(false)}
-        >
+    return (
+        <Drawer anchor='right' open={props.openSideMenu}>
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+                <ListItem button key='Inbox1'>
+                    <ListItemIcon><InboxIcon /></ListItemIcon>
+                    <ListItemText primary='Inbox' />
+                </ListItem>
+                <ListItem button key='Starred1'>
+                    <ListItemIcon><MailIcon /></ListItemIcon>
+                    <ListItemText primary='Starred' />
+                </ListItem>
+                <ListItem button key='Send email1'>
+                    <ListItemIcon><InboxIcon /></ListItemIcon>
+                    <ListItemText primary='Send email' />
+                </ListItem>
+                <ListItem button key='Drafts1'>
+                    <ListItemIcon><MailIcon /></ListItemIcon>
+                    <ListItemText primary='Drafts' />
+                </ListItem>
             </List>
             <Divider />
             <List>
-                {['All mail', 'Trash', 'Spam', 'All mail', 'Trash', 'Spam', 'All mail', 'Trash', 'Spam', 'All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+                <ListItem button key='Inbox2'>
+                    <ListItemIcon><InboxIcon /></ListItemIcon>
+                    <ListItemText primary='Inbox' />
+                </ListItem>
+                <ListItem button key='Starred2'>
+                    <ListItemIcon><MailIcon /></ListItemIcon>
+                    <ListItemText primary='Starred' />
+                </ListItem>
+                <ListItem button key='Send email2'>
+                    <ListItemIcon><InboxIcon /></ListItemIcon>
+                    <ListItemText primary='Send email' />
+                </ListItem>
+                <ListItem button key='Drafts2'>
+                    <ListItemIcon><MailIcon /></ListItemIcon>
+                    <ListItemText primary='Drafts' />
+                </ListItem>
             </List>
-        </div>
-    );
-
-    return (
-        <Drawer anchor='right' open={props.openSideMenu} onClose={toggleDrawer(false)}>
-            {list('right')}
+            <Divider />
+            <List>
+                <ListItem button key='Inbox2'>
+                    <ListItemIcon><InboxIcon /></ListItemIcon>
+                    <ListItemText primary='Inbox' />
+                </ListItem>
+                <ListItem button key='Starred2'>
+                    <ListItemIcon><MailIcon /></ListItemIcon>
+                    <ListItemText primary='Starred' />
+                </ListItem>
+                <ListItem button key='Send email2'>
+                    <ListItemIcon><InboxIcon /></ListItemIcon>
+                    <ListItemText primary='Send email' />
+                </ListItem>
+                <ListItem button key='Drafts2'>
+                    <ListItemIcon><MailIcon /></ListItemIcon>
+                    <ListItemText primary='Drafts' />
+                </ListItem>
+            </List>
+            <Divider />
+            <List>
+                <ListItem button key='Inbox3'>
+                    <ListItemIcon><InboxIcon /></ListItemIcon>
+                    <ListItemText primary='Inbox' />
+                </ListItem>
+                <ListItem button key='Starred3'>
+                    <ListItemIcon><MailIcon /></ListItemIcon>
+                    <ListItemText primary='Starred' />
+                </ListItem>
+                <ListItem button key='Send email3'>
+                    <ListItemIcon><InboxIcon /></ListItemIcon>
+                    <ListItemText primary='Send email' />
+                </ListItem>
+                <ListItem button key='Drafts3'>
+                    <ListItemIcon><MailIcon /></ListItemIcon>
+                    <ListItemText primary='Drafts' />
+                </ListItem>
+            </List>
         </Drawer>
     );
 }

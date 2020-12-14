@@ -7,6 +7,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
 
 import NavigationMain from '../components/Navigation/Main';
+import NavigationSidebar from '../components/Navigation/Sidebar';
 
 import { makeStyles } from '@material-ui/core/styles';
 import {NavigationInterface} from "../components/Navigation/Interfaces";
@@ -72,7 +73,8 @@ export default function ZooWuppertal(props) {
                   <Component {...pageProps} />
               </Grid>
           </Grid>
-          <NavigationMain toggleSideMenu={toggleSideMenu} toogleSearch={toggleSearch} {...pageProps.navigation}></NavigationMain>
+          <NavigationMain toggleSideMenu={toggleSideMenu} toogleSearch={toggleSearch} {...navigationState}></NavigationMain>
+          <NavigationSidebar {...navigationState}></NavigationSidebar>
       </ThemeProvider>
     </React.Fragment>
   );

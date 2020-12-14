@@ -9,15 +9,46 @@ import theme from '../src/theme';
 import NavigationMain from '../components/Navigation/Main';
 
 import { makeStyles } from '@material-ui/core/styles';
+import {NavigationInterface} from "../components/Navigation/Interfaces";
+
+import createPersistedState from 'use-persisted-state';
+import {d3PropertiesDefault} from "../components/D3/Map";
+const useNavigationState = createPersistedState('navigation');
+
 
 const useStyles = makeStyles(theme => ({
     offset: theme.mixins.toolbar,
 }))
 
 export default function ZooWuppertal(props) {
+
   const { Component, pageProps } = props;
 
-  React.useEffect(() => {
+  const [navigationState, setNavigationState] = useNavigationState(pageProps.navigation);
+
+  const toggleSearch = () => {
+
+      const open = (true === navigationState.openSearch) ? false : true;
+
+      setNavigationState({
+          ...navigationState,
+          openSearch:open
+      });
+
+  };
+
+    const toggleSideMenu = () => {
+
+        const open = (true === navigationState.openSideMenu) ? false : true;
+
+        setNavigationState({
+            ...navigationState,
+            openSideMenu:open
+        });
+
+    };
+
+    React.useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
@@ -29,7 +60,7 @@ export default function ZooWuppertal(props) {
   return (
     <React.Fragment>
       <Head>
-        <title>My page</title>
+        <title>Der grüne Zoo Wuppertal</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
           <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" crossOrigin=""/>
       </Head>
@@ -41,7 +72,7 @@ export default function ZooWuppertal(props) {
                   <Component {...pageProps} />
               </Grid>
           </Grid>
-          <NavigationMain{...props}></NavigationMain>
+          <NavigationMain toggleSideMenu={toggleSideMenu} toogleSearch={toggleSearch} {...pageProps.navigation}></NavigationMain>
       </ThemeProvider>
     </React.Fragment>
   );

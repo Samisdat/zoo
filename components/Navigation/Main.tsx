@@ -21,11 +21,25 @@ const useStyles = makeStyles({
     }
 });
 
-export default function NavigationMain() {
+export default function NavigationMain(props) {
+
+    const {toogleSearch} = props;
+    const {toggleSideMenu} = props;
+
     const classes = useStyles();
     const [value, setValue] = React.useState('map');
 
     const handleChange = (event: React.ChangeEvent<{}>, newValue: string) => {
+        console.log(newValue);
+
+        if('search' === newValue){
+            toogleSearch();
+        }
+
+        if('menu' === newValue){
+            toggleSideMenu();
+        }
+
         setValue(newValue);
     };
 
@@ -40,7 +54,7 @@ export default function NavigationMain() {
             }}
         >
             <BottomNavigationAction href="/" label="Karte" value="map" icon={<MapIcon />} />
-            <BottomNavigationAction href="/species" label="Tiere" value="animals" icon={<PetsIcon />} />
+            <BottomNavigationAction href="/species" label="Tiere" value="species" icon={<PetsIcon />} />
             <BottomNavigationAction label="Suche" value="search" icon={<SearchIcon />} />
             <BottomNavigationAction label="Menu" value="menu" icon={<MenuIcon />}/>
         </BottomNavigation>

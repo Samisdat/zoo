@@ -3,7 +3,7 @@ import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -141,17 +141,16 @@ export default function TemporaryDrawer(props) {
             onClose={toggleSearch}
             onOpen={toggleSearch}
         >
-            <Grid container spacing={3}>
-                <Grid item xs={12}>
-            <Autocomplete
+                <Autocomplete
                 id="combo-box-demo"
                 options={top100Films}
                 getOptionLabel={(option) => option.title}
-                style={{ width: 300 }}
+                freeSolo
+                style={{ margin: 20   }}
                 renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
             />
-                </Grid>
-            </Grid>
+
+
 
         </SwipeableDrawer>
         

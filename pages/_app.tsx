@@ -8,6 +8,7 @@ import theme from '../src/theme';
 
 import NavigationMain from '../components/Navigation/Main';
 import NavigationSidebar from '../components/Navigation/Sidebar';
+import NavigationSearch from '../components/Navigation/Search';
 
 import { makeStyles } from '@material-ui/core/styles';
 import {NavigationInterface} from "../components/Navigation/Interfaces";
@@ -75,6 +76,7 @@ export default function ZooWuppertal(props) {
           </Grid>
           <NavigationMain toggleSideMenu={toggleSideMenu} toogleSearch={toggleSearch} {...navigationState}></NavigationMain>
           <NavigationSidebar toggleSideMenu={toggleSideMenu} {...navigationState}></NavigationSidebar>
+          <NavigationSearch toggleSearch={toggleSearch} {...navigationState}></NavigationSearch>
       </ThemeProvider>
     </React.Fragment>
   );

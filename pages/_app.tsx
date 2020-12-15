@@ -74,7 +74,7 @@ export default function ZooWuppertal(props) {
               </Grid>
           </Grid>
           <NavigationMain toggleSideMenu={toggleSideMenu} toogleSearch={toggleSearch} {...navigationState}></NavigationMain>
-          <NavigationSidebar {...navigationState}></NavigationSidebar>
+          <NavigationSidebar toggleSideMenu={toggleSideMenu} {...navigationState}></NavigationSidebar>
       </ThemeProvider>
     </React.Fragment>
   );

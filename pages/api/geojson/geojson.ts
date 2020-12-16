@@ -4,13 +4,27 @@ import path from 'path';
 import fs from 'fs';
 
 import urlSlug from 'url-slug'
+import {FeatureCollection, Polygon} from "geojson";
 
 let allowList = [
     'bounding-box',
     'aussengrenze',
     'way-simple',
-    'zoom',
+    'zoomboxes',
 ];
+
+export const getOneGeoJson = async (slug:string):any => {
+
+    if(false === allowList.includes(slug)){
+        throw new Error('not allowed')
+    }
+
+    const dataDir = path.resolve(process.env.PWD + '/pages/api/data');
+
+    const geojson = JSON.parse(fs.readFileSync(dataDir + '/'    + slug + '/geo.json', {encoding: 'utf8'}));
+
+    return geojson;
+}
 
 export const getGeoJson = async () => {
 

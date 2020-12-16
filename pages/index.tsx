@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {getGeoJson} from './api/geojson/geojson';
+import {getGeoJson, getOneGeoJson} from './api/geojson/geojson';
 import {Feature, FeatureCollection, LineString, Polygon} from 'geojson';
 import {Map} from 'components/D3/Map';
 import {NavigationInterface} from "../components/Navigation/Interfaces";
@@ -9,11 +9,12 @@ interface IndexProps{
     border: Feature<Polygon>;
     simpleWays: FeatureCollection<LineString>[];
     boundingBox: FeatureCollection<LineString>;
-    zoomBoxes?: FeatureCollection<Polygon>;
+    zoomBoxes: FeatureCollection<Polygon>;
     navigation: NavigationInterface;
 }
 
 export default function Index(props:IndexProps) {
+
 
   return (
       <Map {...props}></Map>
@@ -46,7 +47,6 @@ export async function getStaticProps(context) {
 
         return extracted;
 
-
     };
 
     const border:Feature<Polygon> = extractCollection('aussengrenze');
@@ -60,7 +60,7 @@ export async function getStaticProps(context) {
         features: [boundingBox]
     };
 
-    let zoomBoxes = extractCollection('zoom');
+    let zoomBoxes = await getOneGeoJson('zoomboxes') as FeatureCollection<Polygon>;
 
     const navigation:NavigationInterface = {
         activeMainItem: 'map',

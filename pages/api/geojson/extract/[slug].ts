@@ -47,6 +47,8 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
         query: {slug},
     } = req;
 
+
+
     const dataDir = path.resolve(process.env.PWD, 'pages/api/data');
     const combinedSvgPath = path.resolve(dataDir, 'combined.svg');
     const combinedSvg = fs.readFileSync(combinedSvgPath, {encoding:'utf8'});
@@ -78,7 +80,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
     }
 
     // create directory if not exits
-    const dirForRequestSlug = path.resolve(dataDir, slug);
+    const dirForRequestSlug = path.resolve(dataDir, (slug as string));
     console.log()
 
     if (false === fs.existsSync(dirForRequestSlug)){

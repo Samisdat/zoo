@@ -13,7 +13,7 @@ let allowList = [
     'zoomboxes',
 ];
 
-export const getOneGeoJson = async (slug:string):any => {
+export const getOneGeoJson = async (slug:string):Promise<any> => {
 
     if(false === allowList.includes(slug)){
         throw new Error('not allowed')

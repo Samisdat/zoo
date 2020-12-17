@@ -31,7 +31,7 @@ export default function TemporaryDrawer(props) {
     }
 
     const [open, setOpen] = React.useState(false);
-    const [options, setOptions] = React.useState<CountryType[]>([]);
+    const [options, setOptions] = React.useState<any[]>([]);
     const loading = open && options.length === 0;
 
     React.useEffect(() => {

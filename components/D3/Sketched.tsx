@@ -46,8 +46,8 @@ export const Sketched = (props) => {
 ;
 
         const bound = mapSvg.select(`#bounding-box`);
-
-        const boundingBox = bound.node().getBBox();
+        const boundingBox = (bound.node() as SVGGraphicsElement).getBBox();
+        console.log(boundingBox)
 
         const graficElementGroup = mapSvg.select(`#${graficElementId}`);
 

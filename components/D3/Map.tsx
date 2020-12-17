@@ -146,8 +146,8 @@ export const Map = (props) => {
             d3PropertiesState.transform.x,
             d3PropertiesState.transform.y)
         .scale(d3PropertiesState.transform.k);
-
-        mapSvg.call(zooming.transform, t);
+        
+        mapSvg.call((zooming.transform as any), t);
 
         mapSvg.call(zooming);
 

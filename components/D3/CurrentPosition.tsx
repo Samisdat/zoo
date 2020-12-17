@@ -35,9 +35,6 @@ export const CurrentPosition = (props) => {
             .attr('fill', (d, i)=>{
                 return d.properties.fill;
             })
-            .attr('stroke', (d)=>{
-                return d.properties.stroke;
-            })
             .attr('d', props.d3PropertiesState.geoPath)
             .attr('r', 5);
 

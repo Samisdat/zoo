@@ -39,6 +39,8 @@ export default function ZooWuppertal(props) {
 
   };
 
+
+
     const toggleSideMenu = () => {
 
         const open = (true === navigationState.openSideMenu) ? false : true;
@@ -56,6 +58,17 @@ export default function ZooWuppertal(props) {
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
+
+    /*
+    if(true === navigationState.openSearch){
+        return;
+    }
+
+    window.setTimeout(()=>{
+        toggleSearch();
+    }, 300)
+    */
+
   }, []);
 
   const classes = useStyles();

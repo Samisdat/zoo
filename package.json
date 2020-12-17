@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.57",
     "@react-google-maps/api": "^1.9.12",
     "@types/geojson": "^7946.0.7",
     "clsx": "latest",

@@ -21,7 +21,6 @@ import ExploreIcon from '@material-ui/icons/Explore';
 
 import Settings from './Settings';
 import ListSubheader from "@material-ui/core/ListSubheader";
-import BottomNavigation from "@material-ui/core/BottomNavigation";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -48,12 +47,6 @@ export default function TemporaryDrawer(props) {
 
     const onClick = () => {
         toggleSideMenu();
-    }
-
-    const clickAway = () => {
-
-        console.log(props.openSideMenu)
-
     }
 
     return (

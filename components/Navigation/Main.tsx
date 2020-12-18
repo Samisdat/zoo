@@ -30,7 +30,6 @@ export default function NavigationMain(props) {
     const [value, setValue] = React.useState('map');
 
     const handleChange = (event: React.ChangeEvent<{}>, newValue: string) => {
-        console.log(newValue);
 
         if('search' === newValue){
             toogleSearch();

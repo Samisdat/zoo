@@ -56,8 +56,6 @@ export default function Index(props) {
 
   const classes = useStyles();
 
-    console.log(props.gehege)
-
     let group = props.gehege
         .reduce((r, e) => {
             let firstLetter = e.name[0].toLowerCase();

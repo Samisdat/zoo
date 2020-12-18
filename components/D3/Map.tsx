@@ -91,7 +91,6 @@ export const Map = (props) => {
                 }
             };
 
-            console.log(updateD3State)
             setD3PropertiesState(updateD3State);
 
 
@@ -105,9 +104,6 @@ export const Map = (props) => {
             x = centroid[0];
             y = centroid[1];
             k = 4;
-
-            console.log(centroid)
-
 
             mapGroup.transition()
                 .duration(750)

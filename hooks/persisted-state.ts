@@ -11,11 +11,7 @@ export const usePersistedState = (key, defaultValue) => {
             localStorage.setItem(key, JSON.stringify(state));
         }
 
-        console.log();
-
         localStorage.setItem(key, JSON.stringify(state));
-
-        console.log('usePersistedState')
 
     }, [key, state]);
     return [state, setState];

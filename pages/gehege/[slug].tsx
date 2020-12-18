@@ -1,24 +1,22 @@
 import React from 'react';
+import { useRouter } from 'next/router'
+import {GehegeMap} from "../../components/D3/GehegeMap";
+import {getGeoJson, getOneGeoJson} from "../api/geojson/geojson";
+import {Feature, FeatureCollection, LineString, Polygon} from "geojson";
+import {NavigationInterface} from "../../components/Navigation/Interfaces";
+import {IndexProps} from "../index";
 
-import {getGeoJson, getOneGeoJson} from './api/geojson/geojson';
-import {Feature, FeatureCollection, LineString, Polygon} from 'geojson';
-import {Map} from 'components/D3/Map';
-import {NavigationInterface} from "../components/Navigation/Interfaces";
-
-export interface IndexProps{
-    border: Feature<Polygon>;
-    simpleWays: FeatureCollection<LineString>[];
-    boundingBox: FeatureCollection<LineString>;
-    zoomBoxes: FeatureCollection<Polygon>;
-    navigation: NavigationInterface;
-}
-
-export default function Index(props:IndexProps) {
+export default function Gehege(props) {
 
 
-  return (
-      <Map {...props}></Map>
-  );
+    const router = useRouter()
+    const { slug } = router.query
+
+    return (
+        <React.Fragment>
+            <GehegeMap slug={slug} {...props}></GehegeMap>
+        </React.Fragment>
+    );
 }
 
 export async function getStaticProps(context) {
@@ -78,5 +76,29 @@ export async function getStaticProps(context) {
 
     return {
         props: indexProps
+    }
+}
+
+export async function getStaticPaths() {
+
+    const zoomBoxesGeoJson = await getOneGeoJson('zoomboxes') as FeatureCollection<Polygon>;
+
+    const gehege = zoomBoxesGeoJson.features.map((feature:Feature<Polygon>)=>{
+        return feature.properties.slug;
+    });
+
+    const gehegePaths = gehege.map((enclorure:string)=>{
+        return {
+            params:{
+                slug:enclorure
+            }
+        }
+    });
+
+    return {
+
+        paths: gehegePaths,
+
+        fallback: false,
     }
 }

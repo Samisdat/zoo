@@ -72,6 +72,10 @@ export default function TemporaryDrawer(props) {
                     <ListItemIcon><MapIcon /></ListItemIcon>
                     <ListItemText primary='Karte' />
                 </ListItemLink>
+                <ListItemLink key='map' href="/gehege" onClick={onClick}>
+                    <ListItemIcon><MapIcon /></ListItemIcon>
+                    <ListItemText primary='Gehege' />
+                </ListItemLink>
                 <ListItemLink key='leaflet' href="/leaflet" onClick={onClick}>
                     <ListItemIcon><MapIcon /></ListItemIcon>
                     <ListItemText primary='Leaflet' />

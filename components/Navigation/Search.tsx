@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
 }));
 
-export default function TemporaryDrawer(props) {
+export default function NavigationSearch(props) {
 
     const classes = useStyles();
 

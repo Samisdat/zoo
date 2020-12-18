@@ -8,6 +8,7 @@ import {Ways} from "components/D3/Ways";
 
 import createPersistedState from 'use-persisted-state';
 import {Feature} from "geojson";
+import {border} from "@material-ui/system";
 const useD3State = createPersistedState('d3');
 
 export interface Marker {
@@ -51,10 +52,10 @@ export const GehegeMap = (props) => {
 
     const [d3PropertiesState, setD3PropertiesState] = useD3State(d3PropertiesDefault);
 
-    const createD3Map = ()=> {
+    const createD3Map = (centerTo:Feature) => {
 
-        const width = window.innerWidth;
-        const height = window.innerHeight;
+        const width = props.dimensions.width;
+        const height = props.dimensions.height;
 
         const projection = d3.geoMercator()
             .translate([width / 2, height / 2])
@@ -76,27 +77,6 @@ export const GehegeMap = (props) => {
         ;
 
         const mapGroup = mapSvg.select(`#${mapId}`);
-
-        function onClick() {
-
-            const position = projection.invert(d3.mouse(this))
-
-            const updateD3State = {
-                ...d3PropertiesState,
-                marker:{
-                    lat: position[1],
-                    lng: position[0],
-                    // always within
-                    isWithin: true,
-                    text: 'Super'
-                }
-            };
-
-            console.log(updateD3State)
-            setD3PropertiesState(updateD3State);
-
-
-        };
 
         var zooming = d3.zoom()
             .scaleExtent([0.5, 15])
@@ -121,14 +101,16 @@ export const GehegeMap = (props) => {
 
             });
 
-        /*
         var t = d3.zoomIdentity.translate(
             d3PropertiesState.transform.x,
             d3PropertiesState.transform.y)
         .scale(d3PropertiesState.transform.k);
 
-        mapSvg.call(zooming.transform, t);
-        */
+        mapSvg.call(
+            (zooming.transform as any),
+            t
+        );
+
         mapSvg.call(zooming);
 
         const markerProperty: Marker = {
@@ -137,7 +119,6 @@ export const GehegeMap = (props) => {
             isWithin: true,
             text: 'Map Marker Text'
         };
-
 
         const d3Properties: D3MapProperties = {
             width: width,
@@ -152,27 +133,6 @@ export const GehegeMap = (props) => {
         };
 
         setD3PropertiesState(d3Properties);
-
-        function onClick2(d) {
-
-            var x, y, k;
-
-            console.log(props.zoomBoxes.features[10]);
-
-            var centroid = geoPath.centroid(props.zoomBoxes.features[10]);
-            x = centroid[0];
-            y = centroid[1];
-            k = 4;
-
-            console.log(centroid)
-
-            var t = d3.zoomIdentity.translate(-x,-y)
-                .scale(k);
-
-            mapSvg.call((zooming.transform as any), t);
-
-
-        }
 
         const panAndZoomToBox = (box:any) => {
 
@@ -197,8 +157,7 @@ export const GehegeMap = (props) => {
                 })
                 .attr("d", geoPath)
 
-            console.log(document.getElementById('zoomBox'))
-
+            /*
             const [[x0, y0], [x1, y1]] = d3.geoBounds(box);
 
             console.log(x0, y0, x1, y1);
@@ -212,11 +171,29 @@ export const GehegeMap = (props) => {
                 .center(center)
 
 
-            //mapSvg.call(zooming.transform, t);
+            mapSvg.call(zooming.transform, t);
+
+             */
+
+            console.log(centerTo)
 
 
         };
-        setTimeout(()=>{
+
+        panAndZoomToBox(centerTo);
+    };
+
+    useEffect(() => {
+
+        console.log('GehegeMap.useEffect 1');
+
+        if(undefined === props.dimensions.width){
+            return;
+        }
+
+        console.log('GehegeMap.useEffect 2');
+
+        if(undefined === d3PropertiesState || undefined === d3PropertiesState.geoPath){
 
             const gehege = props.zoomBoxes.features.find((feature)=>{
 
@@ -224,28 +201,13 @@ export const GehegeMap = (props) => {
 
             });
 
-            panAndZoomToBox(gehege);
-        },100);
-
-
-
-    };
-
-    useEffect(() => {
-
-        if(undefined === d3PropertiesState || undefined === d3PropertiesState.geoPath){
-            createD3Map();
+            createD3Map(gehege);
         }
 
     });
 
     return (
-        <svg id={svgId} style={{
-            width: '100%',
-            height: '100%',
-            background: 'red'
-        }}
-        >
+        <svg id={svgId}>
             <g id={mapId}>
                 <Sketched d3PropertiesState={d3PropertiesState} {...props}></Sketched>
                 <g id="zoomBox"></g>

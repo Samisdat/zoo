@@ -5,6 +5,7 @@ import {getGeoJson, getOneGeoJson} from "../api/geojson/geojson";
 import {Feature, FeatureCollection, LineString, Polygon} from "geojson";
 import {NavigationInterface} from "../../components/Navigation/Interfaces";
 import {IndexProps} from "../index";
+import {MapRoot} from "../../components/D3/MapRoot";
 
 export default function Gehege(props) {
 
@@ -13,9 +14,7 @@ export default function Gehege(props) {
     const { slug } = router.query
 
     return (
-        <React.Fragment>
-            <GehegeMap slug={slug} {...props}></GehegeMap>
-        </React.Fragment>
+        <MapRoot slug={slug} {...props} />
     );
 }
 

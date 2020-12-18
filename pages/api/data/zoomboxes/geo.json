@@ -5,7 +5,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Elefanten"
+                "name": "Elefanten",
+                "slug": "elefanten"
             },
             "geometry": {
                 "type": "Polygon",
@@ -38,7 +39,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Affenhaus"
+                "name": "Affenhaus",
+                "slug": "affenhaus"
             },
             "geometry": {
                 "type": "Polygon",
@@ -71,7 +73,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "KleinesAffenhaus"
+                "name": "KleinesAffenhaus",
+                "slug": "kleinesaffenhaus"
             },
             "geometry": {
                 "type": "Polygon",
@@ -104,7 +107,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Okavagoo"
+                "name": "Okavagoo",
+                "slug": "okavagoo"
             },
             "geometry": {
                 "type": "Polygon",
@@ -137,7 +141,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Tiger"
+                "name": "Tiger",
+                "slug": "tiger"
             },
             "geometry": {
                 "type": "Polygon",
@@ -170,7 +175,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Seelöwen"
+                "name": "Seelöwen",
+                "slug": "seeloewen"
             },
             "geometry": {
                 "type": "Polygon",
@@ -203,7 +209,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Brillenpinguine"
+                "name": "Brillenpinguine",
+                "slug": "brillenpinguine"
             },
             "geometry": {
                 "type": "Polygon",
@@ -236,7 +243,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Südamerikahaus"
+                "name": "Südamerikahaus",
+                "slug": "suedamerikahaus"
             },
             "geometry": {
                 "type": "Polygon",
@@ -269,7 +277,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Biber"
+                "name": "Biber",
+                "slug": "biber"
             },
             "geometry": {
                 "type": "Polygon",
@@ -302,7 +311,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Vogelhaus"
+                "name": "Vogelhaus",
+                "slug": "vogelhaus"
             },
             "geometry": {
                 "type": "Polygon",
@@ -335,7 +345,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Gibbons"
+                "name": "Gibbons",
+                "slug": "gibbons"
             },
             "geometry": {
                 "type": "Polygon",
@@ -368,7 +379,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Katzenhaus"
+                "name": "Katzenhaus",
+                "slug": "katzenhaus"
             },
             "geometry": {
                 "type": "Polygon",
@@ -401,7 +413,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Löwen"
+                "name": "Löwen",
+                "slug": "loewen"
             },
             "geometry": {
                 "type": "Polygon",
@@ -434,7 +447,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Lachender Hans"
+                "name": "Lachender Hans",
+                "slug": "lachender-hans"
             },
             "geometry": {
                 "type": "Polygon",
@@ -467,7 +481,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Kangurus"
+                "name": "Kangurus",
+                "slug": "kangurus"
             },
             "geometry": {
                 "type": "Polygon",
@@ -500,7 +515,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Okapis"
+                "name": "Okapis",
+                "slug": "okapis"
             },
             "geometry": {
                 "type": "Polygon",
@@ -533,7 +549,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Kirk DikDiks"
+                "name": "Kirk DikDiks",
+                "slug": "kirk-dikdiks"
             },
             "geometry": {
                 "type": "Polygon",
@@ -566,7 +583,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "JuniorZoo"
+                "name": "JuniorZoo",
+                "slug": "juniorzoo"
             },
             "geometry": {
                 "type": "Polygon",
@@ -599,7 +617,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Steinböcke"
+                "name": "Steinböcke",
+                "slug": "steinboecke"
             },
             "geometry": {
                 "type": "Polygon",
@@ -632,7 +651,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Pinguine"
+                "name": "Pinguine",
+                "slug": "pinguine"
             },
             "geometry": {
                 "type": "Polygon",
@@ -665,7 +685,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Altes Ottergehege"
+                "name": "Altes Ottergehege",
+                "slug": "altes-ottergehege"
             },
             "geometry": {
                 "type": "Polygon",
@@ -698,7 +719,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Eisbären"
+                "name": "Eisbären",
+                "slug": "eisbaeren"
             },
             "geometry": {
                 "type": "Polygon",
@@ -731,7 +753,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Terrarium"
+                "name": "Terrarium",
+                "slug": "terrarium"
             },
             "geometry": {
                 "type": "Polygon",
@@ -764,7 +787,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Aquarium"
+                "name": "Aquarium",
+                "slug": "aquarium"
             },
             "geometry": {
                 "type": "Polygon",
@@ -797,7 +821,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Musikmuschel"
+                "name": "Musikmuschel",
+                "slug": "musikmuschel"
             },
             "geometry": {
                 "type": "Polygon",
@@ -830,7 +855,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Eingang"
+                "name": "Eingang",
+                "slug": "eingang"
             },
             "geometry": {
                 "type": "Polygon",
@@ -863,7 +889,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Yaks"
+                "name": "Yaks",
+                "slug": "yaks"
             },
             "geometry": {
                 "type": "Polygon",
@@ -896,7 +923,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Ententeicj"
+                "name": "Ententeicj",
+                "slug": "ententeicj"
             },
             "geometry": {
                 "type": "Polygon",
@@ -929,7 +957,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Ziesel"
+                "name": "Ziesel",
+                "slug": "ziesel"
             },
             "geometry": {
                 "type": "Polygon",
@@ -962,7 +991,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Tierwelt Patagoniens"
+                "name": "Tierwelt Patagoniens",
+                "slug": "tierwelt-patagoniens"
             },
             "geometry": {
                 "type": "Polygon",
@@ -995,7 +1025,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Emus"
+                "name": "Emus",
+                "slug": "emus"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1028,7 +1059,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Pelikane"
+                "name": "Pelikane",
+                "slug": "pelikane"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1061,7 +1093,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Bären"
+                "name": "Bären",
+                "slug": "baeren"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1094,7 +1127,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Rothunde"
+                "name": "Rothunde",
+                "slug": "rothunde"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1127,7 +1161,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Zebras"
+                "name": "Zebras",
+                "slug": "zebras"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1160,7 +1195,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Waldrapp"
+                "name": "Waldrapp",
+                "slug": "waldrapp"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1193,7 +1229,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Pinselohrschweine"
+                "name": "Pinselohrschweine",
+                "slug": "pinselohrschweine"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1226,7 +1263,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Bongos"
+                "name": "Bongos",
+                "slug": "bongos"
             },
             "geometry": {
                 "type": "Polygon",

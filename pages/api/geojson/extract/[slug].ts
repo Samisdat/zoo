@@ -2,7 +2,8 @@ import {NextApiRequest, NextApiResponse} from "next";
 import fs from "fs";
 import path from "path";
 import {xmlTemplate} from "../../data/xml-template";
-import {getPathIds} from "../update/[slug]";
+
+import {getSlug} from "../../../../helper/getSlug";
 
 const { geoFromSVGXML } = require('svg2geojson');
 
@@ -94,12 +95,12 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
     const dataSvg = xmlTemplate(find[2]);
 
     // write svg
+
     fs.writeFileSync(
         path.resolve(dirForRequestSlug, 'data.svg'),
         dataSvg,
         {encoding: 'utf8'}
     );
-
 
     const pathIds = getRectIds(dataSvg);
 
@@ -107,16 +108,19 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
 
 
         for(let i = 0, x = geoJson.features.length; i < x; i += 1){
-            geoJson.features[i].properties = {
 
+            const name =  pathIds[i];
+
+            const slug = getSlug(name);
+
+            geoJson.features[i].properties = {
+                name,
+                slug
             };
 
-            geoJson.features[i].properties.name = pathIds[i];
-
-            console.log(geoJson.features[i].properties.name);
+            console.log(geoJson.features[i].properties);
 
         }
-
 
         fs.writeFileSync(
             path.resolve(dirForRequestSlug, 'geo.json'),

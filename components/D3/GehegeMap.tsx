@@ -157,38 +157,38 @@ export const GehegeMap = (props) => {
             let east = Math.min(...longitudes);
 
             return [
-                (west + east) / 2,
-                (north + south) / 2,
+                [east, north],
+                [west, south],
             ];
 
         }
 
-        const centerOfPolygon = centerToPolygon(centerTo)
 
-        mapGroup.selectAll('circle')
-            .data(getCurrentPositionGeoJson('center', centerOfPolygon[1], centerOfPolygon[0]))
-            .join('circle')
+        //const topLeft = projection(centerOfPolygon);
 
-            .attr('transform', function(d) { return 'translate(' + geoPath.centroid(d) + ')'; })
+        //const centerOfEnclosure = d3.geoCentroid(centerTo);
 
-            .attr('fill', (d, i)=>{
-                return '#000';
-            })
-            .attr('d', geoPath)
-            .attr('r', 1);
+        const centerOfEnclosure = centerToPolygon(centerTo);
+
+        const [x0, y0] = projection(centerOfEnclosure[0]);
+        const [x1, y1] = projection(centerOfEnclosure[1]);
 
 
-        const topLeft = projection(centerOfPolygon);
 
-        const centerOfEnclosure = d3.geoCentroid(centerTo);
+        //[[x0, y0], [x1, y1]]
+        console.log(x0, y0, x1, y1)
 
-        const x = -1 * topLeft[0];
-        const y = -1 * topLeft[1];
-        const k = 13;
+        //const x = -1 * topLeft[0];
+        //const y = -1 * topLeft[1];
+        const k = 6;
+
+        const scale = Math.min(8, 0.9 / Math.max((x1 - x0) / width, (y1 - y0) / height));
+        console.log(scale)
 
         var t = d3.zoomIdentity
-            .translate(x*k, y*k)
+            .translate(width / 2, height / 2)
             .scale(k)
+            .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
         ;
 
 mapSvg.call(

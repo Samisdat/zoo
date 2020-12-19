@@ -9,6 +9,7 @@ import {Ways} from "components/D3/Ways";
 import createPersistedState from 'use-persisted-state';
 import {Feature} from "geojson";
 import {border} from "@material-ui/system";
+import {getCurrentPositionGeoJson} from "../../helper/getCurrentPosition";
 const useD3State = createPersistedState('d3');
 
 export interface Marker {
@@ -81,13 +82,13 @@ export const GehegeMap = (props) => {
         var zooming = d3.zoom()
             .scaleExtent([0.5, 15])
             .on('zoom', () => {
-
                 mapGroup
                     .attr('transform', d3.event.transform);
 
             })
-            .on('end', () => {
 
+            .on('end', () => {
+                /*
                 const updateD3 = {
                     ...d3PropertiesState,
                     transform: {
@@ -98,18 +99,9 @@ export const GehegeMap = (props) => {
                 };
 
                 setD3PropertiesState(updateD3);
-
+                */
             });
 
-        var t = d3.zoomIdentity.translate(
-            d3PropertiesState.transform.x,
-            d3PropertiesState.transform.y)
-        .scale(d3PropertiesState.transform.k);
-
-        mapSvg.call(
-            (zooming.transform as any),
-            t
-        );
 
         mapSvg.call(zooming);
 
@@ -134,13 +126,82 @@ export const GehegeMap = (props) => {
 
         setD3PropertiesState(d3Properties);
 
+        /*
+        var t = d3.zoomIdentity.translate(
+            d3PropertiesState.transform.x,
+            d3PropertiesState.transform.y)
+            .scale(d3PropertiesState.transform.k);
+
+        mapSvg.call(
+            (zooming.transform as any),
+            t
+        );
+        */
+
+
+        const centerToPolygon = (polygon) => {
+
+            const latitudes = polygon.geometry.coordinates[0].map((coordinate)=>{
+                return coordinate[1];
+            });
+
+            const longitudes = polygon.geometry.coordinates[0].map((coordinate)=>{
+                return coordinate[0];
+            });
+
+
+            let north = Math.max(...latitudes);
+            let south = Math.min(...latitudes);
+
+            let west = Math.max(...longitudes);
+            let east = Math.min(...longitudes);
+
+            return [
+                (west + east) / 2,
+                (north + south) / 2,
+            ];
+
+        }
+
+        const centerOfPolygon = centerToPolygon(centerTo)
+
+        mapGroup.selectAll('circle')
+            .data(getCurrentPositionGeoJson('center', centerOfPolygon[1], centerOfPolygon[0]))
+            .join('circle')
+
+            .attr('transform', function(d) { return 'translate(' + geoPath.centroid(d) + ')'; })
+
+            .attr('fill', (d, i)=>{
+                return '#000';
+            })
+            .attr('d', geoPath)
+            .attr('r', 1);
+
+
+        const topLeft = projection(centerOfPolygon);
+
+        const centerOfEnclosure = d3.geoCentroid(centerTo);
+
+        const x = -1 * topLeft[0];
+        const y = -1 * topLeft[1];
+        const k = 13;
+
+        var t = d3.zoomIdentity
+            .translate(x*k, y*k)
+            .scale(k)
+        ;
+
+mapSvg.call(
+    (zooming.transform as any),
+    t
+);
+
         const panAndZoomToBox = (box:any) => {
 
             box.properties.fill = '#f0f0f0';
             box.properties.opacity = 0.3;
 
             var elementsGroup = mapGroup.select('#zoomBox');
-
 
             elementsGroup.selectAll("path")
                 .data([box])
@@ -174,9 +235,6 @@ export const GehegeMap = (props) => {
             mapSvg.call(zooming.transform, t);
 
              */
-
-            console.log(centerTo)
-
 
         };
 

@@ -1,0 +1,13 @@
+{
+    "slug": "braunbaer",
+    "name": "Braunbär",
+    "images": [
+        "images/braunbaer.jpg"
+    ],
+    "taxonomy": {
+        "class": "Säugetiere",
+        "order": "Raubtiere",
+        "family": "Bären",
+        "species": "Braunbär"
+    }
+}

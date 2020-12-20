@@ -1,0 +1,13 @@
+{
+    "slug": "tiger",
+    "name": "Tiger ",
+    "images": [
+        "images/tiger.jpg"
+    ],
+    "taxonomy": {
+        "class": "Säugetiere",
+        "order": "Raubtiere",
+        "family": "Katzen ",
+        "species": "Tiger "
+    }
+}

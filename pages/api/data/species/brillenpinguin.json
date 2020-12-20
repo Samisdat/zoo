@@ -1,0 +1,13 @@
+{
+    "slug": "brillenpinguin",
+    "name": "Brillenpinguin",
+    "images": [
+        "images/brillenpinguin.jpg"
+    ],
+    "taxonomy": {
+        "class": "Vögel",
+        "order": "Pinguine",
+        "family": "Pinguine",
+        "species": "Brillenpinguin"
+    }
+}

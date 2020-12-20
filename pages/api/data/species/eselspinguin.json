@@ -1,0 +1,13 @@
+{
+    "slug": "eselspinguin",
+    "name": "Eselspinguin",
+    "images": [
+        "images/eselpinguin.jpg"
+    ],
+    "taxonomy": {
+        "class": "Vögel",
+        "order": "Pinguine",
+        "family": "Pinguine",
+        "species": "Eselspinguin"
+    }
+}

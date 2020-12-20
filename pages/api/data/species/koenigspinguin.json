@@ -1,0 +1,13 @@
+{
+    "slug": "koenigspinguin",
+    "name": "Königspinguin",
+    "images": [
+        "images/koenigspinguin.jpg"
+    ],
+    "taxonomy": {
+        "class": "Vögel",
+        "order": "Pinguine",
+        "family": "Pinguine",
+        "species": "Königspinguin"
+    }
+}

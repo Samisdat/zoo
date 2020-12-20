@@ -1,0 +1,13 @@
+{
+    "slug": "elefant",
+    "name": "Afrikanischer Elefant",
+    "images": [
+        "images/elefant.jpg"
+    ],
+    "taxonomy": {
+        "class": "Säugetiere",
+        "order": "Rüsseltiere",
+        "family": "Elefanten",
+        "species": "Afrikanischer Elefant"
+    }
+}

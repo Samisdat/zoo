@@ -1,0 +1,13 @@
+{
+    "slug": "schwarzer-klammeraffe",
+    "name": "Schwarzer Klammeraffe",
+    "images": [
+        "images/schwarzer-klamneraffe.jpg"
+    ],
+    "taxonomy": {
+        "class": "Säugetiere",
+        "order": "Primaten",
+        "family": "Kapuzinerartige",
+        "species": "Schwarzer Klammeraffe"
+    }
+}

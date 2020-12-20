@@ -1,0 +1,13 @@
+{
+    "slug": "faultier",
+    "name": "Faultier",
+    "images": [
+        "images/faultier.jpg"
+    ],
+    "taxonomy": {
+        "class": "Säugetiere",
+        "order": "Nebengelenktiere",
+        "family": "Zweifingerfaultiere",
+        "species": "Zweifingerfaultier"
+    }
+}

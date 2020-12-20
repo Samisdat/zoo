@@ -1,0 +1,13 @@
+{
+    "slug": "orang-utan",
+    "name": "Orang Utan",
+    "images": [
+        "images/orange-utan.jpg"
+    ],
+    "taxonomy": {
+        "class": "Säugetiere",
+        "order": "Primaten",
+        "family": "Menschenaffen",
+        "species": "Orang Utan"
+    }
+}

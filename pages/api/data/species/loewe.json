@@ -1,0 +1,13 @@
+{
+    "slug": "loewe",
+    "name": "Löwe",
+    "images": [
+        "images/loewe.jpg"
+    ],
+    "taxonomy": {
+        "class": "Säugetiere",
+        "order": "Raubtiere",
+        "family": "Katzen ",
+        "species": "Löwe"
+    }
+}

@@ -9,6 +9,7 @@ import theme from '../src/theme';
 import NavigationMain from '../components/Navigation/Main';
 import NavigationSidebar from '../components/Navigation/Sidebar';
 import NavigationSearch from '../components/Navigation/Search';
+import Teaser from '../components/Navigation/Teaser';
 
 import { makeStyles } from '@material-ui/core/styles';
 import {NavigationInterface} from "../components/Navigation/Interfaces";
@@ -39,7 +40,16 @@ export default function ZooWuppertal(props) {
 
   };
 
+    const toggleTeaser = () => {
 
+        const open = (true === navigationState.openTeaser) ? false : true;
+
+        setNavigationState({
+            ...navigationState,
+            openTeaser:open
+        });
+
+    };
 
     const toggleSideMenu = () => {
 
@@ -53,21 +63,24 @@ export default function ZooWuppertal(props) {
     };
 
     React.useEffect(() => {
+
+
+
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
 
-    /*
-    if(true === navigationState.openSearch){
+
+    if(true === navigationState.openTeaser){
         return;
     }
 
     window.setTimeout(()=>{
-        toggleSearch();
+        toggleTeaser();
     }, 300)
-    */
+
 
   }, []);
 
@@ -90,6 +103,7 @@ export default function ZooWuppertal(props) {
           <NavigationMain toggleSideMenu={toggleSideMenu} toogleSearch={toggleSearch} {...navigationState}></NavigationMain>
           <NavigationSidebar toggleSideMenu={toggleSideMenu} {...navigationState}></NavigationSidebar>
           <NavigationSearch toggleSearch={toggleSearch} {...navigationState} {...props}></NavigationSearch>
+          <Teaser toggleTeaser={toggleTeaser} {...navigationState} {...props}></Teaser>
       </ThemeProvider>
     </React.Fragment>
   );

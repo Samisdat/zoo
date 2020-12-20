@@ -73,8 +73,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "KleinesAffenhaus",
-                "slug": "kleinesaffenhaus"
+                "name": "Kleines Affenhaus",
+                "slug": "kleines-affenhaus"
             },
             "geometry": {
                 "type": "Polygon",
@@ -923,8 +923,8 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Ententeicj",
-                "slug": "ententeicj"
+                "name": "Ententeich",
+                "slug": "ententeich"
             },
             "geometry": {
                 "type": "Polygon",

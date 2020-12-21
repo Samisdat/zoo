@@ -16,6 +16,25 @@ export const Map = (props) => {
 
     const [mapState, setMapState] = useState<MapStateInterface>(MapStateDefault);
 
+    const setHash = () => {
+
+        let hash = location.hash.replace('#', '');
+
+        if('' === hash){
+            hash = 'center';
+        }
+
+        if(hash === mapState.focus){
+            return;
+        }
+
+        // @TODO Validate
+        setMapState({
+            ...mapState,
+            focus: hash
+        });
+    };
+
     const setDimensions = () => {
 
         setMapState({
@@ -26,6 +45,7 @@ export const Map = (props) => {
 
     }
 
+    // @TODO add reducer to prevent render twice
     useEffect(() => {
 
         const width = window.innerWidth;
@@ -35,9 +55,14 @@ export const Map = (props) => {
             return;
         }
 
-        setDimensions();
+        console.log('render')
 
-        window.addEventListener('resize', setDimensions)
+        setDimensions();
+        setHash();
+
+        window.addEventListener('resize', setDimensions);
+        window.addEventListener('hashchange', setHash);
+
     }, [mapState]);
 
     return (
@@ -46,6 +71,10 @@ export const Map = (props) => {
             <p>width: {mapState.width}</p>
             <p>width: {mapState.height}</p>
             <p>focus: {mapState.focus}</p>
+            <p><a href="#eins">Eins</a></p>
+            <p><a href="#zwei">Zwei</a></p>
+            <p><a href="#drei">Drei</a></p>
+            <p><a href="#vier">Vier</a></p>
         </React.Fragment>
 
     );

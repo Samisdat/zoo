@@ -1,18 +1,10 @@
 import React from 'react';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import ProTip from '../src/ProTip';
-import Copyright from '../src/Copyright';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import Avatar from '@material-ui/core/Avatar';
-import {getSpecies, Species} from "./api/species";
+import {Animal, getAnimals} from "./api/animals";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -46,14 +38,18 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
+function ListItemLink(props) {
+    return <ListItem button component="a" {...props} />;
+}
+
 
 export default function Index(props) {
 
   const classes = useStyles();
 
-    let group = props.species
+    let group = props.animals
         .reduce((r, e) => {
-            let firstLetter = e.species[0].toLowerCase();
+            let firstLetter = e.name[0].toLowerCase();
 
             firstLetter = firstLetter
                 .replace('ä', 'a')
@@ -84,11 +80,16 @@ export default function Index(props) {
           .map(([key, value], i) => {
               return <React.Fragment>
                   <ListSubheader className={classes.subheader}>{key.toUpperCase()}</ListSubheader>
-                  {group[key].map(( species: Species ) => (
+                  {group[key].map(( animal: Animal ) => {
+                      const href =  `/tiere/${animal.slug}`
+
+                      return(
+
                           <ListItem button>
-                              <ListItemText primary={species.species} />
+                              <ListItemLink href={href}>{animal.name}</ListItemLink>
                           </ListItem>
-                  ))}
+                      )}
+                  )}
               </React.Fragment>
           })}
 
@@ -98,11 +99,11 @@ export default function Index(props) {
 
 export async function getStaticProps({ params, preview = false, previewData }) {
 
-    const species = getSpecies();
+    const animals = await getAnimals();
 
     return {
         props: {
-            species: species,
+            animals: animals,
         },
     }
 }

@@ -72,7 +72,7 @@ export default function ZooWuppertal(props) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
 
-
+    /*
     if(true === navigationState.openTeaser){
         return;
     }
@@ -80,7 +80,7 @@ export default function ZooWuppertal(props) {
     window.setTimeout(()=>{
         toggleTeaser();
     }, 300)
-
+    */
 
   }, []);
 

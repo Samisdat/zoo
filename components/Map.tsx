@@ -1,7 +1,6 @@
 import React, {Fragment, useEffect, useState} from 'react';
-import {GehegeMap} from "./GehegeMap";
 
-export const MapRoot = (props) => {
+export const Map = (props) => {
 
     const [dimensions, setDimensions] = useState({
         width: undefined,
@@ -36,7 +35,7 @@ export const MapRoot = (props) => {
 
     return (
 
-        <GehegeMap dimensions={dimensions} {...props}></GehegeMap>
+
 
     );
 

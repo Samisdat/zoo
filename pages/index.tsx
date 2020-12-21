@@ -2,7 +2,7 @@ import React from 'react';
 
 import {getGeoJson, getOneGeoJson} from './api/geojson/geojson';
 import {Feature, FeatureCollection, LineString, Polygon} from 'geojson';
-import {Map} from 'components/D3/Map';
+import {Map} from 'components/Map';
 import {NavigationInterface} from "../components/Navigation/Interfaces";
 
 export interface IndexProps{

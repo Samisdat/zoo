@@ -166,8 +166,8 @@ export const GehegeMap = (props) => {
 
         const centerOfEnclosure = centerToPolygon(centerTo);
 
-        const [x0, y0] = projection(centerOfEnclosure[0]);
-        const [x1, y1] = projection(centerOfEnclosure[1]);
+        const [x0, y0] = projection(centerOfEnclosure[0] as any);
+        const [x1, y1] = projection(centerOfEnclosure[1] as any);
 
 
 

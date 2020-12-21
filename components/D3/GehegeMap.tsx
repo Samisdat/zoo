@@ -3,13 +3,9 @@ import {useEffect} from 'react';
 import * as d3 from 'd3';
 
 import {Sketched} from 'components/D3/Sketched';
-import {CurrentPosition} from 'components/D3/CurrentPosition';
-import {Ways} from "components/D3/Ways";
 
 import createPersistedState from 'use-persisted-state';
 import {Feature} from "geojson";
-import {border} from "@material-ui/system";
-import {getCurrentPositionGeoJson} from "../../helper/getCurrentPosition";
 const useD3State = createPersistedState('d3');
 
 export interface Marker {

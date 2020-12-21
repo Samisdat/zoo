@@ -1,18 +1,9 @@
 import React from 'react';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import ProTip from '../src/ProTip';
-import Copyright from '../src/Copyright';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import Avatar from '@material-ui/core/Avatar';
-import {getSpecies, Species} from "./api/species";
 import {getOneGeoJson} from "./api/geojson/geojson";
 import {Feature, FeatureCollection, Polygon} from "geojson";
 

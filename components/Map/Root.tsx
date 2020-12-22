@@ -43,6 +43,15 @@ export const MapRoot = (props) => {
 
     };
 
+    const setTransform = (transform:MapTransformInterface) => {
+
+        setMapState({
+            ...mapState,
+            transform: transform
+        });
+
+    };
+
     const setDimensions = () => {
 
         setMapState({

@@ -5,7 +5,7 @@ import {GeoPath} from 'd3';
 import {MapStateInterface, MapTransformInterface, MarkerInterface} from "components/Map/Interface";
 import {Group} from "./Group";
 
-const markerPropertyDefault: MarkerInterface = {
+const markerDefault: MarkerInterface = {
     lat: 51.238741,
     lng: 7.107757,
     isWithin: true,
@@ -23,7 +23,7 @@ const MapStateDefault: MapStateInterface = {
     width: 100,
     height: 100,
     dimensionUnit: '%',
-    color: 'blue',
+    color: 'red',
     focus: 'center',
     marker: {
         ...markerDefault

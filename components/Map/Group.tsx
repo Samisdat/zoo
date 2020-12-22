@@ -3,6 +3,7 @@ import {useEffect} from "react";
 import {Ways} from "./Ways";
 import {Sketched} from "./Sketched";
 import {CurrentPosition} from "./CurrentPosition";
+import {MapTransformInterface} from "./Interface";
 
 export const Group = (props) => {
 
@@ -26,21 +27,13 @@ export const Group = (props) => {
             })
             .on('end', () => {
 
-                console.log('end')
+                const transform: MapTransformInterface = {
+                    k: d3.event.transform.k,
+                    x: d3.event.transform.x,
+                    y: d3.event.transform.y
+                }
 
-                /*
-                const updateD3 = {
-                    ...d3PropertiesState,
-                    transform: {
-                        k: d3.event.transform.k,
-                        x: d3.event.transform.x,
-                        y: d3.event.transform.y
-                    }
-                };
-
-                setD3PropertiesState(updateD3);
-
-                 */
+                props.setTransform(transform);
 
             });
 

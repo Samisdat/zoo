@@ -13,6 +13,12 @@ const markerPropertyDefault: MarkerInterface = {
     text: 'Map Marker Text'
 };
 
+const mapTransformDefault: MapTransformInterface = {
+    k:1,
+    x:0,
+    y:0
+}
+
 const MapStateDefault: MapStateInterface = {
     width: 100,
     height: 100,
@@ -22,9 +28,7 @@ const MapStateDefault: MapStateInterface = {
     marker: markerPropertyDefault,
     pathGenerator: undefined,
     transform: {
-        k:1,
-        x:0,
-        y:0
+        ...mapTransformDefault
     }
 }
 
@@ -45,6 +49,16 @@ export const MapRoot = (props) => {
 
     const setTransform = (transform:MapTransformInterface) => {
 
+        if(
+            transform.x === mapState.transform.x &&
+            transform.y === mapState.transform.y &&
+            transform.k === mapState.transform.k
+        ){
+            return;
+        }
+
+        window.localStorage.setItem('pan-zoom', JSON.stringify(transform));
+
         setMapState({
             ...mapState,
             transform: transform
@@ -62,10 +76,48 @@ export const MapRoot = (props) => {
 
     }
 
+    const getTransformFromStorage = ():MapTransformInterface => {
+
+        const zoomFromStorage = window.localStorage.getItem('pan-zoom');
+
+        const defaultTransform = {
+            ...mapTransformDefault
+        };
+
+        if(null === zoomFromStorage){
+            return defaultTransform;
+        }
+
+        let json = undefined;
+
+        try {
+            json = JSON.parse(zoomFromStorage);
+        } catch (e) {
+            return defaultTransform;
+        }
+
+        if(undefined === json.x){
+            return defaultTransform;
+        }
+
+        if(undefined === json.y){
+            return defaultTransform;
+        }
+
+        if(undefined === json.y){
+            return defaultTransform;
+        }
+
+        return json as MapTransformInterface;
+
+    }
+
     const createMap = () => {
 
         const width = window.innerWidth;
         const height = window.innerHeight;
+
+        const transform = getTransformFromStorage();
 
         const projection = d3.geoMercator()
             .translate([width / 2, height / 2])
@@ -88,7 +140,8 @@ export const MapRoot = (props) => {
             height,
             dimensionUnit:'px',
             color: 'blue',
-            pathGenerator
+            pathGenerator,
+            transform
         };
 
         setMapState(nextMapState)

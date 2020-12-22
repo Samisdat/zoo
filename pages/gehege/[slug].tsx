@@ -1,17 +1,19 @@
 import React from 'react';
 import { useRouter } from 'next/router'
-import {GehegeMap} from "../../components/D3/GehegeMap";
+
 import {getGeoJson, getOneGeoJson} from "../api/geojson/geojson";
 import {Feature, FeatureCollection, LineString, Polygon} from "geojson";
 import {NavigationInterface} from "../../components/Navigation/Interfaces";
 import {IndexProps} from "../index";
 import {MapRoot} from "../../components/D3/MapRoot";
 
+
 export default function Gehege(props) {
 
 
     const router = useRouter()
     const { slug } = router.query
+
 
     return (
         <MapRoot slug={slug} {...props} />

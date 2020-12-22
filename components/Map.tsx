@@ -1,38 +1,64 @@
 import React, {Fragment, useEffect, useState} from 'react';
 
-interface MapStateInterface {
+import * as d3 from 'd3';
+
+export interface Marker {
+    lat: number;
+    lng: number;
+    isWithin: boolean;
+    isGPS:boolean
+    text: string;
+}
+
+export interface MapStateInterface {
     width: number;
     height: number;
     focus: string;
+    marker: Marker;
+    transform: { x: number; y: number; k: number };
 }
+
+const markerPropertyDefault: Marker = {
+    lat: 51.238741,
+    lng: 7.107757,
+    isWithin: true,
+    isGPS: false,
+    text: 'Map Marker Text'
+};
 
 const MapStateDefault: MapStateInterface = {
     width: undefined,
     height: undefined,
-    focus: 'center'
+    focus: 'center',
+    marker: markerPropertyDefault,
+    transform: {
+        k:1,
+        x:0,
+        y:0
+    }
 }
+
+import createPersistedState from 'use-persisted-state';
+import {Sketched} from "./D3/Sketched";
+import {Ways} from "./D3/Ways";
+import {CurrentPosition} from "./D3/CurrentPosition";
+const useMapState = createPersistedState('map');
 
 export const Map = (props) => {
 
+    const svgId = 'main-svg';
+
     const [mapState, setMapState] = useState<MapStateInterface>(MapStateDefault);
 
-    const setHash = () => {
+    const [pathGenerator, setPathGenerator] = useState(undefined);
 
-        let hash = location.hash.replace('#', '');
+    const setFocus = (focus:string) => {
 
-        if('' === hash){
-            hash = 'center';
-        }
-
-        if(hash === mapState.focus){
-            return;
-        }
-
-        // @TODO Validate
         setMapState({
             ...mapState,
-            focus: hash
+            focus: focus
         });
+
     };
 
     const setDimensions = () => {
@@ -51,31 +77,44 @@ export const Map = (props) => {
         const width = window.innerWidth;
         const height = window.innerHeight;
 
-        if(width === mapState.width && height === mapState.height ){
-            return;
+        if(width !== mapState.width || height !== mapState.height){
+            setDimensions();
         }
 
-        console.log('render')
+        var mapSvg = d3.select(`#${svgId}`)
+            .attr("width", width + 'px')
+            .attr("height", height + 'px')
+            .attr("style", 'background:blue')
+        ;
 
-        setDimensions();
-        setHash();
+        const projection = d3.geoMercator()
+            .translate([width / 2, height / 2])
+            .angle(180)
+        ;
+
+        console.log(d3.geoPath().projection(projection));
+
+        setPathGenerator(d3.geoPath().projection(projection));
+        console.log(pathGenerator);
+
+        var center = d3.geoCentroid(props.border);
+
+        projection
+            .scale(3000000)
+            .center(center)
 
         window.addEventListener('resize', setDimensions);
-        window.addEventListener('hashchange', setHash);
 
     }, [mapState]);
 
     return (
 
-        <React.Fragment>
-            <p>width: {mapState.width}</p>
-            <p>width: {mapState.height}</p>
-            <p>focus: {mapState.focus}</p>
-            <p><a href="#eins">Eins</a></p>
-            <p><a href="#zwei">Zwei</a></p>
-            <p><a href="#drei">Drei</a></p>
-            <p><a href="#vier">Vier</a></p>
-        </React.Fragment>
+        <svg id={svgId} style={{
+            width: '100%',
+            height: '100%'
+        }}
+        ></svg>
+
 
     );
 

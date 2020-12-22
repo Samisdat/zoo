@@ -11,31 +11,27 @@ export const CurrentPosition = (props) => {
 
     useEffect(() => {
 
-        if(undefined === props.d3PropertiesState){
-            return;
-        }
-
-        if(undefined === props.d3PropertiesState.geoPath){
+        if(undefined === props.pathGenerator){
             return;
         }
 
         var mapSvg = d3.select(`#${svgId}`)
 
         var positionGroup = mapSvg.select(`#${positionId}`);
-        const currentPosition = getCurrentPositionGeoJson('initial', props.d3PropertiesState.marker.lat, props.d3PropertiesState.marker.lng);
+        const currentPosition = getCurrentPositionGeoJson('initial', props.marker.lat, props.marker.lng);
 
         positionGroup.selectAll('circle')
             .data(currentPosition)
             .join('circle')
 
-            .attr('transform', function(d) { return 'translate(' + props.d3PropertiesState.geoPath.centroid(d) + ')'; })
+            .attr('transform', function(d) { return 'translate(' + props.pathGenerator.centroid(d) + ')'; })
             .attr('title', (d)=>{
                 return d.properties.slug;
             })
             .attr('fill', (d, i)=>{
                 return d.properties.fill;
             })
-            .attr('d', props.d3PropertiesState.geoPath)
+            .attr('d', props.pathGenerator)
             .attr('r', 5);
 
 

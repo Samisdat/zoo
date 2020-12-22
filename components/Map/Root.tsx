@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import * as d3 from 'd3';
+import {GeoPath} from 'd3';
 import {MapStateInterface, MapTransformInterface, MarkerInterface} from "components/Map/Interface";
 import {Group} from "./Group";
 
@@ -26,8 +27,6 @@ const MapStateDefault: MapStateInterface = {
         y:0
     }
 }
-
-import {GeoPath} from "d3";
 
 export const MapRoot = (props) => {
 

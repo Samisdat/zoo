@@ -1,27 +1,9 @@
 import React, {useEffect, useState} from 'react';
 
 import * as d3 from 'd3';
+import {MapStateInterface, MapTransformInterface, MarkerInterface} from "components/Map/Interface";
 
-export interface Marker {
-    lat: number;
-    lng: number;
-    isWithin: boolean;
-    isGPS:boolean
-    text: string;
-}
-
-export interface MapStateInterface {
-    width: number;
-    height: number;
-    dimensionUnit: string;
-    color: string;
-    focus: string;
-    marker: Marker;
-    pathGenerator: GeoPath,
-    transform: { x: number; y: number; k: number };
-}
-
-const markerPropertyDefault: Marker = {
+const markerPropertyDefault: MarkerInterface = {
     lat: 51.238741,
     lng: 7.107757,
     isWithin: true,

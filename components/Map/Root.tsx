@@ -171,14 +171,17 @@ export const MapRoot = (props) => {
     return (
 
         <svg id={svgId} style={{
-            width: `${mapState.width}${mapState.dimensionUnit}` ,
-            height: `${mapState.height}${mapState.dimensionUnit}`,
-            backgroundColor: mapState.color
-        }}
+                width: `${mapState.width}${mapState.dimensionUnit}` ,
+                height: `${mapState.height}${mapState.dimensionUnit}`,
+                backgroundColor: mapState.color
+            }}
         >
-            <Group mapState={mapState} {...props} />
+            <Group
+                mapState={mapState}
+                setTransform={setTransform}
+                {...props}
+            />
         </svg>
-
 
     );
 

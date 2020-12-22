@@ -2,7 +2,7 @@ import React from 'react';
 
 import {getGeoJson, getOneGeoJson} from './api/geojson/geojson';
 import {Feature, FeatureCollection, LineString, Polygon} from 'geojson';
-import {Map} from 'components/Map';
+import {MapRoot} from 'components/Map/Root';
 import {NavigationInterface} from "../components/Navigation/Interfaces";
 
 export interface IndexProps{
@@ -15,9 +15,8 @@ export interface IndexProps{
 
 export default function Index(props:IndexProps) {
 
-
   return (
-      <Map {...props}></Map>
+      <MapRoot {...props}></MapRoot>
   );
 }
 

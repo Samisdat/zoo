@@ -40,6 +40,10 @@ export const MapRoot = (props) => {
 
     const setFocus = (focus:string) => {
 
+        if(focus === mapState.focus){
+            return;
+        }
+
         setMapState({
             ...mapState,
             focus: focus
@@ -68,10 +72,17 @@ export const MapRoot = (props) => {
 
     const setDimensions = () => {
 
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        if(width === mapState.width && height === mapState.height){
+            return;
+        }
+
         setMapState({
             ...mapState,
-            width: window.innerWidth,
-            height: window.innerHeight
+            width: width,
+            height: height
         });
 
     }

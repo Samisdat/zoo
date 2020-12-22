@@ -198,7 +198,7 @@ export const MapRoot = (props) => {
     // @TODO add reducer to prevent render twice
     useEffect(() => {
 
-        if(undefined === mapState || undefined === mapState.pathGenerator){
+        if (undefined === mapState.pathGenerator) {
             createMap();
         }
 

@@ -2,8 +2,6 @@ import {useEffect} from 'react';
 
 import * as d3 from 'd3';
 
-import {Sketched} from 'components/D3/Sketched';
-
 import createPersistedState from 'use-persisted-state';
 import {Feature} from "geojson";
 const useD3State = createPersistedState('d3');
@@ -263,7 +261,7 @@ mapSvg.call(
     return (
         <svg id={svgId}>
             <g id={mapId}>
-                <Sketched d3PropertiesState={d3PropertiesState} {...props}></Sketched>
+
                 <g id="zoomBox"></g>
             </g>
 

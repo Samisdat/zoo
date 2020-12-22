@@ -2,6 +2,7 @@ import * as d3 from 'd3';
 import {useEffect} from "react";
 import {Ways} from "./Ways";
 import {Sketched} from "./Sketched";
+import {CurrentPosition} from "./CurrentPosition";
 
 export const Group = (props) => {
 
@@ -74,8 +75,9 @@ export const Group = (props) => {
 
     return (
         <g id={mapId}>
-            <Sketched mapState={props.mapState} boundingBox={props.boundingBox}></Sketched>
-            <Ways pathGenerator={props.mapState.pathGenerator} simpleWays={props.simpleWays}></Ways>
+            <Sketched mapState={props.mapState} boundingBox={props.boundingBox} />
+            <Ways pathGenerator={props.mapState.pathGenerator} simpleWays={props.simpleWays} />
+            <CurrentPosition pathGenerator={props.mapState.pathGenerator} marker={props.mapState.marker} />
         </g>
     );
 

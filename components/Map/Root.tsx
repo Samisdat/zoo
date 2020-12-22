@@ -112,7 +112,7 @@ export const MapRoot = (props) => {
             backgroundColor: mapState.color
         }}
         >
-            <Group mapState={mapState} simpleWays={props.simpleWays}/>
+            <Group mapState={mapState} {...props} />
         </svg>
 
 

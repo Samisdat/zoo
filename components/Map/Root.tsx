@@ -25,7 +25,9 @@ const MapStateDefault: MapStateInterface = {
     dimensionUnit: '%',
     color: 'blue',
     focus: 'center',
-    marker: markerPropertyDefault,
+    marker: {
+        ...markerDefault
+    },
     pathGenerator: undefined,
     transform: {
         ...mapTransformDefault
@@ -123,12 +125,45 @@ export const MapRoot = (props) => {
 
     }
 
+    const getMarkerFromStorage = (): MarkerInterface => {
+
+        const markerFromStorage = window.localStorage.getItem('current-position');
+
+        const defaultMarker = {
+            ...markerDefault
+        };
+
+        if(null === markerFromStorage){
+            return defaultMarker;
+        }
+
+        let json = undefined;
+
+        try {
+            json = JSON.parse(markerFromStorage);
+        } catch (e) {
+            return defaultMarker;
+        }
+
+        if(undefined === json.lat){
+            return defaultMarker;
+        }
+
+        if(undefined === json.lng){
+            return defaultMarker;
+        }
+
+        return json as MarkerInterface;
+
+    }
+
     const createMap = () => {
 
         const width = window.innerWidth;
         const height = window.innerHeight;
 
         const transform = getTransformFromStorage();
+        const marker = getMarkerFromStorage()
 
         const projection = d3.geoMercator()
             .translate([width / 2, height / 2])
@@ -152,7 +187,8 @@ export const MapRoot = (props) => {
             dimensionUnit:'px',
             color: 'blue',
             pathGenerator,
-            transform
+            transform,
+            marker
         };
 
         setMapState(nextMapState)

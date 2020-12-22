@@ -74,7 +74,7 @@ export const MapRoot = (props) => {
 
         const pathGenerator: GeoPath = d3.geoPath().projection(projection)
 
-        var center = d3.geoCentroid(props.border);
+        const center = d3.geoCentroid(props.border);
 
         projection
             .scale(3000000)

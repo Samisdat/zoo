@@ -74,7 +74,7 @@ export const Group = (props) => {
 
     return (
         <g id={mapId}>
-            <Sketched mapState={props.mapState} {...props}></Sketched>
+            <Sketched mapState={props.mapState} boundingBox={props.boundingBox}></Sketched>
             <Ways pathGenerator={props.mapState.pathGenerator} simpleWays={props.simpleWays}></Ways>
         </g>
     );

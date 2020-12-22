@@ -17,11 +17,11 @@ export const Sketched = (props) => {
             return;
         }
 
-        if(undefined === props.d3PropertiesState || null === props.d3PropertiesState){
+        if(undefined === props.mapState || null === props.mapState){
             return;
         }
 
-        if(undefined === props.d3PropertiesState.geoPath || null === props.d3PropertiesState.geoPath){
+        if(undefined === props.mapState.pathGenerator || null === props.mapState.pathGenerator){
             return;
         }
 
@@ -42,7 +42,7 @@ export const Sketched = (props) => {
             .attr("id", (d:Feature)=>{
                 return d.properties.slug;
             })
-            .attr("d", props.d3PropertiesState.geoPath)
+            .attr("d", props.mapState.pathGenerator)
 ;
 
         const bound = mapSvg.select(`#bounding-box`);

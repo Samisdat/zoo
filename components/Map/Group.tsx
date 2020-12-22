@@ -68,9 +68,18 @@ export const Group = (props) => {
 
     return (
         <g id={mapId}>
-            <Sketched mapState={props.mapState} boundingBox={props.boundingBox} />
-            <Ways pathGenerator={props.mapState.pathGenerator} simpleWays={props.simpleWays} />
-            <CurrentPosition pathGenerator={props.mapState.pathGenerator} marker={props.mapState.marker} />
+            <Sketched
+                mapState={props.mapState}
+                boundingBox={props.boundingBox}
+            />
+            <Ways
+                pathGenerator={props.mapState.pathGenerator}
+                simpleWays={props.simpleWays}
+            />
+            <CurrentPosition
+                pathGenerator={props.mapState.pathGenerator}
+                marker={props.mapState.marker}
+            />
         </g>
     );
 

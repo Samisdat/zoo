@@ -64,7 +64,8 @@ export async function getStaticProps(context) {
     const navigation:NavigationInterface = {
         activeMainItem: 'map',
         openSearch: false,
-        openSideMenu: false
+        openSideMenu: false,
+        openTeaser: false
     };
 
     const indexProps:IndexProps = {

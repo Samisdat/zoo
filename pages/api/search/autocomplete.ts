@@ -11,14 +11,14 @@ export default async (req: NextApiRequest, res: NextApiResponse<any[]>) => {
 
         return{
             type: 'zoomBox',
-            name: feature.properties.name
+            feature: feature
         };
 
     });
 
     const data = zoomBoxes.sort( (a:any, b:any)=>{
 
-        return a.name.localeCompare(b.name);
+        return a.feature.properties.name.localeCompare(b.feature.properties.name);
 
     });
 

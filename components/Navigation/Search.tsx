@@ -1,27 +1,11 @@
 import React from 'react';
-import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import fetch from 'cross-fetch';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-    list: {
-        width: 250,
-    },
-    fullList: {
-        width: 'auto',
-    },
-    subheader: {
-        backgroundColor: theme.palette.background.paper,
-    },
-}));
-
 export default function NavigationSearch(props) {
-
-    const classes = useStyles();
 
     const {toggleSearch} = props;
 
@@ -42,12 +26,16 @@ export default function NavigationSearch(props) {
 
         (async () => {
 
-            const response0 = await fetch('http://127.0.0.1:8080/api/search/autocomplete');
+            const response = await fetch('http://127.0.0.1:8080/api/search/autocomplete');
 
-            const results = await response0.json();
+            const results = await response.json();
 
+            const complete = results.map((result)=>{
+                return result.feature;
+            });
+            
             if (active) {
-                setOptions(results);
+                setOptions(complete);
             }
         })();
 
@@ -64,12 +52,15 @@ export default function NavigationSearch(props) {
 
     const onChange = (event) => {
 
-        if(undefined === event.target.value){
+        if(! event.target){
             return;
         }
 
-        const selected = options[event.target.value];
+        const index = event.target.getAttribute('data-option-index');
 
+        const selected = options[index];
+
+        console.log(selected.properties)
 
     }
 
@@ -90,8 +81,16 @@ export default function NavigationSearch(props) {
                 onClose={() => {
                     setOpen(false);
                 }}
-                getOptionSelected={(option, value) => option.name === value.name}
-                getOptionLabel={(option) => option.name}
+                getOptionSelected={
+                    (option, value) => {
+                        return option.properties.name === value.name
+                    }
+                }
+                getOptionLabel={
+                    (option) => {
+                        return option.properties.name
+                    }
+                }
                 options={options}
                 loading={loading}
                 onChange={onChange}

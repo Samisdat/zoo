@@ -5,6 +5,7 @@ import {GeoPath} from 'd3';
 import {MapStateInterface, MapTransformInterface, MarkerInterface} from "components/Map/Interface";
 import {Group} from "./Group";
 import {MapSearch} from "./Search";
+import {Feature, Polygon} from "geojson";
 
 
 const markerDefault: MarkerInterface = {
@@ -26,7 +27,7 @@ const MapStateDefault: MapStateInterface = {
     height: 100,
     dimensionUnit: '%',
     color: 'red',
-    focus: 'center',
+    focus: undefined,
     marker: {
         ...markerDefault
     },
@@ -54,9 +55,9 @@ export const MapRoot = (props) => {
 
     };
 
-    const setFocus = (focus:string) => {
+    const setFocus = (focus:Feature<Polygon>) => {
 
-        if(focus === mapState.focus){
+        if(undefined !== mapState.focus && focus.properties.slug === mapState.focus.properties.slug){
             return;
         }
 
@@ -218,8 +219,6 @@ export const MapRoot = (props) => {
 
         window.addEventListener('resize', setDimensions);
 
-
-
         const nextMapState: MapStateInterface = {
             ...mapState,
             width,
@@ -259,7 +258,7 @@ export const MapRoot = (props) => {
                     {...props}
                 />
             </svg>
-            <MapSearch toggleSearch={toggleSearch} {...mapState}></MapSearch>
+            <MapSearch setFocus={setFocus} toggleSearch={toggleSearch} {...mapState}></MapSearch>
         </React.Fragment>
     );
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import Drawer from '@material-ui/core/Drawer';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import fetch from 'cross-fetch';
@@ -7,7 +7,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 export function MapSearch(props) {
 
-    const {toggleSearch} = props;
+    const {toggleSearch, setFocus} = props;
 
     const onClick = () => {
         toggleSearch();
@@ -60,17 +60,21 @@ export function MapSearch(props) {
 
         const selected = options[index];
 
-        console.log(selected.properties)
+        if(undefined === selected){
+            return;
+        }
+
+        setFocus(selected)
 
     }
 
     return (
 
-        <SwipeableDrawer
+        <Drawer
             anchor='top'
             open={props.openSearch}
             onClose={toggleSearch}
-            onOpen={toggleSearch}
+            variant='persistent'
         >
             <Autocomplete
                 id="asynchronous-demo"
@@ -114,7 +118,7 @@ export function MapSearch(props) {
                 )}
             />
 
-        </SwipeableDrawer>
+        </Drawer>
         
     );
 }

@@ -8,7 +8,6 @@ import theme from '../src/theme';
 
 import NavigationMain from '../components/Navigation/Main';
 import NavigationSidebar from '../components/Navigation/Sidebar';
-import NavigationSearch from '../components/Navigation/Search';
 import Teaser from '../components/Navigation/Teaser';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -28,17 +27,6 @@ export default function ZooWuppertal(props) {
   const { Component, pageProps } = props;
 
   const [navigationState, setNavigationState] = useNavigationState(pageProps.navigation);
-
-  const toggleSearch = () => {
-
-      const open = (true === navigationState.openSearch) ? false : true;
-
-      setNavigationState({
-          ...navigationState,
-          openSearch:open
-      });
-
-  };
 
     const toggleTeaser = () => {
 
@@ -100,9 +88,8 @@ export default function ZooWuppertal(props) {
                   <Component {...pageProps} />
               </Grid>
           </Grid>
-          <NavigationMain toggleSideMenu={toggleSideMenu} toogleSearch={toggleSearch} {...navigationState}></NavigationMain>
+          <NavigationMain toggleSideMenu={toggleSideMenu} {...navigationState}></NavigationMain>
           <NavigationSidebar toggleSideMenu={toggleSideMenu} {...navigationState}></NavigationSidebar>
-          <NavigationSearch toggleSearch={toggleSearch} {...navigationState} {...props}></NavigationSearch>
           <Teaser toggleTeaser={toggleTeaser} {...navigationState} {...props}></Teaser>
       </ThemeProvider>
     </React.Fragment>

@@ -5,7 +5,7 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import fetch from 'cross-fetch';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-export default function NavigationSearch(props) {
+export function MapSearch(props) {
 
     const {toggleSearch} = props;
 

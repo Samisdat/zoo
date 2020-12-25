@@ -23,4 +23,5 @@ export interface MapStateInterface {
     marker: MarkerInterface;
     pathGenerator: GeoPath,
     transform: MapTransformInterface;
+    openSearch: boolean;
 }

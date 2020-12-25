@@ -4,6 +4,8 @@ import * as d3 from 'd3';
 import {GeoPath} from 'd3';
 import {MapStateInterface, MapTransformInterface, MarkerInterface} from "components/Map/Interface";
 import {Group} from "./Group";
+import {MapSearch} from "./Search";
+
 
 const markerDefault: MarkerInterface = {
     lat: 51.238741,
@@ -31,7 +33,8 @@ const MapStateDefault: MapStateInterface = {
     pathGenerator: undefined,
     transform: {
         ...mapTransformDefault
-    }
+    },
+    openSearch: false
 }
 
 export const MapRoot = (props) => {
@@ -39,6 +42,17 @@ export const MapRoot = (props) => {
     const svgId = 'main-svg';
 
     const [mapState, setMapState] = useState<MapStateInterface>(MapStateDefault);
+
+    const toggleSearch = () => {
+
+        const open = (true === mapState.openSearch) ? false : true;
+
+        setMapState({
+            ...mapState,
+            openSearch:open
+        });
+
+    };
 
     const setFocus = (focus:string) => {
 
@@ -157,6 +171,27 @@ export const MapRoot = (props) => {
 
     }
 
+    const getOpenSearchFromStorage = ():boolean => {
+
+        const openSearchFromStorage = window.localStorage.getItem('map-search');
+        const defaultMarker = false;
+
+        if(null === openSearchFromStorage){
+            return defaultMarker;
+        }
+
+        if('false' === openSearchFromStorage){
+            return false;
+        }
+
+        if('true' === openSearchFromStorage){
+            return true;
+        }
+
+        return defaultMarker;
+
+    }
+
     const createMap = () => {
 
         const width = window.innerWidth;
@@ -164,6 +199,9 @@ export const MapRoot = (props) => {
 
         const transform = getTransformFromStorage();
         const marker = getMarkerFromStorage()
+        const openSearch = getOpenSearchFromStorage();
+
+        console.log(openSearch);
 
         const projection = d3.geoMercator()
             .translate([width / 2, height / 2])
@@ -180,6 +218,8 @@ export const MapRoot = (props) => {
 
         window.addEventListener('resize', setDimensions);
 
+
+
         const nextMapState: MapStateInterface = {
             ...mapState,
             width,
@@ -188,7 +228,8 @@ export const MapRoot = (props) => {
             color: 'blue',
             pathGenerator,
             transform,
-            marker
+            marker,
+            openSearch
         };
 
         setMapState(nextMapState)
@@ -205,20 +246,21 @@ export const MapRoot = (props) => {
     }, [mapState]);
 
     return (
-
-        <svg id={svgId} style={{
-                width: `${mapState.width}${mapState.dimensionUnit}` ,
-                height: `${mapState.height}${mapState.dimensionUnit}`,
-                backgroundColor: mapState.color
-            }}
-        >
-            <Group
-                mapState={mapState}
-                setTransform={setTransform}
-                {...props}
-            />
-        </svg>
-
+        <React.Fragment>
+            <svg id={svgId} style={{
+                    width: `${mapState.width}${mapState.dimensionUnit}` ,
+                    height: `${mapState.height}${mapState.dimensionUnit}`,
+                    backgroundColor: mapState.color
+                }}
+            >
+                <Group
+                    mapState={mapState}
+                    setTransform={setTransform}
+                    {...props}
+                />
+            </svg>
+            <MapSearch toggleSearch={toggleSearch} {...mapState}></MapSearch>
+        </React.Fragment>
     );
 
 }

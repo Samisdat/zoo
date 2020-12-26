@@ -62,6 +62,8 @@ export const Group = (props) => {
             return;
         }
 
+        console.log(props);
+
         createD3Map();
 
     });

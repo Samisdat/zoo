@@ -1,5 +1,5 @@
 import {GeoPath} from "d3";
-import {Feature, Polygon} from "geojson";
+import {GeoProjection} from "d3-geo";
 
 export interface MarkerInterface {
     lat: number;
@@ -20,9 +20,8 @@ export interface MapStateInterface {
     height: number;
     dimensionUnit: string;
     color: string;
-    focus: Feature<Polygon>;
     marker: MarkerInterface;
     pathGenerator: GeoPath,
+    projection: GeoProjection;
     transform: MapTransformInterface;
-    openSearch: boolean;
 }

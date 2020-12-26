@@ -4,6 +4,7 @@ import {Ways} from "./Ways";
 import {Sketched} from "./Sketched";
 import {CurrentPosition} from "./CurrentPosition";
 import {MapTransformInterface} from "./Interface";
+import {Feature} from "geojson";
 
 export const Group = (props) => {
 
@@ -11,6 +12,8 @@ export const Group = (props) => {
     const mapId = 'main-map';
 
     const createD3Map = ()=> {
+
+        console.log('createD3Map')
 
         var mapSvg = d3.select(`#${svgId}`)
         const mapGroup = d3.select(`#${mapId}`);
@@ -50,6 +53,38 @@ export const Group = (props) => {
         // enable zooming
         mapSvg.call(zooming);
 
+
+        const panAndZoomToBox = (box:any) => {
+
+            console.log(JSON.stringify(box, null, 4))
+
+
+            box.properties.fill = '#f0f0f0';
+            box.properties.opacity = 0.3;
+
+            var elementsGroup = mapGroup.select('#zoomBox');
+            console.log(elementsGroup)
+            elementsGroup.selectAll("path")
+                .data([box])
+                .enter()
+                .append("path")
+                .attr("fill", (d:Feature)=>{
+                    console.log(d)
+                    return '#f0f';
+                })
+                .attr("opacity", (d:Feature)=>{
+                    return 0.5;
+                })
+                .attr("id", (d:Feature)=>{
+                    return d.properties.slug;
+                })
+                .attr("d", props.mapState.pathGenerator)
+
+        };
+
+        panAndZoomToBox(props.focus);
+
+
     };
 
     useEffect(() => {
@@ -82,6 +117,7 @@ export const Group = (props) => {
                 pathGenerator={props.mapState.pathGenerator}
                 marker={props.mapState.marker}
             />
+            <g id="zoomBox"></g>
         </g>
     );
 

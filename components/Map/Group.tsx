@@ -54,6 +54,63 @@ export const Group = (props) => {
         mapSvg.call(zooming);
 
 
+        const centerToPolygon = (polygon) => {
+
+            const latitudes = polygon.geometry.coordinates[0].map((coordinate)=>{
+                return coordinate[1];
+            });
+
+            const longitudes = polygon.geometry.coordinates[0].map((coordinate)=>{
+                return coordinate[0];
+            });
+
+
+            let north = Math.max(...latitudes);
+            let south = Math.min(...latitudes);
+
+            let west = Math.max(...longitudes);
+            let east = Math.min(...longitudes);
+
+            return [
+                [east, north],
+                [west, south],
+            ];
+
+        }
+
+
+        //const topLeft = projection(centerOfPolygon);
+
+        //const centerOfEnclosure = d3.geoCentroid(centerTo);
+
+        const centerOfEnclosure = centerToPolygon(props.focus);
+
+        const [x0, y0] = props.mapState.projection(centerOfEnclosure[0] as any);
+        const [x1, y1] = props.mapState.projection(centerOfEnclosure[1] as any);
+
+
+
+        //[[x0, y0], [x1, y1]]
+        console.log(x0, y0, x1, y1)
+
+        //const x = -1 * topLeft[0];
+        //const y = -1 * topLeft[1];
+        const k = 6;
+
+        const scale = Math.min(8, 0.9 / Math.max((x1 - x0) / props.mapState.width, (y1 - y0) / props.mapState.height));
+        console.log(scale)
+
+        var t2 = d3.zoomIdentity
+            .translate(props.mapState.width / 2, props.mapState.height / 2)
+            .scale(k)
+            .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
+        ;
+
+        mapSvg.call(
+            (zooming.transform as any),
+            t2
+        );
+
         const panAndZoomToBox = (box:any) => {
 
             console.log(JSON.stringify(box, null, 4))

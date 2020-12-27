@@ -27,7 +27,8 @@ export default function NavigationMain(props) {
 
     const router = useRouter()
 
-    const {toogleSearch} = props;
+    const {toggleSearch} = props;
+
     const {toggleSideMenu} = props;
 
     const classes = useStyles();
@@ -41,11 +42,7 @@ export default function NavigationMain(props) {
                 event.preventDefault();
             }
 
-            const current = window.localStorage.getItem('map-search');
-
-            const next = ('true' === current)? 'false' : 'true';
-
-            window.localStorage.setItem('map-search', next);
+            toggleSearch();
 
         }
 

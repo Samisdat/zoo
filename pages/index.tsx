@@ -5,13 +5,16 @@ import {Feature, FeatureCollection, LineString, Polygon} from 'geojson';
 import {MapRoot} from 'components/Map/Root';
 import {NavigationInterface} from "../components/Navigation/Interfaces";
 import {MapSearch} from "../components/Map/Search";
+import {createChainedFunction} from "@material-ui/core";
 
 export interface IndexProps{
     border: Feature<Polygon>;
     simpleWays: FeatureCollection<LineString>[];
     boundingBox: FeatureCollection<LineString>;
     zoomBoxes: FeatureCollection<Polygon>;
-    navigation: NavigationInterface;
+    navigation?: NavigationInterface;
+    toggleSearch?: Function;
+
 }
 
 type MapFocus = 'center';
@@ -22,6 +25,10 @@ export interface IndexState {
 }
 
 export default function Index(props:IndexProps) {
+
+    const {toggleSearch} = props;
+
+    console.log(props)
 
     const [state, setState] = useState<IndexState>({
         focus: {
@@ -46,17 +53,6 @@ export default function Index(props:IndexProps) {
         openSearch: false,
     });
 
-    const toggleSearch = () => {
-
-        const open = (true === state.openSearch) ? false : true;
-
-        setState({
-            ...state,
-            openSearch:open
-        });
-
-    };
-
     const setFocus = (focus:Feature<Polygon>) => {
 
         let nextFocus = state.focus;
@@ -80,44 +76,10 @@ export default function Index(props:IndexProps) {
 
     };
 
-    const getOpenSearchFromStorage = ():boolean => {
-
-        const openSearchFromStorage = window.localStorage.getItem('map-search');
-        const defaultMarker = false;
-
-        if(null === openSearchFromStorage){
-            return defaultMarker;
-        }
-
-        if('false' === openSearchFromStorage){
-            return false;
-        }
-
-        if('true' === openSearchFromStorage){
-            return true;
-        }
-
-        return defaultMarker;
-
-    }
-
-    useEffect(() => {
-
-        const openSearch = getOpenSearchFromStorage();
-
-        if(openSearch !== state.openSearch){
-            setState({
-                ...state,
-                openSearch:openSearch
-            })
-        }
-
-    }, [state]);
-
     return (
         <React.Fragment>
             <MapRoot setFocus={setFocus} focus={state.focus} {...props}></MapRoot>
-            <MapSearch setFocus={setFocus} toggleSearch={toggleSearch} {...state}></MapSearch>
+            <MapSearch setFocus={setFocus} toggleSearch={toggleSearch} {...props.navigation}></MapSearch>
         </React.Fragment>
   );
 }
@@ -163,18 +125,11 @@ export async function getStaticProps(context) {
 
     let zoomBoxes = await getOneGeoJson('zoomboxes') as FeatureCollection<Polygon>;
 
-    const navigation:NavigationInterface = {
-        activeMainItem: 'map',
-        openSideMenu: false,
-        openTeaser: false
-    };
-
     const indexProps:IndexProps = {
         border: border,
         simpleWays: simpleWay,
         boundingBox:boundingBoxCollection,
-        zoomBoxes:zoomBoxes,
-        navigation:navigation
+        zoomBoxes:zoomBoxes
     };
 
     return {

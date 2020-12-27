@@ -26,7 +26,28 @@ export default function ZooWuppertal(props) {
 
   const { Component, pageProps } = props;
 
-  const [navigationState, setNavigationState] = useNavigationState(pageProps.navigation);
+  const [navigationState, setNavigationState] = useNavigationState({
+        activeMainItem: 'map',
+        openSideMenu: false,
+        openTeaser: false,
+        openSearch: false
+  });
+
+    console.log('navigationState', navigationState.openSearch)
+    const toggleSearch = () => {
+
+
+
+        const open = (true === navigationState.openSearch) ? false : true;
+
+        console.log(navigationState.openSearch)
+
+        setNavigationState({
+            ...navigationState,
+            openSearch:open
+        });
+
+    };
 
     const toggleTeaser = () => {
 
@@ -51,8 +72,6 @@ export default function ZooWuppertal(props) {
     };
 
     React.useEffect(() => {
-
-
 
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
@@ -85,12 +104,27 @@ export default function ZooWuppertal(props) {
         <CssBaseline />
           <Grid container>
               <Grid item xs={12}>
-                  <Component {...pageProps} />
+                  <Component
+                      toggleSearch={toggleSearch}
+                      navigation={navigationState}
+                      {...pageProps}
+                  />
               </Grid>
           </Grid>
-          <NavigationMain toggleSideMenu={toggleSideMenu} {...navigationState}></NavigationMain>
-          <NavigationSidebar toggleSideMenu={toggleSideMenu} {...navigationState}></NavigationSidebar>
-          <Teaser toggleTeaser={toggleTeaser} {...navigationState} {...props}></Teaser>
+          <NavigationMain
+              toggleSearch={toggleSearch}
+              toggleSideMenu={toggleSideMenu}
+              {...navigationState}
+          />
+          <NavigationSidebar
+              toggleSideMenu={toggleSideMenu}
+              {...navigationState}
+          />
+          <Teaser
+              toggleTeaser={toggleTeaser}
+              {...navigationState}
+              {...props}
+          />
       </ThemeProvider>
     </React.Fragment>
   );

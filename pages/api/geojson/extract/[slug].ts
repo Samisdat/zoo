@@ -56,13 +56,6 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
 
     const groupRegEx = new RegExp(`<g id="${slug}"(.*?)>(.*?)<\/g>`, 'm')
 
-    console.log(dataDir)
-    console.log(combinedSvgPath)
-    console.log(combinedSvg)
-
-    console.log(groupRegEx)
-
-
     // @TODO debug
     // if slug !==
     if('zoomboxes' !== slug){
@@ -82,7 +75,6 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
 
     // create directory if not exits
     const dirForRequestSlug = path.resolve(dataDir, (slug as string));
-    console.log()
 
     if (false === fs.existsSync(dirForRequestSlug)){
         fs.mkdirSync(dirForRequestSlug);

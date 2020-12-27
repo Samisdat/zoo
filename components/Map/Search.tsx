@@ -2,56 +2,10 @@ import React from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import fetch from 'cross-fetch';
-import CircularProgress from '@material-ui/core/CircularProgress';
 
-export function MapSearch(props) {
+export const MapSearch = (props) => {
 
     const {toggleSearch, setFocus} = props;
-
-    const onClick = () => {
-        toggleSearch();
-    }
-
-    const [open, setOpen] = React.useState(false);
-    const [options, setOptions] = React.useState<any[]>([]);
-    const loading = open && options.length === 0;
-
-    React.useEffect(() => {
-        let active = true;
-
-        if (!loading) {
-            return undefined;
-        }
-
-        (async () => {
-
-
-            const url = `${location.protocol}//${location.hostname}:${location.port}/api/search/autocomplete`;
-
-            const response = await fetch(url);
-
-            const results = await response.json();
-
-            const complete = results.map((result)=>{
-                return result.feature;
-            });
-            
-            if (active) {
-                setOptions(complete);
-            }
-        })();
-
-        return () => {
-            active = false;
-        };
-    }, [loading]);
-
-    React.useEffect(() => {
-        if (!open) {
-            setOptions([]);
-        }
-    }, [open]);
 
     const onChange = (event) => {
 
@@ -61,7 +15,7 @@ export function MapSearch(props) {
 
         const index = event.target.getAttribute('data-option-index');
 
-        const selected = options[index];
+        const selected = props.zoomBoxes[index].feature;
 
         if(undefined === selected){
             return;
@@ -69,6 +23,20 @@ export function MapSearch(props) {
 
         setFocus(selected)
 
+    }
+
+    const groupBy = (option) => {
+        return option.feature.properties.name[0].toUpperCase();
+    }
+
+    const getOptionLabel = (option) => {
+        return option.feature.properties.name;
+    }
+
+    const renderInput = (params) => {
+        return (
+            <TextField {...params} label="Suche" variant="outlined" />
+        );
     }
 
     return (
@@ -79,46 +47,14 @@ export function MapSearch(props) {
             onClose={toggleSearch}
             variant='persistent'
         >
+
             <Autocomplete
-                id="asynchronous-demo"
-                open={open}
-                onOpen={() => {
-                    setOpen(true);
-                }}
-                onClose={() => {
-                    setOpen(false);
-                }}
-                getOptionSelected={
-                    (option, value) => {
-                        return option.properties.name === value.name
-                    }
-                }
-                getOptionLabel={
-                    (option) => {
-                        return option.properties.name
-                    }
-                }
-                options={options}
-                loading={loading}
+                style={{ width: 300, margin: 10   }}
+                options={props.zoomBoxes}
+                groupBy={groupBy}
+                getOptionLabel={getOptionLabel}
+                renderInput={renderInput}
                 onChange={onChange}
-                freeSolo
-                style={{ width: 300, margin: 20   }}
-                renderInput={(params) => (
-                    <TextField
-                        {...params}
-                        label="Suche"
-                        variant="outlined"
-                        InputProps={{
-                            ...params.InputProps,
-                            endAdornment: (
-                                <React.Fragment>
-                                    {loading ? <CircularProgress color="inherit" size={20} /> : null}
-                                    {params.InputProps.endAdornment}
-                                </React.Fragment>
-                            ),
-                        }}
-                    />
-                )}
             />
 
         </Drawer>

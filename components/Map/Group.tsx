@@ -13,8 +13,6 @@ export const Group = (props) => {
 
     const createD3Map = ()=> {
 
-        console.log('createD3Map')
-
         var mapSvg = d3.select(`#${svgId}`)
         const mapGroup = d3.select(`#${mapId}`);
 

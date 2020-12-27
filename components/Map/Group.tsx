@@ -78,7 +78,7 @@ export const Group = (props) => {
         // enable zooming
         mapSvg.call(zooming);
 
-        if('center' !== props.focus){
+        if('none' !== props.focus){
 
 
             const centerOfEnclosure = centerToPolygon(props.focus);

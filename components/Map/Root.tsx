@@ -57,7 +57,7 @@ export const MapRoot = (props) => {
             transform: transform,
         });
 
-        props.setFocus('center');
+        props.setFocus('none');
 
     };
 

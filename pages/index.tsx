@@ -18,7 +18,7 @@ export interface IndexProps{
 
 }
 
-type MapFocus = 'center';
+type MapFocus = 'none';
 
 export interface IndexState {
     focus: MapFocus | Feature<Polygon>;
@@ -27,51 +27,47 @@ export interface IndexState {
 
 export default function Index(props:IndexProps) {
 
+    console.log(props)
+
     const {toggleSearch} = props;
 
     const [state, setState] = useState<IndexState>({
-        focus: {
-            type:"Feature",
-            properties:{
-                name:"Affenhaus",
-                slug:"affenhaus"
-            },
-            geometry:{
-                type: "Polygon",
-                coordinates:[
-                    [
-                        [7.109109601908572,51.23986872599718],
-                        [7.109109601908572,51.23936830194398],
-                        [7.110279732730108,51.23936830194398],
-                        [7.110279732730108,51.23986872599718],
-                        [7.109109601908572,51.23986872599718]
-                    ]
-                ]
-            }
-        },
+        focus: 'none',
         openSearch: false,
     });
 
-    const setFocus = (focus:Feature<Polygon>) => {
-
-        let nextFocus = state.focus;
-
-        if('center' === state.focus && undefined !== focus){
-            nextFocus = focus
-        }
-        else if('center' !== state.focus){
-            nextFocus = focus
-        }
-
-        if('center' !== nextFocus && 'center' !== state.focus && nextFocus && nextFocus.properties.slug === state.focus.properties.slug){
-            console.log('ist gleich', nextFocus, state.focus);
-            return;
-        }
+    const storeFocus = (focus:MapFocus | Feature<Polygon>) => {
 
         setState({
             ...state,
-            focus: nextFocus
+            focus: focus
         });
+
+    }
+
+    const setFocus = (focus:MapFocus | Feature<Polygon>) => {
+
+        if('none' === focus || undefined === focus){
+
+            storeFocus('none');
+            return;
+        }
+
+        focus = focus as Feature<Polygon>;
+
+        if('none' === state.focus){
+
+            storeFocus(focus)
+
+            return;
+        }
+
+        if(focus.properties.slug !== state.focus.properties.slug){
+
+            storeFocus(focus)
+
+            return;
+        }
 
     };
 

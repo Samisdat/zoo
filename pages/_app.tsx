@@ -24,7 +24,9 @@ const useStyles = makeStyles(theme => ({
 
 export default function ZooWuppertal(props) {
 
-  const { Component, pageProps } = props;
+    console.log(props)
+
+    const { Component, pageProps } = props;
 
   const [navigationState, setNavigationState] = useNavigationState({
         activeMainItem: 'map',
@@ -33,14 +35,10 @@ export default function ZooWuppertal(props) {
         openSearch: false
   });
 
-    console.log('navigationState', navigationState.openSearch)
+
     const toggleSearch = () => {
 
-
-
-        const open = (true === navigationState.openSearch) ? false : true;
-
-        console.log(navigationState.openSearch)
+      const open = (true === navigationState.openSearch) ? false : true;
 
         setNavigationState({
             ...navigationState,

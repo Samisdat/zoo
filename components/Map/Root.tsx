@@ -4,7 +4,6 @@ import * as d3 from 'd3';
 import {GeoPath} from 'd3';
 import {MapStateInterface, MapTransformInterface, MarkerInterface} from "components/Map/Interface";
 import {Group} from "./Group";
-import {GeoProjection} from "d3-geo";
 
 const markerDefault: MarkerInterface = {
     lat: 51.238741,
@@ -55,8 +54,10 @@ export const MapRoot = (props) => {
 
         setMapState({
             ...mapState,
-            transform: transform
+            transform: transform,
         });
+
+        props.setFocus('center');
 
     };
 

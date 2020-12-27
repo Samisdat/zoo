@@ -184,10 +184,10 @@ export const GehegeMap = (props) => {
             .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
         ;
 
-mapSvg.call(
-    (zooming.transform as any),
-    t
-);
+        mapSvg.call(
+            (zooming.transform as any),
+            t
+        );
 
         const panAndZoomToBox = (box:any) => {
 

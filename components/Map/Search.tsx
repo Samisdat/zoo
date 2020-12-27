@@ -26,7 +26,10 @@ export function MapSearch(props) {
 
         (async () => {
 
-            const response = await fetch('http://127.0.0.1:8080/api/search/autocomplete');
+
+            const url = `${location.protocol}//${location.hostname}:${location.port}/api/search/autocomplete`;
+
+            const response = await fetch(url);
 
             const results = await response.json();
 

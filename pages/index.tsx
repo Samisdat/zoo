@@ -116,7 +116,7 @@ export default function Index(props:IndexProps) {
 
     return (
         <React.Fragment>
-            <MapRoot focus={state.focus} {...props}></MapRoot>
+            <MapRoot setFocus={setFocus} focus={state.focus} {...props}></MapRoot>
             <MapSearch setFocus={setFocus} toggleSearch={toggleSearch} {...state}></MapSearch>
         </React.Fragment>
   );

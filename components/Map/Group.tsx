@@ -89,14 +89,14 @@ export const Group = (props) => {
 
 
             //[[x0, y0], [x1, y1]]
-            console.log(x0, y0, x1, y1)
+            //console.log(x0, y0, x1, y1)
 
             //const x = -1 * topLeft[0];
             //const y = -1 * topLeft[1];
             const k = 6;
 
             const scale = Math.min(8, 0.9 / Math.max((x1 - x0) / props.mapState.width, (y1 - y0) / props.mapState.height));
-            console.log(scale)
+            //console.log(scale)
 
             var t2 = d3.zoomIdentity
                 .translate(props.mapState.width / 2, props.mapState.height / 2)
@@ -111,20 +111,16 @@ export const Group = (props) => {
 
             const panAndZoomToBox = (box:any) => {
 
-                console.log(JSON.stringify(box, null, 4))
-
-
                 box.properties.fill = '#f0f0f0';
                 box.properties.opacity = 0.3;
 
                 var elementsGroup = mapGroup.select('#zoomBox');
-                console.log(elementsGroup)
+
                 elementsGroup.selectAll("path")
                     .data([box])
                     .enter()
                     .append("path")
                     .attr("fill", (d:Feature)=>{
-                        console.log(d)
                         return '#f0f';
                     })
                     .attr("opacity", (d:Feature)=>{
@@ -152,8 +148,6 @@ export const Group = (props) => {
         if (undefined === props.mapState.pathGenerator) {
             return;
         }
-
-        console.log(props);
 
         createD3Map();
 

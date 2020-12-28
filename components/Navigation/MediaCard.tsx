@@ -11,7 +11,8 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             display: 'flex',
-            height: '150px'
+            height: '150px',
+            marginBottom: '90px'
         },
         details: {
             display: 'flex',
@@ -40,8 +41,10 @@ export default function MediaControlCard(props) {
     const classes = useStyles();
 
     return (
-        <Card className={classes.root}>
-
+        <Card
+            className={classes.root}
+            elevation={0}
+        >
             <CardMedia
                 className={classes.cover}
                 image="/images/elephant.jpg"

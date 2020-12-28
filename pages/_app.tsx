@@ -104,6 +104,7 @@ export default function ZooWuppertal(props) {
               <Grid item xs={12}>
                   <Component
                       toggleSearch={toggleSearch}
+                      toggleTeaser={toggleTeaser}
                       navigation={navigationState}
                       {...pageProps}
                   />

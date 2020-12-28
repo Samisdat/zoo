@@ -15,6 +15,11 @@ export const MapSearch = (props) => {
 
         const index = event.target.getAttribute('data-option-index');
 
+        if(null === index){
+            setFocus('none');
+            return;
+        }
+
         const selected = props.zoomBoxes[index].feature;
 
         if(undefined === selected){
@@ -55,6 +60,7 @@ export const MapSearch = (props) => {
                 getOptionLabel={getOptionLabel}
                 renderInput={renderInput}
                 onChange={onChange}
+                clearOnBlur
             />
 
         </Drawer>

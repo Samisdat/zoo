@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import { ThemeProvider } from '@material-ui/core/styles';
+import {ThemeProvider} from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
@@ -10,11 +10,12 @@ import NavigationMain from '../components/Navigation/Main';
 import NavigationSidebar from '../components/Navigation/Sidebar';
 import Teaser from '../components/Navigation/Teaser';
 
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import {NavigationInterface} from "../components/Navigation/Interfaces";
 
 import createPersistedState from 'use-persisted-state';
 import {d3PropertiesDefault} from "../components/D3/Map";
+
 const useNavigationState = createPersistedState('navigation');
 
 
@@ -26,23 +27,23 @@ export default function ZooWuppertal(props) {
 
     console.log(props)
 
-    const { Component, pageProps } = props;
+    const {Component, pageProps} = props;
 
-  const [navigationState, setNavigationState] = useNavigationState({
+    const [navigationState, setNavigationState] = useNavigationState({
         activeMainItem: 'map',
         openSideMenu: false,
         openTeaser: false,
         openSearch: false
-  });
+    });
 
 
     const toggleSearch = () => {
 
-      const open = (true === navigationState.openSearch) ? false : true;
+        const open = (true === navigationState.openSearch) ? false : true;
 
         setNavigationState({
             ...navigationState,
-            openSearch:open
+            openSearch: open
         });
 
     };
@@ -53,7 +54,7 @@ export default function ZooWuppertal(props) {
 
         setNavigationState({
             ...navigationState,
-            openTeaser:open
+            openTeaser: open
         });
 
     };
@@ -64,72 +65,72 @@ export default function ZooWuppertal(props) {
 
         setNavigationState({
             ...navigationState,
-            openSideMenu:open
+            openSideMenu: open
         });
 
     };
 
     React.useEffect(() => {
 
-    // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
-    }
+        // Remove the server-side injected CSS.
+        const jssStyles = document.querySelector('#jss-server-side');
+        if (jssStyles) {
+            jssStyles.parentElement.removeChild(jssStyles);
+        }
 
-    /*
-    if(true === navigationState.openTeaser){
-        return;
-    }
+        /*
+        if(true === navigationState.openTeaser){
+            return;
+        }
 
-    window.setTimeout(()=>{
-        toggleTeaser();
-    }, 300)
-    */
+        window.setTimeout(()=>{
+            toggleTeaser();
+        }, 300)
+        */
 
-  }, []);
+    }, []);
 
-  const classes = useStyles();
-  return (
-    <React.Fragment>
-      <Head>
-        <title>Der grüne Zoo Wuppertal</title>
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" crossOrigin=""/>
-      </Head>
-      <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-          <Grid container>
-              <Grid item xs={12}>
-                  <Component
-                      toggleSearch={toggleSearch}
-                      toggleTeaser={toggleTeaser}
-                      navigation={navigationState}
-                      {...pageProps}
-                  />
-              </Grid>
-          </Grid>
-          <NavigationMain
-              toggleSearch={toggleSearch}
-              toggleSideMenu={toggleSideMenu}
-              {...navigationState}
-          />
-          <NavigationSidebar
-              toggleSideMenu={toggleSideMenu}
-              {...navigationState}
-          />
-          <Teaser
-              toggleTeaser={toggleTeaser}
-              {...navigationState}
-              {...props}
-          />
-      </ThemeProvider>
-    </React.Fragment>
-  );
+    const classes = useStyles();
+    return (
+        <React.Fragment>
+            <Head>
+                <title>Der grüne Zoo Wuppertal</title>
+                <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width"/>
+                <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" crossOrigin=""/>
+            </Head>
+            <ThemeProvider theme={theme}>
+                {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+                <CssBaseline/>
+                <Grid container>
+                    <Grid item xs={12}>
+                        <Component
+                            toggleSearch={toggleSearch}
+                            toggleTeaser={toggleTeaser}
+                            navigation={navigationState}
+                            {...pageProps}
+                        />
+                    </Grid>
+                </Grid>
+                <NavigationMain
+                    toggleSearch={toggleSearch}
+                    toggleSideMenu={toggleSideMenu}
+                    {...navigationState}
+                />
+                <NavigationSidebar
+                    toggleSideMenu={toggleSideMenu}
+                    {...navigationState}
+                />
+                <Teaser
+                    toggleTeaser={toggleTeaser}
+                    {...navigationState}
+                    {...props}
+                />
+            </ThemeProvider>
+        </React.Fragment>
+    );
 }
 
 ZooWuppertal.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  pageProps: PropTypes.object.isRequired,
+    Component: PropTypes.elementType.isRequired,
+    pageProps: PropTypes.object.isRequired,
 };

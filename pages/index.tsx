@@ -14,71 +14,31 @@ export interface IndexProps{
     boundingBox: FeatureCollection<LineString>;
     zoomBoxes: any;
     navigation?: NavigationInterface;
+    setFocus?: Function;
     toggleSearch?: Function;
     toggleTeaser?: Function;
 
 }
 
-type MapFocus = 'none';
-
 export interface IndexState {
-    focus: MapFocus | Feature<Polygon>;
     openSearch: boolean;
 }
 
 export default function Index(props:IndexProps) {
 
+    console.log(props.navigation.focus)
+
     const {toggleSearch} = props;
 
     const [state, setState] = useState<IndexState>({
-        focus: 'none',
         openSearch: false,
     });
 
-    const storeFocus = (focus:MapFocus | Feature<Polygon>) => {
-
-        setState({
-            ...state,
-            focus: focus
-        });
-
-        if('none' !== focus){
-            props.toggleTeaser()
-        }
-
-    }
-
-    const setFocus = (focus:MapFocus | Feature<Polygon>) => {
-
-        if('none' === focus || undefined === focus){
-
-            storeFocus('none');
-            return;
-        }
-
-        focus = focus as Feature<Polygon>;
-
-        if('none' === state.focus){
-
-            storeFocus(focus)
-
-            return;
-        }
-
-        if(focus.properties.slug !== state.focus.properties.slug){
-
-            storeFocus(focus)
-
-            return;
-        }
-
-    };
-
     return (
         <React.Fragment>
-            <MapRoot setFocus={setFocus} focus={state.focus} {...props}></MapRoot>
+            <MapRoot setFocus={props.setFocus} {...props}></MapRoot>
             <MapSearch
-                setFocus={setFocus}
+                setFocus={props.setFocus}
                 toggleSearch={toggleSearch}
                 zoomBoxes={props.zoomBoxes}
                 {...props.navigation}

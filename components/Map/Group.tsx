@@ -78,10 +78,9 @@ export const Group = (props) => {
         // enable zooming
         mapSvg.call(zooming);
 
-        if('none' !== props.focus){
+        if('none' !== props.navigation.focus){
 
-
-            const centerOfEnclosure = centerToPolygon(props.focus);
+            const centerOfEnclosure = centerToPolygon(props.navigation.focus);
 
             const [x0, y0] = props.mapState.projection(centerOfEnclosure[0] as any);
             const [x1, y1] = props.mapState.projection(centerOfEnclosure[1] as any);
@@ -133,7 +132,7 @@ export const Group = (props) => {
 
             };
 
-            panAndZoomToBox(props.focus);
+            panAndZoomToBox(props.navigation.focus);
 
         }
 

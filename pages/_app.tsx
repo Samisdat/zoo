@@ -11,13 +11,11 @@ import NavigationSidebar from '../components/Navigation/Sidebar';
 import Teaser from '../components/Navigation/Teaser';
 
 import {makeStyles} from '@material-ui/core/styles';
-import {NavigationInterface} from "../components/Navigation/Interfaces";
+import {MapFocus, NavigationInterface} from "../components/Navigation/Interfaces";
 
 import createPersistedState from 'use-persisted-state';
-import {d3PropertiesDefault} from "../components/D3/Map";
-
+import {Feature, Polygon} from "geojson";
 const useNavigationState = createPersistedState('navigation');
-
 
 const useStyles = makeStyles(theme => ({
     offset: theme.mixins.toolbar,
@@ -25,17 +23,64 @@ const useStyles = makeStyles(theme => ({
 
 export default function ZooWuppertal(props) {
 
-    console.log(props)
-
     const {Component, pageProps} = props;
 
-    const [navigationState, setNavigationState] = useNavigationState({
+    const [navigationState, setNavigationState] = useNavigationState<NavigationInterface>({
         activeMainItem: 'map',
         openSideMenu: false,
         openTeaser: false,
-        openSearch: false
+        openSearch: false,
+        focus: 'none',
+        foobar: 'foobar'
     });
 
+    const storeFocus = (focus:MapFocus | Feature<Polygon>) => {
+
+        console.log('storeFocus 1', focus);
+
+        const foobar = navigationState.foobar + 'r';
+
+        setNavigationState({
+            ...navigationState,
+            focus: focus,
+            foobar: foobar
+        });
+
+        debugger;
+
+        console.log('storeFocus 2', navigationState.focus);
+
+        if('none' !== focus){
+            //toggleTeaser();
+        }
+
+    }
+
+    const setFocus = (focus:MapFocus | Feature<Polygon>) => {
+
+        if('none' === focus || undefined === focus){
+
+            storeFocus('none');
+            return;
+        }
+
+        focus = focus as Feature<Polygon>;
+
+        if('none' === navigationState.focus){
+
+            storeFocus(focus)
+
+            return;
+        }
+
+        if(focus.properties.slug !== navigationState.focus.properties.slug){
+
+            storeFocus(focus)
+
+            return;
+        }
+
+    };
 
     const toggleSearch = () => {
 
@@ -106,6 +151,7 @@ export default function ZooWuppertal(props) {
                         <Component
                             toggleSearch={toggleSearch}
                             toggleTeaser={toggleTeaser}
+                            setFocus={setFocus}
                             navigation={navigationState}
                             {...pageProps}
                         />

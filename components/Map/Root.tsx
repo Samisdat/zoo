@@ -57,7 +57,7 @@ export const MapRoot = (props) => {
             transform: transform,
         });
 
-        props.setFocus('none');
+        //props.setFocus('none');
 
     };
 
@@ -193,7 +193,7 @@ export const MapRoot = (props) => {
             createMap();
         }
 
-    }, [mapState,props.focus]);
+    }, [mapState,props.navigation.focus]);
 
     return (
         <svg id={svgId} style={{

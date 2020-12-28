@@ -15,6 +15,7 @@ export interface IndexProps{
     zoomBoxes: any;
     navigation?: NavigationInterface;
     toggleSearch?: Function;
+    toggleTeaser?: Function;
 
 }
 
@@ -26,8 +27,6 @@ export interface IndexState {
 }
 
 export default function Index(props:IndexProps) {
-
-    console.log(props)
 
     const {toggleSearch} = props;
 
@@ -42,6 +41,10 @@ export default function Index(props:IndexProps) {
             ...state,
             focus: focus
         });
+
+        if('none' !== focus){
+            props.toggleTeaser()
+        }
 
     }
 

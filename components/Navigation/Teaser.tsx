@@ -9,13 +9,12 @@ export default function Teaser(props) {
     return (
 
         <SwipeableDrawer
+            variant="persistent"
             anchor='bottom'
             open={props.openTeaser}
-            onClose={toggleTeaser}
+            onClose={()=>{}}
             onOpen={toggleTeaser}
-            style={{
-                zIndex:3000
-            }}
+
         >
         <MediaCard toggleTeaser={toggleTeaser} {...props}></MediaCard>
         </SwipeableDrawer>

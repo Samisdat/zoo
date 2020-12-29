@@ -3,11 +3,12 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import {getOneGeoJson} from "../geojson/geojson";
 import {Feature, FeatureCollection, Polygon} from "geojson";
 
-export const getZoomboxes = async ():Promise<FeatureCollection> => {
+export const getEnclosureBox = async ():Promise<FeatureCollection> => {
 
-    const zoomBoxes = await getOneGeoJson('zoomboxes') as FeatureCollection<Polygon>;
 
-    zoomBoxes.features = zoomBoxes.features.map( (feature:Feature<Polygon>)=>{
+    const enclosureBoxes = await getOneGeoJson('enclosure-boxes') as FeatureCollection<Polygon>;
+
+    enclosureBoxes.features = enclosureBoxes.features.map( (feature:Feature<Polygon>)=>{
 
         feature.properties.type = 'enclosure-box'
 
@@ -16,11 +17,11 @@ export const getZoomboxes = async ():Promise<FeatureCollection> => {
     });
 
     // @TODO does sorting make sense on this side?
-    zoomBoxes.features = zoomBoxes.features.sort( (a:Feature<Polygon>, b:Feature<Polygon>)=>{
+    enclosureBoxes.features = enclosureBoxes.features.sort( (a:Feature<Polygon>, b:Feature<Polygon>)=>{
         return a.properties.name.localeCompare(b.properties.name);
     });
 
-    return zoomBoxes;
+    return enclosureBoxes;
 
 }
 
@@ -33,11 +34,11 @@ export const getFeaturesList = async (): Promise<FeatureCollection> => {
 
     const geoJson = {
         ...emptyGeoJson
-    }
+    };
 
-    const zoomBoxes = await getZoomboxes();
+    const enclosureBoxes = await getEnclosureBox();
 
-    geoJson.features = geoJson.features.concat(zoomBoxes.features);
+    geoJson.features = geoJson.features.concat(enclosureBoxes.features);
 
     return geoJson;
 
@@ -46,7 +47,7 @@ export const getFeaturesList = async (): Promise<FeatureCollection> => {
 export default async (req: NextApiRequest, res: NextApiResponse<FeatureCollection>) => {
 
     const geoJson = await getFeaturesList();
-    
+
     res.status(200).json(geoJson);
 
 }

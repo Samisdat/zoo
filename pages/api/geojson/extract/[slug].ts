@@ -10,14 +10,15 @@ const { geoFromSVGXML } = require('svg2geojson');
 
 const allowedSlugs = [
     'bounding-box',
-    'enclosure-boxes'
+    'enclosure-boxes',
+    'ways'
 ]
 
 export const getRectIds = (svg:string):string[] => {
 
     const pathIds:string[] = [];
 
-    let pathRegEx = /<rect id="(.*?)"(?: serif:id="(.*?)")*/gm;
+    let pathRegEx = /<(rect|path) id="(.*?)"(?: serif:id="(.*?)")*/gm;
 
     let index = 0;
 
@@ -29,12 +30,14 @@ export const getRectIds = (svg:string):string[] => {
             pathRegEx.lastIndex++;
         }
 
+        console.log(matches)
+
         matches.forEach((match, groupIndex) => {
-            if(1 === groupIndex){
+            if(2 === groupIndex){
                 pathIds[index] = match;
                 console.log(`Found match, group ${groupIndex}: ${match}`);
             }
-            if(2 === groupIndex && undefined !== match){
+            if(3 === groupIndex && undefined !== match){
                 pathIds[index] = match;
                 console.log(`Found match, group ${groupIndex}: ${match}`);
             }
@@ -109,11 +112,10 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
 
     geoFromSVGXML( dataSvg, (geoJson:any) => {
 
-
         for(let i = 0, x = geoJson.features.length; i < x; i += 1){
 
             const name =  pathIds[i];
-
+            console.log(name);
             const slug = getSlug(name);
 
             geoJson.features[i].properties = {

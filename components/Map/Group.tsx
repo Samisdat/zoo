@@ -160,7 +160,7 @@ export const Group = (props) => {
             />
             <Ways
                 pathGenerator={props.mapState.pathGenerator}
-                simpleWays={props.simpleWays}
+                geoJson={props.geoJson}
             />
             <CurrentPosition
                 pathGenerator={props.mapState.pathGenerator}

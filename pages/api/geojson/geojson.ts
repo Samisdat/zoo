@@ -9,7 +9,7 @@ import {FeatureCollection, Polygon} from "geojson";
 let allowList = [
     'bounding-box',
     'aussengrenze',
-    'way-simple',
+    'ways',
     'enclosure-boxes',
 ];
 

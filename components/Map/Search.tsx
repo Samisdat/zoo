@@ -2,10 +2,21 @@ import React from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import {Feature} from "geojson";
 
 export const MapSearch = (props) => {
 
     const {toggleSearch, setFocus} = props;
+
+    const options = props.geoJson.features.filter((feature:Feature) => {
+
+        if('enclosure-box' === feature.properties?.type){
+            return true;
+        }
+
+        return false;
+
+    });
 
     const onChange = (event) => {
 
@@ -20,7 +31,7 @@ export const MapSearch = (props) => {
             return;
         }
 
-        const selected = props.zoomBoxes[index].feature;
+        const selected = options[index];
 
         if(undefined === selected){
             return;
@@ -31,11 +42,11 @@ export const MapSearch = (props) => {
     }
 
     const groupBy = (option) => {
-        return option.feature.properties.name[0].toUpperCase();
+        return option.properties.name[0].toUpperCase();
     }
 
     const getOptionLabel = (option) => {
-        return option.feature.properties.name;
+        return option.properties.name;
     }
 
     const renderInput = (params) => {
@@ -48,14 +59,15 @@ export const MapSearch = (props) => {
 
         <Drawer
             anchor='top'
-            open={props.openSearch}
+            //open={props.openSearch}
+            open={true}
             onClose={toggleSearch}
             variant='persistent'
         >
 
             <Autocomplete
-                style={{ width: 300, margin: 10   }}
-                options={props.zoomBoxes}
+                style={{ margin: 10   }}
+                options={options}
                 groupBy={groupBy}
                 getOptionLabel={getOptionLabel}
                 renderInput={renderInput}

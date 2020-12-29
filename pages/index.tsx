@@ -1,18 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
-import {getGeoJson, getOneGeoJson} from './api/geojson/geojson';
+import {getGeoJson} from './api/geojson/geojson';
 import {Feature, FeatureCollection, LineString, Polygon} from 'geojson';
 import {MapRoot} from 'components/Map/Root';
 import {NavigationInterface} from "../components/Navigation/Interfaces";
 import {MapSearch} from "../components/Map/Search";
-import {createChainedFunction} from "@material-ui/core";
-import {getZoomboxes} from "./api/search/autocomplete";
+import {getFullGeoJson} from "./api/geojson/list";
 
 export interface IndexProps{
     border: Feature<Polygon>;
     simpleWays: FeatureCollection<LineString>[];
     boundingBox: FeatureCollection<LineString>;
-    zoomBoxes: any;
+    geoJson: FeatureCollection;
     navigation?: NavigationInterface;
     setFocus?: Function;
     toggleSearch?: Function;
@@ -26,7 +25,7 @@ export interface IndexState {
 
 export default function Index(props:IndexProps) {
 
-    console.log(props.navigation.focus)
+    console.log(props)
 
     const {toggleSearch} = props;
 
@@ -40,7 +39,7 @@ export default function Index(props:IndexProps) {
             <MapSearch
                 setFocus={props.setFocus}
                 toggleSearch={toggleSearch}
-                zoomBoxes={props.zoomBoxes}
+                geoJson={props.geoJson}
                 {...props.navigation}
             />
         </React.Fragment>
@@ -86,13 +85,13 @@ export async function getStaticProps(context) {
         features: [boundingBox]
     };
 
-    let zoomBoxes = await getZoomboxes();
+    let getJson = await getFullGeoJson();
 
     const indexProps:IndexProps = {
         border: border,
         simpleWays: simpleWay,
         boundingBox:boundingBoxCollection,
-        zoomBoxes: zoomBoxes
+        geoJson: getJson
     };
 
     return {

@@ -1,16 +1,27 @@
 import React, {useEffect} from "react";
 
 import * as d3 from "d3";
+import {Feature} from "geojson";
 
 export const Ways = (props) => {
 
     const simplePathId = "main-ways";
 
+    const ways = props.geoJson.features.filter((feature:Feature) => {
+
+        if('way' === feature.properties?.type){
+            return true;
+        }
+
+        return false;
+
+    });
+
     const plotWays = () => {
 
         d3.select(`#${simplePathId}`)
             .selectAll("path")
-            .data(props.simpleWays)
+            .data(ways)
             .enter()
             .append("path")
             .attr("fill", (d) => {
@@ -18,6 +29,9 @@ export const Ways = (props) => {
             })
             .attr("stroke", (d) => {
                 return "#000";
+            })
+            .attr("opacity", (d) => {
+                return 0;
             })
             .attr("d", props.pathGenerator)
 

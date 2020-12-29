@@ -9,7 +9,6 @@ import {getFullGeoJson} from "./api/geojson/list";
 
 export interface IndexProps{
     border: Feature<Polygon>;
-    simpleWays: FeatureCollection<LineString>[];
     geoJson: FeatureCollection;
     navigation?: NavigationInterface;
     setFocus?: Function;
@@ -58,28 +57,13 @@ export async function getStaticProps(context) {
         return extracted;
 
     };
-
-    const extractWays = () => {
-
-        const extracted = geoJson.features.filter((feature)=>{
-
-            return ('way-simple' === feature.properties.slug)
-
-        });
-
-        return extracted;
-
-    };
-
+    
     const border:Feature<Polygon> = extractCollection('aussengrenze');
-
-    let simpleWay = extractWays();
 
     let getJson = await getFullGeoJson();
 
     const indexProps:IndexProps = {
         border: border,
-        simpleWays: simpleWay,
         geoJson: getJson
     };
 

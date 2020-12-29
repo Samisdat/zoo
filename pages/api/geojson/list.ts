@@ -10,7 +10,7 @@ export const getEnclosureBox = async ():Promise<FeatureCollection> => {
 
     enclosureBoxes.features = enclosureBoxes.features.map( (feature:Feature<Polygon>)=>{
 
-        feature.properties.type = 'enclosure-box'
+        feature.properties.type = 'enclosure-box';
 
         return feature;
 
@@ -30,7 +30,7 @@ const emptyGeoJson:FeatureCollection = {
     "features": []
 };
 
-export const getFeaturesList = async (): Promise<FeatureCollection> => {
+export const getFullGeoJson = async (): Promise<FeatureCollection> => {
 
     const geoJson = {
         ...emptyGeoJson
@@ -46,7 +46,7 @@ export const getFeaturesList = async (): Promise<FeatureCollection> => {
 
 export default async (req: NextApiRequest, res: NextApiResponse<FeatureCollection>) => {
 
-    const geoJson = await getFeaturesList();
+    const geoJson = await getFullGeoJson();
 
     res.status(200).json(geoJson);
 

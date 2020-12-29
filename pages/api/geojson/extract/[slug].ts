@@ -4,8 +4,14 @@ import path from "path";
 import {xmlTemplate} from "../../data/xml-template";
 
 import {getSlug} from "../../../../helper/getSlug";
+import {string} from "prop-types";
 
 const { geoFromSVGXML } = require('svg2geojson');
+
+const allowedSlugs = [
+    'bounding-box',
+    'enclosure-boxes'
+]
 
 export const getRectIds = (svg:string):string[] => {
 
@@ -44,11 +50,18 @@ export const getRectIds = (svg:string):string[] => {
 
 export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
 
-    const {
+    let {
         query: {slug},
     } = req;
 
+    if('string' !== typeof slug){
+        res.status(400).json({
+            error: `slug is not a string and therefore not supported`
+        });
 
+    }
+
+    slug = slug as string;
 
     const dataDir = path.resolve(process.env.PWD, 'pages/api/data');
     const combinedSvgPath = path.resolve(dataDir, 'combined.svg');
@@ -57,8 +70,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
     const groupRegEx = new RegExp(`<g id="${slug}"(.*?)>(.*?)<\/g>`, 'm')
 
     // @TODO debug
-    // if slug !==
-    if('enclosure-boxes' !== slug){
+    if(false === allowedSlugs.includes(slug)){
         res.status(400).json({
             error: `For now only slug enclosure-boxes is supported`
         });
@@ -87,7 +99,6 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
     const dataSvg = xmlTemplate(find[2]);
 
     // write svg
-
     fs.writeFileSync(
         path.resolve(dirForRequestSlug, 'data.svg'),
         dataSvg,
@@ -122,8 +133,6 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
 
         res.status(200).json(geoJson);
 
-
     });
-
 
 }

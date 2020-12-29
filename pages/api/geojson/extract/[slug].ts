@@ -58,9 +58,9 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
 
     // @TODO debug
     // if slug !==
-    if('zoomboxes' !== slug){
+    if('enclosure-boxes' !== slug){
         res.status(400).json({
-            error: `For now only slug zoomboxes is supported`
+            error: `For now only slug enclosure-boxes is supported`
         });
     }
 

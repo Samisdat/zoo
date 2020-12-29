@@ -5,7 +5,6 @@ import {Feature, FeatureCollection, Polygon} from "geojson";
 
 export const getEnclosureBox = async ():Promise<FeatureCollection> => {
 
-
     const enclosureBoxes = await getOneGeoJson('enclosure-boxes') as FeatureCollection<Polygon>;
 
     enclosureBoxes.features = enclosureBoxes.features.map( (feature:Feature<Polygon>)=>{
@@ -25,6 +24,22 @@ export const getEnclosureBox = async ():Promise<FeatureCollection> => {
 
 }
 
+export const getBoundingBox = async ():Promise<FeatureCollection> => {
+
+    const enclosureBoxes = await getOneGeoJson('bounding-box') as FeatureCollection<Polygon>;
+
+    enclosureBoxes.features = enclosureBoxes.features.map( (feature:Feature<Polygon>)=>{
+
+        feature.properties.type = 'bounding-box';
+
+        return feature;
+
+    });
+
+    return enclosureBoxes;
+
+}
+
 const emptyGeoJson:FeatureCollection = {
     "type": "FeatureCollection",
     "features": []
@@ -37,8 +52,10 @@ export const getFullGeoJson = async (): Promise<FeatureCollection> => {
     };
 
     const enclosureBoxes = await getEnclosureBox();
-
     geoJson.features = geoJson.features.concat(enclosureBoxes.features);
+
+    const boundingBox = await getBoundingBox();
+    geoJson.features = geoJson.features.concat(boundingBox.features);
 
     return geoJson;
 

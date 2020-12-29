@@ -10,7 +10,6 @@ import {getFullGeoJson} from "./api/geojson/list";
 export interface IndexProps{
     border: Feature<Polygon>;
     simpleWays: FeatureCollection<LineString>[];
-    boundingBox: FeatureCollection<LineString>;
     geoJson: FeatureCollection;
     navigation?: NavigationInterface;
     setFocus?: Function;
@@ -24,8 +23,6 @@ export interface IndexState {
 }
 
 export default function Index(props:IndexProps) {
-
-    console.log(props)
 
     const {toggleSearch} = props;
 
@@ -78,19 +75,11 @@ export async function getStaticProps(context) {
 
     let simpleWay = extractWays();
 
-    let boundingBox = extractCollection('bounding-box');
-
-    let boundingBoxCollection:FeatureCollection<LineString> = {
-        type: "FeatureCollection",
-        features: [boundingBox]
-    };
-
     let getJson = await getFullGeoJson();
 
     const indexProps:IndexProps = {
         border: border,
         simpleWays: simpleWay,
-        boundingBox:boundingBoxCollection,
         geoJson: getJson
     };
 

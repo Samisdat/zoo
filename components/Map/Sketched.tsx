@@ -25,12 +25,18 @@ export const Sketched = (props) => {
             return;
         }
 
+        const boundingBoxGeoJson = props.geoJson.features.filter((feature:Feature)=>{
+
+            return ('bounding-box' === feature.properties.type);
+
+        });
+
         var mapSvg = d3.select(`#${svgId}`)
 
         var elementsGroup = mapSvg.select(`#${mapElementId}`);
 
         elementsGroup.selectAll("path")
-            .data(props.boundingBox.features)
+            .data(boundingBoxGeoJson)
             .enter()
             .append("path")
             .attr("fill", (d:Feature)=>{

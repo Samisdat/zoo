@@ -156,7 +156,7 @@ export const Group = (props) => {
         <g id={mapId}>
             <Sketched
                 mapState={props.mapState}
-                boundingBox={props.boundingBox}
+                geoJson={props.geoJson}
             />
             <Ways
                 pathGenerator={props.mapState.pathGenerator}

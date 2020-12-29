@@ -1,69 +1,52 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import path from 'path';
-import fs from 'fs';
+import {getOneGeoJson} from "../geojson/geojson";
+import {Feature, FeatureCollection, Polygon} from "geojson";
 
-import urlSlug from 'url-slug'
+export const getZoomboxes = async ():Promise<FeatureCollection> => {
 
-export default async (req: NextApiRequest, res: NextApiResponse<any[]>) => {
+    const zoomBoxes = await getOneGeoJson('zoomboxes') as FeatureCollection<Polygon>;
 
-    const {
-        query: { type },
-    } = req
+    zoomBoxes.features = zoomBoxes.features.map( (feature:Feature<Polygon>)=>{
 
-        const dataDir = path.resolve(process.env.PWD + '/pages/api/data');
+        feature.properties.type = 'enclosure-box'
 
-        const slugs = await fs.readdirSync(dataDir).map((file)=>{
-            return file.replace('.json','');
-        });
+        return feature;
 
-        const data = slugs.map( (slug)=>{
+    });
 
-            const json = JSON.parse(fs.readFileSync(dataDir + '/' + slug + '/data.json', {encoding: 'utf8'}));
-            json.slug = slug;
+    // @TODO does sorting make sense on this side?
+    zoomBoxes.features = zoomBoxes.features.sort( (a:Feature<Polygon>, b:Feature<Polygon>)=>{
+        return a.properties.name.localeCompare(b.properties.name);
+    });
 
-            return json;
-        })
+    return zoomBoxes;
 
-        res.status(200).json(data);
+}
 
-    /*
-        setTimeout(()=>{
+const emptyGeoJson:FeatureCollection = {
+    "type": "FeatureCollection",
+    "features": []
+};
 
+export const getFeaturesList = async (): Promise<FeatureCollection> => {
 
-            res.status(200).json({
-                msg: 'top',
-                slug: urlSlug('Hei there')
-            });
+    const geoJson = {
+        ...emptyGeoJson
+    }
 
-            //fs.createReadStream(geojson).pipe(res);
-            resolve();
+    const zoomBoxes = await getZoomboxes();
 
-        }, 100);
-        */
-        /*
-        fs.stat(geojson, function(err, stats) {
+    geoJson.features = geoJson.features.concat(zoomBoxes.features);
 
-            if(err){
-                res.status(400).json({
-                    msg: err.message
-                });
+    return geoJson;
 
-                reject(err.message);
-            }
-            else{
+}
 
-                res.setHeader("content-type", "application/json");
-                fs.createReadStream(geojson).pipe(res);
-                resolve();
-            }
+export default async (req: NextApiRequest, res: NextApiResponse<FeatureCollection>) => {
 
-
-        });
-
-         */
-
-//    });
-
+    const geoJson = await getFeaturesList();
+    
+    res.status(200).json(geoJson);
 
 }

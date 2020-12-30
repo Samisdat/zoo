@@ -8,7 +8,6 @@ import {MapSearch} from "../components/Map/Search";
 import {getFullGeoJson} from "./api/geojson/list";
 
 export interface IndexProps{
-    border: Feature<Polygon>;
     geoJson: FeatureCollection;
     navigation?: NavigationInterface;
     setFocus?: Function;
@@ -44,26 +43,9 @@ export default function Index(props:IndexProps) {
 
 export async function getStaticProps(context) {
 
-    let geoJson = await getGeoJson();
-
-    const extractCollection = (slug) => {
-
-        const extracted = geoJson.features.find((feature)=>{
-
-            return (slug === feature.properties.slug)
-
-        });
-
-        return extracted;
-
-    };
-    
-    const border:Feature<Polygon> = extractCollection('aussengrenze');
-
     let getJson = await getFullGeoJson();
 
     const indexProps:IndexProps = {
-        border: border,
         geoJson: getJson
     };
 

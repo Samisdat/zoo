@@ -48,7 +48,7 @@ export default function Index(props) {
 
   const classes = useStyles();
 
-    let group = props.gehege
+    let group = props.facilities
         .reduce((r, e) => {
             let firstLetter = e.name[0].toLowerCase();
 
@@ -81,11 +81,11 @@ export default function Index(props) {
           .map(([key, value], i) => {
               return <React.Fragment>
                   <ListSubheader className={classes.subheader}>{key.toUpperCase()}</ListSubheader>
-                  {group[key].map(( gehege: any ) => {
-                      const href =  `/gehege/${gehege.slug}`
+                  {group[key].map(( facility: any ) => {
+                      const href =  `/facility/${facility.slug}`
                       return (
                           <ListItem button>
-                              <ListItemLink href={href}>{gehege.name}</ListItemLink>
+                              <ListItemLink href={href}>{facility.name}</ListItemLink>
                           </ListItem>
                       );
                   })}
@@ -100,11 +100,9 @@ export async function getStaticProps({ params, preview = false, previewData }) {
 
     const getJson = await getFullGeoJson();
 
-
-
-    const enclosures = getJson.features
+    const facilities = getJson.features
         .filter((feature:Feature)=>{
-            return ('enclosure-box' === feature.properties.type);
+            return ('facility-box' === feature.properties.type);
         })
         .map((feature:Feature)=>{
         return feature.properties;
@@ -112,7 +110,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
 
     return {
         props: {
-            enclosures: enclosures,
+            facilities: facilities,
         },
     }
 }

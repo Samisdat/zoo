@@ -205,6 +205,7 @@ export const MapRoot = (props) => {
             <Group
                 mapState={mapState}
                 setTransform={setTransform}
+                setFocus={props.setFocus}
                 {...props}
             />
         </svg>

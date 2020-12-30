@@ -88,28 +88,19 @@ export const Group = (props) => {
 
             });
 
-        /*
-        // set inital  zoom
-        const t = d3.zoomIdentity
-            .translate(
-                props.mapState.transform.x,
-                props.mapState.transform.y
-            )
-            .scale(props.mapState.transform.k);
-
-        mapSvg.call((zooming.transform as any), t);
-        */
         // enable zooming
         mapSvg.call(zooming);
 
         if('none' !== props.navigation.focus){
 
+            mapSvg.on('.zoom', null);
             const centerOfEnclosure = centerToPolygon(props.navigation.focus);
 
             const [x0, y0] = props.mapState.projection(centerOfEnclosure[0] as any);
             const [x1, y1] = props.mapState.projection(centerOfEnclosure[1] as any);
 
             const k = findBestZoomLevel(x0, x1, y0, y1, props.mapState.width, props.mapState.height);
+
 
             var t2 = d3.zoomIdentity
                 .translate(props.mapState.width / 2, props.mapState.height / 2)
@@ -121,6 +112,7 @@ export const Group = (props) => {
                 (zooming.transform as any),
                 t2
             );
+            props.setFocus('none')
 
         }
 

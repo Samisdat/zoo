@@ -4,7 +4,7 @@ import {Ways} from "./Ways";
 import {Sketched} from "./Sketched";
 import {CurrentPosition} from "./CurrentPosition";
 import {MapTransformInterface} from "./Interface";
-import {Feature} from "geojson";
+import {HighlightFocus} from "./HighlightFocus";
 
 const centerToPolygon = (polygon) => {
 
@@ -108,32 +108,6 @@ export const Group = (props) => {
                 t2
             );
 
-            const panAndZoomToBox = (box:any) => {
-
-                box.properties.fill = '#f0f0f0';
-                box.properties.opacity = 0.3;
-
-                var elementsGroup = mapGroup.select('#zoomBox');
-
-                elementsGroup.selectAll("path")
-                    .data([box])
-                    .enter()
-                    .append("path")
-                    .attr("fill", (d:Feature)=>{
-                        return '#f0f';
-                    })
-                    .attr("opacity", (d:Feature)=>{
-                        return 0.5;
-                    })
-                    .attr("id", (d:Feature)=>{
-                        return d.properties.slug;
-                    })
-                    .attr("d", props.mapState.pathGenerator)
-
-            };
-
-            panAndZoomToBox(props.navigation.focus);
-
         }
 
     };
@@ -158,6 +132,10 @@ export const Group = (props) => {
                 mapState={props.mapState}
                 geoJson={props.geoJson}
             />
+            <HighlightFocus
+                mapState={props.mapState}
+                focus={props.navigation.focus}
+            />
             <Ways
                 pathGenerator={props.mapState.pathGenerator}
                 geoJson={props.geoJson}
@@ -166,7 +144,6 @@ export const Group = (props) => {
                 pathGenerator={props.mapState.pathGenerator}
                 marker={props.mapState.marker}
             />
-            <g id="zoomBox"></g>
         </g>
     );
 

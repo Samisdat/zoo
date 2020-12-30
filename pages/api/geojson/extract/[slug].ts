@@ -2,16 +2,15 @@ import {NextApiRequest, NextApiResponse} from "next";
 import fs from "fs";
 import path from "path";
 import {xmlTemplate} from "../../data/xml-template";
-
 import {getSlug} from "../../../../helper/getSlug";
-import {string} from "prop-types";
 
 const { geoFromSVGXML } = require('svg2geojson');
 
 const allowedSlugs = [
     'bounding-box',
     'enclosure-boxes',
-    'ways'
+    'ways',
+    'border'
 ]
 
 export const getRectIds = (svg:string):string[] => {
@@ -29,8 +28,6 @@ export const getRectIds = (svg:string):string[] => {
         if (matches.index === pathRegEx.lastIndex) {
             pathRegEx.lastIndex++;
         }
-
-        console.log(matches)
 
         matches.forEach((match, groupIndex) => {
             if(2 === groupIndex){
@@ -75,7 +72,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
     // @TODO debug
     if(false === allowedSlugs.includes(slug)){
         res.status(400).json({
-            error: `For now only slug enclosure-boxes is supported`
+            error: `For now only slugs [${allowedSlugs.join(', ')}] are supported`
         });
     }
 

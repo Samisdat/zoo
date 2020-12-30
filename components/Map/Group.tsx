@@ -6,6 +6,30 @@ import {CurrentPosition} from "./CurrentPosition";
 import {MapTransformInterface} from "./Interface";
 import {HighlightFocus} from "./HighlightFocus";
 
+// zoom until focus.width or focus.height extends window.width or window.height
+const findBestZoomLevel = (x0, x1, y0, y1, maxWidth, maxHeight) => {
+
+    const minZoom = 0.5;
+    const maxZoom = 20;
+
+    const width = Math.abs(x0 - x1);
+    const height = Math.abs(y0 - y1);
+
+    let k = minZoom;
+
+    while ( ( 1.1 * width ) * k < maxWidth && ( 1.1 * height ) * k < maxHeight) {
+
+        if(k >= maxZoom){
+            break;
+        }
+
+        k += 0.25;
+    }
+
+    return k;
+}
+
+
 const centerToPolygon = (polygon) => {
 
     const latitudes = polygon.geometry.coordinates[0].map((coordinate)=>{
@@ -85,21 +109,11 @@ export const Group = (props) => {
             const [x0, y0] = props.mapState.projection(centerOfEnclosure[0] as any);
             const [x1, y1] = props.mapState.projection(centerOfEnclosure[1] as any);
 
-
-
-            //[[x0, y0], [x1, y1]]
-            //console.log(x0, y0, x1, y1)
-
-            //const x = -1 * topLeft[0];
-            //const y = -1 * topLeft[1];
-            const k = 6;
-
-            const scale = Math.min(8, 0.9 / Math.max((x1 - x0) / props.mapState.width, (y1 - y0) / props.mapState.height));
-            //console.log(scale)
+            const k = findBestZoomLevel(x0, x1, y0, y1, props.mapState.width, props.mapState.height);
 
             var t2 = d3.zoomIdentity
                 .translate(props.mapState.width / 2, props.mapState.height / 2)
-                .scale(Math.abs(k))
+                .scale(k)
                 .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
             ;
 

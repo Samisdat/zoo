@@ -30,28 +30,18 @@ export default function ZooWuppertal(props) {
         openSideMenu: false,
         openTeaser: false,
         openSearch: false,
-        focus: 'none',
-        foobar: 'foobar'
+        focus: 'none'
     });
 
     const storeFocus = (focus:MapFocus | Feature<Polygon>) => {
 
-        console.log('storeFocus 1', focus);
-
-        const foobar = navigationState.foobar + 'r';
-
         setNavigationState({
             ...navigationState,
             focus: focus,
-            foobar: foobar
         });
 
-        debugger;
-
-        console.log('storeFocus 2', navigationState.focus);
-
         if('none' !== focus){
-            //toggleTeaser();
+            toggleTeaser();
         }
 
     }

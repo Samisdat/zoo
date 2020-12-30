@@ -10,6 +10,4 @@ export interface NavigationInterface{
     openTeaser: boolean;
     openSearch: boolean;
     focus: MapFocus | Feature<Polygon>;
-    foobar:string;
-
 }

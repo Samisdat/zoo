@@ -8,7 +8,7 @@ const { geoFromSVGXML } = require('svg2geojson');
 
 const allowedSlugs = [
     'bounding-box',
-    'enclosure-boxes',
+    'facility-boxes',
     'ways',
     'border'
 ]

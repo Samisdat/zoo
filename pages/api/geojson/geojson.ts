@@ -10,7 +10,7 @@ let allowList = [
     'bounding-box',
     'border',
     'ways',
-    'enclosure-boxes',
+    'facility-boxes',
 ];
 
 export const getOneGeoJson = async (slug:string):Promise<any> => {

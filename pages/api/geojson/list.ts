@@ -5,9 +5,9 @@ import {Feature, FeatureCollection, Polygon} from "geojson";
 
 const getBorder = async ():Promise<FeatureCollection> => {
 
-    const enclosureBoxes = await getOneGeoJson('border') as FeatureCollection<Polygon>;
+    const border = await getOneGeoJson('border') as FeatureCollection<Polygon>;
 
-    enclosureBoxes.features = enclosureBoxes.features.map( (feature:Feature<Polygon>)=>{
+    border.features = border.features.map( (feature:Feature<Polygon>)=>{
 
         feature.properties.type = 'border';
 
@@ -15,15 +15,15 @@ const getBorder = async ():Promise<FeatureCollection> => {
 
     });
 
-    return enclosureBoxes;
+    return border;
 
 }
 
 const getWays = async ():Promise<FeatureCollection> => {
 
-    const enclosureBoxes = await getOneGeoJson('ways') as FeatureCollection<Polygon>;
+    const ways = await getOneGeoJson('ways') as FeatureCollection<Polygon>;
 
-    enclosureBoxes.features = enclosureBoxes.features.map( (feature:Feature<Polygon>)=>{
+    ways.features = ways.features.map( (feature:Feature<Polygon>)=>{
 
         feature.properties.type = 'way';
 
@@ -32,40 +32,40 @@ const getWays = async ():Promise<FeatureCollection> => {
     });
 
     // @TODO does sorting make sense on this side?
-    enclosureBoxes.features = enclosureBoxes.features.sort( (a:Feature<Polygon>, b:Feature<Polygon>)=>{
+    ways.features = ways.features.sort( (a:Feature<Polygon>, b:Feature<Polygon>)=>{
         return a.properties.name.localeCompare(b.properties.name);
     });
 
-    return enclosureBoxes;
+    return ways;
 
 }
 
-const getEnclosureBox = async ():Promise<FeatureCollection> => {
+const getFacilityBoxes = async ():Promise<FeatureCollection> => {
 
-    const enclosureBoxes = await getOneGeoJson('enclosure-boxes') as FeatureCollection<Polygon>;
+    const facilityBoxes = await getOneGeoJson('facility-boxes') as FeatureCollection<Polygon>;
 
-    enclosureBoxes.features = enclosureBoxes.features.map( (feature:Feature<Polygon>)=>{
+    facilityBoxes.features = facilityBoxes.features.map( (feature:Feature<Polygon>)=>{
 
-        feature.properties.type = 'enclosure-box';
+        feature.properties.type = 'facility-box';
 
         return feature;
 
     });
 
     // @TODO does sorting make sense on this side?
-    enclosureBoxes.features = enclosureBoxes.features.sort( (a:Feature<Polygon>, b:Feature<Polygon>)=>{
+    facilityBoxes.features = facilityBoxes.features.sort( (a:Feature<Polygon>, b:Feature<Polygon>)=>{
         return a.properties.name.localeCompare(b.properties.name);
     });
 
-    return enclosureBoxes;
+    return facilityBoxes;
 
 }
 
 const getBoundingBox = async ():Promise<FeatureCollection> => {
 
-    const enclosureBoxes = await getOneGeoJson('bounding-box') as FeatureCollection<Polygon>;
+    const boundingBox = await getOneGeoJson('bounding-box') as FeatureCollection<Polygon>;
 
-    enclosureBoxes.features = enclosureBoxes.features.map( (feature:Feature<Polygon>)=>{
+    boundingBox.features = boundingBox.features.map( (feature:Feature<Polygon>)=>{
 
         feature.properties.type = 'bounding-box';
 
@@ -73,7 +73,7 @@ const getBoundingBox = async ():Promise<FeatureCollection> => {
 
     });
 
-    return enclosureBoxes;
+    return boundingBox;
 
 }
 
@@ -88,8 +88,8 @@ export const getFullGeoJson = async (): Promise<FeatureCollection> => {
         ...emptyGeoJson
     };
 
-    const enclosureBoxes = await getEnclosureBox();
-    geoJson.features = geoJson.features.concat(enclosureBoxes.features);
+    const facilityBoxes = await getFacilityBoxes();
+    geoJson.features = geoJson.features.concat(facilityBoxes.features);
 
     const boundingBox = await getBoundingBox();
     geoJson.features = geoJson.features.concat(boundingBox.features);

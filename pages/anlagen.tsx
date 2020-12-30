@@ -6,6 +6,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import {getOneGeoJson} from "./api/geojson/geojson";
 import {Feature, FeatureCollection, Polygon} from "geojson";
+import {getFullGeoJson} from "./api/geojson/list";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -97,21 +98,21 @@ export default function Index(props) {
 
 export async function getStaticProps({ params, preview = false, previewData }) {
 
-    const zoomBoxesGeoJson = await getOneGeoJson('zoomboxes') as FeatureCollection<Polygon>;
+    const getJson = await getFullGeoJson();
 
-    let gehege = zoomBoxesGeoJson.features.map((feature:Feature<Polygon>)=>{
+
+
+    const enclosures = getJson.features
+        .filter((feature:Feature)=>{
+            return ('enclosure-box' === feature.properties.type);
+        })
+        .map((feature:Feature)=>{
         return feature.properties;
-    });
-
-    gehege = gehege.sort( (a:any, b:any)=>{
-
-        return a.name.localeCompare(b.name);
-
     });
 
     return {
         props: {
-            gehege: gehege,
+            enclosures: enclosures,
         },
     }
 }

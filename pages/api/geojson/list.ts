@@ -3,6 +3,22 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import {getOneGeoJson} from "../geojson/geojson";
 import {Feature, FeatureCollection, Polygon} from "geojson";
 
+const getBorder = async ():Promise<FeatureCollection> => {
+
+    const enclosureBoxes = await getOneGeoJson('border') as FeatureCollection<Polygon>;
+
+    enclosureBoxes.features = enclosureBoxes.features.map( (feature:Feature<Polygon>)=>{
+
+        feature.properties.type = 'border';
+
+        return feature;
+
+    });
+
+    return enclosureBoxes;
+
+}
+
 const getWays = async ():Promise<FeatureCollection> => {
 
     const enclosureBoxes = await getOneGeoJson('ways') as FeatureCollection<Polygon>;
@@ -80,6 +96,9 @@ export const getFullGeoJson = async (): Promise<FeatureCollection> => {
 
     const ways = await getWays();
     geoJson.features = geoJson.features.concat(ways.features);
+
+    const border = await getBorder();
+    geoJson.features = geoJson.features.concat(border.features);
 
     return geoJson;
 

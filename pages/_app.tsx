@@ -1,22 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import { ThemeProvider } from '@material-ui/core/styles';
+import {ThemeProvider} from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
 
 import NavigationMain from '../components/Navigation/Main';
 import NavigationSidebar from '../components/Navigation/Sidebar';
-import NavigationSearch from '../components/Navigation/Search';
+import Teaser from '../components/Navigation/Teaser';
 
-import { makeStyles } from '@material-ui/core/styles';
-import {NavigationInterface} from "../components/Navigation/Interfaces";
+import {makeStyles} from '@material-ui/core/styles';
+import {MapFocus, NavigationInterface} from "../components/Navigation/Interfaces";
 
 import createPersistedState from 'use-persisted-state';
-import {d3PropertiesDefault} from "../components/D3/Map";
+import {Feature, Polygon} from "geojson";
 const useNavigationState = createPersistedState('navigation');
-
 
 const useStyles = makeStyles(theme => ({
     offset: theme.mixins.toolbar,
@@ -24,22 +23,76 @@ const useStyles = makeStyles(theme => ({
 
 export default function ZooWuppertal(props) {
 
-  const { Component, pageProps } = props;
+    const {Component, pageProps} = props;
 
-  const [navigationState, setNavigationState] = useNavigationState(pageProps.navigation);
+    const [navigationState, setNavigationState] = useNavigationState<NavigationInterface>({
+        activeMainItem: 'map',
+        openSideMenu: false,
+        openTeaser: false,
+        openSearch: false,
+        focus: 'none'
+    });
 
-  const toggleSearch = () => {
+    const storeFocus = (focus:MapFocus | Feature<Polygon>) => {
 
-      const open = (true === navigationState.openSearch) ? false : true;
+        setNavigationState({
+            ...navigationState,
+            focus: focus,
+        });
 
-      setNavigationState({
-          ...navigationState,
-          openSearch:open
-      });
+        if('none' !== focus){
+            toggleTeaser();
+        }
 
-  };
+    }
 
+    const setFocus = (focus:MapFocus | Feature<Polygon>) => {
 
+        if('none' === focus || undefined === focus){
+
+            storeFocus('none');
+            return;
+        }
+
+        focus = focus as Feature<Polygon>;
+
+        if('none' === navigationState.focus){
+
+            storeFocus(focus)
+
+            return;
+        }
+
+        if(focus.properties.slug !== navigationState.focus.properties.slug){
+
+            storeFocus(focus)
+
+            return;
+        }
+
+    };
+
+    const toggleSearch = () => {
+
+        const open = (true === navigationState.openSearch) ? false : true;
+
+        setNavigationState({
+            ...navigationState,
+            openSearch: open
+        });
+
+    };
+
+    const toggleTeaser = () => {
+
+        const open = (true === navigationState.openTeaser) ? false : true;
+
+        setNavigationState({
+            ...navigationState,
+            openTeaser: open
+        });
+
+    };
 
     const toggleSideMenu = () => {
 
@@ -47,55 +100,73 @@ export default function ZooWuppertal(props) {
 
         setNavigationState({
             ...navigationState,
-            openSideMenu:open
+            openSideMenu: open
         });
 
     };
 
     React.useEffect(() => {
-    // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
-    }
 
-    /*
-    if(true === navigationState.openSearch){
-        return;
-    }
+        // Remove the server-side injected CSS.
+        const jssStyles = document.querySelector('#jss-server-side');
+        if (jssStyles) {
+            jssStyles.parentElement.removeChild(jssStyles);
+        }
 
-    window.setTimeout(()=>{
-        toggleSearch();
-    }, 300)
-    */
+        /*
+        if(true === navigationState.openTeaser){
+            return;
+        }
 
-  }, []);
+        window.setTimeout(()=>{
+            toggleTeaser();
+        }, 300)
+        */
 
-  const classes = useStyles();
-  return (
-    <React.Fragment>
-      <Head>
-        <title>Der grüne Zoo Wuppertal</title>
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" crossOrigin=""/>
-      </Head>
-      <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-          <Grid container>
-              <Grid item xs={12}>
-                  <Component {...pageProps} />
-              </Grid>
-          </Grid>
-          <NavigationMain toggleSideMenu={toggleSideMenu} toogleSearch={toggleSearch} {...navigationState}></NavigationMain>
-          <NavigationSidebar toggleSideMenu={toggleSideMenu} {...navigationState}></NavigationSidebar>
-          <NavigationSearch toggleSearch={toggleSearch} {...navigationState} {...props}></NavigationSearch>
-      </ThemeProvider>
-    </React.Fragment>
-  );
+    }, []);
+
+    const classes = useStyles();
+    return (
+        <React.Fragment>
+            <Head>
+                <title>Der grüne Zoo Wuppertal</title>
+                <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width"/>
+                <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" crossOrigin=""/>
+            </Head>
+            <ThemeProvider theme={theme}>
+                {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+                <CssBaseline/>
+                <Grid container>
+                    <Grid item xs={12}>
+                        <Component
+                            toggleSearch={toggleSearch}
+                            toggleTeaser={toggleTeaser}
+                            setFocus={setFocus}
+                            navigation={navigationState}
+                            {...pageProps}
+                        />
+                    </Grid>
+                </Grid>
+                <NavigationMain
+                    toggleSearch={toggleSearch}
+                    toggleSideMenu={toggleSideMenu}
+                    {...navigationState}
+                />
+                <NavigationSidebar
+                    toggleSideMenu={toggleSideMenu}
+                    {...navigationState}
+                />
+                <Teaser
+                    toggleTeaser={toggleTeaser}
+                    {...navigationState}
+                    {...props}
+                />
+            </ThemeProvider>
+        </React.Fragment>
+    );
 }
 
 ZooWuppertal.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  pageProps: PropTypes.object.isRequired,
+    Component: PropTypes.elementType.isRequired,
+    pageProps: PropTypes.object.isRequired,
 };

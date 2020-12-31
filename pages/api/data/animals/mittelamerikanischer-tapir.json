@@ -1,0 +1,13 @@
+{
+    "slug": "mittelamerikanischer-tapir",
+    "name": "Mittelamerikanischer Tapir",
+    "images": [
+        "images/tapir.jpg"
+    ],
+    "taxonomy": {
+        "class": "Säugetiere",
+        "order": "Unpaarhufer",
+        "family": "Tapire",
+        "species": "Mittelamerikanischer Tapir"
+    }
+}

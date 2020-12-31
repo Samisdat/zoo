@@ -1,6 +1,5 @@
 import React from 'react';
 import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -21,7 +20,6 @@ import ExploreIcon from '@material-ui/icons/Explore';
 
 import Settings from './Settings';
 import ListSubheader from "@material-ui/core/ListSubheader";
-import BottomNavigation from "@material-ui/core/BottomNavigation";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -50,12 +48,6 @@ export default function TemporaryDrawer(props) {
         toggleSideMenu();
     }
 
-    const clickAway = () => {
-
-        console.log(props.openSideMenu)
-
-    }
-
     return (
 
         <SwipeableDrawer
@@ -72,11 +64,15 @@ export default function TemporaryDrawer(props) {
                     <ListItemIcon><MapIcon /></ListItemIcon>
                     <ListItemText primary='Karte' />
                 </ListItemLink>
+                <ListItemLink key='map' href="/facilities" onClick={onClick}>
+                    <ListItemIcon><MapIcon /></ListItemIcon>
+                    <ListItemText primary='Anlagen' />
+                </ListItemLink>
                 <ListItemLink key='leaflet' href="/leaflet" onClick={onClick}>
                     <ListItemIcon><MapIcon /></ListItemIcon>
                     <ListItemText primary='Leaflet' />
                 </ListItemLink>
-                <ListItemLink button key='species' href="species"onClick={onClick}>
+                <ListItemLink button key='animals' href="animals"onClick={onClick}>
                     <ListItemIcon><PetsIcon /></ListItemIcon>
                     <ListItemText primary='Tiere' />
                 </ListItemLink>

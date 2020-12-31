@@ -1,0 +1,13 @@
+{
+    "slug": "leopard",
+    "name": "Leopard",
+    "images": [
+        "images/leopard.jpg"
+    ],
+    "taxonomy": {
+        "class": "Säugetiere",
+        "order": "Raubtiere",
+        "family": "Katzen ",
+        "species": "Leopard"
+    }
+}

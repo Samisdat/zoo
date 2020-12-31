@@ -1,0 +1,13 @@
+{
+    "slug": "eisbaer",
+    "name": "Eisbär",
+    "images": [
+        "images/eisbaer.jpg"
+    ],
+    "taxonomy": {
+        "class": "Säugetiere",
+        "order": "Raubtiere",
+        "family": "Bären",
+        "species": "Eisbär"
+    }
+}

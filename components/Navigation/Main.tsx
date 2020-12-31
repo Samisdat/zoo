@@ -8,6 +8,8 @@ import PetsIcon from '@material-ui/icons/Pets';
 import SearchIcon from '@material-ui/icons/Search';
 import MenuIcon from '@material-ui/icons/Menu';
 
+import { useRouter } from 'next/router'
+
 const useStyles = makeStyles({
     root: {
         left:'20px',
@@ -23,20 +25,28 @@ const useStyles = makeStyles({
 
 export default function NavigationMain(props) {
 
-    const {toogleSearch} = props;
+    const router = useRouter()
+
+    const {toggleSearch} = props;
+
     const {toggleSideMenu} = props;
 
     const classes = useStyles();
     const [value, setValue] = React.useState('map');
 
     const handleChange = (event: React.ChangeEvent<{}>, newValue: string) => {
-        console.log(newValue);
 
         if('search' === newValue){
-            toogleSearch();
+
+            if('/' === router.pathname){
+                event.preventDefault();
+            }
+
+            toggleSearch();
+
         }
 
-        if('menu' === newValue){
+        if('menu' === newValue  ){
             toggleSideMenu();
         }
 
@@ -54,8 +64,8 @@ export default function NavigationMain(props) {
             }}
         >
             <BottomNavigationAction href="/" label="Karte" value="map" icon={<MapIcon />} />
-            <BottomNavigationAction href="/species" label="Tiere" value="species" icon={<PetsIcon />} />
-            <BottomNavigationAction label="Suche" value="search" icon={<SearchIcon />} />
+            <BottomNavigationAction href="/animals" label="Tiere" value="animals" icon={<PetsIcon />} />
+            <BottomNavigationAction href="/" label="Suche" value="search" icon={<SearchIcon />} />
             <BottomNavigationAction label="Menu" value="menu" icon={<MenuIcon />}/>
         </BottomNavigation>
     );

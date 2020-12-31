@@ -2,10 +2,6 @@ import {useEffect} from 'react';
 
 import * as d3 from 'd3';
 
-import {Sketched} from 'components/D3/Sketched';
-import {CurrentPosition} from 'components/D3/CurrentPosition';
-import {Ways} from "components/D3/Ways";
-
 import createPersistedState from 'use-persisted-state';
 const useD3State = createPersistedState('d3');
 
@@ -91,7 +87,6 @@ export const Map = (props) => {
                 }
             };
 
-            console.log(updateD3State)
             setD3PropertiesState(updateD3State);
 
 
@@ -105,9 +100,6 @@ export const Map = (props) => {
             x = centroid[0];
             y = centroid[1];
             k = 4;
-
-            console.log(centroid)
-
 
             mapGroup.transition()
                 .duration(750)
@@ -191,9 +183,6 @@ export const Map = (props) => {
         }}
         >
             <g id={mapId}>
-                <Sketched d3PropertiesState={d3PropertiesState} {...props}></Sketched>
-                <Ways  d3PropertiesState={d3PropertiesState} simpleWays={props.simpleWays}></Ways>
-                <CurrentPosition d3PropertiesState={d3PropertiesState}></CurrentPosition>
             </g>
         </svg>
     );

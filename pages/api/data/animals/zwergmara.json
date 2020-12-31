@@ -1,0 +1,13 @@
+{
+    "slug": "zwergmara",
+    "name": "Zwergmara",
+    "images": [
+        "images/zwergmara.jpg"
+    ],
+    "taxonomy": {
+        "class": "Säugetiere",
+        "order": "Nagetiere",
+        "family": "Meerschweinchen",
+        "species": "Zwergmara"
+    }
+}

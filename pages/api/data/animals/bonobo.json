@@ -1,0 +1,13 @@
+{
+    "slug": "bonobo",
+    "name": "Bonobo",
+    "images": [
+        "images/bonobo.jpg"
+    ],
+    "taxonomy": {
+        "class": "Säugetiere",
+        "order": "Primaten",
+        "family": "Menschenaffen",
+        "species": "Bonobo"
+    }
+}

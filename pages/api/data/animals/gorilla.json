@@ -1,0 +1,13 @@
+{
+    "slug": "gorilla",
+    "name": "Westlicher Gorilla",
+    "images": [
+        "images/gorilla.jpg"
+    ],
+    "taxonomy": {
+        "class": "Säugetiere",
+        "order": "Primaten",
+        "family": "Menschenaffen",
+        "species": "Westlicher Gorilla"
+    }
+}

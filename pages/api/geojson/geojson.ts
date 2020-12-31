@@ -8,9 +8,9 @@ import {FeatureCollection, Polygon} from "geojson";
 
 let allowList = [
     'bounding-box',
-    'aussengrenze',
-    'way-simple',
-    'zoomboxes',
+    'border',
+    'ways',
+    'facility-boxes',
 ];
 
 export const getOneGeoJson = async (slug:string):Promise<any> => {

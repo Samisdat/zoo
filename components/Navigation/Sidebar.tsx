@@ -64,15 +64,15 @@ export default function TemporaryDrawer(props) {
                     <ListItemIcon><MapIcon /></ListItemIcon>
                     <ListItemText primary='Karte' />
                 </ListItemLink>
-                <ListItemLink key='map' href="/gehege" onClick={onClick}>
+                <ListItemLink key='map' href="/facilities" onClick={onClick}>
                     <ListItemIcon><MapIcon /></ListItemIcon>
-                    <ListItemText primary='Gehege' />
+                    <ListItemText primary='Anlagen' />
                 </ListItemLink>
                 <ListItemLink key='leaflet' href="/leaflet" onClick={onClick}>
                     <ListItemIcon><MapIcon /></ListItemIcon>
                     <ListItemText primary='Leaflet' />
                 </ListItemLink>
-                <ListItemLink button key='tiere' href="tiere"onClick={onClick}>
+                <ListItemLink button key='animals' href="animals"onClick={onClick}>
                     <ListItemIcon><PetsIcon /></ListItemIcon>
                     <ListItemText primary='Tiere' />
                 </ListItemLink>

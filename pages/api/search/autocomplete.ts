@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import {getOneGeoJson} from "../geojson/geojson";
 import {Feature, FeatureCollection, Polygon} from "geojson";
 
-export default async (req: NextApiRequest, res: NextApiResponse<any[]>) => {
+export const getZoomboxes = async () => {
 
     const zoomBoxesGeoJson = await getOneGeoJson('zoomboxes') as FeatureCollection<Polygon>;
 
@@ -11,17 +11,23 @@ export default async (req: NextApiRequest, res: NextApiResponse<any[]>) => {
 
         return{
             type: 'zoomBox',
-            name: feature.properties.name
+            feature: feature
         };
 
     });
 
     const data = zoomBoxes.sort( (a:any, b:any)=>{
 
-        return a.name.localeCompare(b.name);
+        return a.feature.properties.name.localeCompare(b.feature.properties.name);
 
     });
 
-    res.status(200).json(data);
+    return data;
+}
+
+export default async (req: NextApiRequest, res: NextApiResponse<any[]>) => {
+
+    const zoomBoxes = await getZoomboxes();
+    res.status(200).json(zoomBoxes);
 
 }

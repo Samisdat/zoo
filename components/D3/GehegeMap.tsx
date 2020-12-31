@@ -2,8 +2,6 @@ import {useEffect} from 'react';
 
 import * as d3 from 'd3';
 
-import {Sketched} from 'components/D3/Sketched';
-
 import createPersistedState from 'use-persisted-state';
 import {Feature} from "geojson";
 const useD3State = createPersistedState('d3');
@@ -172,14 +170,13 @@ export const GehegeMap = (props) => {
 
 
         //[[x0, y0], [x1, y1]]
-        console.log(x0, y0, x1, y1)
+        //console.log(x0, y0, x1, y1)
 
         //const x = -1 * topLeft[0];
         //const y = -1 * topLeft[1];
         const k = 6;
 
         const scale = Math.min(8, 0.9 / Math.max((x1 - x0) / width, (y1 - y0) / height));
-        console.log(scale)
 
         var t = d3.zoomIdentity
             .translate(width / 2, height / 2)
@@ -187,10 +184,10 @@ export const GehegeMap = (props) => {
             .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
         ;
 
-mapSvg.call(
-    (zooming.transform as any),
-    t
-);
+        mapSvg.call(
+            (zooming.transform as any),
+            t
+        );
 
         const panAndZoomToBox = (box:any) => {
 
@@ -263,7 +260,7 @@ mapSvg.call(
     return (
         <svg id={svgId}>
             <g id={mapId}>
-                <Sketched d3PropertiesState={d3PropertiesState} {...props}></Sketched>
+
                 <g id="zoomBox"></g>
             </g>
 

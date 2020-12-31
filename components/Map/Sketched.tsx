@@ -17,20 +17,26 @@ export const Sketched = (props) => {
             return;
         }
 
-        if(undefined === props.d3PropertiesState || null === props.d3PropertiesState){
+        if(undefined === props.mapState || null === props.mapState){
             return;
         }
 
-        if(undefined === props.d3PropertiesState.geoPath || null === props.d3PropertiesState.geoPath){
+        if(undefined === props.mapState.pathGenerator || null === props.mapState.pathGenerator){
             return;
         }
+
+        const boundingBoxGeoJson = props.geoJson.features.filter((feature:Feature)=>{
+
+            return ('bounding-box' === feature.properties.type);
+
+        });
 
         var mapSvg = d3.select(`#${svgId}`)
 
         var elementsGroup = mapSvg.select(`#${mapElementId}`);
 
         elementsGroup.selectAll("path")
-            .data(props.boundingBox.features)
+            .data(boundingBoxGeoJson)
             .enter()
             .append("path")
             .attr("fill", (d:Feature)=>{
@@ -42,7 +48,7 @@ export const Sketched = (props) => {
             .attr("id", (d:Feature)=>{
                 return d.properties.slug;
             })
-            .attr("d", props.d3PropertiesState.geoPath)
+            .attr("d", props.mapState.pathGenerator)
 ;
 
         const bound = mapSvg.select(`#bounding-box`);

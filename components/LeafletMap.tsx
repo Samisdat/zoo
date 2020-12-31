@@ -1,10 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import { Map, TileLayer,    Marker, ImageOverlay, Polyline } from 'react-leaflet'
 import {usePersistedState} from "../hooks/persisted-state";
-import createPersistedState from 'use-persisted-state';
-import {d3PropertiesDefault} from "./D3/Map";
-const useD3State = createPersistedState('d3');
 
 export default function ZooMap(props) {
 
@@ -15,34 +12,26 @@ export default function ZooMap(props) {
 
     const [zoom, setZoom] = usePersistedState('zoom', 17);
 
-    const defaultD3State = {
-        ...d3PropertiesDefault,
-        marker:{
-            lat: 51.238741,
-            lng: 7.107757,
-            isWithin: true,
-            text: 'Map Marker Text'
-        }
-    }
+    const [marker, setMarker] = usePersistedState('current-position', {
+        lat: 51.238741,
+        lng: 7.107757,
+        isWithin: true,
+        isGPS: false,
+        text: 'Map Marker Text'
 
-    const [d3PropertiesState, setD3PropertiesState] = useD3State(defaultD3State);
+    });
 
     const onClick = (event:any) => {
 
         const { lat, lng } = event.latlng;
 
-        const updateD3State = {
-            ...d3PropertiesState,
-            marker:{
-                lat: lat,
-                lng: lng,
-                // always within
-                isWithin: true,
-                text: 'Map Marker Text'
-            }
+        const updateMarker = {
+            ...marker,
+            lat: lat,
+            lng: lng,
         };
 
-        setD3PropertiesState(updateD3State);
+        setMarker(updateMarker);
 
     };
 
@@ -95,7 +84,7 @@ export default function ZooMap(props) {
                 opacity="0"
             />
 
-            <Marker position={d3PropertiesState.marker}></Marker>
+            <Marker position={marker}></Marker>
 
         </Map>
 

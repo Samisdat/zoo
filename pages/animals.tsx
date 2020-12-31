@@ -81,7 +81,7 @@ export default function Index(props) {
               return <React.Fragment>
                   <ListSubheader className={classes.subheader}>{key.toUpperCase()}</ListSubheader>
                   {group[key].map(( animal: Animal ) => {
-                      const href =  `/tiere/${animal.slug}`
+                      const href =  `/animal/${animal.slug}`
 
                       return(
 
@@ -100,7 +100,7 @@ export default function Index(props) {
 export async function getStaticProps({ params, preview = false, previewData }) {
 
     const animals = await getAnimals();
-
+    
     return {
         props: {
             animals: animals,

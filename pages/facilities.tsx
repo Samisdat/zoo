@@ -6,6 +6,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import {getOneGeoJson} from "./api/geojson/geojson";
 import {Feature, FeatureCollection, Polygon} from "geojson";
+import {getFullGeoJson} from "./api/geojson/list";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -47,7 +48,7 @@ export default function Index(props) {
 
   const classes = useStyles();
 
-    let group = props.gehege
+    let group = props.facilities
         .reduce((r, e) => {
             let firstLetter = e.name[0].toLowerCase();
 
@@ -80,11 +81,11 @@ export default function Index(props) {
           .map(([key, value], i) => {
               return <React.Fragment>
                   <ListSubheader className={classes.subheader}>{key.toUpperCase()}</ListSubheader>
-                  {group[key].map(( gehege: any ) => {
-                      const href =  `/gehege/${gehege.slug}`
+                  {group[key].map(( facility: any ) => {
+                      const href =  `/facility/${facility.slug}`
                       return (
                           <ListItem button>
-                              <ListItemLink href={href}>{gehege.name}</ListItemLink>
+                              <ListItemLink href={href}>{facility.name}</ListItemLink>
                           </ListItem>
                       );
                   })}
@@ -97,21 +98,19 @@ export default function Index(props) {
 
 export async function getStaticProps({ params, preview = false, previewData }) {
 
-    const zoomBoxesGeoJson = await getOneGeoJson('zoomboxes') as FeatureCollection<Polygon>;
+    const getJson = await getFullGeoJson();
 
-    let gehege = zoomBoxesGeoJson.features.map((feature:Feature<Polygon>)=>{
+    const facilities = getJson.features
+        .filter((feature:Feature)=>{
+            return ('facility-box' === feature.properties.type);
+        })
+        .map((feature:Feature)=>{
         return feature.properties;
-    });
-
-    gehege = gehege.sort( (a:any, b:any)=>{
-
-        return a.name.localeCompare(b.name);
-
     });
 
     return {
         props: {
-            gehege: gehege,
+            facilities: facilities,
         },
     }
 }

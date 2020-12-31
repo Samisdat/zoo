@@ -64,7 +64,7 @@ export default function NavigationMain(props) {
             }}
         >
             <BottomNavigationAction href="/" label="Karte" value="map" icon={<MapIcon />} />
-            <BottomNavigationAction href="/tiere" label="Tiere" value="tiere" icon={<PetsIcon />} />
+            <BottomNavigationAction href="/animals" label="Tiere" value="animals" icon={<PetsIcon />} />
             <BottomNavigationAction href="/" label="Suche" value="search" icon={<SearchIcon />} />
             <BottomNavigationAction label="Menu" value="menu" icon={<MenuIcon />}/>
         </BottomNavigation>

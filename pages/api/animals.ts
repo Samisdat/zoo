@@ -18,7 +18,7 @@ export type Animal = {
 
 }
 
-const dataDir = path.resolve(process.env.PWD, 'pages/api/data/species');
+const dataDir = path.resolve(process.env.PWD, 'pages/api/data/animals');
 
 export const getAnimal = async (slug:string):Promise<Animal> => {
 

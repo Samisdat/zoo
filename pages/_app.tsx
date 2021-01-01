@@ -41,7 +41,7 @@ export default function ZooWuppertal(props) {
         });
 
         if('none' !== focus){
-            toggleTeaser();
+            //toggleTeaser();
         }
 
     }

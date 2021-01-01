@@ -4,6 +4,7 @@ import * as d3 from 'd3';
 import {GeoPath} from 'd3';
 import {MapStateInterface, MapTransformInterface, MarkerInterface} from "components/Map/Interface";
 import {Group} from "./Group";
+import {Feature} from "geojson";
 
 const markerDefault: MarkerInterface = {
     lat: 51.238741,
@@ -39,6 +40,16 @@ export const MapRoot = (props) => {
     const svgId = 'main-svg';
 
     const [mapState, setMapState] = useState<MapStateInterface>(MapStateDefault);
+
+    const border = props.geoJson.features.find((feature:Feature) => {
+
+        if('border' === feature.properties?.type){
+            return true;
+        }
+
+        return false;
+
+    });
 
     const setTransform = (transform:MapTransformInterface) => {
 
@@ -162,7 +173,7 @@ export const MapRoot = (props) => {
 
         const pathGenerator: GeoPath = d3.geoPath().projection(projection)
 
-        const center = d3.geoCentroid(props.border);
+        const center = d3.geoCentroid(border);
 
         projection
             .scale(3000000)

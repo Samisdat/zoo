@@ -59,8 +59,8 @@ export const MapSearch = (props) => {
 
         <Drawer
             anchor='top'
-            //open={props.openSearch}
-            open={true}
+            open={props.openSearch}
+            //open={true}
             onClose={toggleSearch}
             variant='persistent'
         >

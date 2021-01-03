@@ -1,29 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
-const logoDimension = 80;
+const logoWidth = 100;
+const logoHeight = Math.ceil(logoWidth / 1709 * 1395)
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        logoWrap:{
-            position: 'static',
-            width:(logoDimension + 24),
-            height:64,
-            background:'red'
-        },
         logo:{
+            position: 'fixed',
+            bottom: theme.spacing(1),
+            right: theme.spacing(1),
+            width:(logoWidth),
+            height:logoHeight,
             display: 'block',
-            position: 'absolute',
-            top:0,
-            width:(logoDimension + 24),
-            height:(logoDimension + 24),
-            background:'white'
         },
         logoImg:{
             position: 'absolute',
-            top:200,
-            width:(logoDimension + 24),
-            height:(logoDimension + 24),
+            top:0,
+            width:(logoWidth),
+            height:(logoHeight),
         }
     }),
 );
@@ -31,8 +26,27 @@ const useStyles = makeStyles((theme: Theme) =>
 export function Logo() {
     const classes = useStyles();
 
+    const listenToScroll = () => {
+        const winScroll =
+            document.body.scrollTop || document.documentElement.scrollTop
+
+        console.log(winScroll);
+
+        /*
+        this.setState({
+            theposition: scrolled,
+        })
+        */
+    }
+
+    useEffect(() => {
+
+        window.addEventListener('scroll', listenToScroll)
+
+    });
+
+
     return (
-        <div className={classes.logoWrap}>
             <div className={classes.logo}>
                 <svg
                     className={classes.logoImg}
@@ -83,6 +97,5 @@ export function Logo() {
                     </g>
                 </svg>
             </div>
-        </div>
     );
 }

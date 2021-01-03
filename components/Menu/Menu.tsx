@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import {Logo} from "./Logo";
+import {Fab} from "@material-ui/core";
 
 const logoDimension = 120;
 
@@ -20,6 +21,11 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         title: {
             flexGrow: 1,
+        },
+        fab:{
+            position: 'fixed',
+            bottom: theme.spacing(1),
+            left: theme.spacing(1),
         }
     }),
 );
@@ -28,19 +34,11 @@ export default function ButtonAppBar() {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
-            <AppBar position="fixed">
-                <Toolbar>
-                    <Logo />
-                    <Typography variant="h6" className={classes.title}>
-                        News
-                    </Typography>
-                    <Button color="inherit">Login</Button>
-                    <IconButton className={classes.menuButton} color="inherit" aria-label="menu">
-                        <MenuIcon />
-                    </IconButton>
-                </Toolbar>
-            </AppBar>
-        </div>
+        <React.Fragment>
+        <Fab className={classes.fab}>
+            <MenuIcon/>
+        </Fab>
+        <Logo />
+        </React.Fragment>
     );
 }

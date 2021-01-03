@@ -15,6 +15,7 @@ import {MapFocus, NavigationInterface} from "../components/Navigation/Interfaces
 
 import createPersistedState from 'use-persisted-state';
 import {Feature, Polygon} from "geojson";
+import ButtonAppBar from "../components/Menu/Menu";
 const useNavigationState = createPersistedState('navigation');
 
 const useStyles = makeStyles(theme => ({
@@ -136,6 +137,8 @@ export default function ZooWuppertal(props) {
             <ThemeProvider theme={theme}>
                 {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                 <CssBaseline/>
+                <ButtonAppBar></ButtonAppBar>
+                <div className={classes.offset} />
                 <Grid container>
                     <Grid item xs={12}>
                         <Component

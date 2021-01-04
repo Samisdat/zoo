@@ -11,8 +11,10 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             display: 'flex',
-            height: '150px',
-            marginBottom: '90px'
+            position: 'absolute'    ,
+            bottom:90,
+            left: theme.spacing(1),
+            right: theme.spacing(1)
         },
         details: {
             display: 'flex',
@@ -22,13 +24,8 @@ const useStyles = makeStyles((theme: Theme) =>
             flex: '1 0 auto',
         },
         cover: {
-            width: 151,
-        },
-        controls: {
-            display: 'flex',
-            alignItems: 'center',
-            paddingLeft: theme.spacing(1),
-            paddingBottom: theme.spacing(1),
+            width: 150,
+            height: 150,
         },
         playIcon: {
             height: 38,
@@ -43,7 +40,7 @@ export default function MediaControlCard(props) {
     return (
         <Card
             className={classes.root}
-            elevation={0}
+            elevation={2}
         >
             <CardMedia
                 className={classes.cover}
@@ -52,7 +49,7 @@ export default function MediaControlCard(props) {
             />
             <div className={classes.details}>
                 <CardContent className={classes.content}>
-                    <Typography component="h5" variant="h5">
+                    <Typography component="h6" variant="h6">
                         Live From Space
                     </Typography>
                     <Typography variant="subtitle1" color="textSecondary">

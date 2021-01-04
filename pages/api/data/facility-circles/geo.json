@@ -1,0 +1,300 @@
+{
+    "type": "FeatureCollection",
+    "creator": "svg2geojson v0.7.1",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Brillenpinguine",
+                "slug": "brillenpinguine"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.112548341605529,
+                    51.241027797619765
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Kirk-Dik-Dik",
+                "slug": "kirk-dik-dik"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.11144858331709,
+                    51.24157270013829
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Taskine",
+                "slug": "taskine"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.112508350395041,
+                    51.23822967594663
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Rentiere",
+                "slug": "rentiere"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.112208416316375,
+                    51.238091948461374
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Kiang",
+                "slug": "kiang"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.111728521790511,
+                    51.23814203118328
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Juiniorzoo",
+                "slug": "juiniorzoo"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.113708086709702,
+                    51.24052446626456
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Löwenhaus",
+                "slug": "loewenhaus"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.112044452353372,
+                    51.23727034140843
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Löwenhöhle",
+                "slug": "loewenhoehle"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.113364162299499,
+                    51.23772108590562
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Löwenturm",
+                "slug": "loewenturm"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.113764074404385,
+                    51.23783377202992
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Tiger",
+                "slug": "tiger"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.114663876640384,
+                    51.23840972333189
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Okapis",
+                "slug": "okapis"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.112148509483061,
+                    51.241209600404446
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Südamerikahaus",
+                "slug": "suedamerikahaus"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.111888566614887,
+                    51.24107187291918
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Vogelhaus",
+                "slug": "vogelhaus"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.1122884787197735,
+                    51.24023298732718
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Freiflughalle",
+                "slug": "freiflughalle"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.112133832708814,
+                    51.239940101065315
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Yaks",
+                "slug": "yaks"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.1107688127212025,
+                    51.239744680788554
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Okavango",
+                "slug": "okavango"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.109789028064229,
+                    51.23906856153862
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Elefantenhaus",
+                "slug": "elefantenhaus"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.109081171641217,
+                    51.238508887121284
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Affenhaus",
+                "slug": "affenhaus"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.109769032458983,
+                    51.239581911942345
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Musikmuschel",
+                "slug": "musikmuschel"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.1097830293826565,
+                    51.24043331821483
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Gibbons",
+                "slug": "gibbons"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.108161373799975,
+                    51.24063740530661
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Eingang",
+                "slug": "eingang"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.109056661028307,
+                    51.24099376891437
+                ]
+            }
+        }
+    ]
+}

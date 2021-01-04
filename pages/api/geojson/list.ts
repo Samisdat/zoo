@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import {getOneGeoJson} from "../geojson/geojson";
-import {Feature, FeatureCollection, Polygon} from "geojson";
+import {Feature, FeatureCollection, Point, Polygon} from "geojson";
 
 const getBorder = async ():Promise<FeatureCollection> => {
 
@@ -61,6 +61,22 @@ const getFacilityBoxes = async ():Promise<FeatureCollection> => {
 
 }
 
+const getFacilityCircles = async ():Promise<FeatureCollection> => {
+
+    const facilityCircles = await getOneGeoJson('facility-circles') as FeatureCollection<Point>;
+
+    facilityCircles.features = facilityCircles.features.map( (feature:Feature<Point>)=>{
+
+        feature.properties.type = 'facility-circle';
+
+        return feature;
+
+    });
+
+    return facilityCircles;
+
+}
+
 const getBoundingBox = async ():Promise<FeatureCollection> => {
 
     const boundingBox = await getOneGeoJson('bounding-box') as FeatureCollection<Polygon>;
@@ -90,6 +106,9 @@ export const getFullGeoJson = async (): Promise<FeatureCollection> => {
 
     const facilityBoxes = await getFacilityBoxes();
     geoJson.features = geoJson.features.concat(facilityBoxes.features);
+
+    const facilityCircles = await getFacilityCircles();
+    geoJson.features = geoJson.features.concat(facilityCircles.features);
 
     const boundingBox = await getBoundingBox();
     geoJson.features = geoJson.features.concat(boundingBox.features);

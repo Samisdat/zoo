@@ -5,6 +5,7 @@ import {Sketched} from "./Sketched";
 import {CurrentPosition} from "./CurrentPosition";
 import {MapTransformInterface} from "./Interface";
 import {HighlightFocus} from "./HighlightFocus";
+import {PointOfInterest} from "./PointOfInterest";
 
 // zoom until focus.width or focus.height extends window.width or window.height
 const findBestZoomLevel = (x0, x1, y0, y1, maxWidth, maxHeight) => {
@@ -152,6 +153,12 @@ export const Group = (props) => {
                 pathGenerator={props.mapState.pathGenerator}
                 zoom={zoom}
                 marker={props.mapState.marker}
+            />
+            <PointOfInterest
+                pathGenerator={props.mapState.pathGenerator}
+                projection={props.mapState.projection}
+                zoom={zoom}
+                geoJson={props.geoJson}
             />
         </g>
     );

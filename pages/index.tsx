@@ -6,6 +6,8 @@ import {MapRoot} from 'components/Map/Root';
 import {NavigationInterface} from "../components/Navigation/Interfaces";
 import {MapSearch} from "../components/Map/Search";
 import {getFullGeoJson} from "./api/geojson/list";
+import MediaCard from "../components/Menu/Card";
+import MediaControlCard from "../components/Navigation/MediaCard";
 
 export interface IndexProps{
     geoJson: FeatureCollection;
@@ -31,6 +33,7 @@ export default function Index(props:IndexProps) {
     return (
         <React.Fragment>
             <MapRoot setFocus={props.setFocus} {...props}></MapRoot>
+            <MediaControlCard></MediaControlCard>
             <MapSearch
                 setFocus={props.setFocus}
                 toggleSearch={toggleSearch}

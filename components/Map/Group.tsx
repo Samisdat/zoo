@@ -102,14 +102,17 @@ export const Group = (props) => {
             const [x0, y0] = props.mapState.projection(centerOfEnclosure[0] as any);
             const [x1, y1] = props.mapState.projection(centerOfEnclosure[1] as any);
 
-            const k = findBestZoomLevel(x0, x1, y0, y1, props.mapState.width, props.mapState.height);
+            const teaserOffset = 150 + 90 + 40
 
+            const k = findBestZoomLevel(x0, x1, y0, y1, props.mapState.width, props.mapState.height - teaserOffset);
 
             var t2 = d3.zoomIdentity
-                .translate(props.mapState.width / 2, props.mapState.height / 2)
+                .translate(props.mapState.width / 2, (props.mapState.height) / 2)
                 .scale(k)
-                .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
+                .translate(-(x0 + x1) / 2, -(y0 + y1 ) / 2)
             ;
+
+            //setZoom(k);
 
             mapSvg.call(
                 (zooming.transform as any),

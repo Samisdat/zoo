@@ -3,8 +3,27 @@ import Drawer from '@material-ui/core/Drawer';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import {Feature} from "geojson";
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import ChipsArray from "./Chips";
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        root: {
+            display: 'flex',
+            backgroundColor: 'red',
+            overflowX: 'auto',
+            width:'100%',
+            height:40,
+            flexWrap: 'nowrap',
+            '& > *': {
+            margin: theme.spacing(0.5),
+    },
+        },
+    }),
+);
 
 export const MapSearch = (props) => {
+
+    const classes = useStyles();
 
     const {toggleSearch, setFocus} = props;
 
@@ -64,8 +83,8 @@ export const MapSearch = (props) => {
 
         <Drawer
             anchor='top'
-            open={props.openSearch}
-            //open={true}
+            //open={props.openSearch}
+            open={true}
             onClose={toggleSearch}
             variant='persistent'
         >
@@ -79,8 +98,11 @@ export const MapSearch = (props) => {
                 onChange={onChange}
                 clearOnBlur
             />
+            <div className={classes.root}>
+                <ChipsArray/>
+            </div>
 
         </Drawer>
-        
+
     );
 }

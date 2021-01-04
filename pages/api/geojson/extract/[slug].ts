@@ -9,6 +9,7 @@ const { geoFromSVGXML } = require('svg2geojson');
 const allowedSlugs = [
     'bounding-box',
     'facility-boxes',
+    'facility-circles',
     'ways',
     'border'
 ]
@@ -17,7 +18,7 @@ export const getRectIds = (svg:string):string[] => {
 
     const pathIds:string[] = [];
 
-    let pathRegEx = /<(rect|path) id="(.*?)"(?: serif:id="(.*?)")*/gm;
+    let pathRegEx = /<(rect|path|circle) id="(.*?)"(?: serif:id="(.*?)")*/gm;
 
     let index = 0;
 
@@ -76,6 +77,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
         });
     }
 
+    console.log('facility-circles', combinedSvg)
 
     // look into combined.svg
     // if no group with id=slug -> error
@@ -111,16 +113,40 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
 
         for(let i = 0, x = geoJson.features.length; i < x; i += 1){
 
-            const name =  pathIds[i];
-            console.log(name);
-            const slug = getSlug(name);
+            const name = pathIds[i];
 
             geoJson.features[i].properties = {
                 name,
                 slug
             };
 
-            console.log(geoJson.features[i].properties);
+        }
+
+
+        if('facility-circles' === slug){
+
+            for(let i = 0, x = geoJson.features.length; i < x; i += 1) {
+
+                geoJson.features[i].properties.slug = getSlug(geoJson.features[i].properties.name);
+
+                const coordinates = geoJson.features[i].geometry.coordinates[0];
+
+                const latitudes = coordinates.map((coordinate)=>{
+                    return coordinate[1];
+                }).reduce((a, b) => {return a + b }, 0);
+
+                const longidues = coordinates.map((coordinate)=>{
+                    return coordinate[0];
+                }).reduce((a, b) => {return a + b }, 0);
+
+                geoJson.features[i].geometry = {
+                    "type": "Point",
+                        "coordinates": [
+                            longidues/coordinates.length,
+                            latitudes/coordinates.length
+                        ]
+                }
+            }
 
         }
 

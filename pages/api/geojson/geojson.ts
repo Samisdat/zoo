@@ -11,6 +11,7 @@ let allowList = [
     'border',
     'ways',
     'facility-boxes',
+    'facility-circles'
 ];
 
 export const getOneGeoJson = async (slug:string):Promise<any> => {
@@ -21,7 +22,7 @@ export const getOneGeoJson = async (slug:string):Promise<any> => {
 
     const dataDir = path.resolve(process.env.PWD + '/pages/api/data');
 
-    const geojson = JSON.parse(fs.readFileSync(dataDir + '/'    + slug + '/geo.json', {encoding: 'utf8'}));
+    const geojson = JSON.parse(fs.readFileSync(dataDir + '/' + slug + '/geo.json', {encoding: 'utf8'}));
 
     return geojson;
 }

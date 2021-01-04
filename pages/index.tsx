@@ -45,6 +45,39 @@ export async function getStaticProps(context) {
 
     let getJson = await getFullGeoJson();
 
+    for(let i = 0, x = getJson.features.length; i < x; i += 1){
+
+        const feature = getJson.features[i];
+
+        if('facility-circle' === feature.properties.type){
+            getJson.features[i].geometry.coordinates = [
+                (feature.geometry.coordinates[0] - 0.000021),
+                (feature.geometry.coordinates[1] + 0.000010)
+
+            ]
+        }
+
+        if('way' === feature.properties.type && 1 !== feature.geometry.coordinates.length){
+            console.log(feature.geometry.coordinates.length)
+            const correctedWay = feature.geometry.coordinates.map((coordinates)=>{
+
+                console.log('coordinates', coordinates)
+                return [
+                    (coordinates[0] - 0.000021),
+                    (coordinates[1] + 0.000010)
+                ];
+            });
+
+            feature.geometry.coordinates = correctedWay;
+
+
+        }
+
+
+
+
+    }
+
     const indexProps:IndexProps = {
         geoJson: getJson
     };

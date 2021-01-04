@@ -51,7 +51,12 @@ export const MapSearch = (props) => {
 
     const renderInput = (params) => {
         return (
-            <TextField {...params} label="Suche" variant="outlined" />
+            <TextField
+                {...params}
+                size="small"
+                label="Suche"
+                variant="outlined"
+            />
         );
     }
 

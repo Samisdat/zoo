@@ -1,5 +1,5 @@
 import * as d3 from 'd3';
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {Ways} from "./Ways";
 import {Sketched} from "./Sketched";
 import {CurrentPosition} from "./CurrentPosition";
@@ -58,6 +58,8 @@ export const Group = (props) => {
 
     const svgId = 'main-svg';
     const mapId = 'main-map';
+
+    const [zoom, setZoom] = useState<number>(10);
 
     const createD3Map = ()=> {
 
@@ -130,7 +132,7 @@ export const Group = (props) => {
 
         createD3Map();
 
-    });
+    }, [props.mapState]);
 
     return (
         <g id={mapId}>
@@ -148,6 +150,7 @@ export const Group = (props) => {
             />
             <CurrentPosition
                 pathGenerator={props.mapState.pathGenerator}
+                zoom={zoom}
                 marker={props.mapState.marker}
             />
         </g>

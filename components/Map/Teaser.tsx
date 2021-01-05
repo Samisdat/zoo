@@ -6,6 +6,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
+import {CircularProgress} from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -15,7 +16,11 @@ const useStyles = makeStyles((theme: Theme) =>
             bottom:90,
             left: theme.spacing(1),
             right: theme.spacing(1),
-            flexDirection: 'row'
+            flexDirection: 'row',
+            height: 150
+        },
+        progress:{
+
         },
         text: {
             flex: 1
@@ -56,7 +61,7 @@ const teaserService = async (apiUrl, close):Promise<TeaserStateInterface> => {
 
             resolve(state)
 
-        },1000);
+        },750);
 
     });
 
@@ -66,61 +71,85 @@ const teaserService = async (apiUrl, close):Promise<TeaserStateInterface> => {
 /*
 */
 
+//const loadingContent =
+
 export const Teaser = (props: TeaserPropsInterface) => {
-
-    console.log(props);
-
+    
     const classes = useStyles();
 
-    const [teaser, setTeaser] = useState<TeaserStateInterface>(undefined);
+    const [loading, setLoading] = useState<boolean>(true);
+
+    const [data, setData] = useState<TeaserStateInterface>(undefined);
 
     useEffect(() => {
 
         teaserService(props.apiUrl, props.close)
             .then((data) =>{
-                setTeaser(data);
+                setData(data);
+                setLoading(false);
             });
 
     }, [props.apiUrl])
 
 
-    return (
-    <Card
-        className={classes.root}
-        elevation={2}
-    >
-        <div className={classes.text}>
-            <CardContent>
-                <Typography component="h6" variant="h6">
-                    {teaser?.title}
-                </Typography>
-                <Typography variant="subtitle1" color="textSecondary">
-                    {teaser?.subLine}
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button
-                    size="small"
-                    color="primary"
-                    href={teaser?.href}
-                >
-                    Details
-                </Button>
-                <Button
-                    size="small"
-                    color="primary"
-                    onClick={teaser?.close}
-                >
-                    Schließen
-                </Button>
-            </CardActions>
-        </div>
-        <CardMedia
-            className={classes.image}
-            image={teaser?.image}
-            title={teaser?.title}
-        />
-    </Card>
+    if (true === loading) {
 
+        return (
+            <Card
+                className={classes.root}
+                elevation={2}
+            >
+                <CircularProgress
+                    size={40}
+                    style={{
+                        position: 'absolute',
+                        left:-20,
+                        top:50,
+                        marginLeft: '50%',
+                    }}
+                />
+            </Card>
+        );
+
+    }
+
+    return (
+        <Card
+            className={classes.root}
+            elevation={2}
+        >
+            <div className={classes.text}>
+                <CardContent>
+
+                    <Typography component="h6" variant="h6">
+                        {data?.title}
+                    </Typography>
+                    <Typography variant="subtitle1" color="textSecondary">
+                        {data?.subLine}
+                    </Typography>
+                </CardContent>
+                <CardActions>
+                    <Button
+                        size="small"
+                        color="primary"
+                        href={data?.href}
+                    >
+                        Details
+                    </Button>
+                    <Button
+                        size="small"
+                        color="primary"
+                        onClick={data?.close}
+                    >
+                        Schließen
+                    </Button>
+                </CardActions>
+            </div>
+            <CardMedia
+                className={classes.image}
+                image={data?.image}
+                title={data?.title}
+            />
+        </Card>
     );
 }

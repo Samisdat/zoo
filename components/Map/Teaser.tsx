@@ -74,14 +74,21 @@ const teaserService = async (apiUrl, close):Promise<TeaserStateInterface> => {
 //const loadingContent =
 
 export const Teaser = (props: TeaserPropsInterface) => {
-    
+
     const classes = useStyles();
+
+    const visible = (undefined === props.apiUrl) ? false: true;
+    console.log('visible', visible)
 
     const [loading, setLoading] = useState<boolean>(true);
 
     const [data, setData] = useState<TeaserStateInterface>(undefined);
 
     useEffect(() => {
+
+        if(undefined === props.apiUrl){
+            return;
+        }
 
         teaserService(props.apiUrl, props.close)
             .then((data) =>{
@@ -91,6 +98,12 @@ export const Teaser = (props: TeaserPropsInterface) => {
 
     }, [props.apiUrl])
 
+
+    if (false === visible) {
+        return (
+            <React.Fragment></React.Fragment>
+        );
+    }
 
     if (true === loading) {
 

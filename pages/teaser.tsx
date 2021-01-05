@@ -7,17 +7,26 @@ export interface IndexState {
 }
 
 export default function Index(props) {
-    
-    const clickButton = () => {
-        console.log('clickButton')
+
+    const [teaser, setTeaser] = useState<TeaserPropsInterface>(undefined);
+
+    const closeTeaser = ()=>{
+        setTeaser(undefined);
+        console.log(teaser)
     };
 
-    const teaserProps: TeaserPropsInterface = {
-        apiUrl: 'foo/bar',
-        close: ()=>{
-            console.log('log')
-        }
-    }
+    const clickButton = () => {
+        console.log('clickButton')
+        setTeaser({
+            apiUrl: 'foo/bar',
+            close: closeTeaser
+        })
+
+    };
+
+    /*
+    const teaserProps: TeaserPropsInterface =
+     */
 
     return (
         <div
@@ -45,7 +54,7 @@ export default function Index(props) {
                 Primary
             </Button>
             <Teaser
-                {...teaserProps}
+                {...teaser}
             />
         </div>
   );

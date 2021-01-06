@@ -2,31 +2,21 @@ import React, {useState} from 'react';
 import {Teaser, TeaserPropsInterface} from "../components/Map/Teaser";
 import Button from "@material-ui/core/Button";
 
-export interface IndexState {
-    openSearch: boolean;
-}
-
 export default function Index(props) {
 
     const [teaser, setTeaser] = useState<TeaserPropsInterface>(undefined);
 
     const closeTeaser = ()=>{
         setTeaser(undefined);
-        console.log(teaser)
     };
 
     const clickButton = () => {
-        console.log('clickButton')
         setTeaser({
             apiUrl: 'foo/bar',
             close: closeTeaser
         })
 
     };
-
-    /*
-    const teaserProps: TeaserPropsInterface =
-     */
 
     return (
         <div

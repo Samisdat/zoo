@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 import {CircularProgress} from "@material-ui/core";
+import {TeaserInterface} from "../../pages/api/teaser/[type]/[slug]";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -37,31 +38,34 @@ export interface TeaserPropsInterface {
     close: Function;
 }
 
-export interface TeaserStateInterface {
+export interface TeaserStateInterface extends TeaserInterface{
     apiUrl:string,
-    href: string;
-    title: string;
-    subLine: string;
-    image: string;
 }
 
 const teaserService = async (apiUrl, close):Promise<TeaserStateInterface> => {
 
     const promise = new Promise<TeaserStateInterface>((resolve, reject) => {
 
-        setTimeout(()=>{
+        fetch(apiUrl)
+            .then(res => res.json())
+            .then(
+                (result) => {
 
-            const state:TeaserStateInterface = {
-                apiUrl: apiUrl,
-                image: "/images/elefant.jpg",
-                title: "Live From Space",
-                subLine: 'Mac Miller',
-                href: '/foo/bar',
-            };
+                    const state:TeaserStateInterface = {
+                        apiUrl: apiUrl,
+                        image: result.image,
+                        title: result.title,
+                        subLine: result.subLine,
+                        href: result.href,
+                    };
 
-            resolve(state)
+                    resolve(state)
 
-        },750);
+                },
+                (error) => {
+                    console.log(error);
+                }
+            );
 
     });
 

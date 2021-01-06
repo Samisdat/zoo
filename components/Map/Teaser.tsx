@@ -34,15 +34,15 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export interface TeaserPropsInterface {
     apiUrl: string;
-    close: React.MouseEventHandler<HTMLButtonElement>;
+    close: Function;
 }
 
 export interface TeaserStateInterface {
+    apiUrl:string,
     href: string;
     title: string;
-    subLine?: string;
+    subLine: string;
     image: string;
-    close: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const teaserService = async (apiUrl, close):Promise<TeaserStateInterface> => {
@@ -52,11 +52,11 @@ const teaserService = async (apiUrl, close):Promise<TeaserStateInterface> => {
         setTimeout(()=>{
 
             const state:TeaserStateInterface = {
+                apiUrl: apiUrl,
                 image: "/images/elefant.jpg",
                 title: "Live From Space",
                 subLine: 'Mac Miller',
                 href: '/foo/bar',
-                close
             };
 
             resolve(state)
@@ -71,18 +71,15 @@ const teaserService = async (apiUrl, close):Promise<TeaserStateInterface> => {
 /*
 */
 
-//const loadingContent =
-
 export const Teaser = (props: TeaserPropsInterface) => {
 
     const classes = useStyles();
 
     const visible = (undefined === props.apiUrl) ? false: true;
-    console.log('visible', visible)
-
-    const [loading, setLoading] = useState<boolean>(true);
 
     const [data, setData] = useState<TeaserStateInterface>(undefined);
+
+    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
 
@@ -126,6 +123,11 @@ export const Teaser = (props: TeaserPropsInterface) => {
 
     }
 
+    const handleClose = () => {
+        setLoading(true);
+        props.close();
+    };
+
     return (
         <Card
             className={classes.root}
@@ -135,24 +137,24 @@ export const Teaser = (props: TeaserPropsInterface) => {
                 <CardContent>
 
                     <Typography component="h6" variant="h6">
-                        {data?.title}
+                        {data.title}
                     </Typography>
                     <Typography variant="subtitle1" color="textSecondary">
-                        {data?.subLine}
+                        {data.subLine}
                     </Typography>
                 </CardContent>
                 <CardActions>
                     <Button
                         size="small"
                         color="primary"
-                        href={data?.href}
+                        href={data.href}
                     >
                         Details
                     </Button>
                     <Button
                         size="small"
                         color="primary"
-                        onClick={data?.close}
+                        onClick={handleClose}
                     >
                         Schließen
                     </Button>
@@ -160,8 +162,8 @@ export const Teaser = (props: TeaserPropsInterface) => {
             </div>
             <CardMedia
                 className={classes.image}
-                image={data?.image}
-                title={data?.title}
+                image={data.image}
+                title={data.title}
             />
         </Card>
     );

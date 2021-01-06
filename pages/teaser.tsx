@@ -12,7 +12,7 @@ export default function Index(props) {
 
     const clickButton = () => {
         setTeaser({
-            apiUrl: 'foo/bar',
+            apiUrl: '/api/teaser/enclosure/elefantenhaus',
             close: closeTeaser
         })
 

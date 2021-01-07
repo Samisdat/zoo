@@ -9,7 +9,6 @@ class: Vögel
 order:  Gänsevögel
 family:  Entenvögel 
 species:  Afrikanische Zwergglanzgans
-
 ---
 
 I am content.

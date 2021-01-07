@@ -9,7 +9,6 @@ class: Reptilien
 order:  Schildkröten
 family:  Landschildkröten
 species:  Ägyptische Landschildkröte
-
 ---
 
 I am content.

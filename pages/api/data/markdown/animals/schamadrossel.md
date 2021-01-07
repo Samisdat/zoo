@@ -1,9 +1,10 @@
 ---
 slug: schamadrossel
 title: Schamadrossel
+wikipedia: 
+wikidata: 
 latin:
 image: Schamadrossel
-wikipedia: 
 class: Vögel
 order:  Sperlingsvögel
 family:  Fliegenschnäpper

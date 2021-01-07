@@ -1,9 +1,10 @@
 ---
 slug: weissstorch
 title: Weißstorch
+wikipedia: 
+wikidata: 
 latin:
 image: Weißstorch
-wikipedia: 
 class: Vögel
 order:  Schreitvögel
 family:  Störche

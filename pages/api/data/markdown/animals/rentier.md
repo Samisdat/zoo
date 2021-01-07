@@ -1,9 +1,10 @@
 ---
 slug: rentier
 title: Rentier
+wikipedia: 
+wikidata: 
 latin:
 image: Rentier
-wikipedia: 
 class: Säugetiere
 order:  Paarhufer
 family:  Hirsche

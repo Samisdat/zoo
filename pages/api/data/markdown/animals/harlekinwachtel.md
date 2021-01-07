@@ -1,9 +1,10 @@
 ---
 slug: harlekinwachtel
 title: Harlekinwachtel
+wikipedia: 
+wikidata: 
 latin:
 image: Harlekinwachtel
-wikipedia: 
 class: Vögel
 order:  Hühnervögel
 family:  Fasanenartige

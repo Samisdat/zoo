@@ -1,9 +1,10 @@
 ---
 slug: saebelschnaebler
 title: Säbelschnäbler
+wikipedia: 
+wikidata: 
 latin:
 image: Säbelschnäbler
-wikipedia: 
 class: Vögel
 order:  Regenpfeiferartige
 family:  Säbelschnäbler

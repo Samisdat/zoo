@@ -1,9 +1,10 @@
 ---
 slug: suedlicher-pudu
 title: Südlicher Pudu
+wikipedia: 
+wikidata: 
 latin:
 image: Südlicher Pudu
-wikipedia: 
 class: Säugetiere
 order:  Paarhufer
 family:  Hirsche

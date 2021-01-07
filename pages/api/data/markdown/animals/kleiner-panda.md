@@ -1,9 +1,10 @@
 ---
 slug: kleiner-panda
 title: Kleiner Panda
+wikipedia: 
+wikidata: 
 latin:
 image: Kleiner Panda
-wikipedia: 
 class: Säugetiere
 order:  Raubtiere
 family:  Katzenbären

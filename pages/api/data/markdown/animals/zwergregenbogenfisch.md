@@ -1,9 +1,10 @@
 ---
 slug: zwergregenbogenfisch
 title: Zwergregenbogenfisch
+wikipedia: 
+wikidata: 
 latin:
 image: Zwergregenbogenfisch
-wikipedia: 
 class: Strahlenflosser
 order:  Ährenfischartige
 family:  Regenbogenfische

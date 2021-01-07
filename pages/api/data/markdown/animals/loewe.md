@@ -1,9 +1,10 @@
 ---
 slug: loewe
 title: Löwe
+wikipedia: 
+wikidata: 
 latin:
 image: Löwe
-wikipedia: 
 class: Säugetiere
 order:  Raubtiere
 family:  Katzen 

@@ -1,9 +1,10 @@
 ---
 slug: rotkappen-fruchttaube
 title: Rotkappen-Fruchttaube
+wikipedia: 
+wikidata: 
 latin:
 image: Rotkappen-Fruchttaube
-wikipedia: 
 class: Vögel
 order:  Taubenvögel
 family:  Tauben

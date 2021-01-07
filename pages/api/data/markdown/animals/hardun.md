@@ -1,9 +1,10 @@
 ---
 slug: hardun
 title: Hardun
+wikipedia: 
+wikidata: 
 latin:
 image: Hardun
-wikipedia: 
 class: Reptilien
 order:  Schuppenkriechtiere
 family:  Agamen

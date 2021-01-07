@@ -1,9 +1,10 @@
 ---
 slug: gelbflossen-doktorfisch
 title: Gelbflossen-Doktorfisch
+wikipedia: https://en.wikipedia.org/wiki/Yellowfin_surgeonfish
+wikidata: https://www.wikidata.org/wiki/Q2182371
 latin:
 image: Gelbflossen-Doktorfisch
-wikipedia: 
 class: Strahlenflosser
 order:  Barschartige
 family:  Doktorfische

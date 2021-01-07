@@ -1,9 +1,10 @@
 ---
 slug: riesentukan
 title: Riesentukan
+wikipedia: 
+wikidata: 
 latin:
 image: Riesentukan
-wikipedia: 
 class: Vögel
 order:  Spechtvögel
 family:  Tukane

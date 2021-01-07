@@ -1,9 +1,10 @@
 ---
 slug: schwalbenschwanzschnurrvogel
 title: Schwalbenschwanzschnurrvogel
+wikipedia: 
+wikidata: 
 latin:
 image: Schwalbenschwanzschnurrvogel
-wikipedia: 
 class: Vögel
 order:  Sperlingsvögel
 family:  Schnurrvögel

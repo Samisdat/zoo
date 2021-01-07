@@ -1,9 +1,10 @@
 ---
 slug: bankivahuhn
 title: Bankivahuhn 
+wikipedia: https://de.wikipedia.org/wiki/Bankivahuhn
+wikidata: https://www.wikidata.org/wiki/Q184774?uselang=de
 latin:
-image: Bankivahuhn 
-wikipedia: 
+image: 
 class: Vögel
 order:  Hühnervögel
 family:  Fasanenartige

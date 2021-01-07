@@ -1,9 +1,10 @@
 ---
 slug: stockente
 title: Stockente
+wikipedia: 
+wikidata: 
 latin:
 image: Stockente
-wikipedia: 
 class: Vögel
 order:  Gänsevögel
 family:  Entenvögel 

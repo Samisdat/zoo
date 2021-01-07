@@ -1,9 +1,10 @@
 ---
 slug: kappenpitta
 title: Kappenpitta
+wikipedia: 
+wikidata: 
 latin:
 image: Kappenpitta
-wikipedia: 
 class: Vögel
 order:  Sperlingsvögel
 family:  Pittas

@@ -1,9 +1,10 @@
 ---
 slug: braunbauch-laubenvogel
 title: Braunbauch-Laubenvogel
+wikipedia: https://de.wikipedia.org/wiki/Braunbauch-Laubenvogel
+wikidata: https://www.wikidata.org/wiki/Q863070?uselang=de 
 latin:
 image: Braunbauch-Laubenvogel
-wikipedia: 
 class: Vögel
 order:  Sperlingsvögel
 family:  Laubenvögel

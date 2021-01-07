@@ -1,9 +1,10 @@
 ---
 slug: witwenpfeifgans
 title: Witwenpfeifgans
+wikipedia: 
+wikidata: 
 latin:
 image: Witwenpfeifgans
-wikipedia: 
 class: Vögel
 order:  Gänsevögel
 family:  Entenvögel 

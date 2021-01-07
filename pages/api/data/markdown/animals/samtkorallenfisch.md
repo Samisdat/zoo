@@ -1,9 +1,10 @@
 ---
 slug: samtkorallenfisch
 title: Samtkorallenfisch
+wikipedia: 
+wikidata: 
 latin:
 image: Samtkorallenfisch
-wikipedia: 
 class: Strahlenflosser
 order:  Barschartige
 family:  Riffbarsche

@@ -1,9 +1,10 @@
 ---
 slug: ornamentvogelspinne-poecilotheria-metallica
 title: Ornamentvogelspinne Poecilotheria metallica
+wikipedia: 
+wikidata: 
 latin:
 image: Ornamentvogelspinne Poecilotheria metallica
-wikipedia: 
 class: Spinnentiere
 order:  Webspinnen
 family:  Vogelspinnen

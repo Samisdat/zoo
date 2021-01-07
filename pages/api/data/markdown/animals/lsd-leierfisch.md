@@ -1,9 +1,10 @@
 ---
 slug: lsd-leierfisch
 title: LSD-Leierfisch
+wikipedia: 
+wikidata: 
 latin:
 image: LSD-Leierfisch
-wikipedia: 
 class: Strahlenflosser
 order:  Barschartige
 family:  Leierfische

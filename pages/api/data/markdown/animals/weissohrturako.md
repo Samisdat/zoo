@@ -1,9 +1,10 @@
 ---
 slug: weissohrturako
 title: Weißohrturako
+wikipedia: 
+wikidata: 
 latin:
 image: Weißohrturako
-wikipedia: 
 class: Vögel
 order:  Kuckucksvögel
 family:  Turakos

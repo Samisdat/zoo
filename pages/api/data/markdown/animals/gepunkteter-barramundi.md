@@ -1,9 +1,10 @@
 ---
 slug: gepunkteter-barramundi
 title: Gepunkteter Barramundi
+wikipedia: https://de.wikipedia.org/wiki/Scleropages_jardinii
+wikidata: https://www.wikidata.org/wiki/Q135567?uselang=de
 latin:
 image: Gepunkteter Barramundi
-wikipedia: 
 class: Strahlenflosser
 order:  Knochenzünglerartige
 family:  Knochenzüngler

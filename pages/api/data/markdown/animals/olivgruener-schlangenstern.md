@@ -1,9 +1,10 @@
 ---
 slug: olivgruener-schlangenstern
 title: Olivgrüner Schlangenstern
+wikipedia: 
+wikidata: 
 latin:
 image: Olivgrüner Schlangenstern
-wikipedia: 
 class: Schlangensterne
 order:  Ophiurida
 family:  Ophiodermatidae

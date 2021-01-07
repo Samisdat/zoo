@@ -1,9 +1,10 @@
 ---
 slug: waldrapp
 title: Waldrapp
+wikipedia: 
+wikidata: 
 latin:
 image: Waldrapp
-wikipedia: 
 class: Vögel
 order:  Schreitvögel
 family:  Ibisse und Löffler

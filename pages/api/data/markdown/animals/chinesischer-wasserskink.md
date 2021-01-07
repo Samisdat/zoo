@@ -1,9 +1,10 @@
 ---
 slug: chinesischer-wasserskink
 title: Chinesischer Wasserskink
-latin:
+wikipedia: https://en.wikipedia.org/wiki/Tropidophorus_sinicus
+wikidata: https://www.wikidata.org/wiki/Q3540720
+latin: Tropidophorus sinicus
 image: Chinesischer Wasserskink
-wikipedia: 
 class: Reptilien
 order:  Schuppenkriechtiere
 family:  Skinke

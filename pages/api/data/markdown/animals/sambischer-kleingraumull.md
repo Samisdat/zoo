@@ -1,9 +1,10 @@
 ---
 slug: sambischer-kleingraumull
 title: Sambischer Kleingraumull
+wikipedia: 
+wikidata: 
 latin:
 image: Sambischer Kleingraumull
-wikipedia: 
 class: Säugetiere
 order:  Nagetiere
 family:  Sandgräber

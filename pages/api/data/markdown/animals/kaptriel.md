@@ -1,9 +1,10 @@
 ---
 slug: kaptriel
 title: Kaptriel
+wikipedia: 
+wikidata: 
 latin:
 image: Kaptriel
-wikipedia: 
 class: Vögel
 order:  Regenpfeiferartige
 family:  Triele

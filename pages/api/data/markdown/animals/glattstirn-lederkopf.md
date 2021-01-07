@@ -1,9 +1,10 @@
 ---
 slug: glattstirn-lederkopf
 title: Glattstirn-Lederkopf
+wikipedia: https://en.wikipedia.org/wiki/Little_friarbird
+wikidata: https://www.wikidata.org/wiki/Q2024733
 latin:
 image: Glattstirn-Lederkopf
-wikipedia: 
 class: Vögel
 order:  Sperlingsvögel
 family:  Honigfresser

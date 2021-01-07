@@ -1,9 +1,10 @@
 ---
 slug: roter-neon
 title: Roter Neon
+wikipedia: 
+wikidata: 
 latin:
 image: Roter Neon
-wikipedia: 
 class: Strahlenflosser
 order:  Salmlerartige
 family:  Echte Salmler

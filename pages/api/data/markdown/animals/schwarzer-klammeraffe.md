@@ -1,9 +1,10 @@
 ---
 slug: schwarzer-klammeraffe
 title: Schwarzer Klammeraffe
+wikipedia: 
+wikidata: 
 latin:
 image: Schwarzer Klammeraffe
-wikipedia: 
 class: Säugetiere
 order:  Primaten
 family:  Kapuzinerartige

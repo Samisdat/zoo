@@ -1,9 +1,10 @@
 ---
 slug: diamant-regenbogenfisch
 title: Diamant-Regenbogenfisch
+wikipedia: 
+wikidata: 
 latin:
 image: Diamant-Regenbogenfisch
-wikipedia: 
 class: Strahlenflosser
 order:  Ährenfischartige
 family:  Regenbogenfische

@@ -1,9 +1,10 @@
 ---
 slug: goldkopfpipra
 title: Goldkopfpipra
+wikipedia: 
+wikidata: 
 latin:
 image: Goldkopfpipra
-wikipedia: 
 class: Vögel
 order:  Sperlingsvögel
 family:  Schnurrvögel

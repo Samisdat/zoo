@@ -1,9 +1,10 @@
 ---
 slug: erdmaennchen
 title: Erdmännchen
+wikipedia: 
+wikidata: 
 latin:
 image: Erdmännchen
-wikipedia: 
 class: Säugetiere
 order:  Raubtiere
 family:  Mangusten

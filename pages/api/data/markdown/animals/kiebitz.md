@@ -1,9 +1,10 @@
 ---
 slug: kiebitz
 title: Kiebitz
+wikipedia: 
+wikidata: 
 latin:
 image: Kiebitz
-wikipedia: 
 class: Vögel
 order:  Regenpfeiferartige
 family:  Regenpfeifer

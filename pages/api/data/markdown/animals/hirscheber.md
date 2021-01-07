@@ -1,9 +1,10 @@
 ---
 slug: hirscheber
 title: Hirscheber
+wikipedia: 
+wikidata: 
 latin:
 image: Hirscheber
-wikipedia: 
 class: Säugetiere
 order:  Paarhufer
 family:  Echte Schweine

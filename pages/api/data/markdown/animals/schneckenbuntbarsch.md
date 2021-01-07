@@ -1,9 +1,10 @@
 ---
 slug: schneckenbuntbarsch
 title: Schneckenbuntbarsch
+wikipedia: 
+wikidata: 
 latin:
 image: Schneckenbuntbarsch
-wikipedia: 
 class: Strahlenflosser
 order:  Barschartige
 family:  Buntbarsche

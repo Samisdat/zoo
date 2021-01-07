@@ -1,9 +1,10 @@
 ---
 slug: sumatra-halbschnaebler
 title: Sumatra-Halbschnäbler
+wikipedia: 
+wikidata: 
 latin:
 image: Sumatra-Halbschnäbler
-wikipedia: 
 class: Strahlenflosser
 order:  Hornhechtartige
 family:  Zenarchopteridae

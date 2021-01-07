@@ -1,9 +1,10 @@
 ---
 slug: prachtkopfsteher
 title: Prachtkopfsteher
+wikipedia: 
+wikidata: 
 latin:
 image: Prachtkopfsteher
-wikipedia: 
 class: Strahlenflosser
 order:  Salmlerartige
 family:  Engmaulsalmler

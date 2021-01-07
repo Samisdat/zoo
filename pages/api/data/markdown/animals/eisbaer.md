@@ -1,9 +1,10 @@
 ---
 slug: eisbaer
 title: Eisbär
+wikipedia: 
+wikidata: 
 latin:
 image: Eisbär
-wikipedia: 
 class: Säugetiere
 order:  Raubtiere
 family:  Bären

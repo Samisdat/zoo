@@ -1,9 +1,10 @@
 ---
 slug: moenchsgeier
 title: Mönchsgeier
+wikipedia: 
+wikidata: 
 latin:
 image: Mönchsgeier
-wikipedia: 
 class: Vögel
 order:  Greifvögel
 family:  Habichtartige

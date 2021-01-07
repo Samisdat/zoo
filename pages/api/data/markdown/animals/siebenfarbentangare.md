@@ -1,9 +1,10 @@
 ---
 slug: siebenfarbentangare
 title: Siebenfarbentangare
+wikipedia: 
+wikidata: 
 latin:
 image: Siebenfarbentangare
-wikipedia: 
 class: Vögel
 order:  Sperlingsvögel
 family:  Tangaren

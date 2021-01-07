@@ -1,9 +1,10 @@
 ---
 slug: lederkorallens
 title: Lederkorallens
+wikipedia: 
+wikidata: 
 latin:
 image: Lederkorallens
-wikipedia: 
 class: Blumentiere
 order:  Weichkorallen
 family:  Lederkorallen

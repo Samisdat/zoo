@@ -1,9 +1,10 @@
 ---
 slug: schild-schmuckvogel
 title: Schild-Schmuckvogel
+wikipedia: 
+wikidata: 
 latin:
 image: Schild-Schmuckvogel
-wikipedia: 
 class: Vögel
 order:  Sperlingsvögel
 family:  Schmuckvögel

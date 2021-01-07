@@ -1,9 +1,10 @@
 ---
 slug: pinselohrschwein
 title: Pinselohrschwein
+wikipedia: 
+wikidata: 
 latin:
 image: Pinselohrschwein
-wikipedia: 
 class: Säugetiere
 order:  Paarhufer
 family:  Echte Schweine

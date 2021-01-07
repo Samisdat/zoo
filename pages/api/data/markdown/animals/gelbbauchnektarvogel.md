@@ -1,9 +1,10 @@
 ---
 slug: gelbbauchnektarvogel
 title: Gelbbauchnektarvogel
+wikipedia: 
+wikidata: 
 latin:
 image: Gelbbauchnektarvogel
-wikipedia: 
 class: Vögel
 order:  Sperlingsvögel
 family:  Nektarvögel

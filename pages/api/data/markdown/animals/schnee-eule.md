@@ -1,9 +1,10 @@
 ---
 slug: schnee-eule
 title: Schnee-Eule
+wikipedia: 
+wikidata: 
 latin:
 image: Schnee-Eule
-wikipedia: 
 class: Vögel
 order:  Eulen
 family:  Eigentliche Eulen

@@ -1,9 +1,10 @@
 ---
 slug: schwalbenschwanz-riffbarsch
 title: Schwalbenschwanz-Riffbarsch
+wikipedia: 
+wikidata: 
 latin:
 image: Schwalbenschwanz-Riffbarsch
-wikipedia: 
 class: Strahlenflosser
 order:  Barschartige
 family:  Riffbarsche

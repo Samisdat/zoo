@@ -1,9 +1,10 @@
 ---
 slug: rotkopfgans
 title: Rotkopfgans
+wikipedia: 
+wikidata: 
 latin:
 image: Rotkopfgans
-wikipedia: 
 class: Vögel
 order:  Gänsevögel
 family:  Entenvögel 

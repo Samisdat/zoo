@@ -1,9 +1,10 @@
 ---
 slug: halsbandpekari
 title: Halsbandpekari
+wikipedia: 
+wikidata: 
 latin:
 image: Halsbandpekari
-wikipedia: 
 class: Säugetiere
 order:  Paarhufer
 family:  Nabelschweine

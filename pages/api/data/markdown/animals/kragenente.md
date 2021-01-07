@@ -1,9 +1,10 @@
 ---
 slug: kragenente
 title: Kragenente
+wikipedia: 
+wikidata: 
 latin:
 image: Kragenente
-wikipedia: 
 class: Vögel
 order:  Gänsevögel
 family:  Entenvögel 

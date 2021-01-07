@@ -1,9 +1,10 @@
 ---
 slug: koenigspython
 title: Königspython
+wikipedia: 
+wikidata: 
 latin:
 image: Königspython
-wikipedia: 
 class: Reptilien
 order:  Schuppenkriechtiere
 family:  Riesenschlangen

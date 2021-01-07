@@ -1,9 +1,10 @@
 ---
 slug: areolen-flachschildkroete
 title: Areolen-Flachschildkröte
-latin:
+wikipedia: https://de.wikipedia.org/wiki/Areolen-Flachschildkr%C3%B6te
+wikidata: https://www.wikidata.org/wiki/Q642538
+latin: Homopus areolatus
 image: Areolen-Flachschildkröte
-wikipedia: 
 class: Reptilien
 order:  Schildkröten
 family:  Landschildkröten

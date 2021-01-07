@@ -1,9 +1,10 @@
 ---
 slug: rotschwanz-aehrenfisch
 title: Rotschwanz-Ährenfisch
+wikipedia: 
+wikidata: 
 latin:
 image: Rotschwanz-Ährenfisch
-wikipedia: 
 class: Strahlenflosser
 order:  Ährenfischartige
 family:  Bedotiidae

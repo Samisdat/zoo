@@ -1,9 +1,10 @@
 ---
 slug: hornsittich
 title: Hornsittich
+wikipedia: 
+wikidata: 
 latin:
 image: Hornsittich
-wikipedia: 
 class: Vögel
 order:  Papageien
 family:  Eigentliche Papageien

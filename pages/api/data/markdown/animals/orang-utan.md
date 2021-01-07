@@ -1,9 +1,10 @@
 ---
 slug: orang-utan
 title: Orang Utan
+wikipedia: 
+wikidata: 
 latin:
 image: Orang Utan
-wikipedia: 
 class: Säugetiere
 order:  Primaten
 family:  Menschenaffen

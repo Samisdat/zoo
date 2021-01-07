@@ -1,9 +1,10 @@
 ---
 slug: weisshandgibbon
 title: Weißhandgibbon
+wikipedia: 
+wikidata: 
 latin:
 image: Weißhandgibbon
-wikipedia: 
 class: Säugetiere
 order:  Primaten
 family:  Gibbons

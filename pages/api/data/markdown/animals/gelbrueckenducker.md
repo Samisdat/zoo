@@ -1,9 +1,10 @@
 ---
 slug: gelbrueckenducker
 title: Gelbrückenducker
+wikipedia: 
+wikidata: 
 latin:
 image: Gelbrückenducker
-wikipedia: 
 class: Säugetiere
 order:  Paarhufer
 family:  Hornträger

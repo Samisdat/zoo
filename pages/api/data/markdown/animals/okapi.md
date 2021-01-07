@@ -1,9 +1,10 @@
 ---
 slug: okapi
 title: Okapi
+wikipedia: 
+wikidata: 
 latin:
 image: Okapi
-wikipedia: 
 class: Säugetiere
 order:  Paarhufer
 family:  Giraffenartige

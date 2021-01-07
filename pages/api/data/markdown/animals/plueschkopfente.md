@@ -1,9 +1,10 @@
 ---
 slug: plueschkopfente
 title: Plüschkopfente
+wikipedia: 
+wikidata: 
 latin:
 image: Plüschkopfente
-wikipedia: 
 class: Vögel
 order:  Gänsevögel
 family:  Entenvögel 

@@ -1,9 +1,10 @@
 ---
 slug: pinzettfisch
 title: Pinzettfisch
+wikipedia: 
+wikidata: 
 latin:
 image: Pinzettfisch
-wikipedia: 
 class: Strahlenflosser
 order:  Barschartige
 family:  Falterfische

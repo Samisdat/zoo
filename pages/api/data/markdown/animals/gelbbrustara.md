@@ -1,9 +1,10 @@
 ---
 slug: gelbbrustara
 title: Gelbbrustara
+wikipedia: 
+wikidata: 
 latin:
 image: Gelbbrustara
-wikipedia: 
 class: Vögel
 order:  Papageien
 family:  Eigentliche Papageien

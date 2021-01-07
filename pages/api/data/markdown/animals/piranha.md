@@ -1,9 +1,10 @@
 ---
 slug: piranha
 title: Piranha
+wikipedia: 
+wikidata: 
 latin:
 image: Piranha
-wikipedia: 
 class: Strahlenflosser
 order:  Salmlerartige
 family:  Echte Salmler

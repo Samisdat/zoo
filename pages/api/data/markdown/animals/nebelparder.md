@@ -1,9 +1,10 @@
 ---
 slug: nebelparder
 title: Nebelparder
+wikipedia: 
+wikidata: 
 latin:
 image: Nebelparder
-wikipedia: 
 class: Säugetiere
 order:  Raubtiere
 family:  Katzen 

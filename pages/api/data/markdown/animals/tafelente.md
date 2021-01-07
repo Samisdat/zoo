@@ -1,9 +1,10 @@
 ---
 slug: tafelente
 title: Tafelente
+wikipedia: 
+wikidata: 
 latin:
 image: Tafelente
-wikipedia: 
 class: Vögel
 order:  Gänsevögel
 family:  Entenvögel 

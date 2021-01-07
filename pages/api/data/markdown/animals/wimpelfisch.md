@@ -1,9 +1,10 @@
 ---
 slug: wimpelfisch
 title: Wimpelfisch
+wikipedia: 
+wikidata: 
 latin:
 image: Wimpelfisch
-wikipedia: 
 class: Strahlenflosser
 order:  Barschartige
 family:  Falterfische

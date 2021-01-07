@@ -1,9 +1,10 @@
 ---
 slug: schmuck-floesselhecht
 title: Schmuck-Flösselhecht
+wikipedia: 
+wikidata: 
 latin:
 image: Schmuck-Flösselhecht
-wikipedia: 
 class: Strahlenflosser
 order:  Flösselhechtartige
 family:  Flösselhechte

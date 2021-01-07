@@ -1,9 +1,10 @@
 ---
 slug: dreiecksnatter
 title: Dreiecksnatter 
+wikipedia: 
+wikidata: 
 latin:
 image: Dreiecksnatter 
-wikipedia: 
 class: Reptilien
 order:  Schuppenkriechtiere
 family:  Nattern

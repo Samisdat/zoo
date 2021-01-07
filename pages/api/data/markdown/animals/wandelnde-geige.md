@@ -1,15 +1,14 @@
 ---
 slug: wandelnde-geige
 title: Wandelnde Geige
-wikipedia: 
-wikidata: 
-latin:
+wikipedia: null
+wikidata: Q2547945
+latin: null
 image: Wandelnde Geige
 class: Insekten
-order:  Fangschrecken
-family:  Empusidae
-species:  Wandelnde Geige
-
+order: Fangschrecken
+family: Empusidae
+species: Wandelnde Geige
 ---
 
 I am content.

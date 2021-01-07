@@ -1,15 +1,14 @@
 ---
 slug: schokoladengurami
 title: Schokoladengurami
-wikipedia: 
-wikidata: 
-latin:
+wikipedia: null
+wikidata: Q1536867
+latin: null
 image: Schokoladengurami
 class: Strahlenflosser
-order:  Barschartige
-family:  Großguramis
-species:  Schokoladengurami
-
+order: Barschartige
+family: Großguramis
+species: Schokoladengurami
 ---
 
 I am content.

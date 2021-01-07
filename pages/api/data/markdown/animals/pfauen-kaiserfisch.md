@@ -1,15 +1,14 @@
 ---
 slug: pfauen-kaiserfisch
 title: Pfauen-Kaiserfisch
-wikipedia: 
-wikidata: 
-latin:
+wikipedia: null
+wikidata: Q1759426
+latin: null
 image: Pfauen-Kaiserfisch
 class: Strahlenflosser
-order:  Barschartige
-family:  Kaiserfische
-species:  Pfauen-Kaiserfisch
-
+order: Barschartige
+family: Kaiserfische
+species: Pfauen-Kaiserfisch
 ---
 
 I am content.

@@ -1,15 +1,14 @@
 ---
 slug: schellente
 title: Schellente
-wikipedia: 
-wikidata: 
-latin:
+wikipedia: null
+wikidata: Q29865
+latin: null
 image: Schellente
 class: Vögel
-order:  Gänsevögel
-family:  Entenvögel 
-species:  Schellente
-
+order: Gänsevögel
+family: Entenvögel
+species: Schellente
 ---
 
 I am content.

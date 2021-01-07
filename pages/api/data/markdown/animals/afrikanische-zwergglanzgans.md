@@ -1,9 +1,9 @@
 ---
 slug: afrikanische-zwergglanzgans
 title: Afrikanische Zwergglanzgans
-latin:
+latin: Nettapus auritus
 image: Afrikanische Zwergglanzgans
-wikipedia: 
+wikipedia: https://de.wikipedia.org/wiki/Afrikanische_Zwergente
 class: Vögel
 order:  Gänsevögel
 family:  Entenvögel 

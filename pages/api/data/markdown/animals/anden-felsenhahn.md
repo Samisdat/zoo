@@ -1,9 +1,9 @@
 ---
 slug: anden-felsenhahn
 title: Anden-Felsenhahn
-latin:
+latin: Rupicola peruvianus
 image: Anden-Felsenhahn
-wikipedia: 
+wikipedia: https://de.wikipedia.org/wiki/Andenfelsenhahn
 class: Vögel
 order:  Sperlingsvögel
 family:  Schmuckvögel

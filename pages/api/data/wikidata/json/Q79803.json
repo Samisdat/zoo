@@ -1,0 +1,4138 @@
+{
+    "pageid": 82352,
+    "ns": 0,
+    "title": "Q79803",
+    "lastrevid": 1334840250,
+    "modified": "2021-01-04T16:58:00Z",
+    "type": "item",
+    "id": "Q79803",
+    "labels": {
+        "zh": {
+            "language": "zh",
+            "value": "豚鼠"
+        },
+        "pl": {
+            "language": "pl",
+            "value": "kawia domowa"
+        },
+        "eu": {
+            "language": "eu",
+            "value": "Akuri"
+        },
+        "qu": {
+            "language": "qu",
+            "value": "Wasi quwi"
+        },
+        "gd": {
+            "language": "gd",
+            "value": "Gearra-mhuc"
+        },
+        "ang": {
+            "language": "ang",
+            "value": "rætswīn"
+        },
+        "es": {
+            "language": "es",
+            "value": "Cavia porcellus"
+        },
+        "oc": {
+            "language": "oc",
+            "value": "Cavia"
+        },
+        "hu": {
+            "language": "hu",
+            "value": "Tengerimalac"
+        },
+        "ms": {
+            "language": "ms",
+            "value": "Tikus Belanda"
+        },
+        "et": {
+            "language": "et",
+            "value": "Merisiga"
+        },
+        "bn": {
+            "language": "bn",
+            "value": "গিনিপিগ"
+        },
+        "br": {
+            "language": "br",
+            "value": "Razh-Indez"
+        },
+        "my": {
+            "language": "my",
+            "value": "ပူး"
+        },
+        "sv": {
+            "language": "sv",
+            "value": "Marsvin"
+        },
+        "ar": {
+            "language": "ar",
+            "value": "كابياء خنزيرية"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "huiscavia"
+        },
+        "pt": {
+            "language": "pt",
+            "value": "Porquinho-da-índia"
+        },
+        "eo": {
+            "language": "eo",
+            "value": "kobajo"
+        },
+        "ru": {
+            "language": "ru",
+            "value": "Морская свинка"
+        },
+        "sr": {
+            "language": "sr",
+            "value": "морско прасе"
+        },
+        "tr": {
+            "language": "tr",
+            "value": "Kobay"
+        },
+        "mk": {
+            "language": "mk",
+            "value": "Морско прасе"
+        },
+        "fi": {
+            "language": "fi",
+            "value": "marsu"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "Кавія свійська"
+        },
+        "be-tarask": {
+            "language": "be-tarask",
+            "value": "Марская сьвінка"
+        },
+        "nn": {
+            "language": "nn",
+            "value": "marsvin"
+        },
+        "io": {
+            "language": "io",
+            "value": "Kobayo"
+        },
+        "az": {
+            "language": "az",
+            "value": "Dəniz donuzcuğu"
+        },
+        "hr": {
+            "language": "hr",
+            "value": "Zamorac"
+        },
+        "tl": {
+            "language": "tl",
+            "value": "Konehilyo"
+        },
+        "an": {
+            "language": "an",
+            "value": "Cavia porcellus"
+        },
+        "da": {
+            "language": "da",
+            "value": "marsvin"
+        },
+        "pam": {
+            "language": "pam",
+            "value": "Dagis sungsung"
+        },
+        "nah": {
+            "language": "nah",
+            "value": "Tozantōchtli"
+        },
+        "he": {
+            "language": "he",
+            "value": "שרקן"
+        },
+        "be": {
+            "language": "be",
+            "value": "Марская свінка"
+        },
+        "ko": {
+            "language": "ko",
+            "value": "기니피그"
+        },
+        "lv": {
+            "language": "lv",
+            "value": "Jūrascūciņa"
+        },
+        "it": {
+            "language": "it",
+            "value": "Cavia porcellus"
+        },
+        "li": {
+            "language": "li",
+            "value": "Hoescavia"
+        },
+        "de": {
+            "language": "de",
+            "value": "Hausmeerschweinchen"
+        },
+        "id": {
+            "language": "id",
+            "value": "Tikus belanda"
+        },
+        "ja": {
+            "language": "ja",
+            "value": "モルモット"
+        },
+        "vi": {
+            "language": "vi",
+            "value": "chuột lang nhà"
+        },
+        "sk": {
+            "language": "sk",
+            "value": "Morča domáce"
+        },
+        "ro": {
+            "language": "ro",
+            "value": "Cobai"
+        },
+        "th": {
+            "language": "th",
+            "value": "หนูตะเภา"
+        },
+        "ca": {
+            "language": "ca",
+            "value": "conill porquí"
+        },
+        "la": {
+            "language": "la",
+            "value": "Cavia porcellus"
+        },
+        "cy": {
+            "language": "cy",
+            "value": "mochyn cwta"
+        },
+        "sl": {
+            "language": "sl",
+            "value": "Morski prašiček"
+        },
+        "cs": {
+            "language": "cs",
+            "value": "morče domácí"
+        },
+        "fa": {
+            "language": "fa",
+            "value": "خوکچه هندی"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "Морско свинче"
+        },
+        "vls": {
+            "language": "vls",
+            "value": "Spaansche ratte"
+        },
+        "ka": {
+            "language": "ka",
+            "value": "ზღვის გოჭი"
+        },
+        "lt": {
+            "language": "lt",
+            "value": "Jūrų kiaulytė"
+        },
+        "gv": {
+            "language": "gv",
+            "value": "Muc rangagh"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "cochon d'Inde"
+        },
+        "ceb": {
+            "language": "ceb",
+            "value": "Cavia porcellus"
+        },
+        "is": {
+            "language": "is",
+            "value": "Naggrísir"
+        },
+        "gn": {
+            "language": "gn",
+            "value": "Apere'a"
+        },
+        "jv": {
+            "language": "jv",
+            "value": "Tikus walanda"
+        },
+        "war": {
+            "language": "war",
+            "value": "Cavia porcellus"
+        },
+        "en-ca": {
+            "language": "en-ca",
+            "value": "guinea pig"
+        },
+        "en-gb": {
+            "language": "en-gb",
+            "value": "guinea pig"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "Muc ghuine"
+        },
+        "gu": {
+            "language": "gu",
+            "value": "ગિનિ પિગ"
+        },
+        "kn": {
+            "language": "kn",
+            "value": "ಗಿನಿಯಿಲಿ"
+        },
+        "ku": {
+            "language": "ku",
+            "value": "Kavî"
+        },
+        "nb": {
+            "language": "nb",
+            "value": "marsvin"
+        },
+        "pt-br": {
+            "language": "pt-br",
+            "value": "Porquinho-da-índia"
+        },
+        "stq": {
+            "language": "stq",
+            "value": "Huusmeerswien"
+        },
+        "ta": {
+            "language": "ta",
+            "value": "கினி எலி"
+        },
+        "sh": {
+            "language": "sh",
+            "value": "Morsko prase"
+        },
+        "ne": {
+            "language": "ne",
+            "value": "गिनी पिग"
+        },
+        "el": {
+            "language": "el",
+            "value": "Ινδικό χοιρίδιο"
+        },
+        "ml": {
+            "language": "ml",
+            "value": "ഗിനിപ്പന്നി"
+        },
+        "gl": {
+            "language": "gl",
+            "value": "Cobaia"
+        },
+        "fy": {
+            "language": "fy",
+            "value": "Kavia"
+        },
+        "ia": {
+            "language": "ia",
+            "value": "Cavia porcellus"
+        },
+        "ay": {
+            "language": "ay",
+            "value": "K'uwisu"
+        },
+        "azb": {
+            "language": "azb",
+            "value": "دنیز دونوزجوغو"
+        },
+        "yue": {
+            "language": "yue",
+            "value": "天竺鼠"
+        },
+        "hy": {
+            "language": "hy",
+            "value": "Ծովախոզուկ"
+        },
+        "ln": {
+            "language": "ln",
+            "value": "Kobayé ya ndako"
+        },
+        "lfn": {
+            "language": "lfn",
+            "value": "Cavia"
+        },
+        "ast": {
+            "language": "ast",
+            "value": "Cavia porcellus"
+        },
+        "hi": {
+            "language": "hi",
+            "value": "गिनी पिग"
+        },
+        "zh-hant": {
+            "language": "zh-hant",
+            "value": "豚鼠"
+        },
+        "or": {
+            "language": "or",
+            "value": "ଗିନି ପିଗ"
+        },
+        "te": {
+            "language": "te",
+            "value": "గినియా పిగ్"
+        },
+        "wuu": {
+            "language": "wuu",
+            "value": "豚鼠"
+        },
+        "en": {
+            "language": "en",
+            "value": "Cavia porcellus"
+        },
+        "si": {
+            "language": "si",
+            "value": "ගිනි හාවා"
+        },
+        "wa": {
+            "language": "wa",
+            "value": "Pourcea d' montinne"
+        },
+        "vro": {
+            "language": "vro",
+            "value": "Meretsiga"
+        },
+        "kw": {
+            "language": "kw",
+            "value": "Hogh gyni"
+        }
+    },
+    "descriptions": {
+        "it": {
+            "language": "it",
+            "value": "specie di animale della famiglia Caviidae"
+        },
+        "de": {
+            "language": "de",
+            "value": "Art der Gattung Echte Meerschweinchen (Cavia)"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "espèce de mammifères"
+        },
+        "el": {
+            "language": "el",
+            "value": "είδος τρωκτικού"
+        },
+        "fa": {
+            "language": "fa",
+            "value": "گونه‌ای از خوکچۀ هندی"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "вид бозайник"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "caviasoort uit Zuid-Amerika"
+        },
+        "fi": {
+            "language": "fi",
+            "value": "eläinlaji"
+        },
+        "he": {
+            "language": "he",
+            "value": "מכרסם קטן הנקרא גם קביה"
+        },
+        "ar": {
+            "language": "ar",
+            "value": "نوع من الثدييات"
+        },
+        "zh": {
+            "language": "zh",
+            "value": "被驯化的小型啮齿动物，原产于南美洲"
+        },
+        "es": {
+            "language": "es",
+            "value": "mamali"
+        },
+        "ml": {
+            "language": "ml",
+            "value": "കാവിഡേ കുടുംബത്തിലെ കാവിയ എന്ന ജനുസ്സിൽ പെട്ട ഒരു കരണ്ടുതീനി"
+        },
+        "eu": {
+            "language": "eu",
+            "value": "Kabidoen familiako ugaztun karraskaria, buru eta gorputz handikoa, oin motzekoa eta isatsik gabea. Jatorriz amerikarra da eta laborategiko saiakuntzetan oso erabilia da."
+        },
+        "bn": {
+            "language": "bn",
+            "value": "গৃহপালিত স্তন্যপায়ী প্রাণী"
+        },
+        "pl": {
+            "language": "pl",
+            "value": "gatunek gryzonia"
+        },
+        "nb": {
+            "language": "nb",
+            "value": "gnager som ofte holdes som kjæledyr"
+        },
+        "cs": {
+            "language": "cs",
+            "value": "domestikovaný hlodavec"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "морська свинка"
+        },
+        "en": {
+            "language": "en",
+            "value": "species of mammal (domesticated guinea pig)"
+        },
+        "sv": {
+            "language": "sv",
+            "value": "däggdjur i ordningen gnagare"
+        },
+        "eo": {
+            "language": "eo",
+            "value": "specio"
+        }
+    },
+    "aliases": {
+        "zh": [
+            {
+                "language": "zh",
+                "value": "葵鼠"
+            },
+            {
+                "language": "zh",
+                "value": "天竺鼠"
+            },
+            {
+                "language": "zh",
+                "value": "荷兰猪"
+            },
+            {
+                "language": "zh",
+                "value": "荷蘭豬"
+            }
+        ],
+        "pl": [
+            {
+                "language": "pl",
+                "value": "Cavia porcellus"
+            },
+            {
+                "language": "pl",
+                "value": "świnka morska"
+            }
+        ],
+        "eu": [
+            {
+                "language": "eu",
+                "value": "Kui"
+            },
+            {
+                "language": "eu",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "gd": [
+            {
+                "language": "gd",
+                "value": "Guinea pig"
+            }
+        ],
+        "ang": [
+            {
+                "language": "ang",
+                "value": "Guinea pig"
+            }
+        ],
+        "es": [
+            {
+                "language": "es",
+                "value": "Conejillo de Indias"
+            },
+            {
+                "language": "es",
+                "value": "Cuyes"
+            },
+            {
+                "language": "es",
+                "value": "Cerdo de Guinea"
+            },
+            {
+                "language": "es",
+                "value": "Cuies"
+            },
+            {
+                "language": "es",
+                "value": "Cobayo"
+            },
+            {
+                "language": "es",
+                "value": "Conejillo de las Indias"
+            },
+            {
+                "language": "es",
+                "value": "Cuy peruano"
+            },
+            {
+                "language": "es",
+                "value": "Cavia porcelus"
+            },
+            {
+                "language": "es",
+                "value": "Chanchito de la India"
+            },
+            {
+                "language": "es",
+                "value": "Conejito de la India"
+            },
+            {
+                "language": "es",
+                "value": "Cuy"
+            },
+            {
+                "language": "es",
+                "value": "Cuyito"
+            },
+            {
+                "language": "es",
+                "value": "Cuis"
+            },
+            {
+                "language": "es",
+                "value": "Cuyo"
+            },
+            {
+                "language": "es",
+                "value": "Acure"
+            },
+            {
+                "language": "es",
+                "value": "Conejo de Indias"
+            },
+            {
+                "language": "es",
+                "value": "Curí"
+            },
+            {
+                "language": "es",
+                "value": "Cui"
+            },
+            {
+                "language": "es",
+                "value": "Cuyita"
+            },
+            {
+                "language": "es",
+                "value": "Cochino de Guinea"
+            },
+            {
+                "language": "es",
+                "value": "Conejillo de la India"
+            },
+            {
+                "language": "es",
+                "value": "Cobayas"
+            },
+            {
+                "language": "es",
+                "value": "Cobaya"
+            },
+            {
+                "language": "es",
+                "value": "Curi"
+            },
+            {
+                "language": "es",
+                "value": "Cuye"
+            },
+            {
+                "language": "es",
+                "value": "Acures"
+            },
+            {
+                "language": "es",
+                "value": "Guinea Piggie"
+            }
+        ],
+        "ms": [
+            {
+                "language": "ms",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "et": [
+            {
+                "language": "et",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "br": [
+            {
+                "language": "br",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "sv": [
+            {
+                "language": "sv",
+                "value": "Peruan"
+            },
+            {
+                "language": "sv",
+                "value": "Coronet"
+            },
+            {
+                "language": "sv",
+                "value": "Marsvin peruan"
+            },
+            {
+                "language": "sv",
+                "value": "Texel"
+            },
+            {
+                "language": "sv",
+                "value": "Alpaca"
+            },
+            {
+                "language": "sv",
+                "value": "Sheltie"
+            },
+            {
+                "language": "sv",
+                "value": "Marsvinet"
+            },
+            {
+                "language": "sv",
+                "value": "Guinea Pig"
+            },
+            {
+                "language": "sv",
+                "value": "Merino"
+            },
+            {
+                "language": "sv",
+                "value": "Lunkarya"
+            },
+            {
+                "language": "sv",
+                "value": "Cavia porcellus"
+            },
+            {
+                "language": "sv",
+                "value": "Nonself"
+            }
+        ],
+        "nl": [
+            {
+                "language": "nl",
+                "value": "Tamme cavia"
+            },
+            {
+                "language": "nl",
+                "value": "Cobaya"
+            },
+            {
+                "language": "nl",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "pt": [
+            {
+                "language": "pt",
+                "value": "Porquinhos da india"
+            },
+            {
+                "language": "pt",
+                "value": "Cavia porcelus"
+            },
+            {
+                "language": "pt",
+                "value": "Porquinho da india"
+            },
+            {
+                "language": "pt",
+                "value": "Porco da índia"
+            },
+            {
+                "language": "pt",
+                "value": "Porquinhos-da-Índia"
+            },
+            {
+                "language": "pt",
+                "value": "Porquinho da Índia"
+            },
+            {
+                "language": "pt",
+                "value": "Preá-da-índia"
+            },
+            {
+                "language": "pt",
+                "value": "Porquinho-da-india"
+            },
+            {
+                "language": "pt",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "eo": [
+            {
+                "language": "eo",
+                "value": "Cavia porcellus"
+            },
+            {
+                "language": "eo",
+                "value": "Kobayo"
+            }
+        ],
+        "ru": [
+            {
+                "language": "ru",
+                "value": "Домашняя морская свинка"
+            },
+            {
+                "language": "ru",
+                "value": "Апереа"
+            },
+            {
+                "language": "ru",
+                "value": "Морские свинки"
+            },
+            {
+                "language": "ru",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "sr": [
+            {
+                "language": "sr",
+                "value": "Заморац"
+            },
+            {
+                "language": "sr",
+                "value": "Заморци"
+            },
+            {
+                "language": "sr",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "tr": [
+            {
+                "language": "tr",
+                "value": "Hintdomuzu"
+            },
+            {
+                "language": "tr",
+                "value": "Ginedomuzu"
+            },
+            {
+                "language": "tr",
+                "value": "Gine domuzu"
+            },
+            {
+                "language": "tr",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "fi": [
+            {
+                "language": "fi",
+                "value": "Mus porcellus"
+            },
+            {
+                "language": "fi",
+                "value": "Cavia aperea porcellus"
+            },
+            {
+                "language": "fi",
+                "value": "Cavia cobaya"
+            },
+            {
+                "language": "fi",
+                "value": "Sileäkarvainen dutch"
+            },
+            {
+                "language": "fi",
+                "value": "Cavia porcellus"
+            },
+            {
+                "language": "fi",
+                "value": "marsurodut"
+            }
+        ],
+        "uk": [
+            {
+                "language": "uk",
+                "value": "Морська свинка"
+            },
+            {
+                "language": "uk",
+                "value": "Кавія гвінейська"
+            },
+            {
+                "language": "uk",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "nn": [
+            {
+                "language": "nn",
+                "value": "tammarsvin"
+            }
+        ],
+        "az": [
+            {
+                "language": "az",
+                "value": "Mus porcellus"
+            },
+            {
+                "language": "az",
+                "value": "Cavia leucopyga"
+            },
+            {
+                "language": "az",
+                "value": "Cavia cobaya"
+            },
+            {
+                "language": "az",
+                "value": "Cavia anolaimae"
+            },
+            {
+                "language": "az",
+                "value": "Cavia longipilis"
+            },
+            {
+                "language": "az",
+                "value": "Cavia cutleri"
+            },
+            {
+                "language": "az",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "hr": [
+            {
+                "language": "hr",
+                "value": "Zamorci"
+            }
+        ],
+        "tl": [
+            {
+                "language": "tl",
+                "value": "Baboy-Guinea"
+            },
+            {
+                "language": "tl",
+                "value": "Guinea pig"
+            },
+            {
+                "language": "tl",
+                "value": "Kunehilyo"
+            }
+        ],
+        "an": [
+            {
+                "language": "an",
+                "value": "Conillet d'Indias"
+            },
+            {
+                "language": "an",
+                "value": "Conillito d'Indias"
+            },
+            {
+                "language": "an",
+                "value": "Conillito de Indias"
+            }
+        ],
+        "he": [
+            {
+                "language": "he",
+                "value": "חזיר ים"
+            },
+            {
+                "language": "he",
+                "value": "קביה"
+            }
+        ],
+        "be": [
+            {
+                "language": "be",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "fr": [
+            {
+                "language": "fr",
+                "value": "Cochons d’Inde"
+            },
+            {
+                "language": "fr",
+                "value": "Cochon dinde"
+            },
+            {
+                "language": "fr",
+                "value": "Cavia Porcellus"
+            },
+            {
+                "language": "fr",
+                "value": "Cavia porcellus"
+            },
+            {
+                "language": "fr",
+                "value": "Cobai"
+            }
+        ],
+        "ko": [
+            {
+                "language": "ko",
+                "value": "모르모트"
+            }
+        ],
+        "lv": [
+            {
+                "language": "lv",
+                "value": "Parastā jūrascūciņa"
+            },
+            {
+                "language": "lv",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "it": [
+            {
+                "language": "it",
+                "value": "Porcellino d'india"
+            }
+        ],
+        "li": [
+            {
+                "language": "li",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "de": [
+            {
+                "language": "de",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "id": [
+            {
+                "language": "id",
+                "value": "Guinea pig"
+            }
+        ],
+        "ja": [
+            {
+                "language": "ja",
+                "value": "ギニア豚"
+            },
+            {
+                "language": "ja",
+                "value": "テンジクネズミ"
+            }
+        ],
+        "vi": [
+            {
+                "language": "vi",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "sk": [
+            {
+                "language": "sk",
+                "value": "Domáce morské prasiatko"
+            },
+            {
+                "language": "sk",
+                "value": "Cavia aperea f. porcellus"
+            },
+            {
+                "language": "sk",
+                "value": "Morča peruánske domáce"
+            },
+            {
+                "language": "sk",
+                "value": "Domáce morské prasa"
+            },
+            {
+                "language": "sk",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "ro": [
+            {
+                "language": "ro",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "th": [
+            {
+                "language": "th",
+                "value": "กินนี่พิก"
+            },
+            {
+                "language": "th",
+                "value": "กินนี่ พิก"
+            },
+            {
+                "language": "th",
+                "value": "เควี่"
+            }
+        ],
+        "ca": [
+            {
+                "language": "ca",
+                "value": "Cobaies"
+            },
+            {
+                "language": "ca",
+                "value": "Porc de Guinea"
+            },
+            {
+                "language": "ca",
+                "value": "Cobai"
+            },
+            {
+                "language": "ca",
+                "value": "Conillet d'Índies"
+            },
+            {
+                "language": "ca",
+                "value": "Cobaia"
+            },
+            {
+                "language": "ca",
+                "value": "Conills porquins"
+            },
+            {
+                "language": "ca",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "la": [
+            {
+                "language": "la",
+                "value": "Cobaia"
+            },
+            {
+                "language": "la",
+                "value": "Cavaia porcellus"
+            }
+        ],
+        "cy": [
+            {
+                "language": "cy",
+                "value": "Mochyn gini"
+            }
+        ],
+        "sl": [
+            {
+                "language": "sl",
+                "value": "Bujziga"
+            },
+            {
+                "language": "sl",
+                "value": "Budra"
+            },
+            {
+                "language": "sl",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "cs": [
+            {
+                "language": "cs",
+                "value": "Cavia aperea f. porcellus"
+            },
+            {
+                "language": "cs",
+                "value": "morče"
+            }
+        ],
+        "fa": [
+            {
+                "language": "fa",
+                "value": "خوکچهٔ ی هندی"
+            },
+            {
+                "language": "fa",
+                "value": "خوکچهٔ هندی"
+            },
+            {
+                "language": "fa",
+                "value": "خوکچه ی هندی"
+            },
+            {
+                "language": "fa",
+                "value": "خوک گینه"
+            }
+        ],
+        "bg": [
+            {
+                "language": "bg",
+                "value": "Морско прасе"
+            },
+            {
+                "language": "bg",
+                "value": "Морските свинчета"
+            },
+            {
+                "language": "bg",
+                "value": "Cavia porcellus"
+            }
+        ],
+        "vls": [
+            {
+                "language": "vls",
+                "value": "Cavia Porcellus"
+            },
+            {
+                "language": "vls",
+                "value": "Spoansche ratte"
+            }
+        ],
+        "lt": [
+            {
+                "language": "lt",
+                "value": "Jūros kiaulytė"
+            }
+        ],
+        "nb": [
+            {
+                "language": "nb",
+                "value": "Marsvin teddy"
+            },
+            {
+                "language": "nb",
+                "value": "Cavia porcellus"
+            },
+            {
+                "language": "nb",
+                "value": "Cavia"
+            },
+            {
+                "language": "nb",
+                "value": "Teddy"
+            }
+        ],
+        "el": [
+            {
+                "language": "el",
+                "value": "Ινδόχοιρος"
+            }
+        ],
+        "en": [
+            {
+                "language": "en",
+                "value": "cuy"
+            },
+            {
+                "language": "en",
+                "value": "guinea pig"
+            },
+            {
+                "language": "en",
+                "value": "cavy"
+            },
+            {
+                "language": "en",
+                "value": "domestic guinea pig"
+            },
+            {
+                "language": "en",
+                "value": "domestic cavy"
+            },
+            {
+                "language": "en",
+                "value": "cuy guinea pig"
+            },
+            {
+                "language": "en",
+                "value": "Плъх"
+            }
+        ]
+    },
+    "claims": {
+        "P225": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P225",
+                    "hash": "6448beafd11fdb05698e6d4f3f25e46f24fb0e6b",
+                    "datavalue": {
+                        "value": "Cavia porcellus",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "qualifiers": {
+                    "P405": [
+                        {
+                            "snaktype": "value",
+                            "property": "P405",
+                            "hash": "38e216fd38d883f465d64f74ded3896a9a882a69",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 155914,
+                                    "id": "Q155914"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        }
+                    ],
+                    "P574": [
+                        {
+                            "snaktype": "value",
+                            "property": "P574",
+                            "hash": "8e5adc5898709e4606e2df22b67505f5106c6691",
+                            "datavalue": {
+                                "value": {
+                                    "time": "+1759-00-00T00:00:00Z",
+                                    "timezone": 0,
+                                    "before": 0,
+                                    "after": 0,
+                                    "precision": 9,
+                                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                },
+                                "type": "time"
+                            },
+                            "datatype": "time"
+                        }
+                    ]
+                },
+                "qualifiers-order": [
+                    "P405",
+                    "P574"
+                ],
+                "id": "q79803$E3B6EE48-F4EC-4528-944A-4F9E7ACA8F8E",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "691a0df596277df6f3238054e76619ddc8b2dc17",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "c26dbcef1202a7d198982ed24f6ea69b704f95fe",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 82575,
+                                            "id": "Q82575"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "79340c23ef4cf1c4c9f051db98a300175ce60aa9",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2001-04-19T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "96dfb8481e184edb40553947f8fe08ce080f1553",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-09-19T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577",
+                            "P813"
+                        ]
+                    },
+                    {
+                        "hash": "cf239f11a384e51fd7056fab24d0239766d99b94",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "603c636b2210e4a74b7d40c9e969b7e503bbe252",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1538807,
+                                            "id": "Q1538807"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "673bc4ed98501054939c92e6558ee5abddb4491c",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-09-18T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P105": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P105",
+                    "hash": "aebf3611b23ed90c7c0fc80f6cd1cb7be110ea59",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 7432,
+                            "id": "Q7432"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "q79803$c11e06a9-4958-6c74-53a4-d2df601c2c48",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "691a0df596277df6f3238054e76619ddc8b2dc17",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "c26dbcef1202a7d198982ed24f6ea69b704f95fe",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 82575,
+                                            "id": "Q82575"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "79340c23ef4cf1c4c9f051db98a300175ce60aa9",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2001-04-19T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "96dfb8481e184edb40553947f8fe08ce080f1553",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-09-19T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577",
+                            "P813"
+                        ]
+                    },
+                    {
+                        "hash": "cf239f11a384e51fd7056fab24d0239766d99b94",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "603c636b2210e4a74b7d40c9e969b7e503bbe252",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1538807,
+                                            "id": "Q1538807"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "673bc4ed98501054939c92e6558ee5abddb4491c",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-09-18T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P373": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P373",
+                    "hash": "09a345686c2990883c624f5f334723b68f5651d0",
+                    "datavalue": {
+                        "value": "Cavia porcellus",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "q79803$DEAF015A-F767-40C8-B7EF-F101BBC0868D",
+                "rank": "normal"
+            }
+        ],
+        "P815": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P815",
+                    "hash": "3a80c6a3a874b8f21d448d3801c1d7da3b49cd08",
+                    "datavalue": {
+                        "value": "584713",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$37351E7A-EA20-47A6-8D35-CF008B124701",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "84b0bc804cd5367055bc5aac1e339b807ff3ad3f",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "c26dbcef1202a7d198982ed24f6ea69b704f95fe",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 82575,
+                                            "id": "Q82575"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "68f921417b456e3a6e13524eec6d7559c21ffbad",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2014-11-05T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P171": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P171",
+                    "hash": "6c51fd2d3d5114723b62dbddf855c8d292a66118",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 286088,
+                            "id": "Q286088"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q79803$4FDF33AC-DAEF-4988-A696-9A6EC0AAE762",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "691a0df596277df6f3238054e76619ddc8b2dc17",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "c26dbcef1202a7d198982ed24f6ea69b704f95fe",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 82575,
+                                            "id": "Q82575"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "79340c23ef4cf1c4c9f051db98a300175ce60aa9",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2001-04-19T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "96dfb8481e184edb40553947f8fe08ce080f1553",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-09-19T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577",
+                            "P813"
+                        ]
+                    },
+                    {
+                        "hash": "cf239f11a384e51fd7056fab24d0239766d99b94",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "603c636b2210e4a74b7d40c9e969b7e503bbe252",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1538807,
+                                            "id": "Q1538807"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "673bc4ed98501054939c92e6558ee5abddb4491c",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-09-18T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P349": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P349",
+                    "hash": "650413b4aa5529374abb04bff08168ea7b8f5dfd",
+                    "datavalue": {
+                        "value": "00942111",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$5943AF2F-FF6E-466D-878C-68D06AC96133",
+                "rank": "normal"
+            }
+        ],
+        "P685": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P685",
+                    "hash": "4b44d087ec618da6b6f9ddf6becbc0014995d032",
+                    "datavalue": {
+                        "value": "10141",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$17E15873-CA92-4245-AEF7-A25B7278C94F",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 8447,
+                                            "id": "Q8447"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    },
+                    {
+                        "hash": "883639199c930e72d472532bbf8cdc6deb68ac53",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "1851bc60ddfbcf6f76bd45aa7124fc0d5857a379",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 13711410,
+                                            "id": "Q13711410"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "e980142c711d9e73fc62dedfabfea71e311f594a",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2020-04-14T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P685",
+                    "hash": "fb3c94eb8a8a4a110b51ca2ce96195f01f751f64",
+                    "datavalue": {
+                        "value": "10144",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$10DE49B7-8BF2-4614-A88A-327D2AFF34E5",
+                "rank": "normal"
+            }
+        ],
+        "P31": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P31",
+                    "hash": "06629d890d7ab0ff85c403d8aadf57ce9809c01f",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 16521,
+                            "id": "Q16521"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q79803$08B22EEA-FE85-48C0-8EB9-644274589695",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P31",
+                    "hash": "a4e36b3487414f5c0a4209b6006269275b9b7cc6",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 213907,
+                            "id": "Q213907"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q79803$E045902D-666C-41AB-874A-756A33BE56D5",
+                "rank": "normal"
+            }
+        ],
+        "P646": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P646",
+                    "hash": "3449d12654e2894be32a397cf25e2aac585bedd1",
+                    "datavalue": {
+                        "value": "/m/0gy7v",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$C0B9B422-3DC9-4273-8512-51A68F1F2354",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 15241312,
+                                            "id": "Q15241312"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-10-28T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P959": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P959",
+                    "hash": "726e424114eac0b381677351924765fac975f236",
+                    "datavalue": {
+                        "value": "13400181",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$4CC480FB-4146-4847-8FEE-A20EBD841EB4",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "8f16b5efc9d2d88fedc19b556919872b127172f0",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "603c636b2210e4a74b7d40c9e969b7e503bbe252",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1538807,
+                                            "id": "Q1538807"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "ef7323b32d5c7e333fa3f5490866ec5143aa153c",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2014-01-09T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P842": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P842",
+                    "hash": "0b4599dc18aa80ea09e3ed29f7650bc39d64cd2e",
+                    "datavalue": {
+                        "value": "233628",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$01BDBA09-C605-410F-AFAB-7D341D332377",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "2ffa2e62af09e69ec86d5d0135390101b5b9901d",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "00fe2206a3342fa25c0cfe1d08783c49a1986f12",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 796451,
+                                            "id": "Q796451"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "f1ee713520f3a212519bab9b21cfcd51c83d2cb9",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2014-01-29T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P830": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P830",
+                    "hash": "8aaafd33129e93e5336e16d488356338017d60ee",
+                    "datavalue": {
+                        "value": "326924",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$BDCED345-00D3-453D-9BBF-9CD8DADE5933",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "46753c3e3d74d1fc1e78a255903169ee50bd0f1c",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "6e81987ab11fb1740bd862639411d0700be3b22c",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 82486,
+                                            "id": "Q82486"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "1a72190eec24b81a12a000fa20e6e7c533d6a27e",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2014-11-01T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P910": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P910",
+                    "hash": "2e397a9d3bd2b40b4f378bf774f99815be8b41f8",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 9759453,
+                            "id": "Q9759453"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q79803$E14DA5C9-1C6D-480F-B193-CD94B9F1E150",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "1f1ad4e8b24154f402e1afe4c76421acd00932f9",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "889b94c40f0dc1125270051a5044b24e92e7236a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 175482,
+                                            "id": "Q175482"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P846": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P846",
+                    "hash": "32a023f66e2dc7972543cef44571289dfd86fd92",
+                    "datavalue": {
+                        "value": "5219702",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$92B18E41-9773-41CC-A7E6-FCED624CBDF1",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "9d31fd64848fe238646b47ea6f81fae10a5dddfc",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "dbb8dd1efbe0158a5227213bd628eeac27a1da65",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1531570,
+                                            "id": "Q1531570"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "31a2b0b069fe6e4d67dbaabfca38dc841b03c8bf",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-05-24T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P935": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P935",
+                    "hash": "be14b2192ff2e5b608ddba83c514cd7d448decc8",
+                    "datavalue": {
+                        "value": "Cavia porcellus",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "Q79803$EE81BA8B-AB5E-4FCE-9117-9CC26CB587FC",
+                "rank": "normal"
+            }
+        ],
+        "P1343": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1343",
+                    "hash": "eda63bed5c3d7a3460033092338ab321a2374c7f",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 2041543,
+                            "id": "Q2041543"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "qualifiers": {
+                    "P805": [
+                        {
+                            "snaktype": "value",
+                            "property": "P805",
+                            "hash": "30cb9517a7331663ea8bfd407a1d9984580a487b",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 23859910,
+                                    "id": "Q23859910"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        }
+                    ]
+                },
+                "qualifiers-order": [
+                    "P805"
+                ],
+                "id": "Q79803$4EE08059-E67C-4F9E-8CAC-450694BBB350",
+                "rank": "normal"
+            }
+        ],
+        "P3063": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P3063",
+                    "hash": "b7e374285032c8656e75024a41b6a54b1262c062",
+                    "datavalue": {
+                        "value": {
+                            "amount": "+72",
+                            "unit": "http://www.wikidata.org/entity/Q573"
+                        },
+                        "type": "quantity"
+                    },
+                    "datatype": "quantity"
+                },
+                "type": "statement",
+                "id": "Q79803$9565db4f-4b42-aeef-1786-0f993adc8b1e",
+                "rank": "normal"
+            }
+        ],
+        "P1843": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "4107d7d18378b70bfa516d4956de0570454b9e6d",
+                    "datavalue": {
+                        "value": {
+                            "text": "guinea pig",
+                            "language": "en"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q79803$0f83692e-49c6-89bc-b125-3bb479f61a33",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 328,
+                                            "id": "Q328"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "44d297032c7f99356b5d6e24807775daba4ea159",
+                    "datavalue": {
+                        "value": {
+                            "text": "marsu",
+                            "language": "fi"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q79803$396f59c5-4b88-62d7-ddf8-ed373f04c144",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "d093be7990f92c3c4e86efb78fd0454d038a95c6",
+                    "datavalue": {
+                        "value": {
+                            "text": "Domesticated Guinea Pig",
+                            "language": "en"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q79803$A51CBBCB-D71B-4626-870F-075444CD1A5F",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "9ab7a89e958c781030621846bbf4bd129c4b967e",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "e17975e5c866df46673c91b2287a82cf23d14f5a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 27310853,
+                                            "id": "Q27310853"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P304": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P304",
+                                    "hash": "67d684c815f5de86a94b38dd9bd10c59655b773a",
+                                    "datavalue": {
+                                        "value": "31",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P304"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "232446f61f15318cc4a968a0b0ba7de67550de09",
+                    "datavalue": {
+                        "value": {
+                            "text": "Cavy",
+                            "language": "en"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q79803$0F546D2C-EC6B-419D-BB4B-58FEB85BD9BF",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "9ab7a89e958c781030621846bbf4bd129c4b967e",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "e17975e5c866df46673c91b2287a82cf23d14f5a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 27310853,
+                                            "id": "Q27310853"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P304": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P304",
+                                    "hash": "67d684c815f5de86a94b38dd9bd10c59655b773a",
+                                    "datavalue": {
+                                        "value": "31",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P304"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "d3bf3f771d603f5077c5eddb68352efbad3712c9",
+                    "datavalue": {
+                        "value": {
+                            "text": "Hausmeerschweinchen",
+                            "language": "de"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q79803$584B5491-E636-4CB8-B6A7-71729D61B58D",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "9ab7a89e958c781030621846bbf4bd129c4b967e",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "e17975e5c866df46673c91b2287a82cf23d14f5a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 27310853,
+                                            "id": "Q27310853"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P304": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P304",
+                                    "hash": "67d684c815f5de86a94b38dd9bd10c59655b773a",
+                                    "datavalue": {
+                                        "value": "31",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P304"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P3031": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P3031",
+                    "hash": "4f98ed4195f09480ed5592ad7404ecda7720fc70",
+                    "datavalue": {
+                        "value": "CAVIPO",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$C8F4B160-CE90-4636-8FF5-EE18C3C60717",
+                "rank": "normal"
+            }
+        ],
+        "P3151": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P3151",
+                    "hash": "59ab8a3384902301f8859136bc41bfa6a6403ff5",
+                    "datavalue": {
+                        "value": "119405",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$C11FCD63-DEA8-4756-AC1C-AAA9F8B09409",
+                "rank": "normal"
+            }
+        ],
+        "P3395": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P3395",
+                    "hash": "0f751d2fba7e0acd78cbdb1b478d3cd11df9fb74",
+                    "datavalue": {
+                        "value": {
+                            "amount": "+250",
+                            "unit": "http://www.wikidata.org/entity/Q743895",
+                            "upperBound": "+300",
+                            "lowerBound": "+200"
+                        },
+                        "type": "quantity"
+                    },
+                    "datatype": "quantity"
+                },
+                "type": "statement",
+                "qualifiers": {
+                    "P518": [
+                        {
+                            "snaktype": "value",
+                            "property": "P518",
+                            "hash": "7b6cd221ab77c0f671762d80270491d429e8dd35",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 20980706,
+                                    "id": "Q20980706"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        }
+                    ]
+                },
+                "qualifiers-order": [
+                    "P518"
+                ],
+                "id": "Q79803$b4b8984a-4294-5fca-a32a-6086fc051cc5",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "655f922cb574f5102cb45338fbd0cb32cc5e84b7",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "4efb3bc8a9fc19473dec7bcf47ebe7c7281a9c0b",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 28053140,
+                                            "id": "Q28053140"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "20c127e946cfd3a1debe72f28e585fb4b678e1d8",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-12-23T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P2167": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P2167",
+                    "hash": "6eb2cb2e70ee88698ed03093159869479fdfccc1",
+                    "datavalue": {
+                        "value": "10101513",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$A318DA3E-317D-4479-8CE0-975E2483F96B",
+                "rank": "normal"
+            }
+        ],
+        "P3827": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P3827",
+                    "hash": "12ad10fd96b3e02a0d8b588ff0e61430ee65e652",
+                    "datavalue": {
+                        "value": "guinea-pigs",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$4C11A57D-BDEA-4D42-93C8-1EF37E762170",
+                "rank": "normal"
+            }
+        ],
+        "P4024": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P4024",
+                    "hash": "c4c208c2563928fe370ec4d0c4849b02ffdc7a74",
+                    "datavalue": {
+                        "value": "Cavia_porcellus",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$F0D0C68B-6D94-4F5F-9C97-606AFAD54934",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 8447,
+                                            "id": "Q8447"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P3417": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P3417",
+                    "hash": "8c91bc32bfd9d396cadae331c0503d7a4a3eb137",
+                    "datavalue": {
+                        "value": "Guinea-Pigs-Pet",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$672840a9-47ab-6922-5ddc-add622d03944",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P3417",
+                    "hash": "b98a94cb9bc3cdfc6a0265d96e6f8dcc5c615382",
+                    "datavalue": {
+                        "value": "Guinea-Pigs",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$BD626389-9676-4755-AE06-92455C8537D6",
+                "rank": "normal"
+            }
+        ],
+        "P1225": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1225",
+                    "hash": "5d3dbdf4df62b53aba3aa11fd803c0281bc7ce86",
+                    "datavalue": {
+                        "value": "10648552",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$FF01E262-34AC-48C5-A4F5-2D2E23953BFC",
+                "rank": "normal"
+            }
+        ],
+        "P1417": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1417",
+                    "hash": "e08b00bf495dfff7944532ea3e9b8ae30f87c227",
+                    "datavalue": {
+                        "value": "animal/guinea-pig",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$DE0B0863-5D76-4A60-B396-E57DCED54B21",
+                "rank": "normal"
+            }
+        ],
+        "P4728": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P4728",
+                    "hash": "b9da71f46a7eb6993cbd52b4e0d20fd5ca3f39cc",
+                    "datavalue": {
+                        "value": "106437",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$30B7792F-C97D-4F84-9632-141BC5375DDB",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 8447,
+                                            "id": "Q8447"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P4746": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P4746",
+                    "hash": "ef459431d8cfb89020a020f197d896eabb131587",
+                    "datavalue": {
+                        "value": "019991",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$4E1DB7FF-A554-4311-80A1-63308B9F032D",
+                "rank": "normal"
+            }
+        ],
+        "P2888": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P2888",
+                    "hash": "3597eb3119b4e0d2004db43a928ef32dd0fb8351",
+                    "datavalue": {
+                        "value": "http://wordnet-rdf.princeton.edu/wn30/02364673-n",
+                        "type": "string"
+                    },
+                    "datatype": "url"
+                },
+                "type": "statement",
+                "id": "Q79803$939cbe44-4303-514c-63b3-18a6c66f5781",
+                "rank": "normal"
+            }
+        ],
+        "P3380": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P3380",
+                    "hash": "18477c06fe0ae81ebdfbe86c7a4c8df0a0e342e8",
+                    "datavalue": {
+                        "value": "Guinea Pig",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$F9B4032B-0BDE-424C-B115-FCA7657973E1",
+                "rank": "normal"
+            }
+        ],
+        "P5055": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P5055",
+                    "hash": "08d2bd3f417e748749883d1e664530ca9a3f7d4c",
+                    "datavalue": {
+                        "value": "10223339",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$C2CCDA2E-7406-4706-B61D-DF4132F5C9DE",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "7ee9a51b705e7a21be6b7a783573b26f8206e4f1",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "1e3ad3cb9e0170e28b7c7c335fba55cafa6ef789",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 51885189,
+                                            "id": "Q51885189"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "5c086b97a1bb3987efce8517e7fabb52f8dd83b2",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2018-06-06T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P5698": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P5698",
+                    "hash": "f932376f9cbfb738435000b5de75e306dc635a9f",
+                    "datavalue": {
+                        "value": "89562",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$BD252493-5164-45CE-AEBA-87C3DEEB74B1",
+                "rank": "normal"
+            }
+        ],
+        "P5626": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P5626",
+                    "hash": "a860bfdda9b5663425093a60c093650bfae0c99b",
+                    "datavalue": {
+                        "value": "1874",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$10B43BFB-0177-4A53-8C1C-262B7C5E9363",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "fb39b3eeef485c9c90b62063240177795c7fcc8d",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 8447,
+                                            "id": "Q8447"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P4656": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P4656",
+                                    "hash": "cd3e87821bb2f1342861fac82c7fdde18647fe6f",
+                                    "datavalue": {
+                                        "value": "https://fr.wikipedia.org/w/index.php?title=Cavia_porcellus&oldid=152544643",
+                                        "type": "string"
+                                    },
+                                    "datatype": "url"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143",
+                            "P4656"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P2250": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P2250",
+                    "hash": "f50fb30c8a7705471d184163dab1e1ea04cec60d",
+                    "datavalue": {
+                        "value": {
+                            "amount": "+5",
+                            "unit": "http://www.wikidata.org/entity/Q577"
+                        },
+                        "type": "quantity"
+                    },
+                    "datatype": "quantity"
+                },
+                "type": "statement",
+                "id": "Q79803$128ab467-4dea-8a3c-9b02-5bdbced057e0",
+                "rank": "normal"
+            }
+        ],
+        "P6433": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P6433",
+                    "hash": "594a0259375a91531837b31bbeb94472502c263d",
+                    "datavalue": {
+                        "value": "925837",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$EB6B69D2-4662-452C-91BF-F568A53CB8F1",
+                "rank": "normal"
+            }
+        ],
+        "P244": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P244",
+                    "hash": "2f372b205ae62bd01fa3d429b3a9354075151c48",
+                    "datavalue": {
+                        "value": "sh85057793",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$9C61E6E7-6BA5-48C8-ACA3-B3A64D469027",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "ac5d47e9fbcc281bc0d27a205ae02e22ad24ce31",
+                        "snaks": {
+                            "P854": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P854",
+                                    "hash": "b560dc6b281a39d061e189d2eb299a426a06f1a2",
+                                    "datavalue": {
+                                        "value": "https://github.com/JohnMarkOckerbloom/ftl/blob/master/data/wikimap",
+                                        "type": "string"
+                                    },
+                                    "datatype": "url"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "0dcf4f64e93fdcc654e2c7534285881fe48b9f3d",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2019-04-03T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P854",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P486": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P486",
+                    "hash": "41385f299bfba60c6256eab1ca87edd16e09da22",
+                    "datavalue": {
+                        "value": "D006168",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$6C5F7F6F-EBC8-4E47-8950-2559DBFCC67D",
+                "rank": "normal"
+            }
+        ],
+        "P7033": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P7033",
+                    "hash": "09a3f5c68beedb5f72c08c161699b2348c7a2f42",
+                    "datavalue": {
+                        "value": "scot/3240",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$8C787677-B4FD-420F-9CA0-A535886CE42B",
+                "rank": "normal"
+            }
+        ],
+        "P1296": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1296",
+                    "hash": "baee974ba2dc502d5a2134eb24043a1930f0e661",
+                    "datavalue": {
+                        "value": "0171134",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$11F8857F-D89D-4321-AAF5-E678FACC4EC6",
+                "rank": "normal"
+            }
+        ],
+        "P989": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P989",
+                    "hash": "d3c5fde289604bc1915615b422503f7cb5afd8d2",
+                    "datavalue": {
+                        "value": "Nl-Huiscavia-article.ogg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "qualifiers": {
+                    "P407": [
+                        {
+                            "snaktype": "value",
+                            "property": "P407",
+                            "hash": "700aeaff381db1a1b58c6d58777ab5ec7daefe17",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 7411,
+                                    "id": "Q7411"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        }
+                    ]
+                },
+                "qualifiers-order": [
+                    "P407"
+                ],
+                "id": "Q79803$94C89347-964F-4BF0-B025-6A68293CC6C2",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "281569751a7cffae9d1194c6dd93efb9e9198c89",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "9123b0de1cc9c3954366ba797d598e4e1ea4146f",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 10000,
+                                            "id": "Q10000"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P4656": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P4656",
+                                    "hash": "ac86e3adc3b516d71026633e170069d71ff480d3",
+                                    "datavalue": {
+                                        "value": "https://nl.wikipedia.org/w/index.php?title=Huiscavia&oldid=53891296",
+                                        "type": "string"
+                                    },
+                                    "datatype": "url"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143",
+                            "P4656"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P1245": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1245",
+                    "hash": "434bff077858459f123b6f450a7d6d7dc0d82110",
+                    "datavalue": {
+                        "value": "159389",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$A71B8480-8D55-41D9-99F0-6C05E7867636",
+                "rank": "normal"
+            }
+        ],
+        "P7818": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P7818",
+                    "hash": "d9b81b57a3b1715c8047e4579a56367c23366d0c",
+                    "datavalue": {
+                        "value": "Cochon_d'Inde",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$BFE93903-DDB1-4A98-A2DF-3CFDDC744C3D",
+                "rank": "normal"
+            }
+        ],
+        "P6366": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P6366",
+                    "hash": "42637e325d3309fee86d6b62d1765016675b83c3",
+                    "datavalue": {
+                        "value": "2778815084",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$7E8AC720-F0D5-4B01-978A-666465B1FF39",
+                "rank": "normal"
+            }
+        ],
+        "P6105": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P6105",
+                    "hash": "72331f323cfe91da6d612efb518dc870a7a24fbe",
+                    "datavalue": {
+                        "value": "82290",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$2FF11C99-E045-4C38-90A9-924DC5175BED",
+                "rank": "normal"
+            }
+        ],
+        "P51": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P51",
+                    "hash": "8baea435c02f36524dabd48440a9d9557e53ffb8",
+                    "datavalue": {
+                        "value": "Guinea Pig Feeding Wheek.ogg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "Q79803$2d2b0fbc-4747-c273-bae8-c1cbe59d6145",
+                "rank": "normal"
+            }
+        ],
+        "P18": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "ba166b8a5fd84e95721fa7e037178e6f6f43ce46",
+                    "datavalue": {
+                        "value": "Two adult Guinea Pigs (Cavia porcellus).jpg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "q79803$1C4DABBF-FCE8-4E5C-9AA6-7AD3C2B8BFBF",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "0634b9b30ba6807ff1f8fd8fc77a13aca782501d",
+                    "datavalue": {
+                        "value": "Conill porquí gàbia.JPG",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "qualifiers": {
+                    "P2096": [
+                        {
+                            "snaktype": "value",
+                            "property": "P2096",
+                            "hash": "bdae4f7207b6aa7fa18d4dab391d2e4fe42f9a3f",
+                            "datavalue": {
+                                "value": {
+                                    "text": "Conill porquí amb el seu aliment",
+                                    "language": "ca"
+                                },
+                                "type": "monolingualtext"
+                            },
+                            "datatype": "monolingualtext"
+                        }
+                    ]
+                },
+                "qualifiers-order": [
+                    "P2096"
+                ],
+                "id": "Q79803$0637E820-F679-4FAC-AC67-C105C06900F4",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "3ae4fa12047563351e9fc5943d81126eb6eaaa96",
+                    "datavalue": {
+                        "value": "Cavia.jpg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "Q79803$aaab9c4c-4648-451f-0ed8-7a0c0472d4d0",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "04ee818dc6bdd16563533cb262259bc52bca091f",
+                    "datavalue": {
+                        "value": "Hausmeerschweinchen drei.JPG",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "Q79803$93413a1a-414f-7633-a0a1-f8f3f2ab67b7",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "1d9a50b2a6d1e5d949e07f6c8cd7345971dc82f1",
+                    "datavalue": {
+                        "value": "\"+arya+\" Cavia porcellus - tikus belanda 01.jpg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "Q79803$2fef4f26-4278-a8e6-8d01-0adb9ce0aac9",
+                "rank": "normal"
+            }
+        ],
+        "P6864": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P6864",
+                    "hash": "6524bf39ffcc1d633ee7e3aa0b20da809cc793ed",
+                    "datavalue": {
+                        "value": "43873",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$64996643-E328-4A62-AFEF-27700F50CD30",
+                "rank": "normal"
+            }
+        ],
+        "P8408": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P8408",
+                    "hash": "e2031b03a018146257c112a9918eaad62e6529bd",
+                    "datavalue": {
+                        "value": "GuineaPig",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$DE3CCCB7-6ACC-4D76-90E8-4E57F3652B93",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "9a681f9dd95c90224547c404e11295f4f7dcf54e",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "9d5780dddffa8746637a9929a936ab6b0f601e24",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 64139102,
+                                            "id": "Q64139102"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "622a5a27fa5b25e7e7984974e9db494cf8460990",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2020-07-09T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P2347": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P2347",
+                    "hash": "0a1b83db0d73ab51a2d10de6d4004e946b0cdccd",
+                    "datavalue": {
+                        "value": "17459",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$CF6ED664-1FE7-40BE-8A68-4662CAE9758B",
+                "rank": "normal"
+            }
+        ],
+        "P5063": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P5063",
+                    "hash": "79367058a3d73ad1b33d5fe42fb67ac117c10e4b",
+                    "datavalue": {
+                        "value": "i47997",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$00DD6942-BA14-4F9C-9F11-D488305095A1",
+                "rank": "normal"
+            }
+        ],
+        "P652": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P652",
+                    "hash": "8e198e484e938b5264ed73d099121deac980ef62",
+                    "datavalue": {
+                        "value": "XJI597GH9P",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q79803$08AB2E2D-30AA-454F-A2B1-002D84F15890",
+                "rank": "normal"
+            }
+        ]
+    },
+    "sitelinks": {
+        "angwiki": {
+            "site": "angwiki",
+            "title": "Rætswīn",
+            "badges": []
+        },
+        "anwiki": {
+            "site": "anwiki",
+            "title": "Cavia porcellus",
+            "badges": []
+        },
+        "arwiki": {
+            "site": "arwiki",
+            "title": "كابياء خنزيرية",
+            "badges": []
+        },
+        "astwiki": {
+            "site": "astwiki",
+            "title": "Cavia porcellus",
+            "badges": []
+        },
+        "aywiki": {
+            "site": "aywiki",
+            "title": "K'uwisu",
+            "badges": []
+        },
+        "azbwiki": {
+            "site": "azbwiki",
+            "title": "دنیز دونوزجوغو",
+            "badges": []
+        },
+        "azwiki": {
+            "site": "azwiki",
+            "title": "Dəniz donuzcuğu",
+            "badges": []
+        },
+        "be_x_oldwiki": {
+            "site": "be_x_oldwiki",
+            "title": "Марская сьвінка",
+            "badges": []
+        },
+        "bewiki": {
+            "site": "bewiki",
+            "title": "Марская свінка",
+            "badges": []
+        },
+        "bgwiki": {
+            "site": "bgwiki",
+            "title": "Морско свинче",
+            "badges": []
+        },
+        "bnwiki": {
+            "site": "bnwiki",
+            "title": "গিনিপিগ",
+            "badges": []
+        },
+        "brwiki": {
+            "site": "brwiki",
+            "title": "Razh-Indez",
+            "badges": []
+        },
+        "cawiki": {
+            "site": "cawiki",
+            "title": "Conill porquí",
+            "badges": []
+        },
+        "cebwiki": {
+            "site": "cebwiki",
+            "title": "Cavia porcellus",
+            "badges": []
+        },
+        "commonswiki": {
+            "site": "commonswiki",
+            "title": "Cavia porcellus",
+            "badges": []
+        },
+        "cswiki": {
+            "site": "cswiki",
+            "title": "Morče domácí",
+            "badges": []
+        },
+        "cywiki": {
+            "site": "cywiki",
+            "title": "Mochyn cwta",
+            "badges": []
+        },
+        "dawiki": {
+            "site": "dawiki",
+            "title": "Marsvin (gnaver)",
+            "badges": []
+        },
+        "dewiki": {
+            "site": "dewiki",
+            "title": "Hausmeerschweinchen",
+            "badges": []
+        },
+        "elwiki": {
+            "site": "elwiki",
+            "title": "Ινδικό χοιρίδιο",
+            "badges": []
+        },
+        "enwiki": {
+            "site": "enwiki",
+            "title": "Guinea pig",
+            "badges": [
+                "Q17437796"
+            ]
+        },
+        "eowiki": {
+            "site": "eowiki",
+            "title": "Kobajo",
+            "badges": []
+        },
+        "eswiki": {
+            "site": "eswiki",
+            "title": "Cavia porcellus",
+            "badges": []
+        },
+        "etwiki": {
+            "site": "etwiki",
+            "title": "Merisiga",
+            "badges": []
+        },
+        "euwiki": {
+            "site": "euwiki",
+            "title": "Akuri",
+            "badges": []
+        },
+        "fawiki": {
+            "site": "fawiki",
+            "title": "خوکچه هندی",
+            "badges": []
+        },
+        "fiu_vrowiki": {
+            "site": "fiu_vrowiki",
+            "title": "Meretsiga",
+            "badges": []
+        },
+        "fiwiki": {
+            "site": "fiwiki",
+            "title": "Marsu",
+            "badges": []
+        },
+        "frwiki": {
+            "site": "frwiki",
+            "title": "Cavia porcellus",
+            "badges": []
+        },
+        "fywiki": {
+            "site": "fywiki",
+            "title": "Kavia",
+            "badges": []
+        },
+        "gawiki": {
+            "site": "gawiki",
+            "title": "Muc ghuine",
+            "badges": []
+        },
+        "gdwiki": {
+            "site": "gdwiki",
+            "title": "Gearra-mhuc",
+            "badges": []
+        },
+        "glwiki": {
+            "site": "glwiki",
+            "title": "Cobaia",
+            "badges": []
+        },
+        "gnwiki": {
+            "site": "gnwiki",
+            "title": "Apere'a",
+            "badges": []
+        },
+        "guwiki": {
+            "site": "guwiki",
+            "title": "ગિનિ પિગ",
+            "badges": []
+        },
+        "gvwiki": {
+            "site": "gvwiki",
+            "title": "Muc rangagh",
+            "badges": []
+        },
+        "hewiki": {
+            "site": "hewiki",
+            "title": "שרקן",
+            "badges": []
+        },
+        "hiwiki": {
+            "site": "hiwiki",
+            "title": "गिनी पिग",
+            "badges": []
+        },
+        "hrwiki": {
+            "site": "hrwiki",
+            "title": "Domaći zamorčić",
+            "badges": []
+        },
+        "huwiki": {
+            "site": "huwiki",
+            "title": "Tengerimalac",
+            "badges": []
+        },
+        "hywiki": {
+            "site": "hywiki",
+            "title": "Ծովախոզուկ",
+            "badges": []
+        },
+        "iawiki": {
+            "site": "iawiki",
+            "title": "Cavia porcellus",
+            "badges": []
+        },
+        "idwiki": {
+            "site": "idwiki",
+            "title": "Tikus belanda",
+            "badges": []
+        },
+        "iowiki": {
+            "site": "iowiki",
+            "title": "Kobayo",
+            "badges": []
+        },
+        "iswiki": {
+            "site": "iswiki",
+            "title": "Naggrísir",
+            "badges": []
+        },
+        "itwiki": {
+            "site": "itwiki",
+            "title": "Cavia porcellus",
+            "badges": []
+        },
+        "itwikiquote": {
+            "site": "itwikiquote",
+            "title": "Cavia domestica",
+            "badges": []
+        },
+        "jawiki": {
+            "site": "jawiki",
+            "title": "モルモット",
+            "badges": []
+        },
+        "jvwiki": {
+            "site": "jvwiki",
+            "title": "Tikus walanda",
+            "badges": []
+        },
+        "kawiki": {
+            "site": "kawiki",
+            "title": "ზღვის გოჭი",
+            "badges": []
+        },
+        "knwiki": {
+            "site": "knwiki",
+            "title": "ಗಿನಿಯಿಲಿ",
+            "badges": []
+        },
+        "kowiki": {
+            "site": "kowiki",
+            "title": "기니피그",
+            "badges": []
+        },
+        "kuwiki": {
+            "site": "kuwiki",
+            "title": "Kaviyayê berazî",
+            "badges": []
+        },
+        "kwwiki": {
+            "site": "kwwiki",
+            "title": "Hogh gyni",
+            "badges": []
+        },
+        "lawiki": {
+            "site": "lawiki",
+            "title": "Cavia porcellus",
+            "badges": []
+        },
+        "lfnwiki": {
+            "site": "lfnwiki",
+            "title": "Cavia",
+            "badges": []
+        },
+        "liwiki": {
+            "site": "liwiki",
+            "title": "Hoescavia",
+            "badges": []
+        },
+        "lnwiki": {
+            "site": "lnwiki",
+            "title": "Kobayé ya ndako",
+            "badges": []
+        },
+        "ltwiki": {
+            "site": "ltwiki",
+            "title": "Jūrų kiaulytė",
+            "badges": []
+        },
+        "lvwiki": {
+            "site": "lvwiki",
+            "title": "Jūrascūciņa",
+            "badges": []
+        },
+        "mkwiki": {
+            "site": "mkwiki",
+            "title": "Морско прасе",
+            "badges": []
+        },
+        "mlwiki": {
+            "site": "mlwiki",
+            "title": "ഗിനിപ്പന്നി",
+            "badges": []
+        },
+        "mswiki": {
+            "site": "mswiki",
+            "title": "Tikus Belanda",
+            "badges": []
+        },
+        "mywiki": {
+            "site": "mywiki",
+            "title": "ပူး",
+            "badges": []
+        },
+        "nahwiki": {
+            "site": "nahwiki",
+            "title": "Cuatochtli",
+            "badges": []
+        },
+        "newiki": {
+            "site": "newiki",
+            "title": "गिनी पिग",
+            "badges": []
+        },
+        "nlwiki": {
+            "site": "nlwiki",
+            "title": "Huiscavia",
+            "badges": []
+        },
+        "nnwiki": {
+            "site": "nnwiki",
+            "title": "Marsvin",
+            "badges": []
+        },
+        "nowiki": {
+            "site": "nowiki",
+            "title": "Marsvin",
+            "badges": []
+        },
+        "ocwiki": {
+            "site": "ocwiki",
+            "title": "Cavia",
+            "badges": []
+        },
+        "orwiki": {
+            "site": "orwiki",
+            "title": "ଗିନି ପିଗ",
+            "badges": []
+        },
+        "pamwiki": {
+            "site": "pamwiki",
+            "title": "Dagis sungsung",
+            "badges": []
+        },
+        "plwiki": {
+            "site": "plwiki",
+            "title": "Kawia domowa",
+            "badges": [
+                "Q17437798"
+            ]
+        },
+        "ptwiki": {
+            "site": "ptwiki",
+            "title": "Porquinho-da-Índia",
+            "badges": []
+        },
+        "quwiki": {
+            "site": "quwiki",
+            "title": "Wasi quwi",
+            "badges": []
+        },
+        "rowiki": {
+            "site": "rowiki",
+            "title": "Cobai",
+            "badges": []
+        },
+        "ruwiki": {
+            "site": "ruwiki",
+            "title": "Морская свинка",
+            "badges": []
+        },
+        "shwiki": {
+            "site": "shwiki",
+            "title": "Morsko prase",
+            "badges": []
+        },
+        "simplewiki": {
+            "site": "simplewiki",
+            "title": "Guinea pig",
+            "badges": []
+        },
+        "siwiki": {
+            "site": "siwiki",
+            "title": "ගිනි හාවා",
+            "badges": []
+        },
+        "skwiki": {
+            "site": "skwiki",
+            "title": "Morča domáce",
+            "badges": []
+        },
+        "slwiki": {
+            "site": "slwiki",
+            "title": "Morski prašiček",
+            "badges": []
+        },
+        "specieswiki": {
+            "site": "specieswiki",
+            "title": "Cavia porcellus",
+            "badges": []
+        },
+        "srwiki": {
+            "site": "srwiki",
+            "title": "Морско прасе",
+            "badges": []
+        },
+        "stqwiki": {
+            "site": "stqwiki",
+            "title": "Huusmeerswien",
+            "badges": []
+        },
+        "svwiki": {
+            "site": "svwiki",
+            "title": "Marsvin",
+            "badges": []
+        },
+        "tawiki": {
+            "site": "tawiki",
+            "title": "கினி எலி",
+            "badges": []
+        },
+        "tewiki": {
+            "site": "tewiki",
+            "title": "గినియా పిగ్",
+            "badges": []
+        },
+        "thwiki": {
+            "site": "thwiki",
+            "title": "หนูตะเภา",
+            "badges": []
+        },
+        "tlwiki": {
+            "site": "tlwiki",
+            "title": "Konehilyo",
+            "badges": []
+        },
+        "trwiki": {
+            "site": "trwiki",
+            "title": "Kobay",
+            "badges": []
+        },
+        "ukwiki": {
+            "site": "ukwiki",
+            "title": "Кавія свійська",
+            "badges": []
+        },
+        "viwiki": {
+            "site": "viwiki",
+            "title": "Chuột lang nhà",
+            "badges": []
+        },
+        "vlswiki": {
+            "site": "vlswiki",
+            "title": "Spaansche ratte",
+            "badges": []
+        },
+        "warwiki": {
+            "site": "warwiki",
+            "title": "Cavia porcellus",
+            "badges": []
+        },
+        "wawiki": {
+            "site": "wawiki",
+            "title": "Pourcea d' montinne",
+            "badges": []
+        },
+        "wuuwiki": {
+            "site": "wuuwiki",
+            "title": "豚鼠",
+            "badges": []
+        },
+        "zh_yuewiki": {
+            "site": "zh_yuewiki",
+            "title": "天竺鼠",
+            "badges": []
+        },
+        "zhwiki": {
+            "site": "zhwiki",
+            "title": "豚鼠",
+            "badges": []
+        }
+    }
+}

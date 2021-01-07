@@ -1,0 +1,1163 @@
+{
+    "pageid": 681603,
+    "ns": 0,
+    "title": "Q724983",
+    "lastrevid": 1330519025,
+    "modified": "2020-12-29T01:37:24Z",
+    "type": "item",
+    "id": "Q724983",
+    "labels": {
+        "eu": {
+            "language": "eu",
+            "value": "Fukomys anselli"
+        },
+        "en": {
+            "language": "en",
+            "value": "Fukomys anselli"
+        },
+        "es": {
+            "language": "es",
+            "value": "Fukomys anselli"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "Cryptomys anselli"
+        },
+        "vi": {
+            "language": "vi",
+            "value": "Cryptomys anselli"
+        },
+        "it": {
+            "language": "it",
+            "value": "Fukomys anselli"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "Fukomys anselli"
+        },
+        "la": {
+            "language": "la",
+            "value": "Fukomys anselli"
+        },
+        "de": {
+            "language": "de",
+            "value": "Fukomys anselli"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "Fukomys anselli"
+        },
+        "ca": {
+            "language": "ca",
+            "value": "Fukomys anselli"
+        },
+        "ru": {
+            "language": "ru",
+            "value": "Fukomys anselli"
+        },
+        "cs": {
+            "language": "cs",
+            "value": "Fukomys anselli"
+        },
+        "sv": {
+            "language": "sv",
+            "value": "Fukomys anselli"
+        },
+        "ko": {
+            "language": "ko",
+            "value": "안셀두더지쥐"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "Fukomys anselli"
+        },
+        "ast": {
+            "language": "ast",
+            "value": "Fukomys anselli"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "Fukomys anselli"
+        },
+        "ro": {
+            "language": "ro",
+            "value": "Fukomys anselli"
+        },
+        "pt": {
+            "language": "pt",
+            "value": "Fukomys anselli"
+        },
+        "pl": {
+            "language": "pl",
+            "value": "Fukomys anselli"
+        },
+        "sq": {
+            "language": "sq",
+            "value": "Fukomys anselli"
+        },
+        "ceb": {
+            "language": "ceb",
+            "value": "Fukomys anselli"
+        },
+        "war": {
+            "language": "war",
+            "value": "Fukomys anselli"
+        },
+        "fi": {
+            "language": "fi",
+            "value": "Fukomys anselli"
+        }
+    },
+    "descriptions": {
+        "de": {
+            "language": "de",
+            "value": "Art der Gattung Graumulle (Fukomys)"
+        },
+        "en": {
+            "language": "en",
+            "value": "species of mammal"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "вид бозайник"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "soort uit het geslacht Fukomys"
+        },
+        "sv": {
+            "language": "sv",
+            "value": "art av mullvadsgnagare"
+        },
+        "ar": {
+            "language": "ar",
+            "value": "نوع من الثدييات"
+        },
+        "zh": {
+            "language": "zh",
+            "value": "哺乳动物物种"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "вид ссавців"
+        },
+        "ast": {
+            "language": "ast",
+            "value": "especie de mamíferu"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "speiceas mamach"
+        },
+        "it": {
+            "language": "it",
+            "value": "specie di mammifero"
+        }
+    },
+    "aliases": {
+        "eu": [
+            {
+                "language": "eu",
+                "value": "Cryptomys anselli"
+            }
+        ],
+        "en": [
+            {
+                "language": "en",
+                "value": "Ansell's mole rat"
+            },
+            {
+                "language": "en",
+                "value": "Cryptomys anselli"
+            }
+        ]
+    },
+    "claims": {
+        "P105": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P105",
+                    "hash": "aebf3611b23ed90c7c0fc80f6cd1cb7be110ea59",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 7432,
+                            "id": "Q7432"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "q724983$D139FEBE-D63F-47DC-8CB9-3996D911B948",
+                "rank": "normal"
+            }
+        ],
+        "P141": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P141",
+                    "hash": "f6158175530e6b445bf4165a2355180396d6765a",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 211005,
+                            "id": "Q211005"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "q724983$5916EDD8-F24D-49C8-AFCA-F4536929E61F",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "1c49266d47ebf27ae0043b6a76ec603bad9da5ed",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "744bc312f33e8ae7ea0bc4910a0314a610cc3e72",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 104368521,
+                                            "id": "Q104368521"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P627": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P627",
+                                    "hash": "c9972d1c509d291d8c09749c0aa80ba93d97bf03",
+                                    "datavalue": {
+                                        "value": "44858",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "7c19ebf0632551d9c263bed2b9df22105e159c64",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2020-12-29T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P627",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P373": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P373",
+                    "hash": "23cc0053bfc4b3ea27bedc97b03f60f7c0e07c07",
+                    "datavalue": {
+                        "value": "Cryptomys anselli",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "q724983$0CFCBE83-67ED-4F47-9A4F-4F43B860C013",
+                "rank": "normal"
+            }
+        ],
+        "P225": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P225",
+                    "hash": "52e7fb7905a1760efdb216b40642f65ec7ace12b",
+                    "datavalue": {
+                        "value": "Fukomys anselli",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "q724983$F6FB77F4-B500-481D-9965-86ABEEBFA5F2",
+                "rank": "normal"
+            }
+        ],
+        "P646": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P646",
+                    "hash": "18240e220bab1efc2a393cde98ac3b8818e7f36b",
+                    "datavalue": {
+                        "value": "/m/02wb5y0",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q724983$AFE5CD89-43E1-4B2D-ABAE-3D4077064952",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 15241312,
+                                            "id": "Q15241312"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-10-28T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P171": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P171",
+                    "hash": "a6e6156ae51fdb2ce3681c0dc3c8a812c0671d01",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 2469570,
+                            "id": "Q2469570"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q724983$C1BC7DF1-AF96-45F5-A52A-94777190BC1A",
+                "rank": "normal"
+            }
+        ],
+        "P31": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P31",
+                    "hash": "06629d890d7ab0ff85c403d8aadf57ce9809c01f",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 16521,
+                            "id": "Q16521"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q724983$2B81EFEC-390D-46E6-A485-E8165C49917B",
+                "rank": "normal"
+            }
+        ],
+        "P685": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P685",
+                    "hash": "c1cc8ed2f0a5258576aa3a6e5443040e71abd49a",
+                    "datavalue": {
+                        "value": "261002",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q724983$99794A09-D2D9-4ABC-AE07-A147699C8743",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "fc85b2719ff944c3b69c3c5e986f2c3012fb53f3",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "1851bc60ddfbcf6f76bd45aa7124fc0d5857a379",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 13711410,
+                                            "id": "Q13711410"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "f6f141c5bcd20de38857452090ff2657ec712e5e",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-11-12T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P1420": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1420",
+                    "hash": "aaab47ea349d0a7b646f9f619c1ba7464440dba2",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 20745667,
+                            "id": "Q20745667"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q724983$9b645288-4d13-1954-13a5-95de1ecbe675",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "464bb0550a2a5df049eb5375a74125725aca52e9",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P627": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P627",
+                    "hash": "c9972d1c509d291d8c09749c0aa80ba93d97bf03",
+                    "datavalue": {
+                        "value": "44858",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "Q724983$81CF3351-8317-44CA-8B00-63F38DE44C90",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "182efbdb9110d036ca433f3b49bd3a1ae312858b",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "8c1c5174f4811115ea8a0def725fdc074c2ef036",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-07-10T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P1843": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "414f1b55d428f9378797b1b1b4a8d3d57557f5f7",
+                    "datavalue": {
+                        "value": {
+                            "text": "Zambian Mole-rat",
+                            "language": "en"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q724983$4ED86DBB-E93B-496B-A4E3-68CAE2481EC1",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "eada84c58a38325085267509899037535799e978",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "3e51c3c32949f8a45f2c3331f55ea6ae68ecf3fe",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-10-21T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    },
+                    {
+                        "hash": "0549f9848e860ccec7040c9d7bbc3fcfa7e65223",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "e17975e5c866df46673c91b2287a82cf23d14f5a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 27310853,
+                                            "id": "Q27310853"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P304": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P304",
+                                    "hash": "d25c6d60c86e4d76efbaf53ca58a842a31755e01",
+                                    "datavalue": {
+                                        "value": "74",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P304"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "ac0bce754f7bd64f2f7c109c744f924b37e94908",
+                    "datavalue": {
+                        "value": {
+                            "text": "Zambian Mole Rat",
+                            "language": "en"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q724983$DF96B329-AA0B-4788-AE28-751DD5468C14",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "eada84c58a38325085267509899037535799e978",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "3e51c3c32949f8a45f2c3331f55ea6ae68ecf3fe",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-10-21T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "597f2136d3697b4a5279af8b6fb29b45f0f42cbf",
+                    "datavalue": {
+                        "value": {
+                            "text": "Ansell’s Mole-rat",
+                            "language": "en"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q724983$2A60255C-2E88-40A1-ADB2-D6A929170B6E",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "0549f9848e860ccec7040c9d7bbc3fcfa7e65223",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "e17975e5c866df46673c91b2287a82cf23d14f5a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 27310853,
+                                            "id": "Q27310853"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P304": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P304",
+                                    "hash": "d25c6d60c86e4d76efbaf53ca58a842a31755e01",
+                                    "datavalue": {
+                                        "value": "74",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P304"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "412a278a1b9e432d3ae0148afff00fbf8627d8ae",
+                    "datavalue": {
+                        "value": {
+                            "text": "Ansell’s Blesmol",
+                            "language": "en"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q724983$A8903A4D-1816-4C77-A67D-9DB4133FE653",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "0549f9848e860ccec7040c9d7bbc3fcfa7e65223",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "e17975e5c866df46673c91b2287a82cf23d14f5a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 27310853,
+                                            "id": "Q27310853"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P304": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P304",
+                                    "hash": "d25c6d60c86e4d76efbaf53ca58a842a31755e01",
+                                    "datavalue": {
+                                        "value": "74",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P304"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "ca8351405d90bb08b288957d24a9cc875339d880",
+                    "datavalue": {
+                        "value": {
+                            "text": "Ansell-Graumull",
+                            "language": "de"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q724983$76EFD544-C412-4CDF-B38B-FDC6737A5D43",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "0549f9848e860ccec7040c9d7bbc3fcfa7e65223",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "e17975e5c866df46673c91b2287a82cf23d14f5a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 27310853,
+                                            "id": "Q27310853"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P304": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P304",
+                                    "hash": "d25c6d60c86e4d76efbaf53ca58a842a31755e01",
+                                    "datavalue": {
+                                        "value": "74",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P304"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P838": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P838",
+                    "hash": "0da1a3880b801e403835464a5a3f435c7f0932b9",
+                    "datavalue": {
+                        "value": "302322",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q724983$6BD5688E-84BB-4CC7-AC59-0D178D1DBF3E",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "3bf39867b037e8e494a8389ae8a03bad6825a7fc",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "5946b91c53409c48f5f1fb0319ed41fc67a764da",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 191168,
+                                            "id": "Q191168"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P4024": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P4024",
+                    "hash": "33a1dbbb42374025866819e4238360202e79f4d9",
+                    "datavalue": {
+                        "value": "Cryptomys_anselli",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q724983$F57E7AD4-9380-4ABE-9BDE-4EF3622EF5EA",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 8447,
+                                            "id": "Q8447"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P18": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "46f68d9cb0cc0e37dbc3cc6c2747a0fd9f64d9c5",
+                    "datavalue": {
+                        "value": "Fukomys anselli.jpg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "Q724983$F36910AF-4B83-48C8-98E6-567DCB46EA58",
+                "rank": "normal"
+            }
+        ],
+        "P4728": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P4728",
+                    "hash": "a03f2452619fe9ad5b43e214362f73fb1848f7e8",
+                    "datavalue": {
+                        "value": "5987773",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q724983$AD988D48-515E-4704-8A21-E2D2A2D94331",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 8447,
+                                            "id": "Q8447"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P3151": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P3151",
+                    "hash": "3ba9aea5fa56253e380008a3a51fc6b1402b67dc",
+                    "datavalue": {
+                        "value": "446617",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q724983$9125985D-4EE9-4093-8FCB-526BC2E5F315",
+                "rank": "normal"
+            }
+        ]
+    },
+    "sitelinks": {
+        "bgwiki": {
+            "site": "bgwiki",
+            "title": "Fukomys anselli",
+            "badges": []
+        },
+        "cawiki": {
+            "site": "cawiki",
+            "title": "Fukomys anselli",
+            "badges": []
+        },
+        "commonswiki": {
+            "site": "commonswiki",
+            "title": "Category:Fukomys anselli",
+            "badges": []
+        },
+        "cswiki": {
+            "site": "cswiki",
+            "title": "Fukomys anselli",
+            "badges": []
+        },
+        "dewiki": {
+            "site": "dewiki",
+            "title": "Ansells Graumull",
+            "badges": []
+        },
+        "enwiki": {
+            "site": "enwiki",
+            "title": "Ansell's mole-rat",
+            "badges": []
+        },
+        "eswiki": {
+            "site": "eswiki",
+            "title": "Fukomys anselli",
+            "badges": []
+        },
+        "euwiki": {
+            "site": "euwiki",
+            "title": "Fukomys anselli",
+            "badges": []
+        },
+        "frwiki": {
+            "site": "frwiki",
+            "title": "Cryptomys anselli",
+            "badges": []
+        },
+        "kowiki": {
+            "site": "kowiki",
+            "title": "안셀두더지쥐",
+            "badges": []
+        },
+        "nlwiki": {
+            "site": "nlwiki",
+            "title": "Cryptomys anselli",
+            "badges": []
+        },
+        "specieswiki": {
+            "site": "specieswiki",
+            "title": "Fukomys anselli",
+            "badges": []
+        },
+        "svwiki": {
+            "site": "svwiki",
+            "title": "Fukomys anselli",
+            "badges": []
+        },
+        "viwiki": {
+            "site": "viwiki",
+            "title": "Fukomys anselli",
+            "badges": []
+        }
+    }
+}

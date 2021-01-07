@@ -1,0 +1,347 @@
+{
+    "pageid": 41785935,
+    "ns": 0,
+    "title": "Q40446022",
+    "lastrevid": 1297207314,
+    "modified": "2020-10-25T13:30:34Z",
+    "type": "item",
+    "id": "Q40446022",
+    "labels": {
+        "en": {
+            "language": "en",
+            "value": "Ateles fusciceps robustus"
+        },
+        "de": {
+            "language": "de",
+            "value": "Ateles fusciceps robustus"
+        },
+        "it": {
+            "language": "it",
+            "value": "Ateles fusciceps robustus"
+        },
+        "es": {
+            "language": "es",
+            "value": "Ateles fusciceps robustus"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "Ateles fusciceps robustus"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "Ateles fusciceps robustus"
+        },
+        "ru": {
+            "language": "ru",
+            "value": "Ateles fusciceps robustus"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "Ateles fusciceps robustus"
+        },
+        "la": {
+            "language": "la",
+            "value": "Ateles fusciceps robustus"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "Ateles fusciceps robustus"
+        },
+        "ast": {
+            "language": "ast",
+            "value": "Ateles fusciceps robustus"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "Ateles fusciceps robustus"
+        },
+        "ro": {
+            "language": "ro",
+            "value": "Ateles fusciceps robustus"
+        },
+        "pt": {
+            "language": "pt",
+            "value": "Ateles fusciceps robustus"
+        },
+        "pl": {
+            "language": "pl",
+            "value": "Ateles fusciceps robustus"
+        },
+        "vi": {
+            "language": "vi",
+            "value": "Ateles fusciceps robustus"
+        },
+        "sq": {
+            "language": "sq",
+            "value": "Ateles fusciceps robustus"
+        },
+        "ceb": {
+            "language": "ceb",
+            "value": "Ateles fusciceps robustus"
+        },
+        "war": {
+            "language": "war",
+            "value": "Ateles fusciceps robustus"
+        },
+        "fi": {
+            "language": "fi",
+            "value": "Ateles fusciceps robustus"
+        }
+    },
+    "descriptions": {
+        "de": {
+            "language": "de",
+            "value": "Unterart der Art Braunkopfklammeraffe (Ateles fusciceps)"
+        },
+        "en": {
+            "language": "en",
+            "value": "subspecies of mammal"
+        },
+        "ar": {
+            "language": "ar",
+            "value": "نُويع من الثدييات"
+        }
+    },
+    "aliases": {},
+    "claims": {
+        "P225": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P225",
+                    "hash": "660dcb72b6c6b3e6593234abf061be23867ef5ac",
+                    "datavalue": {
+                        "value": "Ateles fusciceps robustus",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "Q40446022$313649BD-85F3-4085-9C14-94819144B425",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "6caef0f42e2aa090440196f4afc71ea4b0fcf7d2",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "6816dbf868665a8327ab64fcd50beac226695191",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 309388,
+                                            "id": "Q309388"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P31": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P31",
+                    "hash": "06629d890d7ab0ff85c403d8aadf57ce9809c01f",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 16521,
+                            "id": "Q16521"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q40446022$E11CB110-5D7E-4309-81CE-19E31BB2F600",
+                "rank": "normal"
+            }
+        ],
+        "P105": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P105",
+                    "hash": "e44184dde557014194a9ee8a713c46b37258a927",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 68947,
+                            "id": "Q68947"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q40446022$DC52F4A0-176E-469D-B437-3184A5178E58",
+                "rank": "normal"
+            }
+        ],
+        "P171": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P171",
+                    "hash": "ad6648e6f257ca1d1a8f691f293f4e1f2db951ac",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 653650,
+                            "id": "Q653650"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q40446022$9048BE7E-61AB-43B0-9440-88F85D2A51B0",
+                "rank": "normal"
+            }
+        ],
+        "P842": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P842",
+                    "hash": "f16dcce4acc787e121166b7bd14767d7152e872b",
+                    "datavalue": {
+                        "value": "242337",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q40446022$F40071F8-6EEE-4793-B435-066F5F2CDA16",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "38677bad8e08bccfcb7347b61f8ee94f8ae8a8ae",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "00fe2206a3342fa25c0cfe1d08783c49a1986f12",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 796451,
+                                            "id": "Q796451"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "3e8c7ac5540a09acadc634ed60c6c7b3dbb3e387",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2017-09-28T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P685": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P685",
+                    "hash": "f27c4f125276c41319b0a37f7999f464e7d7b1c6",
+                    "datavalue": {
+                        "value": "183327",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q40446022$016CE664-CA04-43E2-B3B5-116F34288BEA",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "c3e1c857de6918111ce42875c6c7fce621f162e0",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "1851bc60ddfbcf6f76bd45aa7124fc0d5857a379",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 13711410,
+                                            "id": "Q13711410"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "20c4902f7442533726aeb59292cc42eb79af6fcd",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2017-09-29T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "sitelinks": {
+        "commonswiki": {
+            "site": "commonswiki",
+            "title": "Category:Ateles fusciceps robustus",
+            "badges": []
+        }
+    }
+}

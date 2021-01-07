@@ -1,0 +1,893 @@
+{
+    "pageid": 647951,
+    "ns": 0,
+    "title": "Q687702",
+    "lastrevid": 1299548374,
+    "modified": "2020-10-29T21:55:38Z",
+    "type": "item",
+    "id": "Q687702",
+    "labels": {
+        "zh-hans": {
+            "language": "zh-hans",
+            "value": "皮兰哈装甲车"
+        },
+        "zh-hant": {
+            "language": "zh-hant",
+            "value": "水虎魚裝甲車"
+        },
+        "zh-hk": {
+            "language": "zh-hk",
+            "value": "水虎魚裝甲車"
+        },
+        "pt": {
+            "language": "pt",
+            "value": "Mowag Piranha"
+        },
+        "pl": {
+            "language": "pl",
+            "value": "Mowag Piranha"
+        },
+        "ru": {
+            "language": "ru",
+            "value": "MOWAG Piranha"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "Mowag Piranha"
+        },
+        "es": {
+            "language": "es",
+            "value": "MOWAG Piranha"
+        },
+        "en": {
+            "language": "en",
+            "value": "Piranha"
+        },
+        "tr": {
+            "language": "tr",
+            "value": "MOWAG Piranha"
+        },
+        "ro": {
+            "language": "ro",
+            "value": "Mowag Piranha"
+        },
+        "ms": {
+            "language": "ms",
+            "value": "MOWAG Piranha"
+        },
+        "it": {
+            "language": "it",
+            "value": "MOWAG Piranha"
+        },
+        "de": {
+            "language": "de",
+            "value": "Piranha"
+        },
+        "ja": {
+            "language": "ja",
+            "value": "ピラーニャ"
+        },
+        "hr": {
+            "language": "hr",
+            "value": "MOWAG Piranha"
+        },
+        "da": {
+            "language": "da",
+            "value": "Mowag Piranha"
+        },
+        "sv": {
+            "language": "sv",
+            "value": "Mowag Piranha"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "Mowag Piranha"
+        },
+        "nb": {
+            "language": "nb",
+            "value": "MOWAG Piranha"
+        },
+        "zh": {
+            "language": "zh",
+            "value": "水虎魚裝甲車"
+        },
+        "id": {
+            "language": "id",
+            "value": "MOWAG Piranha"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "MOWAG Piranha"
+        },
+        "ko": {
+            "language": "ko",
+            "value": "모바그 피라냐"
+        },
+        "ar": {
+            "language": "ar",
+            "value": "مواغ بيرانا"
+        },
+        "ca": {
+            "language": "ca",
+            "value": "MOWAG Piranha"
+        },
+        "vi": {
+            "language": "vi",
+            "value": "Mowag Piranha"
+        },
+        "cs": {
+            "language": "cs",
+            "value": "Piranha"
+        }
+    },
+    "descriptions": {
+        "en": {
+            "language": "en",
+            "value": "armored fighting vehicle family by MOWAG"
+        },
+        "es": {
+            "language": "es",
+            "value": "Vehículo blindado de combate"
+        },
+        "it": {
+            "language": "it",
+            "value": "Veicolo ruotato trasporto truppe di fabbricazione svizzera"
+        },
+        "cs": {
+            "language": "cs",
+            "value": "švýcarské obrněné vozidlo"
+        },
+        "de": {
+            "language": "de",
+            "value": "gepanzertes Radfahrzeug des Schweizer Herstellers"
+        },
+        "zh": {
+            "language": "zh",
+            "value": "瑞士製裝甲車"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "Véhicule militaire blindé suisse"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "Militair voertuig"
+        }
+    },
+    "aliases": {
+        "zh": [
+            {
+                "language": "zh",
+                "value": "皮兰哈装甲车"
+            },
+            {
+                "language": "zh",
+                "value": "食人魚裝甲車"
+            },
+            {
+                "language": "zh",
+                "value": "Mowag Piranha"
+            }
+        ],
+        "pt": [
+            {
+                "language": "pt",
+                "value": "Piranha IIIC"
+            }
+        ],
+        "ru": [
+            {
+                "language": "ru",
+                "value": "БТР Piranha"
+            },
+            {
+                "language": "ru",
+                "value": "Piranha"
+            }
+        ],
+        "es": [
+            {
+                "language": "es",
+                "value": "MOWAG Piraña"
+            },
+            {
+                "language": "es",
+                "value": "Piranha"
+            }
+        ],
+        "de": [
+            {
+                "language": "de",
+                "value": "MOWAG Piranha 6x6"
+            }
+        ],
+        "ja": [
+            {
+                "language": "ja",
+                "value": "モワク ピラーニャ"
+            },
+            {
+                "language": "ja",
+                "value": "ピラーニャ装甲兵員輸送車"
+            }
+        ],
+        "sv": [
+            {
+                "language": "sv",
+                "value": "Piranha V"
+            }
+        ],
+        "en": [
+            {
+                "language": "en",
+                "value": "Mowag Piranha"
+            }
+        ],
+        "cs": [
+            {
+                "language": "cs",
+                "value": "Mowag Piranha"
+            }
+        ]
+    },
+    "claims": {
+        "P373": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P373",
+                    "hash": "8180344e69adedf6d41f325d0149869eb82034a0",
+                    "datavalue": {
+                        "value": "MOWAG Piranha",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "q687702$1A77AE9A-F5DA-420D-B27D-B2446813AFF5",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 328,
+                                            "id": "Q328"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P646": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P646",
+                    "hash": "2b94b8b2a147aed3a932c14cd2f14a3a9cb532c5",
+                    "datavalue": {
+                        "value": "/m/02mpnz",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q687702$67A618EC-5A1E-4342-BE2C-6D5EFB414E69",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 15241312,
+                                            "id": "Q15241312"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-10-28T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P495": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P495",
+                    "hash": "422a58500b1839ec32e81a6786378211dd00ac50",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 39,
+                            "id": "Q39"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q687702$8CE0F217-C0CB-419D-B409-E304032E6C96",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 328,
+                                            "id": "Q328"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P287": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P287",
+                    "hash": "d51c2fb80fbb0e1b83a920630489b43dedc9e95e",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 688141,
+                            "id": "Q688141"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q687702$D7B6BCC2-F24F-4302-A0E5-40EB28AE25E5",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 328,
+                                            "id": "Q328"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P176": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P176",
+                    "hash": "f3d014904de9c430e43280bea4b81d8be3e74343",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 688141,
+                            "id": "Q688141"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q687702$A3D92005-D92C-4A70-AB28-EE2CB8F88708",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 328,
+                                            "id": "Q328"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P18": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "9a20b75861972882eb20f3516d3fe9adc2e35388",
+                    "datavalue": {
+                        "value": "Irish Army Mowag Piranha.jpg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "Q687702$2868BDB3-BAD3-421C-A0DE-AAA8D746C620",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 328,
+                                            "id": "Q328"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "075a7ed3b99a9fa20243ec4502830f334254f30b",
+                    "datavalue": {
+                        "value": "MOWAG Piranha 4x4.JPG",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "Q687702$1B9C5B25-D909-49CB-9CF0-98A4BB06E5AB",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 328,
+                                            "id": "Q328"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "a775cd93e482a2df5f4ac56d8437eb9fab17e5a5",
+                    "datavalue": {
+                        "value": "San Piranha.jpg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "Q687702$278A6169-C9B8-4586-95E4-541A580A6A76",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 328,
+                                            "id": "Q328"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "bfae18c2d14a8d3f12bf7f586dfea9b1bd2d2a18",
+                    "datavalue": {
+                        "value": "MOWAG PIRANHA 10x10 front.JPG",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "Q687702$705DB0B8-15F2-410F-8D63-3CB7542F5DA0",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 328,
+                                            "id": "Q328"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P935": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P935",
+                    "hash": "eb5e926f538aefc49eca0b1288d94f2f77016005",
+                    "datavalue": {
+                        "value": "MOWAG Piranha",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "Q687702$283D06D7-61D4-4643-A77D-7ADB8FBEA2DB",
+                "rank": "normal"
+            }
+        ],
+        "P910": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P910",
+                    "hash": "a07c13fd601cbe5f9c2941e017b72b5feb764d18",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 55309778,
+                            "id": "Q55309778"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q687702$07578B69-A741-4C37-A467-884A1B6B7E23",
+                "rank": "normal"
+            }
+        ],
+        "P31": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P31",
+                    "hash": "d371ad8ba286e8d2cfede5816ac65403ce617c43",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 100709275,
+                            "id": "Q100709275"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q687702$7dc68533-4b78-0e05-0376-b0a40025fc31",
+                "rank": "normal"
+            }
+        ],
+        "P279": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P279",
+                    "hash": "5c6da93670b5ddde6ed431d4d828bbda2714ce0f",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 130368,
+                            "id": "Q130368"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q687702$89799bd7-48cc-58ae-68cf-1878bff34b62",
+                "rank": "normal"
+            }
+        ],
+        "P1343": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1343",
+                    "hash": "2b1bde6fa7d1b773491637e90ceff19df813569d",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 29476558,
+                            "id": "Q29476558"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "qualifiers": {
+                    "P304": [
+                        {
+                            "snaktype": "value",
+                            "property": "P304",
+                            "hash": "ef9272040c210cb1651093974e376d42298b21ea",
+                            "datavalue": {
+                                "value": "275-276",
+                                "type": "string"
+                            },
+                            "datatype": "string"
+                        }
+                    ]
+                },
+                "qualifiers-order": [
+                    "P304"
+                ],
+                "id": "Q687702$eacde08a-41cc-b20c-3a89-5b820df1a740",
+                "rank": "normal"
+            }
+        ]
+    },
+    "sitelinks": {
+        "arwiki": {
+            "site": "arwiki",
+            "title": "مواغ بيرانا",
+            "badges": []
+        },
+        "cawiki": {
+            "site": "cawiki",
+            "title": "MOWAG Piranha",
+            "badges": []
+        },
+        "commonswiki": {
+            "site": "commonswiki",
+            "title": "MOWAG Piranha",
+            "badges": []
+        },
+        "dawiki": {
+            "site": "dawiki",
+            "title": "Mowag Piranha",
+            "badges": []
+        },
+        "dewiki": {
+            "site": "dewiki",
+            "title": "Mowag Piranha",
+            "badges": []
+        },
+        "enwiki": {
+            "site": "enwiki",
+            "title": "Mowag Piranha",
+            "badges": []
+        },
+        "eswiki": {
+            "site": "eswiki",
+            "title": "MOWAG Piranha",
+            "badges": []
+        },
+        "frwiki": {
+            "site": "frwiki",
+            "title": "Mowag Piranha",
+            "badges": []
+        },
+        "hrwiki": {
+            "site": "hrwiki",
+            "title": "MOWAG Piranha",
+            "badges": []
+        },
+        "idwiki": {
+            "site": "idwiki",
+            "title": "MOWAG Piranha",
+            "badges": []
+        },
+        "itwiki": {
+            "site": "itwiki",
+            "title": "MOWAG Piranha",
+            "badges": []
+        },
+        "jawiki": {
+            "site": "jawiki",
+            "title": "ピラーニャ",
+            "badges": []
+        },
+        "kowiki": {
+            "site": "kowiki",
+            "title": "모바그 피라냐",
+            "badges": []
+        },
+        "mswiki": {
+            "site": "mswiki",
+            "title": "MOWAG Piranha",
+            "badges": []
+        },
+        "nlwiki": {
+            "site": "nlwiki",
+            "title": "Mowag Piranha",
+            "badges": []
+        },
+        "nowiki": {
+            "site": "nowiki",
+            "title": "MOWAG Piranha",
+            "badges": []
+        },
+        "plwiki": {
+            "site": "plwiki",
+            "title": "Mowag Piranha",
+            "badges": []
+        },
+        "ptwiki": {
+            "site": "ptwiki",
+            "title": "Mowag Piranha",
+            "badges": []
+        },
+        "rowiki": {
+            "site": "rowiki",
+            "title": "Mowag Piranha",
+            "badges": []
+        },
+        "ruwiki": {
+            "site": "ruwiki",
+            "title": "MOWAG Piranha",
+            "badges": []
+        },
+        "svwiki": {
+            "site": "svwiki",
+            "title": "Mowag Piranha",
+            "badges": []
+        },
+        "trwiki": {
+            "site": "trwiki",
+            "title": "MOWAG Piranha",
+            "badges": []
+        },
+        "ukwiki": {
+            "site": "ukwiki",
+            "title": "MOWAG Piranha",
+            "badges": []
+        },
+        "viwiki": {
+            "site": "viwiki",
+            "title": "Mowag Piranha",
+            "badges": []
+        },
+        "zhwiki": {
+            "site": "zhwiki",
+            "title": "水虎魚裝甲車",
+            "badges": []
+        }
+    }
+}

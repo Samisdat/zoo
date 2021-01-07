@@ -2,7 +2,7 @@
 slug: kalifornischer-seeloewe
 title: Kalifornischer Seelöwe
 wikipedia: 
-wikidata: 
+wikidata: Q379732
 latin:
 image: Kalifornischer Seelöwe
 class: Säugetiere

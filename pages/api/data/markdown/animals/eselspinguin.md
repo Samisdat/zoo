@@ -2,7 +2,7 @@
 slug: eselspinguin
 title: Eselspinguin
 wikipedia: https://de.wikipedia.org/wiki/Eselspinguin
-wikidata: https://www.wikidata.org/wiki/Q213021?uselang=de
+wikidata: Q213021
 latin:
 image: Eselspinguin
 class: Vögel

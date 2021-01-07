@@ -2,7 +2,7 @@
 slug: braunbauch-laubenvogel
 title: Braunbauch-Laubenvogel
 wikipedia: https://de.wikipedia.org/wiki/Braunbauch-Laubenvogel
-wikidata: https://www.wikidata.org/wiki/Q863070?uselang=de 
+wikidata: Q863070 
 latin:
 image: Braunbauch-Laubenvogel
 class: Vögel

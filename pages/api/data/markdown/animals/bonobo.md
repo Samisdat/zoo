@@ -2,7 +2,7 @@
 slug: bonobo
 title: Bonobo
 wikipedia: https://de.wikipedia.org/wiki/Bonobo
-wikidata: https://www.wikidata.org/wiki/Q19537?uselang=de
+wikidata: Q19537
 latin:
 image: Bonobo
 class: Säugetiere

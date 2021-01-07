@@ -2,7 +2,7 @@
 slug: gruentangare
 title: Grüntangare
 wikipedia: 
-wikidata: 
+wikidata: Q2669329
 latin:
 image: Grüntangare
 class: Vögel

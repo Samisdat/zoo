@@ -2,7 +2,7 @@
 slug: gelber-rotmeer-schmetterlingsfisch
 title: Gelber Rotmeer-Schmetterlingsfisch
 wikipedia: https://de.wikipedia.org/wiki/Maskenfalterfisch
-wikidata: https://www.wikidata.org/wiki/Q1281124?uselang=de
+wikidata: Q1281124
 latin:
 image: Gelber Rotmeer-Schmetterlingsfisch
 class: Strahlenflosser

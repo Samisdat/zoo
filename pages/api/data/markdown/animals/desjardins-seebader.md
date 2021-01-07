@@ -2,7 +2,7 @@
 slug: desjardins-seebader
 title: Desjardins Seebader
 wikipedia: https://de.wikipedia.org/wiki/Indischer_Segelflossendoktor
-wikidata: https://www.wikidata.org/wiki/Q1661589?uselang=de 
+wikidata: Q1661589 
 latin:
 image: Desjardins Seebader
 class: Strahlenflosser

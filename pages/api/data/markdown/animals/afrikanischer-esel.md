@@ -2,7 +2,7 @@
 slug: afrikanischer-esel
 title: Afrikanischer Esel
 wikipedia: https://de.wikipedia.org/wiki/Afrikanischer_Esel
-wikidata: https://www.wikidata.org/wiki/Q208140?uselang=de
+wikidata: Q208140
 latin: Equus asinus
 image:  
 class: Säugetiere

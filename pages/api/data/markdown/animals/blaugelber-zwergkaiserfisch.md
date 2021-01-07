@@ -2,7 +2,7 @@
 slug: blaugelber-zwergkaiserfisch
 title: Blaugelber Zwergkaiserfisch
 wikipedia: https://de.wikipedia.org/wiki/Blaugelber_Zwergkaiserfisch
-wikidata: https://www.wikidata.org/wiki/Q882860?uselang=de 
+wikidata: Q882860 
 latin:
 image: Blaugelber Zwergkaiserfisch
 class: Strahlenflosser

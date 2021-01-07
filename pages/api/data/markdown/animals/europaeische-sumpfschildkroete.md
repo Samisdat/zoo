@@ -2,7 +2,7 @@
 slug: europaeische-sumpfschildkroete
 title: Europäische Sumpfschildkröte
 wikipedia: https://de.wikipedia.org/wiki/Europ%C3%A4ische_Sumpfschildkr%C3%B6te
-wikidata: https://www.wikidata.org/wiki/Q187036?uselang=de 
+wikidata: Q187036 
 latin:
 image: Europäische Sumpfschildkröte
 class: Reptilien

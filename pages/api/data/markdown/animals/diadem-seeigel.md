@@ -2,7 +2,7 @@
 slug: diadem-seeigel
 title: Diadem-Seeigel
 wikipedia: https://de.wikipedia.org/wiki/Diademseeigel
-wikidata: https://www.wikidata.org/wiki/Q901480?uselang=de
+wikidata: Q901480
 latin:
 image: Diadem-Seeigel
 class: Seeigel

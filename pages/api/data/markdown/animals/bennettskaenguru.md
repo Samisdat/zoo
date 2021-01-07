@@ -1,7 +1,7 @@
 slug: bennettskaenguru
 title: Bennettskänguru
 wikipedia: https://de.wikipedia.org/wiki/Rotnackenwallaby
-wikidata: https://www.wikidata.org/wiki/Q249024?uselang=de
+wikidata: Q249024
 latin:
 image: Bennettskänguru
 class: Säugetiere

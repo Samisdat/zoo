@@ -2,7 +2,7 @@
 slug: brandgans
 title: Brandgans
 wikipedia: https://de.wikipedia.org/wiki/Brandgans
-wikidata: https://www.wikidata.org/wiki/Q25761?uselang=de
+wikidata: Q25761
 latin:
 image: Brandgans
 class: Vögel

@@ -2,7 +2,7 @@
 slug: hyazinthara
 title: Hyazinthara
 wikipedia: 
-wikidata: 
+wikidata: Q463154
 latin:
 image: Hyazinthara
 class: Vögel

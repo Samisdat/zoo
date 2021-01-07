@@ -2,7 +2,7 @@
 slug: diamanttaeubchen
 title: Diamanttäubchen
 wikipedia: https://de.wikipedia.org/wiki/Diamantt%C3%A4ubchen
-wikidata: https://www.wikidata.org/wiki/Q58904?uselang=de
+wikidata: Q58904
 latin:
 image: Diamanttäubchen
 class: Vögel

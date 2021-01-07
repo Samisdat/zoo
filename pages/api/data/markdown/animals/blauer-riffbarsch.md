@@ -2,7 +2,7 @@
 slug: blauer-riffbarsch
 title: Blauer Riffbarsch
 wikipedia: https://en.wikipedia.org/wiki/Chrysiptera_cyanea
-wikidata: https://www.wikidata.org/wiki/Q1123833
+wikidata: Q1123833
 latin:
 image: Blauer Riffbarsch
 class: Strahlenflosser

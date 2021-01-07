@@ -2,7 +2,7 @@
 slug: gestreifter-blattsteiger
 title: Gestreifter Blattsteiger
 wikipedia: https://de.wikipedia.org/wiki/Gestreifter_Blattsteiger
-wikidata: https://www.wikidata.org/wiki/Q1519617?uselang=de
+wikidata: Q1519617
 latin:
 image: Gestreifter Blattsteiger
 class: Lurche

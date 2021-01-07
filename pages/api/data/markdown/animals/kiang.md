@@ -2,7 +2,7 @@
 slug: kiang
 title: Kiang
 wikipedia: 
-wikidata: 
+wikidata: Q221380
 latin:
 image: Kiang
 class: Säugetiere

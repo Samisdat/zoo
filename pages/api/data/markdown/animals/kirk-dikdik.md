@@ -2,7 +2,7 @@
 slug: kirk-dikdik
 title: Kirk-Dikdik
 wikipedia: 
-wikidata: 
+wikidata: Q833607
 latin:
 image: Kirk-Dikdik
 class: Säugetiere

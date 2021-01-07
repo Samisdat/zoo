@@ -2,7 +2,7 @@
 slug: hardun
 title: Hardun
 wikipedia: 
-wikidata: 
+wikidata: Q510067
 latin:
 image: Hardun
 class: Reptilien

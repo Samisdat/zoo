@@ -2,7 +2,7 @@
 slug: kornnatter
 title: Kornnatter
 wikipedia: 
-wikidata: 
+wikidata: Q754747 
 latin:
 image: Kornnatter
 class: Reptilien

@@ -2,7 +2,7 @@
 slug: afrikanischer-riesentausendfuesser
 title: Afrikanischer Riesentausendfüßer
 wikipedia: https://de.wikipedia.org/wiki/Archispirostreptus_gigas
-wikidata: https://www.wikidata.org/wiki/Q1954820?uselang=de
+wikidata: Q1954820
 latin: Archispirostreptus gigas
 image: 
 class: Doppelfüßer

@@ -2,7 +2,7 @@
 slug: kaptriel
 title: Kaptriel
 wikipedia: 
-wikidata: 
+wikidata: Q1002588
 latin:
 image: Kaptriel
 class: Vögel

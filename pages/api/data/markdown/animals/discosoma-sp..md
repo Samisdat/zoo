@@ -2,7 +2,7 @@
 slug: discosoma-sp.
 title: Discosoma sp.
 wikipedia: https://de.wikipedia.org/wiki/Scheibenanemonen 
-wikidata: https://www.wikidata.org/wiki/Q1499582?uselang=de
+wikidata: Q1499582
 latin:
 image: Discosoma sp.
 class: Blumentiere

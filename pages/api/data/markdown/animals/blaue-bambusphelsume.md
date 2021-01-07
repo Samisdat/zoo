@@ -2,7 +2,7 @@
 slug: blaue-bambusphelsume
 title: Blaue Bambusphelsume
 wikipedia: https://de.wikipedia.org/wiki/Blauer_Bambus-Taggecko
-wikidata: https://www.wikidata.org/wiki/Q882598?uselang=de
+wikidata: Q882598
 latin:
 image: Blaue Bambusphelsume
 class: Reptilien

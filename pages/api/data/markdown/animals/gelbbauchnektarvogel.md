@@ -2,7 +2,7 @@
 slug: gelbbauchnektarvogel
 title: Gelbbauchnektarvogel
 wikipedia: https://de.wikipedia.org/wiki/Ziernektarvogel
-wikidata: https://www.wikidata.org/wiki/Q2209523?uselang=de
+wikidata: Q2209523
 latin:
 image: Gelbbauchnektarvogel
 class: Vögel

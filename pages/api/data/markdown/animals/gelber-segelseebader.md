@@ -2,7 +2,7 @@
 slug: gelber-segelseebader
 title: Gelber Segelseebader
 wikipedia: https://de.wikipedia.org/wiki/Gelber_Segelflossendoktor
-wikidata: https://www.wikidata.org/wiki/Q900868?uselang=de
+wikidata: Q900868
 latin:
 image: Gelber Segelseebader
 class: Strahlenflosser

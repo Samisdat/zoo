@@ -2,7 +2,7 @@
 slug: grosse-mara
 title: Große Mara
 wikipedia: 
-wikidata: 
+wikidata: Q194313
 latin:
 image: Große Mara
 class: Säugetiere

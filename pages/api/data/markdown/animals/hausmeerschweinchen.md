@@ -2,7 +2,7 @@
 slug: hausmeerschweinchen
 title: Hausmeerschweinchen
 wikipedia: 
-wikidata: 
+wikidata: Q79803
 latin:
 image: Hausmeerschweinchen
 class: Säugetiere

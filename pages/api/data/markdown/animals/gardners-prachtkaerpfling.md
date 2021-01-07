@@ -2,7 +2,7 @@
 slug: gardners-prachtkaerpfling
 title: Gardners Prachtkärpfling
 wikipedia: https://de.wikipedia.org/wiki/Stahlblauer_Prachtk%C3%A4rpfling
-wikidata: https://www.wikidata.org/wiki/Q2092830?uselang=de 
+wikidata: Q2092830 
 latin:
 image: Gardners Prachtkärpfling
 class: Strahlenflosser

@@ -2,7 +2,7 @@
 slug: halsbandpekari
 title: Halsbandpekari
 wikipedia: 
-wikidata: 
+wikidata: Q741516
 latin:
 image: Halsbandpekari
 class: Säugetiere

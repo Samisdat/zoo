@@ -2,7 +2,7 @@
 slug: hirscheber
 title: Hirscheber
 wikipedia: 
-wikidata: 
+wikidata: Q232558
 latin:
 image: Hirscheber
 class: Säugetiere

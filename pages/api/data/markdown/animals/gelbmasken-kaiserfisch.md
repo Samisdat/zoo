@@ -2,7 +2,7 @@
 slug: gelbmasken-kaiserfisch
 title: Gelbmasken-Kaiserfisch
 wikipedia: https://de.wikipedia.org/wiki/Blaukopf-Kaiserfisch
-wikidata: https://www.wikidata.org/wiki/Q882944?uselang=de
+wikidata: Q882944
 latin:
 image: Gelbmasken-Kaiserfisch
 class: Strahlenflosser

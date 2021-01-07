@@ -2,7 +2,7 @@
 slug: bernierente
 title: Bernierente
 wikipedia: https://de.wikipedia.org/wiki/Bernierente
-wikidata: https://www.wikidata.org/wiki/Q290199?uselang=de
+wikidata: Q290199
 latin:
 image: Bernierente
 class: Vögel

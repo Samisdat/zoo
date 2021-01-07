@@ -2,7 +2,7 @@
 slug: kolbenente
 title: Kolbenente
 wikipedia: 
-wikidata: 
+wikidata: Q244350
 latin:
 image: Kolbenente
 class: Vögel

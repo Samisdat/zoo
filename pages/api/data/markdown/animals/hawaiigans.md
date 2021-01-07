@@ -2,7 +2,7 @@
 slug: hawaiigans
 title: Hawaiigans
 wikipedia: 
-wikidata: 
+wikidata: Q687695
 latin:
 image: Hawaiigans
 class: Vögel

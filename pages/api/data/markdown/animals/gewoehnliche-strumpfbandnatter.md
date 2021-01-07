@@ -2,7 +2,7 @@
 slug: gewoehnliche-strumpfbandnatter
 title: Gewöhnliche Strumpfbandnatter 
 wikipedia: https://de.wikipedia.org/wiki/Gew%C3%B6hnliche_Strumpfbandnatter
-wikidata: https://www.wikidata.org/wiki/Q911786?uselang=de 
+wikidata: Q911786 
 latin:
 image: Gewöhnliche Strumpfbandnatter 
 class: Reptilien

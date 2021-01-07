@@ -2,7 +2,7 @@
 slug: bankivahuhn
 title: Bankivahuhn 
 wikipedia: https://de.wikipedia.org/wiki/Bankivahuhn
-wikidata: https://www.wikidata.org/wiki/Q184774?uselang=de
+wikidata: Q184774
 latin:
 image: 
 class: Vögel

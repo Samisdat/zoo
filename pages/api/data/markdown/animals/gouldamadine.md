@@ -2,7 +2,7 @@
 slug: gouldamadine
 title: Gouldamadine
 wikipedia: 
-wikidata: 
+wikidata: Q752146
 latin:
 image: Gouldamadine
 class: Vögel

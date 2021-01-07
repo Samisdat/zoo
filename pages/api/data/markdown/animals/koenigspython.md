@@ -2,7 +2,7 @@
 slug: koenigspython
 title: Königspython
 wikipedia: 
-wikidata: 
+wikidata: Q464424
 latin:
 image: Königspython
 class: Reptilien

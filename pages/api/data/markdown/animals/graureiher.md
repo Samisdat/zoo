@@ -2,7 +2,7 @@
 slug: graureiher
 title: Graureiher
 wikipedia: 
-wikidata: 
+wikidata: Q25273
 latin:
 image: Graureiher
 class: Vögel

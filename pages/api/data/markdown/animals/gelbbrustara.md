@@ -2,7 +2,7 @@
 slug: gelbbrustara
 title: Gelbbrustara
 wikipedia: https://de.wikipedia.org/wiki/Gelbbrustara
-wikidata: https://www.wikidata.org/wiki/Q205477?uselang=de
+wikidata: Q205477
 latin:
 image: Gelbbrustara
 class: Vögel

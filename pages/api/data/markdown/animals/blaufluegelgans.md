@@ -2,7 +2,7 @@
 slug: blaufluegelgans
 title: Blauflügelgans
 wikipedia: https://de.wikipedia.org/wiki/Blaufl%C3%BCgelgans
-wikidata: https://www.wikidata.org/wiki/Q658658?uselang=de
+wikidata: Q658658
 latin:
 image: Blauflügelgans
 class: Vögel

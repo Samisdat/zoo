@@ -2,7 +2,7 @@
 slug: goldring-borstenzahn-doktorfisch
 title: Goldring-Borstenzahn-Doktorfisch
 wikipedia: https://de.wikipedia.org/wiki/Goldring-Borstenzahndoktorfisch
-wikidata: https://www.wikidata.org/wiki/Q1235578?uselang=de 
+wikidata: Q1235578 
 latin:
 image: Goldring-Borstenzahn-Doktorfisch
 class: Strahlenflosser

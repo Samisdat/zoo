@@ -1,9 +1,9 @@
 ---
 slug: afrikanischer-esel
 title: Afrikanischer Esel 
-latin:
+latin: Equus asinus
 image: Afrikanischer Esel 
-wikipedia: 
+wikipedia: https://de.wikipedia.org/wiki/Afrikanischer_Esel
 class: Säugetiere
 order:  Unpaarhufer
 family:  Pferde

@@ -2,7 +2,7 @@
 slug: mosambique-guertelschweif
 title: Mosambique Gürtelschweif
 wikipedia: 
-wikidata: 
+wikidata: Q3486907
 latin:
 image: Mosambique Gürtelschweif
 class: Reptilien

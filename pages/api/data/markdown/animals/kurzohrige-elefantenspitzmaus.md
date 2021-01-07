@@ -2,7 +2,7 @@
 slug: kurzohrige-elefantenspitzmaus
 title: Kurzohrige Elefantenspitzmaus
 wikipedia: 
-wikidata: 
+wikidata: Q1130566
 latin:
 image: Kurzohrige Elefantenspitzmaus
 class: Säugetiere

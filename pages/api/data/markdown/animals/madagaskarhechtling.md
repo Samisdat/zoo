@@ -2,7 +2,7 @@
 slug: madagaskarhechtling
 title: Madagaskarhechtling
 wikipedia: 
-wikidata: 
+wikidata: Q285807
 latin:
 image: Madagaskarhechtling
 class: Strahlenflosser

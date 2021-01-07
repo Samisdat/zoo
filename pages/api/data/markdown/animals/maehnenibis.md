@@ -2,7 +2,7 @@
 slug: maehnenibis
 title: Mähnenibis
 wikipedia: 
-wikidata: 
+wikidata: Q477691
 latin:
 image: Mähnenibis
 class: Vögel

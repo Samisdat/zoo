@@ -2,7 +2,7 @@
 slug: lsd-leierfisch
 title: LSD-Leierfisch
 wikipedia: 
-wikidata: 
+wikidata: Q2052347
 latin:
 image: LSD-Leierfisch
 class: Strahlenflosser

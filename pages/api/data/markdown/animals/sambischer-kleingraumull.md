@@ -2,7 +2,7 @@
 slug: sambischer-kleingraumull
 title: Sambischer Kleingraumull
 wikipedia: 
-wikidata: 
+wikidata: Q724983
 latin:
 image: Sambischer Kleingraumull
 class: Säugetiere

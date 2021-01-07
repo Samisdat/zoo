@@ -2,7 +2,7 @@
 slug: rauhschuppenpython
 title: Rauhschuppenpython
 wikipedia: 
-wikidata: 
+wikidata: Q1541179
 latin:
 image: Rauhschuppenpython
 class: Reptilien

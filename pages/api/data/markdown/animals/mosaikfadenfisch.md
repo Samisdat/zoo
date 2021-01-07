@@ -2,7 +2,7 @@
 slug: mosaikfadenfisch
 title: Mosaikfadenfisch
 wikipedia: 
-wikidata: 
+wikidata: Q167648
 latin:
 image: Mosaikfadenfisch
 class: Strahlenflosser

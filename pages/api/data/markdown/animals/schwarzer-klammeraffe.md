@@ -2,7 +2,7 @@
 slug: schwarzer-klammeraffe
 title: Schwarzer Klammeraffe
 wikipedia: 
-wikidata: 
+wikidata: Q40446022
 latin:
 image: Schwarzer Klammeraffe
 class: Säugetiere

@@ -2,7 +2,7 @@
 slug: malaiischer-gabelbart
 title: Malaiischer Gabelbart
 wikipedia: 
-wikidata: 
+wikidata: Q728584
 latin:
 image: Malaiischer Gabelbart
 class: Strahlenflosser

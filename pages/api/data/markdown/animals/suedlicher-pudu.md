@@ -2,7 +2,7 @@
 slug: suedlicher-pudu
 title: Südlicher Pudu
 wikipedia: 
-wikidata: 
+wikidata: Q927065
 latin:
 image: Südlicher Pudu
 class: Säugetiere

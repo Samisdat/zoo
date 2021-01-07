@@ -1,9 +1,10 @@
 ---
 slug: zwergguertelschweif
 title: Zwerggürtelschweif
+wikipedia: 
+wikidata: 
 latin:
 image: Zwerggürtelschweif
-wikipedia: 
 class: Reptilien
 order:  Schuppenkriechtiere
 family:  Gürtelechsen

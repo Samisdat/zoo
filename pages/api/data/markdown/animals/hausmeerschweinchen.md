@@ -1,9 +1,10 @@
 ---
 slug: hausmeerschweinchen
 title: Hausmeerschweinchen
+wikipedia: 
+wikidata: 
 latin:
 image: Hausmeerschweinchen
-wikipedia: 
 class: Säugetiere
 order:  Nagetiere
 family:  Meerschweinchen

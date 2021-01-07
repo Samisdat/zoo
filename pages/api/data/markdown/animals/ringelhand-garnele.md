@@ -1,9 +1,10 @@
 ---
 slug: ringelhand-garnele
 title: Ringelhand-Garnele
+wikipedia: 
+wikidata: 
 latin:
 image: Ringelhand-Garnele
-wikipedia: 
 class: Höhere Krebse
 order:  Zehnfußkrebse
 family:  Felsen- und Partnergarnelen

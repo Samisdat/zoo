@@ -1,9 +1,10 @@
 ---
 slug: streifengans
 title: Streifengans
+wikipedia: 
+wikidata: 
 latin:
 image: Streifengans
-wikipedia: 
 class: Vögel
 order:  Gänsevögel
 family:  Entenvögel 

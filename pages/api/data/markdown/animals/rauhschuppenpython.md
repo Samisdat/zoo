@@ -1,9 +1,10 @@
 ---
 slug: rauhschuppenpython
 title: Rauhschuppenpython
+wikipedia: 
+wikidata: 
 latin:
 image: Rauhschuppenpython
-wikipedia: 
 class: Reptilien
 order:  Schuppenkriechtiere
 family:  Riesenschlangen

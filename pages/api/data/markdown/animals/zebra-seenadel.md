@@ -1,9 +1,10 @@
 ---
 slug: zebra-seenadel
 title: Zebra-Seenadel
+wikipedia: 
+wikidata: 
 latin:
 image: Zebra-Seenadel
-wikipedia: 
 class: Strahlenflosser
 order:  Seenadelartige
 family:  Seenadeln

@@ -1,9 +1,10 @@
 ---
 slug: stachelskink
 title: Stachelskink
+wikipedia: 
+wikidata: 
 latin:
 image: Stachelskink
-wikipedia: 
 class: Reptilien
 order:  Schuppenkriechtiere
 family:  Skinke

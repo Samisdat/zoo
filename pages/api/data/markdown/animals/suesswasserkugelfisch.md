@@ -1,9 +1,10 @@
 ---
 slug: suesswasserkugelfisch
 title: Süßwasserkugelfisch
+wikipedia: 
+wikidata: 
 latin:
 image: Süßwasserkugelfisch
-wikipedia: 
 class: Strahlenflosser
 order:  Kugelfischverwandte
 family:  Kugelfische

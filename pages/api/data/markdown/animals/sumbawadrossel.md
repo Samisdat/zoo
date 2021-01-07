@@ -1,9 +1,10 @@
 ---
 slug: sumbawadrossel
 title: Sumbawadrossel
+wikipedia: 
+wikidata: 
 latin:
 image: Sumbawadrossel
-wikipedia: 
 class: Vögel
 order:  Sperlingsvögel
 family:  Drosseln

@@ -1,9 +1,10 @@
 ---
 slug: gruentangare
 title: Grüntangare
+wikipedia: 
+wikidata: 
 latin:
 image: Grüntangare
-wikipedia: 
 class: Vögel
 order:  Sperlingsvögel
 family:  Tangaren

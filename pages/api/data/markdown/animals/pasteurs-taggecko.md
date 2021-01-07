@@ -1,9 +1,10 @@
 ---
 slug: pasteurs-taggecko
 title: Pasteurs Taggecko
+wikipedia: 
+wikidata: 
 latin:
 image: Pasteurs Taggecko
-wikipedia: 
 class: Reptilien
 order:  Schuppenkriechtiere
 family:  Geckos

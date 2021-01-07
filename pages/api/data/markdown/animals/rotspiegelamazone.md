@@ -1,9 +1,10 @@
 ---
 slug: rotspiegelamazone
 title: Rotspiegelamazone
+wikipedia: 
+wikidata: 
 latin:
 image: Rotspiegelamazone
-wikipedia: 
 class: Vögel
 order:  Papageien
 family:  Eigentliche Papageien

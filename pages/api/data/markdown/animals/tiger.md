@@ -1,9 +1,10 @@
 ---
 slug: tiger
 title: Tiger 
+wikipedia: 
+wikidata: 
 latin:
 image: Tiger 
-wikipedia: 
 class: Säugetiere
 order:  Raubtiere
 family:  Katzen 

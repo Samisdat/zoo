@@ -1,9 +1,10 @@
 ---
 slug: madagaskar-buntbarsch
 title: Madagaskar-Buntbarsch
+wikipedia: 
+wikidata: 
 latin:
 image: Madagaskar-Buntbarsch
-wikipedia: 
 class: Strahlenflosser
 order:  Barschartige
 family:  Buntbarsche

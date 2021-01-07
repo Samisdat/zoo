@@ -1,9 +1,10 @@
 ---
 slug: striemen-grasmaus
 title: Striemen-Grasmaus
+wikipedia: 
+wikidata: 
 latin:
 image: Striemen-Grasmaus
-wikipedia: 
 class: Säugetiere
 order:  Nagetiere
 family:  Langschwanzmäuse

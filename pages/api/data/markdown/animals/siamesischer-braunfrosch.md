@@ -1,9 +1,10 @@
 ---
 slug: siamesischer-braunfrosch
 title: Siamesischer Braunfrosch
+wikipedia: 
+wikidata: 
 latin:
 image: Siamesischer Braunfrosch
-wikipedia: 
 class: Lurche
 order:  Froschlurche
 family:  Echte Frösche

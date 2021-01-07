@@ -1,9 +1,10 @@
 ---
 slug: weissfluegelente
 title: Weißflügelente
+wikipedia: 
+wikidata: 
 latin:
 image: Weißflügelente
-wikipedia: 
 class: Vögel
 order:  Gänsevögel
 family:  Entenvögel 

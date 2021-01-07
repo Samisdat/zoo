@@ -1,9 +1,10 @@
 ---
 slug: stumpfkrokodil
 title: Stumpfkrokodil
+wikipedia: 
+wikidata: 
 latin:
 image: Stumpfkrokodil
-wikipedia: 
 class: Reptilien
 order:  Krokodile
 family:  Echte Krokodile

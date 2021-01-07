@@ -1,9 +1,10 @@
 ---
 slug: keilfleckbarbe
 title: Keilfleckbarbe
+wikipedia: 
+wikidata: 
 latin:
 image: Keilfleckbarbe
-wikipedia: 
 class: Strahlenflosser
 order:  Karpfenartige
 family:  Karpfenfische

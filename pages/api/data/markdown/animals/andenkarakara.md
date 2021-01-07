@@ -1,9 +1,10 @@
 ---
 slug: andenkarakara
 title: Andenkarakara
-latin:
-image: Andenkarakara
-wikipedia: 
+wikipedia: https://de.wikipedia.org/wiki/Geierfalken
+wikidata: https://www.wikidata.org/wiki/Q265681
+latin: Phalcoboenus megalopterus
+image: 
 class: Vögel
 order:  Greifvögel
 family:  Falkenartige

@@ -1,9 +1,10 @@
 ---
 slug: rotfussseriema
 title: Rotfußseriema
+wikipedia: 
+wikidata: 
 latin:
 image: Rotfußseriema
-wikipedia: 
 class: Vögel
 order:  Kranichvögel
 family:  Seriemas

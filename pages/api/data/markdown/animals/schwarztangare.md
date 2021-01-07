@@ -1,9 +1,10 @@
 ---
 slug: schwarztangare
 title: Schwarztangare
+wikipedia: 
+wikidata: 
 latin:
 image: Schwarztangare
-wikipedia: 
 class: Vögel
 order:  Sperlingsvögel
 family:  Tangaren

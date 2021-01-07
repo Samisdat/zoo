@@ -1,9 +1,10 @@
 ---
 slug: steppenzebra
 title: Steppenzebra 
+wikipedia: 
+wikidata: 
 latin:
 image: Steppenzebra 
-wikipedia: 
 class: Säugetiere
 order:  Unpaarhufer
 family:  Pferde

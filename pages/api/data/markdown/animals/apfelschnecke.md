@@ -1,9 +1,10 @@
 ---
 slug: apfelschnecke
 title: Apfelschnecke
+wikipedia: https://de.wikipedia.org/wiki/Apfelschnecken
+wikidata: https://www.wikidata.org/wiki/Q27380?uselang=de
 latin:
-image: Apfelschnecke
-wikipedia: 
+image: 
 class: Schnecken
 order:  Architaenioglossa
 family:  Apfelschnecken

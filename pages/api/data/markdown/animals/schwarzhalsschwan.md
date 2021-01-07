@@ -1,9 +1,10 @@
 ---
 slug: schwarzhalsschwan
 title: Schwarzhalsschwan
+wikipedia: 
+wikidata: 
 latin:
 image: Schwarzhalsschwan
-wikipedia: 
 class: Vögel
 order:  Gänsevögel
 family:  Entenvögel 

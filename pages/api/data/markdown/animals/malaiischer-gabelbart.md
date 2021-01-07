@@ -1,9 +1,10 @@
 ---
 slug: malaiischer-gabelbart
 title: Malaiischer Gabelbart
+wikipedia: 
+wikidata: 
 latin:
 image: Malaiischer Gabelbart
-wikipedia: 
 class: Strahlenflosser
 order:  Knochenzünglerartige
 family:  Knochenzüngler

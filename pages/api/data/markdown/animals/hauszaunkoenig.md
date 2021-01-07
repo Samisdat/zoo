@@ -1,9 +1,10 @@
 ---
 slug: hauszaunkoenig
 title: Hauszaunkönig
+wikipedia: 
+wikidata: 
 latin:
 image: Hauszaunkönig
-wikipedia: 
 class: Vögel
 order:  Sperlingsvögel
 family:  Zaunkönige

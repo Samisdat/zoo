@@ -1,9 +1,10 @@
 ---
 slug: ultramarinbischof
 title: Ultramarinbischof
+wikipedia: 
+wikidata: 
 latin:
 image: Ultramarinbischof
-wikipedia: 
 class: Vögel
 order:  Sperlingsvögel
 family:  Kardinäle

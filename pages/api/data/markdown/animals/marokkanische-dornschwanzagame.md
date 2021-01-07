@@ -1,9 +1,10 @@
 ---
 slug: marokkanische-dornschwanzagame
 title: Marokkanische Dornschwanzagame
+wikipedia: 
+wikidata: 
 latin:
 image: Marokkanische Dornschwanzagame
-wikipedia: 
 class: Reptilien
 order:  Schuppenkriechtiere
 family:  Agamen

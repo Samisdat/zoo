@@ -1,9 +1,10 @@
 ---
 slug: weissschwanztrogon
 title: Weißschwanztrogon
+wikipedia: 
+wikidata: 
 latin:
 image: Weißschwanztrogon
-wikipedia: 
 class: Vögel
 order:  Trogone
 family:  Trogone

@@ -1,9 +1,10 @@
 ---
 slug: schwanengans
 title: Schwanengans
+wikipedia: 
+wikidata: 
 latin:
 image: Schwanengans
-wikipedia: 
 class: Vögel
 order:  Gänsevögel
 family:  Entenvögel 

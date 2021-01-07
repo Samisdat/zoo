@@ -1,9 +1,10 @@
 ---
 slug: schuppensaeger
 title: Schuppensäger
+wikipedia: 
+wikidata: 
 latin:
 image: Schuppensäger
-wikipedia: 
 class: Vögel
 order:  Gänsevögel
 family:  Entenvögel 

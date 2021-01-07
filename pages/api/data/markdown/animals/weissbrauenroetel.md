@@ -1,9 +1,10 @@
 ---
 slug: weissbrauenroetel
 title: Weißbrauenrötel
+wikipedia: 
+wikidata: 
 latin:
 image: Weißbrauenrötel
-wikipedia: 
 class: Vögel
 order:  Sperlingsvögel
 family:  Fliegenschnäpper

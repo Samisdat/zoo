@@ -1,9 +1,10 @@
 ---
 slug: rosapelikan
 title: Rosapelikan
+wikipedia: 
+wikidata: 
 latin:
 image: Rosapelikan
-wikipedia: 
 class: Vögel
 order:  Ruderfüßer
 family:  Pelikane

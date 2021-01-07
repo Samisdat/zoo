@@ -1,9 +1,10 @@
 ---
 slug: schmucksalmler
 title: Schmucksalmler
+wikipedia: 
+wikidata: 
 latin:
 image: Schmucksalmler
-wikipedia: 
 class: Strahlenflosser
 order:  Salmlerartige
 family:  Echte Salmler

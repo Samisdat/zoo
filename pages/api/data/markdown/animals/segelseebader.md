@@ -1,9 +1,10 @@
 ---
 slug: segelseebader
 title: Segelseebader
+wikipedia: 
+wikidata: 
 latin:
 image: Segelseebader
-wikipedia: 
 class: Strahlenflosser
 order:  Barschartige
 family:  Doktorfische

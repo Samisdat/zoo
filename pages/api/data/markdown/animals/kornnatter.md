@@ -1,9 +1,10 @@
 ---
 slug: kornnatter
 title: Kornnatter
+wikipedia: 
+wikidata: 
 latin:
 image: Kornnatter
-wikipedia: 
 class: Reptilien
 order:  Schuppenkriechtiere
 family:  Nattern

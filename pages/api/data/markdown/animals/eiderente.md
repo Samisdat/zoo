@@ -1,9 +1,10 @@
 ---
 slug: eiderente
 title: Eiderente
+wikipedia: 
+wikidata: 
 latin:
 image: Eiderente
-wikipedia: 
 class: Vögel
 order:  Gänsevögel
 family:  Entenvögel 

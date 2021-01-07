@@ -1,9 +1,10 @@
 ---
 slug: krokodilhoeckerechse
 title: Krokodilhöckerechse
+wikipedia: 
+wikidata: 
 latin:
 image: Krokodilhöckerechse
-wikipedia: 
 class: Reptilien
 order:  Schuppenkriechtiere
 family:  Höckerechsen

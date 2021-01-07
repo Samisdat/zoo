@@ -1,9 +1,10 @@
 ---
 slug: gardners-prachtkaerpfling
 title: Gardners Prachtkärpfling
+wikipedia: 
+wikidata: 
 latin:
 image: Gardners Prachtkärpfling
-wikipedia: 
 class: Strahlenflosser
 order:  Zahnkärpflinge
 family:  Aplocheilidae

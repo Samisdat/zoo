@@ -1,9 +1,10 @@
 ---
 slug: schachbrettcichlide
 title: Schachbrettcichlide
+wikipedia: 
+wikidata: 
 latin:
 image: Schachbrettcichlide
-wikipedia: 
 class: Strahlenflosser
 order:  Barschartige
 family:  Buntbarsche

@@ -1,9 +1,10 @@
 ---
 slug: pfauenaugen-zwergfeuerfisch
 title: Pfauenaugen-Zwergfeuerfisch
+wikipedia: 
+wikidata: 
 latin:
 image: Pfauenaugen-Zwergfeuerfisch
-wikipedia: 
 class: Strahlenflosser
 order:  Panzerwangen
 family:  Drachenköpfe

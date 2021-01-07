@@ -1,9 +1,10 @@
 ---
 slug: hauben-seidenkuckuck
 title: Hauben-Seidenkuckuck
+wikipedia: 
+wikidata: 
 latin:
 image: Hauben-Seidenkuckuck
-wikipedia: 
 class: Vögel
 order:  Kuckucksvögel
 family:  Kuckucke

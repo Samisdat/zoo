@@ -1,9 +1,10 @@
 ---
 slug: europaeische-sumpfschildkroete
 title: Europäische Sumpfschildkröte
+wikipedia: 
+wikidata: 
 latin:
 image: Europäische Sumpfschildkröte
-wikipedia: 
 class: Reptilien
 order:  Schildkröten
 family:  Neuwelt-Sumpfschildkröten

@@ -1,9 +1,10 @@
 ---
 slug: strausswachtel
 title: Straußwachtel
+wikipedia: 
+wikidata: 
 latin:
 image: Straußwachtel
-wikipedia: 
 class: Vögel
 order:  Hühnervögel
 family:  Fasanenartige

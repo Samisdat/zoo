@@ -1,9 +1,10 @@
 ---
 slug: eisvogel
 title: Eisvogel
+wikipedia: 
+wikidata: 
 latin:
 image: Eisvogel
-wikipedia: 
 class: Vögel
 order:  Rackenvögel
 family:  Eisvögel

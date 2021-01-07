@@ -1,9 +1,10 @@
 ---
 slug: zwergmara
 title: Zwergmara
+wikipedia: 
+wikidata: 
 latin:
 image: Zwergmara
-wikipedia: 
 class: Säugetiere
 order:  Nagetiere
 family:  Meerschweinchen

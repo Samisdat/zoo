@@ -1,9 +1,10 @@
 ---
 slug: rubintyrann
 title: Rubintyrann
+wikipedia: 
+wikidata: 
 latin:
 image: Rubintyrann
-wikipedia: 
 class: Vögel
 order:  Sperlingsvögel
 family:  Tyrannen

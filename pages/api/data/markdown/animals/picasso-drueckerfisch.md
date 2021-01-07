@@ -1,9 +1,10 @@
 ---
 slug: picasso-drueckerfisch
 title: Picasso-Drückerfisch
+wikipedia: 
+wikidata: 
 latin:
 image: Picasso-Drückerfisch
-wikipedia: 
 class: Strahlenflosser
 order:  Kugelfischverwandte
 family:  Drückerfische

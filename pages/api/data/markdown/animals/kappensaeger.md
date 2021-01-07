@@ -1,9 +1,10 @@
 ---
 slug: kappensaeger
 title: Kappensäger
+wikipedia: 
+wikidata: 
 latin:
 image: Kappensäger
-wikipedia: 
 class: Vögel
 order:  Gänsevögel
 family:  Entenvögel 

@@ -1,9 +1,10 @@
 ---
 slug: lachender-hans
 title: Lachender Hans
+wikipedia: 
+wikidata: 
 latin:
 image: Lachender Hans
-wikipedia: 
 class: Vögel
 order:  Rackenvögel
 family:  Eisvögel

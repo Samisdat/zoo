@@ -1,9 +1,10 @@
 ---
 slug: glattstirn-lederkopf
 title: Glattstirn-Lederkopf
+wikipedia: 
+wikidata: 
 latin:
 image: Glattstirn-Lederkopf
-wikipedia: 
 class: Vögel
 order:  Sperlingsvögel
 family:  Honigfresser

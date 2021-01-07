@@ -1,9 +1,10 @@
 ---
 slug: madagassischer-taggecko
 title: Madagassischer Taggecko
+wikipedia: 
+wikidata: 
 latin:
 image: Madagassischer Taggecko
-wikipedia: 
 class: Reptilien
 order:  Schuppenkriechtiere
 family:  Geckos

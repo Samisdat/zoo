@@ -1,9 +1,10 @@
 ---
 slug: elefant
 title: Afrikanischer Elefant
+wikipedia: 
+wikidata: 
 latin:
 image: Afrikanischer Elefant
-wikipedia: 
 class: Säugetiere
 order:  Rüsseltiere
 family:  Elefanten

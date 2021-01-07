@@ -1,9 +1,10 @@
 ---
 slug: zwergbartagame
 title: Zwergbartagame
+wikipedia: 
+wikidata: 
 latin:
 image: Zwergbartagame
-wikipedia: 
 class: Reptilien
 order:  Schuppenkriechtiere
 family:  Agamen

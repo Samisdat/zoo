@@ -1,9 +1,10 @@
 ---
 slug: graureiher
 title: Graureiher
+wikipedia: 
+wikidata: 
 latin:
 image: Graureiher
-wikipedia: 
 class: Vögel
 order:  Schreitvögel
 family:  Reiher

@@ -1,9 +1,10 @@
 ---
 slug: gelber-kaninchenfisch
 title: Gelber Kaninchenfisch
+wikipedia: 
+wikidata: 
 latin:
 image: Gelber Kaninchenfisch
-wikipedia: 
 class: Strahlenflosser
 order:  Barschartige
 family:  Kaninchenfische

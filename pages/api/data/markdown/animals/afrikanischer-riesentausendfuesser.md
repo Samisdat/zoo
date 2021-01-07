@@ -1,9 +1,10 @@
 ---
 slug: afrikanischer-riesentausendfuesser
 title: Afrikanischer Riesentausendfüßer
-latin: Archispirostreptus gigas
-image: Afrikanischer Riesentausendfüßer
 wikipedia: https://de.wikipedia.org/wiki/Archispirostreptus_gigas
+wikidata: https://www.wikidata.org/wiki/Q1954820?uselang=de
+latin: Archispirostreptus gigas
+image: 
 class: Doppelfüßer
 order:  Schnurfüßer
 family:  Spirostreptidae

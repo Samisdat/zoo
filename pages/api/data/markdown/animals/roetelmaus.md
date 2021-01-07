@@ -1,9 +1,10 @@
 ---
 slug: roetelmaus
 title: Rötelmaus
+wikipedia: 
+wikidata: 
 latin:
 image: Rötelmaus
-wikipedia: 
 class: Säugetiere
 order:  Nagetiere
 family:  Wühler

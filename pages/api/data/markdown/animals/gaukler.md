@@ -1,9 +1,10 @@
 ---
 slug: gaukler
 title: Gaukler
+wikipedia: 
+wikidata: 
 latin:
 image: Gaukler
-wikipedia: 
 class: Vögel
 order:  Greifvögel
 family:  Habichtartige

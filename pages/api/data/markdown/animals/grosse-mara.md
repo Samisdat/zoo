@@ -1,9 +1,10 @@
 ---
 slug: grosse-mara
 title: Große Mara
+wikipedia: 
+wikidata: 
 latin:
 image: Große Mara
-wikipedia: 
 class: Säugetiere
 order:  Nagetiere
 family:  Meerschweinchen

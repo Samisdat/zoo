@@ -1,9 +1,10 @@
 ---
 slug: traumkaiserfisch
 title: Traumkaiserfisch
+wikipedia: 
+wikidata: 
 latin:
 image: Traumkaiserfisch
-wikipedia: 
 class: Strahlenflosser
 order:  Barschartige
 family:  Kaiserfische

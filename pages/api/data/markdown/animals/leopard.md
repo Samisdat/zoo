@@ -1,9 +1,10 @@
 ---
 slug: leopard
 title: Leopard
+wikipedia: 
+wikidata: 
 latin:
 image: Leopard
-wikipedia: 
 class: Säugetiere
 order:  Raubtiere
 family:  Katzen 

@@ -1,9 +1,10 @@
 ---
 slug: zitronensalmler
 title: Zitronensalmler
+wikipedia: 
+wikidata: 
 latin:
 image: Zitronensalmler
-wikipedia: 
 class: Strahlenflosser
 order:  Salmlerartige
 family:  Echte Salmler

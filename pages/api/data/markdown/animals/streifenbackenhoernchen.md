@@ -1,9 +1,10 @@
 ---
 slug: streifenbackenhoernchen
 title: Streifenbackenhörnchen
+wikipedia: 
+wikidata: 
 latin:
 image: Streifenbackenhörnchen
-wikipedia: 
 class: Säugetiere
 order:  Nagetiere
 family:  Hörnchen

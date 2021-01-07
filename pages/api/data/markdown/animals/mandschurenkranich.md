@@ -1,9 +1,10 @@
 ---
 slug: mandschurenkranich
 title: Mandschurenkranich
+wikipedia: 
+wikidata: 
 latin:
 image: Mandschurenkranich
-wikipedia: 
 class: Vögel
 order:  Kranichvögel
 family:  Kraniche

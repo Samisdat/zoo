@@ -1,9 +1,10 @@
 ---
 slug: seidenreiher
 title: Seidenreiher
+wikipedia: 
+wikidata: 
 latin:
 image: Seidenreiher
-wikipedia: 
 class: Vögel
 order:  Schreitvögel
 family:  Reiher

@@ -1,9 +1,10 @@
 ---
 slug: madagaskarhechtling
 title: Madagaskarhechtling
+wikipedia: 
+wikidata: 
 latin:
 image: Madagaskarhechtling
-wikipedia: 
 class: Strahlenflosser
 order:  Zahnkärpflinge
 family:  Aplocheilidae

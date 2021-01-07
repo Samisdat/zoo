@@ -1,9 +1,10 @@
 ---
 slug: pyjama-kardinalbarsch
 title: Pyjama-Kardinalbarsch
+wikipedia: 
+wikidata: 
 latin:
 image: Pyjama-Kardinalbarsch
-wikipedia: 
 class: Strahlenflosser
 order:  Barschartige
 family:  Kardinalbarsche

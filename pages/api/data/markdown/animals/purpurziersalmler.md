@@ -1,9 +1,10 @@
 ---
 slug: purpurziersalmler
 title: Purpurziersalmler
+wikipedia: 
+wikidata: 
 latin:
 image: Purpurziersalmler
-wikipedia: 
 class: Strahlenflosser
 order:  Salmlerartige
 family:  Schlanksalmler

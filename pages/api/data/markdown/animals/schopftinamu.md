@@ -1,9 +1,10 @@
 ---
 slug: schopftinamu
 title: Schopftinamu
+wikipedia: 
+wikidata: 
 latin:
 image: Schopftinamu
-wikipedia: 
 class: Vögel
 order:  Steißhuhnartige
 family:  Steißhühner

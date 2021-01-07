@@ -1,9 +1,10 @@
 ---
 slug: diamanttaeubchen
 title: Diamanttäubchen
+wikipedia: 
+wikidata: 
 latin:
 image: Diamanttäubchen
-wikipedia: 
 class: Vögel
 order:  Taubenvögel
 family:  Tauben

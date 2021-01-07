@@ -1,9 +1,10 @@
 ---
 slug: gestreifter-blattsteiger
 title: Gestreifter Blattsteiger
+wikipedia: 
+wikidata: 
 latin:
 image: Gestreifter Blattsteiger
-wikipedia: 
 class: Lurche
 order:  Froschlurche
 family:  Baumsteigerfrösche

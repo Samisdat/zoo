@@ -1,9 +1,10 @@
 ---
 slug: europaeischer-biber
 title: Europäischer Biber
+wikipedia: 
+wikidata: 
 latin:
 image: Europäischer Biber
-wikipedia: 
 class: Säugetiere
 order:  Nagetiere
 family:  Biber

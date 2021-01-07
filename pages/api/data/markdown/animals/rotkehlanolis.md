@@ -1,9 +1,10 @@
 ---
 slug: rotkehlanolis
 title: Rotkehlanolis
+wikipedia: 
+wikidata: 
 latin:
 image: Rotkehlanolis
-wikipedia: 
 class: Reptilien
 order:  Schuppenkriechtiere
 family:  Leguane

@@ -1,9 +1,10 @@
 ---
 slug: faultier
 title: Zweifingerfaultier
+wikipedia: 
+wikidata: 
 latin:
 image: Zweifingerfaultier
-wikipedia: 
 class: Säugetiere
 order:  Nebengelenktiere
 family:  Zweifingerfaultiere

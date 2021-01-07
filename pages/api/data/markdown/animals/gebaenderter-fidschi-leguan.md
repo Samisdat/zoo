@@ -1,9 +1,10 @@
 ---
 slug: gebaenderter-fidschi-leguan
 title: Gebänderter Fidschi-Leguan
+wikipedia: 
+wikidata: 
 latin:
 image: Gebänderter Fidschi-Leguan
-wikipedia: 
 class: Reptilien
 order:  Schuppenkriechtiere
 family:  Leguane

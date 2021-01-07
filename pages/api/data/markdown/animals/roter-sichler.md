@@ -1,9 +1,10 @@
 ---
 slug: roter-sichler
 title: Roter Sichler
+wikipedia: 
+wikidata: 
 latin:
 image: Roter Sichler
-wikipedia: 
 class: Vögel
 order:  Schreitvögel
 family:  Ibisse und Löffler

@@ -1,9 +1,10 @@
 ---
 slug: trauermantelsalmler
 title: Trauermantelsalmler
+wikipedia: 
+wikidata: 
 latin:
 image: Trauermantelsalmler
-wikipedia: 
 class: Strahlenflosser
 order:  Salmlerartige
 family:  Echte Salmler

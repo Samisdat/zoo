@@ -1,9 +1,10 @@
 ---
 slug: langschnaeuziges-seepferdchen
 title: Langschnäuziges Seepferdchen
+wikipedia: 
+wikidata: 
 latin:
 image: Langschnäuziges Seepferdchen
-wikipedia: 
 class: Strahlenflosser
 order:  Seenadelartige
 family:  Seenadeln

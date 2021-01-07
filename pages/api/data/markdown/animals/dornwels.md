@@ -2,7 +2,7 @@
 slug: dornwels
 title: Dornwels
 wikipedia: https://de.wikipedia.org/wiki/Dornwelse
-wikidata: https://www.wikidata.org/wiki/Q796187?uselang=de
+wikidata: Q796187
 latin:
 image: Dornwels
 class: Strahlenflosser

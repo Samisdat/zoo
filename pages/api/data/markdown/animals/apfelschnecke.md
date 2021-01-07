@@ -2,7 +2,7 @@
 slug: apfelschnecke
 title: Apfelschnecke
 wikipedia: https://de.wikipedia.org/wiki/Apfelschnecken
-wikidata: https://www.wikidata.org/wiki/Q27380?uselang=de
+wikidata: Q27380
 latin:
 image: 
 class: Schnecken

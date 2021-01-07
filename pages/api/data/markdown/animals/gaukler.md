@@ -2,7 +2,7 @@
 slug: gaukler
 title: Gaukler
 wikipedia: https://de.wikipedia.org/wiki/Gaukler_(Vogel)
-wikidata: https://www.wikidata.org/wiki/Q726387?uselang=de
+wikidata: Q726387
 latin:
 image: Gaukler
 class: Vögel

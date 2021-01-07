@@ -2,7 +2,7 @@
 slug: gruenschwanz-glanzstar
 title: Grünschwanz-Glanzstar
 wikipedia: 
-wikidata: 
+wikidata: Q240445
 latin:
 image: Grünschwanz-Glanzstar
 class: Vögel

@@ -2,7 +2,7 @@
 slug: eisvogel
 title: Eisvogel
 wikipedia: https://de.wikipedia.org/wiki/Eisvogel
-wikidata: https://www.wikidata.org/wiki/Q79915?uselang=de
+wikidata: Q79915
 latin:
 image: Eisvogel
 class: Vögel

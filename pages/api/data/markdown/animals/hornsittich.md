@@ -2,7 +2,7 @@
 slug: hornsittich
 title: Hornsittich
 wikipedia: 
-wikidata: 
+wikidata: Q515035
 latin:
 image: Hornsittich
 class: Vögel

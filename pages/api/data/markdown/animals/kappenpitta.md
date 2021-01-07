@@ -2,7 +2,7 @@
 slug: kappenpitta
 title: Kappenpitta
 wikipedia: 
-wikidata: 
+wikidata: Q1075282
 latin:
 image: Kappenpitta
 class: Vögel

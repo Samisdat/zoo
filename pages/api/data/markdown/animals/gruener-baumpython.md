@@ -2,7 +2,7 @@
 slug: gruener-baumpython
 title: Grüner Baumpython
 wikipedia: 
-wikidata: 
+wikidata: Q849394
 latin:
 image: Grüner Baumpython
 class: Reptilien

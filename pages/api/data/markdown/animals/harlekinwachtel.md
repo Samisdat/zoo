@@ -2,7 +2,7 @@
 slug: harlekinwachtel
 title: Harlekinwachtel
 wikipedia: 
-wikidata: 
+wikidata: Q606076
 latin:
 image: Harlekinwachtel
 class: Vögel

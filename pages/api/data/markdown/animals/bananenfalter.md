@@ -2,7 +2,7 @@
 slug: bananenfalter.
 title: Bananenfalter
 wikipedia: https://de.wikipedia.org/wiki/Bananenfalter
-wikidata: https://www.wikidata.org/wiki/Q857483?uselang=de
+wikidata: Q857483
 latin: Caligo eurilochus
 image:
 class: Insekten

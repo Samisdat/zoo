@@ -2,7 +2,7 @@
 slug: chileflamingo
 title: Chileflamingo
 wikipedia: https://de.wikipedia.org/wiki/Chileflamingo
-wikidata: https://www.wikidata.org/wiki/Q317220?uselang=de
+wikidata: Q317220
 latin:
 image: Chileflamingo
 class: Vögel

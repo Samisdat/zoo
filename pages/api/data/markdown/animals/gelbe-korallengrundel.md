@@ -2,7 +2,7 @@
 slug: gelbe-korallengrundel
 title: Gelbe Korallengrundel
 wikipedia: https://de.wikipedia.org/wiki/Gelbe_Korallengrundel
-wikidata: https://www.wikidata.org/wiki/Q1499287?uselang=de
+wikidata: Q1499287
 latin:
 image: Gelbe Korallengrundel
 class: Strahlenflosser

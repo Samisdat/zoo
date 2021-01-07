@@ -2,7 +2,7 @@
 slug: baumskink
 title: Baumskink
 wikipedia: https://en.wikipedia.org/wiki/Dasia_olivacea
-wikidata: https://www.wikidata.org/wiki/Q126597
+wikidata: Q126597
 latin:
 image: Baumskink
 class: Reptilien

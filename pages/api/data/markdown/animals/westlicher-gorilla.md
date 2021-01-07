@@ -2,7 +2,7 @@
 slug: westlicher-gorilla
 title: Westlicher Gorilla
 wikipedia: 
-wikidata: https://www.wikidata.org/wiki/Q737838
+wikidata: Q737838
 latin:
 image: Westlicher Gorilla
 class: Säugetiere

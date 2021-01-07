@@ -2,7 +2,7 @@
 slug: kaerpflingsbuntbarsch
 title: Kärpflingsbuntbarsch
 wikipedia: 
-wikidata: 
+wikidata: Q3317634
 latin:
 image: Kärpflingsbuntbarsch
 class: Strahlenflosser

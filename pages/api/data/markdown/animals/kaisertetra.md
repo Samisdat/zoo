@@ -1,7 +1,7 @@
 ---
 slug: kaisertetra
 title: Kaisertetra
-wikipedia: 
+wikipedia: Q239480
 wikidata: 
 latin:
 image: Kaisertetra

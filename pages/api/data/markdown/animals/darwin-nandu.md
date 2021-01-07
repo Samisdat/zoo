@@ -2,7 +2,7 @@
 slug: darwin-nandu
 title: Darwin-Nandu
 wikipedia: https://de.wikipedia.org/wiki/Darwin-Nandu
-wikidata: https://www.wikidata.org/wiki/Q733120
+wikidata: Q733120
 latin:
 image: Darwin-Nandu
 class: Vögel

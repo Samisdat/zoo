@@ -2,7 +2,7 @@
 slug: kaisergans
 title: Kaisergans
 wikipedia: 
-wikidata: 
+wikidata: Q755653
 latin:
 image: Kaisergans
 class: Vögel

@@ -2,7 +2,7 @@
 slug: europaeischer-biber
 title: Europäischer Biber
 wikipedia: https://de.wikipedia.org/wiki/Europ%C3%A4ischer_Biber
-wikidata: https://www.wikidata.org/wiki/Q181191?uselang=de
+wikidata: Q181191
 latin:
 image: Europäischer Biber
 class: Säugetiere

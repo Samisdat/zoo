@@ -2,7 +2,7 @@
 slug: grosser-kampffisch
 title: Großer Kampffisch
 wikipedia: 
-wikidata: 
+wikidata: Q4898370
 latin:
 image: Großer Kampffisch
 class: Strahlenflosser

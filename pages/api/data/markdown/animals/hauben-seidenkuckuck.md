@@ -2,7 +2,7 @@
 slug: hauben-seidenkuckuck
 title: Hauben-Seidenkuckuck
 wikipedia: 
-wikidata: 
+wikidata: Q1272011
 latin:
 image: Hauben-Seidenkuckuck
 class: Vögel

@@ -2,7 +2,7 @@
 slug: gelbbrauner-antennenwels
 title: Gelbbrauner Antennenwels
 wikipedia: https://de.wikipedia.org/wiki/Antennen-Harnischwelse
-wikidata: https://www.wikidata.org/wiki/Q571923?uselang=de
+wikidata: Q571923
 latin:
 image: Gelbbrauner Antennenwels
 class: Strahlenflosser

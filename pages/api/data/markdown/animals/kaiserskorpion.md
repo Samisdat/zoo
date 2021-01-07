@@ -2,7 +2,7 @@
 slug: kaiserskorpion
 title: Kaiserskorpion
 wikipedia: 
-wikidata: 
+wikidata: Q1142349
 latin:
 image: Kaiserskorpion
 class: Spinnentiere

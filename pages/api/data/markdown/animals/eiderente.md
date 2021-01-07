@@ -2,7 +2,7 @@
 slug: eiderente
 title: Eiderente
 wikipedia: https://de.wikipedia.org/wiki/Eiderente
-wikidata: https://www.wikidata.org/wiki/Q26696?uselang=de
+wikidata: Q26696
 latin:
 image: Eiderente
 class: Vögel

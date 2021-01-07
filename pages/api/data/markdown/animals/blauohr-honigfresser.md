@@ -2,7 +2,7 @@
 slug: blauohr-honigfresser
 title: Blauohr-Honigfresser
 wikipedia: https://de.wikipedia.org/wiki/Blauohr-Honigfresser
-wikidata: https://www.wikidata.org/wiki/Q774382?uselang=de
+wikidata: Q774382
 latin:
 image: Blauohr-Honigfresser
 class: Vögel

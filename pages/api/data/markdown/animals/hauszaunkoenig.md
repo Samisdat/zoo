@@ -2,7 +2,7 @@
 slug: hauszaunkoenig
 title: Hauszaunkönig
 wikipedia: 
-wikidata: 
+wikidata: Q524799
 latin:
 image: Hauszaunkönig
 class: Vögel

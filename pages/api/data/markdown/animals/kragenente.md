@@ -2,7 +2,7 @@
 slug: kragenente
 title: Kragenente
 wikipedia: 
-wikidata: 
+wikidata: Q331179
 latin:
 image: Kragenente
 class: Vögel

@@ -2,7 +2,7 @@
 slug: gelbfuessiger-honigsauger
 title: Gelbfüßiger Honigsauger
 wikipedia: https://de.wikipedia.org/wiki/Azurnaschvogel
-wikidata: https://www.wikidata.org/wiki/Q794373
+wikidata: Q794373
 latin:
 image: Gelbfüßiger Honigsauger
 class: Vögel

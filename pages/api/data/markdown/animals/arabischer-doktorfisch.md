@@ -2,7 +2,7 @@
 slug: arabischer-doktorfisch
 title: Arabischer Doktorfisch
 wikipedia: https://de.wikipedia.org/wiki/Arabischer_Doktorfisch
-wikidata: https://www.wikidata.org/wiki/Q377713?uselang=de 
+wikidata: Q377713 
 latin:
 image: Arabischer Doktorfisch
 class: Strahlenflosser

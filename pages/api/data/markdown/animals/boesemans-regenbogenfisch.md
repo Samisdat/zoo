@@ -2,7 +2,7 @@
 slug: boesemans-regenbogenfisch
 title: Boesemans Regenbogenfisch
 wikipedia: https://de.wikipedia.org/wiki/Harlekin-Regenbogenfisch
-wikidata: https://www.wikidata.org/wiki/Q833254?uselang=de
+wikidata: Q833254
 latin:
 image: Boesemans Regenbogenfisch
 class: Strahlenflosser

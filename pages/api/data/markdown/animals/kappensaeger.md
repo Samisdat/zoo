@@ -2,7 +2,7 @@
 slug: kappensaeger
 title: Kappensäger
 wikipedia: 
-wikidata: 
+wikidata: Q241349
 latin:
 image: Kappensäger
 class: Vögel

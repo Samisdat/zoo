@@ -2,7 +2,7 @@
 slug: banggai-kardinalbarsch
 title: Banggai-Kardinalbarsch
 wikipedia: https://de.wikipedia.org/wiki/Banggai-Kardinalbarsch
-wikidata: https://www.wikidata.org/wiki/Q428921?uselang=de
+wikidata: Q428921
 latin:
 image: Banggai-Kardinalbarsch
 class: Strahlenflosser

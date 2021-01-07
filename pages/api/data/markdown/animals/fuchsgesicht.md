@@ -2,7 +2,7 @@
 slug: fuchsgesicht
 title: Fuchsgesicht
 wikipedia: https://de.wikipedia.org/wiki/Fuchsgesicht
-wikidata: https://www.wikidata.org/wiki/Q258544?uselang=de
+wikidata: Q258544
 latin:
 image: Fuchsgesicht
 class: Strahlenflosser

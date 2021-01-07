@@ -2,7 +2,7 @@
 slug: kleiner-panda
 title: Kleiner Panda
 wikipedia: 
-wikidata: 
+wikidata: Q41960
 latin:
 image: Kleiner Panda
 class: Säugetiere

@@ -2,7 +2,7 @@
 slug: brillenpinguin
 title: Brillenpinguin
 wikipedia: https://de.wikipedia.org/wiki/Brillenpinguin
-wikidata: https://www.wikidata.org/wiki/Q244813?uselang=de
+wikidata: Q244813
 latin:
 image: Brillenpinguin
 class: Vögel

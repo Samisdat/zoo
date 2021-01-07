@@ -2,7 +2,7 @@
 slug: kiebitz
 title: Kiebitz
 wikipedia: 
-wikidata: 
+wikidata: Q25392
 latin:
 image: Kiebitz
 class: Vögel

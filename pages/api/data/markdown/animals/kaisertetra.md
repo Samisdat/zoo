@@ -1,8 +1,8 @@
 ---
 slug: kaisertetra
 title: Kaisertetra
-wikipedia: Q239480
-wikidata: 
+wikipedia: 
+wikidata: Q239480
 latin:
 image: Kaisertetra
 class: Strahlenflosser

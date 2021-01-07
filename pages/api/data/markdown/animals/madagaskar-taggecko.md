@@ -1,8 +1,8 @@
 ---
-slug: madagassischer-taggecko
-title: Madagassischer Taggecko
+slug: madagaskar-taggecko
+title: Madagaskar-Taggecko
 wikipedia: 
-wikidata: 
+wikidata: Q1475501
 latin:
 image: Madagassischer Taggecko
 class: Reptilien

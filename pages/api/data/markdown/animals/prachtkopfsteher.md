@@ -2,7 +2,7 @@
 slug: prachtkopfsteher
 title: Prachtkopfsteher
 wikipedia: 
-wikidata: 
+wikidata: Q3546845
 latin:
 image: Prachtkopfsteher
 class: Strahlenflosser

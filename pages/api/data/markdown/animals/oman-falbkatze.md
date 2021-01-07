@@ -2,7 +2,7 @@
 slug: oman-falbkatze
 title: Oman-Falbkatze
 wikipedia: 
-wikidata: 
+wikidata: Q521594
 latin:
 image: Oman-Falbkatze
 class: Säugetiere

@@ -2,7 +2,7 @@
 slug: krokodilhoeckerechse
 title: Krokodilhöckerechse
 wikipedia: 
-wikidata: 
+wikidata: Q302215
 latin:
 image: Krokodilhöckerechse
 class: Reptilien

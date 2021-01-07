@@ -2,7 +2,7 @@
 slug: kubanischer-schweinsfisch
 title: Kubanischer Schweinsfisch
 wikipedia: 
-wikidata: 
+wikidata: Q937738
 latin:
 image: Kubanischer Schweinsfisch
 class: Strahlenflosser

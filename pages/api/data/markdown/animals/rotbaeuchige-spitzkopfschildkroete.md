@@ -2,7 +2,7 @@
 slug: rotbaeuchige-spitzkopfschildkroete
 title: Rotbäuchige Spitzkopfschildkröte
 wikipedia: 
-wikidata: 
+wikidata: Q1086983
 latin:
 image: Rotbäuchige Spitzkopfschildkröte
 class: Reptilien

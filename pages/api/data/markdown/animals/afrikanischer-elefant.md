@@ -9,7 +9,6 @@ class: Säugetiere
 order:  Rüsseltiere
 family:  Elefanten
 species:  Afrikanischer Elefant
-
 ---
 
 I am content.

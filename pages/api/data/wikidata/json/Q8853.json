@@ -1,0 +1,1969 @@
+{
+    "pageid": 10184,
+    "ns": 0,
+    "title": "Q8853",
+    "lastrevid": 1331922561,
+    "modified": "2020-12-30T21:49:26Z",
+    "type": "item",
+    "id": "Q8853",
+    "labels": {
+        "nb": {
+            "language": "nb",
+            "value": "Løven"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "Lion"
+        },
+        "en": {
+            "language": "en",
+            "value": "Leo"
+        },
+        "it": {
+            "language": "it",
+            "value": "Leone"
+        },
+        "de": {
+            "language": "de",
+            "value": "Löwe"
+        },
+        "es": {
+            "language": "es",
+            "value": "Leo"
+        },
+        "af": {
+            "language": "af",
+            "value": "Leeu"
+        },
+        "ar": {
+            "language": "ar",
+            "value": "الأسد"
+        },
+        "ast": {
+            "language": "ast",
+            "value": "Lleo"
+        },
+        "be": {
+            "language": "be",
+            "value": "Сузор'е Леў"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "Лъв"
+        },
+        "bn": {
+            "language": "bn",
+            "value": "সিংহ"
+        },
+        "ca": {
+            "language": "ca",
+            "value": "Lleó"
+        },
+        "co": {
+            "language": "co",
+            "value": "Leo"
+        },
+        "cs": {
+            "language": "cs",
+            "value": "Lev"
+        },
+        "da": {
+            "language": "da",
+            "value": "Løven"
+        },
+        "el": {
+            "language": "el",
+            "value": "Λέων"
+        },
+        "eo": {
+            "language": "eo",
+            "value": "Leono"
+        },
+        "fa": {
+            "language": "fa",
+            "value": "شیر"
+        },
+        "fi": {
+            "language": "fi",
+            "value": "Leijona"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "An Leon"
+        },
+        "gl": {
+            "language": "gl",
+            "value": "Leo"
+        },
+        "he": {
+            "language": "he",
+            "value": "אריה"
+        },
+        "hi": {
+            "language": "hi",
+            "value": "सिंह तारामंडल"
+        },
+        "hr": {
+            "language": "hr",
+            "value": "Lav"
+        },
+        "hy": {
+            "language": "hy",
+            "value": "Առյուծ"
+        },
+        "ia": {
+            "language": "ia",
+            "value": "Leon"
+        },
+        "id": {
+            "language": "id",
+            "value": "Leo"
+        },
+        "io": {
+            "language": "io",
+            "value": "Leono"
+        },
+        "ja": {
+            "language": "ja",
+            "value": "しし座"
+        },
+        "jv": {
+            "language": "jv",
+            "value": "Leo"
+        },
+        "ka": {
+            "language": "ka",
+            "value": "ლომი"
+        },
+        "ko": {
+            "language": "ko",
+            "value": "사자자리"
+        },
+        "ku": {
+            "language": "ku",
+            "value": "Şêr"
+        },
+        "la": {
+            "language": "la",
+            "value": "Leo"
+        },
+        "lb": {
+            "language": "lb",
+            "value": "Leo"
+        },
+        "li": {
+            "language": "li",
+            "value": "Liew"
+        },
+        "lt": {
+            "language": "lt",
+            "value": "Liūtas"
+        },
+        "lv": {
+            "language": "lv",
+            "value": "Lauva"
+        },
+        "mhr": {
+            "language": "mhr",
+            "value": "Арыслан"
+        },
+        "mk": {
+            "language": "mk",
+            "value": "Лав"
+        },
+        "ml": {
+            "language": "ml",
+            "value": "ചിങ്ങം"
+        },
+        "nah": {
+            "language": "nah",
+            "value": "Cītlalōlli"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "Leeuw"
+        },
+        "nn": {
+            "language": "nn",
+            "value": "Løva"
+        },
+        "pl": {
+            "language": "pl",
+            "value": "Gwiazdozbiór Lwa"
+        },
+        "pt": {
+            "language": "pt",
+            "value": "Leo"
+        },
+        "ro": {
+            "language": "ro",
+            "value": "Leul"
+        },
+        "ru": {
+            "language": "ru",
+            "value": "Лев"
+        },
+        "sah": {
+            "language": "sah",
+            "value": "Хахай"
+        },
+        "sh": {
+            "language": "sh",
+            "value": "Lav"
+        },
+        "sk": {
+            "language": "sk",
+            "value": "Lev"
+        },
+        "sr": {
+            "language": "sr",
+            "value": "Лав"
+        },
+        "sv": {
+            "language": "sv",
+            "value": "Lejonet"
+        },
+        "th": {
+            "language": "th",
+            "value": "กลุ่มดาวสิงโต"
+        },
+        "tr": {
+            "language": "tr",
+            "value": "Leo"
+        },
+        "tt": {
+            "language": "tt",
+            "value": "Әсәт йолдызлыгы"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "Лев"
+        },
+        "ur": {
+            "language": "ur",
+            "value": "اسد"
+        },
+        "vi": {
+            "language": "vi",
+            "value": "Sư Tử"
+        },
+        "war": {
+            "language": "war",
+            "value": "Leo"
+        },
+        "zh": {
+            "language": "zh",
+            "value": "狮子座"
+        },
+        "be-tarask": {
+            "language": "be-tarask",
+            "value": "Леў"
+        },
+        "et": {
+            "language": "et",
+            "value": "Lõvi"
+        },
+        "pnb": {
+            "language": "pnb",
+            "value": "شینہ تارہ چرمٹ"
+        },
+        "hu": {
+            "language": "hu",
+            "value": "Oroszlán"
+        },
+        "oc": {
+            "language": "oc",
+            "value": "Leon (constellacion)"
+        },
+        "sr-ec": {
+            "language": "sr-ec",
+            "value": "лав"
+        },
+        "br": {
+            "language": "br",
+            "value": "Leo"
+        },
+        "kk": {
+            "language": "kk",
+            "value": "Арыстан (шоқжұлдыз)"
+        },
+        "eu": {
+            "language": "eu",
+            "value": "Leo (konstelazioa)"
+        },
+        "sl": {
+            "language": "sl",
+            "value": "Lev (ozvezdje)"
+        },
+        "bs": {
+            "language": "bs",
+            "value": "Lav"
+        },
+        "ba": {
+            "language": "ba",
+            "value": "Арыҫлан"
+        },
+        "ta": {
+            "language": "ta",
+            "value": "சிம்மம்"
+        },
+        "yue": {
+            "language": "yue",
+            "value": "獅子座"
+        },
+        "uz": {
+            "language": "uz",
+            "value": "Asad"
+        },
+        "nds": {
+            "language": "nds",
+            "value": "Lööv"
+        },
+        "az": {
+            "language": "az",
+            "value": "Şir"
+        },
+        "pcd": {
+            "language": "pcd",
+            "value": "Lion"
+        },
+        "cdo": {
+            "language": "cdo",
+            "value": "Săi-giāng-cô̤"
+        },
+        "nan": {
+            "language": "nan",
+            "value": "Sai-á-chō"
+        },
+        "ms": {
+            "language": "ms",
+            "value": "Singa"
+        },
+        "cy": {
+            "language": "cy",
+            "value": "Leo"
+        },
+        "hak": {
+            "language": "hak",
+            "value": "Sṳ̂-chṳ́-chho"
+        },
+        "ky": {
+            "language": "ky",
+            "value": "Арстан жылдызы"
+        },
+        "my": {
+            "language": "my",
+            "value": "လီယို"
+        },
+        "bo": {
+            "language": "bo",
+            "value": "སེང་གེའི་སྐར་ཚོམ་"
+        },
+        "wuu": {
+            "language": "wuu",
+            "value": "狮子座"
+        },
+        "sw": {
+            "language": "sw",
+            "value": "Asadi"
+        },
+        "mr": {
+            "language": "mr",
+            "value": "सिंह"
+        },
+        "sq": {
+            "language": "sq",
+            "value": "Luani"
+        },
+        "mg": {
+            "language": "mg",
+            "value": "Alahasaty (antokon-kintana)"
+        },
+        "hyw": {
+            "language": "hyw",
+            "value": "Առիւծ"
+        },
+        "arz": {
+            "language": "arz",
+            "value": "اسد (كوكبه)"
+        },
+        "diq": {
+            "language": "diq",
+            "value": "Şêr"
+        }
+    },
+    "descriptions": {
+        "nb": {
+            "language": "nb",
+            "value": "stjernebilde"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "constellation du zodiaque"
+        },
+        "en": {
+            "language": "en",
+            "value": "zodiac constellation passing through the celestial equator"
+        },
+        "it": {
+            "language": "it",
+            "value": "costellazione zodiacale"
+        },
+        "es": {
+            "language": "es",
+            "value": "constelación"
+        },
+        "ru": {
+            "language": "ru",
+            "value": "зодиакальное созвездие северного полушария"
+        },
+        "de": {
+            "language": "de",
+            "value": "Sternbild der Ekliptik"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "sterrenbeeld"
+        },
+        "af": {
+            "language": "af",
+            "value": "sterrebeeld"
+        },
+        "uz": {
+            "language": "uz",
+            "value": "yulduz turkumi"
+        },
+        "nds": {
+            "language": "nds",
+            "value": "Steernbild"
+        },
+        "el": {
+            "language": "el",
+            "value": "αστερισμός"
+        },
+        "sr": {
+            "language": "sr",
+            "value": "сазвежђе"
+        },
+        "ko": {
+            "language": "ko",
+            "value": "별자리"
+        },
+        "he": {
+            "language": "he",
+            "value": "קבוצת כוכבים"
+        },
+        "fi": {
+            "language": "fi",
+            "value": "tähdistö"
+        },
+        "ca": {
+            "language": "ca",
+            "value": "constel·lació"
+        },
+        "pl": {
+            "language": "pl",
+            "value": "gwiazdozbiór"
+        },
+        "eo": {
+            "language": "eo",
+            "value": "zodiaka konstelacio en la ĉiela ekvatoro"
+        },
+        "zh": {
+            "language": "zh",
+            "value": "星座"
+        },
+        "sq": {
+            "language": "sq",
+            "value": "yjësi"
+        },
+        "sv": {
+            "language": "sv",
+            "value": "stjärnbild på ekliptikan"
+        },
+        "ar": {
+            "language": "ar",
+            "value": "كوكبة"
+        },
+        "ast": {
+            "language": "ast",
+            "value": "constelación"
+        },
+        "da": {
+            "language": "da",
+            "value": "konstellation i ekliptika"
+        },
+        "pt": {
+            "language": "pt",
+            "value": "constelação"
+        },
+        "cs": {
+            "language": "cs",
+            "value": "souhvězdí procházející rovinou nebeského rovníku"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "réaltbhuíon de chuid an stoidiaca ar an meánchiorcal neamhaí"
+        },
+        "ky": {
+            "language": "ky",
+            "value": "түндүк жарым шардагы зодиактык топ жылдыз"
+        },
+        "fa": {
+            "language": "fa",
+            "value": "زیباست"
+        },
+        "ja": {
+            "language": "ja",
+            "value": "黄道十二星座の一つ"
+        }
+    },
+    "aliases": {
+        "de": [
+            {
+                "language": "de",
+                "value": "♌"
+            },
+            {
+                "language": "de",
+                "value": "Leo"
+            }
+        ],
+        "ru": [
+            {
+                "language": "ru",
+                "value": "Лев (созвездие)"
+            }
+        ],
+        "af": [
+            {
+                "language": "af",
+                "value": "Leo"
+            }
+        ],
+        "ar": [
+            {
+                "language": "ar",
+                "value": "كوكبة الأسد"
+            }
+        ],
+        "pl": [
+            {
+                "language": "pl",
+                "value": "Leo"
+            }
+        ],
+        "en": [
+            {
+                "language": "en",
+                "value": "Leonis"
+            },
+            {
+                "language": "en",
+                "value": "Leo (constellation)"
+            }
+        ],
+        "cs": [
+            {
+                "language": "cs",
+                "value": "souhvězdí Lva"
+            }
+        ]
+    },
+    "claims": {
+        "P913": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P913",
+                    "hash": "8e6adb5d8849835482a9fc807052ea5352bef55e",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 3594861,
+                            "id": "Q3594861"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q8853$42a27703-4562-ab02-6205-4050487823fb",
+                "rank": "normal"
+            }
+        ],
+        "P373": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P373",
+                    "hash": "ed6e4727c846e63f31094632975c34178d481477",
+                    "datavalue": {
+                        "value": "Leo (constellation)",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "q8853$111A7DFC-84E8-4A31-A804-185DC2F7558A",
+                "rank": "normal"
+            }
+        ],
+        "P31": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P31",
+                    "hash": "ce5f46d399bae2272ac573383c3c1cf14495783c",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 8928,
+                            "id": "Q8928"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q8853$e28a475c-4933-49af-39a9-cc94f203f583",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "68ae6340f5bb3e4432f8d9a31f3b03904ec86712",
+                        "snaks": {
+                            "P123": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P123",
+                                    "hash": "a233a39080faad5981544c9d76bc9be52c143f71",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 6867,
+                                            "id": "Q6867"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "e1321dbabfe05a647a26b2eaafeafde6d5fc091b",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2014-03-28T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ],
+                            "P407": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P407",
+                                    "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1860,
+                                            "id": "Q1860"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P854": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P854",
+                                    "hash": "dfbd741f1d19503f8e89b4e494d57dea97f4a2e3",
+                                    "datavalue": {
+                                        "value": "http://www.iau.org/public/themes/constellations/",
+                                        "type": "string"
+                                    },
+                                    "datatype": "url"
+                                }
+                            ],
+                            "P1476": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P1476",
+                                    "hash": "16154c2b24c987919b429fc2c1e83b589f2ce581",
+                                    "datavalue": {
+                                        "value": {
+                                            "text": "The Constellations",
+                                            "language": "en"
+                                        },
+                                        "type": "monolingualtext"
+                                    },
+                                    "datatype": "monolingualtext"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P123",
+                            "P813",
+                            "P407",
+                            "P854",
+                            "P1476"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P31",
+                    "hash": "26a0396c49d23fb6852727591e3c439eefd334d3",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 4193029,
+                            "id": "Q4193029"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q8853$C53B62A4-AFD3-4E33-BD55-0678D5E64459",
+                "rank": "normal"
+            }
+        ],
+        "P910": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P910",
+                    "hash": "f9d0f3949b972894aa2ddf7a3830fde2ddd0224e",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 10644,
+                            "id": "Q10644"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q8853$844b98ff-4806-3c96-6b41-1076622dd20c",
+                "rank": "normal"
+            }
+        ],
+        "P227": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P227",
+                    "hash": "54b5a3b24ac96cd84cfe56b79acfb0844eb2c61c",
+                    "datavalue": {
+                        "value": "4036178-0",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q8853$7777EF40-1625-4DEF-85BF-9ED106BE4D18",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 48183,
+                                            "id": "Q48183"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P646": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P646",
+                    "hash": "e6ae1bacdcce7d07776499dc5d163f2f28121029",
+                    "datavalue": {
+                        "value": "/m/04h2q",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q8853$DC65945E-F420-4DEE-A64F-15800E73583C",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 15241312,
+                                            "id": "Q15241312"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-10-28T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P18": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "80fc0cfe252fb42997daf6c986f306df95c5adcc",
+                    "datavalue": {
+                        "value": "LeoCC.jpg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "Q8853$AD164139-52B2-4EC7-B5D6-290971182DA8",
+                "rank": "normal"
+            }
+        ],
+        "P935": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P935",
+                    "hash": "c95129102ff4d12b0d7c1717c6d8c43905e0d0a5",
+                    "datavalue": {
+                        "value": "Leo",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "Q8853$C88B7D94-ABB8-4849-9BCF-F86A65CFEF41",
+                "rank": "normal"
+            }
+        ],
+        "P1417": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1417",
+                    "hash": "1fe687bd523d4833acc52195e9812e6d03ea088f",
+                    "datavalue": {
+                        "value": "place/Leo-constellation",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q8853$220e52f0-4051-5052-f9cd-c8037b12e8b7",
+                "rank": "normal"
+            }
+        ],
+        "P1296": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1296",
+                    "hash": "fac571f2b1ceb5a072dae454b934f6e3a1cd9ad0",
+                    "datavalue": {
+                        "value": "0037697",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q8853$4BC76B63-F7DB-4BC0-BA22-57DB2B86047E",
+                "rank": "normal"
+            }
+        ],
+        "P2924": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P2924",
+                    "hash": "ce524b8e31ad67ebd45fca7dde5b6d8cbc313299",
+                    "datavalue": {
+                        "value": "2135132",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q8853$5EB732B1-0F55-44EE-AE07-98A63F5C2D7F",
+                "rank": "normal"
+            }
+        ],
+        "P242": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P242",
+                    "hash": "ad1e3a5ce1bb23dbc262bea500b5933b9fb19e8d",
+                    "datavalue": {
+                        "value": "Leo constellation map.svg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "Q8853$49571BA0-5301-4A8A-977E-A6B29684B3A2",
+                "rank": "normal"
+            }
+        ],
+        "P1813": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1813",
+                    "hash": "3cc81e5a989188bb22d4ee902ea21019914ad994",
+                    "datavalue": {
+                        "value": {
+                            "text": "Leo",
+                            "language": "la"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q8853$40a873f8-4b3c-5040-fa4f-46171888ae9f",
+                "rank": "normal"
+            }
+        ],
+        "P138": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P138",
+                    "hash": "07acb09b6981bc28196660232594c9b2bc24ebc7",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 140,
+                            "id": "Q140"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q8853$45a1ac20-42fe-eb0f-3238-6085e4dc8705",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P138",
+                    "hash": "58cc11face83039bf2f896028306a0bba77bdd70",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 425449,
+                            "id": "Q425449"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q8853$87914bef-427c-bb1f-f35d-a79b765fb213",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P138",
+                    "hash": "e6cfc217f303125dd494fe8f3490d0cc7d40dfd3",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 199438,
+                            "id": "Q199438"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q8853$fd6567af-4134-6c2c-21ea-3f0850dec874",
+                "rank": "normal"
+            }
+        ],
+        "P2046": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P2046",
+                    "hash": "2372a5db5d4cd85e88f0c9f2d75e7bd078afb49a",
+                    "datavalue": {
+                        "value": {
+                            "amount": "+947",
+                            "unit": "http://www.wikidata.org/entity/Q254532"
+                        },
+                        "type": "quantity"
+                    },
+                    "datatype": "quantity"
+                },
+                "type": "statement",
+                "id": "Q8853$6309518b-4552-050d-a493-e06587b95ea2",
+                "rank": "normal"
+            }
+        ],
+        "P47": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P47",
+                    "hash": "0fc45f2eba1d4c96afdec1efe7fd49e6ebfafaf0",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 8918,
+                            "id": "Q8918"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q8853$9edac1f1-4638-a8ed-1e9e-b64c8edbab0f",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P47",
+                    "hash": "97e870b4c170aa41bce320ce2d9b8b7c181aeec4",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 10403,
+                            "id": "Q10403"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q8853$6acbacf4-4016-0fb7-0ae0-8e5fbbefc59b",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P47",
+                    "hash": "98739da089fc39f72f4da3e6f699860afa0a1470",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 10443,
+                            "id": "Q10443"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q8853$e9f5b279-457f-ad4f-9672-280e3f1e9d33",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P47",
+                    "hash": "557c86a77ef98c5522ee63fb6f7c6871eefb2c20",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 8849,
+                            "id": "Q8849"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q8853$f51cd713-455c-eee4-6671-1c7285058f08",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P47",
+                    "hash": "0bf7bae9ba8193f6ade950962479e65dae0ad248",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 10578,
+                            "id": "Q10578"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q8853$eb9a66f4-4fc8-60df-344b-fec697720e94",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P47",
+                    "hash": "631994d7087d478823f6ad9d2dd2b7028073f82f",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 10525,
+                            "id": "Q10525"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q8853$feb79f60-4efe-6b0f-a63d-a8a282947550",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P47",
+                    "hash": "d1eece85c3b68a54423671675b82ee8ffccca3c6",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 9282,
+                            "id": "Q9282"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q8853$00b6e8b7-4efd-184c-cab1-8f75c81fb59e",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P47",
+                    "hash": "f660bffc54b310818d3eb97306939e19f61a9eab",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 8842,
+                            "id": "Q8842"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q8853$1b8fa530-4fd5-c6c2-1256-402b697f96bd",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P47",
+                    "hash": "4607acde98f202aa2c511b04b177bb82d5a51d0e",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 9285,
+                            "id": "Q9285"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q8853$15c1aa1d-4506-fae9-64a6-66f2d3d7c004",
+                "rank": "normal"
+            }
+        ],
+        "P1343": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1343",
+                    "hash": "88389772f86dcd7d415ddd029f601412e5cc894a",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 602358,
+                            "id": "Q602358"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "qualifiers": {
+                    "P805": [
+                        {
+                            "snaktype": "value",
+                            "property": "P805",
+                            "hash": "e820359d472aaf20b62e3338997f794056c6f512",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 24451090,
+                                    "id": "Q24451090"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        }
+                    ]
+                },
+                "qualifiers-order": [
+                    "P805"
+                ],
+                "id": "Q8853$5d6e5c5d-37fa-4b66-90b6-6b83e5b67bc2",
+                "rank": "normal"
+            }
+        ],
+        "P1245": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1245",
+                    "hash": "3a2e0d50e0266a1f4796df2581d074c47a9ddd09",
+                    "datavalue": {
+                        "value": "688710",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q8853$7C046FBF-CA14-4DFC-A098-F7BAB17D685F",
+                "rank": "normal"
+            }
+        ],
+        "P443": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P443",
+                    "hash": "7d058dfd1e8a41f026974faec3dc0588e29c6854",
+                    "datavalue": {
+                        "value": "LL-Q150 (fra)-Ash Crow-lion.wav",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "qualifiers": {
+                    "P407": [
+                        {
+                            "snaktype": "value",
+                            "property": "P407",
+                            "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 150,
+                                    "id": "Q150"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        }
+                    ]
+                },
+                "qualifiers-order": [
+                    "P407"
+                ],
+                "id": "Q8853$0ab39b3a-4c05-28ae-ec1f-f88ce4527b35",
+                "rank": "normal"
+            }
+        ],
+        "P7818": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P7818",
+                    "hash": "c925f663a90fe4496db60baaa4994be2498b6d2e",
+                    "datavalue": {
+                        "value": "Lion_(constellation)",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q8853$21506F5B-6988-4791-BBE0-BDC9F265EBE3",
+                "rank": "normal"
+            }
+        ],
+        "P1424": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1424",
+                    "hash": "140cd79fd342e305cf85d7640cf1dfc001700249",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 6504951,
+                            "id": "Q6504951"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q8853$688199b7-1ba9-405f-bcfa-efd83574b469",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "ff71349f2867f5fd5a04bc314319852c888deda8",
+                        "snaks": {
+                            "P3452": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P3452",
+                                    "hash": "3048ea2a88b44be605f45884d2cd53f5c6c99bdb",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 6504951,
+                                            "id": "Q6504951"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P3452"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P8408": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P8408",
+                    "hash": "af8334443d2c68241c1333b4e048534987f23ea1",
+                    "datavalue": {
+                        "value": "Leo-Constellation",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q8853$2EC21231-19F5-482A-882D-96FCE53BD3FC",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "9a681f9dd95c90224547c404e11295f4f7dcf54e",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "9d5780dddffa8746637a9929a936ab6b0f601e24",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 64139102,
+                                            "id": "Q64139102"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "622a5a27fa5b25e7e7984974e9db494cf8460990",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2020-07-09T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P5063": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P5063",
+                    "hash": "0c7044d472fa9c792e222041c34e8f2f8d033886",
+                    "datavalue": {
+                        "value": "i85690",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q8853$5B0967C3-9752-4147-BA0B-D68DFFB72D60",
+                "rank": "normal"
+            }
+        ]
+    },
+    "sitelinks": {
+        "afwiki": {
+            "site": "afwiki",
+            "title": "Leeu (sterrebeeld)",
+            "badges": []
+        },
+        "arwiki": {
+            "site": "arwiki",
+            "title": "الأسد (كوكبة)",
+            "badges": []
+        },
+        "arzwiki": {
+            "site": "arzwiki",
+            "title": "ليو (كوكبه)",
+            "badges": []
+        },
+        "astwiki": {
+            "site": "astwiki",
+            "title": "Lleo",
+            "badges": []
+        },
+        "azwiki": {
+            "site": "azwiki",
+            "title": "Şir (bürc)",
+            "badges": []
+        },
+        "bawiki": {
+            "site": "bawiki",
+            "title": "Арыҫлан (йондоҙлоҡ)",
+            "badges": []
+        },
+        "be_x_oldwiki": {
+            "site": "be_x_oldwiki",
+            "title": "Леў (сузор’е)",
+            "badges": []
+        },
+        "bewiki": {
+            "site": "bewiki",
+            "title": "Леў (сузор’е)",
+            "badges": []
+        },
+        "bgwiki": {
+            "site": "bgwiki",
+            "title": "Лъв (съзвездие)",
+            "badges": []
+        },
+        "bowiki": {
+            "site": "bowiki",
+            "title": "སེང་གེའི་སྐར་ཚོམ་",
+            "badges": []
+        },
+        "brwiki": {
+            "site": "brwiki",
+            "title": "Leon (steredeg)",
+            "badges": []
+        },
+        "bswiki": {
+            "site": "bswiki",
+            "title": "Lav (sazviježđe)",
+            "badges": []
+        },
+        "cawiki": {
+            "site": "cawiki",
+            "title": "Constel·lació del Lleó",
+            "badges": []
+        },
+        "cdowiki": {
+            "site": "cdowiki",
+            "title": "Sṳ̆-cṳ̄-cô̤",
+            "badges": []
+        },
+        "commonswiki": {
+            "site": "commonswiki",
+            "title": "Leo",
+            "badges": []
+        },
+        "cowiki": {
+            "site": "cowiki",
+            "title": "Lione (custellazione)",
+            "badges": []
+        },
+        "cswiki": {
+            "site": "cswiki",
+            "title": "Souhvězdí Lva",
+            "badges": []
+        },
+        "cywiki": {
+            "site": "cywiki",
+            "title": "Leo (cytser)",
+            "badges": []
+        },
+        "dawiki": {
+            "site": "dawiki",
+            "title": "Løven (stjernebillede)",
+            "badges": []
+        },
+        "dewiki": {
+            "site": "dewiki",
+            "title": "Löwe (Sternbild)",
+            "badges": []
+        },
+        "diqwiki": {
+            "site": "diqwiki",
+            "title": "Leo (taxımestare)",
+            "badges": []
+        },
+        "elwiki": {
+            "site": "elwiki",
+            "title": "Λέων (αστερισμός)",
+            "badges": []
+        },
+        "enwiki": {
+            "site": "enwiki",
+            "title": "Leo (constellation)",
+            "badges": []
+        },
+        "eowiki": {
+            "site": "eowiki",
+            "title": "Leono (konstelacio)",
+            "badges": []
+        },
+        "eswiki": {
+            "site": "eswiki",
+            "title": "Leo (constelación)",
+            "badges": []
+        },
+        "etwiki": {
+            "site": "etwiki",
+            "title": "Lõvi (tähtkuju)",
+            "badges": []
+        },
+        "euwiki": {
+            "site": "euwiki",
+            "title": "Leo (konstelazioa)",
+            "badges": []
+        },
+        "fawiki": {
+            "site": "fawiki",
+            "title": "شیر (صورت فلکی)",
+            "badges": []
+        },
+        "fiwiki": {
+            "site": "fiwiki",
+            "title": "Leijona (tähdistö)",
+            "badges": []
+        },
+        "frwiki": {
+            "site": "frwiki",
+            "title": "Lion (constellation)",
+            "badges": []
+        },
+        "gawiki": {
+            "site": "gawiki",
+            "title": "An Leon",
+            "badges": []
+        },
+        "glwiki": {
+            "site": "glwiki",
+            "title": "Leo",
+            "badges": []
+        },
+        "hakwiki": {
+            "site": "hakwiki",
+            "title": "Sṳ̂-chṳ́-chho",
+            "badges": []
+        },
+        "hewiki": {
+            "site": "hewiki",
+            "title": "אריה (קבוצת כוכבים)",
+            "badges": []
+        },
+        "hiwiki": {
+            "site": "hiwiki",
+            "title": "सिंह तारामंडल",
+            "badges": []
+        },
+        "hrwiki": {
+            "site": "hrwiki",
+            "title": "Lav (zviježđe)",
+            "badges": []
+        },
+        "huwiki": {
+            "site": "huwiki",
+            "title": "Oroszlán csillagkép",
+            "badges": []
+        },
+        "hywiki": {
+            "site": "hywiki",
+            "title": "Առյուծ (համաստեղություն)",
+            "badges": []
+        },
+        "hywwiki": {
+            "site": "hywwiki",
+            "title": "Առիւծ (կենդանակերպ)",
+            "badges": []
+        },
+        "iawiki": {
+            "site": "iawiki",
+            "title": "Leon (constellation)",
+            "badges": []
+        },
+        "idwiki": {
+            "site": "idwiki",
+            "title": "Leo",
+            "badges": []
+        },
+        "iowiki": {
+            "site": "iowiki",
+            "title": "Leono (stelaro)",
+            "badges": []
+        },
+        "itwiki": {
+            "site": "itwiki",
+            "title": "Leone (costellazione)",
+            "badges": []
+        },
+        "itwikiquote": {
+            "site": "itwikiquote",
+            "title": "Leone (costellazione)",
+            "badges": []
+        },
+        "jawiki": {
+            "site": "jawiki",
+            "title": "しし座",
+            "badges": []
+        },
+        "jvwiki": {
+            "site": "jvwiki",
+            "title": "Leo",
+            "badges": []
+        },
+        "kawiki": {
+            "site": "kawiki",
+            "title": "ლომის თანავარსკვლავედი",
+            "badges": []
+        },
+        "kkwiki": {
+            "site": "kkwiki",
+            "title": "Арыстан (шоқжұлдыз)",
+            "badges": []
+        },
+        "kowiki": {
+            "site": "kowiki",
+            "title": "사자자리",
+            "badges": []
+        },
+        "kuwiki": {
+            "site": "kuwiki",
+            "title": "Şêr (komstêr)",
+            "badges": []
+        },
+        "kywiki": {
+            "site": "kywiki",
+            "title": "Арстан (топ жылдыз)",
+            "badges": []
+        },
+        "lawiki": {
+            "site": "lawiki",
+            "title": "Leo (constellatio)",
+            "badges": []
+        },
+        "lbwiki": {
+            "site": "lbwiki",
+            "title": "Leo (Stärebild)",
+            "badges": []
+        },
+        "liwiki": {
+            "site": "liwiki",
+            "title": "Liew (starebeeld)",
+            "badges": []
+        },
+        "ltwiki": {
+            "site": "ltwiki",
+            "title": "Liūtas (žvaigždynas)",
+            "badges": []
+        },
+        "lvwiki": {
+            "site": "lvwiki",
+            "title": "Lauva (zvaigznājs)",
+            "badges": []
+        },
+        "mgwiki": {
+            "site": "mgwiki",
+            "title": "Alahasaty (antokon-kintana)",
+            "badges": []
+        },
+        "mhrwiki": {
+            "site": "mhrwiki",
+            "title": "Арыслан (тӱшка шӱдыр)",
+            "badges": []
+        },
+        "mkwiki": {
+            "site": "mkwiki",
+            "title": "Лав (соѕвездие)",
+            "badges": []
+        },
+        "mlwiki": {
+            "site": "mlwiki",
+            "title": "ചിങ്ങം (നക്ഷത്രരാശി)",
+            "badges": []
+        },
+        "mrwiki": {
+            "site": "mrwiki",
+            "title": "सिंह (तारकासमूह)",
+            "badges": []
+        },
+        "mswiki": {
+            "site": "mswiki",
+            "title": "Singa (buruj)",
+            "badges": []
+        },
+        "mywiki": {
+            "site": "mywiki",
+            "title": "လီယို (ကြယ်စုတန်း)",
+            "badges": []
+        },
+        "nahwiki": {
+            "site": "nahwiki",
+            "title": "Cītlalōlli",
+            "badges": []
+        },
+        "nlwiki": {
+            "site": "nlwiki",
+            "title": "Leeuw (sterrenbeeld)",
+            "badges": []
+        },
+        "nnwiki": {
+            "site": "nnwiki",
+            "title": "Løva",
+            "badges": []
+        },
+        "nowiki": {
+            "site": "nowiki",
+            "title": "Løven",
+            "badges": []
+        },
+        "ocwiki": {
+            "site": "ocwiki",
+            "title": "Leon (constellacion)",
+            "badges": []
+        },
+        "pcdwiki": {
+            "site": "pcdwiki",
+            "title": "Lion (constélacion)",
+            "badges": []
+        },
+        "plwiki": {
+            "site": "plwiki",
+            "title": "Gwiazdozbiór Lwa",
+            "badges": []
+        },
+        "pnbwiki": {
+            "site": "pnbwiki",
+            "title": "شینہ تارہ چرمٹ",
+            "badges": []
+        },
+        "ptwiki": {
+            "site": "ptwiki",
+            "title": "Leo",
+            "badges": []
+        },
+        "rowiki": {
+            "site": "rowiki",
+            "title": "Leul (constelație)",
+            "badges": []
+        },
+        "ruwiki": {
+            "site": "ruwiki",
+            "title": "Лев (созвездие)",
+            "badges": []
+        },
+        "ruwikinews": {
+            "site": "ruwikinews",
+            "title": "Категория:Лев (созвездие)",
+            "badges": []
+        },
+        "sahwiki": {
+            "site": "sahwiki",
+            "title": "Хахай (сулустар бөлөхтөрө)",
+            "badges": []
+        },
+        "shwiki": {
+            "site": "shwiki",
+            "title": "Lav (zviježđe)",
+            "badges": []
+        },
+        "simplewiki": {
+            "site": "simplewiki",
+            "title": "Leo (constellation)",
+            "badges": []
+        },
+        "skwiki": {
+            "site": "skwiki",
+            "title": "Lev (súhvezdie)",
+            "badges": []
+        },
+        "slwiki": {
+            "site": "slwiki",
+            "title": "Lev (ozvezdje)",
+            "badges": []
+        },
+        "sqwiki": {
+            "site": "sqwiki",
+            "title": "Luani (yjësia)",
+            "badges": []
+        },
+        "srwiki": {
+            "site": "srwiki",
+            "title": "Лав (сазвежђе)",
+            "badges": []
+        },
+        "svwiki": {
+            "site": "svwiki",
+            "title": "Lejonet (stjärnbild)",
+            "badges": []
+        },
+        "swwiki": {
+            "site": "swwiki",
+            "title": "Simba (kundinyota)",
+            "badges": []
+        },
+        "tawiki": {
+            "site": "tawiki",
+            "title": "சிம்மம் (விண்மீன் குழாம்)",
+            "badges": []
+        },
+        "thwiki": {
+            "site": "thwiki",
+            "title": "กลุ่มดาวสิงโต",
+            "badges": []
+        },
+        "trwiki": {
+            "site": "trwiki",
+            "title": "Leo (takımyıldız)",
+            "badges": []
+        },
+        "ttwiki": {
+            "site": "ttwiki",
+            "title": "Әсәт йолдызлыгы",
+            "badges": []
+        },
+        "ukwiki": {
+            "site": "ukwiki",
+            "title": "Лев (сузір'я)",
+            "badges": []
+        },
+        "urwiki": {
+            "site": "urwiki",
+            "title": "اسد (مجمع النجوم)",
+            "badges": []
+        },
+        "viwiki": {
+            "site": "viwiki",
+            "title": "Sư Tử (chòm sao)",
+            "badges": []
+        },
+        "warwiki": {
+            "site": "warwiki",
+            "title": "Leo (constelasyon)",
+            "badges": []
+        },
+        "wuuwiki": {
+            "site": "wuuwiki",
+            "title": "狮子座",
+            "badges": []
+        },
+        "zh_min_nanwiki": {
+            "site": "zh_min_nanwiki",
+            "title": "Sai-á-chō",
+            "badges": []
+        },
+        "zh_yuewiki": {
+            "site": "zh_yuewiki",
+            "title": "獅子座",
+            "badges": []
+        },
+        "zhwiki": {
+            "site": "zhwiki",
+            "title": "狮子座",
+            "badges": []
+        }
+    }
+}

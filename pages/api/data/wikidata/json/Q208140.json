@@ -1,0 +1,2788 @@
+{
+    "pageid": 204191,
+    "ns": 0,
+    "title": "Q208140",
+    "lastrevid": 1330193611,
+    "modified": "2020-12-28T14:55:00Z",
+    "type": "item",
+    "id": "Q208140",
+    "labels": {
+        "zh-hans": {
+            "language": "zh-hans",
+            "value": "非洲野驴"
+        },
+        "zh-hant": {
+            "language": "zh-hant",
+            "value": "非洲野驢"
+        },
+        "zh-hk": {
+            "language": "zh-hk",
+            "value": "非洲野驢"
+        },
+        "zh-cn": {
+            "language": "zh-cn",
+            "value": "非洲野驴"
+        },
+        "zh-sg": {
+            "language": "zh-sg",
+            "value": "非洲野驴"
+        },
+        "zh-tw": {
+            "language": "zh-tw",
+            "value": "非洲野驢"
+        },
+        "eu": {
+            "language": "eu",
+            "value": "Afrikako basa asto"
+        },
+        "pl": {
+            "language": "pl",
+            "value": "Osioł afrykański"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "Âne sauvage d'Afrique"
+        },
+        "he": {
+            "language": "he",
+            "value": "ערוד"
+        },
+        "ko": {
+            "language": "ko",
+            "value": "아프리카야생당나귀"
+        },
+        "es": {
+            "language": "es",
+            "value": "Equus africanus"
+        },
+        "ms": {
+            "language": "ms",
+            "value": "Keldai Liar Afrika"
+        },
+        "hu": {
+            "language": "hu",
+            "value": "vadszamár"
+        },
+        "lv": {
+            "language": "lv",
+            "value": "Āfrikas savvaļas ēzelis"
+        },
+        "it": {
+            "language": "it",
+            "value": "Equus africanus"
+        },
+        "de": {
+            "language": "de",
+            "value": "Afrikanischer Esel"
+        },
+        "ja": {
+            "language": "ja",
+            "value": "アフリカノロバ"
+        },
+        "br": {
+            "language": "br",
+            "value": "Azen gouez"
+        },
+        "sh": {
+            "language": "sh",
+            "value": "Afrički divlji magarac"
+        },
+        "pnb": {
+            "language": "pnb",
+            "value": "افریقی جنگلی کھوتا"
+        },
+        "ar": {
+            "language": "ar",
+            "value": "حمار بري إفريقي"
+        },
+        "sv": {
+            "language": "sv",
+            "value": "afrikansk vildåsna"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "Equus africanus"
+        },
+        "pt": {
+            "language": "pt",
+            "value": "Asno-selvagem-africano"
+        },
+        "sk": {
+            "language": "sk",
+            "value": "Somár africký"
+        },
+        "ru": {
+            "language": "ru",
+            "value": "дикий осёл"
+        },
+        "en": {
+            "language": "en",
+            "value": "Equus africanus"
+        },
+        "sr-el": {
+            "language": "sr-el",
+            "value": "Afrički divlji magarac"
+        },
+        "sr-ec": {
+            "language": "sr-ec",
+            "value": "Афрички дивљи магарац"
+        },
+        "tr": {
+            "language": "tr",
+            "value": "Afrika yaban eşeği"
+        },
+        "th": {
+            "language": "th",
+            "value": "ลาป่าแอฟริกา"
+        },
+        "ca": {
+            "language": "ca",
+            "value": "ase salvatge africà"
+        },
+        "fi": {
+            "language": "fi",
+            "value": "Afrikanvilliaasi"
+        },
+        "cs": {
+            "language": "cs",
+            "value": "osel africký"
+        },
+        "fa": {
+            "language": "fa",
+            "value": "خر وحشی آفریقایی"
+        },
+        "az": {
+            "language": "az",
+            "value": "Afrika eşşəyi"
+        },
+        "hr": {
+            "language": "hr",
+            "value": "Afrički divlji magarac"
+        },
+        "an": {
+            "language": "an",
+            "value": "Equus africanus"
+        },
+        "zh": {
+            "language": "zh",
+            "value": "非洲野驴"
+        },
+        "sr": {
+            "language": "sr",
+            "value": "Афрички дивљи магарац"
+        },
+        "nv": {
+            "language": "nv",
+            "value": "Télii bijáád noodǫ́zí"
+        },
+        "la": {
+            "language": "la",
+            "value": "Equus asinus"
+        },
+        "war": {
+            "language": "war",
+            "value": "Equus asinus"
+        },
+        "vi": {
+            "language": "vi",
+            "value": "Lừa hoang châu Phi"
+        },
+        "eo": {
+            "language": "eo",
+            "value": "Afrika sovaĝa azeno"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "африканско диво магаре"
+        },
+        "ia": {
+            "language": "ia",
+            "value": "Equus africanus"
+        },
+        "el": {
+            "language": "el",
+            "value": "αφρικανικός όνος"
+        },
+        "da": {
+            "language": "da",
+            "value": "afrikansk vildæsel"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "Дикий віслюк"
+        },
+        "am": {
+            "language": "am",
+            "value": "ኣውር ኣህያ"
+        },
+        "lt": {
+            "language": "lt",
+            "value": "Afrikinis asilas"
+        },
+        "nb": {
+            "language": "nb",
+            "value": "afrikansk villesel"
+        },
+        "frr": {
+            "language": "frr",
+            "value": "Echt eesel"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "Asal Afracach"
+        },
+        "ast": {
+            "language": "ast",
+            "value": "Equus africanus"
+        },
+        "ro": {
+            "language": "ro",
+            "value": "Equus africanus"
+        },
+        "sq": {
+            "language": "sq",
+            "value": "Equus africanus"
+        },
+        "ceb": {
+            "language": "ceb",
+            "value": "Equus africanus"
+        }
+    },
+    "descriptions": {
+        "it": {
+            "language": "it",
+            "value": "specie di animale della famiglia Equidae"
+        },
+        "ru": {
+            "language": "ru",
+            "value": "вид лошадей"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "espèce de mammifères"
+        },
+        "de": {
+            "language": "de",
+            "value": "Art der Gattung Pferde (Equus)"
+        },
+        "fa": {
+            "language": "fa",
+            "value": "گونه‌ای از ستوران"
+        },
+        "en": {
+            "language": "en",
+            "value": "species of mammal"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "вид бозайник"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "soort uit het geslacht Equus"
+        },
+        "ar": {
+            "language": "ar",
+            "value": "نوع من الثدييات"
+        },
+        "hu": {
+            "language": "hu",
+            "value": "emlősfaj"
+        },
+        "es": {
+            "language": "es",
+            "value": "Asno africano"
+        },
+        "zh": {
+            "language": "zh",
+            "value": "哺乳动物物种"
+        },
+        "eu": {
+            "language": "eu",
+            "value": "Astoaren forma basatia, etxe-astoaren arbasoa dena. Equus africanus."
+        },
+        "uk": {
+            "language": "uk",
+            "value": "вид ссавців"
+        },
+        "da": {
+            "language": "da",
+            "value": "pattedyr i hestefamilien"
+        },
+        "ast": {
+            "language": "ast",
+            "value": "especie de mamíferu"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "speiceas mamach"
+        },
+        "he": {
+            "language": "he",
+            "value": "בעל חיים מתת-סוג חמור"
+        }
+    },
+    "aliases": {
+        "eu": [
+            {
+                "language": "eu",
+                "value": "Equus africanus"
+            },
+            {
+                "language": "eu",
+                "value": "basasto"
+            }
+        ],
+        "pl": [
+            {
+                "language": "pl",
+                "value": "Equus africanus"
+            },
+            {
+                "language": "pl",
+                "value": "Konik afrykański"
+            }
+        ],
+        "fr": [
+            {
+                "language": "fr",
+                "value": "Equus africanus"
+            },
+            {
+                "language": "fr",
+                "value": "Equus asinus africanus"
+            },
+            {
+                "language": "fr",
+                "value": "Ane sauvage d'Afrique"
+            }
+        ],
+        "he": [
+            {
+                "language": "he",
+                "value": "Equus africanus"
+            },
+            {
+                "language": "he",
+                "value": "Equus asinus"
+            }
+        ],
+        "ko": [
+            {
+                "language": "ko",
+                "value": "아프리카야생나귀"
+            }
+        ],
+        "es": [
+            {
+                "language": "es",
+                "value": "Asno salvaje africano"
+            },
+            {
+                "language": "es",
+                "value": "Burro salvaje africano"
+            },
+            {
+                "language": "es",
+                "value": "Asno salvaje de Somalia"
+            },
+            {
+                "language": "es",
+                "value": "Asno salvaje de Nubia"
+            }
+        ],
+        "ms": [
+            {
+                "language": "ms",
+                "value": "Equus africanus"
+            }
+        ],
+        "lv": [
+            {
+                "language": "lv",
+                "value": "Equus africanus"
+            }
+        ],
+        "it": [
+            {
+                "language": "it",
+                "value": "Asino selvatico africano"
+            }
+        ],
+        "de": [
+            {
+                "language": "de",
+                "value": "Equus africanus"
+            },
+            {
+                "language": "de",
+                "value": "Echter Esel"
+            },
+            {
+                "language": "de",
+                "value": "Equus asinus"
+            }
+        ],
+        "ja": [
+            {
+                "language": "ja",
+                "value": "ソマリノロバ"
+            }
+        ],
+        "br": [
+            {
+                "language": "br",
+                "value": "Equus africanus"
+            }
+        ],
+        "nl": [
+            {
+                "language": "nl",
+                "value": "Asinus africanus"
+            }
+        ],
+        "pt": [
+            {
+                "language": "pt",
+                "value": "Equus africanus"
+            }
+        ],
+        "sk": [
+            {
+                "language": "sk",
+                "value": "Somár divý"
+            }
+        ],
+        "ru": [
+            {
+                "language": "ru",
+                "value": "Equus asinus"
+            },
+            {
+                "language": "ru",
+                "value": "африканский осёл"
+            },
+            {
+                "language": "ru",
+                "value": "Equus africanus"
+            }
+        ],
+        "sr": [
+            {
+                "language": "sr",
+                "value": "Equus africanus"
+            }
+        ],
+        "tr": [
+            {
+                "language": "tr",
+                "value": "Equus africanus"
+            }
+        ],
+        "ca": [
+            {
+                "language": "ca",
+                "value": "Ase silvestre africà"
+            },
+            {
+                "language": "ca",
+                "value": "Equus africanus"
+            }
+        ],
+        "fi": [
+            {
+                "language": "fi",
+                "value": "Afrikkalainen villiaasi"
+            },
+            {
+                "language": "fi",
+                "value": "Equus africanus"
+            },
+            {
+                "language": "fi",
+                "value": "Equus asinus"
+            },
+            {
+                "language": "fi",
+                "value": "Villiaasi"
+            }
+        ],
+        "cs": [
+            {
+                "language": "cs",
+                "value": "Equus asinus"
+            }
+        ],
+        "fa": [
+            {
+                "language": "fa",
+                "value": "خر وحشی افریقایی"
+            }
+        ],
+        "az": [
+            {
+                "language": "az",
+                "value": "Afrika ulağı"
+            },
+            {
+                "language": "az",
+                "value": "Equus africanus"
+            },
+            {
+                "language": "az",
+                "value": "Equus asinus"
+            }
+        ],
+        "an": [
+            {
+                "language": "an",
+                "value": "Somero salbache africano"
+            },
+            {
+                "language": "an",
+                "value": "Somer salvache africano"
+            },
+            {
+                "language": "an",
+                "value": "Somer salbache africano"
+            },
+            {
+                "language": "an",
+                "value": "Equus africanus somalicus"
+            },
+            {
+                "language": "an",
+                "value": "Somero salvache africano"
+            },
+            {
+                "language": "an",
+                "value": "Equus africanus africanus"
+            }
+        ],
+        "en": [
+            {
+                "language": "en",
+                "value": "African wild ass"
+            }
+        ],
+        "el": [
+            {
+                "language": "el",
+                "value": "αφρικανικός αγριογάιδαρος"
+            },
+            {
+                "language": "el",
+                "value": "Equus africanus"
+            }
+        ],
+        "hu": [
+            {
+                "language": "hu",
+                "value": "Equus africanus"
+            },
+            {
+                "language": "hu",
+                "value": "afrikai vadszamár"
+            }
+        ],
+        "bg": [
+            {
+                "language": "bg",
+                "value": "Equus africanus"
+            }
+        ]
+    },
+    "claims": {
+        "P105": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P105",
+                    "hash": "aebf3611b23ed90c7c0fc80f6cd1cb7be110ea59",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 7432,
+                            "id": "Q7432"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "q208140$9883F7BB-E2B6-4F28-BE32-6B671F3F1E42",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "89e96b63b05055cc80c950cf5fea109c7d453658",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "c26dbcef1202a7d198982ed24f6ea69b704f95fe",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 82575,
+                                            "id": "Q82575"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "539fa499b6ea982e64006270bb26f52a57a8e32b",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+1996-06-13T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "96dfb8481e184edb40553947f8fe08ce080f1553",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-09-19T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P373": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P373",
+                    "hash": "ef86b909d3ba62442b0b8dff107ca0085f56e9b7",
+                    "datavalue": {
+                        "value": "Equus africanus",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "q208140$24722F3B-F913-4286-9AFF-D0AC94E32817",
+                "rank": "normal"
+            }
+        ],
+        "P225": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P225",
+                    "hash": "010992a8a926253d65595d2ed9cf0f190f7ffbed",
+                    "datavalue": {
+                        "value": "Equus africanus",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "qualifiers": {
+                    "P405": [
+                        {
+                            "snaktype": "value",
+                            "property": "P405",
+                            "hash": "1277dacc7a145bdfe7993df2ca2d6061113fb7d9",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 61968,
+                                    "id": "Q61968"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        },
+                        {
+                            "snaktype": "value",
+                            "property": "P405",
+                            "hash": "38d637b211cd74e3b2abe311c1dfafac8d415949",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 93568,
+                                    "id": "Q93568"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        }
+                    ],
+                    "P574": [
+                        {
+                            "snaktype": "value",
+                            "property": "P574",
+                            "hash": "82414d58838832e7bf8bcb654caf64e9d6f1d8b7",
+                            "datavalue": {
+                                "value": {
+                                    "time": "+1866-00-00T00:00:00Z",
+                                    "timezone": 0,
+                                    "before": 0,
+                                    "after": 0,
+                                    "precision": 9,
+                                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                },
+                                "type": "time"
+                            },
+                            "datatype": "time"
+                        }
+                    ],
+                    "P31": [
+                        {
+                            "snaktype": "value",
+                            "property": "P31",
+                            "hash": "60a983bb1006c765614eb370c3854e64ec50599f",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 14594740,
+                                    "id": "Q14594740"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        }
+                    ]
+                },
+                "qualifiers-order": [
+                    "P405",
+                    "P574",
+                    "P31"
+                ],
+                "id": "q208140$9B11B7FD-C8ED-4873-9271-D68DADF88D53",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "89e96b63b05055cc80c950cf5fea109c7d453658",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "c26dbcef1202a7d198982ed24f6ea69b704f95fe",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 82575,
+                                            "id": "Q82575"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "539fa499b6ea982e64006270bb26f52a57a8e32b",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+1996-06-13T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "96dfb8481e184edb40553947f8fe08ce080f1553",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-09-19T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P18": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "67822949f0d2489f01203b0d56844af6245240de",
+                    "datavalue": {
+                        "value": "African wild Ass.jpg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "qualifiers": {
+                    "P2096": [
+                        {
+                            "snaktype": "value",
+                            "property": "P2096",
+                            "hash": "3e2f30d8ad01b7a4a64e58a9f156f59d41fe9d29",
+                            "datavalue": {
+                                "value": {
+                                    "text": "Equus africanus somalicus",
+                                    "language": "ca"
+                                },
+                                "type": "monolingualtext"
+                            },
+                            "datatype": "monolingualtext"
+                        }
+                    ]
+                },
+                "qualifiers-order": [
+                    "P2096"
+                ],
+                "id": "q208140$62E21069-9A6C-4C64-A5DA-0DA316F5922D",
+                "rank": "normal"
+            }
+        ],
+        "P181": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P181",
+                    "hash": "0fafbe5962220811424779b03b67d936e65d7edd",
+                    "datavalue": {
+                        "value": "Equus africanus distribution.svg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "q208140$7BA8D11F-E611-4207-9FA0-5463B3DF710C",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 328,
+                                            "id": "Q328"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P31": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P31",
+                    "hash": "06629d890d7ab0ff85c403d8aadf57ce9809c01f",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 16521,
+                            "id": "Q16521"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "q208140$9CAF25AF-BB95-4E82-9AEC-AF5CAFE155CF",
+                "rank": "normal"
+            }
+        ],
+        "P171": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P171",
+                    "hash": "7f1494ec9efbcae380ff2ac9d724ba8a7540d517",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 27022,
+                            "id": "Q27022"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q208140$09fdea29-416d-e5af-db12-5c6ab5851512",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "89e96b63b05055cc80c950cf5fea109c7d453658",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "c26dbcef1202a7d198982ed24f6ea69b704f95fe",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 82575,
+                                            "id": "Q82575"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "539fa499b6ea982e64006270bb26f52a57a8e32b",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+1996-06-13T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "96dfb8481e184edb40553947f8fe08ce080f1553",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-09-19T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P815": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P815",
+                    "hash": "9b1cd46272bf62b227f6b3ec496ef0736d59ed93",
+                    "datavalue": {
+                        "value": "926142",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q208140$AA40F534-381E-44C0-B481-6D88DE0EF86A",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "5afd298cf39effb71a4a641eb3127b42b25214c3",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "c26dbcef1202a7d198982ed24f6ea69b704f95fe",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 82575,
+                                            "id": "Q82575"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "a647dba9b9772b63cf64c55674c1b16cdc9ae87d",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-07-28T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P910": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P910",
+                    "hash": "43e31bb30a232846ff1f47455ae7b91a094825cd",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 28759910,
+                            "id": "Q28759910"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q208140$1f7ce5da-4111-28cb-f815-a865615f4596",
+                "rank": "normal"
+            }
+        ],
+        "P646": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P646",
+                    "hash": "0feacfbfdb9317b6cc2d5a8b43f135aacd5512a7",
+                    "datavalue": {
+                        "value": "/m/09vxrf",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q208140$FD5B69E6-D88B-4CEA-B75B-B9150ECADB4A",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 15241312,
+                                            "id": "Q15241312"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-10-28T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P141": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P141",
+                    "hash": "9c34b29bf4b1067e0ce6ecdfd83be8d3cfc4ec0f",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 219127,
+                            "id": "Q219127"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q208140$7D6985FE-6B03-4CED-AF6E-47F6F36F8BB9",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "c6e388501a7ac2f9744357b71086fe6cbab4017a",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "744bc312f33e8ae7ea0bc4910a0314a610cc3e72",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 104368521,
+                                            "id": "Q104368521"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P627": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P627",
+                                    "hash": "442aa3dbf5af140f03f617c0762921f8c0afd8de",
+                                    "datavalue": {
+                                        "value": "7949",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "4bafd415d4f8947f10c51571d96632eaea61cf97",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2020-12-28T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P627",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P830": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P830",
+                    "hash": "ff36afb77790d2a4df239307e4ab52702d27e89b",
+                    "datavalue": {
+                        "value": "328647",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q208140$BE36BB51-5294-4D0A-BE9F-992E32DD6F76",
+                "rank": "normal"
+            }
+        ],
+        "P842": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P842",
+                    "hash": "685d72f764e9cede0e23a3338a28129112b3f57c",
+                    "datavalue": {
+                        "value": "239419",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q208140$8F98C73E-265D-4670-A637-BD8000319B7A",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "ff3207a3255f1b9eb63960e7a06e267197587f65",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "00fe2206a3342fa25c0cfe1d08783c49a1986f12",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 796451,
+                                            "id": "Q796451"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "0dc850f3fbd012a2905bff8d932b867556debb91",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-07-21T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P2040": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P2040",
+                    "hash": "720e7269000404136b1b233853491013f2b0fc94",
+                    "datavalue": {
+                        "value": "3255",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q208140$31821D42-EBF2-4E42-AB24-74B54D47A007",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "348b5187938d682071c94e22f1b30659af715dc7",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "213dc0d84ed983cbb28466ebb0c45bf8b0730ea2",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 20962955,
+                                            "id": "Q20962955"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "3d2c713dec9143721ae196af88fee0fde5ae20f2",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-09-10T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P935": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P935",
+                    "hash": "802b321511956f05192deba619663dc219cf2cb2",
+                    "datavalue": {
+                        "value": "Equus africanus",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "Q208140$EE669945-7F69-4E4D-860A-0C339851070A",
+                "rank": "normal"
+            }
+        ],
+        "P846": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P846",
+                    "hash": "5f801e93755080d8489d41005ebfb52e362d05e1",
+                    "datavalue": {
+                        "value": "5787168",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q208140$167F7BAC-C859-4065-8C96-D0440740F4A1",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "2df140c0032da1951d30ef7facf3bbe37f9bf4ce",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "dbb8dd1efbe0158a5227213bd628eeac27a1da65",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1531570,
+                                            "id": "Q1531570"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "63a48523b7028f4a441eedfd63710e88d98244b9",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-12-04T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P2752": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P2752",
+                    "hash": "7c9cb95aebf2e31033919b145c9f90c8f0c9ff84",
+                    "datavalue": {
+                        "value": "b5999c48-d584-4f9c-a0e5-32e4d29d09ab",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q208140$F0AE177A-11CD-4D5A-9BE1-E74C256203ED",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "f2265c9b83cc21e46fc1abe6a9a6745a1fffda37",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "d2a00cf78c60679a289dbbfe43c50d44ee8afd95",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 23893915,
+                                            "id": "Q23893915"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "13a652be234c1f3b5e8b77c12736919092de26ac",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-04-29T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P1843": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "bdf21b77d2e263bc2aafa44fdca5100396ce087b",
+                    "datavalue": {
+                        "value": {
+                            "text": "African wild ass",
+                            "language": "en"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q208140$BEEC5220-1C48-4C50-85F4-D34804C7552E",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "e320bd743dc36820f2627d6ef9d8e5cbbec69521",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "158cddada2d76da9ecb2072e793c1ce99dbcb169",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 433276,
+                                            "id": "Q433276"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "3949eeb1b61292c8967f17156baa463352b13b97",
+                    "datavalue": {
+                        "value": {
+                            "text": "Asno Salvaje de Africa",
+                            "language": "es"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q208140$38BEFF79-1AC6-42DA-A391-052A6F724006",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "d3a8e536300044db1d823eae6891b2c7baa49f66",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "620d2e76d21bb1d326fc360db5bece2070115240",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-10-19T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "cd2d4b3d972ffab8f91e9e1163a01a74fff6ee19",
+                    "datavalue": {
+                        "value": {
+                            "text": "Ane sauvage d'Afrique",
+                            "language": "fr"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q208140$2064EBCB-8E34-49D3-B475-8C9C6EF539CA",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "362e3c5d6de1d193ef97205ba38834ba075191fc",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "c7813bad20c2553e26e45c37e3502ce7252312df",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-10-20T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "af89ce6858016785022018077c931977b5fa803a",
+                    "datavalue": {
+                        "value": {
+                            "text": "Âne Sauvage D'Afrique",
+                            "language": "fr"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q208140$D8472376-34A4-4A16-9E51-3A5BBD9F327B",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "362e3c5d6de1d193ef97205ba38834ba075191fc",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "c7813bad20c2553e26e45c37e3502ce7252312df",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-10-20T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "80039f0f2070a41bed470b61c76e1d75f2adda93",
+                    "datavalue": {
+                        "value": {
+                            "text": "African Ass",
+                            "language": "en"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q208140$E8A895BD-3B7E-4127-AFCC-0DFB0D1BC19A",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "eada84c58a38325085267509899037535799e978",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "3e51c3c32949f8a45f2c3331f55ea6ae68ecf3fe",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-10-21T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    },
+                    {
+                        "hash": "e28888668e04f03cd03b4c89ce3aa397c04c6eb8",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "e17975e5c866df46673c91b2287a82cf23d14f5a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 27310853,
+                                            "id": "Q27310853"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P304": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P304",
+                                    "hash": "af96dd8ad09ba2a998a32be9c6d5091535817659",
+                                    "datavalue": {
+                                        "value": "70",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P304"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "c49f13c6674694e7014ceed45f4b90c56cae48af",
+                    "datavalue": {
+                        "value": {
+                            "text": "African Wild Ass",
+                            "language": "en"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q208140$07BE0E78-D3E7-416D-8F0F-033B4D622FBF",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "eada84c58a38325085267509899037535799e978",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "3e51c3c32949f8a45f2c3331f55ea6ae68ecf3fe",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-10-21T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    },
+                    {
+                        "hash": "e28888668e04f03cd03b4c89ce3aa397c04c6eb8",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "e17975e5c866df46673c91b2287a82cf23d14f5a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 27310853,
+                                            "id": "Q27310853"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P304": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P304",
+                                    "hash": "af96dd8ad09ba2a998a32be9c6d5091535817659",
+                                    "datavalue": {
+                                        "value": "70",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P304"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "aafd8cf1c5d636fb40dd79b988b88832e5ef6da5",
+                    "datavalue": {
+                        "value": {
+                            "text": "Ass",
+                            "language": "en"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q208140$706DA9F6-4F79-44E1-801B-A68EAB87E151",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "eada84c58a38325085267509899037535799e978",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "3e51c3c32949f8a45f2c3331f55ea6ae68ecf3fe",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-10-21T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "64eca7025a5b970eec89049c1fc67e90040e10cd",
+                    "datavalue": {
+                        "value": {
+                            "text": "Afrikanischer Esel",
+                            "language": "de"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q208140$F66D484A-0C82-4D08-AD41-9D878FD98D54",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "e28888668e04f03cd03b4c89ce3aa397c04c6eb8",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "e17975e5c866df46673c91b2287a82cf23d14f5a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 27310853,
+                                            "id": "Q27310853"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P304": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P304",
+                                    "hash": "af96dd8ad09ba2a998a32be9c6d5091535817659",
+                                    "datavalue": {
+                                        "value": "70",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P304"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "f6ed49af8c742b4582349017ec62ff86ce09b103",
+                    "datavalue": {
+                        "value": {
+                            "text": "Afrikanischer Wildesel",
+                            "language": "de"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q208140$B75D18D8-8D35-48A4-AD7B-A9C3982795BD",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "e28888668e04f03cd03b4c89ce3aa397c04c6eb8",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "e17975e5c866df46673c91b2287a82cf23d14f5a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 27310853,
+                                            "id": "Q27310853"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P304": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P304",
+                                    "hash": "af96dd8ad09ba2a998a32be9c6d5091535817659",
+                                    "datavalue": {
+                                        "value": "70",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P304"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P627": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P627",
+                    "hash": "442aa3dbf5af140f03f617c0762921f8c0afd8de",
+                    "datavalue": {
+                        "value": "7949",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "Q208140$9A4BB2D0-16E3-4EBE-9E93-94B859D89995",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "182efbdb9110d036ca433f3b49bd3a1ae312858b",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "8c1c5174f4811115ea8a0def725fdc074c2ef036",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-07-10T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P2833": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P2833",
+                    "hash": "282aa550c09cc5d215c8ac43f484654d04625168",
+                    "datavalue": {
+                        "value": "equus-africanus",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q208140$4FC6C585-FEA4-4D85-9635-4C10670FFCB5",
+                "rank": "normal"
+            }
+        ],
+        "P3063": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P3063",
+                    "hash": "f4d4bd70945285ff8ab19def4fa026ec3a6bc0d1",
+                    "datavalue": {
+                        "value": {
+                            "amount": "+1",
+                            "unit": "http://www.wikidata.org/entity/Q577"
+                        },
+                        "type": "quantity"
+                    },
+                    "datatype": "quantity"
+                },
+                "type": "statement",
+                "id": "Q208140$ddab3c32-4197-c460-2ac3-e7e9ad68ed12",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "e4f1aa171b43c982f789c9020a3b78e69edc25f8",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "f618501ace3a6524b053661d067b775547f96f58",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 26706243,
+                                            "id": "Q26706243"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P478": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P478",
+                                    "hash": "ca3c5e6054c169ee3d0dfaf660f3eecd77942070",
+                                    "datavalue": {
+                                        "value": "4",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ],
+                            "P304": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P304",
+                                    "hash": "fc9bd4003bcab2e5076e4ccab02d7f5494d765bf",
+                                    "datavalue": {
+                                        "value": "568",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P478",
+                            "P304"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P1889": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1889",
+                    "hash": "db664fc1e63ff3c3510a2f5aa740639e341b4999",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 19829417,
+                            "id": "Q19829417"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q208140$a918053e-4b2b-a360-7971-452c23899a6c",
+                "rank": "normal"
+            }
+        ],
+        "P1417": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1417",
+                    "hash": "0cf0a5eae8ba33f9ca07c84a8a3966873f700182",
+                    "datavalue": {
+                        "value": "animal/African-wild-ass",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q208140$03BDE5AC-2FB7-4A12-A3DF-6BB192DEB146",
+                "rank": "normal"
+            }
+        ],
+        "P4746": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P4746",
+                    "hash": "def7afacd0217fda82b2e5b0d3838b6937e56758",
+                    "datavalue": {
+                        "value": "021321",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q208140$9DDE2E6F-4AF9-4BB4-9B19-DF76AA879CA9",
+                "rank": "normal"
+            }
+        ],
+        "P2924": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P2924",
+                    "hash": "d3b696aa656a0ccd1d5f271f13396f81be9ebb2e",
+                    "datavalue": {
+                        "value": "2696146",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q208140$1CE0F887-07F2-4C3A-BC16-1529909AE7F7",
+                "rank": "normal"
+            }
+        ],
+        "P6033": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P6033",
+                    "hash": "e69be3b1d62c5baad38db115964e4b4d0874cf2b",
+                    "datavalue": {
+                        "value": "agulus-esel",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q208140$BE998EB3-E500-44DD-851D-FAA05A87F67A",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P6033",
+                    "hash": "2f9c17ee64a090d14b9f7fb7ba3af62f113df218",
+                    "datavalue": {
+                        "value": "equus-africanus",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q208140$2F5B771E-0767-4DC2-99DF-9D27CD18D640",
+                "rank": "normal"
+            }
+        ],
+        "P6030": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P6030",
+                    "hash": "39c0557afa147cb9d662792c71d8c04b5329eb94",
+                    "datavalue": {
+                        "value": "6590",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q208140$DF53E402-7487-408E-A023-44D04C786882",
+                "rank": "normal"
+            }
+        ],
+        "P3151": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P3151",
+                    "hash": "da2c7cb4db4340e39f2b6d331f1a7b60160b546a",
+                    "datavalue": {
+                        "value": "74315",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q208140$1C70FEE2-2BB4-4FEE-AD7B-133221FCE853",
+                "rank": "normal"
+            }
+        ],
+        "P1343": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1343",
+                    "hash": "bce6a36f982b01f6cec4a97d253565328f22b47d",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 19190511,
+                            "id": "Q19190511"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "qualifiers": {
+                    "P805": [
+                        {
+                            "snaktype": "value",
+                            "property": "P805",
+                            "hash": "c501d99825b62c4fae2ad5c7eb48ff6365b64190",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 44712070,
+                                    "id": "Q44712070"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        }
+                    ]
+                },
+                "qualifiers-order": [
+                    "P805"
+                ],
+                "id": "Q208140$3821f2f9-846f-4381-bace-fbf3810e5681",
+                "rank": "normal"
+            }
+        ],
+        "P7818": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P7818",
+                    "hash": "c86df6e3591f5e6da2f01d6621b506f4f9bac565",
+                    "datavalue": {
+                        "value": "Âne_sauvage_d'Afrique",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q208140$B62DCE6A-4FF7-4C56-B6B9-89D721154581",
+                "rank": "normal"
+            }
+        ],
+        "P6105": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P6105",
+                    "hash": "8bedc3cb011a79a2ba43d8c442c0eadd83a629bc",
+                    "datavalue": {
+                        "value": "86260",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q208140$8C224BAC-975B-47BD-924E-364C5665A4CB",
+                "rank": "normal"
+            }
+        ]
+    },
+    "sitelinks": {
+        "amwiki": {
+            "site": "amwiki",
+            "title": "አውሬ አህያ",
+            "badges": []
+        },
+        "anwiki": {
+            "site": "anwiki",
+            "title": "Equus africanus",
+            "badges": []
+        },
+        "arwiki": {
+            "site": "arwiki",
+            "title": "حمار بري إفريقي",
+            "badges": []
+        },
+        "azwiki": {
+            "site": "azwiki",
+            "title": "Afrika eşşəyi",
+            "badges": []
+        },
+        "bgwiki": {
+            "site": "bgwiki",
+            "title": "Африканско диво магаре",
+            "badges": []
+        },
+        "brwiki": {
+            "site": "brwiki",
+            "title": "Azen gouez",
+            "badges": []
+        },
+        "cawiki": {
+            "site": "cawiki",
+            "title": "Ase salvatge africà",
+            "badges": []
+        },
+        "cebwiki": {
+            "site": "cebwiki",
+            "title": "Equus africanus",
+            "badges": []
+        },
+        "commonswiki": {
+            "site": "commonswiki",
+            "title": "Equus africanus",
+            "badges": []
+        },
+        "cswiki": {
+            "site": "cswiki",
+            "title": "Osel africký",
+            "badges": []
+        },
+        "dawiki": {
+            "site": "dawiki",
+            "title": "Afrikansk vildæsel",
+            "badges": []
+        },
+        "dewiki": {
+            "site": "dewiki",
+            "title": "Afrikanischer Esel",
+            "badges": []
+        },
+        "elwiki": {
+            "site": "elwiki",
+            "title": "Αφρικανικός όνος",
+            "badges": []
+        },
+        "enwiki": {
+            "site": "enwiki",
+            "title": "African wild ass",
+            "badges": []
+        },
+        "eowiki": {
+            "site": "eowiki",
+            "title": "Afrika sovaĝa azeno",
+            "badges": []
+        },
+        "eswiki": {
+            "site": "eswiki",
+            "title": "Equus africanus",
+            "badges": []
+        },
+        "euwiki": {
+            "site": "euwiki",
+            "title": "Afrikako basa asto",
+            "badges": []
+        },
+        "fawiki": {
+            "site": "fawiki",
+            "title": "خر وحشی آفریقایی",
+            "badges": []
+        },
+        "fiwiki": {
+            "site": "fiwiki",
+            "title": "Afrikanvilliaasi",
+            "badges": []
+        },
+        "frrwiki": {
+            "site": "frrwiki",
+            "title": "Echt Eesel",
+            "badges": []
+        },
+        "frwiki": {
+            "site": "frwiki",
+            "title": "Âne sauvage d'Afrique",
+            "badges": []
+        },
+        "gawiki": {
+            "site": "gawiki",
+            "title": "Asal Afracach",
+            "badges": []
+        },
+        "hewiki": {
+            "site": "hewiki",
+            "title": "ערוד",
+            "badges": []
+        },
+        "hrwiki": {
+            "site": "hrwiki",
+            "title": "Afrički divlji magarac",
+            "badges": []
+        },
+        "huwiki": {
+            "site": "huwiki",
+            "title": "Vadszamár",
+            "badges": []
+        },
+        "itwiki": {
+            "site": "itwiki",
+            "title": "Equus africanus",
+            "badges": []
+        },
+        "jawiki": {
+            "site": "jawiki",
+            "title": "アフリカノロバ",
+            "badges": []
+        },
+        "kowiki": {
+            "site": "kowiki",
+            "title": "아프리카야생당나귀",
+            "badges": []
+        },
+        "ltwiki": {
+            "site": "ltwiki",
+            "title": "Afrikinis asilas",
+            "badges": []
+        },
+        "lvwiki": {
+            "site": "lvwiki",
+            "title": "Āfrikas savvaļas ēzelis",
+            "badges": []
+        },
+        "mswiki": {
+            "site": "mswiki",
+            "title": "Keldai Liar Afrika",
+            "badges": []
+        },
+        "nlwiki": {
+            "site": "nlwiki",
+            "title": "Wilde ezel",
+            "badges": []
+        },
+        "nowiki": {
+            "site": "nowiki",
+            "title": "Afrikansk villesel",
+            "badges": []
+        },
+        "nvwiki": {
+            "site": "nvwiki",
+            "title": "Télii bijáád noodǫ́zí",
+            "badges": []
+        },
+        "plwiki": {
+            "site": "plwiki",
+            "title": "Osioł nubijski",
+            "badges": []
+        },
+        "pnbwiki": {
+            "site": "pnbwiki",
+            "title": "افریقی جنگلی کھوتا",
+            "badges": []
+        },
+        "ptwiki": {
+            "site": "ptwiki",
+            "title": "Asno-selvagem-africano",
+            "badges": []
+        },
+        "ruwiki": {
+            "site": "ruwiki",
+            "title": "Дикий осёл",
+            "badges": []
+        },
+        "shwiki": {
+            "site": "shwiki",
+            "title": "Afrički divlji magarac",
+            "badges": []
+        },
+        "skwiki": {
+            "site": "skwiki",
+            "title": "Somár africký",
+            "badges": []
+        },
+        "specieswiki": {
+            "site": "specieswiki",
+            "title": "Equus africanus",
+            "badges": []
+        },
+        "srwiki": {
+            "site": "srwiki",
+            "title": "Афрички дивљи магарац",
+            "badges": []
+        },
+        "svwiki": {
+            "site": "svwiki",
+            "title": "Afrikansk vildåsna",
+            "badges": []
+        },
+        "thwiki": {
+            "site": "thwiki",
+            "title": "ลาป่าแอฟริกา",
+            "badges": []
+        },
+        "trwiki": {
+            "site": "trwiki",
+            "title": "Afrika yaban eşeği",
+            "badges": []
+        },
+        "ukwiki": {
+            "site": "ukwiki",
+            "title": "Віслюк дикий",
+            "badges": []
+        },
+        "viwiki": {
+            "site": "viwiki",
+            "title": "Lừa hoang châu Phi",
+            "badges": []
+        },
+        "warwiki": {
+            "site": "warwiki",
+            "title": "Equus asinus",
+            "badges": []
+        },
+        "zhwiki": {
+            "site": "zhwiki",
+            "title": "非洲野驴",
+            "badges": []
+        }
+    }
+}

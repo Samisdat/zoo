@@ -1,0 +1,404 @@
+{
+    "pageid": 17441998,
+    "ns": 0,
+    "title": "Q15813151",
+    "lastrevid": 1314244469,
+    "modified": "2020-11-28T00:34:58Z",
+    "type": "item",
+    "id": "Q15813151",
+    "labels": {
+        "en": {
+            "language": "en",
+            "value": "Symphysodon haraldi"
+        },
+        "de": {
+            "language": "de",
+            "value": "Symphysodon haraldi"
+        },
+        "th": {
+            "language": "th",
+            "value": "ปลาปอมปาดัวร์น้ำตาล"
+        },
+        "it": {
+            "language": "it",
+            "value": "Symphysodon haraldi"
+        },
+        "es": {
+            "language": "es",
+            "value": "Symphysodon haraldi"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "Symphysodon haraldi"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "Symphysodon haraldi"
+        },
+        "ru": {
+            "language": "ru",
+            "value": "Symphysodon haraldi"
+        },
+        "ia": {
+            "language": "ia",
+            "value": "Symphysodon haraldi"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "Symphysodon haraldi"
+        },
+        "la": {
+            "language": "la",
+            "value": "Symphysodon haraldi"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "Symphysodon haraldi"
+        },
+        "ast": {
+            "language": "ast",
+            "value": "Symphysodon haraldi"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "Symphysodon haraldi"
+        },
+        "ro": {
+            "language": "ro",
+            "value": "Symphysodon haraldi"
+        },
+        "pt": {
+            "language": "pt",
+            "value": "Symphysodon haraldi"
+        },
+        "pl": {
+            "language": "pl",
+            "value": "Symphysodon haraldi"
+        },
+        "vi": {
+            "language": "vi",
+            "value": "Symphysodon haraldi"
+        },
+        "sq": {
+            "language": "sq",
+            "value": "Symphysodon haraldi"
+        },
+        "ceb": {
+            "language": "ceb",
+            "value": "Symphysodon haraldi"
+        },
+        "war": {
+            "language": "war",
+            "value": "Symphysodon haraldi"
+        },
+        "fi": {
+            "language": "fi",
+            "value": "Symphysodon haraldi"
+        }
+    },
+    "descriptions": {
+        "de": {
+            "language": "de",
+            "value": "Art der Gattung Diskusfische (Symphysodon)"
+        },
+        "it": {
+            "language": "it",
+            "value": "specie di pesce"
+        },
+        "fa": {
+            "language": "fa",
+            "value": "گونه‌ای از دیسکوس"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "espèce de poissons"
+        },
+        "en": {
+            "language": "en",
+            "value": "species of fish"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "вид риба"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "taxon, soort van vissen"
+        },
+        "fi": {
+            "language": "fi",
+            "value": "kalalaji"
+        },
+        "ar": {
+            "language": "ar",
+            "value": "نوع من الأسماك"
+        },
+        "sq": {
+            "language": "sq",
+            "value": "lloj i peshqve"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "вид риб"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "speiceas iasc"
+        }
+    },
+    "aliases": {},
+    "claims": {
+        "P31": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P31",
+                    "hash": "06629d890d7ab0ff85c403d8aadf57ce9809c01f",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 16521,
+                            "id": "Q16521"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q15813151$1829d121-4daf-8d07-5bc9-ed631dd884f4",
+                "rank": "normal"
+            }
+        ],
+        "P105": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P105",
+                    "hash": "aebf3611b23ed90c7c0fc80f6cd1cb7be110ea59",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 7432,
+                            "id": "Q7432"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q15813151$7921d707-4c5c-7397-4590-7a64ee2025cb",
+                "rank": "normal"
+            }
+        ],
+        "P225": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P225",
+                    "hash": "2f670de93605f7888e9e6fa46c4e38069b355d88",
+                    "datavalue": {
+                        "value": "Symphysodon haraldi",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "Q15813151$15a32dce-4df0-1cfe-6d4f-c58401307b6c",
+                "rank": "normal"
+            }
+        ],
+        "P171": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P171",
+                    "hash": "4a77a91000a172d1e324b181a102e3a83deca07e",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 3613,
+                            "id": "Q3613"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q15813151$4b0c4be2-458c-3676-7bf3-372383415ca1",
+                "rank": "normal"
+            }
+        ],
+        "P373": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P373",
+                    "hash": "43736537614cdd555914cb5b9a16ffafb051a75b",
+                    "datavalue": {
+                        "value": "Symphysodon haraldi",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "Q15813151$57230067-4eab-aaf2-f70a-11d0dbd9a3ba",
+                "rank": "normal"
+            }
+        ],
+        "P685": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P685",
+                    "hash": "44a96f9d013f1479dedd8a67d8626455bcfa5b49",
+                    "datavalue": {
+                        "value": "350779",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q15813151$09889941-223A-4BBD-B1B0-CD56F237B44E",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "a62660898d0c868f55e68410e0c5ace68cde3371",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "1851bc60ddfbcf6f76bd45aa7124fc0d5857a379",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 13711410,
+                                            "id": "Q13711410"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "05e75318ce4f82c2b4cc11ac8b322884cbac98f8",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-11-15T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P18": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "85f96146428d01aadec3a9174b8abbcc2531623f",
+                    "datavalue": {
+                        "value": "Symphysodon haraldi Prague 2011 2.jpg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "Q15813151$171B0362-C248-4C4F-A856-268BF584947E",
+                "rank": "normal"
+            }
+        ],
+        "P846": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P846",
+                    "hash": "f5438998abd5af4fa8932bc194cd8524a4ac3db1",
+                    "datavalue": {
+                        "value": "5852874",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q15813151$4314E14B-8B40-41D2-B5B8-3C69AB210F3B",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "955031e0c30f4102d491ac5583d8818891c32146",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "dbb8dd1efbe0158a5227213bd628eeac27a1da65",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1531570,
+                                            "id": "Q1531570"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "8ff16398a0999e851a54c1b4c2ee3808e1fc4486",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-05-28T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "sitelinks": {
+        "commonswiki": {
+            "site": "commonswiki",
+            "title": "Category:Symphysodon haraldi",
+            "badges": []
+        },
+        "thwiki": {
+            "site": "thwiki",
+            "title": "ปลาปอมปาดัวร์น้ำตาล",
+            "badges": []
+        }
+    }
+}

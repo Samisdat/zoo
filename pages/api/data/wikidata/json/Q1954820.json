@@ -1,0 +1,724 @@
+{
+    "pageid": 1884108,
+    "ns": 0,
+    "title": "Q1954820",
+    "lastrevid": 1314621567,
+    "modified": "2020-11-28T15:28:44Z",
+    "type": "item",
+    "id": "Q1954820",
+    "labels": {
+        "be-tarask": {
+            "language": "be-tarask",
+            "value": "Гіганцкая афрыканская мнаганожка"
+        },
+        "ja": {
+            "language": "ja",
+            "value": "アフリカオオヤスデ"
+        },
+        "vi": {
+            "language": "vi",
+            "value": "Archispirostreptus gigas"
+        },
+        "be": {
+            "language": "be",
+            "value": "Гіганцкая афрыканская мнаганожка"
+        },
+        "ru": {
+            "language": "ru",
+            "value": "Archispirostreptus gigas"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "Archispirostreptus gigas"
+        },
+        "en": {
+            "language": "en",
+            "value": "Archispirostreptus gigas"
+        },
+        "ro": {
+            "language": "ro",
+            "value": "Archispirostreptus gigas"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "Archispirostreptus gigas"
+        },
+        "de": {
+            "language": "de",
+            "value": "Archispirostreptus gigas"
+        },
+        "es": {
+            "language": "es",
+            "value": "Archispirostreptus gigas"
+        },
+        "it": {
+            "language": "it",
+            "value": "Archispirostreptus gigas"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "Archispirostreptus gigas"
+        },
+        "la": {
+            "language": "la",
+            "value": "Archispirostreptus gigas"
+        },
+        "ar": {
+            "language": "ar",
+            "value": "ألفية الأرجل الأفريقية الكبيرة"
+        },
+        "fa": {
+            "language": "fa",
+            "value": "هزارپای غول‌پیکر آفریقایی"
+        },
+        "gl": {
+            "language": "gl",
+            "value": "Archispirostreptus gigas"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "Archispirostreptus gigas"
+        },
+        "pt": {
+            "language": "pt",
+            "value": "Milípede-gigante-africano"
+        },
+        "zh-hant": {
+            "language": "zh-hant",
+            "value": "非洲巨馬陸"
+        },
+        "zh-hans": {
+            "language": "zh-hans",
+            "value": "非洲巨马陆"
+        },
+        "ast": {
+            "language": "ast",
+            "value": "Archispirostreptus gigas"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "Archispirostreptus gigas"
+        },
+        "zh": {
+            "language": "zh",
+            "value": "非洲巨马陆"
+        },
+        "pl": {
+            "language": "pl",
+            "value": "Archispirostreptus gigas"
+        },
+        "sq": {
+            "language": "sq",
+            "value": "Archispirostreptus gigas"
+        },
+        "ceb": {
+            "language": "ceb",
+            "value": "Archispirostreptus gigas"
+        },
+        "war": {
+            "language": "war",
+            "value": "Archispirostreptus gigas"
+        },
+        "fi": {
+            "language": "fi",
+            "value": "Archispirostreptus gigas"
+        }
+    },
+    "descriptions": {
+        "de": {
+            "language": "de",
+            "value": "Art der Gattung Archispirostreptus"
+        },
+        "en": {
+            "language": "en",
+            "value": "species of myriapod"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "вид многоножка"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "soort uit het geslacht Archispirostreptus"
+        },
+        "ar": {
+            "language": "ar",
+            "value": "نوع من كثيرات الأرجل"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "вид багатоніжок"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "speiceas miriapód"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "espèce de myriapodes diplopodes"
+        }
+    },
+    "aliases": {
+        "be": [
+            {
+                "language": "be",
+                "value": "Archispirostreptus gigas"
+            }
+        ],
+        "ru": [
+            {
+                "language": "ru",
+                "value": "Гигантская африканская многоножка"
+            }
+        ]
+    },
+    "claims": {
+        "P18": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "c3127e639d1aee96bb396a667984c0955099ac13",
+                    "datavalue": {
+                        "value": "Archispirostreptus-Gigas-Amphitheatre.jpg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "q1954820$74F10555-274A-43D3-BB18-089A80A90888",
+                "rank": "normal"
+            }
+        ],
+        "P225": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P225",
+                    "hash": "24c45870e1bcdb8aeabaf432fe4da5f6283d8b34",
+                    "datavalue": {
+                        "value": "Archispirostreptus gigas",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "qualifiers": {
+                    "P405": [
+                        {
+                            "snaktype": "value",
+                            "property": "P405",
+                            "hash": "aadb908a6da2fbc58607ece8ce1c08acbf1d7534",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 58029,
+                                    "id": "Q58029"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        }
+                    ],
+                    "P574": [
+                        {
+                            "snaktype": "value",
+                            "property": "P574",
+                            "hash": "b96b6e43e3b166ddc6d9c8b457156c80b5385f83",
+                            "datavalue": {
+                                "value": {
+                                    "time": "+1855-00-00T00:00:00Z",
+                                    "timezone": 0,
+                                    "before": 0,
+                                    "after": 0,
+                                    "precision": 9,
+                                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                },
+                                "type": "time"
+                            },
+                            "datatype": "time"
+                        }
+                    ],
+                    "P31": [
+                        {
+                            "snaktype": "value",
+                            "property": "P31",
+                            "hash": "60a983bb1006c765614eb370c3854e64ec50599f",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 14594740,
+                                    "id": "Q14594740"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        }
+                    ]
+                },
+                "qualifiers-order": [
+                    "P405",
+                    "P574",
+                    "P31"
+                ],
+                "id": "Q1954820$225198C1-CA8B-403A-9BB6-1A349602C2B6",
+                "rank": "normal"
+            }
+        ],
+        "P105": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P105",
+                    "hash": "aebf3611b23ed90c7c0fc80f6cd1cb7be110ea59",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 7432,
+                            "id": "Q7432"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q1954820$D3EEE44F-CFEA-4A1F-9355-95C729909EFD",
+                "rank": "normal"
+            }
+        ],
+        "P646": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P646",
+                    "hash": "6037831aa15b3d009e72d2a6e58d79de21b244b7",
+                    "datavalue": {
+                        "value": "/m/02vq21b",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q1954820$355AAE18-2138-4D28-8F7E-B5E6E2B1997E",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 15241312,
+                                            "id": "Q15241312"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-10-28T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P373": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P373",
+                    "hash": "276e1ad43e0c1c949ece541e1bc3e31b3357bde0",
+                    "datavalue": {
+                        "value": "Archispirostreptus gigas",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "Q1954820$70265436-06F7-4123-8039-A6D79CAF0A93",
+                "rank": "normal"
+            }
+        ],
+        "P685": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P685",
+                    "hash": "17aa608fc14bbbac9b11a2125db7c4b35b14222c",
+                    "datavalue": {
+                        "value": "184086",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q1954820$3D2685E8-52D9-4845-A32F-0F730292A3AA",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 206855,
+                                            "id": "Q206855"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    },
+                    {
+                        "hash": "7903ccf85f70af156888e9e0d1848ae9a37046f4",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "1851bc60ddfbcf6f76bd45aa7124fc0d5857a379",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 13711410,
+                                            "id": "Q13711410"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "041bc50ce29162a0366ac7946b4d65e042c07611",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2019-06-25T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P171": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P171",
+                    "hash": "d73de186e836dc2bcb8360e75e8b31ea8bd7e398",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 3719216,
+                            "id": "Q3719216"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q1954820$324AF785-CBD4-4380-9A27-BFA1C6E51DD8",
+                "rank": "normal"
+            }
+        ],
+        "P31": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P31",
+                    "hash": "06629d890d7ab0ff85c403d8aadf57ce9809c01f",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 16521,
+                            "id": "Q16521"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q1954820$728756A5-4AEE-40DC-8536-231884D11E85",
+                "rank": "normal"
+            }
+        ],
+        "P846": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P846",
+                    "hash": "0966cc8d8775997fec4c1f1775fd4da4dbd0bc46",
+                    "datavalue": {
+                        "value": "1025719",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q1954820$542813ED-22A5-4210-9DF1-80BFDEAA25DE",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "9d31fd64848fe238646b47ea6f81fae10a5dddfc",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "dbb8dd1efbe0158a5227213bd628eeac27a1da65",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1531570,
+                                            "id": "Q1531570"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "31a2b0b069fe6e4d67dbaabfca38dc841b03c8bf",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-05-24T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P850": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P850",
+                    "hash": "b0525f93dd96ab5f61e3fc03bf62e9a9df7849f6",
+                    "datavalue": {
+                        "value": "947329",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q1954820$E7CA724F-A1F5-426E-9C72-84DF6BB6EFB5",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "fc851afcb7d747c5e9c9985f4920d97f92a7b6d0",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "c5517df7c2364e280b841bbd4cd538c720153d8c",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 604063,
+                                            "id": "Q604063"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "86ff60fc1649618361aa81c75a2add40f22db694",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2017-02-08T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P6366": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P6366",
+                    "hash": "7443db00779c5f2bc19941cc189a9ded73223b4f",
+                    "datavalue": {
+                        "value": "2776851527",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q1954820$9C1D1DD1-8DAA-4112-B206-F181EDBF42AE",
+                "rank": "normal"
+            }
+        ]
+    },
+    "sitelinks": {
+        "arwiki": {
+            "site": "arwiki",
+            "title": "ألفية الأرجل الأفريقية الكبيرة",
+            "badges": []
+        },
+        "be_x_oldwiki": {
+            "site": "be_x_oldwiki",
+            "title": "Гіганцкая афрыканская мнаганожка",
+            "badges": []
+        },
+        "bewiki": {
+            "site": "bewiki",
+            "title": "Гіганцкая афрыканская мнаганожка",
+            "badges": []
+        },
+        "commonswiki": {
+            "site": "commonswiki",
+            "title": "Category:Archispirostreptus gigas",
+            "badges": []
+        },
+        "dewiki": {
+            "site": "dewiki",
+            "title": "Archispirostreptus gigas",
+            "badges": []
+        },
+        "enwiki": {
+            "site": "enwiki",
+            "title": "Archispirostreptus gigas",
+            "badges": []
+        },
+        "fawiki": {
+            "site": "fawiki",
+            "title": "هزارپای غول‌پیکر آفریقایی",
+            "badges": []
+        },
+        "frwiki": {
+            "site": "frwiki",
+            "title": "Archispirostreptus gigas",
+            "badges": []
+        },
+        "glwiki": {
+            "site": "glwiki",
+            "title": "Archispirostreptus gigas",
+            "badges": []
+        },
+        "jawiki": {
+            "site": "jawiki",
+            "title": "アフリカオオヤスデ",
+            "badges": []
+        },
+        "nlwiki": {
+            "site": "nlwiki",
+            "title": "Archispirostreptus gigas",
+            "badges": []
+        },
+        "ptwiki": {
+            "site": "ptwiki",
+            "title": "Archispirostreptus gigas",
+            "badges": []
+        },
+        "rowiki": {
+            "site": "rowiki",
+            "title": "Archispirostreptus gigas",
+            "badges": []
+        },
+        "ruwiki": {
+            "site": "ruwiki",
+            "title": "Archispirostreptus gigas",
+            "badges": []
+        },
+        "specieswiki": {
+            "site": "specieswiki",
+            "title": "Archispirostreptus gigas",
+            "badges": []
+        },
+        "viwiki": {
+            "site": "viwiki",
+            "title": "Archispirostreptus gigas",
+            "badges": []
+        }
+    }
+}

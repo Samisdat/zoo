@@ -1,0 +1,972 @@
+{
+    "pageid": 2458907,
+    "ns": 0,
+    "title": "Q2547945",
+    "lastrevid": 1300101539,
+    "modified": "2020-10-31T10:36:17Z",
+    "type": "item",
+    "id": "Q2547945",
+    "labels": {
+        "de": {
+            "language": "de",
+            "value": "Wandelnde Geige"
+        },
+        "en": {
+            "language": "en",
+            "value": "Gongylus gongylodes"
+        },
+        "es": {
+            "language": "es",
+            "value": "Gongylus gongylodes"
+        },
+        "ceb": {
+            "language": "ceb",
+            "value": "Gongylus gongylodes"
+        },
+        "sv": {
+            "language": "sv",
+            "value": "Gongylus gongylodes"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "Gongylus gongylodes"
+        },
+        "it": {
+            "language": "it",
+            "value": "Gongylus gongylodes"
+        },
+        "la": {
+            "language": "la",
+            "value": "Gongylus gongylodes"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "Gongylus gongylodes"
+        },
+        "war": {
+            "language": "war",
+            "value": "Gongylus gongylodes"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "Gongylus gongylodes"
+        },
+        "ru": {
+            "language": "ru",
+            "value": "Gongylus gongylodes"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "Gongylus gongylodes"
+        },
+        "ast": {
+            "language": "ast",
+            "value": "‎Gongylus gongylodes‎"
+        },
+        "zh": {
+            "language": "zh",
+            "value": "小提琴螳螂"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "Gongylus gongylodes"
+        },
+        "ro": {
+            "language": "ro",
+            "value": "Gongylus gongylodes"
+        },
+        "pt": {
+            "language": "pt",
+            "value": "Gongylus gongylodes"
+        },
+        "pl": {
+            "language": "pl",
+            "value": "Gongylus gongylodes"
+        },
+        "vi": {
+            "language": "vi",
+            "value": "Gongylus gongylodes"
+        },
+        "sq": {
+            "language": "sq",
+            "value": "Gongylus gongylodes"
+        },
+        "fi": {
+            "language": "fi",
+            "value": "Gongylus gongylodes"
+        }
+    },
+    "descriptions": {
+        "de": {
+            "language": "de",
+            "value": "Art der Gattung Gongylus"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "espèce d'insectes"
+        },
+        "en": {
+            "language": "en",
+            "value": "species of insect"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "вид насекомо"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "soort uit het geslacht Gongylus"
+        },
+        "hy": {
+            "language": "hy",
+            "value": "միջատների տեսակ"
+        },
+        "ar": {
+            "language": "ar",
+            "value": "نوع من الحشرات"
+        },
+        "bn": {
+            "language": "bn",
+            "value": "কীটপতঙ্গের প্রজাতি"
+        },
+        "ta": {
+            "language": "ta",
+            "value": "பூச்சி இனம்"
+        },
+        "ro": {
+            "language": "ro",
+            "value": "specie de insecte"
+        },
+        "pt": {
+            "language": "pt",
+            "value": "espécie de inseto"
+        },
+        "nn": {
+            "language": "nn",
+            "value": "insektart"
+        },
+        "nb": {
+            "language": "nb",
+            "value": "insektart"
+        },
+        "an": {
+            "language": "an",
+            "value": "especie d'insecto"
+        },
+        "pt-br": {
+            "language": "pt-br",
+            "value": "espécie de inseto"
+        },
+        "gl": {
+            "language": "gl",
+            "value": "especie de insecto"
+        },
+        "ca": {
+            "language": "ca",
+            "value": "espècie d'insecte"
+        },
+        "es": {
+            "language": "es",
+            "value": "especie de insecto"
+        },
+        "id": {
+            "language": "id",
+            "value": "spesies serangga"
+        },
+        "sq": {
+            "language": "sq",
+            "value": "lloj i insekteve"
+        },
+        "ru": {
+            "language": "ru",
+            "value": "вид насекомых"
+        },
+        "he": {
+            "language": "he",
+            "value": "מין של חרק"
+        },
+        "cs": {
+            "language": "cs",
+            "value": "druh hmyzu"
+        },
+        "io": {
+            "language": "io",
+            "value": "speco di insekto"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "вид комах"
+        },
+        "ast": {
+            "language": "ast",
+            "value": "especie d'inseutu"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "speiceas feithidí"
+        }
+    },
+    "aliases": {
+        "de": [
+            {
+                "language": "de",
+                "value": "Wandelnde Geigen"
+            },
+            {
+                "language": "de",
+                "value": "Gongylus gongylodes"
+            }
+        ]
+    },
+    "claims": {
+        "P105": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P105",
+                    "hash": "aebf3611b23ed90c7c0fc80f6cd1cb7be110ea59",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 7432,
+                            "id": "Q7432"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "q2547945$5D324916-786C-4285-8191-E803DC3E0C38",
+                "rank": "normal"
+            }
+        ],
+        "P225": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P225",
+                    "hash": "ecda692ee1b515e3d1fc083922053a12fb94bdaf",
+                    "datavalue": {
+                        "value": "Gongylus gongylodes",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "qualifiers": {
+                    "P405": [
+                        {
+                            "snaktype": "value",
+                            "property": "P405",
+                            "hash": "a817d3670bc2f9a3586b6377a65d54fff72ef888",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 1043,
+                                    "id": "Q1043"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        }
+                    ],
+                    "P574": [
+                        {
+                            "snaktype": "value",
+                            "property": "P574",
+                            "hash": "506af9838b7d37b45786395b95170263f1951a31",
+                            "datavalue": {
+                                "value": {
+                                    "time": "+1758-01-01T00:00:00Z",
+                                    "timezone": 0,
+                                    "before": 0,
+                                    "after": 0,
+                                    "precision": 9,
+                                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                },
+                                "type": "time"
+                            },
+                            "datatype": "time"
+                        }
+                    ]
+                },
+                "qualifiers-order": [
+                    "P405",
+                    "P574"
+                ],
+                "id": "q2547945$E7E65292-9316-4928-8278-4BE3F994F15E",
+                "rank": "normal"
+            }
+        ],
+        "P373": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P373",
+                    "hash": "694f761858234934582a7b4400b73dcebf6b2fc9",
+                    "datavalue": {
+                        "value": "Gongylus gongylodes",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "q2547945$ABD2752F-F46D-4894-B74B-6A8307EAB7E4",
+                "rank": "normal"
+            }
+        ],
+        "P18": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "82f70823efae31764d000c754b10b3ab497c0058",
+                    "datavalue": {
+                        "value": "DruryV1P050AA pict 2.jpg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "q2547945$E7E749ED-FE55-4F19-A3B0-3BA1F8007149",
+                "rank": "normal"
+            }
+        ],
+        "P646": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P646",
+                    "hash": "39768a8f718207b57b6bf2a95cc934cd883fb1b3",
+                    "datavalue": {
+                        "value": "/m/06sxxl",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q2547945$59B63B64-E980-4D81-BDCE-935A8C56F5F2",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 15241312,
+                                            "id": "Q15241312"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-10-28T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P171": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P171",
+                    "hash": "a94cfcd9ee3b06d42469afa435a5b933d14f9f98",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 1946598,
+                            "id": "Q1946598"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q2547945$23CC23A8-8064-4F8A-B77F-14B8E60B5E18",
+                "rank": "normal"
+            }
+        ],
+        "P31": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P31",
+                    "hash": "06629d890d7ab0ff85c403d8aadf57ce9809c01f",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 16521,
+                            "id": "Q16521"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q2547945$8ECEA378-5402-4A6D-8697-E0D07CC45A80",
+                "rank": "normal"
+            }
+        ],
+        "P685": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P685",
+                    "hash": "0e82eaa1933cb89bcc61905841cc685a9eece9d5",
+                    "datavalue": {
+                        "value": "267100",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q2547945$18218F25-A3B5-47D3-879C-A03704CF01AB",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "70d94501512f065d1b970970fcb99b39305df1b1",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "1851bc60ddfbcf6f76bd45aa7124fc0d5857a379",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 13711410,
+                                            "id": "Q13711410"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "99d3da0310cacb1ccab6d008c28c172dfcd7bd9c",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-11-13T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P846": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P846",
+                    "hash": "02fc8c0000898904a280f404893e20a0d5dd723c",
+                    "datavalue": {
+                        "value": "5048801",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q2547945$9EA91F68-2B7F-460A-8F7A-C562F5BC9077",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "b7243c8faff8677061c9ccc7ff09bb25863f992e",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "dbb8dd1efbe0158a5227213bd628eeac27a1da65",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1531570,
+                                            "id": "Q1531570"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "713383a751b8459976359db29307a866fa4f6aef",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-05-21T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P830": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P830",
+                    "hash": "23eadeccc722f090828445a62188512d11152341",
+                    "datavalue": {
+                        "value": "4515141",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q2547945$c3a8abbf-3d47-4444-864b-198f0e7f8487",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "804ffa181bec295c6d70505eeea6177b2a1aa725",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "6e81987ab11fb1740bd862639411d0700be3b22c",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 82486,
+                                            "id": "Q82486"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "a7d0768fe2a8c84310b3ca6fe63bff9d7880c17e",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-11-14T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P935": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P935",
+                    "hash": "fad995a874c38f8b556c7400630db78a373a7141",
+                    "datavalue": {
+                        "value": "Gongylus gongylodes",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "Q2547945$033FA3EB-1A9E-451C-965C-C8ABCD95A9CF",
+                "rank": "normal"
+            }
+        ],
+        "P1843": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "798649bd3f87f3208536e700aae4a92eb1565611",
+                    "datavalue": {
+                        "value": {
+                            "text": "wandering violin mantis",
+                            "language": "en"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q2547945$4bfc9d5d-4e1d-5f5c-74a5-43a1f774081a",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "ac3eb72a5f3c8a289ebc77f9a286f3e99c105498",
+                    "datavalue": {
+                        "value": {
+                            "text": "ornate mantis",
+                            "language": "en"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q2547945$44330727-46ed-be46-3eec-ce67868e2483",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "2c8b20b73acefc59058a59acabc663c3a8584176",
+                    "datavalue": {
+                        "value": {
+                            "text": "Indian rose mantis",
+                            "language": "en"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q2547945$d50a6688-426b-5f0e-d7e1-92577dea55a7",
+                "rank": "normal"
+            }
+        ],
+        "P5055": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P5055",
+                    "hash": "5b338197b89a070134573b5c53e04a568fb86793",
+                    "datavalue": {
+                        "value": "11570867",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q2547945$92B680FE-D6C9-4E00-940A-53B63DABD2A2",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "d6dadfad4e08348441e57efe5ea570fd1b115d8f",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "1e3ad3cb9e0170e28b7c7c335fba55cafa6ef789",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 51885189,
+                                            "id": "Q51885189"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "b15746808413da7616163da624b3e2471b6b59a9",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2018-06-04T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P910": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P910",
+                    "hash": "53432252bc8b3116c3d2ff6b902c833929a00082",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 55289537,
+                            "id": "Q55289537"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q2547945$023B8AC8-8CD5-47DD-ABAF-0FD9D4A6207C",
+                "rank": "normal"
+            }
+        ],
+        "P3151": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P3151",
+                    "hash": "28c9f8f82039309300c06120ea2b90bffd12f0b5",
+                    "datavalue": {
+                        "value": "51923",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q2547945$DF3C46E9-389B-4756-B81C-0EF75303D30B",
+                "rank": "normal"
+            }
+        ],
+        "P6055": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P6055",
+                    "hash": "98b406ca1066a04e395d1fea193401acb133de96",
+                    "datavalue": {
+                        "value": "1182358",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q2547945$1D72FEAA-BC44-4123-9AAA-F4722FB715FD",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "1a5929177c84ab775654f697ed96343542f6c346",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "b6d05e62434e1d83cd28f6b30a93fcadfbf7d7e8",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 57714294,
+                                            "id": "Q57714294"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "1f45647b1adb356938a149775082fe752b6850b9",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2018-11-01T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P8408": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P8408",
+                    "hash": "61f8f45cce2da8e5d3e2ba7d0ddac72cd28ef7b9",
+                    "datavalue": {
+                        "value": "GongylusGongylodes",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q2547945$2543DEE2-A498-49BF-8F80-02F9B07D3700",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "9a681f9dd95c90224547c404e11295f4f7dcf54e",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "9d5780dddffa8746637a9929a936ab6b0f601e24",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 64139102,
+                                            "id": "Q64139102"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "622a5a27fa5b25e7e7984974e9db494cf8460990",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2020-07-09T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "sitelinks": {
+        "cebwiki": {
+            "site": "cebwiki",
+            "title": "Gongylus gongylodes",
+            "badges": []
+        },
+        "commonswiki": {
+            "site": "commonswiki",
+            "title": "Gongylus gongylodes",
+            "badges": []
+        },
+        "dewiki": {
+            "site": "dewiki",
+            "title": "Wandelnde Geige",
+            "badges": []
+        },
+        "enwiki": {
+            "site": "enwiki",
+            "title": "Gongylus gongylodes",
+            "badges": []
+        },
+        "eswiki": {
+            "site": "eswiki",
+            "title": "Gongylus gongylodes",
+            "badges": []
+        },
+        "specieswiki": {
+            "site": "specieswiki",
+            "title": "Gongylus gongylodes",
+            "badges": []
+        },
+        "svwiki": {
+            "site": "svwiki",
+            "title": "Gongylus gongylodes",
+            "badges": []
+        },
+        "warwiki": {
+            "site": "warwiki",
+            "title": "Gongylus gongylodes",
+            "badges": []
+        }
+    }
+}

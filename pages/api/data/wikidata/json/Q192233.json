@@ -1,0 +1,1955 @@
+{
+    "pageid": 190424,
+    "ns": 0,
+    "title": "Q192233",
+    "lastrevid": 1332849680,
+    "modified": "2021-01-01T03:15:48Z",
+    "type": "item",
+    "id": "Q192233",
+    "labels": {
+        "zh-hans": {
+            "language": "zh-hans",
+            "value": "金猫"
+        },
+        "zh-hant": {
+            "language": "zh-hant",
+            "value": "金貓"
+        },
+        "zh-hk": {
+            "language": "zh-hk",
+            "value": "金貓"
+        },
+        "zh-cn": {
+            "language": "zh-cn",
+            "value": "金猫"
+        },
+        "zh-sg": {
+            "language": "zh-sg",
+            "value": "金猫"
+        },
+        "zh-tw": {
+            "language": "zh-tw",
+            "value": "金貓"
+        },
+        "pl": {
+            "language": "pl",
+            "value": "Mormi złocisty"
+        },
+        "eu": {
+            "language": "eu",
+            "value": "Catopuma temminckii"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "Chat de Temminck"
+        },
+        "he": {
+            "language": "he",
+            "value": "חתול זהוב אסייתי"
+        },
+        "es": {
+            "language": "es",
+            "value": "Catopuma temminckii"
+        },
+        "ug": {
+            "language": "ug",
+            "value": "سېرىق ياۋا مۈشۈك"
+        },
+        "ltg": {
+            "language": "ltg",
+            "value": "Catopuma temminckii"
+        },
+        "ms": {
+            "language": "ms",
+            "value": "Kucing Tulap"
+        },
+        "gag": {
+            "language": "gag",
+            "value": "Aziya altın kedisi"
+        },
+        "hu": {
+            "language": "hu",
+            "value": "Ázsiai aranymacska"
+        },
+        "it": {
+            "language": "it",
+            "value": "Pardofelis temminckii"
+        },
+        "de": {
+            "language": "de",
+            "value": "Asiatische Goldkatze"
+        },
+        "ml": {
+            "language": "ml",
+            "value": "സ്വർണ്ണപ്പൂച്ച"
+        },
+        "ja": {
+            "language": "ja",
+            "value": "アジアゴールデンキャット"
+        },
+        "br": {
+            "language": "br",
+            "value": "Kazh alaouret Azia"
+        },
+        "vi": {
+            "language": "vi",
+            "value": "Báo lửa"
+        },
+        "yue": {
+            "language": "yue",
+            "value": "亞洲金貓"
+        },
+        "my": {
+            "language": "my",
+            "value": "ရွှေကြောင်"
+        },
+        "ar": {
+            "language": "ar",
+            "value": "سنور ذهبي آسيوي"
+        },
+        "sv": {
+            "language": "sv",
+            "value": "Asiatisk guldkatt"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "Aziatische goudkat"
+        },
+        "pt": {
+            "language": "pt",
+            "value": "Gato-bravo-dourado-da-ásia"
+        },
+        "eo": {
+            "language": "eo",
+            "value": "Azia ora kato"
+        },
+        "sk": {
+            "language": "sk",
+            "value": "Mačka Temminckova"
+        },
+        "ru": {
+            "language": "ru",
+            "value": "Кошка Темминка"
+        },
+        "sr-el": {
+            "language": "sr-el",
+            "value": "Азијска златна мачка"
+        },
+        "sr-ec": {
+            "language": "sr-ec",
+            "value": "Азијска златна мачка"
+        },
+        "en": {
+            "language": "en",
+            "value": "Pardofelis temminckii"
+        },
+        "tr": {
+            "language": "tr",
+            "value": "Asya altın kedisi"
+        },
+        "th": {
+            "language": "th",
+            "value": "เสือไฟ"
+        },
+        "ca": {
+            "language": "ca",
+            "value": "gat daurat asiàtic"
+        },
+        "fi": {
+            "language": "fi",
+            "value": "Aasiankultakissa"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "Азіатська золотиста кішка"
+        },
+        "cs": {
+            "language": "cs",
+            "value": "kočka Temminckova"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "азиатска златна котка"
+        },
+        "mr": {
+            "language": "mr",
+            "value": "आशियाई सोनेरी मांजर"
+        },
+        "nv": {
+            "language": "nv",
+            "value": "Náátsʼózídę́ę́ʼ mósíłtsxooí ałchinígíí"
+        },
+        "da": {
+            "language": "da",
+            "value": "Asiatisk guldkat"
+        },
+        "war": {
+            "language": "war",
+            "value": "Catopuma temminckii"
+        },
+        "sr": {
+            "language": "sr",
+            "value": "Азијска златна мачка"
+        },
+        "zh": {
+            "language": "zh",
+            "value": "金貓"
+        },
+        "ceb": {
+            "language": "ceb",
+            "value": "Catopuma temminckii"
+        },
+        "id": {
+            "language": "id",
+            "value": "Kucing emas Asia"
+        },
+        "la": {
+            "language": "la",
+            "value": "Pardofelis temminckii"
+        },
+        "nb": {
+            "language": "nb",
+            "value": "Asiagullkatt"
+        },
+        "hr": {
+            "language": "hr",
+            "value": "Azijska zlatna mačka"
+        },
+        "fa": {
+            "language": "fa",
+            "value": "گربه طلایی آسیا"
+        },
+        "lt": {
+            "language": "lt",
+            "value": "Teminko katė"
+        },
+        "ne": {
+            "language": "ne",
+            "value": "सुनौलो बिरालो"
+        },
+        "ro": {
+            "language": "ro",
+            "value": "Pisica asiatică aurie"
+        },
+        "be-tarask": {
+            "language": "be-tarask",
+            "value": "Pardofelis temminckii"
+        },
+        "sh": {
+            "language": "sh",
+            "value": "Azijska zlatna mačka"
+        },
+        "ta": {
+            "language": "ta",
+            "value": "ஆசிய தங்க நிறப் பூனை"
+        },
+        "ia": {
+            "language": "ia",
+            "value": "Catopuma temminckii"
+        },
+        "ko": {
+            "language": "ko",
+            "value": "아시아황금고양이"
+        },
+        "bn": {
+            "language": "bn",
+            "value": "এশীয় সোনালী বিড়াল"
+        },
+        "azb": {
+            "language": "azb",
+            "value": "آسیا آلتین پیشیگی"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "Cat órga na hÁise"
+        },
+        "gl": {
+            "language": "gl",
+            "value": "Catopuma temminckii"
+        },
+        "ast": {
+            "language": "ast",
+            "value": "Pardofelis temminckii"
+        },
+        "sq": {
+            "language": "sq",
+            "value": "Pardofelis temminckii"
+        },
+        "cv": {
+            "language": "cv",
+            "value": "Темминк кушакӗ"
+        }
+    },
+    "descriptions": {
+        "it": {
+            "language": "it",
+            "value": "specie di animale della famiglia Felidae"
+        },
+        "de": {
+            "language": "de",
+            "value": "Art der Gattung Pardofelis"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "espèce de mammifères"
+        },
+        "fa": {
+            "language": "fa",
+            "value": "گونه‌ای از پلنگ‌گربه‌ها"
+        },
+        "pl": {
+            "language": "pl",
+            "value": "gatunek kota"
+        },
+        "en": {
+            "language": "en",
+            "value": "species of mammal"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "вид бозайник"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "soort uit het geslacht Pardofelis"
+        },
+        "ar": {
+            "language": "ar",
+            "value": "نوع من الثدييات"
+        },
+        "zh": {
+            "language": "zh",
+            "value": "哺乳动物物种"
+        },
+        "cs": {
+            "language": "cs",
+            "value": "kočkovitá šelma"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "вид ссавців"
+        },
+        "ast": {
+            "language": "ast",
+            "value": "especie de mamíferu"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "speiceas mamach"
+        },
+        "fi": {
+            "language": "fi",
+            "value": "Keskikokoinen kissaeläin"
+        }
+    },
+    "aliases": {
+        "pl": [
+            {
+                "language": "pl",
+                "value": "Pardofelis temminckii"
+            },
+            {
+                "language": "pl",
+                "value": "Catopuma temminckii"
+            }
+        ],
+        "fr": [
+            {
+                "language": "fr",
+                "value": "Catopuma Temminckii"
+            },
+            {
+                "language": "fr",
+                "value": "Chat doré asiatique"
+            },
+            {
+                "language": "fr",
+                "value": "Chat de Temink"
+            },
+            {
+                "language": "fr",
+                "value": "Chat de Temmink"
+            },
+            {
+                "language": "fr",
+                "value": "Pardofelis temminckii"
+            },
+            {
+                "language": "fr",
+                "value": "Chat de Teminck"
+            },
+            {
+                "language": "fr",
+                "value": "Chat doré d'Asie"
+            }
+        ],
+        "he": [
+            {
+                "language": "he",
+                "value": "Catopuma temminckii"
+            }
+        ],
+        "es": [
+            {
+                "language": "es",
+                "value": "Gato dorado asiático"
+            },
+            {
+                "language": "es",
+                "value": "Gato dorado asiatico"
+            }
+        ],
+        "ms": [
+            {
+                "language": "ms",
+                "value": "Kucing Emas"
+            },
+            {
+                "language": "ms",
+                "value": "Pardofelis temminckii"
+            },
+            {
+                "language": "ms",
+                "value": "Kucing Tulap Asia"
+            },
+            {
+                "language": "ms",
+                "value": "Kucing Emas Asia"
+            },
+            {
+                "language": "ms",
+                "value": "Catopuma temminckii"
+            }
+        ],
+        "it": [
+            {
+                "language": "it",
+                "value": "Gatto di Temminck"
+            },
+            {
+                "language": "it",
+                "value": "Gatto dorato asiatico"
+            },
+            {
+                "language": "it",
+                "value": "Catopuma temminckii"
+            }
+        ],
+        "de": [
+            {
+                "language": "de",
+                "value": "Pardofelis temminckii"
+            },
+            {
+                "language": "de",
+                "value": "Catopuma temminckii"
+            }
+        ],
+        "ml": [
+            {
+                "language": "ml",
+                "value": "Asian Golden Cat"
+            }
+        ],
+        "vi": [
+            {
+                "language": "vi",
+                "value": "Beo vàng châu Á"
+            },
+            {
+                "language": "vi",
+                "value": "Beo vàng Temminck"
+            },
+            {
+                "language": "vi",
+                "value": "Catopuma temminckii"
+            }
+        ],
+        "yue": [
+            {
+                "language": "yue",
+                "value": "P. temminckii"
+            },
+            {
+                "language": "yue",
+                "value": "Pardofelis temminckii"
+            }
+        ],
+        "ar": [
+            {
+                "language": "ar",
+                "value": "القط الذهبي الأسيوي"
+            }
+        ],
+        "sv": [
+            {
+                "language": "sv",
+                "value": "Catopuma temminckii"
+            }
+        ],
+        "nl": [
+            {
+                "language": "nl",
+                "value": "Felis temminckii"
+            },
+            {
+                "language": "nl",
+                "value": "Felis temmincki"
+            },
+            {
+                "language": "nl",
+                "value": "Pardofelis temminckii"
+            },
+            {
+                "language": "nl",
+                "value": "Catopuma temmincki"
+            },
+            {
+                "language": "nl",
+                "value": "Temmincks kat"
+            },
+            {
+                "language": "nl",
+                "value": "Catopuma temminckii"
+            }
+        ],
+        "pt": [
+            {
+                "language": "pt",
+                "value": "Gato-dourado asiático"
+            },
+            {
+                "language": "pt",
+                "value": "Pardofelis temminckii"
+            },
+            {
+                "language": "pt",
+                "value": "Catopuma temminckii"
+            }
+        ],
+        "eo": [
+            {
+                "language": "eo",
+                "value": "Felis temminckii"
+            }
+        ],
+        "ru": [
+            {
+                "language": "ru",
+                "value": "Азиатская золотистая кошка"
+            },
+            {
+                "language": "ru",
+                "value": "Catopuma temminckii"
+            }
+        ],
+        "sr": [
+            {
+                "language": "sr",
+                "value": "Pardofelis temminckii"
+            },
+            {
+                "language": "sr",
+                "value": "Catopuma temminckii"
+            }
+        ],
+        "tr": [
+            {
+                "language": "tr",
+                "value": "Felis temminckii"
+            },
+            {
+                "language": "tr",
+                "value": "Catopuma temmincki"
+            },
+            {
+                "language": "tr",
+                "value": "Temminck kedisi"
+            },
+            {
+                "language": "tr",
+                "value": "Profelis temminckii"
+            }
+        ],
+        "th": [
+            {
+                "language": "th",
+                "value": "Catopuma temminckii"
+            },
+            {
+                "language": "th",
+                "value": "แมวทองเอเชีย"
+            }
+        ],
+        "ca": [
+            {
+                "language": "ca",
+                "value": "Catopuma temminckii"
+            }
+        ],
+        "fi": [
+            {
+                "language": "fi",
+                "value": "Felis temminckii"
+            },
+            {
+                "language": "fi",
+                "value": "Profelis temminckii"
+            },
+            {
+                "language": "fi",
+                "value": "Catopuma temminckii"
+            }
+        ],
+        "uk": [
+            {
+                "language": "uk",
+                "value": "Катапума золотиста"
+            },
+            {
+                "language": "uk",
+                "value": "Pardofelis temminckii"
+            },
+            {
+                "language": "uk",
+                "value": "Азійська золотиста кішка"
+            },
+            {
+                "language": "uk",
+                "value": "Catopuma temminckii"
+            }
+        ],
+        "cs": [
+            {
+                "language": "cs",
+                "value": "Pardofelis temminckii"
+            },
+            {
+                "language": "cs",
+                "value": "Catopuma temminckii"
+            },
+            {
+                "language": "cs",
+                "value": "Felis temminskii"
+            }
+        ],
+        "bg": [
+            {
+                "language": "bg",
+                "value": "Азиатска златиста котка"
+            },
+            {
+                "language": "bg",
+                "value": "Catopuma temminckii"
+            },
+            {
+                "language": "bg",
+                "value": "Pardofelis temminckii"
+            }
+        ],
+        "mr": [
+            {
+                "language": "mr",
+                "value": "अशियाई सोनेरी मांजर"
+            }
+        ],
+        "da": [
+            {
+                "language": "da",
+                "value": "Catopuma temminckii"
+            }
+        ],
+        "nb": [
+            {
+                "language": "nb",
+                "value": "Catopuma temminckii"
+            }
+        ],
+        "en": [
+            {
+                "language": "en",
+                "value": "Asian golden cat"
+            },
+            {
+                "language": "en",
+                "value": "Asiatic golden cat"
+            }
+        ]
+    },
+    "claims": {
+        "P105": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P105",
+                    "hash": "aebf3611b23ed90c7c0fc80f6cd1cb7be110ea59",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 7432,
+                            "id": "Q7432"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "q192233$CBCFCC7B-CC41-45EB-912D-4CA993CEBF1F",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "191170633afce8f4cc7b17b3abcb9c43dc45c186",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "c26dbcef1202a7d198982ed24f6ea69b704f95fe",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 82575,
+                                            "id": "Q82575"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "ce304b23a49136a6e15445bfcb6f9d212b29417a",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2003-10-28T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "08e80ae2ee0953bca6e1eddc18d104c990ec1884",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-10-22T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577",
+                            "P813"
+                        ]
+                    },
+                    {
+                        "hash": "f2fcc71ba228fd0db2b328c938e601507006fa46",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "603c636b2210e4a74b7d40c9e969b7e503bbe252",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1538807,
+                                            "id": "Q1538807"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "6892402e621d2b47092e15284d64cdbb395e71f7",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-09-19T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P373": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P373",
+                    "hash": "4544d10badaf7ff33ea5778f66ffe4939398d646",
+                    "datavalue": {
+                        "value": "Pardofelis temminckii",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "q192233$45040311-D437-4C02-A256-8207DA392811",
+                "rank": "normal"
+            }
+        ],
+        "P181": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P181",
+                    "hash": "4429d7dad954dfe8b3e8fd9b89c2521dc4e047dd",
+                    "datavalue": {
+                        "value": "Distibution map of Asian Golden Cat.svg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "q192233$7B96032B-CCD1-48A8-876B-7D62CD141E73",
+                "rank": "normal"
+            }
+        ],
+        "P18": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "f0b698ecabd94f900e0759ae6904ba04098856c6",
+                    "datavalue": {
+                        "value": "Asian Golden cat.jpg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "q192233$0AC8E8C0-A34B-45AA-ACEF-13754F0BFF45",
+                "rank": "normal"
+            }
+        ],
+        "P225": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P225",
+                    "hash": "a00f7dea0408a523ab7604afcfe1a3bd22d3cd7d",
+                    "datavalue": {
+                        "value": "Pardofelis temminckii",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "qualifiers": {
+                    "P405": [
+                        {
+                            "snaktype": "value",
+                            "property": "P405",
+                            "hash": "45bcfd7a28cb1c84dd0889b8b55e01ed5bd114b4",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 332479,
+                                    "id": "Q332479"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        },
+                        {
+                            "snaktype": "value",
+                            "property": "P405",
+                            "hash": "059405774eb5ccf8da5caf63dce2e85029b8149f",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 507763,
+                                    "id": "Q507763"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        }
+                    ],
+                    "P574": [
+                        {
+                            "snaktype": "value",
+                            "property": "P574",
+                            "hash": "49b5dbf94c59cde89ccc1d6bccbc83677853f157",
+                            "datavalue": {
+                                "value": {
+                                    "time": "+1827-01-01T00:00:00Z",
+                                    "timezone": 0,
+                                    "before": 0,
+                                    "after": 0,
+                                    "precision": 9,
+                                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                },
+                                "type": "time"
+                            },
+                            "datatype": "time"
+                        }
+                    ]
+                },
+                "qualifiers-order": [
+                    "P405",
+                    "P574"
+                ],
+                "id": "q192233$16731953-F211-44D4-A4F5-DAC97CF19E5C",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "2e0c13df5b13edc9b3db9d8129e466c0894710ac",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "2b1e96d67dc01973d72472f712fd98ce87c6f0d7",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 13679,
+                                            "id": "Q13679"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P171": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P171",
+                    "hash": "a67b546bf4371803302e702737303d3cb89577e6",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 134690,
+                            "id": "Q134690"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q192233$9F7F62C4-A3C0-4E27-9E51-2DF31FF68F8A",
+                "rank": "normal"
+            }
+        ],
+        "P646": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P646",
+                    "hash": "ee5b27b5d37942c55565250baf84ce5be2d5eef3",
+                    "datavalue": {
+                        "value": "/m/01p1_g",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q192233$07B7A53C-836A-4C23-BC61-64F74130F5AB",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 15241312,
+                                            "id": "Q15241312"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-10-28T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P842": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P842",
+                    "hash": "c9a709ffddc4ea5bcfde9d052eaf0855ac62a31b",
+                    "datavalue": {
+                        "value": "224093",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q192233$E74220A5-4BE0-46BD-A364-463FBA3E281F",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "1111bfc1dc63ee739fb9dd3f5534346c7fd478f0",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "00fe2206a3342fa25c0cfe1d08783c49a1986f12",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 796451,
+                                            "id": "Q796451"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "14c5b75e8d3f4c43cb5b570380dd98e421bb9751",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2014-01-30T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P31": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P31",
+                    "hash": "06629d890d7ab0ff85c403d8aadf57ce9809c01f",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 16521,
+                            "id": "Q16521"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q192233$55DAA9CE-6CFB-4997-9E1F-FA4E34F4D4BF",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P31",
+                    "hash": "a06f0e0ce196677bd9819f945fb19b23c3238296",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 1040689,
+                            "id": "Q1040689"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "qualifiers": {
+                    "P642": [
+                        {
+                            "snaktype": "value",
+                            "property": "P642",
+                            "hash": "52b93a810ab64649dee661f7c680a302abbb04d7",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 23772769,
+                                    "id": "Q23772769"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        }
+                    ]
+                },
+                "qualifiers-order": [
+                    "P642"
+                ],
+                "id": "Q192233$004e14ad-40db-df37-552e-5f98e44177eb",
+                "rank": "normal"
+            }
+        ],
+        "P935": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P935",
+                    "hash": "48739104934164756ceaf53189b51a0c7a3a6381",
+                    "datavalue": {
+                        "value": "Pardofelis temminckii",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "Q192233$F4D28F2E-F2CF-4C6B-8956-4C4C06171D68",
+                "rank": "normal"
+            }
+        ],
+        "P1403": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1403",
+                    "hash": "4e28bd622b1224b65fe231a3935321a28525cb7a",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 23772782,
+                            "id": "Q23772782"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q192233$4284d591-4bac-ffe4-102b-0eee683145f4",
+                "rank": "normal"
+            }
+        ],
+        "P1843": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "0abdfdb507c8d0139b9d25ee0b11470965e82f0c",
+                    "datavalue": {
+                        "value": {
+                            "text": "Asiatic golden cat",
+                            "language": "en"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q192233$F5D8D7C4-E413-4A90-BFEE-39F73D5EA0D9",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "e320bd743dc36820f2627d6ef9d8e5cbbec69521",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "158cddada2d76da9ecb2072e793c1ce99dbcb169",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 433276,
+                                            "id": "Q433276"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P2833": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P2833",
+                    "hash": "a8454e8800f00e2584e83b02eda8081a190ce829",
+                    "datavalue": {
+                        "value": "pardofelis-temminckii",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q192233$BFB37395-3937-457B-A931-032439D9AB50",
+                "rank": "normal"
+            }
+        ],
+        "P3151": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P3151",
+                    "hash": "6e41571b80e83055f7782737cbefc8e34f72e2a1",
+                    "datavalue": {
+                        "value": "74846",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q192233$71A11618-47DB-4F6E-8E88-0E8373827415",
+                "rank": "normal"
+            }
+        ],
+        "P846": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P846",
+                    "hash": "afd83013d4159a55a090deb8e7fa054f405bcdf7",
+                    "datavalue": {
+                        "value": "5787233",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q192233$CBE570A4-262F-4713-8FEE-8BA6ABC4D7CA",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "aac98a0cc61c8e4139864cab49b599bd6fae5055",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "dbb8dd1efbe0158a5227213bd628eeac27a1da65",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1531570,
+                                            "id": "Q1531570"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "160daaff07ae82e0a0e609250f18051d22d01bf1",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-10-26T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P4024": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P4024",
+                    "hash": "5595f2e012fa4e2819db29dfbcf87de4f37af2a9",
+                    "datavalue": {
+                        "value": "Catopuma_temminckii",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q192233$E265C890-B752-4156-8AD7-4F0403DFF16E",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 8447,
+                                            "id": "Q8447"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P910": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P910",
+                    "hash": "a96417810688b5cb853a9257e33ad96862af5a6b",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 55274398,
+                            "id": "Q55274398"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q192233$9D4C9ABC-DD70-449A-BD95-E516AF06D86E",
+                "rank": "normal"
+            }
+        ],
+        "P6105": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P6105",
+                    "hash": "60a2862e0199761714af5f840d6c89a5aea85f8e",
+                    "datavalue": {
+                        "value": "201012",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q192233$C04C742B-55AD-4702-8516-CC2ADB079CD1",
+                "rank": "normal"
+            }
+        ],
+        "P1889": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1889",
+                    "hash": "5e070db5de174e7d421c638863fbf8b30f6b5e3b",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 192231,
+                            "id": "Q192231"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q192233$9D807BFE-E949-403B-93EA-6BD9E3F66F2D",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "6328154e5ad7399b914e8a5f3e0cfe9ebd41ff25",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 328,
+                                            "id": "Q328"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P4656": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P4656",
+                                    "hash": "a6be12143128121e164cb03c78e7fa5702965630",
+                                    "datavalue": {
+                                        "value": "https://en.wikipedia.org/w/index.php?title=Asian_golden_cat&oldid=950433645",
+                                        "type": "string"
+                                    },
+                                    "datatype": "url"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143",
+                            "P4656"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P3606": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P3606",
+                    "hash": "3b39f798cd0e16c89b83baf4471f14b196c87862",
+                    "datavalue": {
+                        "value": "488216",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q192233$B97E2200-1E49-4FB2-9F41-4B66A9B88CDC",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "d664721ef4c34ae8476ac36595ecdb8fea2ffbd5",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "1c65e846218564f7d6b921ae8fc3ce0db9fa17c6",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 16934719,
+                                            "id": "Q16934719"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "04ed4634f5761843c8f4db79a1a65a2ac41d35d7",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2020-05-03T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P8408": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P8408",
+                    "hash": "521266a894b2d98b5861346597fe761b7c94dff1",
+                    "datavalue": {
+                        "value": "AsianGoldenCat",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q192233$A25A48D6-92AD-47D6-B678-76E5DE87D86A",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "9a681f9dd95c90224547c404e11295f4f7dcf54e",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "9d5780dddffa8746637a9929a936ab6b0f601e24",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 64139102,
+                                            "id": "Q64139102"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "622a5a27fa5b25e7e7984974e9db494cf8460990",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2020-07-09T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P815": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P815",
+                    "hash": "b5244c4d3737d14686102e1e5fab9157aa484a56",
+                    "datavalue": {
+                        "value": "621867",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q192233$566ec312-46ac-512d-a49a-ca5bcd1e7b1c",
+                "rank": "normal"
+            }
+        ],
+        "P685": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P685",
+                    "hash": "e35270ce660bca57d3a2ac6db69cf520492cfa59",
+                    "datavalue": {
+                        "value": "61455",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q192233$bf8b79bd-404d-d22c-4458-7dd887259e38",
+                "rank": "normal"
+            }
+        ]
+    },
+    "sitelinks": {
+        "arwiki": {
+            "site": "arwiki",
+            "title": "سنور ذهبي آسيوي",
+            "badges": []
+        },
+        "azbwiki": {
+            "site": "azbwiki",
+            "title": "آسیا آلتین پیشیگی",
+            "badges": []
+        },
+        "be_x_oldwiki": {
+            "site": "be_x_oldwiki",
+            "title": "Pardofelis temminckii",
+            "badges": []
+        },
+        "bgwiki": {
+            "site": "bgwiki",
+            "title": "Азиатска златна котка",
+            "badges": []
+        },
+        "bnwiki": {
+            "site": "bnwiki",
+            "title": "এশীয় সোনালী বিড়াল",
+            "badges": []
+        },
+        "brwiki": {
+            "site": "brwiki",
+            "title": "Kazh alaouret Azia",
+            "badges": []
+        },
+        "cawiki": {
+            "site": "cawiki",
+            "title": "Gat daurat asiàtic",
+            "badges": []
+        },
+        "cebwiki": {
+            "site": "cebwiki",
+            "title": "Catopuma temminckii",
+            "badges": []
+        },
+        "commonswiki": {
+            "site": "commonswiki",
+            "title": "Pardofelis temminckii",
+            "badges": []
+        },
+        "cswiki": {
+            "site": "cswiki",
+            "title": "Kočka Temminckova",
+            "badges": []
+        },
+        "cvwiki": {
+            "site": "cvwiki",
+            "title": "Темминк кушакӗ",
+            "badges": []
+        },
+        "dawiki": {
+            "site": "dawiki",
+            "title": "Asiatisk guldkat",
+            "badges": []
+        },
+        "dewiki": {
+            "site": "dewiki",
+            "title": "Asiatische Goldkatze",
+            "badges": []
+        },
+        "enwiki": {
+            "site": "enwiki",
+            "title": "Asian golden cat",
+            "badges": []
+        },
+        "eowiki": {
+            "site": "eowiki",
+            "title": "Azia ora kato",
+            "badges": []
+        },
+        "eswiki": {
+            "site": "eswiki",
+            "title": "Catopuma temminckii",
+            "badges": []
+        },
+        "euwiki": {
+            "site": "euwiki",
+            "title": "Catopuma temminckii",
+            "badges": []
+        },
+        "fawiki": {
+            "site": "fawiki",
+            "title": "گربه طلایی آسیایی",
+            "badges": []
+        },
+        "fiwiki": {
+            "site": "fiwiki",
+            "title": "Aasiankultakissa",
+            "badges": []
+        },
+        "frwiki": {
+            "site": "frwiki",
+            "title": "Chat de Temminck",
+            "badges": [
+                "Q17437796"
+            ]
+        },
+        "gagwiki": {
+            "site": "gagwiki",
+            "title": "Aziya altın kedisi",
+            "badges": []
+        },
+        "gawiki": {
+            "site": "gawiki",
+            "title": "Cat órga na hÁise",
+            "badges": []
+        },
+        "glwiki": {
+            "site": "glwiki",
+            "title": "Catopuma temminckii",
+            "badges": []
+        },
+        "hewiki": {
+            "site": "hewiki",
+            "title": "חתול זהוב אסייתי",
+            "badges": []
+        },
+        "hrwiki": {
+            "site": "hrwiki",
+            "title": "Azijska zlatna mačka",
+            "badges": []
+        },
+        "huwiki": {
+            "site": "huwiki",
+            "title": "Ázsiai aranymacska",
+            "badges": []
+        },
+        "iawiki": {
+            "site": "iawiki",
+            "title": "Pardofelis temminckii",
+            "badges": []
+        },
+        "idwiki": {
+            "site": "idwiki",
+            "title": "Kucing emas Asia",
+            "badges": []
+        },
+        "itwiki": {
+            "site": "itwiki",
+            "title": "Catopuma temminckii",
+            "badges": []
+        },
+        "jawiki": {
+            "site": "jawiki",
+            "title": "アジアゴールデンキャット",
+            "badges": []
+        },
+        "kowiki": {
+            "site": "kowiki",
+            "title": "아시아황금고양이",
+            "badges": []
+        },
+        "ltgwiki": {
+            "site": "ltgwiki",
+            "title": "Catopuma temminckii",
+            "badges": []
+        },
+        "ltwiki": {
+            "site": "ltwiki",
+            "title": "Teminko katė",
+            "badges": []
+        },
+        "mlwiki": {
+            "site": "mlwiki",
+            "title": "സ്വർണ്ണപ്പൂച്ച",
+            "badges": []
+        },
+        "mrwiki": {
+            "site": "mrwiki",
+            "title": "आशियाई सोनेरी मांजर",
+            "badges": []
+        },
+        "mswiki": {
+            "site": "mswiki",
+            "title": "Kucing Tulap",
+            "badges": []
+        },
+        "mywiki": {
+            "site": "mywiki",
+            "title": "အာရှရွှေကြောင်",
+            "badges": []
+        },
+        "newiki": {
+            "site": "newiki",
+            "title": "सुनौलो बिरालो",
+            "badges": []
+        },
+        "nlwiki": {
+            "site": "nlwiki",
+            "title": "Aziatische goudkat",
+            "badges": []
+        },
+        "nowiki": {
+            "site": "nowiki",
+            "title": "Asiagullkatt",
+            "badges": []
+        },
+        "nvwiki": {
+            "site": "nvwiki",
+            "title": "Náátsʼózídę́ę́ʼ mósíłtsxooí ałchinígíí",
+            "badges": []
+        },
+        "plwiki": {
+            "site": "plwiki",
+            "title": "Mormi złocisty",
+            "badges": []
+        },
+        "ptwiki": {
+            "site": "ptwiki",
+            "title": "Gato-bravo-dourado-da-ásia",
+            "badges": []
+        },
+        "rowiki": {
+            "site": "rowiki",
+            "title": "Pisica asiatică aurie",
+            "badges": []
+        },
+        "ruwiki": {
+            "site": "ruwiki",
+            "title": "Кошка Темминка",
+            "badges": []
+        },
+        "shwiki": {
+            "site": "shwiki",
+            "title": "Azijska zlatna mačka",
+            "badges": []
+        },
+        "skwiki": {
+            "site": "skwiki",
+            "title": "Mačka Temminckova",
+            "badges": []
+        },
+        "specieswiki": {
+            "site": "specieswiki",
+            "title": "Pardofelis temminckii",
+            "badges": []
+        },
+        "srwiki": {
+            "site": "srwiki",
+            "title": "Азијска златна мачка",
+            "badges": []
+        },
+        "svwiki": {
+            "site": "svwiki",
+            "title": "Asiatisk guldkatt",
+            "badges": []
+        },
+        "tawiki": {
+            "site": "tawiki",
+            "title": "ஆசியப் பொன்னிறப் பூனை",
+            "badges": []
+        },
+        "thwiki": {
+            "site": "thwiki",
+            "title": "เสือไฟ",
+            "badges": []
+        },
+        "trwiki": {
+            "site": "trwiki",
+            "title": "Asya altın kedisi",
+            "badges": []
+        },
+        "ugwiki": {
+            "site": "ugwiki",
+            "title": "سېرىق ياۋا مۈشۈك",
+            "badges": []
+        },
+        "ukwiki": {
+            "site": "ukwiki",
+            "title": "Pardofelis temminckii",
+            "badges": []
+        },
+        "viwiki": {
+            "site": "viwiki",
+            "title": "Báo lửa",
+            "badges": []
+        },
+        "warwiki": {
+            "site": "warwiki",
+            "title": "Catopuma temminckii",
+            "badges": []
+        },
+        "wuuwiki": {
+            "site": "wuuwiki",
+            "title": "金猫",
+            "badges": []
+        },
+        "zh_yuewiki": {
+            "site": "zh_yuewiki",
+            "title": "亞洲金貓",
+            "badges": []
+        },
+        "zhwiki": {
+            "site": "zhwiki",
+            "title": "金貓",
+            "badges": []
+        }
+    }
+}

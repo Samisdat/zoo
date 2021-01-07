@@ -1,0 +1,332 @@
+{
+    "pageid": 7219110,
+    "ns": 0,
+    "title": "Q7313543",
+    "lastrevid": 1266001088,
+    "modified": "2020-08-26T18:42:10Z",
+    "type": "item",
+    "id": "Q7313543",
+    "labels": {
+        "en": {
+            "language": "en",
+            "value": "rentier"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "rentier"
+        },
+        "ja": {
+            "language": "ja",
+            "value": "ランティエ"
+        },
+        "de": {
+            "language": "de",
+            "value": "Rentier"
+        },
+        "ru": {
+            "language": "ru",
+            "value": "Рантье"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "rentenier"
+        },
+        "nb": {
+            "language": "nb",
+            "value": "rentenist"
+        },
+        "sv": {
+            "language": "sv",
+            "value": "rentier"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "Рантьє"
+        },
+        "pl": {
+            "language": "pl",
+            "value": "Rentier"
+        },
+        "sk": {
+            "language": "sk",
+            "value": "rentier"
+        },
+        "es": {
+            "language": "es",
+            "value": "rentista"
+        },
+        "hy": {
+            "language": "hy",
+            "value": "ռանտյե"
+        },
+        "da": {
+            "language": "da",
+            "value": "Rentier"
+        },
+        "tt": {
+            "language": "tt",
+            "value": "Рантье"
+        },
+        "kk": {
+            "language": "kk",
+            "value": "Рантье"
+        },
+        "ast": {
+            "language": "ast",
+            "value": "rentista"
+        },
+        "ca": {
+            "language": "ca",
+            "value": "rendista"
+        },
+        "wa": {
+            "language": "wa",
+            "value": "Rintî"
+        },
+        "ba": {
+            "language": "ba",
+            "value": "Рантье"
+        },
+        "cs": {
+            "language": "cs",
+            "value": "rentiér"
+        },
+        "id": {
+            "language": "id",
+            "value": "rentenir"
+        }
+    },
+    "descriptions": {
+        "de": {
+            "language": "de",
+            "value": "Person, die von regelmäßigen Zahlungen aus in Obligationen angelegtem Kapital oder der Verpachtung von Land lebt"
+        },
+        "es": {
+            "language": "es",
+            "value": "persona que principalmente vive de sus rentas"
+        },
+        "en": {
+            "language": "en",
+            "value": "person whose income derives from rents, interest on investments, and other passive returns"
+        },
+        "ru": {
+            "language": "ru",
+            "value": "Лица, живущие за счёт ренты"
+        },
+        "ba": {
+            "language": "ba",
+            "value": "рента, йәғни банк вкладтары, ҡиммәтле ҡағыҙҙар, килемле күсемһеҙ милек, ер, бизнес төрөндә урынлаштырылған капитал, авторлыҡ хоҡуғы һәм гонорарҙар иҫәбенә йәшәүсе шәхестәр."
+        },
+        "cs": {
+            "language": "cs",
+            "value": "osoba žijící z renty"
+        },
+        "hy": {
+            "language": "hy",
+            "value": "ռենտայի հաշվին ապրող մարդ"
+        }
+    },
+    "aliases": {
+        "da": [
+            {
+                "language": "da",
+                "value": "Particulier"
+            },
+            {
+                "language": "da",
+                "value": "Privatmand"
+            }
+        ]
+    },
+    "claims": {
+        "P31": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P31",
+                    "hash": "864f4f6124c60ed97c50d36b5a050bccc123e775",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 12737077,
+                            "id": "Q12737077"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q7313543$eec17c71-431b-13d3-aff8-9d636fb89a98",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P31",
+                    "hash": "7b4bf5ace6f0f381f2ed32b7a70b42d01be3602f",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 21703265,
+                            "id": "Q21703265"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q7313543$f381934a-4f84-f3e5-f6df-3da0d7b3819b",
+                "rank": "normal"
+            }
+        ],
+        "P1343": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1343",
+                    "hash": "62c309f8296338bd9647a7e758857137f3370310",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 2657718,
+                            "id": "Q2657718"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q7313543$70817461-CC74-4242-AF33-4F904560367E",
+                "rank": "normal"
+            }
+        ],
+        "P279": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P279",
+                    "hash": "9019d7bd979ab45546db55aa010d7d0582e7158b",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 618532,
+                            "id": "Q618532"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q7313543$80c578eb-4509-8935-55e9-e2c4f62cb889",
+                "rank": "normal"
+            }
+        ],
+        "P2521": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P2521",
+                    "hash": "7903063b610b3306beee7edfa8c7e2c27ded17b9",
+                    "datavalue": {
+                        "value": {
+                            "text": "rentista",
+                            "language": "ast"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q7313543$8268FFBD-54B1-411A-98F4-D8FD336072D7",
+                "rank": "normal"
+            }
+        ]
+    },
+    "sitelinks": {
+        "bawiki": {
+            "site": "bawiki",
+            "title": "Рантье",
+            "badges": []
+        },
+        "cswiki": {
+            "site": "cswiki",
+            "title": "Rentiér",
+            "badges": []
+        },
+        "dawiki": {
+            "site": "dawiki",
+            "title": "Rentier",
+            "badges": []
+        },
+        "dewiki": {
+            "site": "dewiki",
+            "title": "Rentier (Person)",
+            "badges": []
+        },
+        "frwiki": {
+            "site": "frwiki",
+            "title": "Rentier",
+            "badges": []
+        },
+        "frwikiquote": {
+            "site": "frwikiquote",
+            "title": "Rentier",
+            "badges": []
+        },
+        "hywiki": {
+            "site": "hywiki",
+            "title": "Ռանտյե",
+            "badges": []
+        },
+        "jawiki": {
+            "site": "jawiki",
+            "title": "ランティエ",
+            "badges": []
+        },
+        "kkwiki": {
+            "site": "kkwiki",
+            "title": "Рантье",
+            "badges": []
+        },
+        "nlwiki": {
+            "site": "nlwiki",
+            "title": "Rentenier",
+            "badges": []
+        },
+        "nowiki": {
+            "site": "nowiki",
+            "title": "Rentenist",
+            "badges": []
+        },
+        "plwiki": {
+            "site": "plwiki",
+            "title": "Rentier",
+            "badges": []
+        },
+        "ruwiki": {
+            "site": "ruwiki",
+            "title": "Рантье",
+            "badges": []
+        },
+        "svwiki": {
+            "site": "svwiki",
+            "title": "Rentier",
+            "badges": []
+        },
+        "ttwiki": {
+            "site": "ttwiki",
+            "title": "Рантье",
+            "badges": []
+        },
+        "ukwiki": {
+            "site": "ukwiki",
+            "title": "Рантьє",
+            "badges": []
+        },
+        "wawiki": {
+            "site": "wawiki",
+            "title": "Rintî",
+            "badges": []
+        }
+    }
+}

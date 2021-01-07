@@ -1,0 +1,3150 @@
+{
+    "pageid": 361429,
+    "ns": 0,
+    "title": "Q379732",
+    "lastrevid": 1330469408,
+    "modified": "2020-12-28T23:56:38Z",
+    "type": "item",
+    "id": "Q379732",
+    "labels": {
+        "zh-hans": {
+            "language": "zh-hans",
+            "value": "加州海狮"
+        },
+        "zh-hant": {
+            "language": "zh-hant",
+            "value": "加州海獅"
+        },
+        "zh-hk": {
+            "language": "zh-hk",
+            "value": "加州海獅"
+        },
+        "zh-cn": {
+            "language": "zh-cn",
+            "value": "加州海狮"
+        },
+        "zh-sg": {
+            "language": "zh-sg",
+            "value": "加州海狮"
+        },
+        "zh-tw": {
+            "language": "zh-tw",
+            "value": "加州海獅"
+        },
+        "pl": {
+            "language": "pl",
+            "value": "uszanka kalifornijska"
+        },
+        "eu": {
+            "language": "eu",
+            "value": "Zalophus californianus"
+        },
+        "he": {
+            "language": "he",
+            "value": "אריה ים קליפורני"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "otarie de Californie"
+        },
+        "ko": {
+            "language": "ko",
+            "value": "캘리포니아바다사자"
+        },
+        "es": {
+            "language": "es",
+            "value": "Zalophus californianus"
+        },
+        "hu": {
+            "language": "hu",
+            "value": "kaliforniai oroszlánfóka"
+        },
+        "ms": {
+            "language": "ms",
+            "value": "Singa Laut"
+        },
+        "it": {
+            "language": "it",
+            "value": "Zalophus californianus"
+        },
+        "de": {
+            "language": "de",
+            "value": "Kalifornischer Seelöwe"
+        },
+        "ja": {
+            "language": "ja",
+            "value": "カリフォルニアアシカ"
+        },
+        "br": {
+            "language": "br",
+            "value": "Morleon Kalifornia"
+        },
+        "yue": {
+            "language": "yue",
+            "value": "加州海獅"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "Californische zeeleeuw"
+        },
+        "ar": {
+            "language": "ar",
+            "value": "أسد البحر الكاليفورني"
+        },
+        "sv": {
+            "language": "sv",
+            "value": "Kaliforniskt sjölejon"
+        },
+        "sk": {
+            "language": "sk",
+            "value": "Uškatec kalifornský"
+        },
+        "ru": {
+            "language": "ru",
+            "value": "калифорнийский морской лев"
+        },
+        "mn": {
+            "language": "mn",
+            "value": "Калифорни далайн арслан"
+        },
+        "en": {
+            "language": "en",
+            "value": "California sea lion"
+        },
+        "ca": {
+            "language": "ca",
+            "value": "lleó marí de Califòrnia"
+        },
+        "fi": {
+            "language": "fi",
+            "value": "Kalifornianmerileijona"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "Каліфорнійський морський лев"
+        },
+        "cs": {
+            "language": "cs",
+            "value": "lachtan kalifornský"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "калифорнийски морски лъв"
+        },
+        "lt": {
+            "language": "lt",
+            "value": "Kaliforninis jūrų liūtas"
+        },
+        "nv": {
+            "language": "nv",
+            "value": "Tábąąstííntsoh"
+        },
+        "war": {
+            "language": "war",
+            "value": "Zalophus californianus"
+        },
+        "vi": {
+            "language": "vi",
+            "value": "Sư tử biển California"
+        },
+        "zh": {
+            "language": "zh",
+            "value": "加州海獅"
+        },
+        "ceb": {
+            "language": "ceb",
+            "value": "Zalophus californianus"
+        },
+        "la": {
+            "language": "la",
+            "value": "Zalophus californianus"
+        },
+        "lv": {
+            "language": "lv",
+            "value": "Kalifornijas jūras lauva"
+        },
+        "fa": {
+            "language": "fa",
+            "value": "شیر دریایی کالیفرنیا"
+        },
+        "nb": {
+            "language": "nb",
+            "value": "Californiasjøløve"
+        },
+        "hy": {
+            "language": "hy",
+            "value": "կալիֆորնիական ծովառյուծ"
+        },
+        "mk": {
+            "language": "mk",
+            "value": "калифорниски морски лав"
+        },
+        "az": {
+            "language": "az",
+            "value": "Kaliforniya dəniz şiri"
+        },
+        "ia": {
+            "language": "ia",
+            "value": "Zalophus californianus"
+        },
+        "gl": {
+            "language": "gl",
+            "value": "León mariño de California"
+        },
+        "azb": {
+            "language": "azb",
+            "value": "کالیفورنیا دنیز اسلانی"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "Mór-rón Calafoirniach"
+        },
+        "ast": {
+            "language": "ast",
+            "value": "Zalophus californianus"
+        },
+        "ro": {
+            "language": "ro",
+            "value": "Zalophus californianus"
+        },
+        "pt": {
+            "language": "pt",
+            "value": "Zalophus californianus"
+        },
+        "sr": {
+            "language": "sr",
+            "value": "Калифорнијски морски лав"
+        },
+        "sq": {
+            "language": "sq",
+            "value": "Zalophus californianus"
+        },
+        "avk": {
+            "language": "avk",
+            "value": "Piakol (Zalophus californianus)"
+        }
+    },
+    "descriptions": {
+        "it": {
+            "language": "it",
+            "value": "specie di animale della famiglia Otariidae"
+        },
+        "de": {
+            "language": "de",
+            "value": "Art der Gattung Zalophus"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "espèce de mammifères"
+        },
+        "ru": {
+            "language": "ru",
+            "value": "вид тюленей"
+        },
+        "fa": {
+            "language": "fa",
+            "value": "گونه‌ای از فزون‌تاج"
+        },
+        "en": {
+            "language": "en",
+            "value": "the fastest living species pinniped in the world"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "вид бозайник"
+        },
+        "mk": {
+            "language": "mk",
+            "value": "вид морски лав"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "soort uit het geslacht Zalophus"
+        },
+        "ar": {
+            "language": "ar",
+            "value": "نوع من الثدييات"
+        },
+        "zh": {
+            "language": "zh",
+            "value": "哺乳动物物种"
+        },
+        "hu": {
+            "language": "hu",
+            "value": "emlősfaj"
+        },
+        "pl": {
+            "language": "pl",
+            "value": "ssak morski"
+        }
+    },
+    "aliases": {
+        "zh": [
+            {
+                "language": "zh",
+                "value": "加州海獅屬"
+            }
+        ],
+        "pl": [
+            {
+                "language": "pl",
+                "value": "Zalophus californianus"
+            },
+            {
+                "language": "pl",
+                "value": "uchatka kalifornijska"
+            },
+            {
+                "language": "pl",
+                "value": "lew morski"
+            }
+        ],
+        "he": [
+            {
+                "language": "he",
+                "value": "Zalophus californianus"
+            }
+        ],
+        "fr": [
+            {
+                "language": "fr",
+                "value": "Zalophus californianus californianus"
+            },
+            {
+                "language": "fr",
+                "value": "Lion de mer de Californie"
+            },
+            {
+                "language": "fr",
+                "value": "Zalophus californianus"
+            }
+        ],
+        "ko": [
+            {
+                "language": "ko",
+                "value": "캘리포니아강치"
+            }
+        ],
+        "es": [
+            {
+                "language": "es",
+                "value": "León marino de California"
+            },
+            {
+                "language": "es",
+                "value": "Leon marino de California"
+            }
+        ],
+        "de": [
+            {
+                "language": "de",
+                "value": "Zalophus californianus"
+            }
+        ],
+        "br": [
+            {
+                "language": "br",
+                "value": "Zalophus californianus"
+            }
+        ],
+        "yue": [
+            {
+                "language": "yue",
+                "value": "Zalophus californianus"
+            }
+        ],
+        "nl": [
+            {
+                "language": "nl",
+                "value": "Zalophus californianus"
+            },
+            {
+                "language": "nl",
+                "value": "Zalophus californianus californianus"
+            }
+        ],
+        "sv": [
+            {
+                "language": "sv",
+                "value": "Zalophus californianus"
+            }
+        ],
+        "sk": [
+            {
+                "language": "sk",
+                "value": "Zalophus californianus"
+            }
+        ],
+        "ru": [
+            {
+                "language": "ru",
+                "value": "Zalophus californianus"
+            },
+            {
+                "language": "ru",
+                "value": "калифорнийский тюлень"
+            },
+            {
+                "language": "ru",
+                "value": "калифорнийские морские львы"
+            },
+            {
+                "language": "ru",
+                "value": "чёрный морской лев"
+            }
+        ],
+        "ca": [
+            {
+                "language": "ca",
+                "value": "Zalophus californianus"
+            }
+        ],
+        "fi": [
+            {
+                "language": "fi",
+                "value": "Zalophus californianus"
+            },
+            {
+                "language": "fi",
+                "value": "Tyynenmerenhylje"
+            }
+        ],
+        "uk": [
+            {
+                "language": "uk",
+                "value": "Zalophus californianus"
+            }
+        ],
+        "cs": [
+            {
+                "language": "cs",
+                "value": "Zalophus californianus"
+            },
+            {
+                "language": "cs",
+                "value": "Lachtan tmavý"
+            }
+        ],
+        "bg": [
+            {
+                "language": "bg",
+                "value": "Zalophus californianus japonicus"
+            },
+            {
+                "language": "bg",
+                "value": "Zalophus californianus californianus"
+            },
+            {
+                "language": "bg",
+                "value": "Zalophus californianus wollebaeki"
+            },
+            {
+                "language": "bg",
+                "value": "Zalophus californianus"
+            },
+            {
+                "language": "bg",
+                "value": "Zalophus californianus wollebacki"
+            },
+            {
+                "language": "bg",
+                "value": "Черен морски лъв"
+            }
+        ],
+        "lt": [
+            {
+                "language": "lt",
+                "value": "Zalophus californianus"
+            },
+            {
+                "language": "lt",
+                "value": "Kalifornijos jūrų liūtas"
+            }
+        ],
+        "mk": [
+            {
+                "language": "mk",
+                "value": "Zalophus californianus"
+            }
+        ],
+        "en": [
+            {
+                "language": "en",
+                "value": "Zalophus californianus"
+            }
+        ],
+        "hu": [
+            {
+                "language": "hu",
+                "value": "Zalophus californianus"
+            }
+        ]
+    },
+    "claims": {
+        "P105": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P105",
+                    "hash": "aebf3611b23ed90c7c0fc80f6cd1cb7be110ea59",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 7432,
+                            "id": "Q7432"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "q379732$F7DCFCE1-4687-4C06-8441-7B4F9BCD0417",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "89e96b63b05055cc80c950cf5fea109c7d453658",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "c26dbcef1202a7d198982ed24f6ea69b704f95fe",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 82575,
+                                            "id": "Q82575"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "539fa499b6ea982e64006270bb26f52a57a8e32b",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+1996-06-13T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "96dfb8481e184edb40553947f8fe08ce080f1553",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-09-19T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577",
+                            "P813"
+                        ]
+                    },
+                    {
+                        "hash": "f2fcc71ba228fd0db2b328c938e601507006fa46",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "603c636b2210e4a74b7d40c9e969b7e503bbe252",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1538807,
+                                            "id": "Q1538807"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "6892402e621d2b47092e15284d64cdbb395e71f7",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-09-19T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P141": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P141",
+                    "hash": "f6158175530e6b445bf4165a2355180396d6765a",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 211005,
+                            "id": "Q211005"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "q379732$9BE72FB6-64A1-4140-9FB3-12F975F2837E",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "4e7730a4ecbcf722089530edf111ad22943b5ba3",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "744bc312f33e8ae7ea0bc4910a0314a610cc3e72",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 104368521,
+                                            "id": "Q104368521"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P627": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P627",
+                                    "hash": "491fe30f4960ff4cb1d6c61bf58a5ec68fa71e2c",
+                                    "datavalue": {
+                                        "value": "41666",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "7c19ebf0632551d9c263bed2b9df22105e159c64",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2020-12-29T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P627",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P373": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P373",
+                    "hash": "594d9e2b80c1e21b9286724bfe533b750081241d",
+                    "datavalue": {
+                        "value": "Zalophus californianus",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "q379732$2839202C-647F-4842-9DBD-5F31742ECD4A",
+                "rank": "normal"
+            }
+        ],
+        "P225": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P225",
+                    "hash": "596a56b061b73280a6a4f953080b3fca7ddb4e44",
+                    "datavalue": {
+                        "value": "Zalophus californianus",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "qualifiers": {
+                    "P405": [
+                        {
+                            "snaktype": "value",
+                            "property": "P405",
+                            "hash": "0934421de089542854c40a4c78857f8d1afd9e6a",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 318217,
+                                    "id": "Q318217"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        }
+                    ],
+                    "P574": [
+                        {
+                            "snaktype": "value",
+                            "property": "P574",
+                            "hash": "f0c5713f7f2da76ba46e6a0d64f8bb0eaa6138a4",
+                            "datavalue": {
+                                "value": {
+                                    "time": "+1828-01-01T00:00:00Z",
+                                    "timezone": 0,
+                                    "before": 0,
+                                    "after": 0,
+                                    "precision": 9,
+                                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                },
+                                "type": "time"
+                            },
+                            "datatype": "time"
+                        }
+                    ],
+                    "P31": [
+                        {
+                            "snaktype": "value",
+                            "property": "P31",
+                            "hash": "60a983bb1006c765614eb370c3854e64ec50599f",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 14594740,
+                                    "id": "Q14594740"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        }
+                    ]
+                },
+                "qualifiers-order": [
+                    "P405",
+                    "P574",
+                    "P31"
+                ],
+                "id": "q379732$1A317A38-D821-453E-BA88-E5A5E9883E09",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "89e96b63b05055cc80c950cf5fea109c7d453658",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "c26dbcef1202a7d198982ed24f6ea69b704f95fe",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 82575,
+                                            "id": "Q82575"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "539fa499b6ea982e64006270bb26f52a57a8e32b",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+1996-06-13T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "96dfb8481e184edb40553947f8fe08ce080f1553",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-09-19T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577",
+                            "P813"
+                        ]
+                    },
+                    {
+                        "hash": "f2fcc71ba228fd0db2b328c938e601507006fa46",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "603c636b2210e4a74b7d40c9e969b7e503bbe252",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1538807,
+                                            "id": "Q1538807"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "6892402e621d2b47092e15284d64cdbb395e71f7",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-09-19T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    },
+                    {
+                        "hash": "2e0c13df5b13edc9b3db9d8129e466c0894710ac",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "2b1e96d67dc01973d72472f712fd98ce87c6f0d7",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 13679,
+                                            "id": "Q13679"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P181": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P181",
+                    "hash": "bb1b82d8e02e3349d47e615a5e044528f02ac1b9",
+                    "datavalue": {
+                        "value": "Zalophus californianus distribution.png",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "q379732$957B4719-A385-488F-A038-E8D755544F31",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 328,
+                                            "id": "Q328"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P171": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P171",
+                    "hash": "47282708d3663a2f90e7636561dba3e5e685a3e5",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 135911,
+                            "id": "Q135911"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q379732$103F7CB9-0D7A-49D6-AE3B-36D0E0F50B28",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "89e96b63b05055cc80c950cf5fea109c7d453658",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "c26dbcef1202a7d198982ed24f6ea69b704f95fe",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 82575,
+                                            "id": "Q82575"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "539fa499b6ea982e64006270bb26f52a57a8e32b",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+1996-06-13T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "96dfb8481e184edb40553947f8fe08ce080f1553",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-09-19T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577",
+                            "P813"
+                        ]
+                    },
+                    {
+                        "hash": "f2fcc71ba228fd0db2b328c938e601507006fa46",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "603c636b2210e4a74b7d40c9e969b7e503bbe252",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1538807,
+                                            "id": "Q1538807"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "6892402e621d2b47092e15284d64cdbb395e71f7",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-09-19T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P815": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P815",
+                    "hash": "9651fda03e6fcccbcd19d37f6fb32bbd185b3076",
+                    "datavalue": {
+                        "value": "180621",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$86E4776E-BD43-4C46-BD9E-51F2E70F3291",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "d39590feb5a714a291345f9d30a2cf68c0a97b66",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "c26dbcef1202a7d198982ed24f6ea69b704f95fe",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 82575,
+                                            "id": "Q82575"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "10e8559d090b1e81e602b8d1183ec99e8f22a730",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2014-11-06T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P685": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P685",
+                    "hash": "83b695eebd0cc6bf6706ee8783bb5e4a809b2ddf",
+                    "datavalue": {
+                        "value": "9704",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$41796BC8-AF61-4EA3-8FBB-63295EF34A58",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 8447,
+                                            "id": "Q8447"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    },
+                    {
+                        "hash": "479112f1389caedf3161cd384ac7fa65e28a8815",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "1851bc60ddfbcf6f76bd45aa7124fc0d5857a379",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 13711410,
+                                            "id": "Q13711410"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "c63b5e768859434f558bb7d62988ff0f6b55b335",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2019-06-24T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P935": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P935",
+                    "hash": "8faa557c00d03333e4dec8250e8cc83d3c787c51",
+                    "datavalue": {
+                        "value": "Zalophus californianus",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "Q379732$82C353AF-F064-4F4C-907E-223065CD2E2F",
+                "rank": "normal"
+            }
+        ],
+        "P31": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P31",
+                    "hash": "06629d890d7ab0ff85c403d8aadf57ce9809c01f",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 16521,
+                            "id": "Q16521"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q379732$C6CC99DD-92AE-4B80-99E5-8C9B81B55D32",
+                "rank": "normal"
+            }
+        ],
+        "P646": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P646",
+                    "hash": "8030ed1b6c585ca0fdc9e89d253e2ba12a88dfe5",
+                    "datavalue": {
+                        "value": "/m/0gd1z",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$802FC73F-D70B-433C-A6D9-0F14B2EB6623",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 15241312,
+                                            "id": "Q15241312"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2013-10-28T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P842": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P842",
+                    "hash": "aace9127f240283920bea0fd983f1ccb4b62209d",
+                    "datavalue": {
+                        "value": "96087",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$C050777D-7207-4D6C-A416-A2A2B2972656",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "1111bfc1dc63ee739fb9dd3f5534346c7fd478f0",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "00fe2206a3342fa25c0cfe1d08783c49a1986f12",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 796451,
+                                            "id": "Q796451"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "14c5b75e8d3f4c43cb5b570380dd98e421bb9751",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2014-01-30T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P850": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P850",
+                    "hash": "1bf379c9420d5bcf3060160fefe8476d269fa065",
+                    "datavalue": {
+                        "value": "255003",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$76C799C5-6AFC-4BA2-8FB1-6ABDDC96D078",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "4dd0f632781f913aadf125d6f6b9755bc8d432fe",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "c5517df7c2364e280b841bbd4cd538c720153d8c",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 604063,
+                                            "id": "Q604063"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "feb7e2b9ad5d183a71545e84b5566d899d6ece26",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2014-11-16T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P959": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P959",
+                    "hash": "8cfb83807297fead8dbf2892db751129343df083",
+                    "datavalue": {
+                        "value": "14001019",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$ABBF4041-73FE-4B5B-B321-80637A785FF2",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "9393f38eccf66f4a0e755e7ea59f14e855a22c02",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "603c636b2210e4a74b7d40c9e969b7e503bbe252",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1538807,
+                                            "id": "Q1538807"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "92379828e0ba618e52cd5f39d75ea797c77368e2",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-04-25T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P846": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P846",
+                    "hash": "b9559b9c3e64833ba7f9af297d8aa12a6f7c60fd",
+                    "datavalue": {
+                        "value": "2433458",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$D1E139F3-AE51-40E3-BB0D-1B0F4E3634A5",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "b7243c8faff8677061c9ccc7ff09bb25863f992e",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "dbb8dd1efbe0158a5227213bd628eeac27a1da65",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1531570,
+                                            "id": "Q1531570"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "713383a751b8459976359db29307a866fa4f6aef",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-05-21T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P1417": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1417",
+                    "hash": "dfc8f8a7aa9df059ae38aa2c30e6a777e618ed0c",
+                    "datavalue": {
+                        "value": "animal/California-sea-lion",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$21F6F348-E009-44C5-B2E8-7D91FFEC3746",
+                "rank": "normal"
+            }
+        ],
+        "P1843": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "7b47bd0ab9d51d7c349a744ff662d7cccc4a22f0",
+                    "datavalue": {
+                        "value": {
+                            "text": "California sea lion",
+                            "language": "en"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q379732$EAF1F31B-94EE-444F-B411-88F819A10EED",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "e320bd743dc36820f2627d6ef9d8e5cbbec69521",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "158cddada2d76da9ecb2072e793c1ce99dbcb169",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 433276,
+                                            "id": "Q433276"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "ae63a09d5cd954af75c15c6c167481dbbff66cc4",
+                    "datavalue": {
+                        "value": {
+                            "text": "lobo común",
+                            "language": "es"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q379732$909A096B-2693-45BE-8C54-FCB8AE910ED8",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "362e3c5d6de1d193ef97205ba38834ba075191fc",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "c7813bad20c2553e26e45c37e3502ce7252312df",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-10-20T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "5235fc62723a35d6275e0cc88bb045af3d5c792a",
+                    "datavalue": {
+                        "value": {
+                            "text": "Lobo marino de California",
+                            "language": "es"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q379732$982D6B88-BBF1-4850-ADE4-976C648C23D4",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "362e3c5d6de1d193ef97205ba38834ba075191fc",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "c7813bad20c2553e26e45c37e3502ce7252312df",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-10-20T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "6bae60281c5b6a01a44be63d6e5bbf2a427d426e",
+                    "datavalue": {
+                        "value": {
+                            "text": "marino de California",
+                            "language": "es"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q379732$3FEB6E4E-43E7-4806-BE13-68E8A7DC6B13",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "362e3c5d6de1d193ef97205ba38834ba075191fc",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "c7813bad20c2553e26e45c37e3502ce7252312df",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-10-20T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "0d827b8aa3876c0153759582c35546832931a7d2",
+                    "datavalue": {
+                        "value": {
+                            "text": "Lion de mer de Californie",
+                            "language": "fr"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q379732$B37A5DF4-1277-4AE3-819C-C00A7B19F1A7",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "362e3c5d6de1d193ef97205ba38834ba075191fc",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "c7813bad20c2553e26e45c37e3502ce7252312df",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-10-20T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "616d758370e4d7f6042e7c2c8e68e894fc489960",
+                    "datavalue": {
+                        "value": {
+                            "text": "Otarie de Californie",
+                            "language": "fr"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q379732$A7CFFCFD-054C-4337-B6B0-5DD9A310E1BA",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "362e3c5d6de1d193ef97205ba38834ba075191fc",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "c7813bad20c2553e26e45c37e3502ce7252312df",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-10-20T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "3c66c7dff35e5f495805b54157df50e185c3d51b",
+                    "datavalue": {
+                        "value": {
+                            "text": "Californian Sea Lion",
+                            "language": "en"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q379732$7DB62F8C-E49B-47EF-8049-30FDA491125C",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "20d7486175d34b4d8f47df19ab911ddc6f463c99",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "f25e1d301d8d916fdbf23200abacb00392ef283e",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-10-22T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "dc00b627aed77c1835439d1c85f9b1c781d8e98d",
+                    "datavalue": {
+                        "value": {
+                            "text": "California Sea Lion",
+                            "language": "en"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q379732$3F4DBB10-9F9E-489E-BEFF-DB13D95D92DB",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "a51d2bc03d88fc9f0f888e436e3f81c372080185",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "e17975e5c866df46673c91b2287a82cf23d14f5a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 27310853,
+                                            "id": "Q27310853"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P304": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P304",
+                                    "hash": "02faded08e2030702e5e7574366e7a293f8141bf",
+                                    "datavalue": {
+                                        "value": "246",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P304"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "07657ff0ce5cd535d3aba52089628acaf838305e",
+                    "datavalue": {
+                        "value": {
+                            "text": "Kalifornischer Seelöwe",
+                            "language": "de"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q379732$13C71A5F-A835-40A3-A2C2-F6B1760F0799",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "a51d2bc03d88fc9f0f888e436e3f81c372080185",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "e17975e5c866df46673c91b2287a82cf23d14f5a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 27310853,
+                                            "id": "Q27310853"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P304": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P304",
+                                    "hash": "02faded08e2030702e5e7574366e7a293f8141bf",
+                                    "datavalue": {
+                                        "value": "246",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P304"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "d1648f35c3e331ba11fa1124913b4913932f8638",
+                    "datavalue": {
+                        "value": {
+                            "text": "uszanka kalifornijska",
+                            "language": "pl"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q379732$d36f96bf-4662-8930-0bbb-e51798f8d857",
+                "rank": "preferred",
+                "references": [
+                    {
+                        "hash": "14d2400e3b1d36332748dc330276f099eeaa8800",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1551807,
+                                            "id": "Q1551807"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "b5ebbe7f1c74b1b07c159fe7d813928597178d80",
+                    "datavalue": {
+                        "value": {
+                            "text": "uchatka kalifornijska",
+                            "language": "pl"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q379732$9d32c660-4599-5929-1587-360c4f252549",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "14d2400e3b1d36332748dc330276f099eeaa8800",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1551807,
+                                            "id": "Q1551807"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P1843",
+                    "hash": "7d612c7780c983d39f9ec2b4cf002e88e1483dd4",
+                    "datavalue": {
+                        "value": {
+                            "text": "lew morski",
+                            "language": "pl"
+                        },
+                        "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                },
+                "type": "statement",
+                "id": "Q379732$4b36a438-4e20-ac32-7999-185846b22734",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "14d2400e3b1d36332748dc330276f099eeaa8800",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1551807,
+                                            "id": "Q1551807"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P627": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P627",
+                    "hash": "491fe30f4960ff4cb1d6c61bf58a5ec68fa71e2c",
+                    "datavalue": {
+                        "value": "41666",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "Q379732$8901DA89-F5DE-4C41-9720-77F9912EC1AC",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "6f8626cb03bb3ca6ee0a5c2ece82d7e62dc83598",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "f0cde5a6da346a8a887f7acbb8cb3969e389856f",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2016-07-11T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P2833": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P2833",
+                    "hash": "1f3df699bf93b73ca8280469d42f3a8e5282a1e0",
+                    "datavalue": {
+                        "value": "zalophus-californianus",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$6D36F6CA-51A1-4BBF-B47D-2D4A1EDB2D34",
+                "rank": "normal"
+            }
+        ],
+        "P3063": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P3063",
+                    "hash": "e39f3c2175d371302289301bc43dfc85bf4554d7",
+                    "datavalue": {
+                        "value": {
+                            "amount": "+50",
+                            "unit": "http://www.wikidata.org/entity/Q23387"
+                        },
+                        "type": "quantity"
+                    },
+                    "datatype": "quantity"
+                },
+                "type": "statement",
+                "id": "Q379732$b941dd3f-41a0-6598-1f07-6b2d077d1230",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "1b5184a568f2cc7eb52f5c9bd86ef1819d0f6fd1",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "f618501ace3a6524b053661d067b775547f96f58",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 26706243,
+                                            "id": "Q26706243"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P478": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P478",
+                                    "hash": "ca3c5e6054c169ee3d0dfaf660f3eecd77942070",
+                                    "datavalue": {
+                                        "value": "4",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ],
+                            "P304": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P304",
+                                    "hash": "7f10d89fdbdf49a18f277215c8cf6ab4f46e36f0",
+                                    "datavalue": {
+                                        "value": "202",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P478",
+                            "P304"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P3031": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P3031",
+                    "hash": "6154f25f29935ffd035b4a605914654bd5c3509d",
+                    "datavalue": {
+                        "value": "ZALOCA",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$EC35AE8D-F42D-4694-BDA7-C1FA6123E33F",
+                "rank": "normal"
+            }
+        ],
+        "P3151": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P3151",
+                    "hash": "567e2a556e684ce4984ce1b223929eccf0c1b79d",
+                    "datavalue": {
+                        "value": "41740",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$8210B483-D199-47D1-B81C-7EB2459E08D8",
+                "rank": "normal"
+            }
+        ],
+        "P18": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "4d7f2a461c24beeec6aa7201ca0e4ebcaf6e7e07",
+                    "datavalue": {
+                        "value": "Bigmalesealion.jpg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "qualifiers": {
+                    "P2096": [
+                        {
+                            "snaktype": "value",
+                            "property": "P2096",
+                            "hash": "8039e8a443ef21758de43e737185d2694b4c26e2",
+                            "datavalue": {
+                                "value": {
+                                    "text": "Mascle",
+                                    "language": "ca"
+                                },
+                                "type": "monolingualtext"
+                            },
+                            "datatype": "monolingualtext"
+                        }
+                    ]
+                },
+                "qualifiers-order": [
+                    "P2096"
+                ],
+                "id": "Q379732$D007C2CC-6136-47E1-803D-B1EF5BC3E526",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "4fc0ff13475d2a0ba287957bf512899469d31bb2",
+                    "datavalue": {
+                        "value": "California sea lion in La Jolla (70568).jpg",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "Q379732$fe948d6b-4889-5187-02ef-0d23162868fd",
+                "rank": "normal"
+            }
+        ],
+        "P838": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P838",
+                    "hash": "38fc2903113c6540880a5b3a0a7b3f5d47b316cd",
+                    "datavalue": {
+                        "value": "2248",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$C58DF195-EB8A-464A-A598-4B1C53CA5F84",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "3bf39867b037e8e494a8389ae8a03bad6825a7fc",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "5946b91c53409c48f5f1fb0319ed41fc67a764da",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 191168,
+                                            "id": "Q191168"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P4024": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P4024",
+                    "hash": "613dbb1bce994bbab1510e188a9a2fd832a755d9",
+                    "datavalue": {
+                        "value": "Zalophus_californianus",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$7897939D-20DE-462C-AF3B-E47FD0D76DFF",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 8447,
+                                            "id": "Q8447"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P5055": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P5055",
+                    "hash": "66820827c40a2514343500d84104ec7702bf086a",
+                    "datavalue": {
+                        "value": "10201349",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$FAE0140D-ABD6-4AFF-A370-49CCAA8D20E2",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "7ee9a51b705e7a21be6b7a783573b26f8206e4f1",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "1e3ad3cb9e0170e28b7c7c335fba55cafa6ef789",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 51885189,
+                                            "id": "Q51885189"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "5c086b97a1bb3987efce8517e7fabb52f8dd83b2",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2018-06-06T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P910": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P910",
+                    "hash": "481037211714370b25c5cf797222cbaeffe57e76",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 55299673,
+                            "id": "Q55299673"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q379732$88100102-23D6-41B3-A68F-638F6C6BB305",
+                "rank": "normal"
+            }
+        ],
+        "P5397": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P5397",
+                    "hash": "f03dd04587ace8acd0104b08345a91ac28a390b7",
+                    "datavalue": {
+                        "value": "18765",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$458A9AEE-169B-4C84-9D70-9DE13E32343E",
+                "rank": "normal"
+            }
+        ],
+        "P4902": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P4902",
+                    "hash": "e7a623f0517f6437ed34be6dc033f1bd1db2f975",
+                    "datavalue": {
+                        "value": "184520MAMIFB501112",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$B0C4BBB9-CFF1-4D76-B725-B0BFC255F12B",
+                "rank": "normal"
+            }
+        ],
+        "P6019": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P6019",
+                    "hash": "1c8404b2222f6bfa74e44368df393e1434488efe",
+                    "datavalue": {
+                        "value": "348",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$2D05790D-D557-44C9-A401-BCF27A7634F2",
+                "rank": "normal"
+            }
+        ],
+        "P6049": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P6049",
+                    "hash": "e435b3688dbd4c84e6966409b37c0f34531afb22",
+                    "datavalue": {
+                        "value": "california-sea-lion",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$548C2D1C-A4A3-41A3-96E3-328761DDA55C",
+                "rank": "normal"
+            }
+        ],
+        "P6018": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P6018",
+                    "hash": "2925e75db8571bbf4efc5a285e3ab639098b2ee8",
+                    "datavalue": {
+                        "value": "69419",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$BA69382F-C687-434D-8675-53540B8DF6B8",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "ceccfdac147766e16ab81fd97d71115527f6a06a",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "18d34877fb9f20376e5e75a04e448143bc7fa4d8",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 7439813,
+                                            "id": "Q7439813"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "8f896a71d465c977998a14a0fb231931f81a8148",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2018-11-20T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P6163": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P6163",
+                    "hash": "0e9bed8f7307eb63889a12f2c8956d1a64c0d71c",
+                    "datavalue": {
+                        "value": "1091",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$5B6CB8D5-F83F-4B03-AAB4-C2E3A569F2B5",
+                "rank": "normal"
+            }
+        ],
+        "P4214": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P4214",
+                    "hash": "758bfd1210a9b7f1ef39a6254dbf9bb0dbbef104",
+                    "datavalue": {
+                        "value": {
+                            "amount": "+35.7",
+                            "unit": "http://www.wikidata.org/entity/Q577"
+                        },
+                        "type": "quantity"
+                    },
+                    "datatype": "quantity"
+                },
+                "type": "statement",
+                "id": "Q379732$61cd67d6-01e1-4092-9254-2bbb81748f5f",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "a8ccf5105b0e2623ae145dd8a9b927c9bd957ddf",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "5b45c23ddb076fe9c5accfe4a4bbd1c24c4c87cb",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 83566668,
+                                            "id": "Q83566668"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P6105": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P6105",
+                    "hash": "5c258198a89ccfa4988017cde9e815fb8161efa3",
+                    "datavalue": {
+                        "value": "79917",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q379732$B4B98BBD-E187-4E7A-A085-6217D5E5DA37",
+                "rank": "normal"
+            }
+        ]
+    },
+    "sitelinks": {
+        "arwiki": {
+            "site": "arwiki",
+            "title": "أسد البحر الكاليفورني",
+            "badges": []
+        },
+        "avkwiki": {
+            "site": "avkwiki",
+            "title": "Piakol (Zalophus californianus)",
+            "badges": []
+        },
+        "azbwiki": {
+            "site": "azbwiki",
+            "title": "کالیفورنیا دنیز اسلانی",
+            "badges": []
+        },
+        "azwiki": {
+            "site": "azwiki",
+            "title": "Kaliforniya dəniz şiri",
+            "badges": []
+        },
+        "bgwiki": {
+            "site": "bgwiki",
+            "title": "Калифорнийски морски лъв",
+            "badges": []
+        },
+        "brwiki": {
+            "site": "brwiki",
+            "title": "Morleon Kalifornia",
+            "badges": []
+        },
+        "cawiki": {
+            "site": "cawiki",
+            "title": "Lleó marí de Califòrnia",
+            "badges": []
+        },
+        "cebwiki": {
+            "site": "cebwiki",
+            "title": "Zalophus californianus",
+            "badges": []
+        },
+        "commonswiki": {
+            "site": "commonswiki",
+            "title": "Zalophus californianus",
+            "badges": []
+        },
+        "cswiki": {
+            "site": "cswiki",
+            "title": "Lachtan kalifornský",
+            "badges": []
+        },
+        "dewiki": {
+            "site": "dewiki",
+            "title": "Kalifornischer Seelöwe",
+            "badges": []
+        },
+        "enwiki": {
+            "site": "enwiki",
+            "title": "California sea lion",
+            "badges": [
+                "Q17437798"
+            ]
+        },
+        "eswiki": {
+            "site": "eswiki",
+            "title": "Zalophus californianus",
+            "badges": []
+        },
+        "euwiki": {
+            "site": "euwiki",
+            "title": "Kaliforniako itsas lehoi",
+            "badges": []
+        },
+        "fawiki": {
+            "site": "fawiki",
+            "title": "شیر دریایی کالیفرنیا",
+            "badges": []
+        },
+        "fiwiki": {
+            "site": "fiwiki",
+            "title": "Kalifornianmerileijona",
+            "badges": []
+        },
+        "frwiki": {
+            "site": "frwiki",
+            "title": "Otarie de Californie",
+            "badges": []
+        },
+        "gawiki": {
+            "site": "gawiki",
+            "title": "Mór-rón Calafoirniach",
+            "badges": []
+        },
+        "glwiki": {
+            "site": "glwiki",
+            "title": "Zalophus californianus",
+            "badges": []
+        },
+        "hewiki": {
+            "site": "hewiki",
+            "title": "אריה ים קליפורני",
+            "badges": []
+        },
+        "huwiki": {
+            "site": "huwiki",
+            "title": "Kaliforniai oroszlánfóka",
+            "badges": []
+        },
+        "hywiki": {
+            "site": "hywiki",
+            "title": "Կալիֆոռնական ծովառյուծ",
+            "badges": []
+        },
+        "iawiki": {
+            "site": "iawiki",
+            "title": "Zalophus californianus",
+            "badges": []
+        },
+        "itwiki": {
+            "site": "itwiki",
+            "title": "Zalophus californianus",
+            "badges": []
+        },
+        "jawiki": {
+            "site": "jawiki",
+            "title": "カリフォルニアアシカ",
+            "badges": []
+        },
+        "kowiki": {
+            "site": "kowiki",
+            "title": "캘리포니아바다사자",
+            "badges": []
+        },
+        "ltwiki": {
+            "site": "ltwiki",
+            "title": "Kaliforninis jūrų liūtas",
+            "badges": []
+        },
+        "lvwiki": {
+            "site": "lvwiki",
+            "title": "Kalifornijas lauvronis",
+            "badges": []
+        },
+        "mkwiki": {
+            "site": "mkwiki",
+            "title": "Калифорниски морски лав",
+            "badges": []
+        },
+        "mnwiki": {
+            "site": "mnwiki",
+            "title": "Калифорни далайн арслан",
+            "badges": []
+        },
+        "mswiki": {
+            "site": "mswiki",
+            "title": "Singa Laut",
+            "badges": []
+        },
+        "nlwiki": {
+            "site": "nlwiki",
+            "title": "Californische zeeleeuw",
+            "badges": []
+        },
+        "nowiki": {
+            "site": "nowiki",
+            "title": "Californiasjøløve",
+            "badges": []
+        },
+        "nvwiki": {
+            "site": "nvwiki",
+            "title": "Tábąąstííntsoh (Akééháshį́į́dę́ę́ʼígíí)",
+            "badges": []
+        },
+        "plwiki": {
+            "site": "plwiki",
+            "title": "Uszanka kalifornijska",
+            "badges": []
+        },
+        "ptwiki": {
+            "site": "ptwiki",
+            "title": "Leão-marinho-da-califórnia",
+            "badges": []
+        },
+        "ruwiki": {
+            "site": "ruwiki",
+            "title": "Калифорнийский морской лев",
+            "badges": []
+        },
+        "simplewiki": {
+            "site": "simplewiki",
+            "title": "California sea lion",
+            "badges": []
+        },
+        "skwiki": {
+            "site": "skwiki",
+            "title": "Uškatec kalifornský",
+            "badges": []
+        },
+        "specieswiki": {
+            "site": "specieswiki",
+            "title": "Zalophus californianus",
+            "badges": []
+        },
+        "srwiki": {
+            "site": "srwiki",
+            "title": "Калифорнијски морски лав",
+            "badges": []
+        },
+        "svwiki": {
+            "site": "svwiki",
+            "title": "Kaliforniskt sjölejon",
+            "badges": []
+        },
+        "ukwiki": {
+            "site": "ukwiki",
+            "title": "Каліфорнійський морський лев",
+            "badges": []
+        },
+        "viwiki": {
+            "site": "viwiki",
+            "title": "Sư tử biển California",
+            "badges": []
+        },
+        "warwiki": {
+            "site": "warwiki",
+            "title": "Zalophus californianus",
+            "badges": []
+        },
+        "zh_yuewiki": {
+            "site": "zh_yuewiki",
+            "title": "加州海獅",
+            "badges": []
+        },
+        "zhwiki": {
+            "site": "zhwiki",
+            "title": "加州海獅",
+            "badges": []
+        }
+    }
+}

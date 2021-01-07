@@ -1,0 +1,882 @@
+{
+    "pageid": 3320684,
+    "ns": 0,
+    "title": "Q3486907",
+    "lastrevid": 1331749032,
+    "modified": "2020-12-30T16:31:38Z",
+    "type": "item",
+    "id": "Q3486907",
+    "labels": {
+        "fr": {
+            "language": "fr",
+            "value": "Smaug mossambicus"
+        },
+        "en": {
+            "language": "en",
+            "value": "Mozambique girdled lizard"
+        },
+        "de": {
+            "language": "de",
+            "value": "Smaug mossambicus"
+        },
+        "es": {
+            "language": "es",
+            "value": "Smaug mossambicus"
+        },
+        "eu": {
+            "language": "eu",
+            "value": "Smaug mossambicus"
+        },
+        "it": {
+            "language": "it",
+            "value": "Smaug mossambicus"
+        },
+        "vi": {
+            "language": "vi",
+            "value": "Smaug mossambicus"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "Smaug mossambicus"
+        },
+        "ru": {
+            "language": "ru",
+            "value": "Smaug mossambicus"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "Mozambique Girdled Lizard"
+        },
+        "la": {
+            "language": "la",
+            "value": "Smaug mossambicus"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "Smaug mossambicus"
+        },
+        "ast": {
+            "language": "ast",
+            "value": "Smaug mossambicus"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "Smaug mossambicus"
+        },
+        "ro": {
+            "language": "ro",
+            "value": "Smaug mossambicus"
+        },
+        "pt": {
+            "language": "pt",
+            "value": "Smaug mossambicus"
+        },
+        "pl": {
+            "language": "pl",
+            "value": "Smaug mossambicus"
+        },
+        "nv": {
+            "language": "nv",
+            "value": "Naʼashǫ́ʼii diwozhí bitéél łitsxooígíí"
+        },
+        "sq": {
+            "language": "sq",
+            "value": "Smaug mossambicus"
+        },
+        "ceb": {
+            "language": "ceb",
+            "value": "Smaug mossambicus"
+        },
+        "war": {
+            "language": "war",
+            "value": "Smaug mossambicus"
+        },
+        "fi": {
+            "language": "fi",
+            "value": "Smaug mossambicus"
+        }
+    },
+    "descriptions": {
+        "de": {
+            "language": "de",
+            "value": "Art der Gattung Smaug"
+        },
+        "en": {
+            "language": "en",
+            "value": "species of reptile"
+        },
+        "bg": {
+            "language": "bg",
+            "value": "вид влечуго"
+        },
+        "nl": {
+            "language": "nl",
+            "value": "taxon, soort van reptielen"
+        },
+        "ar": {
+            "language": "ar",
+            "value": "نوع من الزواحف"
+        },
+        "uk": {
+            "language": "uk",
+            "value": "вид плазунів"
+        },
+        "ast": {
+            "language": "ast",
+            "value": "especie de reptil"
+        },
+        "ga": {
+            "language": "ga",
+            "value": "speiceas reiptílí"
+        }
+    },
+    "aliases": {
+        "fr": [
+            {
+                "language": "fr",
+                "value": "Cordylus warreni mossambicus"
+            },
+            {
+                "language": "fr",
+                "value": "Cordylus mossambicus"
+            }
+        ],
+        "en": [
+            {
+                "language": "en",
+                "value": "Smaug mossambicus"
+            },
+            {
+                "language": "en",
+                "value": "flame-bellied armadillo lizard"
+            },
+            {
+                "language": "en",
+                "value": "Cordylus mossambicus"
+            },
+            {
+                "language": "en",
+                "value": "Gorongosa girdled lizard"
+            }
+        ]
+    },
+    "claims": {
+        "P18": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P18",
+                    "hash": "a136fb16ff2895deaa0fa0b783e5fb07ab8bc1fc",
+                    "datavalue": {
+                        "value": "Cordylus mossambicus male.JPG",
+                        "type": "string"
+                    },
+                    "datatype": "commonsMedia"
+                },
+                "type": "statement",
+                "id": "q3486907$CE33F06C-45C0-4AD3-B519-D397D7A32E11",
+                "rank": "normal"
+            }
+        ],
+        "P685": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P685",
+                    "hash": "dab2d6b2c225fde0abef96583ba073dab8280dab",
+                    "datavalue": {
+                        "value": "885427",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q3486907$EC31A440-7EA9-45C3-91E9-CFD908B66DAF",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 8447,
+                                            "id": "Q8447"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    },
+                    {
+                        "hash": "7903ccf85f70af156888e9e0d1848ae9a37046f4",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "1851bc60ddfbcf6f76bd45aa7124fc0d5857a379",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 13711410,
+                                            "id": "Q13711410"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "041bc50ce29162a0366ac7946b4d65e042c07611",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2019-06-25T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P225": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P225",
+                    "hash": "2cacaee1243adfe84e388b6857267fea94b6b231",
+                    "datavalue": {
+                        "value": "Smaug mossambicus",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "qualifiers": {
+                    "P405": [
+                        {
+                            "snaktype": "value",
+                            "property": "P405",
+                            "hash": "89874f845b891b277038449ee4b0d9b8c2f1834b",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 3561552,
+                                    "id": "Q3561552"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        }
+                    ],
+                    "P574": [
+                        {
+                            "snaktype": "value",
+                            "property": "P574",
+                            "hash": "17bba9c779f0354efe2bd216c6aaac36183b534f",
+                            "datavalue": {
+                                "value": {
+                                    "time": "+1958-00-00T00:00:00Z",
+                                    "timezone": 0,
+                                    "before": 0,
+                                    "after": 0,
+                                    "precision": 9,
+                                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                },
+                                "type": "time"
+                            },
+                            "datatype": "time"
+                        }
+                    ]
+                },
+                "qualifiers-order": [
+                    "P405",
+                    "P574"
+                ],
+                "id": "Q3486907$F94D8407-9815-4BB5-B849-01F00609FCAD",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "c18df66906c0789d1e752000df168d8c40b1e0cb",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "69c1c0fbfbae08e64958c4aa1e4317bb555303d8",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1644501,
+                                            "id": "Q1644501"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "25a0863955204f7eabe2fcc1fa5e1ced592f1f56",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-03-01T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 10,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P105": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P105",
+                    "hash": "aebf3611b23ed90c7c0fc80f6cd1cb7be110ea59",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 7432,
+                            "id": "Q7432"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q3486907$A352C93E-F5D8-49CF-BCC9-13E94F6B7708",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "c18df66906c0789d1e752000df168d8c40b1e0cb",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "69c1c0fbfbae08e64958c4aa1e4317bb555303d8",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1644501,
+                                            "id": "Q1644501"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "25a0863955204f7eabe2fcc1fa5e1ced592f1f56",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-03-01T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 10,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P31": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P31",
+                    "hash": "06629d890d7ab0ff85c403d8aadf57ce9809c01f",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 16521,
+                            "id": "Q16521"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q3486907$E30997A1-D525-494D-B7B9-1FB75EDFF81A",
+                "rank": "normal"
+            }
+        ],
+        "P171": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P171",
+                    "hash": "824398d8e4eeef7e98441b292a0997b5532c3478",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 3486900,
+                            "id": "Q3486900"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q3486907$09f76cfe-4d17-1f5b-fe69-9f67e3999c40",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "c18df66906c0789d1e752000df168d8c40b1e0cb",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "69c1c0fbfbae08e64958c4aa1e4317bb555303d8",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 1644501,
+                                            "id": "Q1644501"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P577": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P577",
+                                    "hash": "25a0863955204f7eabe2fcc1fa5e1ced592f1f56",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-03-01T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 10,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P577"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P3151": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P3151",
+                    "hash": "e9b0b7a27ceb7961e6a3f972339e6ddf189e59d0",
+                    "datavalue": {
+                        "value": "121127",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q3486907$3093E665-254E-4511-8C6C-28C0479F513E",
+                "rank": "normal"
+            }
+        ],
+        "P2040": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P2040",
+                    "hash": "99ba73ca2a64815e65d71932ad016ea81d9bb404",
+                    "datavalue": {
+                        "value": "65704",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q3486907$6EFA0D14-B79B-4630-8ED7-F562FEDC77D2",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "8d76f67f62ab7fe4bb3a784f21273b09cc0778e6",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "213dc0d84ed983cbb28466ebb0c45bf8b0730ea2",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 20962955,
+                                            "id": "Q20962955"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "5341a2c19aecd1c72a57ffc6045d2a61b67c0080",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2017-01-27T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P4728": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P4728",
+                    "hash": "936fcd05e3acdbe2873ef36055abfb645d75a50d",
+                    "datavalue": {
+                        "value": "5758400",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q3486907$9E72215A-8535-4FDA-8D6E-6F4C47F244B2",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+                        "snaks": {
+                            "P143": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P143",
+                                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 8447,
+                                            "id": "Q8447"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P143"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P5473": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P5473",
+                    "hash": "2ae010d08eaa493fc4066e2474a8ef1e49196453",
+                    "datavalue": {
+                        "value": "genus=Smaug&species=mossambicus",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q3486907$1BA6577F-2399-450B-827D-5DA43109A315",
+                "rank": "normal"
+            }
+        ],
+        "P373": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P373",
+                    "hash": "1d6077b1314817ec8fdda8d2d4c40468e2d0f711",
+                    "datavalue": {
+                        "value": "Smaug mossambicus",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "Q3486907$9A5EC2DD-7F4C-42D6-9420-C7471F253A34",
+                "rank": "normal"
+            }
+        ],
+        "P141": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P141",
+                    "hash": "f6158175530e6b445bf4165a2355180396d6765a",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 211005,
+                            "id": "Q211005"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "type": "statement",
+                "id": "Q3486907$23FFF67C-DD7B-4DFA-BF24-317FA7281488",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "e1ecfb10413f84ee8d3c81c0a4a3c69246a3159c",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "744bc312f33e8ae7ea0bc4910a0314a610cc3e72",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 104368521,
+                                            "id": "Q104368521"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P627": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P627",
+                                    "hash": "a4556d68ed379df55f4c8830384544e250a042bf",
+                                    "datavalue": {
+                                        "value": "110167750",
+                                        "type": "string"
+                                    },
+                                    "datatype": "string"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "2ceaf967ac418176f952b4a0eaf7aeeb6538fa56",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2020-12-30T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P627",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P627": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P627",
+                    "hash": "a4556d68ed379df55f4c8830384544e250a042bf",
+                    "datavalue": {
+                        "value": "110167750",
+                        "type": "string"
+                    },
+                    "datatype": "string"
+                },
+                "type": "statement",
+                "id": "Q3486907$D93BB77B-B48B-46A4-8B15-F1834A11264F",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "480b904fd95c0dc75b22c12e9a34c88f4283e4d9",
+                        "snaks": {
+                            "P248": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P248",
+                                    "hash": "ba14d022d7e0c8b74595e7b8aaa1bc2451dd806a",
+                                    "datavalue": {
+                                        "value": {
+                                            "entity-type": "item",
+                                            "numeric-id": 32059,
+                                            "id": "Q32059"
+                                        },
+                                        "type": "wikibase-entityid"
+                                    },
+                                    "datatype": "wikibase-item"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "6f330ee26e2cd535ff3bb4a64a7381e0ca5de56a",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2020-01-06T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P248",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "P646": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P646",
+                    "hash": "691da8627768e9f9c39c8162bad5a5e93d6cda4e",
+                    "datavalue": {
+                        "value": "/m/03cjlhp",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q3486907$6DF93393-A507-45C8-8DD9-8D2DF2220F8D",
+                "rank": "normal"
+            }
+        ]
+    },
+    "sitelinks": {
+        "commonswiki": {
+            "site": "commonswiki",
+            "title": "Category:Smaug mossambicus",
+            "badges": []
+        },
+        "enwiki": {
+            "site": "enwiki",
+            "title": "Mozambique girdled lizard",
+            "badges": []
+        },
+        "euwiki": {
+            "site": "euwiki",
+            "title": "Smaug mossambicus",
+            "badges": []
+        },
+        "frwiki": {
+            "site": "frwiki",
+            "title": "Smaug mossambicus",
+            "badges": []
+        },
+        "nvwiki": {
+            "site": "nvwiki",
+            "title": "Naʼashǫ́ʼii diwozhí bitéél łitsxooígíí",
+            "badges": []
+        },
+        "specieswiki": {
+            "site": "specieswiki",
+            "title": "Smaug mossambicus",
+            "badges": []
+        },
+        "viwiki": {
+            "site": "viwiki",
+            "title": "Smaug mossambicus",
+            "badges": []
+        }
+    }
+}

@@ -1,0 +1,70 @@
+{
+    "pageid": 7406526,
+    "ns": 0,
+    "title": "Q7493712",
+    "lastrevid": 1129155708,
+    "modified": "2020-03-05T01:03:09Z",
+    "type": "item",
+    "id": "Q7493712",
+    "labels": {
+        "en": {
+            "language": "en",
+            "value": "Shell dwellers"
+        },
+        "pl": {
+            "language": "pl",
+            "value": "Muszlowce (ryby)"
+        },
+        "de": {
+            "language": "de",
+            "value": "Schneckenbuntbarsch"
+        },
+        "th": {
+            "language": "th",
+            "value": "ปลาหมอหอย"
+        }
+    },
+    "descriptions": {},
+    "aliases": {},
+    "claims": {
+        "P6366": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P6366",
+                    "hash": "8152e8a250f7c35be3034eac7e17454925d161ec",
+                    "datavalue": {
+                        "value": "2780924194",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "Q7493712$A3453022-7569-4BD8-ABEC-CA1254C83099",
+                "rank": "normal"
+            }
+        ]
+    },
+    "sitelinks": {
+        "dewiki": {
+            "site": "dewiki",
+            "title": "Schneckenbuntbarsch",
+            "badges": []
+        },
+        "enwiki": {
+            "site": "enwiki",
+            "title": "Shell dwellers",
+            "badges": []
+        },
+        "plwiki": {
+            "site": "plwiki",
+            "title": "Muszlowce (ryby)",
+            "badges": []
+        },
+        "thwiki": {
+            "site": "thwiki",
+            "title": "ปลาหมอหอย",
+            "badges": []
+        }
+    }
+}

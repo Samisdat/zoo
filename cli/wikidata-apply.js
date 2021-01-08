@@ -63,6 +63,15 @@ const getImages = (imagesProperty) => {
 
 }
 
+const getScientificName = (nameProperty) => {
+
+    if(0 === nameProperty.length){
+        return;
+    }
+
+    return nameProperty[0].mainsnak.datavalue.value;
+}
+
 const extractWikiData = (wikidata) => {
 
     let wikipediaLink = undefined;
@@ -77,13 +86,22 @@ const extractWikiData = (wikidata) => {
     let images = [];
 
     if(undefined !== wikidata.claims.P18){
-        images = getImages(wikidata.claims.P18)
+        images = getImages(wikidata.claims.P18);
     }
-    
+
+    let scientificName = undefined;
+
+    if(undefined !== wikidata.claims.P225){
+        scientificName = getScientificName(wikidata.claims.P225)
+    }
+
+
+
     //https://upload.wikimedia.org/wikipedia/commons/5/54/Testudo_kleinmanni.jpg
     return{
         wikipediaLink: wikipediaLink,
-        images:images
+        images:images,
+        scientificName:scientificName
     }
 
 };

@@ -49,7 +49,7 @@ export default function Index(props) {
 
     let group = props.animals
         .reduce((r, e) => {
-            let firstLetter = e.name[0].toLowerCase();
+            let firstLetter = e.title[0].toLowerCase();
 
             firstLetter = firstLetter
                 .replace('ä', 'a')
@@ -86,7 +86,7 @@ export default function Index(props) {
                       return(
 
                           <ListItem button>
-                              <ListItemLink href={href}>{animal.name}</ListItemLink>
+                              <ListItemLink href={href}>{animal.title}</ListItemLink>
                           </ListItem>
                       )}
                   )}

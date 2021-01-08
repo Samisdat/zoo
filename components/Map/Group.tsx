@@ -3,9 +3,10 @@ import {useEffect, useState} from "react";
 import {Ways} from "./Ways";
 import {Sketched} from "./Sketched";
 import {CurrentPosition} from "./CurrentPosition";
-import {MapTransformInterface} from "./Interface";
+import {MapStateInterface, MapTransformInterface} from "./Interface";
 import {HighlightFocus} from "./HighlightFocus";
 import {PointOfInterest} from "./PointOfInterest";
+import {Feature} from "geojson";
 
 // zoom until focus.width or focus.height extends window.width or window.height
 const findBestZoomLevel = (x0, x1, y0, y1, maxWidth, maxHeight) => {

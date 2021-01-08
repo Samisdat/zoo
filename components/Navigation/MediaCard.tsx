@@ -3,18 +3,16 @@ import { Theme, createStyles, makeStyles, useTheme } from '@material-ui/core/sty
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import CardActions from '@material-ui/core/CardActions';
-import Button from '@material-ui/core/Button';
+import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import SkipNextIcon from '@material-ui/icons/SkipNext';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             display: 'flex',
-            position: 'absolute'    ,
-            bottom:90,
-            left: theme.spacing(1),
-            right: theme.spacing(1)
         },
         details: {
             display: 'flex',
@@ -24,8 +22,13 @@ const useStyles = makeStyles((theme: Theme) =>
             flex: '1 0 auto',
         },
         cover: {
-            width: 150,
-            height: 150,
+            width: 151,
+        },
+        controls: {
+            display: 'flex',
+            alignItems: 'center',
+            paddingLeft: theme.spacing(1),
+            paddingBottom: theme.spacing(1),
         },
         playIcon: {
             height: 38,
@@ -34,37 +37,38 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export default function MediaControlCard(props) {
+export default function MediaControlCard() {
     const classes = useStyles();
+    const theme = useTheme();
 
     return (
-        <Card
-            className={classes.root}
-            elevation={2}
-        >
-            <CardMedia
-                className={classes.cover}
-                image="/images/elefant.jpg"
-                title="Live from space album cover"
-            />
+        <Card className={classes.root}>
             <div className={classes.details}>
                 <CardContent className={classes.content}>
-                    <Typography component="h6" variant="h6">
+                    <Typography component="h5" variant="h5">
                         Live From Space
                     </Typography>
                     <Typography variant="subtitle1" color="textSecondary">
                         Mac Miller
                     </Typography>
                 </CardContent>
-                <CardActions>
-                    <Button size="small" color="primary">
-                        Details
-                    </Button>
-                    <Button size="small" color="primary" onClick={props.toggleTeaser}>
-                        Schließen
-                    </Button>
-                </CardActions>
+                <div className={classes.controls}>
+                    <IconButton aria-label="previous">
+                        {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
+                    </IconButton>
+                    <IconButton aria-label="play/pause">
+                        <PlayArrowIcon className={classes.playIcon} />
+                    </IconButton>
+                    <IconButton aria-label="next">
+                        {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
+                    </IconButton>
+                </div>
             </div>
+            <CardMedia
+                className={classes.cover}
+                image="/static/images/cards/live-from-space.jpg"
+                title="Live from space album cover"
+            />
         </Card>
     );
 }

@@ -12,9 +12,9 @@ export default function Index(props) {
 
     const clickButton = () => {
         setTeaser({
-            apiUrl: '/api/teaser/enclosure/elefantenhaus',
+            apiUrl: '/api/teaser/animals/elefanten',
             close: closeTeaser
-        })
+        });
 
     };
 

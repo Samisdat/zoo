@@ -1,15 +1,23 @@
 ---
 slug: dreiecksnatter
-title: Dreiecksnatter 
-wikipedia: https://de.wikipedia.org/wiki/Dreiecksnatter
+title: Dreiecksnatter
 wikidata: Q2998807
-latin:
-image: Dreiecksnatter 
+image: Dreiecksnatter
 class: Reptilien
-order:  Schuppenkriechtiere
-family:  Nattern
-species:  Dreiecksnatter 
-
+order: Schuppenkriechtiere
+family: Nattern
+species: Dreiecksnatter
+wikipediaLink: null
+images:
+  - 'https://upload.wikimedia.org/wikipedia/commons/b/b5/Tennessee_milksnake.jpg'
+scientificName: Lampropeltis triangulum triangulum
+i18nNames:
+  en: Lampropeltis triangulum triangulum
+  de: Lampropeltis triangulum triangulum
+  nl: Lampropeltis triangulum triangulum
+iucnID: null
+iucnLink: null
+iucnStatus: null
 ---
 
 I am content.

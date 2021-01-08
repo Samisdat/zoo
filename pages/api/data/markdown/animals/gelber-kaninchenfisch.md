@@ -1,15 +1,24 @@
 ---
 slug: gelber-kaninchenfisch
 title: Gelber Kaninchenfisch
-wikipedia: https://de.wikipedia.org/wiki/Kaninchenfische
 wikidata: Q17148
-latin:
 image: Gelber Kaninchenfisch
 class: Strahlenflosser
-order:  Barschartige
-family:  Kaninchenfische
-species:  Gelber Kaninchenfisch
-
+order: Barschartige
+family: Kaninchenfische
+species: Gelber Kaninchenfisch
+wikipediaLink: null
+images:
+  - >-
+    https://upload.wikimedia.org/wikipedia/commons/1/1b/Siganus_vulpinus_1_edit.jpg
+scientificName: Siganidae
+i18nNames:
+  en: Rabbitfish
+  de: Kaninchenfische
+  nl: konijnvissen
+iucnID: null
+iucnLink: null
+iucnStatus: null
 ---
 
 I am content.

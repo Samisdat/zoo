@@ -1,14 +1,22 @@
 ---
 slug: pinzettfisch
 title: Pinzettfisch
-wikipedia: null
 wikidata: Q1255189
-latin: null
 image: Pinzettfisch
 class: Strahlenflosser
 order: Barschartige
 family: Falterfische
 species: Pinzettfisch
+wikipediaLink: 'https://de.wikipedia.org/wiki/Pinzettfisch'
+images: []
+scientificName: null
+i18nNames:
+  en: Pinzettfisch
+  de: Pinzettfisch
+  nl: Pinzettfisch
+iucnID: null
+iucnLink: null
+iucnStatus: null
 ---
 
 I am content.

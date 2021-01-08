@@ -1,15 +1,24 @@
 ---
 slug: langschnaeuziges-seepferdchen
 title: Langschnäuziges Seepferdchen
-wikipedia: 
 wikidata: Q132985
-latin:
 image: Langschnäuziges Seepferdchen
 class: Strahlenflosser
-order:  Seenadelartige
-family:  Seenadeln
-species:  Langschnäuziges Seepferdchen
-
+order: Seenadelartige
+family: Seenadeln
+species: Langschnäuziges Seepferdchen
+wikipediaLink: 'https://de.wikipedia.org/wiki/Hippocampus_reidi'
+images:
+  - >-
+    https://upload.wikimedia.org/wikipedia/commons/c/c3/Hippocampus_reidi_brasil.jpeg
+scientificName: Hippocampus reidi
+i18nNames:
+  en: Longsnout seahorse
+  de: Hippocampus reidi
+  nl: Hippocampus reidi
+iucnID: '10082'
+iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/10082'
+iucnStatus: Q719675
 ---
 
 I am content.

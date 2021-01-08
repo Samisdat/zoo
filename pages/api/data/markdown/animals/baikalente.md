@@ -1,15 +1,22 @@
 ---
 slug: baikalente
 title: Baikalente
-wikipedia: https://de.wikipedia.org/wiki/Baikalente
 wikidata: Q330710
-latin: Anas formosa
 image: Baikalente
 class: Vögel
-order:  Gänsevögel
-family:  Entenvögel 
-species:  Baikalente
-
+order: Gänsevögel
+family: Entenvögel
+species: Baikalente
+wikipediaLink: 'https://de.wikipedia.org/wiki/Baikalente'
+images: []
+scientificName: Sibirionetta formosa
+i18nNames:
+  en: Baikal Teal
+  de: Gluckente
+  nl: Siberische Taling
+iucnID: '22680317'
+iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/22680317'
+iucnStatus: Q211005
 ---
 
 I am content.

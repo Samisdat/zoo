@@ -1,5 +1,5 @@
 ---
-slug: elefant
+slug: afrikanischer-elefant
 title: Afrikanischer Elefant
 wikidata: Q36557
 image: Afrikanischer Elefant

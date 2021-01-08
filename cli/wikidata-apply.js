@@ -72,6 +72,90 @@ const getScientificName = (nameProperty) => {
     return nameProperty[0].mainsnak.datavalue.value;
 }
 
+const getI18nName = (i18nProberty) => {
+
+    const lang = i18nProberty.mainsnak.datavalue.value.language;
+    const name = i18nProberty.mainsnak.datavalue.value.text;
+
+    return{
+        lang,
+        name
+    };
+}
+const getI18nNames = (i18nNamesProberty, labels) => {
+
+    let en, de, nl = undefined;
+
+    if(undefined !== i18nNamesProberty){
+        const names = i18nNamesProberty.map(getI18nName);
+
+        en = names.find((name)=>{
+            return ('en' === name.lang);
+        });
+
+        if(undefined !== en){
+            en = en.name;
+        }
+
+        de = names.find((name)=>{
+            return ('de' === name.lang);
+        });
+
+        if(undefined !== de){
+            de = de.name;
+        }
+
+        nl = names.find((name)=>{
+            return ('nl' === name.lang);
+        });
+        if(undefined !== nl){
+            nl = nl.name;
+        }
+
+    }
+
+    if(undefined === en && undefined !== labels.en){
+        en = labels.en.value;
+    }
+
+    if(undefined === de && undefined !== labels.de){
+        de = labels.de.value;
+    }
+
+    if(undefined === nl && undefined !== labels.nl){
+        nl = labels.nl.value;
+    }
+
+    const i18nNames = {
+        en,
+        de,
+        nl
+    };
+
+    return i18nNames;
+}
+
+const getIucnID = (i18nNamesProberty) => {
+
+    if(1 !== i18nNamesProberty.length){
+        return undefined;
+    }
+
+    return i18nNamesProberty[0].mainsnak.datavalue.value;
+
+}
+
+const getIucnStatus = (iucnStatusProberty) => {
+
+    if(1 !== iucnStatusProberty.length){
+        return undefined;
+    }
+
+    return iucnStatusProberty[0].mainsnak.datavalue.value.id;
+
+}
+
+
 const extractWikiData = (wikidata) => {
 
     let wikipediaLink = undefined;
@@ -95,13 +179,34 @@ const extractWikiData = (wikidata) => {
         scientificName = getScientificName(wikidata.claims.P225)
     }
 
+    let i18nNames = getI18nNames(wikidata.claims.P1843, wikidata.labels)
 
+    let iucnID = undefined;
+    let iucnLink = undefined;
+
+    if(undefined !== wikidata.claims.P627){
+        iucnID = getIucnID(wikidata.claims.P627)
+
+        if(undefined !== iucnID){
+            iucnLink = `https://apiv3.iucnredlist.org/api/v3/taxonredirect/${iucnID}`;
+        }
+    }
+
+    let iucnStatus = undefined;
+
+    if(undefined !== wikidata.claims.P141){
+        iucnStatus = getIucnStatus(wikidata.claims.P141)
+    }
 
     //https://upload.wikimedia.org/wikipedia/commons/5/54/Testudo_kleinmanni.jpg
     return{
         wikipediaLink: wikipediaLink,
         images:images,
-        scientificName:scientificName
+        scientificName:scientificName,
+        i18nNames: i18nNames,
+        iucnID,
+        iucnLink,
+        iucnStatus
     }
 
 };
@@ -125,8 +230,8 @@ const loopData = async () => {
             continue;
         }
 
-
         const wikidataId = animalMarkdown.data.wikidata;
+
         console.log('wikidataId', wikidataId);
 
         const wikidataFilePath = path.resolve(wikidataDir, wikidataId + '.json');
@@ -143,10 +248,31 @@ const loopData = async () => {
 
         const wikiData = extractWikiData(wikidataJson);
 
-        console.log(wikiData)
+        for(const wikiDataKey in wikiData){
 
+            animalMarkdown.data[wikiDataKey] = wikiData[wikiDataKey];
+        }
 
-        break;
+        for(const key in animalMarkdown.data){
+
+            if(undefined === animalMarkdown.data[key]){
+                animalMarkdown.data[key] = null;
+            }
+
+        }
+
+        for(const key in animalMarkdown.data.i18nNames){
+
+            if(undefined === animalMarkdown.data.i18nNames[key]){
+                animalMarkdown.data.i18nNames[key] = null;
+            }
+
+        }
+
+        delete animalMarkdown.data.latin
+        delete animalMarkdown.data.wikipedia
+
+        fs.writeFileSync(animalFilePath, frontmatter.stringify(animalMarkdown),{encoding:'utf-8'});
 
     }
 

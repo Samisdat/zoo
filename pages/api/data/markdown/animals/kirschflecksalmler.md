@@ -1,15 +1,23 @@
 ---
 slug: kirschflecksalmler
 title: Kirschflecksalmler
-wikipedia: 
 wikidata: Q927123
-latin:
 image: Kirschflecksalmler
 class: Strahlenflosser
-order:  Salmlerartige
-family:  Echte Salmler
-species:  Kirschflecksalmler
-
+order: Salmlerartige
+family: Echte Salmler
+species: Kirschflecksalmler
+wikipediaLink: 'https://de.wikipedia.org/wiki/Kirschflecksalmler'
+images:
+  - 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Kirschflecksalmler-M.jpg'
+scientificName: Hyphessobrycon erythrostigma
+i18nNames:
+  en: Hyphessobrycon erythrostigma
+  de: Kirschflecksalmler
+  nl: Bloedvlektetra
+iucnID: null
+iucnLink: null
+iucnStatus: null
 ---
 
 I am content.

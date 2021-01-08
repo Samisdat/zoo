@@ -1,15 +1,23 @@
 ---
 slug: baumskink
 title: Baumskink
-wikipedia: https://en.wikipedia.org/wiki/Dasia_olivacea
 wikidata: Q126597
-latin:
 image: Baumskink
 class: Reptilien
-order:  Schuppenkriechtiere
-family:  Skinke
-species:  Baumskink
-
+order: Schuppenkriechtiere
+family: Skinke
+species: Baumskink
+wikipediaLink: null
+images:
+  - 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Dasia_olivacea.jpg'
+scientificName: Dasia olivacea
+i18nNames:
+  en: Olive Dasia
+  de: Dasia olivacea
+  nl: Dasia olivacea
+iucnID: '178252'
+iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/178252'
+iucnStatus: Q211005
 ---
 
 I am content.

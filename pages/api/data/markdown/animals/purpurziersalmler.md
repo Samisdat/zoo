@@ -1,14 +1,23 @@
 ---
 slug: purpurziersalmler
 title: Purpurziersalmler
-wikipedia: null
 wikidata: Q1164371
-latin: null
 image: Purpurziersalmler
 class: Strahlenflosser
 order: Salmlerartige
 family: Schlanksalmler
 species: Purpurziersalmler
+wikipediaLink: 'https://de.wikipedia.org/wiki/Purpurziersalmler'
+images:
+  - 'https://upload.wikimedia.org/wikipedia/commons/7/77/Red_Pencilfish.jpg'
+scientificName: Nannostomus mortenthaleri
+i18nNames:
+  en: red pencil
+  de: Purpurziersalmler
+  nl: Nannostomus mortenthaleri
+iucnID: '49830676'
+iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/49830676'
+iucnStatus: Q219127
 ---
 
 I am content.

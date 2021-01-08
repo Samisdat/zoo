@@ -1,14 +1,24 @@
 ---
 slug: zwergwachtel
 title: Zwergwachtel
-wikipedia: null
 wikidata: Q244429
-latin: null
 image: Zwergwachtel
 class: Vögel
 order: Hühnervögel
 family: Fasanenartige
 species: Zwergwachtel
+wikipediaLink: 'https://de.wikipedia.org/wiki/Zwergwachtel'
+images:
+  - >-
+    https://upload.wikimedia.org/wikipedia/commons/8/8d/Excalfactoria_chinensis_(aka).jpg
+scientificName: Coturnix chinensis
+i18nNames:
+  en: King Quail
+  de: Zwergwachtel
+  nl: Chinese dwergkwartel
+iucnID: null
+iucnLink: null
+iucnStatus: null
 ---
 
 I am content.

@@ -1,15 +1,24 @@
 ---
 slug: gebaenderter-fidschi-leguan
 title: Gebänderter Fidschi-Leguan
-wikipedia: https://de.wikipedia.org/wiki/Fidschileguane
 wikidata: Q1411411
-latin:
 image: Gebänderter Fidschi-Leguan
 class: Reptilien
-order:  Schuppenkriechtiere
-family:  Leguane
-species:  Gebänderter Fidschi-Leguan
-
+order: Schuppenkriechtiere
+family: Leguane
+species: Gebänderter Fidschi-Leguan
+wikipediaLink: 'https://de.wikipedia.org/wiki/Fidschileguane'
+images:
+  - >-
+    https://upload.wikimedia.org/wikipedia/commons/2/21/Brachylophus_fasciatus.JPG
+scientificName: Brachylophus
+i18nNames:
+  en: Brachylophus
+  de: Fidschileguane
+  nl: Brachylophus
+iucnID: null
+iucnLink: null
+iucnStatus: null
 ---
 
 I am content.

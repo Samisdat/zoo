@@ -4,6 +4,7 @@ import * as d3 from 'd3';
 import {GeoPath} from 'd3';
 import {MapTransformInterface,} from "components/Map/Interface";
 import {GeoProjection} from "d3-geo";
+import {Feature, FeatureCollection} from "geojson";
 
 const mapTransformDefault: MapTransformInterface = {
     k:1,
@@ -33,11 +34,82 @@ const MapStateDefault: GeographicRangeMapStateInterface = {
     },
 }
 
+export const centerToFeatureCollection = (featureset: FeatureCollection):Feature => {
+
+    const latitudes = [];
+    const longitudes = [];
+
+    for(const feature of featureset.features){
+
+        if('Polygon' === feature.geometry.type){
+
+            for(const coordinates of feature.geometry.coordinates){
+
+                for(const coordinate of coordinates){
+
+
+                    latitudes.push(coordinate[1]);
+                    longitudes.push(coordinate[0]);
+                }
+
+            }
+
+        }
+        else if('MultiPolygon' === feature.geometry.type){
+
+            for(const coordinates of feature.geometry.coordinates){
+
+                for(const coordinate of coordinates){
+
+                    for(const coord of coordinate){
+                        latitudes.push(coord[1]);
+                        longitudes.push(coord[0]);
+                    }
+
+                }
+
+            }
+
+        }
+
+
+    }
+
+    let north = Math.max(...latitudes);
+
+    let south = Math.min(...latitudes);
+
+    let west = Math.max(...longitudes);
+    let east = Math.min(...longitudes);
+
+    return {
+        "type": "Feature",
+        "properties": {
+            "name": "Afghanistan"
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [east, north],
+                    [west, north],
+                    [west, south],
+                    [east, south],
+                    [east, north],
+                ]
+            ]
+        }
+    };
+
+}
+
+
 export const World = (props) => {
 
     const svgId = 'geographic-range';
     const worldId = 'geographic-range-world';
     const whereId = "geographic-range-where";
+    const rectId = "geographic-range-react";
 
     const [mapState, setMapState] = useState<GeographicRangeMapStateInterface>(MapStateDefault);
 
@@ -50,8 +122,6 @@ export const World = (props) => {
 
         //const width = 800;
         const height = width * ratio;
-
-        const center = d3.geoCentroid(props.world_countries);
 
         const projection = d3.geoNaturalEarth1()
             .translate([width / 2, height / 2 + 10])
@@ -93,6 +163,26 @@ export const World = (props) => {
             .attr("d", pathGenerator)
 
 
+        const center = centerToFeatureCollection(props.geojson);
+
+        console.log(center)
+
+
+        d3.select(`#${rectId}`)
+            .selectAll("path")
+            .exit()
+            .data([center])
+            .enter()
+            .append("path")
+            .attr("fill", (d:Feature)=>{
+                return '#0f0';
+            })
+            .attr("stroke", (d:Feature)=>{
+                return '#0f0';
+            })
+            .attr("opacity", 0.7)
+            .attr("d", pathGenerator)
+
         const nextMapState: GeographicRangeMapStateInterface = {
             ...mapState,
             width,
@@ -114,7 +204,7 @@ export const World = (props) => {
             createMap();
         }
 
-    }, );
+    });
 
     return (
         <svg id={svgId} style={{
@@ -127,6 +217,7 @@ export const World = (props) => {
         >
             <g id={worldId}></g>
             <g id={whereId}></g>
+            <g id={rectId}></g>
 
         </svg>
     );

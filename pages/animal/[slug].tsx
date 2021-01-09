@@ -22,6 +22,7 @@ export default function Tiere(props) {
             <World
                 geojson={props.geojson}
                 world_countries={props.world_countries}
+                world={props.world}
             />
             <img
                 src={image}

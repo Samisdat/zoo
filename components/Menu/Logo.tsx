@@ -47,7 +47,7 @@ export function Logo() {
 
 
     return (
-            <div className={classes.logo}>
+            <a href="/" className={classes.logo}>
                 <svg
                     className={classes.logoImg}
                     width="100%"
@@ -100,6 +100,6 @@ export function Logo() {
                         />
                     </g>
                 </svg>
-            </div>
+            </a>
     );
 }

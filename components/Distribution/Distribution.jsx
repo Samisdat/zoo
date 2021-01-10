@@ -1,0 +1,42 @@
+import React from 'react';
+import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+
+import {Detail} from "./Detail";
+import {MiniMap} from "./MiniMap";
+import {Legend} from "./Legend";
+
+const useStyles = makeStyles((theme) =>
+    createStyles({
+        root: {
+            position: 'relative',
+            width: '100%',
+            height: '400px',
+            background: 'red',
+            [theme.breakpoints.down('sm')]: {
+                background: 'blue',
+            },
+        },
+    }),
+);
+
+export const Distribution = (props) => {
+
+    const classes = useStyles();
+
+    return (
+        <React.Fragment>
+            <div
+                className={classes.root}
+            >
+                <Detail
+                    {...props}
+                />
+                <MiniMap
+                    {...props}
+                />
+            </div>
+            <Legend></Legend>
+        </React.Fragment>
+    );
+
+}

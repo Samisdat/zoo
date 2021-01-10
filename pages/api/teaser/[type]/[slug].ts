@@ -11,7 +11,7 @@ export interface TeaserInterface {
     image: string;
 }
 
-const dataDir = path.resolve(process.env.PWD + '/pages/api/data/markdown');
+const dataDir = path.resolve(process.env.PWD + '/data/markdown');
 
 export default async (req: NextApiRequest, res: NextApiResponse<TeaserInterface>) => {
 

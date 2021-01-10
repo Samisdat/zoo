@@ -69,7 +69,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
         return;
     }
 
-    const dataDir = path.resolve(process.env.PWD + '/pages/api/data');
+    const dataDir = path.resolve(process.env.PWD + '/data');
     const dataFile = path.resolve(dataDir, slug + '/data.json');
     const svgFile = path.resolve(dataDir, slug + '/data.svg');
 

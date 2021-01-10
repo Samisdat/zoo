@@ -1,12 +1,10 @@
 import React, {useState} from 'react';
 
-import {getGeoJson} from './api/geojson/geojson';
-import {Feature, FeatureCollection, LineString, Polygon} from 'geojson';
+import {FeatureCollection} from 'geojson';
 import {MapRoot} from 'components/Map/Root';
 import {NavigationInterface} from "../components/Navigation/Interfaces";
 import {MapSearch} from "../components/Map/Search";
 import {getFullGeoJson} from "./api/geojson/list";
-import MediaCard from "../components/Menu/Card";
 import MediaControlCard from "../components/Navigation/MediaCard";
 
 export interface IndexProps{
@@ -33,6 +31,7 @@ export default function Index(props:IndexProps) {
     return (
         <React.Fragment>
             <MapRoot setFocus={props.setFocus} {...props}></MapRoot>
+            {/*
             <MediaControlCard></MediaControlCard>
             <MapSearch
                 setFocus={props.setFocus}
@@ -40,6 +39,7 @@ export default function Index(props:IndexProps) {
                 geoJson={props.geoJson}
                 {...props.navigation}
             />
+            */}
         </React.Fragment>
   );
 }
@@ -73,11 +73,7 @@ export async function getStaticProps(context) {
 
             feature.geometry.coordinates = correctedWay;
 
-
         }
-
-
-
 
     }
 

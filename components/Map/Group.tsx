@@ -9,9 +9,9 @@ import {PointOfInterest} from "./PointOfInterest";
 import {Feature} from "geojson";
 
 // zoom until focus.width or focus.height extends window.width or window.height
-const findBestZoomLevel = (x0, x1, y0, y1, maxWidth, maxHeight) => {
+export const findBestZoomLevel = (x0, x1, y0, y1, maxWidth, maxHeight) => {
 
-    const minZoom = 0.5;
+    const minZoom = 0.1;
     const maxZoom = 20;
 
     const width = Math.abs(x0 - x1);
@@ -25,7 +25,7 @@ const findBestZoomLevel = (x0, x1, y0, y1, maxWidth, maxHeight) => {
             break;
         }
 
-        k += 0.25;
+        k += 0.01;
     }
 
     return k;

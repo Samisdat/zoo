@@ -1,7 +1,7 @@
 import {NextApiRequest, NextApiResponse} from "next";
 import fs from "fs";
 import path from "path";
-import {xmlTemplate} from "../../data/xml-template";
+import {xmlTemplate} from "../../../../data/xml-template";
 import {getSlug} from "../../../../helper/getSlug";
 
 const { geoFromSVGXML } = require('svg2geojson');
@@ -64,7 +64,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
 
     slug = slug as string;
 
-    const dataDir = path.resolve(process.env.PWD, 'pages/api/data');
+    const dataDir = path.resolve(process.env.PWD, 'data');
     const combinedSvgPath = path.resolve(dataDir, 'combined.svg');
     const combinedSvg = fs.readFileSync(combinedSvgPath, {encoding:'utf8'});
 

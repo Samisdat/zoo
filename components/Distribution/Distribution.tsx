@@ -5,7 +5,7 @@ import {Detail} from "./Detail";
 import {MiniMap} from "./MiniMap";
 import {Legend} from "./Legend";
 
-const useStyles = makeStyles((theme) =>
+const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             position: 'relative',

@@ -3,14 +3,18 @@ import React, {useEffect, useState} from 'react';
 import * as d3 from 'd3';
 
 import * as topojson from "topojson-client";
+import {GeoPath} from "d3";
+import {GeoProjection} from "d3-geo";
+import {MapTransformInterface} from "../Map/Interface";
+import {FeatureCollection} from "geojson";
 
 const mapTransformDefault = {
     k:1,
     x:0,
     y:0
 }
-/*
-export interface GeographicRangeMapStateInterface {
+
+export interface DistributionDetailStateInterface {
     width: number;
     height: number;
     dimensionUnit: string;
@@ -18,9 +22,9 @@ export interface GeographicRangeMapStateInterface {
     pathGenerator: GeoPath,
     projection: GeoProjection;
     transform: MapTransformInterface;
-}
-*/
-const MapStateDefault = {
+};
+
+const MapStateDefault: DistributionDetailStateInterface = {
     width: 100,
     height: 100,
     dimensionUnit: '%',
@@ -32,7 +36,7 @@ const MapStateDefault = {
     },
 }
 
-export const centerToFeatureCollection = (featureset) => {
+export const centerToFeatureCollection = (featureset:FeatureCollection) => {
 
     const latitudes = [];
     const longitudes = [];
@@ -112,9 +116,9 @@ export const Detail = (props) => {
     const whereId = "geographic-range-where";
     const rectId = "geographic-range-react";
 
-    const [mapState, setMapState] = useState(MapStateDefault);
+    const [mapState, setMapState] = useState<DistributionDetailStateInterface>(MapStateDefault);
 
-    const createMapUsa = () => {
+    const createDetailMap = () => {
 
         const width = window.innerWidth;
         const height = 400;
@@ -127,7 +131,7 @@ export const Detail = (props) => {
             .on("zoom", zoomed);
 
         const svg = d3.select(`#${svgId}`)
-            .attr("viewBox", [0, 0, width, height])
+            .attr("viewBox", [0, 0, width, height] as any)
         ;
 
 
@@ -176,12 +180,12 @@ export const Detail = (props) => {
                 return '#0f0';
             })
             .attr("opacity", 0.7)
-            .attr("d", path)
+            .attr("d", path as any)
 
-        const [[x0, y0], [x1, y1]] = path.bounds(center);
+        const [[x0, y0], [x1, y1]] = path.bounds(center as any);
 
         svg.call(
-            zoom.transform,
+            zoom.transform as any,
             d3.zoomIdentity
                 .translate(width / 2, height / 2)
                 .scale(Math.min(8, 0.9 / Math.max((x1 - x0) / width, (y1 - y0) / height)))
@@ -215,7 +219,7 @@ export const Detail = (props) => {
     useEffect(() => {
 
         if (undefined === mapState.pathGenerator) {
-            createMapUsa();
+            createDetailMap();
         }
 
     });

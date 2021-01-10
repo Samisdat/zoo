@@ -1,8 +1,6 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Chip from '@material-ui/core/Chip';
-import Paper from '@material-ui/core/Paper';
-import TagFacesIcon from '@material-ui/icons/TagFaces';
 
 interface ChipData {
     key: number;
@@ -47,6 +45,7 @@ export default function ChipsArray() {
                 return (
 
                         <Chip
+                            key={data.key}
                             icon={icon}
                             label={data.label}
                             onDelete={ handleDelete(data)}

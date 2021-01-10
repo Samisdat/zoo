@@ -20,7 +20,7 @@ export const getOneGeoJson = async (slug:string):Promise<any> => {
         throw new Error('not allowed')
     }
 
-    const dataDir = path.resolve(process.env.PWD + '/pages/api/data');
+    const dataDir = path.resolve(process.env.PWD + '/data');
 
     const geojson = JSON.parse(fs.readFileSync(dataDir + '/' + slug + '/geo.json', {encoding: 'utf8'}));
 
@@ -29,7 +29,7 @@ export const getOneGeoJson = async (slug:string):Promise<any> => {
 
 export const getGeoJson = async () => {
 
-    const dataDir = path.resolve(process.env.PWD + '/pages/api/data');
+    const dataDir = path.resolve(process.env.PWD + '/data');
 
     let slugs = await fs.readdirSync(dataDir).map((file) => {
         return file.replace('.json', '');

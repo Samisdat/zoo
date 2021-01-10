@@ -31,7 +31,7 @@ export interface Animal {
     content: string;
 }
 
-const dataDir = path.resolve(process.env.PWD, 'pages/api/data/markdown/animals');
+const dataDir = path.resolve(process.env.PWD, 'data/markdown/animals');
 
 export const getAnimal = async (slug:string):Promise<Animal> => {
 

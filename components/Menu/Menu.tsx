@@ -139,7 +139,7 @@ export default function ButtonAppBar() {
                     <ListItemIcon><MapIcon /></ListItemIcon>
                     <ListItemText primary='Leaflet' />
                 </ListItemLink>
-                <ListItemLink button key='animal' href="animals"onClick={onClick}>
+                <ListItemLink button key='animal' href="animal" onClick={onClick}>
                     <ListItemIcon><PetsIcon /></ListItemIcon>
                     <ListItemText primary='Tiere' />
                 </ListItemLink>

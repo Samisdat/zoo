@@ -43,7 +43,7 @@ export const MapRoot = (props) => {
 
     const border = props.geoJson.features.find((feature:Feature) => {
 
-        if('border' === feature.properties?.type){
+        if('facility-circle' === feature.properties?.type){
             return true;
         }
 
@@ -167,7 +167,6 @@ export const MapRoot = (props) => {
 
 
         const projection = d3.geoMercator()
-            .translate([width / 2, height / 2])
             .angle(180)
         ;
 
@@ -176,7 +175,7 @@ export const MapRoot = (props) => {
         const center = d3.geoCentroid(border);
 
         projection
-            .scale(3000000)
+            .scale(300000)
             .center(center)
 
         window.addEventListener('resize', setDimensions);

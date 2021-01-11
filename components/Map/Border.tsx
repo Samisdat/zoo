@@ -5,8 +5,6 @@ import {Feature} from "geojson";
 
 export const Border = (props) => {
 
-    console.log('Border');
-
     const boxId = "main-box";
     const simplePathId = "main-border";
 
@@ -27,9 +25,6 @@ export const Border = (props) => {
     });
 
     const plotWays = () => {
-
-        console.log('boundingBoxGeoJson', boundingBoxGeoJson)
-        console.log('plotWays', ways)
 
         d3.select(`#${boxId}`)
             .selectAll("path")
@@ -54,7 +49,6 @@ export const Border = (props) => {
             .attr("d", props.pathGenerator)
         ;
 
-
         d3.select(`#${simplePathId}`)
             .selectAll("path")
             .data(ways)
@@ -73,7 +67,6 @@ export const Border = (props) => {
                 return 1;
             })
             .attr("d", props.pathGenerator)
-
 
     };
 

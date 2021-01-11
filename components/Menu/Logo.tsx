@@ -30,7 +30,7 @@ export function Logo() {
         const winScroll =
             document.body.scrollTop || document.documentElement.scrollTop
 
-        console.log(winScroll);
+        //console.log(winScroll);
 
         /*
         this.setState({

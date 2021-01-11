@@ -161,11 +161,13 @@ export default function ZooWuppertal(props) {
                     toggleSideMenu={toggleSideMenu}
                     {...navigationState}
                 />
+                {/*
                 <Teaser
                     toggleTeaser={toggleTeaser}
                     {...navigationState}
                     {...props}
                 />
+                */}
             </ThemeProvider>
         </React.Fragment>
     );

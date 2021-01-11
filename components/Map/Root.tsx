@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
 import * as d3 from 'd3';
-import {GeoPath} from 'd3';
 import {MapStateInterface, MapTransformInterface, MarkerInterface} from "components/Map/Interface";
 import {Group} from "./Group";
 import {Feature} from "geojson";
@@ -165,19 +164,14 @@ export const MapRoot = (props) => {
         const transform = getTransformFromStorage();
         const marker = getMarkerFromStorage()
 
-
+        const margin = 20;
         const projection = d3.geoMercator()
-            .translate([width / 2, height / 2])
             .angle(180)
+            .scale(1)
+            .fitExtent([[margin, margin], [width - margin, height - margin]], border)
         ;
 
-        const pathGenerator: GeoPath = d3.geoPath().projection(projection)
-
-        const center = d3.geoCentroid(border);
-
-        projection
-            .scale(3000000)
-            .center(center)
+        const pathGenerator = d3.geoPath().projection(projection)
 
         window.addEventListener('resize', setDimensions);
 

@@ -30,8 +30,11 @@ export const Ways = (props) => {
             .attr("stroke", (d) => {
                 return "#000";
             })
+            .attr("stroke-width", (d) => {
+                return '1px';
+            })
             .attr("opacity", (d) => {
-                return 0;
+                return 1;
             })
             .attr("d", props.pathGenerator)
 

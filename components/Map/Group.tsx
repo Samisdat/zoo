@@ -142,6 +142,7 @@ export const Group = (props) => {
 
     return (
         <g id={mapId}>
+
             <Border
                 pathGenerator={props.mapState.pathGenerator}
                 geoJson={props.geoJson}
@@ -154,6 +155,7 @@ export const Group = (props) => {
                 pathGenerator={props.mapState.pathGenerator}
                 geoJson={props.geoJson}
             />
+
             <CurrentPosition
                 pathGenerator={props.mapState.pathGenerator}
                 zoom={zoom}
@@ -165,6 +167,7 @@ export const Group = (props) => {
                 zoom={zoom}
                 geoJson={props.geoJson}
             />
+            
         </g>
     );
 

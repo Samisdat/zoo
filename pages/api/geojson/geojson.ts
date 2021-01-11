@@ -4,7 +4,7 @@ import path from 'path';
 import fs from 'fs';
 
 import urlSlug from 'url-slug'
-import {FeatureCollection, Polygon} from "geojson";
+import {Feature, FeatureCollection, Polygon} from "geojson";
 
 let allowList = [
     'bounding-box',
@@ -23,6 +23,25 @@ export const getOneGeoJson = async (slug:string):Promise<any> => {
     const dataDir = path.resolve(process.env.PWD + '/data');
 
     const geojson = JSON.parse(fs.readFileSync(dataDir + '/' + slug + '/geo.json', {encoding: 'utf8'}));
+
+    geojson.features = geojson.features.map((feature:Feature)=>{
+
+        // for reason d3 v6 renders polygons as reactangle
+        // this is the workaround
+
+        const type = feature.geometry.type;
+
+        if('Polygon' !== type){
+            return feature;
+        }
+
+        feature.geometry.type = 'LineString';
+        feature.geometry.coordinates = feature.geometry.coordinates[0];
+
+        return feature;
+
+    });
+
 
     return geojson;
 }

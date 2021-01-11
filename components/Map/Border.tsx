@@ -7,6 +7,7 @@ export const Border = (props) => {
 
     console.log('Border');
 
+    const boxId = "main-box";
     const simplePathId = "main-border";
 
     const ways = props.geoJson.features.filter((feature:Feature) => {
@@ -19,9 +20,40 @@ export const Border = (props) => {
 
     });
 
+    const boundingBoxGeoJson = props.geoJson.features.filter((feature:Feature)=>{
+
+        return ('bounding-box' === feature.properties.type);
+
+    });
+
     const plotWays = () => {
 
+        console.log('boundingBoxGeoJson', boundingBoxGeoJson)
         console.log('plotWays', ways)
+
+        d3.select(`#${boxId}`)
+            .selectAll("path")
+            .data(boundingBoxGeoJson)
+            .enter()
+            .append("path")
+            .attr("fill", (d:Feature)=>{
+                return "yellow";
+            })
+            .attr("stroke", (d:Feature)=>{
+                return "green";
+            })
+            .attr("stroke-width", (d:Feature)=>{
+                return '0.1px';
+            })
+            .attr("opacity", (d:Feature)=>{
+                return 1;
+            })
+            .attr("id", (d:Feature)=>{
+                return d.properties.slug;
+            })
+            .attr("d", props.pathGenerator)
+        ;
+
 
         d3.select(`#${simplePathId}`)
             .selectAll("path")
@@ -29,7 +61,7 @@ export const Border = (props) => {
             .enter()
             .append("path")
             .attr("fill", (d) => {
-                return "none";
+                return "lime";
             })
             .attr("stroke", (d) => {
                 return "#000";
@@ -54,5 +86,8 @@ export const Border = (props) => {
         plotWays();
     });
 
-    return <g id={simplePathId}></g>;
+    return <React.Fragment>
+        <g id={boxId}></g>
+        <g id={simplePathId}></g>
+    </React.Fragment>;
 };

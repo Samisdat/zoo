@@ -38,6 +38,7 @@ export const PointOfInterest = (props) => {
             radius = 2
         }
 
+        radius = 10;
         /*
         const clicked = (event:any, d:any) => {
             alert(event.properties.name)
@@ -53,7 +54,7 @@ export const PointOfInterest = (props) => {
             })
             .attr('d', props.pathGenerator)
             .attr('r', radius * 2.5 )
-            .attr('opacity', .5 )
+            .attr('opacity', 0 )
             //.on("click", clicked)
         ;
         /*

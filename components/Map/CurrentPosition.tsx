@@ -34,11 +34,14 @@ export const CurrentPosition = (props) => {
             .attr('title', (d)=>{
                 return d.properties.slug;
             })
+            .attr('opacity', (d, i)=>{
+                return 1;
+            })
             .attr('fill', (d, i)=>{
-                return d.properties.fill;
+                return 'red';
             })
             .attr('d', props.pathGenerator)
-            .attr('r', radius );
+            .attr('r', 5 );
 
 
     });

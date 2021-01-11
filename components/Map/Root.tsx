@@ -43,7 +43,7 @@ export const MapRoot = (props) => {
 
     const border = props.geoJson.features.find((feature:Feature) => {
 
-        if('facility-circle' === feature.properties?.type){
+        if('border' === feature.properties?.type){
             return true;
         }
 
@@ -165,20 +165,39 @@ export const MapRoot = (props) => {
         const transform = getTransformFromStorage();
         const marker = getMarkerFromStorage()
 
+        console.log(border)
+
+        /*
+        const center = d3.geoCentroid(border);
 
         const projection = d3.geoMercator()
+            .translate([width / 2, height / 2])
+
+            //.fitWidth(width, [border])
+            //.fitHeight(height, [border])
+            //
+            .scale(30000)
             .angle(180)
         ;
 
         const pathGenerator: GeoPath = d3.geoPath().projection(projection)
 
-        const center = d3.geoCentroid(border);
-
         projection
-            .scale(300000)
             .center(center)
+            //.fitExtent([[20, 20], [width, height]], border.features)
+         */
 
-        window.addEventListener('resize', setDimensions);
+        const margin = 20;
+        const projection = d3.geoMercator().angle(180).scale(1)
+            .fitExtent([[margin, margin], [width - margin, height - margin]], border)
+        ;
+
+
+        const pathGenerator = d3.geoPath().projection(projection)
+
+        //projection.angle(180)
+
+    window.addEventListener('resize', setDimensions);
 
         const nextMapState: MapStateInterface = {
             ...mapState,

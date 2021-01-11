@@ -52,6 +52,7 @@ export async function getStaticProps(context) {
 
         const feature = getJson.features[i];
 
+        /*
         if('facility-circle' === feature.properties.type){
             getJson.features[i].geometry.coordinates = [
                 (feature.geometry.coordinates[0] - 0.000021),
@@ -59,6 +60,7 @@ export async function getStaticProps(context) {
 
             ]
         }
+
 
         if('way' === feature.properties.type && 1 !== feature.geometry.coordinates.length){
             console.log(feature.geometry.coordinates.length)
@@ -74,6 +76,8 @@ export async function getStaticProps(context) {
             feature.geometry.coordinates = correctedWay;
 
         }
+
+         */
 
     }
 

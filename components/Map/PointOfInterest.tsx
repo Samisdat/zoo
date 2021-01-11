@@ -1,7 +1,5 @@
 import React, {useEffect} from 'react';
 import * as d3 from 'd3';
-
-import {getCurrentPositionGeoJson} from 'helper/getCurrentPosition';
 import {Feature} from "geojson";
 
 export const PointOfInterest = (props) => {
@@ -32,17 +30,17 @@ export const PointOfInterest = (props) => {
         var positionGroup = mapSvg.select(`#${positionId}`);
         var clickGroup = mapSvg.select(`#${clickId}`);
 
-        let radius = 2  / props.zoom;
+        let radius = 8  / props.zoom;
 
-        if(2 < radius){
-            radius = 2
+        if(8 < radius){
+            radius = 8
         }
 
-        /*
+
         const clicked = (event:any, d:any) => {
-            alert(event.properties.name)
+            console.log(event.properties);
         }
-         */
+
 
         positionGroup.selectAll('circle')
             .data(pois)
@@ -52,11 +50,11 @@ export const PointOfInterest = (props) => {
                 return 'red';
             })
             .attr('d', props.pathGenerator)
-            .attr('r', radius * 2.5 )
-            .attr('opacity', .5 )
-            //.on("click", clicked)
+            .attr('r', radius *2.5)
+            .attr('opacity', 1 )
+            .on("click", clicked)
         ;
-        /*
+
         clickGroup.selectAll('circle')
             .data(pois)
             .join('circle')
@@ -66,6 +64,8 @@ export const PointOfInterest = (props) => {
             })
             .attr('d', props.pathGenerator)
             .attr('r', radius );
+
+        /*
         positionGroup.selectAll("text")
             .data(pois)
             .enter()
@@ -81,7 +81,8 @@ export const PointOfInterest = (props) => {
                 return props.projection(d.geometry.coordinates)[1] + 15;
             })
             .attr("class","labels");
-        */
+
+         */
 
     });
 

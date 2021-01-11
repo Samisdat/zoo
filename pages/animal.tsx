@@ -81,13 +81,10 @@ export default function Index(props) {
               return <React.Fragment>
                   <ListSubheader className={classes.subheader}>{key.toUpperCase()}</ListSubheader>
                   {group[key].map(( animal: Animal ) => {
-                      const href =  `/animal/${animal.slug}`
+                      const href = `/animal/${animal.slug}`
 
                       return(
-
-                          <ListItem button>
-                              <ListItemLink href={href}>{animal.title}</ListItemLink>
-                          </ListItem>
+                          <ListItemLink href={href}>{animal.title}</ListItemLink>
                       )}
                   )}
               </React.Fragment>

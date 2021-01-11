@@ -7,11 +7,12 @@ import {MapStateInterface, MapTransformInterface} from "./Interface";
 import {HighlightFocus} from "./HighlightFocus";
 import {PointOfInterest} from "./PointOfInterest";
 import {Feature} from "geojson";
+import {Border} from "./Border";
 
 // zoom until focus.width or focus.height extends window.width or window.height
-const findBestZoomLevel = (x0, x1, y0, y1, maxWidth, maxHeight) => {
+export const findBestZoomLevel = (x0, x1, y0, y1, maxWidth, maxHeight) => {
 
-    const minZoom = 0.5;
+    const minZoom = 0.1;
     const maxZoom = 20;
 
     const width = Math.abs(x0 - x1);
@@ -25,7 +26,7 @@ const findBestZoomLevel = (x0, x1, y0, y1, maxWidth, maxHeight) => {
             break;
         }
 
-        k += 0.25;
+        k += 0.01;
     }
 
     return k;
@@ -61,7 +62,7 @@ export const Group = (props) => {
     const svgId = 'main-svg';
     const mapId = 'main-map';
 
-    const [zoom, setZoom] = useState<number>(10);
+    const [zoom, setZoom] = useState<number>(props.mapState.transform.k);
 
     const createD3Map = ()=> {
 
@@ -69,23 +70,25 @@ export const Group = (props) => {
         const mapGroup = d3.select(`#${mapId}`);
 
         const zooming = d3.zoom()
-            .scaleExtent([0.5, 15])
-            .on('zoom', () => {
+            .scaleExtent([0.01, 150000])
+            .on('zoom', (event) => {
 
                 mapGroup.attr(
                     'transform',
-                    d3.event.transform
+                    event.transform
                 );
 
+                setZoom(event.transform.k);
+
             })
-            .on('end', () => {
+            .on('end', (event) => {
 
                 console.log('end')
 
                 const transform: MapTransformInterface = {
-                    k: d3.event.transform.k,
-                    x: d3.event.transform.x,
-                    y: d3.event.transform.y
+                    k: event.transform.k,
+                    x: event.transform.x,
+                    y: event.transform.y
                 }
 
                 props.setTransform(transform);
@@ -141,14 +144,20 @@ export const Group = (props) => {
 
     return (
         <g id={mapId}>
+            <Border
+                pathGenerator={props.mapState.pathGenerator}
+                geoJson={props.geoJson}
+            />
             <Sketched
                 mapState={props.mapState}
                 geoJson={props.geoJson}
             />
+            {/*
             <HighlightFocus
                 mapState={props.mapState}
-                focus={props.navigation.focus}
+                geoJson={props.geoJson}
             />
+            */}
             <Ways
                 pathGenerator={props.mapState.pathGenerator}
                 geoJson={props.geoJson}

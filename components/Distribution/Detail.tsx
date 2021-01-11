@@ -1,18 +1,20 @@
 import React, {useEffect, useState} from 'react';
 
 import * as d3 from 'd3';
-import {GeoPath} from 'd3';
-import {MapTransformInterface,} from "components/Map/Interface";
-import {GeoProjection} from "d3-geo";
-import {Feature, FeatureCollection} from "geojson";
 
-const mapTransformDefault: MapTransformInterface = {
+import * as topojson from "topojson-client";
+import {GeoPath} from "d3";
+import {GeoProjection} from "d3-geo";
+import {MapTransformInterface} from "../Map/Interface";
+import {FeatureCollection} from "geojson";
+
+const mapTransformDefault = {
     k:1,
     x:0,
     y:0
 }
 
-export interface GeographicRangeMapStateInterface {
+export interface DistributionDetailStateInterface {
     width: number;
     height: number;
     dimensionUnit: string;
@@ -20,13 +22,13 @@ export interface GeographicRangeMapStateInterface {
     pathGenerator: GeoPath,
     projection: GeoProjection;
     transform: MapTransformInterface;
-}
+};
 
-const MapStateDefault: GeographicRangeMapStateInterface = {
+const MapStateDefault: DistributionDetailStateInterface = {
     width: 100,
     height: 100,
     dimensionUnit: '%',
-    color: 'red',
+    color: 'blue',
     pathGenerator: undefined,
     projection: undefined,
     transform: {
@@ -34,7 +36,7 @@ const MapStateDefault: GeographicRangeMapStateInterface = {
     },
 }
 
-export const centerToFeatureCollection = (featureset: FeatureCollection):Feature => {
+export const centerToFeatureCollection = (featureset:FeatureCollection) => {
 
     const latitudes = [];
     const longitudes = [];
@@ -104,96 +106,112 @@ export const centerToFeatureCollection = (featureset: FeatureCollection):Feature
 }
 
 
-export const World = (props) => {
+export const Detail = (props) => {
 
     const svgId = 'geographic-range';
+
+    const distributionId = 'geographic-range-distribution'
+
     const worldId = 'geographic-range-world';
     const whereId = "geographic-range-where";
     const rectId = "geographic-range-react";
 
-    const [mapState, setMapState] = useState<GeographicRangeMapStateInterface>(MapStateDefault);
+    const [mapState, setMapState] = useState<DistributionDetailStateInterface>(MapStateDefault);
 
-    const createMap = () => {
+    const createDetailMap = () => {
 
-        const width = window.innerWidth - 40;
-        //const height = (width/3*2);
+        const width = window.innerWidth;
+        const height = 400;
 
-        const ratio = 0.5;
+        const projection = d3.geoMercator()
+        const path = d3.geoPath().projection(projection);
 
-        //const width = 800;
-        const height = width * ratio;
+        const zoom = d3.zoom()
+            .scaleExtent([1, 8])
+            .on("zoom", zoomed);
 
-        const projection = d3.geoNaturalEarth1()
-            .translate([width / 2, height / 2 + 10])
-            .scale(150)
-            //.center(center)
+        const svg = d3.select(`#${svgId}`)
+            .attr("viewBox", [0, 0, width, height] as any)
+        ;
 
-        const pathGenerator: GeoPath = d3.geoPath().projection(projection)
 
-        d3.select(`#${worldId}`)
+        const distribution = d3.select(`#${distributionId}`);
+        const world = d3.select(`#${worldId}`);
+        const where = d3.select(`#${whereId}`);
+        const rect = d3.select(`#${rectId}`);
+
+        world
+            .attr("fill", "#444")
+            .attr("stroke", "black")
+            .attr("cursor", "pointer")
             .selectAll("path")
             .data(props.world_countries.features)
-            .enter()
-            .append("path")
-            .attr("fill", (d) => {
-                return "red";
-            })
-            .attr("stroke", (d) => {
-                return "red";
-            })
-            .attr("opacity", (d) => {
-                return 1;
-            })
-            .attr("d", pathGenerator)
+            .join("path")
+            .attr("d", path);
 
-        d3.select(`#${whereId}`)
+        where
             .selectAll("path")
             .data(props.geojson.features)
             .enter()
             .append("path")
             .attr("fill", (d) => {
-                return "green";
+                return "yellow";
             })
             .attr("stroke", (d) => {
-                return "green";
+                return "yellow";
             })
             .attr("opacity", (d) => {
                 return 1;
             })
-            .attr("d", pathGenerator)
-
+            .attr("d", path)
 
         const center = centerToFeatureCollection(props.geojson);
 
-        console.log(center)
-
-
-        d3.select(`#${rectId}`)
+        rect
             .selectAll("path")
             .exit()
             .data([center])
             .enter()
             .append("path")
-            .attr("fill", (d:Feature)=>{
+            .attr("fill", (d)=>{
                 return '#0f0';
             })
-            .attr("stroke", (d:Feature)=>{
+            .attr("stroke", (d)=>{
                 return '#0f0';
             })
             .attr("opacity", 0.7)
-            .attr("d", pathGenerator)
+            .attr("d", path as any)
 
-        const nextMapState: GeographicRangeMapStateInterface = {
+        const [[x0, y0], [x1, y1]] = path.bounds(center as any);
+
+        svg.call(
+            zoom.transform as any,
+            d3.zoomIdentity
+                .translate(width / 2, height / 2)
+                .scale(Math.min(8, 0.9 / Math.max((x1 - x0) / width, (y1 - y0) / height)))
+                .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
+        );
+
+        function zoomed(event) {
+
+
+            const {transform} = event;
+            distribution.attr("transform", transform);
+            distribution.attr("stroke-width", 1 / transform.k);
+        }
+
+        const nextMapState = {
             ...mapState,
             width,
             height,
             dimensionUnit:'px',
             color: 'blue',
-            pathGenerator,
-            projection: projection,
+            pathGenerator:path,
+            projection: projection
         };
 
         setMapState(nextMapState)
+
 
     }
 
@@ -201,24 +219,27 @@ export const World = (props) => {
     useEffect(() => {
 
         if (undefined === mapState.pathGenerator) {
-            createMap();
+            createDetailMap();
         }
 
     });
 
     return (
         <svg id={svgId} style={{
-            width: `${mapState.width}${mapState.dimensionUnit}` ,
-            height: `${mapState.height}${mapState.dimensionUnit}`,
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: `400px` ,
             backgroundColor: mapState.color,
             display: 'block',
-            margin:20
         }}
         >
-            <g id={worldId}></g>
-            <g id={whereId}></g>
-            <g id={rectId}></g>
-
+            <g id={distributionId}>
+                <g id={worldId}></g>
+                <g id={whereId}></g>
+                <g id={rectId}></g>
+            </g>
         </svg>
     );
 

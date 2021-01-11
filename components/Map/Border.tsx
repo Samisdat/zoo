@@ -3,13 +3,15 @@ import React, {useEffect} from "react";
 import * as d3 from "d3";
 import {Feature} from "geojson";
 
-export const Ways = (props) => {
+export const Border = (props) => {
 
-    const simplePathId = "main-ways";
+    console.log('Border');
+
+    const simplePathId = "main-border";
 
     const ways = props.geoJson.features.filter((feature:Feature) => {
 
-        if('way' === feature.properties?.type){
+        if('border' === feature.properties?.type){
             return true;
         }
 
@@ -18,6 +20,8 @@ export const Ways = (props) => {
     });
 
     const plotWays = () => {
+
+        console.log('plotWays', ways)
 
         d3.select(`#${simplePathId}`)
             .selectAll("path")

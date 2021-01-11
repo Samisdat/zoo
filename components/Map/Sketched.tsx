@@ -31,6 +31,7 @@ export const Sketched = (props) => {
 
         });
 
+
         var mapSvg = d3.select(`#${svgId}`)
 
         var elementsGroup = mapSvg.select(`#${mapElementId}`);
@@ -39,11 +40,14 @@ export const Sketched = (props) => {
             .data(boundingBoxGeoJson)
             .enter()
             .append("path")
-            .attr("fill", (d:Feature)=>{
-                return d.properties.fill;
+            .attr("stroke", (d:Feature)=>{
+                return "red";
+            })
+            .attr("stroke-width", (d:Feature)=>{
+                return '0.1px';
             })
             .attr("opacity", (d:Feature)=>{
-                return 0.5;
+                return 1;
             })
             .attr("id", (d:Feature)=>{
                 return d.properties.slug;

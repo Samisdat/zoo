@@ -31,7 +31,7 @@ export const Ways = (props) => {
                 return "#000";
             })
             .attr("stroke-width", (d) => {
-                return '0.1px';
+                return '1px';
             })
             .attr("opacity", (d) => {
                 return 1;

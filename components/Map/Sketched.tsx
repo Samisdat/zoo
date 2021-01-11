@@ -55,23 +55,15 @@ export const Sketched = (props) => {
                 return d.properties.slug;
             })
             .attr("d", props.mapState.pathGenerator)
-;
-
-        console.log(props.mapState.pathGenerator)
+        ;
 
         const bound = mapSvg.select(`#bounding-box`);
         const boundingBox = (bound.node() as SVGGraphicsElement).getBBox();
-
-        console.log(props.mapState.transform)
-        console.log(boundingBox)
 
         const x = boundingBox.x;
         const y = boundingBox.y;
 
         const scale = boundingBox.width / 2550;
-        console.log(x, y, scale)
-
-
 
         const graficElementGroup = mapSvg.select(`#${graficElementId}`);
 

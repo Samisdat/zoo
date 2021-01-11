@@ -62,7 +62,7 @@ export const Group = (props) => {
     const svgId = 'main-svg';
     const mapId = 'main-map';
 
-    const [zoom, setZoom] = useState<number>(10);
+    const [zoom, setZoom] = useState<number>(props.mapState.transform.k);
 
     const createD3Map = ()=> {
 
@@ -77,6 +77,8 @@ export const Group = (props) => {
                     'transform',
                     event.transform
                 );
+
+                setZoom(event.transform.k);
 
             })
             .on('end', (event) => {
@@ -142,7 +144,6 @@ export const Group = (props) => {
 
     return (
         <g id={mapId}>
-
             <Border
                 pathGenerator={props.mapState.pathGenerator}
                 geoJson={props.geoJson}
@@ -151,11 +152,16 @@ export const Group = (props) => {
                 mapState={props.mapState}
                 geoJson={props.geoJson}
             />
+            {/*
+            <HighlightFocus
+                mapState={props.mapState}
+                geoJson={props.geoJson}
+            />
+            */}
             <Ways
                 pathGenerator={props.mapState.pathGenerator}
                 geoJson={props.geoJson}
             />
-
             <CurrentPosition
                 pathGenerator={props.mapState.pathGenerator}
                 zoom={zoom}
@@ -167,7 +173,6 @@ export const Group = (props) => {
                 zoom={zoom}
                 geoJson={props.geoJson}
             />
-            
         </g>
     );
 

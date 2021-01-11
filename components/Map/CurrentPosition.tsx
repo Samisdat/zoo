@@ -20,10 +20,10 @@ export const CurrentPosition = (props) => {
         var positionGroup = mapSvg.select(`#${positionId}`);
         const currentPosition = getCurrentPositionGeoJson('initial', props.marker.lat, props.marker.lng);
 
-        let radius = 5  / props.zoom;
+        let radius = 8  / props.zoom;
 
-        if(5 < radius){
-            radius = 5
+        if(8 < radius){
+            radius = 8
         }
 
         positionGroup.selectAll('circle')
@@ -41,7 +41,7 @@ export const CurrentPosition = (props) => {
                 return 'red';
             })
             .attr('d', props.pathGenerator)
-            .attr('r', 5 );
+            .attr('r', radius );
 
 
     });

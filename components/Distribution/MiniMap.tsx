@@ -47,7 +47,7 @@ export const MiniMap = (props) => {
             .attr("stroke", "#444")
             .attr("cursor", "pointer")
             .selectAll("path")
-            .data(props.world_countries.features)
+            .data(props.worldCountriesJson.features)
             .join("path")
             .attr("d", path);
 
@@ -60,7 +60,7 @@ export const MiniMap = (props) => {
             }
         };
 
-        const centerRect = centerToFeatureCollection(props.geojson);
+        const centerRect = centerToFeatureCollection(props.distributionGeoJson);
 
         rect
             .selectAll("path")

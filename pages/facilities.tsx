@@ -7,6 +7,9 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import {getOneGeoJson} from "./api/geojson/geojson";
 import {Feature, FeatureCollection, Polygon} from "geojson";
 import {getFullGeoJson} from "./api/geojson/list";
+import path from "path";
+import fs from "fs";
+const frontmatter = require('@github-docs/frontmatter')
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -96,6 +99,8 @@ export default function Index(props) {
   );
 }
 
+
+
 export async function getStaticProps({ params, preview = false, previewData }) {
 
     const getJson = await getFullGeoJson();
@@ -105,8 +110,33 @@ export async function getStaticProps({ params, preview = false, previewData }) {
             return ('facility-box' === feature.properties.type);
         })
         .map((feature:Feature)=>{
-        return feature.properties;
+            return feature.properties;
     });
+
+    const dataDir = path.resolve(process.env.PWD, 'data/markdown/facility');
+    for(const facility of facilities){
+
+        const facilityFilePath = path.resolve(dataDir, facility.slug + '.md');
+
+        if (true === fs.existsSync(facilityFilePath)) {
+            continue;
+        }
+
+        const markdown = 'Some Content';
+
+        const data = {
+            title: facility.name,
+            slug: facility.slug,
+            type: 'enclosure'
+        };
+
+        const markdownFileContent = frontmatter.stringify(markdown, data);
+
+        console.log(markdownFileContent)
+
+        fs.writeFileSync(facilityFilePath, markdownFileContent, {encoding:'utf8'});
+
+    }
 
     return {
         props: {

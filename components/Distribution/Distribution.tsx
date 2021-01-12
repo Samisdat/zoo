@@ -29,13 +29,17 @@ export const Distribution = (props) => {
                 className={classes.root}
             >
                 <Detail
-                    {...props}
+                    distributionGeoJson={props.distributionGeoJson}
+                    worldCountriesJson={props.worldCountriesJson}
                 />
                 <MiniMap
-                    {...props}
+                    distributionGeoJson={props.distributionGeoJson}
+                    worldCountriesJson={props.worldCountriesJson}
                 />
             </div>
-            <Legend></Legend>
+            <Legend
+                distributionGeoJson={props.distributionGeoJson}
+            ></Legend>
         </React.Fragment>
     );
 

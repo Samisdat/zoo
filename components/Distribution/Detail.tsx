@@ -7,6 +7,8 @@ import {GeoPath} from "d3";
 import {GeoProjection} from "d3-geo";
 import {MapTransformInterface} from "../Map/Interface";
 import {FeatureCollection} from "geojson";
+import {MiniMap} from "./MiniMap";
+import {Distribution} from "./Distribution";
 
 const mapTransformDefault = {
     k:1,
@@ -87,7 +89,7 @@ export const centerToFeatureCollection = (featureset:FeatureCollection) => {
     return {
         "type": "Feature",
         "properties": {
-            "name": "Afghanistan"
+            "name": "Centered"
         },
         "geometry": {
             "type": "Polygon",
@@ -145,13 +147,13 @@ export const Detail = (props) => {
             .attr("stroke", "black")
             .attr("cursor", "pointer")
             .selectAll("path")
-            .data(props.world_countries.features)
+            .data(props.worldCountriesJson.features)
             .join("path")
             .attr("d", path);
 
         where
             .selectAll("path")
-            .data(props.geojson.features)
+            .data(props.distributionGeoJson.features)
             .enter()
             .append("path")
             .attr("fill", (d) => {
@@ -165,7 +167,7 @@ export const Detail = (props) => {
             })
             .attr("d", path)
 
-        const center = centerToFeatureCollection(props.geojson);
+        const center = centerToFeatureCollection(props.distributionGeoJson);
 
         rect
             .selectAll("path")

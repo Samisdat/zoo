@@ -109,7 +109,7 @@ export const MiniMap = (props) => {
             width: width,
             height: height,
             backgroundColor:'white',
-            border:'1px splid black'
+            border:'1px solid black'
         }}
         >
             <g id={distributionId}>

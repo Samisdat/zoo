@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-function ListItemLink(props) {
+export const ListItemLink = (props)  => {
     return <ListItem button component="a" {...props} />;
 }
 

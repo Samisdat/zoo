@@ -29,9 +29,9 @@ import ExploreIcon from "@material-ui/icons/Explore";
 import InfoIcon from "@material-ui/icons/Info";
 import CodeIcon from "@material-ui/icons/Code";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
+import BookIcon from '@material-ui/icons/Book';
+import StoreIcon from '@material-ui/icons/Store';
 import Settings from "../Navigation/Settings";
-
-const logoDimension = 120;
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -131,17 +131,21 @@ export default function ButtonAppBar() {
                     <ListItemIcon><MapIcon /></ListItemIcon>
                     <ListItemText primary='Karte' />
                 </ListItemLink>
+                <ListItemLink button key='animal' href="animal" onClick={onClick}>
+                    <ListItemIcon><PetsIcon /></ListItemIcon>
+                    <ListItemText primary='Tiere' />
+                </ListItemLink>
                 <ListItemLink key='map' href="/facilities" onClick={onClick}>
-                    <ListItemIcon><MapIcon /></ListItemIcon>
+                    <ListItemIcon><StoreIcon /></ListItemIcon>
                     <ListItemText primary='Anlagen' />
+                </ListItemLink>
+                <ListItemLink key='nes' href="/news" onClick={onClick}>
+                    <ListItemIcon><BookIcon /></ListItemIcon>
+                    <ListItemText primary='Neuigkeiten' />
                 </ListItemLink>
                 <ListItemLink key='leaflet' href="/leaflet" onClick={onClick}>
                     <ListItemIcon><MapIcon /></ListItemIcon>
                     <ListItemText primary='Leaflet' />
-                </ListItemLink>
-                <ListItemLink button key='animal' href="animal" onClick={onClick}>
-                    <ListItemIcon><PetsIcon /></ListItemIcon>
-                    <ListItemText primary='Tiere' />
                 </ListItemLink>
                 <ListItem button key='search'onClick={onClick}>
                     <ListItemIcon><SearchIcon /></ListItemIcon>
@@ -199,6 +203,15 @@ export default function ButtonAppBar() {
                 </ListItem>
             </List>
             <Settings></Settings>
+            <Fab
+                className={classes.fab}
+                onClick={handleClose}
+                style={{
+                    zIndex:5
+                }}
+            >
+                <CloseIcon/>
+            </Fab>
 
             </Dialog>
         <Logo />

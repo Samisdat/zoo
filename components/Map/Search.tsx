@@ -98,10 +98,11 @@ export const MapSearch = (props) => {
                 onChange={onChange}
                 clearOnBlur
             />
+            {/*
             <div className={classes.root}>
                 <ChipsArray/>
             </div>
-
+            */}
         </Drawer>
 
     );

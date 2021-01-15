@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
-import {Logo} from "./Logo";
+import {LogoLarge} from "./LogoLarge";
 import {Fab} from "@material-ui/core";
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -201,7 +201,7 @@ export default function ButtonAppBar() {
             <Settings></Settings>
 
             </Dialog>
-        <Logo />
+        <LogoLarge />
         </React.Fragment>
     );
 }

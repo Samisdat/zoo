@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import * as d3 from "d3";
 
@@ -21,33 +21,44 @@ const useStyles = makeStyles((theme: Theme) =>
         logo:{
             position: 'fixed',
             right: theme.spacing(2),
-            bottom: 1,
+            bottom: 0,
             width: logoSmallWidth,
             height: logoSmallHeight,
             display: 'block',
-            zIndex:5,
-            backgroundColor: 'green',
+            zIndex:1500,
         },
         logoImg:{
             position: 'absolute',
             bottom: 0,
-            right: -1 * theme.spacing(2),
-            backgroundColor: '#fff',
+            right: 0,
         }
     }),
 );
 
 export function LogoLarge() {
 
-    const [animationPlayedState, setShowAnimationState] = useAnimationPlayedState<boolean>(false);
+    //const [animationPlayedState, setShowAnimationState] = useAnimationPlayedState<boolean>(false);
+    const [animationPlayedState, setShowAnimationState] = useState<boolean>(false);
 
     const classes = useStyles();
+
+    const onclick = (event)=>{
+
+        console.log('onclick', animationPlayedState)
+
+        if(false === animationPlayedState){
+            event.preventDefault();
+        }
+
+    }
+
 
     const fakedSplashScreen = () => {
 
         const ratio = 1709 / 1395;
 
         const largeLogoId = 'largeLogo';
+        const dimId = 'dim';
         const allId = 'alles';
         const greenId = 'DerGrüneZoo';
         const zooId = 'Zoo';
@@ -57,6 +68,7 @@ export function LogoLarge() {
 
 
         const svg = d3.select(`#${largeLogoId}`);
+        const dim = svg.select(`#${dimId} rect`);
         const all = svg.select(`#${allId}`);
         const green = svg.selectAll(`#${greenId} path`);
         const zoo = svg.selectAll(`#${zooId} path`);
@@ -79,8 +91,15 @@ export function LogoLarge() {
             .attr('viewBox', null)
             .style('width', null)
             .style('height', null)
-            .style('right', null);
+            .style('right', -16);
 
+        dim
+            .attr('x', 0)
+            .attr('y', 0)
+            .attr('width', svgWidth)
+            .attr('height', svgHeight)
+            .attr('fill', '#fff')
+            .style('opacity', '1')
 
         const scale = largeWidth/ 1709;
         const smallScale = smallWidth/ 1709;
@@ -110,75 +129,86 @@ export function LogoLarge() {
         pinguinRight.attr('transform', 'translate('+ (svgWidth / scale)  + ' 0)')
         pinguinLeft.attr('transform', 'translate('+ -1 * (svgWidth/ scale) + ' 0)')
 
-        const duration = 1000;
+        const durations:number[] = [
+            500,
+            1000,
+            750,
+            1000
+        ];
 
         const steps:number[] = [
-            1 * duration,
-            2 * duration,
-            3 * duration,
-            4 * duration
-        ]
+            500,
+            1500,
+            2250,
+            3250
+        ];
 
         zoo
             .transition()
             .delay(steps[0])
-            .duration(duration)
+            .duration(durations[0])
             .style('fill', '#000000')
 
         wuppertal
             .transition()
             .delay(steps[0])
-            .duration(duration)
+            .duration(durations[0])
             .style('fill', '#000000')
 
         green
             .transition()
             .delay(steps[1])
-            .duration(duration)
+            .duration(durations[1])
             .style('fill', '#00a800')
             .attr('transform', 'translate(0 0)')
 
         zoo
             .transition()
-            .delay(steps[1] + 500)
-            .duration(duration)
+            .delay(steps[1])
+            .duration(durations[1])
             .style('fill', '#00a800')
 
         wuppertal
             .transition()
-            .delay(steps[1] + 500)
-            .duration(duration)
+            .delay(steps[1])
+            .duration(durations[1])
             .style('fill', '#00a800')
 
         pinguinRight
             .transition()
             .delay(steps[2])
-            .duration(duration / 1.5)
+            .duration(durations[2])
             .attr('transform', 'translate(0 0)')
 
         pinguinLeft
             .transition()
             .delay(steps[2])
-            .duration(duration/ 1.5)
+            .duration(durations[2])
             .attr('transform', 'translate(0 0)')
 
         green
             .transition()
             .delay(steps[3])
-            .duration(duration)
+            .duration(durations[3])
             .style('opacity', 0)
 
         wuppertal
             .transition()
             .delay(steps[3])
-            .duration(duration)
+            .duration(durations[3])
             .style('opacity', 0)
 
         all
             .transition()
             .delay(steps[3])
-            .duration(duration)
+            .duration(durations[3])
             .attr('transform', 'translate(' + smallX + ' ' + smallY + ') scale(' + smallScale + ' )')
+
+        dim
+            .transition()
+            .delay(steps[3])
+            .duration(durations[3])
+            .style('opacity', 0)
             .on("end", ()=>{
 
                 svg.attr('viewBox', '0 0 1709 1395');
@@ -187,11 +217,14 @@ export function LogoLarge() {
                 svg.style('right', 0);
                 all.attr('transform', null);
 
+                /*
                 setTimeout(()=>{
                     setShowAnimationState(true)
                 },1000);
+                 */
 
             });
+
 
     };
 
@@ -212,7 +245,7 @@ export function LogoLarge() {
     });
 
     return (
-            <a href="/" className={classes.logo}>
+            <a onClick={onclick} href="/" className={classes.logo}>
                 <svg
                     id="largeLogo"
                     className={classes.logoImg}
@@ -223,6 +256,7 @@ export function LogoLarge() {
                     xmlns="http://www.w3.org/2000/svg"
                     style={{fillRule:'evenodd',clipRule:'evenodd',strokeLinejoin:'round',strokeMiterlimit:2}}
                 >
+                    <g id="dim"><rect/></g>
                     <g id="alles">
 
                     <g id="DerGrüneZoo">

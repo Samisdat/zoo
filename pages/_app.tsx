@@ -11,15 +11,15 @@ import NavigationSidebar from '../components/Navigation/Sidebar';
 import Teaser from '../components/Navigation/Teaser';
 
 import {makeStyles} from '@material-ui/core/styles';
-import {MapFocus, NavigationInterface} from "../components/Navigation/Interfaces";
+import {NavigationInterface} from "../components/Navigation/Interfaces";
 
 import createPersistedState from 'use-persisted-state';
 import {Feature, Polygon} from "geojson";
 import ButtonAppBar from "../components/Menu/Menu";
 import {Fab} from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-const useNavigationState = createPersistedState('navigation');
 
+const useNavigationState = createPersistedState('navigation');
 const useStyles = makeStyles(theme => ({
     offset: theme.mixins.toolbar,
 }))
@@ -32,48 +32,8 @@ export default function ZooWuppertal(props) {
         activeMainItem: 'map',
         openSideMenu: false,
         openTeaser: false,
-        openSearch: false,
-        focus: 'none'
+        openSearch: false
     });
-
-    const storeFocus = (focus:MapFocus | Feature<Polygon>) => {
-
-        setNavigationState({
-            ...navigationState,
-            focus: focus,
-        });
-
-        if('none' !== focus){
-            //toggleTeaser();
-        }
-
-    }
-
-    const setFocus = (focus:MapFocus | Feature<Polygon>) => {
-
-        if('none' === focus || undefined === focus){
-
-            storeFocus('none');
-            return;
-        }
-
-        focus = focus as Feature<Polygon>;
-
-        if('none' === navigationState.focus){
-
-            storeFocus(focus)
-
-            return;
-        }
-
-        if(focus.properties.slug !== navigationState.focus.properties.slug){
-
-            storeFocus(focus)
-
-            return;
-        }
-
-    };
 
     const toggleSearch = () => {
 
@@ -144,7 +104,6 @@ export default function ZooWuppertal(props) {
                         <Component
                             toggleSearch={toggleSearch}
                             toggleTeaser={toggleTeaser}
-                            setFocus={setFocus}
                             navigation={navigationState}
                             {...pageProps}
                         />

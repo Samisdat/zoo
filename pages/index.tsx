@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
 
-import {FeatureCollection} from 'geojson';
+import {Feature, FeatureCollection, Polygon} from 'geojson';
 import {MapRoot} from 'components/Map/Root';
 import {NavigationInterface} from "../components/Navigation/Interfaces";
 import {MapSearch} from "../components/Map/Search";
 import {getFullGeoJson} from "./api/geojson/list";
-import MediaControlCard from "../components/Navigation/MediaCard";
+import {Teaser, TeaserPropsInterface} from "../components/Map/Teaser";
+
+import createPersistedState from 'use-persisted-state';
+const useMapState = createPersistedState('map');
 
 export interface IndexProps{
     geoJson: FeatureCollection;
@@ -16,30 +19,98 @@ export interface IndexProps{
 
 }
 
-export interface IndexState {
+export interface MapState {
     openSearch: boolean;
+    focus: MapFocus | Feature<Polygon>;
+}
+
+export type MapFocus = 'none';
+
+const defaultMapState:MapState = {
+    openSearch: false,
+    focus: 'none',
 }
 
 export default function Index(props:IndexProps) {
 
     const {toggleSearch} = props;
 
-    const [state, setState] = useState<IndexState>({
-        openSearch: false,
-    });
+    const [mapState, setMapState] = useMapState<MapState>(defaultMapState);
+
+    const [teaser, setTeaser] = useState<TeaserPropsInterface>(/*{
+        apiUrl: '/api/teaser/animals/afrikanischer-elefant',
+        close: ()=>{
+            setTeaser(undefined);
+        }
+    }*/);
+
+    const closeTeaser = ()=>{
+        setTeaser(undefined);
+    };
+
+    const clickButton = () => {
+        setTeaser({
+            apiUrl: '/api/teaser/animals/afrikanischer-elefant',
+            close: closeTeaser
+        });
+
+    };
+
+    const storeFocus = (focus:MapFocus | Feature<Polygon>) => {
+
+        setMapState({
+            ...mapState,
+            focus: focus,
+        });
+
+        if('none' !== focus){
+            //toggleTeaser();
+        }
+
+    }
+
+    const setFocus = (focus:MapFocus | Feature<Polygon>) => {
+
+        if('none' === focus || undefined === focus){
+
+            storeFocus('none');
+            return;
+        }
+
+        focus = focus as Feature<Polygon>;
+
+        if('none' === mapState.focus){
+
+            storeFocus(focus)
+
+            return;
+        }
+
+        if(focus.properties.slug !== mapState.focus.properties.slug){
+
+            storeFocus(focus)
+
+            return;
+        }
+
+    };
 
     return (
         <React.Fragment>
-            <MapRoot setFocus={props.setFocus} {...props}></MapRoot>
-            {/*
-            <MediaControlCard></MediaControlCard>
+            <MapRoot
+                focus={mapState.focus}
+                setTeaser={setTeaser}
+                {...props}
+            />
             <MapSearch
-                setFocus={props.setFocus}
                 toggleSearch={toggleSearch}
                 geoJson={props.geoJson}
+                setFocus={setFocus}
                 {...props.navigation}
             />
-            */}
+            <Teaser
+                {...teaser}
+            />
         </React.Fragment>
   );
 }
@@ -47,6 +118,8 @@ export default function Index(props:IndexProps) {
 export async function getStaticProps(context) {
 
     let getJson = await getFullGeoJson();
+
+    console.log(getJson);
 
     for(let i = 0, x = getJson.features.length; i < x; i += 1){
 

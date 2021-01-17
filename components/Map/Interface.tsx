@@ -19,7 +19,6 @@ export interface MapStateInterface {
     width: number;
     height: number;
     dimensionUnit: string;
-    color: string;
     marker: MarkerInterface;
     pathGenerator: GeoPath,
     projection: GeoProjection;

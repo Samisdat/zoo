@@ -1,5 +1,5 @@
 import * as d3 from 'd3';
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Ways} from "./Ways";
 import {Sketched} from "./Sketched";
 import {CurrentPosition} from "./CurrentPosition";
@@ -8,6 +8,10 @@ import {HighlightFocus} from "./HighlightFocus";
 import {PointOfInterest} from "./PointOfInterest";
 import {Feature} from "geojson";
 import {Border} from "./Border";
+import {centerToFeatureCollection} from "../Distribution/Detail";
+import {MapFocus} from "../../pages";
+import {MapSearch} from "./Search";
+import {Segments} from "./Segments";
 
 // zoom until focus.width or focus.height extends window.width or window.height
 export const findBestZoomLevel = (x0, x1, y0, y1, maxWidth, maxHeight) => {
@@ -57,12 +61,23 @@ const centerToPolygon = (polygon) => {
 
 }
 
+interface ZoomDependencies {
+    mapSvg:any,
+    zooming:any,
+}
+
 export const Group = (props) => {
 
     const svgId = 'main-svg';
     const mapId = 'main-map';
 
+    const [autoZoom, setAutoZoom] = useState<boolean>(false);
     const [zoom, setZoom] = useState<number>(props.mapState.transform.k);
+    const [focus, setFocus] = useState<MapFocus>("none");
+    const [zoomDependencies, setZoomDependencies] = useState<ZoomDependencies>({
+        mapSvg:undefined,
+        zooming:undefined,
+    });
 
     const createD3Map = ()=> {
 
@@ -83,7 +98,7 @@ export const Group = (props) => {
             })
             .on('end', (event) => {
 
-                console.log('end')
+                console.log('end', autoZoom)
 
                 const transform: MapTransformInterface = {
                     k: event.transform.k,
@@ -91,40 +106,49 @@ export const Group = (props) => {
                     y: event.transform.y
                 }
 
-                props.setTransform(transform);
+                //props.setTransform(transform);
 
             });
+
+        setZoomDependencies({
+            mapSvg:mapSvg,
+            zooming:zooming
+        });
 
         // enable zooming
         mapSvg.call(zooming);
 
-        if('none' !== props.navigation.focus){
+        /*
+        if('none' !== props.focus){
+
+            console.log(props.focus);
 
             mapSvg.on('.zoom', null);
-            const centerOfEnclosure = centerToPolygon(props.navigation.focus);
+            const centerOfEnclosure = centerToFeatureCollection({
+                features:[props.focus],
+                type:'FeatureCollection'
+            });
 
-            const [x0, y0] = props.mapState.projection(centerOfEnclosure[0] as any);
-            const [x1, y1] = props.mapState.projection(centerOfEnclosure[1] as any);
+            console.log(centerOfEnclosure)
 
-            const teaserOffset = 150 + 90 + 40
+            const [[x0, y0], [x1, y1]] = props.mapState.pathGenerator.bounds(centerOfEnclosure as any);
 
-            const k = findBestZoomLevel(x0, x1, y0, y1, props.mapState.width, props.mapState.height - teaserOffset);
-
-            var t2 = d3.zoomIdentity
-                .translate(props.mapState.width / 2, (props.mapState.height) / 2)
-                .scale(k)
-                .translate(-(x0 + x1) / 2, -(y0 + y1 ) / 2)
-            ;
-
-            //setZoom(k);
+            console.log(x0, y0, x1, y1)
 
             mapSvg.call(
-                (zooming.transform as any),
-                t2
+                zooming.transform as any,
+                d3.zoomIdentity
+                    .translate(props.mapState.width / 2, props.mapState.height / 2)
+                    .scale(Math.min(8, 0.9 / Math.max((x1 - x0) / props.mapState.width, (y1 - y0) / props.mapState.height)))
+                    .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
             );
-            props.setFocus('none')
+
+            //props.setFocus('none')
 
         }
+
+         */
+
 
     };
 
@@ -142,6 +166,55 @@ export const Group = (props) => {
 
     }, [props.mapState]);
 
+    useEffect(()=>{
+
+        if(undefined === zoomDependencies.mapSvg || undefined === zoomDependencies.zooming){
+            return;
+        }
+
+        console.log(props.focus?.properties?.name);
+
+        console.log(zoomDependencies)
+
+        //zoomDependencies.mapSvg.on('.zoom', null);
+        const centerOfEnclosure = centerToFeatureCollection({
+            features:[props.focus],
+            type:'FeatureCollection'
+        });
+
+        console.log(centerOfEnclosure)
+
+        const [[x0, y0], [x1, y1]] = props.mapState.pathGenerator.bounds(centerOfEnclosure as any);
+
+        console.log(x0, y0, x1, y1)
+
+        setAutoZoom(true);
+
+        zoomDependencies.mapSvg.transition().duration(500).call(
+            zoomDependencies.zooming.transform as any,
+            d3.zoomIdentity
+                .translate(props.mapState.width / 2, props.mapState.height / 2)
+                .scale(Math.min(8, 0.9 / Math.max((x1 - x0) / props.mapState.width, (y1 - y0) / props.mapState.height)))
+                .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
+        )
+        .on("end", ()=>{
+
+            console.log(props.setTeaser)
+
+            props.setTeaser({
+                apiUrl: '/api/teaser/animals/afrikanischer-elefant',
+                    close: ()=>{
+                        props.setTeaser(undefined);
+            }}  );
+            console.log('ende')
+
+        });
+
+
+
+
+    }, [props.focus])
+
     return (
         <g id={mapId}>
             <Border
@@ -157,11 +230,15 @@ export const Group = (props) => {
                 mapState={props.mapState}
                 geoJson={props.geoJson}
             />
-            */}
             <Ways
                 pathGenerator={props.mapState.pathGenerator}
                 geoJson={props.geoJson}
             />
+            <Segments
+                pathGenerator={props.mapState.pathGenerator}
+                geoJson={props.geoJson}
+            />
+            */}
             <CurrentPosition
                 pathGenerator={props.mapState.pathGenerator}
                 zoom={zoom}

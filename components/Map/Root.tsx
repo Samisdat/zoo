@@ -4,6 +4,7 @@ import * as d3 from 'd3';
 import {MapStateInterface, MapTransformInterface, MarkerInterface} from "components/Map/Interface";
 import {Group} from "./Group";
 import {Feature} from "geojson";
+import {MapSearch} from "./Search";
 
 const markerDefault: MarkerInterface = {
     lat: 51.238741,
@@ -23,7 +24,6 @@ const MapStateDefault: MapStateInterface = {
     width: 100,
     height: 100,
     dimensionUnit: '%',
-    color: 'red',
     marker: {
         ...markerDefault
     },
@@ -180,7 +180,6 @@ export const MapRoot = (props) => {
             width,
             height,
             dimensionUnit:'px',
-            color: 'blue',
             pathGenerator,
             projection: projection,
             transform,
@@ -198,7 +197,7 @@ export const MapRoot = (props) => {
             createMap();
         }
 
-    }, [mapState,props.navigation.focus]);
+    }, [mapState, props.focus]);
 
     return (
         <svg id={svgId} style={{
@@ -210,6 +209,7 @@ export const MapRoot = (props) => {
             <Group
                 mapState={mapState}
                 setTransform={setTransform}
+                setTeaser={props.setTeaser}
                 setFocus={props.setFocus}
                 {...props}
             />

@@ -38,9 +38,20 @@ export const PointOfInterest = (props) => {
 
 
         const clicked = (event:any, d:any) => {
-            console.log(event.properties);
+            console.log(d.properties);
         }
 
+
+        clickGroup.selectAll('circle')
+            .data(pois)
+            .join('circle')
+            .attr('transform', function(d) { return 'translate(' + props.pathGenerator.centroid(d) + ')'; })
+            .attr('fill', (d, i)=>{
+                return 'blue';
+            })
+            .attr('d', props.pathGenerator)
+            .attr('r', radius )
+            .on("click", clicked)
 
         positionGroup.selectAll('circle')
             .data(pois)
@@ -51,19 +62,9 @@ export const PointOfInterest = (props) => {
             })
             .attr('d', props.pathGenerator)
             .attr('r', radius *2.5)
-            .attr('opacity', 1 )
+            .attr('opacity', 0 )
             .on("click", clicked)
         ;
-
-        clickGroup.selectAll('circle')
-            .data(pois)
-            .join('circle')
-            .attr('transform', function(d) { return 'translate(' + props.pathGenerator.centroid(d) + ')'; })
-            .attr('fill', (d, i)=>{
-                return 'blue';
-            })
-            .attr('d', props.pathGenerator)
-            .attr('r', radius );
 
         /*
         positionGroup.selectAll("text")

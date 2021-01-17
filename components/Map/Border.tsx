@@ -38,7 +38,7 @@ export const Border = (props) => {
                 return "green";
             })
             .attr("stroke-width", (d:Feature)=>{
-                return '0.1px';
+                return '10px';
             })
             .attr("opacity", (d:Feature)=>{
                 return 1;
@@ -61,7 +61,7 @@ export const Border = (props) => {
                 return "#000";
             })
             .attr("stroke-width", (d) => {
-                return '0.1px';
+                return '10px';
             })
             .attr("opacity", (d) => {
                 return 1;
@@ -72,6 +72,7 @@ export const Border = (props) => {
 
     useEffect(() => {
 
+        return;
         if (undefined === props.pathGenerator) {
             return;
         }
@@ -79,8 +80,8 @@ export const Border = (props) => {
         plotWays();
     });
 
-    return <React.Fragment>
+    return (<React.Fragment>
         <g id={boxId}></g>
         <g id={simplePathId}></g>
-    </React.Fragment>;
+    </React.Fragment>);
 };

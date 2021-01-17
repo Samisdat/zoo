@@ -75,6 +75,19 @@ export const centerToFeatureCollection = (featureset:FeatureCollection) => {
             }
 
         }
+        else if('LineString' === feature.geometry.type){
+
+            console.log(feature.geometry)
+
+            for(const coordinate of feature.geometry.coordinates){
+
+                latitudes.push(coordinate[1]);
+                longitudes.push(coordinate[0]);
+
+            }
+
+
+        }
 
 
     }
@@ -167,6 +180,8 @@ export const Detail = (props) => {
             })
             .attr("d", path)
 
+        console.log(props.distributionGeoJson);
+
         const center = centerToFeatureCollection(props.distributionGeoJson);
 
         rect
@@ -184,6 +199,7 @@ export const Detail = (props) => {
             .attr("opacity", 0.7)
             .attr("d", path as any)
 
+        console.log(center)
         const [[x0, y0], [x1, y1]] = path.bounds(center as any);
 
         svg.call(

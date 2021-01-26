@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import {Feature, FeatureCollection, Polygon} from 'geojson';
 import {MapRoot} from 'components/Map/Root';
@@ -31,10 +31,26 @@ const defaultMapState:MapState = {
     focus: 'none',
 }
 
+type MapDimensionUnit = 'px' | '%';
+
+interface MapDimension{
+    width: number;
+    height: number;
+    unit: MapDimensionUnit;
+}
+
+// on serve side there is no window width and height
+const MapDimensionDefault:MapDimension = {
+    width: 100,
+    height: 100,
+    unit: '%'
+}
+
 export default function Index(props:IndexProps) {
 
     const {toggleSearch} = props;
 
+    const [mapDimensionState, setMapDimensionState] = useMapState<MapDimension>(MapDimensionDefault);
     const [mapState, setMapState] = useMapState<MapState>(defaultMapState);
 
     const [teaser, setTeaser] = useState<TeaserPropsInterface>(/*{
@@ -95,11 +111,53 @@ export default function Index(props:IndexProps) {
 
     };
 
+    const setDimension = () => {
+
+        const mapDimension: MapDimension = {
+            width: window.innerWidth,
+            height: window.innerHeight,
+            unit: 'px'
+        };
+
+        setMapDimensionState(mapDimension);
+
+    };
+
+    useEffect(() => {
+
+        console.log(window.innerWidth, mapDimensionState.width);
+        console.log(window.innerHeight, mapDimensionState.height);
+        console.log(window.innerWidth === mapDimensionState.width && window.innerHeight === mapDimensionState.height);
+
+        if(
+            window.innerWidth === mapDimensionState.width && window.innerHeight === mapDimensionState.height){
+            return;
+        }
+
+        return;
+
+        console.log('importande');
+
+        setDimension();
+
+        console.log(mapDimensionState);
+
+        window.addEventListener('resize', ()=>{
+            console.log('window@resize')
+            setDimension();
+            console.log(mapDimensionState);
+        });
+
+    });
+
+
     return (
         <React.Fragment>
+            <div>foo</div>
             <MapRoot
                 focus={mapState.focus}
                 setTeaser={setTeaser}
+                mapDimension={mapDimensionState}
                 {...props}
             />
             <MapSearch
@@ -118,8 +176,6 @@ export default function Index(props:IndexProps) {
 export async function getStaticProps(context) {
 
     let getJson = await getFullGeoJson();
-
-    console.log(getJson);
 
     for(let i = 0, x = getJson.features.length; i < x; i += 1){
 

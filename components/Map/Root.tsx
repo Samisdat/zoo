@@ -71,23 +71,6 @@ export const MapRoot = (props) => {
 
     };
 
-    const setDimensions = () => {
-
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-
-        if(width === mapState.width && height === mapState.height){
-            return;
-        }
-
-        setMapState({
-            ...mapState,
-            width: width,
-            height: height
-        });
-
-    }
-
     const getTransformFromStorage = ():MapTransformInterface => {
 
         const zoomFromStorage = window.localStorage.getItem('pan-zoom');
@@ -158,8 +141,8 @@ export const MapRoot = (props) => {
 
     const createMap = () => {
 
-        const width = window.innerWidth;
-        const height = window.innerHeight;
+        const width = props.mapDimension.width;
+        const height = props.mapDimension.height;
 
         const transform = getTransformFromStorage();
         const marker = getMarkerFromStorage()
@@ -172,8 +155,6 @@ export const MapRoot = (props) => {
         ;
 
         const pathGenerator = d3.geoPath().projection(projection)
-
-        window.addEventListener('resize', setDimensions);
 
         const nextMapState: MapStateInterface = {
             ...mapState,
@@ -201,9 +182,9 @@ export const MapRoot = (props) => {
 
     return (
         <svg id={svgId} style={{
-                width: `${mapState.width}${mapState.dimensionUnit}` ,
-                height: `${mapState.height}${mapState.dimensionUnit}`,
-                backgroundColor: mapState.color
+                width: `100%` ,
+                height: `100%`,
+                backgroundColor: 'red'
             }}
         >
             <Group

@@ -4,10 +4,8 @@ import {Ways} from "./Ways";
 import {Sketched} from "./Sketched";
 import {CurrentPosition} from "./CurrentPosition";
 import {MapStateInterface, MapTransformInterface} from "./Interface";
-import {HighlightFocus} from "./HighlightFocus";
 import {PointOfInterest} from "./PointOfInterest";
 import {Feature} from "geojson";
-import {Border} from "./Border";
 import {centerToFeatureCollection} from "../Distribution/Detail";
 import {MapFocus} from "../../pages";
 import {MapSearch} from "./Search";
@@ -217,19 +215,11 @@ export const Group = (props) => {
 
     return (
         <g id={mapId}>
-            <Border
-                pathGenerator={props.mapState.pathGenerator}
-                geoJson={props.geoJson}
-            />
             <Sketched
                 mapState={props.mapState}
                 geoJson={props.geoJson}
             />
             {/*
-            <HighlightFocus
-                mapState={props.mapState}
-                geoJson={props.geoJson}
-            />
             <Ways
                 pathGenerator={props.mapState.pathGenerator}
                 geoJson={props.geoJson}

@@ -214,14 +214,12 @@ export const Group = (props) => {
                 zoom={zoom}
                 marker={props.mapState.marker}
             />
-            {/*
             <PointOfInterest
                 pathGenerator={props.mapState.pathGenerator}
                 projection={props.mapState.projection}
                 zoom={zoom}
                 geoJson={props.geoJson}
             />
-            */}
         </g>
     );
 

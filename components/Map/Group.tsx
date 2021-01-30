@@ -128,8 +128,8 @@ export const Group = (props) => {
             mapSvg.call(
                 zooming.transform as any,
                 d3.zoomIdentity
-                    .translate(props.mapState.width / 2, props.mapState.height / 2)
-                    .scale(Math.min(8, 0.9 / Math.max((x1 - x0) / props.mapState.width, (y1 - y0) / props.mapState.height)))
+                    .translate(props.mapDimension.width / 2, props.mapDimension.height / 2)
+                    .scale(Math.min(8, 0.9 / Math.max((x1 - x0) / props.mapDimension.width, (y1 - y0) / props.mapDimension.height)))
                     .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
             );
 
@@ -174,8 +174,8 @@ export const Group = (props) => {
         zoomDependencies.mapSvg.transition().duration(500).call(
             zoomDependencies.zooming.transform as any,
             d3.zoomIdentity
-                .translate(props.mapState.width / 2, props.mapState.height / 2)
-                .scale(Math.min(8, 0.9 / Math.max((x1 - x0) / props.mapState.width, (y1 - y0) / props.mapState.height)))
+                .translate(props.mapDimension.width / 2, props.mapDimension.height / 2)
+                .scale(Math.min(8, 0.9 / Math.max((x1 - x0) / props.mapDimension.width, (y1 - y0) / props.mapDimension.height)))
                 .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
         )
         .on("end", ()=>{

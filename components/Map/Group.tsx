@@ -121,7 +121,7 @@ export const Group = (props) => {
 
             console.log(props.focus);
 
-            mapSvg.on('.zoom', null);
+            //mapSvg.on('.zoom', null);
             const centerOfEnclosure = centerToFeatureCollection({
                 features:[props.focus],
                 type:'FeatureCollection'

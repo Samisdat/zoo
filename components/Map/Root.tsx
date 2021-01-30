@@ -21,9 +21,6 @@ const mapTransformDefault: MapTransformInterface = {
 }
 
 const MapStateDefault: MapStateInterface = {
-    width: 100,
-    height: 100,
-    dimensionUnit: '%',
     marker: {
         ...markerDefault
     },
@@ -158,9 +155,6 @@ export const MapRoot = (props) => {
 
         const nextMapState: MapStateInterface = {
             ...mapState,
-            width,
-            height,
-            dimensionUnit:'px',
             pathGenerator,
             projection: projection,
             transform,

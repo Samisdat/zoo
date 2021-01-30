@@ -41,9 +41,9 @@ interface MapDimension{
 
 // on serve side there is no window width and height
 const MapDimensionDefault:MapDimension = {
-    width: 100,
-    height: 100,
-    unit: '%'
+    width: 300,
+    height: 300,
+    unit: 'px'
 }
 
 export default function Index(props:IndexProps) {
@@ -94,6 +94,7 @@ export default function Index(props:IndexProps) {
         }
 
         focus = focus as Feature<Polygon>;
+
 
         if('none' === mapState.focus){
 

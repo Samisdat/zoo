@@ -16,9 +16,6 @@ export interface MapTransformInterface {
 }
 
 export interface MapStateInterface {
-    width: number;
-    height: number;
-    dimensionUnit: string;
     marker: MarkerInterface;
     pathGenerator: GeoPath,
     projection: GeoProjection;

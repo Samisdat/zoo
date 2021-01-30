@@ -126,9 +126,9 @@ export default function Index(props:IndexProps) {
 
     useEffect(() => {
 
-        console.log(window.innerWidth, mapDimensionState.width);
-        console.log(window.innerHeight, mapDimensionState.height);
-        console.log(window.innerWidth === mapDimensionState.width && window.innerHeight === mapDimensionState.height);
+        //console.log(window.innerWidth, mapDimensionState.width);
+        //console.log(window.innerHeight, mapDimensionState.height);
+        //console.log(window.innerWidth === mapDimensionState.width && window.innerHeight === mapDimensionState.height);
 
         if(
             window.innerWidth === mapDimensionState.width && window.innerHeight === mapDimensionState.height){
@@ -137,11 +137,9 @@ export default function Index(props:IndexProps) {
 
         return;
 
-        console.log('importande');
 
         setDimension();
 
-        console.log(mapDimensionState);
 
         /*
         window.addEventListener('resize', ()=>{

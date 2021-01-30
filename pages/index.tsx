@@ -154,7 +154,6 @@ export default function Index(props:IndexProps) {
 
     return (
         <React.Fragment>
-            <div>foo</div>
             <MapRoot
                 focus={mapState.focus}
                 setTeaser={setTeaser}

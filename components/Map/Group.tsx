@@ -96,8 +96,6 @@ export const Group = (props) => {
             })
             .on('end', (event) => {
 
-                console.log('end', autoZoom)
-
                 const transform: MapTransformInterface = {
                     k: event.transform.k,
                     x: event.transform.x,
@@ -119,19 +117,13 @@ export const Group = (props) => {
         /*
         if('none' !== props.focus){
 
-            console.log(props.focus);
-
             //mapSvg.on('.zoom', null);
             const centerOfEnclosure = centerToFeatureCollection({
                 features:[props.focus],
                 type:'FeatureCollection'
             });
 
-            console.log(centerOfEnclosure)
-
             const [[x0, y0], [x1, y1]] = props.mapState.pathGenerator.bounds(centerOfEnclosure as any);
-
-            console.log(x0, y0, x1, y1)
 
             mapSvg.call(
                 zooming.transform as any,
@@ -146,7 +138,6 @@ export const Group = (props) => {
         }
 
          */
-
 
     };
 
@@ -170,21 +161,13 @@ export const Group = (props) => {
             return;
         }
 
-        console.log(props.focus?.properties?.name);
-
-        console.log(zoomDependencies)
-
         //zoomDependencies.mapSvg.on('.zoom', null);
         const centerOfEnclosure = centerToFeatureCollection({
             features:[props.focus],
             type:'FeatureCollection'
         });
 
-        console.log(centerOfEnclosure)
-
         const [[x0, y0], [x1, y1]] = props.mapState.pathGenerator.bounds(centerOfEnclosure as any);
-
-        console.log(x0, y0, x1, y1)
 
         setAutoZoom(true);
 
@@ -197,14 +180,11 @@ export const Group = (props) => {
         )
         .on("end", ()=>{
 
-            console.log(props.setTeaser)
-
             props.setTeaser({
                 apiUrl: '/api/teaser/animals/afrikanischer-elefant',
                     close: ()=>{
                         props.setTeaser(undefined);
             }}  );
-            console.log('ende')
 
         });
 

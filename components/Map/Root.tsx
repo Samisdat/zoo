@@ -5,6 +5,7 @@ import {MapStateInterface, MapTransformInterface, MarkerInterface} from "compone
 import {Group} from "./Group";
 import {Feature} from "geojson";
 import {MapSearch} from "./Search";
+import {makeStyles} from "@material-ui/core/styles";
 
 const markerDefault: MarkerInterface = {
     lat: 51.238741,
@@ -31,7 +32,20 @@ const MapStateDefault: MapStateInterface = {
     },
 }
 
+const useStyles = makeStyles({
+    fullScreenMap: {
+        position: 'absolute',
+        top: 0,
+        left:0,
+        width: `100%`,
+        height: `100%`,
+    }
+});
+
+
 export const MapRoot = (props) => {
+
+    const classes = useStyles();
 
     const svgId = 'main-svg';
 
@@ -175,15 +189,9 @@ export const MapRoot = (props) => {
     }, [mapState, props.focus]);
 
     return (
-        <svg id={svgId}
-             style={{
-                position: 'absolute',
-                top: 0,
-                left:0,
-                width: `100%`,
-                height: `100%`,
-                backgroundColor: 'red'
-            }}
+        <svg
+            id={svgId}
+            className={classes.fullScreenMap}
         >
             <Group
                 mapState={mapState}

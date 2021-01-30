@@ -181,8 +181,12 @@ export const MapRoot = (props) => {
     }, [mapState, props.focus]);
 
     return (
-        <svg id={svgId} style={{
-                width: `100%` ,
+        <svg id={svgId}
+             style={{
+                position: 'absolute',
+                top: 0,
+                left:0,
+                width: `100%`,
                 height: `100%`,
                 backgroundColor: 'red'
             }}

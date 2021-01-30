@@ -143,12 +143,13 @@ export default function Index(props:IndexProps) {
 
         console.log(mapDimensionState);
 
+        /*
         window.addEventListener('resize', ()=>{
             console.log('window@resize')
             setDimension();
             console.log(mapDimensionState);
         });
-
+        */
     });
 
 

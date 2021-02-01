@@ -29,6 +29,7 @@ export interface Animal {
     iucnLink: string;
     iucnStatus: string;
     content: string;
+    facility?: string;
 }
 
 const dataDir = path.resolve(process.env.PWD, 'data/markdown/animals');
@@ -58,7 +59,12 @@ export const getAnimal = async (slug:string):Promise<Animal> => {
         iucnLink: animalMarkdown.data.iucnLink,
         iucnStatus: animalMarkdown.data.iucnStatus,
         content: animalMarkdown.content,
+        facility: animalMarkdown.data.facility,
     };
+
+    if(undefined === animal.facility){
+        animal.facility = null;
+    }
 
     return animal;
 }

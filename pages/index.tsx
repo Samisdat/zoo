@@ -166,6 +166,7 @@ export default function Index(props:IndexProps) {
                 focus={mapState.focus}
                 setTeaser={setTeaser}
                 mapDimension={mapDimensionState}
+                fullsize={true}
                 {...props}
             />
             <MapSearch

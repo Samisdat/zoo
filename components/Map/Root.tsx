@@ -192,7 +192,7 @@ export const MapRoot = (props) => {
     return (
         <svg
             id={svgId}
-            className={classes.fullScreenMap}
+            className={`${props.fullsize ? classes.fullScreenMap : ""}`}
         >
             <Group
                 mapState={mapState}

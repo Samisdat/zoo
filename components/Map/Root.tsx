@@ -4,7 +4,6 @@ import * as d3 from 'd3';
 import {MapStateInterface, MapTransformInterface, MarkerInterface} from "components/Map/Interface";
 import {Group} from "./Group";
 import {Feature} from "geojson";
-import {MapSearch} from "./Search";
 import {makeStyles} from "@material-ui/core/styles";
 
 const markerDefault: MarkerInterface = {
@@ -174,6 +173,8 @@ export const MapRoot = (props) => {
             transform,
             marker,
         };
+
+
 
         setMapState(nextMapState)
 

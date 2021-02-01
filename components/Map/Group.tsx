@@ -80,6 +80,10 @@ export const Group = (props) => {
     const createD3Map = ()=> {
 
         var mapSvg = d3.select(`#${svgId}`)
+
+        mapSvg.attr('width', props.mapDimension.width)
+        mapSvg.attr('height', props.mapDimension.height)
+
         const mapGroup = d3.select(`#${mapId}`);
 
         const zooming = d3.zoom()

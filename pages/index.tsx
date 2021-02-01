@@ -144,13 +144,13 @@ export default function Index(props:IndexProps) {
 
         }
 
-        console.log(window.innerWidth, mapDimensionState.width);
-        console.log(window.innerHeight, mapDimensionState.height);
-        console.log(window.innerWidth === mapDimensionState.width && window.innerHeight === mapDimensionState.height);
+        console.log(window.innerWidth, mapDimensionState?.width);
+        console.log(window.innerHeight, mapDimensionState?.height);
+        console.log(window.innerWidth === mapDimensionState?.width && window.innerHeight === mapDimensionState?.height);
 
         if(
-            window.innerWidth === mapDimensionState.width &&
-            window.innerHeight === mapDimensionState.height)
+            window.innerWidth === mapDimensionState?.width &&
+            window.innerHeight === mapDimensionState?.height)
         {
             return;
         }

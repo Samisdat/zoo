@@ -33,7 +33,7 @@ const defaultMapState:MapState = {
 
 type MapDimensionUnit = 'px' | '%';
 
-interface MapDimension{
+export interface MapDimension{
     width: number;
     height: number;
     unit: MapDimensionUnit;

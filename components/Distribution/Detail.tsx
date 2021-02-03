@@ -45,6 +45,10 @@ export const centerToFeatureCollection = (featureset:FeatureCollection) => {
 
     for(const feature of featureset.features){
 
+        if(undefined === feature.geometry){
+            continue;
+        }
+
         if('Polygon' === feature.geometry.type){
 
             for(const coordinates of feature.geometry.coordinates){

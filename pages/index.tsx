@@ -36,14 +36,12 @@ type MapDimensionUnit = 'px' | '%';
 export interface MapDimension{
     width: number;
     height: number;
-    unit: MapDimensionUnit;
 }
 
 // on serve side there is no window width and height
 const MapDimensionDefault:MapDimension = {
     width: 300,
     height: 300,
-    unit: 'px'
 }
 
 export default function Index(props:IndexProps) {
@@ -75,7 +73,7 @@ export default function Index(props:IndexProps) {
     };
 
     const storeFocus = (focus:MapFocus | Feature<Polygon>) => {
-        
+
         setMapState({
             ...mapState,
             focus: focus,
@@ -119,7 +117,6 @@ export default function Index(props:IndexProps) {
         const mapDimension: MapDimension = {
             width: window.innerWidth,
             height: window.innerHeight,
-            unit: 'px'
         };
 
         setMapDimensionState(mapDimension);

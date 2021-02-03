@@ -49,8 +49,7 @@ export default function Tiere(props) {
 
     const mapDimension: MapDimension = {
         width: 300,
-        height: 300,
-        unit: 'px'
+        height: 300
     };
 
 

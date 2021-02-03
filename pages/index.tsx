@@ -75,7 +75,7 @@ export default function Index(props:IndexProps) {
     };
 
     const storeFocus = (focus:MapFocus | Feature<Polygon>) => {
-
+        
         setMapState({
             ...mapState,
             focus: focus,
@@ -105,7 +105,7 @@ export default function Index(props:IndexProps) {
             return;
         }
 
-        if(focus.properties.slug !== mapState.focus.properties.slug){
+        if(focus.properties.slug !== mapState.focus?.properties?.slug){
 
             storeFocus(focus)
 

@@ -174,8 +174,6 @@ export const MapRoot = (props) => {
             marker,
         };
 
-
-
         setMapState(nextMapState)
 
     }

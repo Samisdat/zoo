@@ -45,6 +45,7 @@ export const MapSearch = (props) => {
 
         const index = event.target.getAttribute('data-option-index');
 
+
         if(null === index){
             setFocus('none');
             return;

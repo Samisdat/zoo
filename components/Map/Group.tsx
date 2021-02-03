@@ -106,7 +106,7 @@ export const Group = (props) => {
                     y: event.transform.y
                 }
 
-                //props.setTransform(transform);
+                props.setTransform(transform);
 
             });
 
@@ -117,6 +117,18 @@ export const Group = (props) => {
 
         // enable zooming
         mapSvg.call(zooming);
+
+        const t = d3.zoomIdentity
+            .translate(
+                props.mapState.transform.x,
+                props.mapState.transform.y
+            )
+            .scale(props.mapState.transform.k);
+
+        mapSvg.call(
+            (zooming.transform as any),
+            t
+        );
 
         /*
         if('none' !== props.focus){

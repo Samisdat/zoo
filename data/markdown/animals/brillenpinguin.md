@@ -23,6 +23,7 @@ i18nNames:
 iucnID: '22697810'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/22697810'
 iucnStatus: Q11394
+facility: brillenpinguine
 ---
 
 I am content.

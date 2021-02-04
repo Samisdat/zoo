@@ -19,6 +19,7 @@ i18nNames:
 iucnID: '7953'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/7953'
 iucnStatus: Q211005
+facility: kiang
 ---
 
 I am content.

@@ -15,9 +15,10 @@ i18nNames:
   en: babirusa
   de: Hirscheber
   nl: babiroesa's
-iucnID: null
-iucnLink: null
+iucnID: 2461
+iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/2461'
 iucnStatus: null
+facility: hirscheber
 ---
 
 I am content.

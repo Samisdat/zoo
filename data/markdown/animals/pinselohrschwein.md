@@ -21,6 +21,7 @@ i18nNames:
 iucnID: '41771'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/41771'
 iucnStatus: Q211005
+facility: pinselohrschweine
 ---
 
 I am content.

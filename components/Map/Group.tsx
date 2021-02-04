@@ -198,8 +198,19 @@ export const Group = (props) => {
         )
         .on("end", ()=>{
 
+            let href = '/api/teaser/';
+
+            if('single-enclosure' === props.focus.properties.facilityType){
+                href += 'animal/';
+            }
+            else{
+                href += 'not-yet-implemented/';
+            }
+
+            href += props.focus.properties.slug;
+
             props.setTeaser({
-                apiUrl: '/api/teaser/animals/afrikanischer-elefant',
+                apiUrl: href,
                     close: ()=>{
                         props.setTeaser(undefined);
             }}  );

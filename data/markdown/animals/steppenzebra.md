@@ -21,6 +21,7 @@ i18nNames:
 iucnID: '41013'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/41013'
 iucnStatus: Q719675
+facility: zebras
 ---
 
 I am content.

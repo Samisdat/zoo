@@ -22,6 +22,7 @@ i18nNames:
 iucnID: '15188'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/15188'
 iucnStatus: Q11394
+facility: okapis
 ---
 
 I am content.

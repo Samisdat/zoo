@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import {getSlug} from "helper/getSlug";
 import fs from "fs";
 import path from "path";
+import {getAnimals} from "../../animals";
 const frontmatter = require('@github-docs/frontmatter')
 
 export interface TeaserInterface {
@@ -24,42 +25,32 @@ export default async (req: NextApiRequest, res: NextApiResponse<TeaserInterface>
     type = type as string;
     slug = slug as string;
 
-    const schema = {
-        properties: {
-            title: {
-                type: 'string',
-                required: true
-            },
-            latin: {
-                type: 'string',
-                required: true
-            },
-            image: {
-                type: 'string',
-                required: true
-            },
-            wikipedia: {
-                type: 'string',
-                format: 'url',
-                required: true
-            }
+    const animals = await getAnimals();
+
+    const animal = animals.find((animal)=>{
+        if(slug === animal.facility){
+            return true;
         }
-    }
 
-    const filePath = path.resolve(dataDir, type, slug + '.md')
-
-    const fileContent = fs.readFileSync(filePath, {encoding:'utf8'});
-
-    const { data, content, errors } = frontmatter(fileContent,{
-        schema
+        return false;
     });
 
-    const href = `/${type}/${slug}`;
+    console.log(animal);
+
+    const href = `/${type}/${animal.slug}`;
+
+    let image = undefined;
+
+    if(undefined !== animal.images && animal.images.length > 0){
+        image = animal.images[0];
+    }
+
+    let scientificName = animal.scientificName;
 
     const teaser:TeaserInterface = {
-        image: data.image,
-        title: data.title,
-        subLine: data.latin,
+        image: image,
+        title: animal.title,
+        subLine: scientificName,
         href: href,
     };
 

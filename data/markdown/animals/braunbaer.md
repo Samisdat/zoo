@@ -18,6 +18,7 @@ i18nNames:
 iucnID: '41688'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/41688'
 iucnStatus: Q211005
+facility: baeren
 ---
 
 I am content.

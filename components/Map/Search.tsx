@@ -2,7 +2,7 @@ import React from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import {Feature} from "geojson";
+import {Feature, Polygon} from "geojson";
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import ChipsArray from "./Chips";
 const useStyles = makeStyles((theme: Theme) =>
@@ -23,6 +23,8 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const MapSearch = (props) => {
 
+    console.log(props.focus);
+
     const classes = useStyles();
 
     const {toggleSearch, setFocus} = props;
@@ -37,6 +39,22 @@ export const MapSearch = (props) => {
 
     });
 
+    let value = null;
+
+    if(undefined !== props.focus && 'none' !== props.focus){
+
+        value = options.find((option)=>{
+
+            if(undefined !== option.properties.slug && props.focus.properties.slug === option.properties.slug){
+                return true;
+            }
+
+            return false;
+
+        });
+
+    }
+    
     const onChange = (event) => {
 
         if(! event.target){
@@ -91,6 +109,7 @@ export const MapSearch = (props) => {
         >
 
             <Autocomplete
+                value={value}
                 style={{ margin: 10   }}
                 options={options}
                 groupBy={groupBy}

@@ -167,6 +167,7 @@ export default function Index(props:IndexProps) {
                 {...props}
             />
             <MapSearch
+                focus={mapState.focus}
                 toggleSearch={toggleSearch}
                 geoJson={props.geoJson}
                 setFocus={setFocus}

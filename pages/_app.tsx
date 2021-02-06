@@ -4,7 +4,6 @@ import Head from 'next/head';
 import {ThemeProvider} from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import CssBaseline from '@material-ui/core/CssBaseline';
-import theme from '../src/theme';
 
 import NavigationMain from '../components/Navigation/Main';
 import NavigationSidebar from '../components/Navigation/Sidebar';
@@ -18,6 +17,23 @@ import {Feature, Polygon} from "geojson";
 import ButtonAppBar from "../components/Menu/Menu";
 import {Fab} from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
+
+import { createMuiTheme } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            // Purple and green play nicely together.
+            main: '#00a800',
+            light: '#f00'
+        },
+        secondary: {
+            // This is green.A700 as hex.
+            main: '#11cb5f',
+        },
+    },
+});
+
 
 const useNavigationState = createPersistedState('navigation');
 const useStyles = makeStyles(theme => ({
@@ -90,13 +106,12 @@ export default function ZooWuppertal(props) {
 
     const classes = useStyles();
     return (
-        <React.Fragment>
+        <ThemeProvider theme={theme}>
             <Head>
                 <title>Der grüne Zoo Wuppertal</title>
                 <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width"/>
                 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" crossOrigin=""/>
             </Head>
-            <ThemeProvider theme={theme}>
                 {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                 <CssBaseline/>
                 <Grid container>
@@ -127,8 +142,7 @@ export default function ZooWuppertal(props) {
                     {...props}
                 />
                 */}
-            </ThemeProvider>
-        </React.Fragment>
+        </ThemeProvider>
     );
 }
 

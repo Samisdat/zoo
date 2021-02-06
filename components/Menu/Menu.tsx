@@ -32,6 +32,7 @@ import MenuBookIcon from "@material-ui/icons/MenuBook";
 import BookIcon from '@material-ui/icons/Book';
 import StoreIcon from '@material-ui/icons/Store';
 import Settings from "../Navigation/Settings";
+import {animalUrlPart, blogUrlPart, facilityUrlPart} from "../../constants";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -45,7 +46,7 @@ const useStyles = makeStyles((theme: Theme) =>
             position: 'fixed',
             bottom: theme.spacing(2),
             left: theme.spacing(2),
-            backgroundColor: '#00a800',
+            /*backgroundColor: '#00a800',*/
             color: '#fff'
         },
         appBar: {
@@ -97,24 +98,25 @@ export default function ButtonAppBar() {
 
     return (
         <React.Fragment>
-        <Fab
-            className={classes.fab}
-            onClick={handleClickOpen}
-        >
-            <MenuIcon/>
-        </Fab>
+
+                <Fab
+                    color="primary"
+                    className={classes.fab}
+                    onClick={handleClickOpen}
+                >
+                    <MenuIcon/>
+                </Fab>
         <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
                 <AppBar className={classes.appBar}>
-                    <Toolbar>
+                    <Toolbar
+                        color="primary"
+                    >
                         <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
                             <CloseIcon />
                         </IconButton>
                         <Typography variant="h6" className={classes.title}>
                             Der grüne Zoo
                         </Typography>
-                        <Button autoFocus color="inherit" onClick={handleClose}>
-                            save
-                        </Button>
                     </Toolbar>
                 </AppBar>
                 <List>
@@ -206,6 +208,7 @@ export default function ButtonAppBar() {
             </List>
             <Settings></Settings>
             <Fab
+                color="primary"
                 className={classes.fab}
                 onClick={handleClose}
                 style={{

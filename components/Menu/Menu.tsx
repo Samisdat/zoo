@@ -131,26 +131,28 @@ export default function ButtonAppBar() {
                     <ListItemIcon><MapIcon /></ListItemIcon>
                     <ListItemText primary='Karte' />
                 </ListItemLink>
-                <ListItemLink button key='animal' href="animal" onClick={onClick}>
+                <ListItemLink button key='tiere' href={animalUrlPart} onClick={onClick}>
                     <ListItemIcon><PetsIcon /></ListItemIcon>
                     <ListItemText primary='Tiere' />
                 </ListItemLink>
-                <ListItemLink key='map' href="/facilities" onClick={onClick}>
+                <ListItemLink key='anlagen' href={facilityUrlPart} onClick={onClick}>
                     <ListItemIcon><StoreIcon /></ListItemIcon>
                     <ListItemText primary='Anlagen' />
                 </ListItemLink>
-                <ListItemLink key='nes' href="/news" onClick={onClick}>
+                <ListItemLink key='nes' href={blogUrlPart} onClick={onClick}>
                     <ListItemIcon><BookIcon /></ListItemIcon>
                     <ListItemText primary='Neuigkeiten' />
                 </ListItemLink>
-                <ListItemLink key='leaflet' href="/leaflet" onClick={onClick}>
+            </List>
+            <List subheader={<ListSubheader  className={classes.subheader}>Dev</ListSubheader>} style={{ width:'300px'}}>
+                <ListItemLink key='leaflet' href="/dev/leaflet" onClick={onClick}>
                     <ListItemIcon><MapIcon /></ListItemIcon>
                     <ListItemText primary='Leaflet' />
                 </ListItemLink>
-                <ListItem button key='search'onClick={onClick}>
-                    <ListItemIcon><SearchIcon /></ListItemIcon>
-                    <ListItemText primary='Suche' />
-                </ListItem>
+                <ListItemLink key='leaflet' href="/dev/teaser" onClick={onClick}>
+                    <ListItemIcon><MapIcon /></ListItemIcon>
+                    <ListItemText primary='Teaser' />
+                </ListItemLink>
             </List>
             <List subheader={<ListSubheader className={classes.subheader}>Wichtige Orte</ListSubheader>}>
                 <ListItem button key='food'>

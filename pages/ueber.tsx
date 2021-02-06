@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box';
 import ProTip from '../src/ProTip';
 import Copyright from '../src/Copyright';
 
-export default function About() {
+export default function Ueber() {
   return (
     <Container maxWidth="sm">
       <Box my={4}>

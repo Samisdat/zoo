@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Teaser, TeaserPropsInterface} from "../components/Map/Teaser";
+import {Teaser, TeaserPropsInterface} from "components/Map/Teaser";
 import Button from "@material-ui/core/Button";
 
 export default function Index(props) {
@@ -12,7 +12,7 @@ export default function Index(props) {
 
     const clickButton = () => {
         setTeaser({
-            apiUrl: '/api/teaser/animals/afrikanischer-elefant',
+            apiUrl: '/api/teaser/animal/elefanten',
             close: closeTeaser
         });
 

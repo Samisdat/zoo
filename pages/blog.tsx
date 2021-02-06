@@ -7,7 +7,8 @@ import Moment from 'react-moment';
 
 import path from "path";
 import fs from "fs";
-import {ListItemLink} from "./facilities";
+import {ListItemLink} from "./anlagen";
+import {blogUrlPart} from "../constants";
 
 const frontmatter = require('@github-docs/frontmatter')
 const ReactMarkdown = require('react-markdown')
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export default function News(props) {
+export default function Blog(props) {
 
   const classes = useStyles();
 
@@ -31,7 +32,7 @@ export default function News(props) {
         <List className={classes.root}>
             {
                 props.newsPosts.map( (newsPost) => {
-                    const href =  `/news/${newsPost.slug}`
+                    const href =  `/${blogUrlPart}/${newsPost.slug}`
                     return (
                         <ListItem key={newsPost.slug}>
                             <ListItemLink href={href}>

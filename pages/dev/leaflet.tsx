@@ -4,7 +4,7 @@ import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 
 import dynamic from 'next/dynamic';
 
-const LeafletMap = dynamic(() => import('../components/LeafletMap'), {
+const LeafletMap = dynamic(() => import('components/LeafletMap'), {
   ssr: false
 });
 

@@ -9,6 +9,7 @@ import {Feature, FeatureCollection, Polygon} from "geojson";
 import {getFullGeoJson} from "./api/geojson/list";
 import path from "path";
 import fs from "fs";
+import {facilityUrlPart} from "../constants";
 const frontmatter = require('@github-docs/frontmatter')
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -85,7 +86,7 @@ export default function Index(props) {
               return <React.Fragment>
                   <ListSubheader className={classes.subheader}>{key.toUpperCase()}</ListSubheader>
                   {group[key].map(( facility: any ) => {
-                      const href =  `/facility/${facility.slug}`
+                      const href =  `/${facilityUrlPart}/${facility.slug}`
                       return (
                           <ListItem button>
                               <ListItemLink href={href}>{facility.name}</ListItemLink>

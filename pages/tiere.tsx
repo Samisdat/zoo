@@ -5,6 +5,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import {Animal, getAnimals} from "./api/animals";
+import {animalUrlPart} from "../constants";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -81,7 +82,7 @@ export default function Index(props) {
               return <React.Fragment>
                   <ListSubheader className={classes.subheader}>{key.toUpperCase()}</ListSubheader>
                   {group[key].map(( animal: Animal ) => {
-                      const href = `/animal/${animal.slug}`
+                      const href = `/${animalUrlPart}/${animal.slug}`
 
                       return(
                           <ListItemLink href={href}>{animal.title}</ListItemLink>

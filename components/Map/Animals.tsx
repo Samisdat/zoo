@@ -1,25 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
-import {CircularProgress, Drawer} from "@material-ui/core";
-import {TeaserInterface} from "../../pages/api/teaser/[type]/[slug]";
-
-import Link from 'next/link'
+import {CardHeader, CircularProgress} from "@material-ui/core";
 
 import {useTheme } from '@material-ui/core/styles';
 import MobileStepper from '@material-ui/core/MobileStepper';
-import Paper from '@material-ui/core/Paper';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
-
-
+import CloseIcon from '@material-ui/icons/Close';
+import DirectionsIcon from '@material-ui/icons/Directions';
+import {relative} from "jest-haste-map/build/lib/fast_path";
+import {TeaserStateInterface} from "./Teaser";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -27,10 +21,9 @@ const useStyles = makeStyles((theme: Theme) =>
             display: 'flex',
             position: 'absolute'    ,
             bottom:90,
-            left: theme.spacing(1),
-            right: theme.spacing(1),
+            left: theme.spacing(2),
+            right: theme.spacing(2  ),
             flexDirection: 'row',
-            height: 150
         },
         progress:{
 
@@ -46,14 +39,13 @@ const useStyles = makeStyles((theme: Theme) =>
             paddingLeft: 50,
         },
         stepperRoot: {
-            maxWidth: 400,
-            flexGrow: 1,
+            width: '100%',
         },
         header: {
             display: 'flex',
             alignItems: 'center',
             height: 50,
-            paddingLeft: theme.spacing(4),
+            paddingLeft: theme.spacing(2),
             backgroundColor: theme.palette.background.default,
         },
         img: {
@@ -62,16 +54,38 @@ const useStyles = makeStyles((theme: Theme) =>
             maxWidth: 400,
             overflow: 'hidden',
             width: '100%',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center center',
         },
+        step:{
+            position: 'relative',
+            height: 150,
+            display: 'block',
+            maxWidth: 400,
+            overflow: 'hidden',
+            width: '100%',
+        },
+        title:{
+            position:'absolute',
+            bottom: theme.spacing(1),
+            left: theme.spacing(1),
+            color: 'rgba(0, 0, 0, 0.7)',
+            background: 'rgba(255, 255, 255, 0.5)',
+            margin: 0,
+            paddingLeft: theme.spacing(1),
+            paddingRight: theme.spacing(1),
+            paddingTop: theme.spacing(0.5),
+            paddingBottom: theme.spacing(0.5),
+            fontSize:'16px',
 
+        }
     }),
 );
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
 const tutorialSteps = [
     {
-        label: 'San Francisco',
+        label: 'Schwarze Klammeraffen',
         imgPath:
             'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
     },
@@ -104,30 +118,105 @@ export interface AnimalsPropsInterface {
     open:boolean;
 }
 
-export interface AnimalsStateInterface extends AnimalsPropsInterface{
-    apiUrl:string;
+export interface AnimalDetail{
     image: string;
     title: string;
-    subLine: string;
     href: string;
 }
+
+export interface AnimalsStateInterface{
+    apiUrl:string;
+    animals:AnimalDetail[]
+}
+
+const animalsService = async (apiUrl, close):Promise<AnimalsStateInterface> => {
+
+    const promise = new Promise<AnimalsStateInterface>((resolve, reject) => {
+
+        fetch(apiUrl)
+            .then(res => res.json())
+            .then(
+                (result:AnimalDetail[]) => {
+
+                    const state:AnimalsStateInterface = {
+                        apiUrl: apiUrl,
+                        animals: result
+                    };
+
+                    resolve(state)
+
+                },
+                (error) => {
+                    console.log(error);
+                }
+            );
+
+    });
+
+    return promise
+
+}
+
 
 export const Animals = (props: AnimalsPropsInterface) => {
 
     const classes = useStyles();
 
+    const visible = (undefined === props.apiUrl) ? false: true;
+
     const [loading, setLoading] = useState<boolean>(true);
+
+    const [data, setData] = useState<AnimalsStateInterface>(undefined);
+
+    const [activeStep, setActiveStep] = React.useState(0);
 
     useEffect(() => {
 
+        if(undefined === props.apiUrl){
+            return;
+        }
+
+        animalsService(props.apiUrl, props.close)
+            .then((data) =>{
+                console.log(data);
+                setData(data);
+                setLoading(false);
+            });
 
     }, [props.apiUrl])
 
     const onClose = () => {}
 
     const theme = useTheme();
-    const [activeStep, setActiveStep] = React.useState(0);
-    const maxSteps = tutorialSteps.length;
+
+    if (false === visible) {
+        return (
+            <React.Fragment></React.Fragment>
+        );
+    }
+
+    if (true === loading) {
+
+        return (
+            <Card
+                className={classes.root}
+                elevation={2}
+            >
+                <CircularProgress
+                    size={40}
+                    style={{
+                        position: 'absolute',
+                        left:-20,
+                        top:50,
+                        marginLeft: '50%',
+                    }}
+                />
+            </Card>
+        );
+
+    }
+
+    const maxSteps = data.animals.length;
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -141,35 +230,30 @@ export const Animals = (props: AnimalsPropsInterface) => {
         setActiveStep(step);
     };
 
-
     return (
-        <React.Fragment>
-        <Drawer
-            anchor='top'
-            open={props.open}
-            onClose={onClose}
-            ModalProps={{
-                hideBackdrop:true
-            }}
-            classes={{
-                modal: classes.modal
-            }}
-            variant='persistent'
+        <Card
+            className={classes.root}
+            elevation={2}
         >
             <div className={classes.stepperRoot}>
-                <Paper square elevation={0} className={classes.header}>
-                    <Typography>{tutorialSteps[activeStep].label}</Typography>
-                </Paper>
                 <SwipeableViews
-                    axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                     index={activeStep}
                     onChangeIndex={handleStepChange}
                     enableMouseEvents
                 >
-                    {tutorialSteps.map((step, index) => (
-                        <div key={step.label}>
-                            {Math.abs(activeStep - index) <= 2 ? (
-                                <img className={classes.img} src={step.imgPath} alt={step.label} />
+                    {data.animals.map((step, index) => (
+                        <div className={classes.step} key={step.href}>
+                            {
+                                Math.abs(activeStep - index) <= 2 ? (
+                                    <React.Fragment>
+                                        <h1 className={classes.title}>{step.title}</h1>
+                                        <div
+                                            className={classes.img}
+                                            style={{
+                                                backgroundImage: 'url(' + step.image + ')'
+                                            }}
+                                        />
+                                    </React.Fragment>
                             ) : null}
                         </div>
                     ))}
@@ -182,19 +266,36 @@ export const Animals = (props: AnimalsPropsInterface) => {
                     nextButton={
                         <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
                             Next
-                            {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
+                            <KeyboardArrowRight />
                         </Button>
                     }
                     backButton={
                         <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-                            {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
+                            <KeyboardArrowLeft />
                             Back
                         </Button>
                     }
                 />
+
+            <CardActions disableSpacing>
+                <Button
+                    startIcon={<KeyboardArrowRight />}
+                >
+                    Details
+                </Button>
+                <Button
+                    startIcon={<DirectionsIcon />}
+                >
+                    Hierhin
+                </Button>
+                <Button
+                    startIcon={<CloseIcon />}
+                >
+                    Schließen
+                </Button>
+            </CardActions>
             </div>
-        </Drawer>
-        </React.Fragment>
+        </Card>
 
         );
 }

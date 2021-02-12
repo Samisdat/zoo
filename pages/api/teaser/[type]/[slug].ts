@@ -2,19 +2,19 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import {getSlug} from "helper/getSlug";
 import fs from "fs";
 import path from "path";
-import {getAnimals} from "../../animals";
+import {getAnimals, getAnimal} from "../../animals";
+import {getFacilities} from "../../facilities";
 const frontmatter = require('@github-docs/frontmatter')
 
 export interface TeaserInterface {
     href: string;
     title: string;
-    subLine: string;
     image: string;
 }
 
 const dataDir = path.resolve(process.env.PWD + '/data/markdown');
 
-export default async (req: NextApiRequest, res: NextApiResponse<TeaserInterface>) => {
+export default async (req: NextApiRequest, res: NextApiResponse<TeaserInterface[]>) => {
 
     let {
         query: {type,slug},
@@ -25,35 +25,80 @@ export default async (req: NextApiRequest, res: NextApiResponse<TeaserInterface>
     type = type as string;
     slug = slug as string;
 
-    const animals = await getAnimals();
+    const teasers :TeaserInterface[] = [];
 
-    const animal = animals.find((animal)=>{
-        if(slug === animal.facility){
-            return true;
+    console.log(type)
+
+    if('animal' === type){
+
+        const animals = await getAnimals();
+
+        const animal = animals.find((animal)=>{
+            if(slug === animal.facility){
+                return true;
+            }
+
+            return false;
+        });
+
+        const href = `/${type}/${animal.slug}`;
+
+        let image = undefined;
+
+        if(undefined !== animal.images && animal.images.length > 0){
+            image = animal.images[0];
         }
 
-        return false;
-    });
+        const teaser:TeaserInterface = {
+            image: image,
+            title: animal.title,
+            href: href,
+        };
 
-    console.log(animal);
+        teasers.push(teaser);
 
-    const href = `/${type}/${animal.slug}`;
+    }
+    else if('facility' === type){
 
-    let image = undefined;
+        const facilities = await getFacilities();
 
-    if(undefined !== animal.images && animal.images.length > 0){
-        image = animal.images[0];
+        const facility = facilities.find((facility)=>{
+            if(slug === facility.slug){
+                return true;
+            }
+
+            return false;
+        });
+
+        for(let i = 0, x = facility.animals.length; i < x; i += 1){
+
+            const animalSlug = facility.animals[i];
+
+            const animal = await getAnimal(animalSlug);
+
+            const href = `/${type}/${animal.slug}`;
+
+            let image = undefined;
+
+            if(undefined !== animal.images && animal.images.length > 0){
+                image = animal.images[0];
+            }
+
+            const teaser:TeaserInterface = {
+                image: image,
+                title: animal.title,
+                href: href,
+            };
+
+            teasers.push(teaser);
+
+        }
+
+
+
     }
 
-    let scientificName = animal.scientificName;
 
-    const teaser:TeaserInterface = {
-        image: image,
-        title: animal.title,
-        subLine: scientificName,
-        href: href,
-    };
-
-    res.status(200).json(teaser);
+    res.status(200).json(teasers);
 
 }

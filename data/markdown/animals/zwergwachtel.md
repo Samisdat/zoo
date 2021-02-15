@@ -2,7 +2,6 @@
 slug: zwergwachtel
 title: Zwergwachtel
 wikidata: Q244429
-image: Zwergwachtel
 class: Vögel
 order: Hühnervögel
 family: Fasanenartige

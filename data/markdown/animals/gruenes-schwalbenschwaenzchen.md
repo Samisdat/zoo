@@ -2,7 +2,6 @@
 slug: gruenes-schwalbenschwaenzchen
 title: Grünes Schwalbenschwänzchen
 wikidata: Q1552198
-image: Grünes Schwalbenschwänzchen
 class: Strahlenflosser
 order: Barschartige
 family: Riffbarsche

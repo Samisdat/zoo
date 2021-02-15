@@ -2,7 +2,6 @@
 slug: krokodilhoeckerechse
 title: Krokodilhöckerechse
 wikidata: Q302215
-image: Krokodilhöckerechse
 class: Reptilien
 order: Schuppenkriechtiere
 family: Höckerechsen

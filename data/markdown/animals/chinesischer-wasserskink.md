@@ -2,7 +2,6 @@
 slug: chinesischer-wasserskink
 title: Chinesischer Wasserskink
 wikidata: Q3540720
-image: Chinesischer Wasserskink
 class: Reptilien
 order: Schuppenkriechtiere
 family: Skinke

@@ -2,7 +2,6 @@
 slug: gepard
 title: Gepard
 wikidata: Q23907
-image: Gepard
 class: Säugetiere
 order: Raubtiere
 family: Katzen

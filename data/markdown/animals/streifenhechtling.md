@@ -2,7 +2,6 @@
 slug: streifenhechtling
 title: Streifenhechtling
 wikidata: Q1574876
-image: Streifenhechtling
 class: Strahlenflosser
 order: Zahnkärpflinge
 family: Aplocheilidae

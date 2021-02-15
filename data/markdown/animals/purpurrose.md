@@ -2,7 +2,6 @@
 slug: purpurrose
 title: Purpurrose
 wikidata: Q27075782
-image: Purpurrose
 class: Blumentiere
 order: Seeanemonen
 family: Actiniidae

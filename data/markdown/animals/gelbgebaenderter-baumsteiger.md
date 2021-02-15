@@ -2,7 +2,6 @@
 slug: gelbgebaenderter-baumsteiger
 title: Gelbgebänderter Baumsteiger
 wikidata: Q615690
-image: Gelbgebänderter Baumsteiger
 class: Lurche
 order: Froschlurche
 family: Baumsteigerfrösche

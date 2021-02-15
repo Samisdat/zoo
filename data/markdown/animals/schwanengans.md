@@ -2,7 +2,6 @@
 slug: schwanengans
 title: Schwanengans
 wikidata: Q31354
-image: Schwanengans
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

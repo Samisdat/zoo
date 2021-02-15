@@ -2,7 +2,6 @@
 slug: arabischer-doktorfisch
 title: Arabischer Doktorfisch
 wikidata: Q377713
-image: Arabischer Doktorfisch
 class: Strahlenflosser
 order: Barschartige
 family: Doktorfische

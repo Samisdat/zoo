@@ -2,7 +2,6 @@
 slug: kornnatter
 title: Kornnatter
 wikidata: Q754747
-image: Kornnatter
 class: Reptilien
 order: Schuppenkriechtiere
 family: Nattern

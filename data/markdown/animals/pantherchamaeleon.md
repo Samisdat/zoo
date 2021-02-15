@@ -2,7 +2,6 @@
 slug: pantherchamaeleon
 title: Pantherchamäleon
 wikidata: Q838578
-image: Pantherchamäleon
 class: Reptilien
 order: Schuppenkriechtiere
 family: Chamäleons

@@ -2,7 +2,6 @@
 slug: ornamentvogelspinne
 title: Ornamentvogelspinne
 wikidata: Q135749
-image: null
 class: Spinnentiere
 order: Webspinnen
 family: Vogelspinnen

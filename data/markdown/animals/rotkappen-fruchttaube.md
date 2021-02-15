@@ -2,7 +2,6 @@
 slug: rotkappen-fruchttaube
 title: Rotkappen-Fruchttaube
 wikidata: Q1084845
-image: Rotkappen-Fruchttaube
 class: Vögel
 order: Taubenvögel
 family: Tauben

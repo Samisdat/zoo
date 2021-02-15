@@ -2,7 +2,6 @@
 slug: gruenschwanz-glanzstar
 title: Grünschwanz-Glanzstar
 wikidata: Q240445
-image: Grünschwanz-Glanzstar
 class: Vögel
 order: Sperlingsvögel
 family: Stare

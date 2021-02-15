@@ -2,7 +2,6 @@
 slug: zweifingerfaultier
 title: Zweifingerfaultier
 wikidata: Q752691
-image: Zweifingerfaultier
 class: Säugetiere
 order: Nebengelenktiere
 family: Zweifingerfaultiere

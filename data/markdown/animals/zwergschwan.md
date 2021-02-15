@@ -2,7 +2,6 @@
 slug: zwergschwan
 title: Zwergschwan
 wikidata: Q244325
-image: Zwergschwan
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

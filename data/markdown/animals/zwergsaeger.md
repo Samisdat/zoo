@@ -2,7 +2,6 @@
 slug: zwergsaeger
 title: Zwergsäger
 wikidata: Q200646
-image: Zwergsäger
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

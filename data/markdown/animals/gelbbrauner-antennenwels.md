@@ -2,7 +2,6 @@
 slug: gelbbrauner-antennenwels
 title: Gelbbrauner Antennenwels
 wikidata: Q571923
-image: Gelbbrauner Antennenwels
 class: Strahlenflosser
 order: Welsartige
 family: Harnischwelse

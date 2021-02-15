@@ -2,7 +2,6 @@
 slug: westlicher-gorilla
 title: Westlicher Gorilla
 wikidata: Q737838
-image: Westlicher Gorilla
 class: Säugetiere
 order: Primaten
 family: Menschenaffen

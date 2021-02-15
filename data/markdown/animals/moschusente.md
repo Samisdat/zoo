@@ -2,7 +2,6 @@
 slug: moschusente
 title: Moschusente
 wikidata: Q242851
-image: Moschusente
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

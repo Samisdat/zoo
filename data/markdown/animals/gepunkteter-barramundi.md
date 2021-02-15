@@ -2,7 +2,6 @@
 slug: gepunkteter-barramundi
 title: Gepunkteter Barramundi
 wikidata: Q135567
-image: Gepunkteter Barramundi
 class: Strahlenflosser
 order: Knochenzünglerartige
 family: Knochenzüngler

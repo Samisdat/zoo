@@ -2,7 +2,6 @@
 slug: mosambique-guertelschweif
 title: Mosambique Gürtelschweif
 wikidata: Q3486907
-image: Mosambique Gürtelschweif
 class: Reptilien
 order: Schuppenkriechtiere
 family: Gürtelechsen

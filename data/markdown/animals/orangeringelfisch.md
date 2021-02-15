@@ -2,7 +2,6 @@
 slug: orangeringelfisch
 title: Orangeringelfisch
 wikidata: Q1126155
-image: Orangeringelfisch
 class: Strahlenflosser
 order: Barschartige
 family: Riffbarsche

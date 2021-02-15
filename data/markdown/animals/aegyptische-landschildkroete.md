@@ -2,7 +2,6 @@
 slug: aegyptische-landschildkroete
 title: Ägyptische Landschildkröte
 wikidata: Q253781
-image: null
 class: Reptilien
 order: Schildkröten
 family: Landschildkröten

@@ -2,7 +2,6 @@
 slug: weissstorch
 title: Weißstorch
 wikidata: Q25352
-image: Weißstorch
 class: Vögel
 order: Schreitvögel
 family: Störche

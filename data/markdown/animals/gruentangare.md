@@ -2,7 +2,6 @@
 slug: gruentangare
 title: Grüntangare
 wikidata: Q2669329
-image: Grüntangare
 class: Vögel
 order: Sperlingsvögel
 family: Tangaren

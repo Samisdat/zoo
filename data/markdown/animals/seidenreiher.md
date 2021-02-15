@@ -2,7 +2,6 @@
 slug: seidenreiher
 title: Seidenreiher
 wikidata: Q131709
-image: Seidenreiher
 class: Vögel
 order: Schreitvögel
 family: Reiher

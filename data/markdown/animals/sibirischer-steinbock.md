@@ -2,7 +2,6 @@
 slug: sibirischer-steinbock
 title: Sibirischer Steinbock
 wikidata: Q754947
-image: Sibirischer Steinbock
 class: Säugetiere
 order: Paarhufer
 family: Hornträger

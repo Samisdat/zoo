@@ -2,7 +2,6 @@
 slug: spatelschnabelente
 title: Spatelschnabelente
 wikidata: Q917578
-image: Spatelschnabelente
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

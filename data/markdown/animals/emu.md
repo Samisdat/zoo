@@ -8,8 +8,7 @@ family: Casuariidae
 species: Großer Emu
 wikipediaLink: 'https://de.wikipedia.org/wiki/Emu'
 images:
-  - >-
-    https://upload.wikimedia.org/wikipedia/commons/9/9d/Emu_1_-_Tidbinbilla.jpg
+  - 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Emu_1_-_Tidbinbilla.jpg'
   - >-
     https://upload.wikimedia.org/wikipedia/commons/7/71/Dromaius_novaehollandiae%2C_Port_Campbell_National_Park_1.jpg
 scientificName: Dromaius novaehollandiae

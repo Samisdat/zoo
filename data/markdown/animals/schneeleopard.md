@@ -2,7 +2,6 @@
 slug: schneeleopard
 title: Schneeleopard
 wikidata: Q30197
-image: Schneeleopard
 class: Säugetiere
 order: Raubtiere
 family: Katzen

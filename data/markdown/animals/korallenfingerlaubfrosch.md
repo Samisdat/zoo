@@ -2,7 +2,6 @@
 slug: korallenfingerlaubfrosch
 title: Korallenfingerlaubfrosch
 wikidata: Q654682
-image: Korallenfingerlaubfrosch
 class: Lurche
 order: Froschlurche
 family: Laubfrösche im weiteren Sinne

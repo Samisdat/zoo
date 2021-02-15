@@ -2,7 +2,6 @@
 slug: prachtschmerle
 title: Prachtschmerle
 wikidata: Q841395
-image: Prachtschmerle
 class: Strahlenflosser
 order: Karpfenartige
 family: Schmerlen

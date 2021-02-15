@@ -2,7 +2,6 @@
 slug: diadem-seeigel
 title: Diadem-Seeigel
 wikidata: Q901480
-image: Diadem-Seeigel
 class: Seeigel
 order: Diadematoida
 family: Diademseeigel

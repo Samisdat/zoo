@@ -2,7 +2,6 @@
 slug: rotwangen-schmuckschildkroete
 title: Rotwangen-Schmuckschildkröte
 wikidata: Q207839
-image: Rotwangen-Schmuckschildkröte
 class: Reptilien
 order: Schildkröten
 family: Neuwelt-Sumpfschildkröten

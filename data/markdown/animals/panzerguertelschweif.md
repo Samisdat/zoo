@@ -2,7 +2,6 @@
 slug: panzerguertelschweif
 title: Panzergürtelschweif
 wikidata: Q777490
-image: Panzergürtelschweif
 class: Reptilien
 order: Schuppenkriechtiere
 family: Gürtelechsen

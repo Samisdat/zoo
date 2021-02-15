@@ -2,7 +2,6 @@
 slug: eselspinguin
 title: Eselspinguin
 wikidata: Q213021
-image: Eselspinguin
 class: Vögel
 order: Pinguine
 family: Pinguine

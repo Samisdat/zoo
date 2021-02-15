@@ -2,7 +2,6 @@
 slug: jamaika-erdtaube
 title: Jamaika Erdtaube
 wikidata: Q676938
-image: Jamaika Erdtaube
 class: Vögel
 order: Taubenvögel
 family: Tauben

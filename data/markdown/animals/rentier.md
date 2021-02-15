@@ -2,17 +2,14 @@
 slug: rentier
 title: Rentier
 wikidata: Q39624
-image: Rentier
 class: Säugetiere
 order: Paarhufer
 family: Hirsche
 species: Rentier
 wikipediaLink: 'https://de.wikipedia.org/wiki/Ren'
-images: 
-  - >-
-    https://upload.wikimedia.org/wikipedia/commons/f/fd/Caribou.jpg
-  - >-
-    https://upload.wikimedia.org/wikipedia/commons/e/e0/Rentier_fws_1.jpg
+images:
+  - 'https://upload.wikimedia.org/wikipedia/commons/f/fd/Caribou.jpg'
+  - 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Rentier_fws_1.jpg'
 scientificName: Rangifer tarandus
 i18nNames:
   en: Reindeer

@@ -2,7 +2,6 @@
 slug: waldrapp
 title: Waldrapp
 wikidata: Q245414
-image: Waldrapp
 class: Vögel
 order: Schreitvögel
 family: Ibisse und Löffler
@@ -20,8 +19,8 @@ i18nNames:
 iucnID: '22697488'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/22697488'
 iucnStatus: Q11394
-animals: [waldrapp]
-published: false
+facility: waldrapp
+published: true
 ---
 
 I am content.

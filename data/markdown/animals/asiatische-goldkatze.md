@@ -2,7 +2,6 @@
 slug: asiatische-goldkatze
 title: Asiatische Goldkatze
 wikidata: Q192233
-image: Asiatische Goldkatze
 class: Säugetiere
 order: Raubtiere
 family: Katzen

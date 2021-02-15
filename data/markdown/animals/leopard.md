@@ -2,7 +2,6 @@
 slug: leopard
 title: Leopard
 wikidata: Q34706
-image: Leopard
 class: Säugetiere
 order: Raubtiere
 family: Katzen

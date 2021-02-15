@@ -2,7 +2,6 @@
 slug: maehnenibis
 title: Mähnenibis
 wikidata: Q477691
-image: Mähnenibis
 class: Vögel
 order: Schreitvögel
 family: Ibisse und Löffler

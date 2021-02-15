@@ -2,7 +2,6 @@
 slug: andenkarakara
 title: Andenkarakara
 wikidata: Q265681
-image: null
 class: Vögel
 order: Greifvögel
 family: Falkenartige

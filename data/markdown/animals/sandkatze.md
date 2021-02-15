@@ -2,7 +2,6 @@
 slug: sandkatze
 title: Sandkatze
 wikidata: Q175329
-image: Sandkatze
 class: Säugetiere
 order: Raubtiere
 family: Katzen

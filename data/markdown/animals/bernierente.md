@@ -2,7 +2,6 @@
 slug: bernierente
 title: Bernierente
 wikidata: Q290199
-image: Bernierente
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

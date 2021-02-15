@@ -2,7 +2,6 @@
 slug: blauer-diskusfisch
 title: Blauer Diskusfisch
 wikidata: Q15813151
-image: Blauer Diskusfisch
 class: Strahlenflosser
 order: Barschartige
 family: Buntbarsche

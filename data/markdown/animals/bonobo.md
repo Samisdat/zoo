@@ -2,7 +2,6 @@
 slug: bonobo
 title: Bonobo
 wikidata: Q19537
-image: Bonobo
 class: Säugetiere
 order: Primaten
 family: Menschenaffen

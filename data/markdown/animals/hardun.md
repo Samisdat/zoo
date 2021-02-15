@@ -2,7 +2,6 @@
 slug: hardun
 title: Hardun
 wikidata: Q510067
-image: Hardun
 class: Reptilien
 order: Schuppenkriechtiere
 family: Agamen

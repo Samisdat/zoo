@@ -2,7 +2,6 @@
 slug: brandgans
 title: Brandgans
 wikidata: Q25761
-image: Brandgans
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

@@ -2,7 +2,6 @@
 slug: goldring-borstenzahn-doktorfisch
 title: Goldring-Borstenzahn-Doktorfisch
 wikidata: Q1235578
-image: Goldring-Borstenzahn-Doktorfisch
 class: Strahlenflosser
 order: Barschartige
 family: Doktorfische

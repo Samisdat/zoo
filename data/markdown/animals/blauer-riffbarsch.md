@@ -2,7 +2,6 @@
 slug: blauer-riffbarsch
 title: Blauer Riffbarsch
 wikidata: Q1123833
-image: Blauer Riffbarsch
 class: Strahlenflosser
 order: Barschartige
 family: Riffbarsche

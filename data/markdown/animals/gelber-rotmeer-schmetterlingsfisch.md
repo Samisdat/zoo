@@ -2,7 +2,6 @@
 slug: gelber-rotmeer-schmetterlingsfisch
 title: Gelber Rotmeer-Schmetterlingsfisch
 wikidata: Q1281124
-image: Gelber Rotmeer-Schmetterlingsfisch
 class: Strahlenflosser
 order: Barschartige
 family: Falterfische

@@ -2,7 +2,6 @@
 slug: perlhuhnwels
 title: Perlhuhnwels
 wikidata: Q1571152
-image: Perlhuhnwels
 class: Strahlenflosser
 order: Welsartige
 family: Fiederbartwelse

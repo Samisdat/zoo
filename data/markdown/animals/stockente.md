@@ -2,7 +2,6 @@
 slug: stockente
 title: Stockente
 wikidata: Q25348
-image: Stockente
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

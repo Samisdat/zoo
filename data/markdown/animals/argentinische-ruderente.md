@@ -2,7 +2,6 @@
 slug: argentinische-ruderente
 title: Argentinische Ruderente
 wikidata: Q646048
-image: Argentinische Ruderente
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

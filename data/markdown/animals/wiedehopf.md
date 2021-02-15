@@ -2,7 +2,6 @@
 slug: wiedehopf
 title: Wiedehopf
 wikidata: Q25247
-image: Wiedehopf
 class: Vögel
 order: Hopfartige
 family: Wiedehopfe

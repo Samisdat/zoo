@@ -2,7 +2,6 @@
 slug: rosapelikan
 title: Rosapelikan
 wikidata: Q199427
-image: Rosapelikan
 class: Vögel
 order: Ruderfüßer
 family: Pelikane
@@ -24,7 +23,7 @@ i18nNames:
 iucnID: '22697590'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/22697590'
 iucnStatus: Q211005
-facility: pelikane    
+facility: pelikane
 published: true
 ---
 

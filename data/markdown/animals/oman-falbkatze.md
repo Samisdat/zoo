@@ -2,7 +2,6 @@
 slug: oman-falbkatze
 title: Oman-Falbkatze
 wikidata: Q521594
-image: Oman-Falbkatze
 class: Säugetiere
 order: Raubtiere
 family: Katzen

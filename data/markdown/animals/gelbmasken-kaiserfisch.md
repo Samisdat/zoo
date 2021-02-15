@@ -2,7 +2,6 @@
 slug: gelbmasken-kaiserfisch
 title: Gelbmasken-Kaiserfisch
 wikidata: Q882944
-image: Gelbmasken-Kaiserfisch
 class: Strahlenflosser
 order: Barschartige
 family: Kaiserfische

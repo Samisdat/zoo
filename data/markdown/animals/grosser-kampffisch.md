@@ -2,7 +2,6 @@
 slug: grosser-kampffisch
 title: Großer Kampffisch
 wikidata: Q4898370
-image: Großer Kampffisch
 class: Strahlenflosser
 order: Barschartige
 family: Fadenfische

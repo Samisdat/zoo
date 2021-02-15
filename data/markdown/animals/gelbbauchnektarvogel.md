@@ -2,7 +2,6 @@
 slug: gelbbauchnektarvogel
 title: Gelbbauchnektarvogel
 wikidata: Q2209523
-image: Gelbbauchnektarvogel
 class: Vögel
 order: Sperlingsvögel
 family: Nektarvögel

@@ -2,7 +2,6 @@
 slug: diamanttaeubchen
 title: Diamanttäubchen
 wikidata: Q58904
-image: Diamanttäubchen
 class: Vögel
 order: Taubenvögel
 family: Tauben

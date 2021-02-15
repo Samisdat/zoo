@@ -2,7 +2,6 @@
 slug: dickschnabelorganist
 title: Dickschnabelorganist
 wikidata: Q1210137
-image: Dickschnabelorganist
 class: Vögel
 order: Sperlingsvögel
 family: Tangaren

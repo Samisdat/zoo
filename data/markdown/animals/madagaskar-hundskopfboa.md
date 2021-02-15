@@ -2,7 +2,6 @@
 slug: madagaskar-hundskopfboa
 title: Madagaskar-Hundskopfboa
 wikidata: Q1883136
-image: Madagaskar-Hundskopfboa
 class: Reptilien
 order: Schuppenkriechtiere
 family: Riesenschlangen

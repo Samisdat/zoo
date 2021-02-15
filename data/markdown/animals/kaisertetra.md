@@ -2,7 +2,6 @@
 slug: kaisertetra
 title: Kaisertetra
 wikidata: Q239480
-image: Kaisertetra
 class: Strahlenflosser
 order: Salmlerartige
 family: Echte Salmler

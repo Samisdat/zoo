@@ -2,7 +2,6 @@
 slug: eiderente
 title: Eiderente
 wikidata: Q26696
-image: Eiderente
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

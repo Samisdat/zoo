@@ -2,7 +2,6 @@
 slug: roter-vari
 title: Roter Vari
 wikidata: Q516703
-image: Roter Vari
 class: Säugetiere
 order: Primaten
 family: Lemuren

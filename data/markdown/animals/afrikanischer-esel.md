@@ -2,7 +2,6 @@
 slug: afrikanischer-esel
 title: Afrikanischer Esel
 wikidata: Q208140
-image: null
 class: Säugetiere
 order: Unpaarhufer
 family: Pferde

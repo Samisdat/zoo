@@ -2,7 +2,6 @@
 slug: blassfuss-toepfervogel
 title: Blassfuß-Töpfervogel
 wikidata: Q1265893
-image: Blassfuß-Töpfervogel
 class: Vögel
 order: Sperlingsvögel
 family: Töpfervögel

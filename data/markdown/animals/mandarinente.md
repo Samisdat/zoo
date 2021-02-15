@@ -2,7 +2,6 @@
 slug: mandarinente
 title: Mandarinente
 wikidata: Q200339
-image: Mandarinente
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

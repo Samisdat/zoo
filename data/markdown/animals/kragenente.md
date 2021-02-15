@@ -2,7 +2,6 @@
 slug: kragenente
 title: Kragenente
 wikidata: Q331179
-image: Kragenente
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

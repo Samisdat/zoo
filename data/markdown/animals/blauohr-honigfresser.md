@@ -2,7 +2,6 @@
 slug: blauohr-honigfresser
 title: Blauohr-Honigfresser
 wikidata: Q774382
-image: Blauohr-Honigfresser
 class: Vögel
 order: Sperlingsvögel
 family: Honigfresser

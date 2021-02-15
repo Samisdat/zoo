@@ -2,7 +2,6 @@
 slug: gewoehnliche-strumpfbandnatter
 title: Gewöhnliche Strumpfbandnatter
 wikidata: Q911786
-image: Gewöhnliche Strumpfbandnatter
 class: Reptilien
 order: Schuppenkriechtiere
 family: Nattern

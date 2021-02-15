@@ -2,7 +2,6 @@
 slug: griechische-landschildkroete
 title: Griechische Landschildkröte
 wikidata: Q262555
-image: Griechische Landschildkröte
 class: Reptilien
 order: Schildkröten
 family: Landschildkröten

@@ -2,7 +2,6 @@
 slug: asiatischer-rothund
 title: Asiatischer Rothund
 wikidata: Q132585
-image: Asiatischer Rothund
 class: Säugetiere
 order: Raubtiere
 family: Hunde

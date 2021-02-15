@@ -2,7 +2,6 @@
 slug: blauer-seidenkuckuck
 title: Blauer Seidenkuckuck
 wikidata: Q1268135
-image: Blauer Seidenkuckuck
 class: Vögel
 order: Kuckucksvögel
 family: Kuckucke

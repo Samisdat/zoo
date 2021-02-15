@@ -2,7 +2,6 @@
 slug: rothalsgans
 title: Rothalsgans
 wikidata: Q187852
-image: Rothalsgans
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

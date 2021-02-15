@@ -2,7 +2,6 @@
 slug: eisvogel
 title: Eisvogel
 wikidata: Q79915
-image: Eisvogel
 class: Vögel
 order: Rackenvögel
 family: Eisvögel

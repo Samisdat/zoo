@@ -2,7 +2,6 @@
 slug: langfluegel-dampfschiffente
 title: Langflügel-Dampfschiffente
 wikidata: Q241198
-image: Langflügel-Dampfschiffente
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

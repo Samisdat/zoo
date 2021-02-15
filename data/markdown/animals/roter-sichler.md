@@ -2,7 +2,6 @@
 slug: roter-sichler
 title: Roter Sichler
 wikidata: Q467996
-image: Roter Sichler
 class: Vögel
 order: Schreitvögel
 family: Ibisse und Löffler
@@ -21,7 +20,7 @@ i18nNames:
 iucnID: '22697415'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/22697415'
 iucnStatus: Q211005
-animals: [waldrapp]
+facility: waldrapp
 published: false
 ---
 

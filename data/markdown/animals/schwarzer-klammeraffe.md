@@ -2,12 +2,11 @@
 slug: schwarzer-klammeraffe
 title: Schwarzer Klammeraffe
 wikidata: Q653650
-image: Schwarzer Klammeraffe
 class: Säugetiere
 order: Primaten
 family: Klammerschwanzaffen
 species: Schwarzer Klammeraffe
-wikipediaLink: https://de.wikipedia.org/wiki/Braunkopfklammeraffe
+wikipediaLink: 'https://de.wikipedia.org/wiki/Braunkopfklammeraffe'
 images:
   - >-
     https://upload.wikimedia.org/wikipedia/commons/9/92/Ateles-fusciceps_54724770b.jpg

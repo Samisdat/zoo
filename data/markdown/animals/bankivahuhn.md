@@ -2,7 +2,6 @@
 slug: bankivahuhn
 title: Bankivahuhn
 wikidata: Q184774
-image: null
 class: Vögel
 order: Hühnervögel
 family: Fasanenartige

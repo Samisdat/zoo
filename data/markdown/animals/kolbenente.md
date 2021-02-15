@@ -2,7 +2,6 @@
 slug: kolbenente
 title: Kolbenente
 wikidata: Q244350
-image: Kolbenente
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

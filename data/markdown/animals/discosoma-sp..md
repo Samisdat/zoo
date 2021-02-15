@@ -2,7 +2,6 @@
 slug: discosoma-sp.
 title: Discosoma sp.
 wikidata: Q1499582
-image: Discosoma sp.
 class: Blumentiere
 order: Scheibenanemonen
 family: Discosomatidae

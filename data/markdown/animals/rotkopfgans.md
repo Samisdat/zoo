@@ -2,7 +2,6 @@
 slug: rotkopfgans
 title: Rotkopfgans
 wikidata: Q923950
-image: Rotkopfgans
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

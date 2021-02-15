@@ -2,7 +2,6 @@
 slug: areolen-flachschildkroete
 title: Areolen-Flachschildkröte
 wikidata: Q642538
-image: Areolen-Flachschildkröte
 class: Reptilien
 order: Schildkröten
 family: Landschildkröten

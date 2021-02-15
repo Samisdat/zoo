@@ -2,7 +2,6 @@
 slug: kaiserskorpion
 title: Kaiserskorpion
 wikidata: Q1142349
-image: Kaiserskorpion
 class: Spinnentiere
 order: Skorpione
 family: Scorpionidae

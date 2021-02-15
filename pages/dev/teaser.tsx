@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {Teaser, TeaserPropsInterface} from "components/Map/Teaser";
 import Button from "@material-ui/core/Button";
+import Drawer from "@material-ui/core/Drawer";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 
 export default function Index(props) {
 
@@ -10,10 +12,19 @@ export default function Index(props) {
         setTeaser(undefined);
     };
 
-    const clickButton = () => {
+    const addOne = () => {
         setTeaser({
-            apiUrl: '/api/teaser/animal/elefanten',
-            close: closeTeaser
+            apiUrl: '/api/teaser/animal/baeren',
+            close: closeTeaser,
+            open:true
+        });
+
+    };
+    const addMultiple = () => {
+        setTeaser({
+            apiUrl: '/api/teaser/facility/affenhaus',
+            close: closeTeaser,
+            open:true
         });
 
     };
@@ -26,7 +37,7 @@ export default function Index(props) {
                 bottom:0,
                 left:0,
                 right:0,
-                background:'blue'
+                background:'yellow'
             }}
         >
             <Button
@@ -36,16 +47,40 @@ export default function Index(props) {
                     position:'absolute',
                     top: '50%',
                     left:'50%',
-                    marginTop:-12,
+                    marginTop:-20,
                     marginLeft:-30,
                 }}
-                onClick={clickButton}
+                onClick={addOne}
             >
-                Primary
+                Ein Bild
+            </Button>
+            <Button
+                variant="contained"
+                color="primary"
+                style={{
+                    position:'absolute',
+                    top: '50%',
+                    left:'50%',
+                    marginTop:20,
+                    marginLeft:-30,
+                }}
+                onClick={addMultiple}
+            >
+                Viele Bilder
             </Button>
             <Teaser
                 {...teaser}
             />
+            <Drawer
+                anchor='top'
+                //open={props.openSearch}
+                open={true}
+                variant='persistent'
+            >
+
+                Suche
+            </Drawer>
+
         </div>
   );
 }

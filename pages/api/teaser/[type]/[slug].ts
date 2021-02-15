@@ -27,11 +27,13 @@ export default async (req: NextApiRequest, res: NextApiResponse<TeaserInterface[
 
     const teasers :TeaserInterface[] = [];
 
-    console.log(type)
+    console.log(type, slug)
 
     if('animal' === type){
 
         const animals = await getAnimals();
+
+        console.log(animals);
 
         const animal = animals.find((animal)=>{
             if(slug === animal.facility){
@@ -41,7 +43,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<TeaserInterface[
             return false;
         });
 
-        const href = `/${type}/${animal.slug}`;
+        const href = `/tiere/${animal.slug}`;
 
         let image = undefined;
 
@@ -62,6 +64,8 @@ export default async (req: NextApiRequest, res: NextApiResponse<TeaserInterface[
 
         const facilities = await getFacilities();
 
+        console.log(facilities)
+
         const facility = facilities.find((facility)=>{
             if(slug === facility.slug){
                 return true;
@@ -76,7 +80,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<TeaserInterface[
 
             const animal = await getAnimal(animalSlug);
 
-            const href = `/${type}/${animal.slug}`;
+            const href = `/tiere/${animal.slug}`;
 
             let image = undefined;
 
@@ -93,8 +97,6 @@ export default async (req: NextApiRequest, res: NextApiResponse<TeaserInterface[
             teasers.push(teaser);
 
         }
-
-
 
     }
 

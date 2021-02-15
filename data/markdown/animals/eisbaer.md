@@ -2,7 +2,6 @@
 slug: eisbaer
 title: Eisbär
 wikidata: Q33609
-image: Eisbär
 class: Säugetiere
 order: Raubtiere
 family: Bären

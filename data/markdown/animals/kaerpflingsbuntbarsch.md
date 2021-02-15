@@ -2,7 +2,6 @@
 slug: kaerpflingsbuntbarsch
 title: Kärpflingsbuntbarsch
 wikidata: Q3317634
-image: Kärpflingsbuntbarsch
 class: Strahlenflosser
 order: Barschartige
 family: Buntbarsche

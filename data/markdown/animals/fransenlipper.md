@@ -2,7 +2,6 @@
 slug: fransenlipper
 title: Fransenlipper
 wikidata: Q150554
-image: Fransenlipper
 class: Strahlenflosser
 order: Karpfenartige
 family: Karpfenfische

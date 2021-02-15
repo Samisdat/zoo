@@ -2,7 +2,6 @@
 slug: baikalente
 title: Baikalente
 wikidata: Q330710
-image: Baikalente
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

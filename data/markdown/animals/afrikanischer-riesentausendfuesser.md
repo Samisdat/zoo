@@ -2,7 +2,6 @@
 slug: afrikanischer-riesentausendfuesser
 title: Afrikanischer Riesentausendfüßer
 wikidata: Q1954820
-image: null
 class: Doppelfüßer
 order: Schnurfüßer
 family: Spirostreptidae

@@ -2,7 +2,6 @@
 slug: mittelamerikanischer-tapir
 title: Mittelamerikanischer Tapir
 wikidata: Q215997
-image: Mittelamerikanischer Tapir
 class: Säugetiere
 order: Unpaarhufer
 family: Tapire

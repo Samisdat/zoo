@@ -2,7 +2,6 @@
 slug: gelbfuessiger-honigsauger
 title: Gelbfüßiger Honigsauger
 wikidata: Q794373
-image: Gelbfüßiger Honigsauger
 class: Vögel
 order: Sperlingsvögel
 family: Tangaren

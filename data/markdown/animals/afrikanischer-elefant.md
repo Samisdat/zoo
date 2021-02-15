@@ -2,7 +2,6 @@
 slug: afrikanischer-elefant
 title: Afrikanischer Elefant
 wikidata: Q36557
-image: Afrikanischer Elefant
 class: Säugetiere
 order: Rüsseltiere
 family: Elefanten

@@ -2,7 +2,6 @@
 slug: takin
 title: Takin
 wikidata: Q193469
-image: Takin
 class: Säugetiere
 order: Paarhufer
 family: Hornträger

@@ -2,7 +2,6 @@
 slug: pyjama-kardinalbarsch
 title: Pyjama-Kardinalbarsch
 wikidata: Q700398
-image: Pyjama-Kardinalbarsch
 class: Strahlenflosser
 order: Barschartige
 family: Kardinalbarsche

@@ -2,7 +2,6 @@
 slug: prachteiderente
 title: Prachteiderente
 wikidata: Q207846
-image: Prachteiderente
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

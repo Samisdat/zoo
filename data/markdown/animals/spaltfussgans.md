@@ -2,7 +2,6 @@
 slug: spaltfussgans
 title: Spaltfußgans
 wikidata: Q212937
-image: Spaltfußgans
 class: Vögel
 order: Gänsevögel
 family: Spaltfußgänse

@@ -2,7 +2,6 @@
 slug: nebelparder
 title: Nebelparder
 wikidata: Q36135
-image: Nebelparder
 class: Säugetiere
 order: Raubtiere
 family: Katzen

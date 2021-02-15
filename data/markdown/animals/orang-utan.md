@@ -2,7 +2,6 @@
 slug: orang-utan
 title: Orang Utan
 wikidata: Q41050
-image: Orang Utan
 class: Säugetiere
 order: Primaten
 family: Menschenaffen

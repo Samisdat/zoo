@@ -2,7 +2,6 @@
 slug: hauben-seidenkuckuck
 title: Hauben-Seidenkuckuck
 wikidata: Q1272011
-image: Hauben-Seidenkuckuck
 class: Vögel
 order: Kuckucksvögel
 family: Kuckucke

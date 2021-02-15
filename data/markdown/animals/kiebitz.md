@@ -2,7 +2,6 @@
 slug: kiebitz
 title: Kiebitz
 wikidata: Q25392
-image: Kiebitz
 class: Vögel
 order: Regenpfeiferartige
 family: Regenpfeifer

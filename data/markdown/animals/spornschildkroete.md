@@ -2,7 +2,6 @@
 slug: spornschildkroete
 title: Spornschildkröte
 wikidata: Q301016
-image: Spornschildkröte
 class: Reptilien
 order: Schildkröten
 family: Landschildkröten

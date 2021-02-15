@@ -2,7 +2,6 @@
 slug: desjardins-seebader
 title: Desjardins Seebader
 wikidata: Q1661589
-image: Desjardins Seebader
 class: Strahlenflosser
 order: Barschartige
 family: Doktorfische

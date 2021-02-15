@@ -2,7 +2,6 @@
 slug: dornwels
 title: Dornwels
 wikidata: Q796187
-image: Dornwels
 class: Strahlenflosser
 order: Welsartige
 family: Dornwelse

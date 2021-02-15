@@ -2,7 +2,6 @@
 slug: gelbflossen-doktorfisch
 title: Gelbflossen-Doktorfisch
 wikidata: Q2182371
-image: Gelbflossen-Doktorfisch
 class: Strahlenflosser
 order: Barschartige
 family: Doktorfische

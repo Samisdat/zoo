@@ -2,7 +2,6 @@
 slug: kaimanfisch
 title: Kaimanfisch
 wikidata: Q506144
-image: Kaimanfisch
 class: Strahlenflosser
 order: Knochenhechtartige
 family: Knochenhechte

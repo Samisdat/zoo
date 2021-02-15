@@ -2,7 +2,6 @@
 slug: dornwald-taggecko
 title: Dornwald-Taggecko
 wikidata: Q572781
-image: Dornwald-Taggecko
 class: Reptilien
 order: Schuppenkriechtiere
 family: Geckos

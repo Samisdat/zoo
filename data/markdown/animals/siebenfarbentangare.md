@@ -2,7 +2,6 @@
 slug: siebenfarbentangare
 title: Siebenfarbentangare
 wikidata: Q1543890
-image: Siebenfarbentangare
 class: Vögel
 order: Sperlingsvögel
 family: Tangaren

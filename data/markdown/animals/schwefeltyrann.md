@@ -2,7 +2,6 @@
 slug: schwefeltyrann
 title: Schwefeltyrann
 wikidata: Q202804
-image: Schwefeltyrann
 class: Vögel
 order: Sperlingsvögel
 family: Tyrannen

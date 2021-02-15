@@ -2,7 +2,6 @@
 slug: anden-felsenhahn
 title: Anden-Felsenhahn
 wikidata: Q490393
-image: null
 class: Vögel
 order: Sperlingsvögel
 family: Schmuckvögel

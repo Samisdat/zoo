@@ -2,7 +2,6 @@
 slug: hornsittich
 title: Hornsittich
 wikidata: Q515035
-image: Hornsittich
 class: Vögel
 order: Papageien
 family: Eigentliche Papageien

@@ -2,7 +2,6 @@
 slug: brillenpinguin
 title: Brillenpinguin
 wikidata: Q244813
-image: Brillenpinguin
 class: Vögel
 order: Pinguine
 family: Pinguine

@@ -2,7 +2,6 @@
 slug: bartagame
 title: Bartagame
 wikidata: Q743973
-image: Bartagame
 class: Reptilien
 order: Schuppenkriechtiere
 family: Agamen

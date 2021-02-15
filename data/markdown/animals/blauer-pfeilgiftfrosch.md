@@ -2,7 +2,6 @@
 slug: blauer-pfeilgiftfrosch
 title: Blauer Pfeilgiftfrosch
 wikidata: Q743123
-image: Blauer Pfeilgiftfrosch
 class: Lurche
 order: Froschlurche
 family: Baumsteigerfrösche

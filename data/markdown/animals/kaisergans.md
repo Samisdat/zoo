@@ -2,7 +2,6 @@
 slug: kaisergans
 title: Kaisergans
 wikidata: Q755653
-image: Kaisergans
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

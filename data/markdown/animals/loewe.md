@@ -2,14 +2,14 @@
 slug: loewe
 title: Löwe
 wikidata: Q140
-image: Löwe
 class: Säugetiere
 order: Raubtiere
 family: Katzen
 species: Löwe
 wikipediaLink: 'https://de.wikipedia.org/wiki/Löwe_(Sternbild)'
 images:
-  - 'https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg'
+  - >-
+    https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg
   - 'https://upload.wikimedia.org/wikipedia/commons/c/c6/Okonjima_Lioness.jpg'
 scientificName: Panthera leo
 i18nNames:

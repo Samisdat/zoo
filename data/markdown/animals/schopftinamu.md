@@ -2,7 +2,6 @@
 slug: schopftinamu
 title: Schopftinamu
 wikidata: Q843185
-image: Schopftinamu
 class: Vögel
 order: Steißhuhnartige
 family: Steißhühner

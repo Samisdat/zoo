@@ -2,7 +2,6 @@
 slug: faerberfrosch
 title: Färberfrosch
 wikidata: Q1478869
-image: Färberfrosch
 class: Lurche
 order: Froschlurche
 family: Baumsteigerfrösche

@@ -2,7 +2,6 @@
 slug: schellente
 title: Schellente
 wikidata: Q29865
-image: Schellente
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

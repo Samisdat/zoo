@@ -2,7 +2,6 @@
 slug: gabelschwanz-regenbogenfisch
 title: Gabelschwanz-Regenbogenfisch
 wikidata: Q1488317
-image: Gabelschwanz-Regenbogenfisch
 class: Strahlenflosser
 order: Ährenfischartige
 family: Blauaugen

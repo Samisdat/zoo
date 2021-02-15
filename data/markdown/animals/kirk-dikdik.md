@@ -2,7 +2,6 @@
 slug: kirk-dikdik
 title: Kirk-Dikdik
 wikidata: Q833607
-image: Kirk-Dikdik
 class: Säugetiere
 order: Paarhufer
 family: Hornträger

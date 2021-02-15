@@ -2,7 +2,6 @@
 slug: glanzelsterchen
 title: Glanzelsterchen
 wikidata: Q1300584
-image: Glanzelsterchen
 class: Vögel
 order: Sperlingsvögel
 family: Prachtfinken

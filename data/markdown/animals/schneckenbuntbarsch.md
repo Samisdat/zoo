@@ -2,7 +2,6 @@
 slug: schneckenbuntbarsch
 title: Schneckenbuntbarsch
 wikidata: Q7493712
-image: Schneckenbuntbarsch
 class: Strahlenflosser
 order: Barschartige
 family: Buntbarsche

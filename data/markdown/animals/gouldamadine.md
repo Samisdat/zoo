@@ -2,7 +2,6 @@
 slug: gouldamadine
 title: Gouldamadine
 wikidata: Q752146
-image: Gouldamadine
 class: Vögel
 order: Sperlingsvögel
 family: Prachtfinken

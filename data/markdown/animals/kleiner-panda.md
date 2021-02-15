@@ -2,7 +2,6 @@
 slug: kleiner-panda
 title: Kleiner Panda
 wikidata: Q41960
-image: Kleiner Panda
 class: Säugetiere
 order: Raubtiere
 family: Katzenbären

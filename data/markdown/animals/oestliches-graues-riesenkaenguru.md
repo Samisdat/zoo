@@ -2,7 +2,6 @@
 slug: oestliches-graues-riesenkaenguru
 title: Östliches Graues Riesenkänguru
 wikidata: Q270098
-image: Östliches Graues Riesenkänguru
 class: Säugetiere
 order: Beuteltiere
 family: Kängurus

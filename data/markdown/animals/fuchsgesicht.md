@@ -2,7 +2,6 @@
 slug: fuchsgesicht
 title: Fuchsgesicht
 wikidata: Q258544
-image: Fuchsgesicht
 class: Strahlenflosser
 order: Barschartige
 family: Kaninchenfische

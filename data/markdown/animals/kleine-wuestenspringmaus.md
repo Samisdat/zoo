@@ -2,7 +2,6 @@
 slug: kleine-wuestenspringmaus
 title: Kleine Wüstenspringmaus
 wikidata: Q920382
-image: Kleine Wüstenspringmaus
 class: Säugetiere
 order: Nagetiere
 family: Springmäuse

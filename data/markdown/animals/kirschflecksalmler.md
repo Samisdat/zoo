@@ -2,7 +2,6 @@
 slug: kirschflecksalmler
 title: Kirschflecksalmler
 wikidata: Q927123
-image: Kirschflecksalmler
 class: Strahlenflosser
 order: Salmlerartige
 family: Echte Salmler

@@ -2,7 +2,6 @@
 slug: lachsroter-regenbogenfisch
 title: Lachsroter Regenbogenfisch
 wikidata: Q59066
-image: Lachsroter Regenbogenfisch
 class: Strahlenflosser
 order: Ährenfischartige
 family: Regenbogenfische

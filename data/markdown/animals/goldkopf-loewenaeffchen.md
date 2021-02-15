@@ -2,7 +2,6 @@
 slug: goldkopf-loewenaeffchen
 title: Goldkopf-Löwenäffchen
 wikidata: Q775442
-image: Goldkopf-Löwenäffchen
 class: Säugetiere
 order: Primaten
 family: Krallenaffen

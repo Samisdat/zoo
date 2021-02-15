@@ -2,7 +2,6 @@
 slug: weisshandgibbon
 title: Weißhandgibbon
 wikidata: Q208043
-image: Weißhandgibbon
 class: Säugetiere
 order: Primaten
 family: Gibbons

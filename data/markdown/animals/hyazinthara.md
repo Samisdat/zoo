@@ -2,7 +2,6 @@
 slug: hyazinthara
 title: Hyazinthara
 wikidata: Q463154
-image: Hyazinthara
 class: Vögel
 order: Papageien
 family: Eigentliche Papageien

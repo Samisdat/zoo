@@ -2,7 +2,6 @@
 slug: banggai-kardinalbarsch
 title: Banggai-Kardinalbarsch
 wikidata: Q428921
-image: Banggai-Kardinalbarsch
 class: Strahlenflosser
 order: Barschartige
 family: Kardinalbarsche

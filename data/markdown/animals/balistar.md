@@ -2,7 +2,6 @@
 slug: balistar
 title: Balistar
 wikidata: Q756868
-image: Balistar
 class: Vögel
 order: Sperlingsvögel
 family: Stare

@@ -2,7 +2,6 @@
 slug: glattstirn-lederkopf
 title: Glattstirn-Lederkopf
 wikidata: Q2024733
-image: Glattstirn-Lederkopf
 class: Vögel
 order: Sperlingsvögel
 family: Honigfresser

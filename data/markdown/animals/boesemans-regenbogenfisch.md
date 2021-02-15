@@ -2,7 +2,6 @@
 slug: boesemans-regenbogenfisch
 title: Boesemans Regenbogenfisch
 wikidata: Q833254
-image: Boesemans Regenbogenfisch
 class: Strahlenflosser
 order: Ährenfischartige
 family: Regenbogenfische

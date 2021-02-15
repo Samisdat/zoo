@@ -2,7 +2,6 @@
 slug: bananenfalter.
 title: Bananenfalter
 wikidata: Q857483
-image: null
 class: Insekten
 order: Schmetterlinge
 family: Edelfalter

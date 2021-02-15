@@ -2,7 +2,6 @@
 slug: zebrafink
 title: Zebrafink
 wikidata: Q331065
-image: Zebrafink
 class: Vögel
 order: Sperlingsvögel
 family: Prachtfinken

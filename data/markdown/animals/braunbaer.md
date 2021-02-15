@@ -2,7 +2,6 @@
 slug: braunbaer
 title: Braunbär
 wikidata: Q36341
-image: Braunbär
 class: Säugetiere
 order: Raubtiere
 family: Bären

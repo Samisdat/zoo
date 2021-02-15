@@ -2,7 +2,6 @@
 slug: kurzohrige-elefantenspitzmaus
 title: Kurzohrige Elefantenspitzmaus
 wikidata: Q1130566
-image: Kurzohrige Elefantenspitzmaus
 class: Säugetiere
 order: Rüsselspringer
 family: Rüsselspringer

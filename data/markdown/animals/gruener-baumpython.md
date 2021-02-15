@@ -2,7 +2,6 @@
 slug: gruener-baumpython
 title: Grüner Baumpython
 wikidata: Q849394
-image: Grüner Baumpython
 class: Reptilien
 order: Schuppenkriechtiere
 family: Riesenschlangen

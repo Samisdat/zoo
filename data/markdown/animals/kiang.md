@@ -2,7 +2,6 @@
 slug: kiang
 title: Kiang
 wikidata: Q221380
-image: Kiang
 class: Säugetiere
 order: Unpaarhufer
 family: Pferde

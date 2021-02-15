@@ -2,7 +2,6 @@
 slug: tafelente
 title: Tafelente
 wikidata: Q26742
-image: Tafelente
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

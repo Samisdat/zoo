@@ -2,7 +2,6 @@
 slug: blaugelber-zwergkaiserfisch
 title: Blaugelber Zwergkaiserfisch
 wikidata: Q882860
-image: Blaugelber Zwergkaiserfisch
 class: Strahlenflosser
 order: Barschartige
 family: Kaiserfische

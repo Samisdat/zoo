@@ -2,7 +2,6 @@
 slug: mosaikfadenfisch
 title: Mosaikfadenfisch
 wikidata: Q167648
-image: Mosaikfadenfisch
 class: Strahlenflosser
 order: Barschartige
 family: Fadenfische

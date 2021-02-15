@@ -2,7 +2,6 @@
 slug: peposakaente
 title: Peposakaente
 wikidata: Q851349
-image: Peposakaente
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

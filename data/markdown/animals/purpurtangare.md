@@ -2,7 +2,6 @@
 slug: purpurtangare
 title: Purpurtangare
 wikidata: Q671550
-image: Purpurtangare
 class: Vögel
 order: Sperlingsvögel
 family: Tangaren

@@ -2,7 +2,6 @@
 slug: chileflamingo
 title: Chileflamingo
 wikidata: Q317220
-image: Chileflamingo
 class: Vögel
 order: Flamingos
 family: Flamingos

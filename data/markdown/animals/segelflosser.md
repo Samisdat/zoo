@@ -2,7 +2,6 @@
 slug: segelflosser
 title: Segelflosser
 wikidata: Q214145
-image: Segelflosser
 class: Strahlenflosser
 order: Barschartige
 family: Buntbarsche

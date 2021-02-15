@@ -2,7 +2,6 @@
 slug: hawaiigans
 title: Hawaiigans
 wikidata: Q687695
-image: Hawaiigans
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

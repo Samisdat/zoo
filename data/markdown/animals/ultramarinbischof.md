@@ -2,7 +2,6 @@
 slug: ultramarinbischof
 title: Ultramarinbischof
 wikidata: Q1585545
-image: Ultramarinbischof
 class: Vögel
 order: Sperlingsvögel
 family: Kardinäle

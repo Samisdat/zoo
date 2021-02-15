@@ -2,7 +2,6 @@
 slug: koenigspinguin
 title: Königspinguin
 wikidata: Q182209
-image: Königspinguin
 class: Vögel
 order: Pinguine
 family: Pinguine

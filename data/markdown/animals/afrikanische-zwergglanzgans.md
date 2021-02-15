@@ -2,7 +2,6 @@
 slug: afrikanische-zwergglanzgans
 title: Afrikanische Zwergglanzgans
 wikidata: Q386949
-image: null
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

@@ -2,7 +2,6 @@
 slug: bongo
 title: Bongo
 wikidata: Q193400
-image: Bongo
 class: Säugetiere
 order: Paarhufer
 family: Hornträger

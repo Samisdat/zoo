@@ -2,7 +2,6 @@
 slug: maehnengans
 title: Mähnengans
 wikidata: Q837402
-image: Mähnengans
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

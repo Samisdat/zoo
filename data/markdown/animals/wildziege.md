@@ -2,7 +2,6 @@
 slug: wildziege
 title: Wildziege
 wikidata: Q178228
-image: Wildziege
 class: Säugetiere
 order: Paarhufer
 family: Hornträger

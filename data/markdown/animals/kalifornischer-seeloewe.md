@@ -2,7 +2,6 @@
 slug: kalifornischer-seeloewe
 title: Kalifornischer Seelöwe
 wikidata: Q379732
-image: Kalifornischer Seelöwe
 class: Säugetiere
 order: Raubtiere
 family: Ohrenrobben

@@ -2,7 +2,6 @@
 slug: spatelente
 title: Spatelente
 wikidata: Q369767
-image: Spatelente
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

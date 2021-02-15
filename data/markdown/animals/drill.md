@@ -2,7 +2,6 @@
 slug: drill
 title: Drill
 wikidata: Q221434
-image: Drill
 class: Säugetiere
 order: Primaten
 family: Meerkatzenverwandte

@@ -2,7 +2,6 @@
 slug: baumskink
 title: Baumskink
 wikidata: Q126597
-image: Baumskink
 class: Reptilien
 order: Schuppenkriechtiere
 family: Skinke

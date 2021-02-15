@@ -2,7 +2,6 @@
 slug: china-nachtigall
 title: China-Nachtigall
 wikidata: Q589245
-image: China-Nachtigall
 class: Vögel
 order: Sperlingsvögel
 family: Timalien

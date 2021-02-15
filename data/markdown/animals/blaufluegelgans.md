@@ -2,7 +2,6 @@
 slug: blaufluegelgans
 title: Blauflügelgans
 wikidata: Q658658
-image: Blauflügelgans
 class: Vögel
 order: Gänsevögel
 family: Entenvögel

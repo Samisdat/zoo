@@ -2,7 +2,6 @@
 slug: graureiher
 title: Graureiher
 wikidata: Q25273
-image: Graureiher
 class: Vögel
 order: Schreitvögel
 family: Reiher

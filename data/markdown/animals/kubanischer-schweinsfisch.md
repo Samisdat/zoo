@@ -2,7 +2,6 @@
 slug: kubanischer-schweinsfisch
 title: Kubanischer Schweinsfisch
 wikidata: Q937738
-image: Kubanischer Schweinsfisch
 class: Strahlenflosser
 order: Barschartige
 family: Lippfische

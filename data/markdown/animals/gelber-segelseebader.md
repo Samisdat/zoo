@@ -2,7 +2,6 @@
 slug: gelber-segelseebader
 title: Gelber Segelseebader
 wikidata: Q900868
-image: Gelber Segelseebader
 class: Strahlenflosser
 order: Barschartige
 family: Doktorfische

@@ -2,7 +2,6 @@
 slug: gelbsteissbuelbuel
 title: Gelbsteißbülbül
 wikidata: Q1070620
-image: Gelbsteißbülbül
 class: Vögel
 order: Sperlingsvögel
 family: Bülbüls

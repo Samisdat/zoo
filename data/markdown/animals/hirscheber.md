@@ -2,7 +2,6 @@
 slug: hirscheber
 title: Hirscheber
 wikidata: Q232558
-image: Hirscheber
 class: Säugetiere
 order: Paarhufer
 family: Echte Schweine

@@ -2,7 +2,6 @@
 slug: gelbe-korallengrundel
 title: Gelbe Korallengrundel
 wikidata: Q1499287
-image: Gelbe Korallengrundel
 class: Strahlenflosser
 order: Barschartige
 family: Grundeln

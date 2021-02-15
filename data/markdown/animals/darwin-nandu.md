@@ -2,7 +2,6 @@
 slug: darwin-nandu
 title: Darwin-Nandu
 wikidata: Q733120
-image: Darwin-Nandu
 class: Vögel
 order: Laufvögel
 family: Nandus

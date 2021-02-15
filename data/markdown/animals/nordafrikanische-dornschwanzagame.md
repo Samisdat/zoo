@@ -2,7 +2,6 @@
 slug: nordafrikanische-dornschwanzagame
 title: Nordafrikanische Dornschwanzagame
 wikidata: Q1997560
-image: Nordafrikanische Dornschwanzagame
 class: Reptilien
 order: Schuppenkriechtiere
 family: Agamen

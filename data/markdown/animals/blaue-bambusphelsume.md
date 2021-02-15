@@ -2,7 +2,6 @@
 slug: blaue-bambusphelsume
 title: Blaue Bambusphelsume
 wikidata: Q882598
-image: Blaue Bambusphelsume
 class: Reptilien
 order: Schuppenkriechtiere
 family: Geckos

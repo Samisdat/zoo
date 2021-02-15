@@ -2,7 +2,6 @@
 slug: leopard-buschfisch
 title: Leopard-Buschfisch
 wikidata: Q1819560
-image: Leopard-Buschfisch
 class: Strahlenflosser
 order: Barschartige
 family: Kletterfische

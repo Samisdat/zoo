@@ -2,7 +2,6 @@
 slug: sonnenralle
 title: Sonnenralle
 wikidata: Q601107
-image: Sonnenralle
 class: Vögel
 order: Kranichvögel
 family: Sonnenrallen

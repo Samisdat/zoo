@@ -185,7 +185,10 @@ export const Animals = (props: AnimalsPropsInterface) => {
 
     }, [props.apiUrl])
 
-    const onClose = () => {}
+    const handleClose = () => {
+        setLoading(true);
+        props.close();
+    };
 
     const theme = useTheme();
 
@@ -250,7 +253,7 @@ export const Animals = (props: AnimalsPropsInterface) => {
                                         <div
                                             className={classes.img}
                                             style={{
-                                                backgroundImage: 'url(' + step.image + ')'
+                                                backgroundImage: 'url("' + step.image + '")'
                                             }}
                                         />
                                     </React.Fragment>
@@ -258,28 +261,32 @@ export const Animals = (props: AnimalsPropsInterface) => {
                         </div>
                     ))}
                 </SwipeableViews>
-                <MobileStepper
-                    steps={maxSteps}
-                    position="static"
-                    variant="dots"
-                    activeStep={activeStep}
-                    nextButton={
-                        <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
-                            Next
-                            <KeyboardArrowRight />
-                        </Button>
-                    }
-                    backButton={
-                        <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-                            <KeyboardArrowLeft />
-                            Back
-                        </Button>
-                    }
-                />
+
+                {maxSteps > 1 &&
+                    <MobileStepper
+                        steps={maxSteps}
+                        position="static"
+                        variant="dots"
+                        activeStep={activeStep}
+                        nextButton={
+                            <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
+                                Next
+                                <KeyboardArrowRight />
+                            </Button>
+                        }
+                        backButton={
+                            <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+                                <KeyboardArrowLeft />
+                                Back
+                            </Button>
+                        }
+                    />
+                }
 
             <CardActions disableSpacing>
                 <Button
                     startIcon={<KeyboardArrowRight />}
+                    href={data.animals[activeStep].href}
                 >
                     Details
                 </Button>
@@ -290,6 +297,7 @@ export const Animals = (props: AnimalsPropsInterface) => {
                 </Button>
                 <Button
                     startIcon={<CloseIcon />}
+                    onClick={handleClose}
                 >
                     Schließen
                 </Button>

@@ -201,7 +201,10 @@ export const Group = (props) => {
             let href = '/api/teaser/';
 
             if('single-enclosure' === props.focus.properties.facilityType){
-                href += 'animal/';
+                href += 'facility/';
+            }
+            else if('shared-enclosure' === props.focus.properties.facilityType){
+                href += 'facility/';
             }
             else{
                 href += 'not-yet-implemented/';

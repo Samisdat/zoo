@@ -5,7 +5,7 @@ import {MapRoot} from 'components/Map/Root';
 import {NavigationInterface} from "../components/Navigation/Interfaces";
 import {MapSearch} from "../components/Map/Search";
 import {getFullGeoJson} from "./api/geojson/list";
-import {Teaser, TeaserPropsInterface} from "../components/Map/Teaser";
+import {Animals, AnimalsPropsInterface} from "../components/Map/Animals";
 
 import createPersistedState from 'use-persisted-state';
 const useMapState = createPersistedState('map');
@@ -51,7 +51,7 @@ export default function Index(props:IndexProps) {
     const [mapDimensionState, setMapDimensionState] = useMapState<MapDimension>(MapDimensionDefault);
     const [mapState, setMapState] = useMapState<MapState>(defaultMapState);
 
-    const [teaser, setTeaser] = useState<TeaserPropsInterface>(/*{
+    const [teaser, setTeaser] = useState<AnimalsPropsInterface>(/*{
         apiUrl: '/api/teaser/animals/afrikanischer-elefant',
         close: ()=>{
             setTeaser(undefined);
@@ -64,6 +64,7 @@ export default function Index(props:IndexProps) {
         setTeaser(undefined);
     };
 
+    /*
     const clickButton = () => {
         setTeaser({
             apiUrl: '/api/teaser/animals/afrikanischer-elefant',
@@ -71,7 +72,7 @@ export default function Index(props:IndexProps) {
         });
 
     };
-
+    */
     const storeFocus = (focus:MapFocus | Feature<Polygon>) => {
 
         setMapState({
@@ -173,7 +174,7 @@ export default function Index(props:IndexProps) {
                 setFocus={setFocus}
                 {...props.navigation}
             />
-            <Teaser
+            <Animals
                 {...teaser}
             />
         </React.Fragment>

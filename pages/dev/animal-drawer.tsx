@@ -12,7 +12,15 @@ export default function Index(props) {
         setTeaser(undefined);
     };
 
-    const clickButton = () => {
+    const addOne = () => {
+        setTeaser({
+            apiUrl: '/api/teaser/animal/baeren',
+            close: closeTeaser,
+            open:true
+        });
+
+    };
+    const addMultiple = () => {
         setTeaser({
             apiUrl: '/api/teaser/facility/affenhaus',
             close: closeTeaser,
@@ -39,12 +47,26 @@ export default function Index(props) {
                     position:'absolute',
                     top: '50%',
                     left:'50%',
-                    marginTop:-12,
+                    marginTop:-20,
                     marginLeft:-30,
                 }}
-                onClick={clickButton}
+                onClick={addOne}
             >
-                Primary
+                Ein Bild
+            </Button>
+            <Button
+                variant="contained"
+                color="primary"
+                style={{
+                    position:'absolute',
+                    top: '50%',
+                    left:'50%',
+                    marginTop:20,
+                    marginLeft:-30,
+                }}
+                onClick={addMultiple}
+            >
+                Viele Bilder
             </Button>
             <Animals
                 {...teaser}

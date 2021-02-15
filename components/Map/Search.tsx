@@ -31,7 +31,15 @@ export const MapSearch = (props) => {
 
     const options = props.geoJson.features.filter((feature:Feature) => {
 
-        if('facility-box' === feature.properties?.type && 'single-enclosure' === feature.properties?.facilityType){
+        if('facility-box' !== feature.properties?.type){
+            return false;
+        }
+
+        if('single-enclosure' === feature.properties?.facilityType){
+            return true;
+        }
+
+        if('shared-enclosure' === feature.properties?.facilityType){
             return true;
         }
 

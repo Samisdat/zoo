@@ -21,6 +21,7 @@ iucnID: '22678117'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/22678117'
 iucnStatus: Q211005
 facility: emus
+published: true
 ---
 
 I am content.

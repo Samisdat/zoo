@@ -19,6 +19,7 @@ iucnID: '4007'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/4007'
 iucnStatus: Q211005
 facility: biber
+published: true
 ---
 
 I am content.

@@ -19,6 +19,7 @@ iucnID: '2892'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/2892'
 iucnStatus: Q278113
 facility: yaks
+published: true
 ---
 
 I am content.

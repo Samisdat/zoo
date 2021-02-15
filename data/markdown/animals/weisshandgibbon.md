@@ -22,6 +22,7 @@ iucnID: '10548'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/10548'
 iucnStatus: Q11394
 facility: gibbons
+published: true
 ---
 
 I am content.

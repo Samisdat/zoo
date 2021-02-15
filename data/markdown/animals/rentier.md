@@ -22,6 +22,7 @@ iucnID: 29742
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/29742'
 iucnStatus: Q278113
 facility: rentiere
+published: true
 ---
 
 I am content.

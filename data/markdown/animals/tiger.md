@@ -25,6 +25,7 @@ iucnID: '15955'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/15955'
 iucnStatus: Q11394
 facility: tiger
+published: true
 ---
 
 I am content.

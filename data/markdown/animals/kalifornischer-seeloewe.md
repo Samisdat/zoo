@@ -21,6 +21,7 @@ iucnID: '41666'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/41666'
 iucnStatus: Q211005
 facility: seeloewen
+published: true
 ---
 
 I am content.

@@ -21,6 +21,7 @@ iucnID: null
 iucnLink: null
 iucnStatus: null
 facility: affenhaus
+published: true
 ---
 
 I am content.

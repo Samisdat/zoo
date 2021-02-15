@@ -25,6 +25,7 @@ iucnID: '22697590'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/22697590'
 iucnStatus: Q211005
 facility: pelikane    
+published: true
 ---
 
 I am content.

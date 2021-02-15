@@ -20,6 +20,7 @@ iucnID: '42398'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/42398'
 iucnStatus: Q719675
 facility: steinboecke
+published: true
 ---
 
 I am content.

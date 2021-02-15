@@ -21,6 +21,7 @@ iucnID: '21471'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/21471'
 iucnStatus: Q11394
 facility: suedamerikahaus
+published: true
 ---
 
 I am content.

@@ -30,6 +30,7 @@ export interface Animal {
     iucnStatus: string;
     content: string;
     facility?: string;
+    published: boolean;
 }
 
 const dataDir = path.resolve(process.env.PWD, 'data/markdown/animals');
@@ -60,6 +61,7 @@ export const getAnimal = async (slug:string):Promise<Animal> => {
         iucnStatus: animalMarkdown.data.iucnStatus,
         content: animalMarkdown.content,
         facility: animalMarkdown.data.facility,
+        published: animalMarkdown.data.published,
     };
 
     if(undefined === animal.facility){

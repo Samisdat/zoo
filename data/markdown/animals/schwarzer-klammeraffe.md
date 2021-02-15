@@ -20,6 +20,7 @@ iucnID: null
 iucnLink: null
 iucnStatus: null
 facility: kleines-affenhaus
+published: true
 ---
 
 I am content.

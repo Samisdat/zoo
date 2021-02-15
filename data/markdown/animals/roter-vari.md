@@ -22,6 +22,7 @@ iucnID: '22920'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/22920'
 iucnStatus: Q219127
 facility: kleines-affenhaus
+published: true
 ---
 
 I am content.

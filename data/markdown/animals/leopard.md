@@ -20,6 +20,7 @@ iucnID: '15954'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/15954'
 iucnStatus: Q278113
 facility: katzenhaus
+published: true
 ---
 
 I am content.

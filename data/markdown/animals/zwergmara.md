@@ -21,6 +21,7 @@ iucnID: '5360'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/5360'
 iucnStatus: Q211005
 facility: suedamerikahaus
+published: true
 ---
 
 I am content.

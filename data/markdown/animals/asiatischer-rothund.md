@@ -20,6 +20,7 @@ iucnID: '5953'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/5953'
 iucnStatus: Q11394
 facility: rothunde
+published: true
 ---
 
 I am content.

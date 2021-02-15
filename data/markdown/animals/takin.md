@@ -19,6 +19,7 @@ iucnID: '3160'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/3160'
 iucnStatus: Q278113
 facility: takin
+published: true
 ---
 
 I am content.

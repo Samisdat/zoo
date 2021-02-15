@@ -23,6 +23,7 @@ iucnID: '15932'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/15932'
 iucnStatus: Q11394
 facility: affenhaus
+published: true
 ---
 
 I am content.

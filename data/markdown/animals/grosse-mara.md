@@ -19,6 +19,7 @@ iucnID: '6785'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/6785'
 iucnStatus: Q719675
 facility: tierwelt-patagoniens
+published: true
 ---
 
 I am content.

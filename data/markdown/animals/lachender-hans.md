@@ -22,6 +22,7 @@ iucnID: '22683189'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/22683189'
 iucnStatus: Q211005
 facility: lachender-hans
+published: true
 ---
 
 I am content.

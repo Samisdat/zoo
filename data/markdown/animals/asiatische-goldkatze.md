@@ -19,6 +19,7 @@ iucnID: null
 iucnLink: null
 iucnStatus: null
 facility: katzenhaus
+published: true
 ---
 
 I am content.

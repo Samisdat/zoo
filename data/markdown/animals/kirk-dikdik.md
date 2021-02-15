@@ -22,6 +22,7 @@ iucnID: '12670'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/12670'
 iucnStatus: Q211005
 facility: kirk-dikdiks
+published: true
 ---
 
 I am content.

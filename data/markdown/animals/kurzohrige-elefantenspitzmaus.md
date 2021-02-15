@@ -20,6 +20,7 @@ iucnID: '45369602'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/45369602'
 iucnStatus: Q211005
 facility: katzenhaus
+published: true
 ---
 
 I am content.

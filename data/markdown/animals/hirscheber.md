@@ -19,6 +19,7 @@ iucnID: 2461
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/2461'
 iucnStatus: null
 facility: hirscheber
+published: true
 ---
 
 I am content.

@@ -24,6 +24,7 @@ iucnID: '12392'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/12392'
 iucnStatus: Q278113
 facility: elefanten
+published: true
 ---
 
 I am content.

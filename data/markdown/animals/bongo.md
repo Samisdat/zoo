@@ -22,6 +22,7 @@ iucnID: '22047'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/22047'
 iucnStatus: Q719675
 facility: bongos
+published: true
 ---
 
 I am content.

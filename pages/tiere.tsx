@@ -97,8 +97,12 @@ export default function Index(props) {
 
 export async function getStaticProps({ params, preview = false, previewData }) {
 
-    const animals = await getAnimals();
-    
+    let animals = await getAnimals();
+
+    animals = animals.filter((animal:Animal)=>{
+        return animal.published;
+    });
+
     return {
         props: {
             animals: animals,

@@ -19,6 +19,7 @@ iucnID: '22823'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/22823'
 iucnStatus: Q278113
 facility: eisbaeren
+published: true
 ---
 
 I am content.

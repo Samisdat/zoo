@@ -1,6 +1,6 @@
 ---
 title: Terrarium
 slug: terrarium
-type: enclosure
+type: shared-enclosure
 ---
 Some Content

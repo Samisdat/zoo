@@ -21,6 +21,7 @@ i18nNames:
 iucnID: '22697415'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/22697415'
 iucnStatus: Q211005
+animals: [waldrapp]
 ---
 
 I am content.

@@ -1,6 +1,7 @@
 ---
 title: Waldrapp
 slug: waldrapp
-type: enclosure
+type: shared-enclosure
+animals: [waldrapp, roter-sichler]
 ---
 Some Content

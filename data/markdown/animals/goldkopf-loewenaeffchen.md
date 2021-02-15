@@ -21,6 +21,7 @@ i18nNames:
 iucnID: '40643'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/40643'
 iucnStatus: Q11394
+facility: kleines-affenhaus
 ---
 
 I am content.

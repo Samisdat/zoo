@@ -1,6 +1,7 @@
 ---
 title: Lachender Hans
 slug: lachender-hans
-type: enclosure
+type: single-enclosure
+animals: [lachender-hans]
 ---
 Some Content

@@ -1,6 +1,6 @@
 ---
 title: Spielplatz
 slug: spielplatz
-type: enclosure
+type: playground
 ---
 Some Content

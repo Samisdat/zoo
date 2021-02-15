@@ -1,6 +1,7 @@
 ---
 title: Tiger
 slug: tiger
-type: enclosure
+type: single-enclosure
+animals: [tiger]
 ---
 Some Content

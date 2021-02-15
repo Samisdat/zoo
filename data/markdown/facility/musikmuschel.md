@@ -1,6 +1,6 @@
 ---
 title: Musikmuschel
 slug: musikmuschel
-type: enclosure
+type: poi
 ---
 Some Content

@@ -1,6 +1,6 @@
 ---
 title: Kiosk Tigertal
 slug: kiosk-tigertal
-type: enclosure
+type: food
 ---
 Some Content

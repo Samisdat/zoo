@@ -1,6 +1,6 @@
 ---
 title: Ententeich
 slug: ententeich
-type: enclosure
+type: shared-enclosure
 ---
 Some Content

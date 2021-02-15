@@ -1,6 +1,7 @@
 ---
 title: Kirk DikDiks
 slug: kirk-dikdiks
-type: enclosure
+type: single-enclosure
+animals: [kirk-dikdik]
 ---
 Some Content

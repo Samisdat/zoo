@@ -1,5 +1,5 @@
 ---
-slug: faultier
+slug: zweifingerfaultier
 title: Zweifingerfaultier
 wikidata: Q752691
 image: Zweifingerfaultier
@@ -20,6 +20,7 @@ i18nNames:
 iucnID: '4777'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/4777'
 iucnStatus: Q211005
+facility: suedamerikahaus
 ---
 
 I am content.

@@ -1,6 +1,7 @@
 ---
 title: Rentiere
 slug: rentiere
-type: enclosure
+type: single-enclosure
+animals: [rentier]
 ---
 Some Content

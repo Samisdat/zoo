@@ -1,6 +1,7 @@
 ---
 title: Gibbons
 slug: gibbons
-type: enclosure
+type: single-enclosure
+animals: [weisshandgibbon]
 ---
 Some Content

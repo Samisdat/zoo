@@ -1,6 +1,7 @@
 ---
 title: Südamerikahaus
 slug: suedamerikahaus
-type: enclosure
+type: shared-enclosure
+animals: [mittelamerikanischer-tapir, zweifingerfaultier, halsbandpekari, zwergmara]
 ---
 Some Content

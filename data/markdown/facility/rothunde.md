@@ -1,6 +1,7 @@
 ---
 title: Rothunde
 slug: rothunde
-type: enclosure
+type: single-enclosure
+animals: [asiatischer-rothund]
 ---
 Some Content

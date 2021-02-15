@@ -20,6 +20,7 @@ i18nNames:
 iucnID: '5360'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/5360'
 iucnStatus: Q211005
+facility: suedamerikahaus
 ---
 
 I am content.

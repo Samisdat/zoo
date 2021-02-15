@@ -1,6 +1,7 @@
 ---
 title: Hirscheber
 slug: hirscheber
-type: enclosure
+type: single-enclosure
+animals: [hirscheber]
 ---
 Some Content

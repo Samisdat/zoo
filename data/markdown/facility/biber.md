@@ -1,6 +1,7 @@
 ---
 title: Biber
 slug: biber
-type: enclosure
+type: single-enclosure
+animals: [europaeischer-biber]
 ---
 Some Content

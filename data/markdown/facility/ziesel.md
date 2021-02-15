@@ -1,6 +1,7 @@
 ---
 title: Ziesel
 slug: ziesel
-type: enclosure
+type: single-enclosure
+animals: []
 ---
 Some Content

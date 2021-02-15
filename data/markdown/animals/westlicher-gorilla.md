@@ -22,6 +22,7 @@ i18nNames:
 iucnID: '9404'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/9404'
 iucnStatus: Q219127
+facility: affenhaus
 ---
 
 I am content.

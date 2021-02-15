@@ -1,6 +1,6 @@
 ---
 title: Vogelhaus
 slug: vogelhaus
-type: enclosure
+type: shared-enclosure
 ---
 Some Content

@@ -1,6 +1,6 @@
 ---
 title: Okavagoo
 slug: okavagoo
-type: enclosure
+type: food
 ---
 Some Content

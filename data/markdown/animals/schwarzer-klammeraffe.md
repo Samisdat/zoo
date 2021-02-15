@@ -1,14 +1,16 @@
 ---
 slug: schwarzer-klammeraffe
 title: Schwarzer Klammeraffe
-wikidata: Q40446022
+wikidata: Q653650
 image: Schwarzer Klammeraffe
 class: Säugetiere
 order: Primaten
-family: Kapuzinerartige
+family: Klammerschwanzaffen
 species: Schwarzer Klammeraffe
-wikipediaLink: null
-images: []
+wikipediaLink: https://de.wikipedia.org/wiki/Braunkopfklammeraffe
+images:
+  - >-
+    https://upload.wikimedia.org/wikipedia/commons/9/92/Ateles-fusciceps_54724770b.jpg
 scientificName: Ateles fusciceps robustus
 i18nNames:
   en: Ateles fusciceps robustus
@@ -17,6 +19,7 @@ i18nNames:
 iucnID: null
 iucnLink: null
 iucnStatus: null
+facility: kleines-affenhaus
 ---
 
 I am content.

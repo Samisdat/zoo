@@ -1,6 +1,7 @@
 ---
 title: Zebras
 slug: zebras
-type: enclosure
+type: single-enclosure
+animals: [steppenzebra]
 ---
 Some Content

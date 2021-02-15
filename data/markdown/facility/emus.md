@@ -1,6 +1,7 @@
 ---
 title: Emus
 slug: emus
-type: enclosure
+type: single-enclosure
+animals: [emu]
 ---
 Some Content

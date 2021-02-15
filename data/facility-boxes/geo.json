@@ -7,7 +7,8 @@
             "properties": {
                 "name": "Elefanten",
                 "slug": "elefanten",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -42,7 +43,8 @@
             "properties": {
                 "name": "Kiang",
                 "slug": "kiang",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -77,7 +79,8 @@
             "properties": {
                 "name": "Rentiere",
                 "slug": "rentiere",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -110,9 +113,10 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Taskine",
-                "slug": "taskine",
-                "facilityType": "single-enclosure"
+                "name": "Takine",
+                "slug": "takine",
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -147,7 +151,8 @@
             "properties": {
                 "name": "Kiosk Tigertal",
                 "slug": "kiosk-tigertal",
-                "facilityType": "food"
+                "facilityType": "food",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -182,7 +187,8 @@
             "properties": {
                 "name": "Katzenhaus",
                 "slug": "katzenhaus",
-                "facilityType": "shared-enclosure"
+                "facilityType": "shared-enclosure",
+                "published": false
             },
             "geometry": {
                 "type": "Polygon",
@@ -217,7 +223,8 @@
             "properties": {
                 "name": "Hirscheber",
                 "slug": "hirscheber",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -252,7 +259,8 @@
             "properties": {
                 "name": "Affenhaus",
                 "slug": "affenhaus",
-                "facilityType": "shared-enclosure"
+                "facilityType": "shared-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -287,7 +295,8 @@
             "properties": {
                 "name": "Spielplatz",
                 "slug": "spielplatz",
-                "facilityType": "playground"
+                "facilityType": "playground",
+                "published": false
             },
             "geometry": {
                 "type": "Polygon",
@@ -322,7 +331,8 @@
             "properties": {
                 "name": "Davidshirsche",
                 "slug": "davidshirsche",
-                "facilityType": "shared-enclosure"
+                "facilityType": "shared-enclosure",
+                "published": false
             },
             "geometry": {
                 "type": "Polygon",
@@ -357,7 +367,8 @@
             "properties": {
                 "name": "Kleines Affenhaus",
                 "slug": "kleines-affenhaus",
-                "facilityType": "shared-enclosure"
+                "facilityType": "shared-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -392,7 +403,8 @@
             "properties": {
                 "name": "Okavagoo",
                 "slug": "okavagoo",
-                "facilityType": "food"
+                "facilityType": "food",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -427,7 +439,8 @@
             "properties": {
                 "name": "Tiger",
                 "slug": "tiger",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -462,7 +475,8 @@
             "properties": {
                 "name": "Seelöwen",
                 "slug": "seeloewen",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -497,7 +511,8 @@
             "properties": {
                 "name": "Brillenpinguine",
                 "slug": "brillenpinguine",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -532,7 +547,8 @@
             "properties": {
                 "name": "Südamerikahaus",
                 "slug": "suedamerikahaus",
-                "facilityType": "shared-enclosure"
+                "facilityType": "shared-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -567,7 +583,8 @@
             "properties": {
                 "name": "Biber",
                 "slug": "biber",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": false
             },
             "geometry": {
                 "type": "Polygon",
@@ -602,7 +619,8 @@
             "properties": {
                 "name": "Vogelhaus",
                 "slug": "vogelhaus",
-                "facilityType": "shared-enclosure"
+                "facilityType": "shared-enclosure",
+                "published": false
             },
             "geometry": {
                 "type": "Polygon",
@@ -637,7 +655,8 @@
             "properties": {
                 "name": "Gibbons",
                 "slug": "gibbons",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -672,7 +691,8 @@
             "properties": {
                 "name": "Katzenhaus",
                 "slug": "katzenhaus",
-                "facilityType": "shared-enclosure"
+                "facilityType": "shared-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -707,7 +727,8 @@
             "properties": {
                 "name": "Löwen",
                 "slug": "loewen",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -742,7 +763,8 @@
             "properties": {
                 "name": "Lachender Hans",
                 "slug": "lachender-hans",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": false
             },
             "geometry": {
                 "type": "Polygon",
@@ -777,7 +799,8 @@
             "properties": {
                 "name": "Kangurus",
                 "slug": "kangurus",
-                "facilityType": "shared-enclosure"
+                "facilityType": "shared-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -812,7 +835,8 @@
             "properties": {
                 "name": "Okapis",
                 "slug": "okapis",
-                "facilityType": "single-enclosure"
+                "facilityType": "shared-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -847,7 +871,8 @@
             "properties": {
                 "name": "Kirk DikDiks",
                 "slug": "kirk-dikdiks",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -882,7 +907,8 @@
             "properties": {
                 "name": "JuniorZoo",
                 "slug": "juniorzoo",
-                "facilityType": "shared-enclosure"
+                "facilityType": "shared-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -917,7 +943,8 @@
             "properties": {
                 "name": "Steinböcke",
                 "slug": "steinboecke",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -952,7 +979,8 @@
             "properties": {
                 "name": "Pinguine",
                 "slug": "pinguine",
-                "facilityType": "shared-enclosure"
+                "facilityType": "shared-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -987,7 +1015,8 @@
             "properties": {
                 "name": "Altes Ottergehege",
                 "slug": "altes-ottergehege",
-                "facilityType": "shared-enclosure"
+                "facilityType": "shared-enclosure",
+                "published": false
             },
             "geometry": {
                 "type": "Polygon",
@@ -1022,7 +1051,8 @@
             "properties": {
                 "name": "Eisbären",
                 "slug": "eisbaeren",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -1057,7 +1087,8 @@
             "properties": {
                 "name": "Terrarium",
                 "slug": "terrarium",
-                "facilityType": "shared-enclosure"
+                "facilityType": "shared-enclosure",
+                "published": false
             },
             "geometry": {
                 "type": "Polygon",
@@ -1092,7 +1123,8 @@
             "properties": {
                 "name": "Aquarium",
                 "slug": "aquarium",
-                "facilityType": "shared-enclosure"
+                "facilityType": "shared-enclosure",
+                "published": false
             },
             "geometry": {
                 "type": "Polygon",
@@ -1127,7 +1159,8 @@
             "properties": {
                 "name": "Musikmuschel",
                 "slug": "musikmuschel",
-                "facilityType": "poi"
+                "facilityType": "poi",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -1162,7 +1195,8 @@
             "properties": {
                 "name": "Eingang",
                 "slug": "eingang",
-                "facilityType": "poi"
+                "facilityType": "poi",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -1197,7 +1231,8 @@
             "properties": {
                 "name": "Yaks",
                 "slug": "yaks",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -1232,7 +1267,8 @@
             "properties": {
                 "name": "Ententeich",
                 "slug": "ententeich",
-                "facilityType": "shared-enclosure"
+                "facilityType": "shared-enclosure",
+                "published": false
             },
             "geometry": {
                 "type": "Polygon",
@@ -1267,7 +1303,8 @@
             "properties": {
                 "name": "Ziesel",
                 "slug": "ziesel",
-                "facilityType": "shared-enclosure"
+                "facilityType": "shared-enclosure",
+                "published": false
             },
             "geometry": {
                 "type": "Polygon",
@@ -1302,7 +1339,8 @@
             "properties": {
                 "name": "Tierwelt Patagoniens",
                 "slug": "tierwelt-patagoniens",
-                "facilityType": "shared-enclosure"
+                "facilityType": "shared-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -1337,7 +1375,8 @@
             "properties": {
                 "name": "Emus",
                 "slug": "emus",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -1372,7 +1411,8 @@
             "properties": {
                 "name": "Pelikane",
                 "slug": "pelikane",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -1407,7 +1447,8 @@
             "properties": {
                 "name": "Bären",
                 "slug": "baeren",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -1442,7 +1483,8 @@
             "properties": {
                 "name": "Rothunde",
                 "slug": "rothunde",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -1477,7 +1519,8 @@
             "properties": {
                 "name": "Zebras",
                 "slug": "zebras",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -1512,7 +1555,8 @@
             "properties": {
                 "name": "Waldrapp",
                 "slug": "waldrapp",
-                "facilityType": "shared-enclosure"
+                "facilityType": "shared-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -1547,7 +1591,8 @@
             "properties": {
                 "name": "Pinselohrschweine",
                 "slug": "pinselohrschweine",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -1582,7 +1627,8 @@
             "properties": {
                 "name": "Bongos",
                 "slug": "bongos",
-                "facilityType": "single-enclosure"
+                "facilityType": "single-enclosure",
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",

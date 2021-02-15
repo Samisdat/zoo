@@ -18,6 +18,7 @@ i18nNames:
 iucnID: '41777'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/41777'
 iucnStatus: Q211005
+facility: suedamerikahaus
 ---
 
 I am content.

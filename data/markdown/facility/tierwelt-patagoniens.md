@@ -1,6 +1,7 @@
 ---
 title: Tierwelt Patagoniens
 slug: tierwelt-patagoniens
-type: enclosure
+type: shared-enclosure
+animals: [grosse-mara, darwin-nandu]
 ---
 Some Content

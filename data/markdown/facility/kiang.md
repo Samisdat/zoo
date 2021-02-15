@@ -1,6 +1,7 @@
 ---
 title: Kiang
 slug: kiang
-type: enclosure
+type: single-enclosure
+animals: [kiang]
 ---
 Some Content

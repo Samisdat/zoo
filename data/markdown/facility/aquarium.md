@@ -1,6 +1,6 @@
 ---
 title: Aquarium
 slug: aquarium
-type: enclosure
+type: shared-enclosure
 ---
 Some Content

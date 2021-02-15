@@ -1,6 +1,6 @@
 ---
 title: Davidshirsche
 slug: davidshirsche
-type: enclosure
+type: shared-enclosure
 ---
 Some Content

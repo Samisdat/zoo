@@ -1,6 +1,7 @@
 ---
 title: Bären
 slug: baeren
-type: enclosure
+type: single-enclosure
+animals: [braunbaer]
 ---
 Some Content

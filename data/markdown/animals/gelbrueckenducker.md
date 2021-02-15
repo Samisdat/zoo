@@ -19,6 +19,7 @@ i18nNames:
 iucnID: '4150'
 iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/4150'
 iucnStatus: Q719675
+facility: okapis
 ---
 
 I am content.

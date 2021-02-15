@@ -1,6 +1,6 @@
 ---
 title: Eingang
 slug: eingang
-type: enclosure
+type: poi
 ---
 Some Content

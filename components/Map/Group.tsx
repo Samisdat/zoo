@@ -200,10 +200,11 @@ export const Group = (props) => {
 
             let href = '/api/teaser/';
 
-            if('single-enclosure' === props.focus.properties.facilityType){
-                href += 'facility/';
-            }
-            else if('shared-enclosure' === props.focus.properties.facilityType){
+            if(
+                'food' === props.focus?.properties?.facilityType ||
+                'single-enclosure' === props.focus?.properties?.facilityType ||
+                'shared-enclosure' === props.focus?.properties?.facilityType
+            ){
                 href += 'facility/';
             }
             else{
@@ -219,9 +220,6 @@ export const Group = (props) => {
             }}  );
 
         });
-
-
-
 
     }, [props.focus])
 

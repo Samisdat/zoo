@@ -1,7 +1,7 @@
 ---
 title: Taskine
 slug: takine
-type: single-enclosure
+type: enclosure
 animals: [takin]
 ---
 Some Content

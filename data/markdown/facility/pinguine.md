@@ -1,7 +1,7 @@
 ---
 title: Pinguine
 slug: pinguine
-type: shared-enclosure
+type: enclosure
 animals: [koenigspinguin, eselspinguin]
 ---
 Some Content

@@ -204,8 +204,7 @@ export const Group = (props) => {
                 'poi' === props.focus?.properties?.facilityType ||
                 'food' === props.focus?.properties?.facilityType ||
                 'playground' === props.focus?.properties?.facilityType ||
-                'single-enclosure' === props.focus?.properties?.facilityType ||
-                'shared-enclosure' === props.focus?.properties?.facilityType
+                'enclosure' === props.focus?.properties?.facilityType
             ){
                 href += 'facility/';
             }

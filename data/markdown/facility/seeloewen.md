@@ -1,7 +1,7 @@
 ---
 title: Seelöwen
 slug: seeloewen
-type: single-enclosure
+type: enclosure
 animals: [kalifornischer-seeloewe]
 ---
 Some Content

@@ -1,7 +1,7 @@
 ---
 title: Steinböcke
 slug: steinboecke
-type: single-enclosure
+type: enclosure
 animals: [sibirischer-steinbock]
 ---
 Some Content

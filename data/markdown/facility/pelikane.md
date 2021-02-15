@@ -1,7 +1,7 @@
 ---
 title: Pelikane
 slug: pelikane
-type: single-enclosure
+type: enclosure
 animals: [rosapelikan]
 ---
 Some Content

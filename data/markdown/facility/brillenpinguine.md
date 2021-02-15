@@ -1,7 +1,7 @@
 ---
 title: Brillenpinguine
 slug: brillenpinguine
-type: single-enclosure
+type: enclosure
 animals: [brillenpinguin]
 ---
 Some Content

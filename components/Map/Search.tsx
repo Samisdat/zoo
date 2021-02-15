@@ -48,11 +48,7 @@ export const MapSearch = (props) => {
             return true;
         }
 
-        if('single-enclosure' === feature.properties?.facilityType){
-            return true;
-        }
-
-        if('shared-enclosure' === feature.properties?.facilityType){
+        if('enclosure' === feature.properties?.facilityType){
             return true;
         }
 

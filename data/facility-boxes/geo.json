@@ -296,7 +296,7 @@
                 "name": "Spielplatz",
                 "slug": "spielplatz",
                 "facilityType": "playground",
-                "published": false
+                "published": true
             },
             "geometry": {
                 "type": "Polygon",

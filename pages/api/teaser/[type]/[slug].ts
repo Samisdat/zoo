@@ -73,7 +73,11 @@ export default async (req: NextApiRequest, res: NextApiResponse<TeaserInterface[
             return false;
         });
 
-        if('food' === facility.type){
+        if(
+            'poi' === facility.type ||
+            'food' === facility.type ||
+            'playground' === facility.type
+        ){
 
             const href = `/anlagen/${facility.slug}`;
 

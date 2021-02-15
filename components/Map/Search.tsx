@@ -35,7 +35,16 @@ export const MapSearch = (props) => {
             return false;
         }
 
+
+        if('playground' === feature.properties?.facilityType){
+            return true;
+        }
+
         if('food' === feature.properties?.facilityType){
+            return true;
+        }
+
+        if('poi' === feature.properties?.facilityType){
             return true;
         }
 

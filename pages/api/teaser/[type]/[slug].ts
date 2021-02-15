@@ -64,7 +64,6 @@ export default async (req: NextApiRequest, res: NextApiResponse<TeaserInterface[
 
         const facilities = await getFacilities();
 
-        console.log(facilities)
 
         const facility = facilities.find((facility)=>{
             if(slug === facility.slug){
@@ -73,6 +72,24 @@ export default async (req: NextApiRequest, res: NextApiResponse<TeaserInterface[
 
             return false;
         });
+
+        if('food' === facility.type){
+
+            const href = `/anlagen/${facility.slug}`;
+
+            const teaser:TeaserInterface = {
+                image: facility.images[0],
+                title: facility.title,
+                href: href,
+            };
+
+            teasers.push(teaser);
+
+        }
+        else if(
+            'single-enclosure' === facility.type ||
+            'shared-enclosure' === facility.type
+        ){
 
         for(let i = 0, x = facility.animals.length; i < x; i += 1){
 
@@ -97,9 +114,9 @@ export default async (req: NextApiRequest, res: NextApiResponse<TeaserInterface[
             teasers.push(teaser);
 
         }
+        }
 
     }
-
 
     res.status(200).json(teasers);
 

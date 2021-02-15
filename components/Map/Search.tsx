@@ -35,6 +35,10 @@ export const MapSearch = (props) => {
             return false;
         }
 
+        if('food' === feature.properties?.facilityType){
+            return true;
+        }
+
         if('single-enclosure' === feature.properties?.facilityType){
             return true;
         }

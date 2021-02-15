@@ -7,7 +7,8 @@ export interface Facility {
     slug: string;
     title:string;
     type: string
-    animals:string[];
+    animals: string[];
+    images?: string[];
 }
 
 const dataDir = path.resolve(process.env.PWD, 'data/markdown/facility');
@@ -28,6 +29,10 @@ export const getFacility = async (slug:string):Promise<Facility> => {
 
     if(undefined === facility.animals){
         facility.animals = null;
+    }
+
+    if(undefined !== facilityMarkdown.data.images){
+        facility.images = facilityMarkdown.data.images;
     }
 
     return facility;

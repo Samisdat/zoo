@@ -1,7 +1,7 @@
 ---
 title: Löwen
 slug: loewen
-type: single-enclosure
+type: enclosure
 animals: [loewe]
 ---
 Some Content

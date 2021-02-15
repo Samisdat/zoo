@@ -1,7 +1,7 @@
 ---
 title: Pinselohrschweine
 slug: pinselohrschweine
-type: single-enclosure
+type: enclosure
 animals: [pinselohrschwein]
 ---
 Some Content

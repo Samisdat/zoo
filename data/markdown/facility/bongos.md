@@ -1,7 +1,7 @@
 ---
 title: Bongos
 slug: bongos
-type: single-enclosure
+type: enclosure
 animals: [bongo]
 ---
 Some Content

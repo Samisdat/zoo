@@ -1,7 +1,7 @@
 ---
 title: Elefanten
 slug: elefanten
-type: single-enclosure
+type: enclosure
 animals: [afrikanischer-elefant]
 ---
 Some Content

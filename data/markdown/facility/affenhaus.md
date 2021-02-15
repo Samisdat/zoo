@@ -1,7 +1,7 @@
 ---
 title: Affenhaus
 slug: affenhaus
-type: shared-enclosure
+type: enclosure
 animals: [bonobo, westlicher-gorilla, orang-utan]
 ---
 Some Content

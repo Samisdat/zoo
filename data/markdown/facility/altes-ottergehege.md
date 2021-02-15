@@ -1,6 +1,6 @@
 ---
 title: Altes Ottergehege
 slug: altes-ottergehege
-type: shared-enclosure
+type: enclosure
 ---
 Some Content

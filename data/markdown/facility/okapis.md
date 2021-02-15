@@ -1,7 +1,7 @@
 ---
 title: Okapis
 slug: okapis
-type: shared-enclosure
+type: enclosure
 animals: [okapi, gelbrueckenducker]
 ---
 Some Content

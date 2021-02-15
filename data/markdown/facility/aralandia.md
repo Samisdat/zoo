@@ -1,7 +1,7 @@
 ---
 title: Aralandia
 slug: aralandia
-type: shared-enclosure
+type: enclosure
 ---
 Some Content
 

@@ -1,7 +1,7 @@
 ---
 title: Katzenhaus
 slug: katzenhaus
-type: shared-enclosure
+type: enclosure
 animals: [leopard, sambischer-kleingraumull, asiatische-goldkatze, kurzohrige-elefantenspitzmaus]
 ---
 Some Content

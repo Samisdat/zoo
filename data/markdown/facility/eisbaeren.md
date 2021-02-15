@@ -1,7 +1,7 @@
 ---
 title: Eisbären
 slug: eisbaeren
-type: single-enclosure
+type: enclosure
 animals: [eisbaer]
 ---
 Some Content

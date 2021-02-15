@@ -1,7 +1,7 @@
 ---
 title: Pudu
 slug: pudu
-type: single-enclosure
+type: enclosure
 animals: [suedlicher-pudu]
 ---
 Some Content

@@ -1,7 +1,7 @@
 ---
 title: Yaks
 slug: yaks
-type: single-enclosure
+type: enclosure
 animals: [yak]
 ---
 Some Content

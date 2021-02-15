@@ -90,10 +90,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<TeaserInterface[
             teasers.push(teaser);
 
         }
-        else if(
-            'single-enclosure' === facility.type ||
-            'shared-enclosure' === facility.type
-        ){
+        else if('enclosure' === facility.type){
 
         for(let i = 0, x = facility.animals.length; i < x; i += 1){
 

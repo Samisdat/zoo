@@ -1,7 +1,7 @@
 ---
 title: JuniorZoo
 slug: juniorzoo
-type: shared-enclosure
+type: enclosure
 animals: [wildziege, afrikanischer-esel]
 ---
 Some Content

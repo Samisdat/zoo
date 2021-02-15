@@ -201,7 +201,9 @@ export const Group = (props) => {
             let href = '/api/teaser/';
 
             if(
+                'poi' === props.focus?.properties?.facilityType ||
                 'food' === props.focus?.properties?.facilityType ||
+                'playground' === props.focus?.properties?.facilityType ||
                 'single-enclosure' === props.focus?.properties?.facilityType ||
                 'shared-enclosure' === props.focus?.properties?.facilityType
             ){

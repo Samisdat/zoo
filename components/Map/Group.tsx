@@ -117,9 +117,7 @@ export const Group = (props) => {
 
         // enable zooming
         mapSvg.call(zooming);
-
-        console.log()
-
+        
         const t = d3.zoomIdentity
             .translate(
                 props.mapState.transform.x,

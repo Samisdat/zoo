@@ -126,6 +126,7 @@ export const MapSearch = (props) => {
         >
 
             <Autocomplete
+                id="map-search"
                 value={value}
                 style={{ margin: 10   }}
                 options={options}

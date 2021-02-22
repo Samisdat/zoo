@@ -10,6 +10,8 @@
     "@types/geojson": "^7946.0.7",
     "@types/use-persisted-state": "^0.3.0",
     "clsx": "latest",
+    "cypress": "^6.5.0",
+    "cypress-plugin-snapshots": "^1.4.4",
     "d3": "^6.3.1",
     "d3-geo": "^1.12.1",
     "leaflet": "^1.6.0",

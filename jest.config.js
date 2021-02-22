@@ -2,7 +2,8 @@ module.exports = {
   preset: "ts-jest",
   "roots": [
     "<rootDir>/components",
-    "<rootDir>/pages"
+    "<rootDir>/pages",
+    "<rootDir>/helper"
   ],
   setupFilesAfterEnv: ["<rootDir>/setupTests.ts"],
   globals: {

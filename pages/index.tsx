@@ -46,6 +46,10 @@ const MapDimensionDefault:MapDimension = {
 
 export default function Index(props:IndexProps) {
 
+    const boundingBox = props.geoJson.features.find((feature)=>{
+        return ('bounding-box' === feature.properties.type);
+    });
+
     const {toggleSearch} = props;
 
     const [mapDimensionState, setMapDimensionState] = useMapState<MapDimension>(MapDimensionDefault);

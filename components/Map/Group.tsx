@@ -10,6 +10,7 @@ import {centerToFeatureCollection} from "../Distribution/Detail";
 import {MapFocus} from "../../pages";
 import {MapSearch} from "./Search";
 import {Segments} from "./Segments";
+import {filterGeoJson} from "helper/geojson/filterGeoJson";
 
 // zoom until focus.width or focus.height extends window.width or window.height
 export const findBestZoomLevel = (x0, x1, y0, y1, maxWidth, maxHeight) => {
@@ -69,6 +70,8 @@ export const Group = (props) => {
     const svgId = 'main-svg';
     const mapId = 'main-map';
 
+    const boundingBox = filterGeoJson('bounding-box', props.geoJson);
+
     const [autoZoom, setAutoZoom] = useState<boolean>(false);
     const [zoom, setZoom] = useState<number>(props.mapState.transform.k);
     const [focus, setFocus] = useState<MapFocus>("none");
@@ -117,7 +120,7 @@ export const Group = (props) => {
 
         // enable zooming
         mapSvg.call(zooming);
-        
+
         const t = d3.zoomIdentity
             .translate(
                 props.mapState.transform.x,
@@ -226,7 +229,7 @@ export const Group = (props) => {
         <g id={mapId}>
             <Sketched
                 mapState={props.mapState}
-                geoJson={props.geoJson}
+                boundingBox={boundingBox}
             />
             {/*
             <Ways

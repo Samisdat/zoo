@@ -16,7 +16,7 @@ import {relative} from "jest-haste-map/build/lib/fast_path";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        root: {
+        mapTeaser: {
             display: 'flex',
             position: 'absolute'    ,
             bottom:90,
@@ -203,7 +203,7 @@ export const Teaser = (props: TeaserPropsInterface) => {
 
         return (
             <Card
-                className={classes.root}
+                className={classes.mapTeaser}
                 elevation={2}
             >
                 <CircularProgress
@@ -236,7 +236,8 @@ export const Teaser = (props: TeaserPropsInterface) => {
 
     return (
         <Card
-            className={classes.root}
+            id='map-teaser'
+            className={classes.mapTeaser}
             elevation={2}
         >
             <div className={classes.stepperRoot}>

@@ -131,8 +131,6 @@ export default function Index(props:IndexProps) {
         // register event listener only once
         if(false === hasResizeListener){
 
-            console.log('register listener');
-
             window.addEventListener('resize', ()=>{
                 console.log('window@resize')
                 setDimension();
@@ -141,10 +139,6 @@ export default function Index(props:IndexProps) {
             setHasResizeListener(true);
 
         }
-
-        console.log(window.innerWidth, mapDimensionState?.width);
-        console.log(window.innerHeight, mapDimensionState?.height);
-        console.log(window.innerWidth === mapDimensionState?.width && window.innerHeight === mapDimensionState?.height);
 
         if(
             window.innerWidth === mapDimensionState?.width &&

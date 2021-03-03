@@ -1,13 +1,8 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
-import {Avatar, Box, Fab, ListItemAvatar} from "@material-ui/core";
-import Button from '@material-ui/core/Button';
+import {Box, Fab} from "@material-ui/core";
 import Dialog from '@material-ui/core/Dialog';
-import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -15,28 +10,10 @@ import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import { TransitionProps } from '@material-ui/core/transitions';
-import ListSubheader from "@material-ui/core/ListSubheader";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import MapIcon from "@material-ui/icons/Map";
-import PetsIcon from "@material-ui/icons/Pets";
-import SearchIcon from "@material-ui/icons/Search";
-import FastfoodIcon from "@material-ui/icons/Fastfood";
-import MailIcon from "@material-ui/icons/Mail";
-import WcIcon from "@material-ui/icons/Wc";
-import ChildFriendlyIcon from "@material-ui/icons/ChildFriendly";
-import ExploreIcon from "@material-ui/icons/Explore";
-import InfoIcon from "@material-ui/icons/Info";
-import CodeIcon from "@material-ui/icons/Code";
-import MenuBookIcon from "@material-ui/icons/MenuBook";
-import BookIcon from '@material-ui/icons/Book';
-import StoreIcon from '@material-ui/icons/Store';
-import Settings from "../Navigation/Settings";
-
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
-import {animalUrlPart, blogUrlPart, facilityUrlPart} from "../../constants";
 import {Feature} from "geojson";
-import {Animal} from "../../pages/api/animals";
+import PinnedSubheaderList from "./SearchList";
+import ChipsArray from "./Chips";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -77,6 +54,18 @@ const useStyles = makeStyles((theme: Theme) =>
         subheader: {
             backgroundColor: theme.palette.background.paper,
         },
+        expandHandle:{
+            position: 'absolute',
+            top:0,
+            left:0,
+            width:'100%',
+            height:24,
+            background: 'rgba(255,255,255,0.7)',
+            textAlign:'center'
+        },
+        strechedIcon:{
+            transform: 'scale(3,1)'
+        }
     }),
 );
 
@@ -86,10 +75,6 @@ const Transition = React.forwardRef(function Transition(
 ) {
     return <Slide direction="down" ref={ref} {...props} />;
 });
-
-const ListItemLink = (props) => {
-    return <ListItem button component="a" {...props} />;
-};
 
 export default function SearchDialog(props) {
     const classes = useStyles();
@@ -147,12 +132,12 @@ export default function SearchDialog(props) {
         ordered[key] = group[key];
     });
 
-
-    console.log(options)
-
     const [open, setOpen] = React.useState(true);
 
     const handleClickOpen = () => {
+
+        console.log('handleClickOpen')
+
         setOpen(true);
     };
 
@@ -160,83 +145,61 @@ export default function SearchDialog(props) {
         setOpen(false);
     };
 
-    const onClick = () => {
-        console.log('onClick');
-    }
+    const handleClickItem = (item:Feature) => {
+
+        console.log('handleClickItem', item.properties.name)
+
+        setOpen(false);
+
+        props.setFocus(item);
+    };
 
     return (
         <React.Fragment>
-
-            <Fab
-                color="secondary"
-                className={classes.fab}
+            <Box
+                className={classes.expandHandle}
                 onClick={handleClickOpen}
-                style={{left:100}}
             >
-                <ExpandMoreIcon/>
-            </Fab>
+                <ExpandMoreIcon
+                    className={classes.strechedIcon}
+                />
+            </Box>
             <Dialog
                 fullScreen
                 open={open}
                 onClose={handleClose}
                 TransitionComponent={Transition}
             >
-                {/*
+
                 <AppBar
                     className={classes.appBar}
-                    position="static"
                 >
                     <Toolbar
                         color="primary"
                     >
-                        <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
-                            <CloseIcon />
-                        </IconButton>
                         <Typography variant="h6" className={classes.title}>
                             Suche
                         </Typography>
+                        <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
+                            <CloseIcon />
+                        </IconButton>
                     </Toolbar>
                 </AppBar>
-                */}
-                <List
-                    className={classes.listRoot}
+
+                <Box
+                    style={{
+                        height:'150px',
+                        background:'red',
+                        border:'10px solid blue'
+                    }}
                 >
-                    {Object.entries(ordered)
-                        .map(([key, value], i) => {
-                            return <React.Fragment>
-                                <ListSubheader className={classes.subheader}>{key.toUpperCase()}</ListSubheader>
-                                {group[key].map(( animal: Feature ) => {
-
-                                    return(
-                                    <ListItem alignItems="flex-start">
-                                        <ListItemAvatar>
-                                            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                                        </ListItemAvatar>
-                                        <ListItemText
-                                            primary={animal.properties.name}
-                                            secondary={
-                                                <React.Fragment>
-                                                    <Typography
-                                                        component="span"
-                                                        variant="body2"
-                                                        className={classes.inline}
-                                                        color="textPrimary"
-                                                    >
-                                                        Ali Connors
-                                                    </Typography>
-                                                    {" — I'll be in your neighborhood doing errands this…"}
-                                                </React.Fragment>
-                                            }
-                                        />
-                                    </ListItem>
-
-                                    )}
-                                )}
-                            </React.Fragment>
-                    })}
-
-
-                </List>
+                    Search and chips
+                    <ChipsArray />
+                </Box>
+                <PinnedSubheaderList
+                    ordered={ordered}
+                    handleClickItem={handleClickItem}
+                />
                 <Fab
                     color="primary"
                     className={classes.fab}

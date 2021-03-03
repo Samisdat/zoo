@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-import {Feature, FeatureCollection, Polygon} from 'geojson';
+import {Feature, FeatureCollection, LineString, Polygon} from 'geojson';
 import {MapRoot} from 'components/Map/Root';
 import {NavigationInterface} from "../components/Navigation/Interfaces";
 import {MapSearch} from "../components/Map/Search";
@@ -8,6 +8,7 @@ import {getFullGeoJson} from "./api/geojson/list";
 import {Teaser, TeaserPropsInterface} from "../components/Map/Teaser";
 
 import createPersistedState from 'use-persisted-state';
+import SearchDialog from "../components/Search/Search";
 const useMapState = createPersistedState('map');
 
 export interface IndexProps{
@@ -44,11 +45,15 @@ const MapDimensionDefault:MapDimension = {
     height: 300,
 }
 
-export default function Index(props:IndexProps) {
+interface MapBound{
+    box: Feature<LineString>
+}
 
-    const boundingBox = props.geoJson.features.find((feature)=>{
-        return ('bounding-box' === feature.properties.type);
-    });
+interface MapTeaser{
+    teaser: Feature<LineString>
+}
+
+export default function Index(props:IndexProps) {
 
     const {toggleSearch} = props;
 
@@ -63,6 +68,8 @@ export default function Index(props:IndexProps) {
     }*/);
 
     const [hasResizeListener, setHasResizeListener] = useState<boolean>(false);
+
+    const [searchResult, setSearchResult] = useState<Feature<Polygon>>(undefined);
 
     const closeTeaser = ()=>{
         setTeaser(undefined);
@@ -117,6 +124,8 @@ export default function Index(props:IndexProps) {
 
     };
 
+
+
     const setDimension = () => {
 
         const mapDimension: MapDimension = {
@@ -165,12 +174,19 @@ export default function Index(props:IndexProps) {
                 fullsize={true}
                 {...props}
             />
+            {/*
             <MapSearch
                 focus={mapState.focus}
                 toggleSearch={toggleSearch}
                 geoJson={props.geoJson}
                 setFocus={setFocus}
+                setSearchResult={setSearchResult}
                 {...props.navigation}
+            />
+            */}
+            <SearchDialog
+                geoJson={props.geoJson}
+                setFocus={setFocus}
             />
             <Teaser
                 {...teaser}

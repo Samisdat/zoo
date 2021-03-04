@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme: Theme) =>
             position: 'fixed',
             bottom: theme.spacing(2),
             left: theme.spacing(2),
-            /*backgroundColor: '#00a800',*/
             color: '#fff'
         },
         appBar: {

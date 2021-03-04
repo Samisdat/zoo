@@ -106,7 +106,12 @@ export default function ButtonAppBar() {
                 >
                     <MenuIcon/>
                 </Fab>
-        <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
+        <Dialog
+            fullScreen
+            open={open}
+            onClose={handleClose}
+            TransitionComponent={Transition}
+        >
                 <AppBar className={classes.appBar}>
                     <Toolbar
                         color="primary"

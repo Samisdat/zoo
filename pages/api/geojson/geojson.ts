@@ -4,7 +4,7 @@ import path from 'path';
 import fs from 'fs';
 
 import urlSlug from 'url-slug'
-import {Feature, FeatureCollection, Polygon} from "geojson";
+import {Feature, FeatureCollection, LineString, Polygon} from "geojson";
 
 let allowList = [
     'bounding-box',
@@ -35,13 +35,20 @@ export const getOneGeoJson = async (slug:string):Promise<any> => {
             return feature;
         }
 
-        feature.geometry.type = 'LineString';
-        feature.geometry.coordinates = feature.geometry.coordinates[0];
+        const polygon:Feature<Polygon> = feature as Feature<Polygon>;
 
-        return feature;
+        const lineString: Feature<LineString> = {
+            type: 'Feature',
+            geometry:{
+                type: 'LineString',
+                coordinates: polygon.geometry.coordinates[0]
+            },
+            properties: polygon.properties
+        };
+
+        return lineString;
 
     });
-
 
     return geojson;
 }

@@ -23,6 +23,10 @@ export const Distribution = (props) => {
 
     const classes = useStyles();
 
+    if(!props.distributionGeoJson){
+        return (<React.Fragment/>);
+    }
+
     return (
         <React.Fragment>
             <div

@@ -313,7 +313,11 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
 
-    const animals = await getAnimals();
+    let animals = await getAnimals();
+
+    animals = animals.filter((animal:Animal)=>{
+        return animal.published;
+    });
 
     const animalPaths = animals.map((animal:Animal)=>{
         return {

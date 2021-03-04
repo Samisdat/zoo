@@ -29,7 +29,15 @@ export default class MyDocument extends Document {
 // it's compatible with server-side generation (SSG).
 MyDocument.getInitialProps = async (ctx) => {
 
-    await basicAuthMiddleware(ctx.req, ctx.res);
+    const basicAuthOptions = {
+        realm: 'Zoo Wuppertal',
+        users:[{
+            name:'foo',
+            password: 'bar'
+        }]
+    };
+
+    //await basicAuthMiddleware(ctx.req, ctx.res, basicAuthOptions);
 
   // Resolution order
   //

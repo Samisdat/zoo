@@ -3,7 +3,6 @@ import React, {useEffect, useState} from 'react';
 import {Feature, FeatureCollection, LineString, Polygon} from 'geojson';
 import {MapRoot} from 'components/Map/Root';
 import {NavigationInterface} from "../components/Navigation/Interfaces";
-import {MapSearch} from "../components/Map/Search";
 import {getFullGeoJson} from "./api/geojson/list";
 import {Teaser, TeaserPropsInterface} from "../components/Map/Teaser";
 

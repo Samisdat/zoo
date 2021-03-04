@@ -8,7 +8,6 @@ import {PointOfInterest} from "./PointOfInterest";
 import {Feature} from "geojson";
 import {centerToFeatureCollection} from "../Distribution/Detail";
 import {MapFocus} from "../../pages";
-import {MapSearch} from "./Search";
 import {Segments} from "./Segments";
 import {filterGeoJson} from "helper/geojson/filterGeoJson";
 

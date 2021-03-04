@@ -5,19 +5,19 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import {Feature} from "geojson";
-import {Avatar, ListItemAvatar, Typography} from "@material-ui/core";
+import {Avatar, ListItemAvatar} from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             backgroundColor: theme.palette.background.paper,
             position: 'absolute',
-            top: 150 + 56,
+            top:56,
+            /*top: 150 + 56,*/
             bottom:0,
             left:0,
             right:0,
             overflow: 'auto',
-            border: '10px solid green'
         },
         listSection: {
             backgroundColor: 'inherit',
@@ -41,14 +41,16 @@ export default function PinnedSubheaderList(props) {
     };
 
     return (
-        <List className={classes.root} subheader={<li />}>
+        <List
+            className={classes.root}
+            subheader={<li />}
+        >
             {Object.entries(props.ordered).map((key, value)=>(
                     <li key={`section-${key[0]}`} className={classes.listSection}>
                         <ul className={classes.ul}>
                             <ListSubheader>{key[0].toUpperCase()}</ListSubheader>
-                            {key[1].map((item:Feature, index) => {
+                            {(key[1] as Feature[]).map((item:Feature, index) => {
                                 return(
-
                                     <ListItem
                                         alignItems="flex-start"
                                         onClick={()=>{onListItemClick(item)}}
@@ -58,19 +60,7 @@ export default function PinnedSubheaderList(props) {
                                         </ListItemAvatar>
                                         <ListItemText
                                             primary={item.properties.name}
-                                            secondary={
-                                                <React.Fragment>
-                                                    <Typography
-                                                        component="span"
-                                                        variant="body2"
-                                                        className={classes.inline}
-                                                        color="textPrimary"
-                                                    >
-                                                        Ali Connors
-                                                    </Typography>
-                                                    {" — I'll be in your neighborhood doing errands this…"}
-                                                </React.Fragment>
-                                            }
+                                            secondary='Lorem Ipsum'
                                         />
                                     </ListItem>
                                 )})}

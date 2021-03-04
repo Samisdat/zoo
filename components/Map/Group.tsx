@@ -90,7 +90,9 @@ export const Group = (props) => {
         const mapGroup = d3.select(`#${mapId}`);
 
         const zooming = d3.zoom()
-            .scaleExtent([0.01, 150000])
+            .scaleExtent([0.5, 30])
+            //.translateExtent([[-100,0], [props.mapDimension.width, props.mapDimension.height]])
+            //.extent([[-100, 0], [props.mapDimension.width, props.mapDimension.height]])
             .on('zoom', (event) => {
 
                 mapGroup.attr(

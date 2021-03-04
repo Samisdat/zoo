@@ -177,7 +177,7 @@ export default function SearchDialog(props) {
                         color="primary"
                     >
                         <Typography variant="h6" className={classes.title}>
-                            Suche
+                            Auf der Karte zeigen
                         </Typography>
                         <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
                             <CloseIcon />

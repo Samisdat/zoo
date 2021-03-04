@@ -185,17 +185,16 @@ export default function SearchDialog(props) {
                         </IconButton>
                     </Toolbar>
                 </AppBar>
-
+                {/*
                 <Box
                     style={{
                         height:'150px',
                         background:'red',
-                        border:'10px solid blue'
                     }}
                 >
-                    Search and chips
                     <ChipsArray />
                 </Box>
+                */}
                 <PinnedSubheaderList
                     ordered={ordered}
                     handleClickItem={handleClickItem}

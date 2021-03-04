@@ -5,6 +5,7 @@ import {MapStateInterface, MapTransformInterface, MarkerInterface} from "compone
 import {Group} from "./Group";
 import {Feature} from "geojson";
 import {makeStyles} from "@material-ui/core/styles";
+import {ZoomLevel} from "./ZoomLevel";
 
 const markerDefault: MarkerInterface = {
     lat: 51.238741,
@@ -198,6 +199,9 @@ export const MapRoot = (props) => {
                 setTeaser={props.setTeaser}
                 setFocus={props.setFocus}
                 {...props}
+            />
+            <ZoomLevel
+                mapState={mapState}
             />
         </svg>
     );

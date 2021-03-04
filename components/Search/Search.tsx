@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import {Box, Fab} from "@material-ui/core";
+import {Paper, Fab} from "@material-ui/core";
 import Dialog from '@material-ui/core/Dialog';
 import ListItem from '@material-ui/core/ListItem';
 import AppBar from '@material-ui/core/AppBar';
@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme: Theme) =>
             top:0,
             left:0,
             width:'100%',
-            height:24,
+            height:32,
             background: 'rgba(255,255,255,0.7)',
             textAlign:'center'
         },
@@ -155,14 +155,16 @@ export default function SearchDialog(props) {
 
     return (
         <React.Fragment>
-            <Box
+            <Paper
+                elevation={3}
                 className={classes.expandHandle}
                 onClick={handleClickOpen}
+                square={true}
             >
                 <ExpandMoreIcon
-                    className={classes.strechedIcon}
+                    fontSize={"large"}
                 />
-            </Box>
+            </Paper>
             <Dialog
                 fullScreen
                 open={open}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router'
-import {getAnimals, getAnimal, Animal} from "pages/api/animals";
+
 import Typography from "@material-ui/core/Typography";
 
 import {Distribution} from "../../components/Distribution/Distribution";
@@ -10,6 +10,8 @@ import {Feature, FeatureCollection, Polygon} from "geojson";
 import {MapRoot} from "../../components/Map/Root";
 import {getFullGeoJson} from "../api/geojson/list";
 import {MapDimension, MapFocus} from "../index";
+import {get, list} from "../../data-repos/aninals";
+import {Animal} from "../../data-repos/aninals.interface";
 
 
 export default function Tiere(props) {
@@ -111,7 +113,7 @@ const getDistribution = async (slug:string): Promise<FeatureCollection> => {
 
 export async function getStaticProps(context) {
 
-    const animal = await getAnimal(context.params.slug);
+    const animal = await get(context.params.slug);
 
     const slug = context.params.slug;
 
@@ -310,7 +312,7 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
 
-    let animals = await getAnimals();
+    let animals = await list();
 
     animals = animals.filter((animal:Animal)=>{
         return animal.published;

@@ -4,8 +4,9 @@ import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import {Animal, getAnimals} from "./api/animals";
 import {animalUrlPart} from "../constants";
+import {list} from "../data-repos/aninals";
+import {Animal} from "../data-repos/aninals.interface";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -97,7 +98,7 @@ export default function Index(props) {
 
 export async function getStaticProps({ params, preview = false, previewData }) {
 
-    let animals = await getAnimals();
+    let animals = await list();
 
     animals = animals.filter((animal:Animal)=>{
         return animal.published;

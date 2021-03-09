@@ -3,36 +3,6 @@ import fs from "fs";
 import path from "path";
 const frontmatter = require('@github-docs/frontmatter')
 
-export interface Taxonomy {
-    class: string;
-    order: string;
-    family: string;
-    species: string;
-};
-
-export interface i18nAnimal{
-    en: string;
-    de: string;
-    nl: string;
-}
-
-export interface Animal {
-    slug: string;
-    title:string;
-    taxonomy: Taxonomy
-    wikidata:string;
-    wikipediaLink: string;
-    images:  string[];
-    scientificName: string;
-    i18nNames: i18nAnimal,
-    iucnID: string;
-    iucnLink: string;
-    iucnStatus: string;
-    content: string;
-    facility?: string;
-    published: boolean;
-}
-
 const dataDir = path.resolve(process.env.PWD, 'data/markdown/animals');
 
 export const getAnimal = async (slug:string):Promise<Animal> => {

@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 /**
  * Citation according to rules from iucn
  * <citation field information><year>. The IUCN Red List of Threatened Species. Version <Red List version>. https://www.iucnredlist.org. Downloaded on <insert appropriate date>.

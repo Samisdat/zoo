@@ -6,5 +6,4 @@ export interface NavigationInterface{
     activeMainItem:NavigationMainItems;
     openSideMenu: boolean;
     openTeaser: boolean;
-    openSearch: boolean;
 }

@@ -2,13 +2,10 @@ import React, {useEffect, useState} from 'react';
 
 import * as d3 from 'd3';
 
-import * as topojson from "topojson-client";
 import {GeoPath} from "d3";
 import {GeoProjection} from "d3-geo";
 import {MapTransformInterface} from "../Map/Interface";
 import {FeatureCollection} from "geojson";
-import {MiniMap} from "./MiniMap";
-import {Distribution} from "./Distribution";
 
 const mapTransformDefault = {
     k:1,
@@ -88,9 +85,7 @@ export const centerToFeatureCollection = (featureset:FeatureCollection) => {
 
             }
 
-
         }
-
 
     }
 
@@ -121,7 +116,6 @@ export const centerToFeatureCollection = (featureset:FeatureCollection) => {
     };
 
 }
-
 
 export const Detail = (props) => {
 
@@ -228,7 +222,6 @@ export const Detail = (props) => {
         };
 
         setMapState(nextMapState)
-
 
     }
 

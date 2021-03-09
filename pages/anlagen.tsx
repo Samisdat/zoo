@@ -133,8 +133,6 @@ export async function getStaticProps({ params, preview = false, previewData }) {
 
         const markdownFileContent = frontmatter.stringify(markdown, data);
 
-        console.log(markdownFileContent)
-
         fs.writeFileSync(facilityFilePath, markdownFileContent, {encoding:'utf8'});
 
     }

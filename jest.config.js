@@ -3,7 +3,8 @@ module.exports = {
   "roots": [
     "<rootDir>/components",
     "<rootDir>/pages",
-    "<rootDir>/helper"
+    "<rootDir>/helper",
+    "<rootDir>/data-repos"
   ],
   setupFilesAfterEnv: ["<rootDir>/setupTests.ts"],
   globals: {

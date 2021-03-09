@@ -8,14 +8,15 @@
     "noImplicitAny": true,
     "sourceMap": true,
     "target": "es5",
-    "types": ["jest"],
+    "types": ["jest", "node"],
     "noEmit": true,
     "strict": true
   },
   "include": [
     "pages/*.ts",
     "components/*.ts",
-    "helper/*.ts"
+    "helper/*.ts",
+    "data-repos/*.ts"
   ],
   "exclude": [
     "cypress/**/*"

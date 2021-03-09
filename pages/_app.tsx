@@ -4,19 +4,11 @@ import Head from 'next/head';
 import {ThemeProvider} from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import CssBaseline from '@material-ui/core/CssBaseline';
-
-import NavigationMain from '../components/Navigation/Main';
 import NavigationSidebar from '../components/Navigation/Sidebar';
-import Teaser from '../components/Navigation/Teaser';
-
 import {makeStyles} from '@material-ui/core/styles';
 import {NavigationInterface} from "../components/Navigation/Interfaces";
-
 import createPersistedState from 'use-persisted-state';
-import {Feature, Polygon} from "geojson";
 import ButtonAppBar from "../components/Menu/Menu";
-import {Fab} from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
 
 import { createMuiTheme } from '@material-ui/core/styles';
 
@@ -47,22 +39,12 @@ export default function ZooWuppertal(props) {
     const [navigationState, setNavigationState] = useNavigationState<NavigationInterface>({
         activeMainItem: 'map',
         openSideMenu: false,
-        openTeaser: false,
-        openSearch: false
+        openTeaser: false
     });
 
-    const toggleSearch = () => {
-
-        const open = (true === navigationState.openSearch) ? false : true;
-
-        setNavigationState({
-            ...navigationState,
-            openSearch: open
-        });
-
-    };
-
     const toggleTeaser = () => {
+
+        console.log('toggleTeaser')
 
         const open = (true === navigationState.openTeaser) ? false : true;
 
@@ -92,16 +74,6 @@ export default function ZooWuppertal(props) {
             jssStyles.parentElement.removeChild(jssStyles);
         }
 
-        /*
-        if(true === navigationState.openTeaser){
-            return;
-        }
-
-        window.setTimeout(()=>{
-            toggleTeaser();
-        }, 300)
-        */
-
     }, []);
 
     const classes = useStyles();
@@ -117,31 +89,17 @@ export default function ZooWuppertal(props) {
                 <Grid container>
                     <Grid item xs={12}>
                         <Component
-                            toggleSearch={toggleSearch}
                             toggleTeaser={toggleTeaser}
                             navigation={navigationState}
                             {...pageProps}
                         />
                     </Grid>
                 </Grid>
-                {/*
-                <NavigationMain
-                    toggleSearch={toggleSearch}
-                    toggleSideMenu={toggleSideMenu}
-                    {...navigationState}
-                />*/}
                 <ButtonAppBar></ButtonAppBar>
                 <NavigationSidebar
                     toggleSideMenu={toggleSideMenu}
                     {...navigationState}
                 />
-                {/*
-                <Teaser
-                    toggleTeaser={toggleTeaser}
-                    {...navigationState}
-                    {...props}
-                />
-                */}
         </ThemeProvider>
     );
 }

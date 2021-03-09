@@ -83,8 +83,6 @@ export async function getStaticPaths() {
 
     }
 
-    console.log(newsSlugs)
-
     return {
 
         paths: newsSlugs,

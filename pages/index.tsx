@@ -31,8 +31,6 @@ const defaultMapState:MapState = {
     focus: 'none',
 }
 
-type MapDimensionUnit = 'px' | '%';
-
 export interface MapDimension{
     width: number;
     height: number;
@@ -44,45 +42,15 @@ const MapDimensionDefault:MapDimension = {
     height: 300,
 }
 
-interface MapBound{
-    box: Feature<LineString>
-}
-
-interface MapTeaser{
-    teaser: Feature<LineString>
-}
-
 export default function Index(props:IndexProps) {
-
-    const {toggleSearch} = props;
 
     const [mapDimensionState, setMapDimensionState] = useMapState<MapDimension>(MapDimensionDefault);
     const [mapState, setMapState] = useMapState<MapState>(defaultMapState);
 
-    const [teaser, setTeaser] = useState<TeaserPropsInterface>(/*{
-        apiUrl: '/api/teaser/animals/afrikanischer-elefant',
-        close: ()=>{
-            setTeaser(undefined);
-        }
-    }*/);
+    const [teaser, setTeaser] = useState<TeaserPropsInterface>();
 
     const [hasResizeListener, setHasResizeListener] = useState<boolean>(false);
 
-    const [searchResult, setSearchResult] = useState<Feature<Polygon>>(undefined);
-
-    const closeTeaser = ()=>{
-        setTeaser(undefined);
-    };
-
-    /*
-    const clickButton = () => {
-        setTeaser({
-            apiUrl: '/api/teaser/animals/afrikanischer-elefant',
-            close: closeTeaser
-        });
-
-    };
-    */
     const storeFocus = (focus:MapFocus | Feature<Polygon>) => {
 
         setMapState({
@@ -122,8 +90,6 @@ export default function Index(props:IndexProps) {
         }
 
     };
-
-
 
     const setDimension = () => {
 
@@ -173,16 +139,6 @@ export default function Index(props:IndexProps) {
                 fullsize={true}
                 {...props}
             />
-            {/*
-            <MapSearch
-                focus={mapState.focus}
-                toggleSearch={toggleSearch}
-                geoJson={props.geoJson}
-                setFocus={setFocus}
-                setSearchResult={setSearchResult}
-                {...props.navigation}
-            />
-            */}
             <SearchDialog
                 geoJson={props.geoJson}
                 setFocus={setFocus}
@@ -197,39 +153,6 @@ export default function Index(props:IndexProps) {
 export async function getStaticProps(context) {
 
     let getJson = await getFullGeoJson();
-
-    for(let i = 0, x = getJson.features.length; i < x; i += 1){
-
-        const feature = getJson.features[i];
-
-        /*
-        if('facility-circle' === feature.properties.type){
-            getJson.features[i].geometry.coordinates = [
-                (feature.geometry.coordinates[0] - 0.000021),
-                (feature.geometry.coordinates[1] + 0.000010)
-
-            ]
-        }
-
-
-        if('way' === feature.properties.type && 1 !== feature.geometry.coordinates.length){
-            console.log(feature.geometry.coordinates.length)
-            const correctedWay = feature.geometry.coordinates.map((coordinates)=>{
-
-                console.log('coordinates', coordinates)
-                return [
-                    (coordinates[0] - 0.000021),
-                    (coordinates[1] + 0.000010)
-                ];
-            });
-
-            feature.geometry.coordinates = correctedWay;
-
-        }
-
-         */
-
-    }
 
     const indexProps:IndexProps = {
         geoJson: getJson

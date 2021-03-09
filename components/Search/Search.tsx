@@ -2,7 +2,6 @@ import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import {Paper, Fab} from "@material-ui/core";
 import Dialog from '@material-ui/core/Dialog';
-import ListItem from '@material-ui/core/ListItem';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -131,7 +130,7 @@ export default function SearchDialog(props) {
         ordered[key] = group[key];
     });
 
-    const [open, setOpen] = React.useState(true);
+    const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
 
@@ -145,8 +144,6 @@ export default function SearchDialog(props) {
     };
 
     const handleClickItem = (item:Feature) => {
-
-        console.log('handleClickItem', item.properties.name)
 
         setOpen(false);
 

@@ -177,7 +177,7 @@ export const Teaser = (props: TeaserPropsInterface) => {
 
         animalsService(props.apiUrl, props.close)
             .then((data) =>{
-                console.log(data);
+
                 setActiveStep(0);
                 setData(data);
                 setLoading(false);

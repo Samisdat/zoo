@@ -21,12 +21,9 @@ export default function Tiere(props) {
 
     const image = props.animal.images[0];
 
-    console.log(animal.facility)
-
     let focus: MapFocus | Feature<Polygon> = 'none';
 
     if(animal.facility){
-        console.log('da ist was');
 
         focus = props.geoJson.features.find((feature:Feature)=>{
 

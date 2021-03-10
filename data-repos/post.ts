@@ -21,7 +21,7 @@ export const get = async (slug:string):Promise<Post> => {
         slug: newsMarkdown.data.slug,
         title: newsMarkdown.data.title,
         animal: newsMarkdown.data.animal,
-        content: newsMarkdown.data.content,
+        content: newsMarkdown.content,
         date: newsMarkdown.data.date,
         enclosure: newsMarkdown.data.enclosure,
         published: newsMarkdown.data.published,

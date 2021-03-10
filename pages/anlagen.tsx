@@ -10,6 +10,7 @@ import {getFullGeoJson} from "./api/geojson/list";
 import path from "path";
 import fs from "fs";
 import {facilityUrlPart} from "../constants";
+import {list} from "../data-repos/enclosures";
 const frontmatter = require('@github-docs/frontmatter')
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -54,7 +55,7 @@ export default function Index(props) {
 
     let group = props.facilities
         .reduce((r, e) => {
-            let firstLetter = e.name[0].toLowerCase();
+            let firstLetter = e.title[0].toLowerCase();
 
             firstLetter = firstLetter
                 .replace('ä', 'a')
@@ -89,7 +90,7 @@ export default function Index(props) {
                       const href =  `/${facilityUrlPart}/${facility.slug}`
                       return (
                           <ListItem button>
-                              <ListItemLink href={href}>{facility.name}</ListItemLink>
+                              <ListItemLink href={href}>{facility.title}</ListItemLink>
                           </ListItem>
                       );
                   })}
@@ -114,32 +115,13 @@ export async function getStaticProps({ params, preview = false, previewData }) {
             return feature.properties;
     });
 
-    const dataDir = path.resolve(process.env.PWD, 'data/markdown/facility');
-    for(const facility of facilities){
+    const enclosures = await list();
 
-        const facilityFilePath = path.resolve(dataDir, facility.slug + '.md');
-
-        if (true === fs.existsSync(facilityFilePath)) {
-            continue;
-        }
-
-        const markdown = 'Some Content';
-
-        const data = {
-            title: facility.name,
-            slug: facility.slug,
-            type: 'enclosure'
-        };
-
-        const markdownFileContent = frontmatter.stringify(markdown, data);
-
-        fs.writeFileSync(facilityFilePath, markdownFileContent, {encoding:'utf8'});
-
-    }
+    console.log(enclosures);
 
     return {
         props: {
-            facilities: facilities,
+            facilities: enclosures,
         },
     }
 }

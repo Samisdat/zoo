@@ -6,5 +6,4 @@ export interface Post {
     enclosure: string;
     content: string;
     published: boolean;
-
 }

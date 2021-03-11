@@ -1,13 +1,7 @@
-import {get, list, getDataDir} from "../post";
+import {get, list} from "../post";
 
 describe('posts', () => {
-
-    test('getDataDir', ()=>{
-
-        expect(getDataDir()).toBe('/Users/samisdat/repos/zoo/data-repos/markdown/posts');
-
-    });
-
+    
     test('get one', async () => {
 
         const post = await get('01');
@@ -25,6 +19,3 @@ describe('posts', () => {
     });
 
 });
-
-
-

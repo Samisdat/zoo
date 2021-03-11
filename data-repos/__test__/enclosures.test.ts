@@ -1,12 +1,6 @@
-import {get, list, getDataDir} from "../enclosures";
+import {get, list} from "../enclosures";
 
 describe('enclosures', () => {
-
-    test('getDataDir', ()=>{
-
-        expect(getDataDir()).toBe('/Users/samisdat/repos/zoo/data-repos/markdown/enclosures');
-
-    });
 
     test('get one', async () => {
 

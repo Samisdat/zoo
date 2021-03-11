@@ -1,12 +1,6 @@
-import {get, list, getDataDir} from "../aninals";
+import {get, list} from "../aninals";
 
 describe('animals', () => {
-
-    test('getDataDir', ()=>{
-
-        expect(getDataDir()).toBe('/Users/samisdat/repos/zoo/data-repos/markdown/animals');
-
-    });
 
     test('get one', async () => {
 

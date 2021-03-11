@@ -3,16 +3,14 @@ import fs from "fs";
 const frontmatter = require('@github-docs/frontmatter')
 
 import {Post} from "./post.interface";
-
-const dataDir = path.resolve(process.env.PWD as string, 'data-repos/markdown/posts');
-
-export const getDataDir = ():string =>{
-    return dataDir;
-};
+import {getDataDir} from "./data-helper";
 
 export const get = async (slug:string):Promise<Post> => {
 
-    const filePath = path.resolve(getDataDir(), slug + '.md');
+    const filePath = path.resolve(
+        getDataDir('posts'),
+        slug + '.md'
+    );
 
     const fileContent = await fs.readFileSync(filePath, {encoding:'utf8'});
     const newsMarkdown = frontmatter(fileContent);
@@ -34,7 +32,7 @@ export const list = async ():Promise<Post[]> => {
 
     const posts:Post[] = [];
 
-    let slugs = await fs.readdirSync(dataDir).map((file) => {
+    let slugs = await fs.readdirSync(getDataDir('posts')).map((file) => {
         return file.replace('.md', '');
     });
 

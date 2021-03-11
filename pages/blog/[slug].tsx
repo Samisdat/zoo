@@ -4,6 +4,8 @@ import {getFullGeoJson} from "../api/geojson/list";
 import path from "path";
 import fs from "fs";
 import Moment from "react-moment";
+import {get, list} from "../../data-repos/post";
+import {Post} from "../../data-repos/post.interface";
 const frontmatter = require('@github-docs/frontmatter')
 
 const ReactMarkdown = require('react-markdown')
@@ -24,23 +26,15 @@ export async function getStaticProps(context) {
 
     const slugParam = context.params.slug
 
-    const dataDir = path.resolve(process.env.PWD, 'data/markdown/news');
+    const post = await get(slugParam);
 
-    const newsFilePath = path.resolve(dataDir, slugParam + '.md');
-
-    const newsFileContent = fs.readFileSync(newsFilePath, {encoding:'utf8'});
-
-    const { data, content, errors } = frontmatter(newsFileContent);
-
-    const { title, slug, date, animal, enclosure } = data;
-
-
+    const { title, slug, date, animal, enclosure, content } = post;
 
     return {
         props: {
             title,
             slug,
-            date: date.toISOString(),
+            date: (date as any).toISOString(),
             animal,
             enclosure,
             content
@@ -51,42 +45,18 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
 
+    const posts = await list();
 
-    const dataDir = path.resolve(process.env.PWD, 'data/markdown/news');
-
-    const newsPostFiles = fs.readdirSync(dataDir);
-
-    let newsSlugs = [];
-
-    for(const newsPostFile of newsPostFiles) {
-
-        if ('.DS_Store' === newsPostFile) {
-            continue;
-        }
-
-        const newsFilePath = path.resolve(dataDir, newsPostFile);
-
-        if (false === fs.existsSync(newsFilePath)) {
-            continue;
-        }
-
-        const newsFileContent = fs.readFileSync(newsFilePath, {encoding: 'utf8'});
-
-        const {data} = frontmatter(newsFileContent);
-        const {slug} = data;
-
-        newsSlugs.push({
+    let newsSlugs = posts.map((post:Post)=>{
+        return {
             params:{
-                slug: slug + ''
+                slug: post.slug + ''
             }
-        });
-
-    }
+        }
+    });
 
     return {
-
         paths: newsSlugs,
-
         fallback: false,
-    }
+    };
 }

@@ -3,7 +3,7 @@ import fs from "fs";
 const frontmatter = require('@github-docs/frontmatter')
 
 import {Enclosures} from "./enclosures.interface";
-import {getDataDir} from "./data-helper";
+import {getDataDir, getFileNames} from "./data-helper";
 
 export const get = async (slug:string):Promise<Enclosures> => {
 
@@ -34,8 +34,10 @@ export const list = async ():Promise<Enclosures[]> => {
 
     const animals:Enclosures[] = [];
 
-    let slugs = await fs.readdirSync(getDataDir('enclosures')).map((file) => {
-        return file.replace('.md', '');
+    const fileNames = await getFileNames('enclosures')
+
+    const slugs = fileNames.map((fileName)=>{
+        return fileName.replace('.md', '')
     });
 
     for(const slug of slugs){

@@ -26,6 +26,16 @@ export const getFileNames = async (dataSubDir:string): Promise<string[]> => {
 
     let files = await fs.readdirSync(dataDir)
 
+    files = files.filter((file)=>{
+
+        if('.DS_Store' === file){
+            return false
+        }
+
+        return true;
+
+    });
+
     return files;
 
 };

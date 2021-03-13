@@ -3,7 +3,7 @@ import * as fs from "fs";
 
 const rootDataDir = path.resolve(process.env.PWD as string, 'data-repos/markdown');
 
-export const getDataDir = (dataSubDir:string) :string =>{
+export const getDataDir = (dataSubDir:string): string =>{
 
     const dataDir = path.resolve(
         rootDataDir,
@@ -18,4 +18,14 @@ export const getDataDir = (dataSubDir:string) :string =>{
     }
 
     return dataDir;
+};
+
+export const getFileNames = async (dataSubDir:string): Promise<string[]> => {
+
+    const dataDir = getDataDir(dataSubDir);
+
+    let files = await fs.readdirSync(dataDir)
+
+    return files;
+
 };

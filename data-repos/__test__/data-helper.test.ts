@@ -1,4 +1,4 @@
-import {getDataDir} from "../data-helper";
+import {getDataDir, getFileNames} from "../data-helper";
 
 describe('data-helper', () => {
 
@@ -19,6 +19,14 @@ describe('data-helper', () => {
                 getDataDir('foobar')
             }
         ).toThrow(Error);
+
+    });
+
+    test('getFiles', async ()=>{
+
+        const files = await getFileNames('animals');
+
+        expect(files).toMatchSnapshot();
 
     });
 

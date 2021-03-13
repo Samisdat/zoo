@@ -3,7 +3,7 @@ import fs from "fs";
 const frontmatter = require('@github-docs/frontmatter')
 
 import {Post} from "./post.interface";
-import {getDataDir} from "./data-helper";
+import {getDataDir, getFileNames} from "./data-helper";
 
 export const get = async (slug:string):Promise<Post> => {
 
@@ -32,18 +32,10 @@ export const list = async ():Promise<Post[]> => {
 
     const posts:Post[] = [];
 
-    let slugs = await fs.readdirSync(getDataDir('posts')).map((file) => {
-        return file.replace('.md', '');
-    });
+    const fileNames = await getFileNames('posts')
 
-    slugs = slugs.filter((slug)=>{
-
-        if('.DS_Store' === slug){
-            return false;
-        }
-
-        return true;
-
+    const slugs = fileNames.map((fileName)=>{
+        return fileName.replace('.md', '')
     });
 
     for(const slug of slugs){

@@ -3,13 +3,13 @@ import fs from "fs";
 const frontmatter = require('@github-docs/frontmatter')
 
 import {Animal} from "./aninals.interface";
-import {getDataDir} from "./data-helper";
+import {getDataDir, getFileNames} from "./data-helper";
 
 export const get = async (slug:string):Promise<Animal> => {
 
     const filePath = path.resolve(
         getDataDir('animals'),
-        slug + '.md'
+        `${slug}.md`
     );
 
     const fileContent = await fs.readFileSync(filePath, {encoding:'utf8'});
@@ -48,8 +48,10 @@ export const list = async ():Promise<Animal[]> => {
 
     const animals:Animal[] = [];
 
-    let slugs = await fs.readdirSync(getDataDir('animals')).map((file) => {
-        return file.replace('.md', '');
+    const fileNames = await getFileNames('animals')
+
+    const slugs = fileNames.map((fileName)=>{
+        return fileName.replace('.md', '')
     });
 
     for(const slug of slugs){

@@ -32,7 +32,7 @@ describe('geojson', () => {
 
     test('get facility-boxes', async ()=>{
 
-        const boundingbox = await get('facility-boxes');
+        const boundingbox = await get('facility-box');
 
         expect(boundingbox).toMatchSnapshot();
 
@@ -40,7 +40,7 @@ describe('geojson', () => {
 
     test('get facility-circles', async ()=>{
 
-        const boundingbox = await get('facility-circles');
+        const boundingbox = await get('facility-circle');
 
         expect(boundingbox).toMatchSnapshot();
 
@@ -48,7 +48,7 @@ describe('geojson', () => {
 
     test('get ways', async ()=>{
 
-        const boundingbox = await get('ways');
+        const boundingbox = await get('way');
 
         expect(boundingbox).toMatchSnapshot();
 

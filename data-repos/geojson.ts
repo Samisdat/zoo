@@ -6,9 +6,9 @@ import {getDataDir} from "./data-helper";
 let allowList = [
     'bounding-box',
     'border',
-    'ways',
-    'facility-boxes',
-    'facility-circles'
+    'way',
+    'facility-box',
+    'facility-circle'
 ];
 
 export const isAllowedType = (type: string) => {

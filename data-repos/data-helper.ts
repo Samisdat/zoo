@@ -1,12 +1,15 @@
 import path from "path";
 import * as fs from "fs";
 
-const rootDataDir = path.resolve(process.env.PWD as string, 'data-repos/markdown');
+const rootDataDir = path.resolve(process.env.PWD as string, 'data-repos');
 
-export const getDataDir = (dataSubDir:string): string =>{
+export type DataType = 'markdown' | 'geojson';
+
+export const getDataDir = (dataType: DataType, dataSubDir:string): string =>{
 
     const dataDir = path.resolve(
         rootDataDir,
+        dataType,
         dataSubDir
     );
 
@@ -20,9 +23,9 @@ export const getDataDir = (dataSubDir:string): string =>{
     return dataDir;
 };
 
-export const getFileNames = async (dataSubDir:string): Promise<string[]> => {
+export const getFileNames = async (dataType:DataType, dataSubDir:string): Promise<string[]> => {
 
-    const dataDir = getDataDir(dataSubDir);
+    const dataDir = getDataDir(dataType, dataSubDir);
 
     let files = await fs.readdirSync(dataDir)
 

@@ -8,7 +8,7 @@ import {getDataDir, getFileNames} from "./data-helper";
 export const get = async (slug:string):Promise<Enclosures> => {
 
     const filePath = path.resolve(
-        getDataDir('enclosures'),
+        getDataDir('markdown', 'enclosures'),
         slug + '.md'
     );
 
@@ -34,7 +34,7 @@ export const list = async ():Promise<Enclosures[]> => {
 
     const animals:Enclosures[] = [];
 
-    const fileNames = await getFileNames('enclosures')
+    const fileNames = await getFileNames('markdown','enclosures')
 
     const slugs = fileNames.map((fileName)=>{
         return fileName.replace('.md', '')

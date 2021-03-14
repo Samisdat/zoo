@@ -2,12 +2,28 @@ import {getDataDir, getFileNames} from "../data-helper";
 
 describe('data-helper', () => {
 
-    test('getDataDir', ()=>{
+    test('getDataDir - markdown', ()=>{
 
         expect(
-            getDataDir('animals')
+            getDataDir(
+                'markdown',
+                'animals'
+            )
         ).toBe(
             '/Users/samisdat/repos/zoo/data-repos/markdown/animals'
+        );
+
+    });
+
+    test('getDataDir - geojson', ()=>{
+
+        expect(
+            getDataDir(
+                'geojson',
+                'bounding-box'
+            )
+        ).toBe(
+            '/Users/samisdat/repos/zoo/data-repos/geojson/bounding-box'
         );
 
     });
@@ -16,7 +32,7 @@ describe('data-helper', () => {
 
         expect(
             ()=>{
-                getDataDir('foobar')
+                getDataDir('markdown','foobar')
             }
         ).toThrow(Error);
 
@@ -24,7 +40,10 @@ describe('data-helper', () => {
 
     test('getFiles', async ()=>{
 
-        const files = await getFileNames('animals');
+        const files = await getFileNames(
+            'markdown',
+            'animals'
+        );
 
         expect(files).toMatchSnapshot();
 

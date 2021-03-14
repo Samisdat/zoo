@@ -23,7 +23,7 @@ export async function getStaticProps(context) {
 
     const slug = context.params.slug
 
-    const dataDir = path.resolve(process.env.PWD, 'data/markdown/facility');
+    const dataDir = path.resolve(process.env.PWD, 'data-repos/markdown/enclosures');
 
     const facilityFilePath = path.resolve(dataDir, slug + '.md');
 

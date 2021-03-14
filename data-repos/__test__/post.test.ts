@@ -16,6 +16,8 @@ describe('posts', () => {
 
         expect(posts.length).toBe(29);
 
+        expect(posts).toMatchSnapshot();
+
     });
 
 });

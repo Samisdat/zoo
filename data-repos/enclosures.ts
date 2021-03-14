@@ -21,6 +21,7 @@ export const get = async (slug:string):Promise<Enclosures> => {
         type: enclosureMarkdown.data.type,
         animals: enclosureMarkdown.data.animals,
         content: enclosureMarkdown.content,
+        published: enclosureMarkdown.data.published,
     };
 
     if(undefined === enclosure.animals){
@@ -32,7 +33,7 @@ export const get = async (slug:string):Promise<Enclosures> => {
 
 export const list = async ():Promise<Enclosures[]> => {
 
-    const animals:Enclosures[] = [];
+    const enclosures:Enclosures[] = [];
 
     const fileNames = await getFileNames('markdown','enclosures')
 
@@ -42,12 +43,14 @@ export const list = async ():Promise<Enclosures[]> => {
 
     for(const slug of slugs){
 
-        const animal = await get(slug);
+        const enclosure = await get(slug);
 
-        animals.push(animal);
+        if(true === enclosure.published){
+            enclosures.push(enclosure);
+        }
 
     }
 
-    return animals;
+    return enclosures;
 
 };

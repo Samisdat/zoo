@@ -1,0 +1,460 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`enclosures list all 1`] = `
+Array [
+  Object {
+    "animals": Array [
+      "bonobo",
+      "westlicher-gorilla",
+      "orang-utan",
+    ],
+    "content": "Some Content
+
+Some other content",
+    "published": true,
+    "slug": "affenhaus",
+    "title": "Affenhaus",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "braunbaer",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "baeren",
+    "title": "Bären",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "bongo",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "bongos",
+    "title": "Bongos",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "brillenpinguin",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "brillenpinguine",
+    "title": "Brillenpinguine",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": null,
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "davidshirsche",
+    "title": "Davidshirsche",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": null,
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "eingang",
+    "title": "Eingang",
+    "type": "poi",
+  },
+  Object {
+    "animals": Array [
+      "eisbaer",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "eisbaeren",
+    "title": "Eisbären",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "afrikanischer-elefant",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "elefanten",
+    "title": "Elefanten",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "emu",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "emus",
+    "title": "Emus",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "weisshandgibbon",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "gibbons",
+    "title": "Gibbons",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "hirscheber",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "hirscheber",
+    "title": "Hirscheber",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "wildziege",
+      "afrikanischer-esel",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "juniorzoo",
+    "title": "JuniorZoo",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "oestliches-graues-riesenkaenguru",
+      "bennettskaenguru",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "kangurus",
+    "title": "Kangurus",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "leopard",
+      "sambischer-kleingraumull",
+      "asiatische-goldkatze",
+      "kurzohrige-elefantenspitzmaus",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "katzenhaus",
+    "title": "Katzenhaus",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "kiang",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "kiang",
+    "title": "Kiang",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": null,
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "kiosk-tigertal",
+    "title": "Kiosk Tigertal",
+    "type": "food",
+  },
+  Object {
+    "animals": Array [
+      "kirk-dikdik",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "kirk-dikdiks",
+    "title": "Kirk DikDiks",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "schwarzer-klammeraffe",
+      "goldkopf-loewenaeffchen",
+      "drill",
+      "roter-vari",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "kleines-affenhaus",
+    "title": "Kleines Affenhaus",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "lachender-hans",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "lachender-hans",
+    "title": "Lachender Hans",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "loewe",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "loewen",
+    "title": "Löwen",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": null,
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "musikmuschel",
+    "title": "Musikmuschel",
+    "type": "poi",
+  },
+  Object {
+    "animals": Array [
+      "okapi",
+      "gelbrueckenducker",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "okapis",
+    "title": "Okapis",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": null,
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "okavango",
+    "title": "Okavango",
+    "type": "food",
+  },
+  Object {
+    "animals": Array [
+      "rosapelikan",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "pelikane",
+    "title": "Pelikane",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "koenigspinguin",
+      "eselspinguin",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "pinguine",
+    "title": "Pinguine",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "pinselohrschwein",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "pinselohrschweine",
+    "title": "Pinselohrschweine",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "suedlicher-pudu",
+    ],
+    "content": "Some Content
+
+Some other content",
+    "published": true,
+    "slug": "pudu",
+    "title": "Pudu",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "rentier",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "rentiere",
+    "title": "Rentiere",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "asiatischer-rothund",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "rothunde",
+    "title": "Rothunde",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "kalifornischer-seeloewe",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "seeloewen",
+    "title": "Seelöwen",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": null,
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "spielplatz",
+    "title": "Spielplatz",
+    "type": "playground",
+  },
+  Object {
+    "animals": Array [
+      "sibirischer-steinbock",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "steinboecke",
+    "title": "Steinböcke",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "mittelamerikanischer-tapir",
+      "zweifingerfaultier",
+      "halsbandpekari",
+      "zwergmara",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "suedamerikahaus",
+    "title": "Südamerikahaus",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "takin",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "takine",
+    "title": "Taskine",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "grosse-mara",
+      "darwin-nandu",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "tierwelt-patagoniens",
+    "title": "Tierwelt Patagoniens",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "tiger",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "tiger",
+    "title": "Tiger",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": null,
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "vogelhaus",
+    "title": "Vogelhaus",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "waldrapp",
+      "roter-sichler",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "waldrapp",
+    "title": "Waldrapp",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "yak",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "yaks",
+    "title": "Yaks",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [
+      "steppenzebra",
+    ],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "zebras",
+    "title": "Zebras",
+    "type": "enclosure",
+  },
+  Object {
+    "animals": Array [],
+    "content": "Some Content
+",
+    "published": true,
+    "slug": "ziesel",
+    "title": "Ziesel",
+    "type": "enclosure",
+  },
+]
+`;

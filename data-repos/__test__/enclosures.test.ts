@@ -14,7 +14,7 @@ describe('enclosures', () => {
 
         const enclosures = await list();
 
-        expect(enclosures.length).toBe(47);
+        expect(enclosures.length).toBe(41);
 
     });
 

@@ -4,4 +4,5 @@ export interface Enclosures {
     type: string;
     animals: string[] | null;
     content: string;
+    published: boolean;
 }

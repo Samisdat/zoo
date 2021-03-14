@@ -58,7 +58,9 @@ export const list = async ():Promise<Animal[]> => {
 
         const animal = await get(slug);
 
-        animals.push(animal);
+        if(true === animal.published){
+            animals.push(animal);
+        }
 
     }
 

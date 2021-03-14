@@ -100,10 +100,6 @@ export async function getStaticProps({ params, preview = false, previewData }) {
 
     let animals = await list();
 
-    animals = animals.filter((animal:Animal)=>{
-        return animal.published;
-    });
-
     return {
         props: {
             animals: animals,

@@ -314,10 +314,6 @@ export async function getStaticPaths() {
 
     let animals = await list();
 
-    animals = animals.filter((animal:Animal)=>{
-        return animal.published;
-    });
-
     const animalPaths = animals.map((animal:Animal)=>{
         return {
             params:{

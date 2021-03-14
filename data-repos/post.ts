@@ -4,6 +4,7 @@ const frontmatter = require('@github-docs/frontmatter')
 
 import {Post} from "./post.interface";
 import {getDataDir, getFileNames} from "./data-helper";
+import {Animal} from "./aninals.interface";
 
 export const get = async (slug:string):Promise<Post> => {
 
@@ -42,7 +43,9 @@ export const list = async ():Promise<Post[]> => {
 
         const post = await get(slug);
 
-        posts.push(post);
+        if(true === post.published){
+            posts.push(post);
+        }
 
     }
 

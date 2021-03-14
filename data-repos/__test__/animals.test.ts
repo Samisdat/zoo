@@ -16,6 +16,8 @@ describe('animals', () => {
 
         expect(animals.length).toBe(45);
 
+        expect(animals).toMatchSnapshot();
+
     });
 
 });

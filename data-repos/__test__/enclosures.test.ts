@@ -16,6 +16,8 @@ describe('enclosures', () => {
 
         expect(enclosures.length).toBe(41);
 
+        expect(enclosures).toMatchSnapshot();
+
     });
 
 });

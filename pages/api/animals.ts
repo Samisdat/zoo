@@ -7,8 +7,6 @@ export default async (req: NextApiRequest, res: NextApiResponse<Animal[]>) => {
 
     const animals = await list();
 
-    console.log(animals)
-
     res.status(200).json(animals);
 
 }

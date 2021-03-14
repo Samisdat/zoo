@@ -1,12 +1,7 @@
 import React from 'react';
-import {Feature} from "geojson";
-import {getFullGeoJson} from "../api/geojson/list";
-import path from "path";
-import fs from "fs";
 import Moment from "react-moment";
 import {get, list} from "../../data-repos/post";
 import {Post} from "../../data-repos/post.interface";
-const frontmatter = require('@github-docs/frontmatter')
 
 const ReactMarkdown = require('react-markdown')
 const gfm = require('remark-gfm')

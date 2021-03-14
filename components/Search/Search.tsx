@@ -79,7 +79,7 @@ export default function SearchDialog(props) {
 
     const options = props.geoJson.features.filter((feature:Feature) => {
 
-        if('facility-box' !== feature.properties?.type){
+        if('facility-boxes' !== feature.properties?.type){
             return false;
         }
 

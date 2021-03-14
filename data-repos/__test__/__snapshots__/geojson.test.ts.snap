@@ -1,0 +1,8155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`geojson get border 1`] = `
+Object {
+  "creator": "svg2geojson v0.7.1",
+  "features": Array [
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.110154484257978,
+            51.24166260896365,
+          ],
+          Array [
+            7.110154484257978,
+            51.24166260896365,
+          ],
+          Array [
+            7.10855216442557,
+            51.241059229859026,
+          ],
+          Array [
+            7.1079009915443025,
+            51.241018294746276,
+          ],
+          Array [
+            7.107857965000938,
+            51.24067848848638,
+          ],
+          Array [
+            7.107803696928305,
+            51.24027141361856,
+          ],
+          Array [
+            7.107623116617343,
+            51.24003798055587,
+          ],
+          Array [
+            7.106862963688374,
+            51.23977247702221,
+          ],
+          Array [
+            7.106460800078336,
+            51.23966423073121,
+          ],
+          Array [
+            7.106441772260386,
+            51.239609908506885,
+          ],
+          Array [
+            7.106524702033576,
+            51.23944014060029,
+          ],
+          Array [
+            7.106542146199591,
+            51.23943051720527,
+          ],
+          Array [
+            7.106617301681463,
+            51.23941571525681,
+          ],
+          Array [
+            7.106640864502682,
+            51.23932168745056,
+          ],
+          Array [
+            7.106556563030972,
+            51.2393184295695,
+          ],
+          Array [
+            7.106671121852538,
+            51.239175245571694,
+          ],
+          Array [
+            7.106753947648581,
+            51.23903172101138,
+          ],
+          Array [
+            7.10676065017546,
+            51.23896586223207,
+          ],
+          Array [
+            7.106647786981218,
+            51.23880372693229,
+          ],
+          Array [
+            7.10647595274799,
+            51.2386008117762,
+          ],
+          Array [
+            7.1063783661961555,
+            51.23850480570243,
+          ],
+          Array [
+            7.106425651803438,
+            51.23847430782892,
+          ],
+          Array [
+            7.106586876368523,
+            51.23854723578444,
+          ],
+          Array [
+            7.106850738375327,
+            51.23861280909223,
+          ],
+          Array [
+            7.1071974021834485,
+            51.23866870892229,
+          ],
+          Array [
+            7.107354027759327,
+            51.238678169548464,
+          ],
+          Array [
+            7.10735609530491,
+            51.238624217936284,
+          ],
+          Array [
+            7.1075504845808535,
+            51.23856477976192,
+          ],
+          Array [
+            7.107662515957917,
+            51.23852424030267,
+          ],
+          Array [
+            7.1077456736810065,
+            51.23849756624498,
+          ],
+          Array [
+            7.107998250168212,
+            51.23842199642589,
+          ],
+          Array [
+            7.108327165877117,
+            51.23835293235238,
+          ],
+          Array [
+            7.108521923072198,
+            51.238322950330904,
+          ],
+          Array [
+            7.1088455439448355,
+            51.23828126147318,
+          ],
+          Array [
+            7.1090959849014,
+            51.23822614042945,
+          ],
+          Array [
+            7.109130965213215,
+            51.23821081261241,
+          ],
+          Array [
+            7.109166621376486,
+            51.23819228450944,
+          ],
+          Array [
+            7.1092027054457105,
+            51.238156615594896,
+          ],
+          Array [
+            7.109295996941539,
+            51.23790620448948,
+          ],
+          Array [
+            7.109351284790039,
+            51.237849137732,
+          ],
+          Array [
+            7.109563610123887,
+            51.23777860122646,
+          ],
+          Array [
+            7.109717020406443,
+            51.237780519394704,
+          ],
+          Array [
+            7.110024716779064,
+            51.237827947732356,
+          ],
+          Array [
+            7.110550157294554,
+            51.237930719981854,
+          ],
+          Array [
+            7.111016230858073,
+            51.23802494811899,
+          ],
+          Array [
+            7.111353868649988,
+            51.237961092648554,
+          ],
+          Array [
+            7.111882564450012,
+            51.23785993556684,
+          ],
+          Array [
+            7.11203720646185,
+            51.2378307047862,
+          ],
+          Array [
+            7.112087127489904,
+            51.237763115648846,
+          ],
+          Array [
+            7.112091818458894,
+            51.23771195865255,
+          ],
+          Array [
+            7.111731977546916,
+            51.23744878897372,
+          ],
+          Array [
+            7.11052555070274,
+            51.2374221474698,
+          ],
+          Array [
+            7.110522523368106,
+            51.23719875599286,
+          ],
+          Array [
+            7.111152216970219,
+            51.23713674106245,
+          ],
+          Array [
+            7.113305267759632,
+            51.2369509366683,
+          ],
+          Array [
+            7.11418582222602,
+            51.23686719585313,
+          ],
+          Array [
+            7.114636895086485,
+            51.236822048783466,
+          ],
+          Array [
+            7.114737129056453,
+            51.23731244877987,
+          ],
+          Array [
+            7.114851128001073,
+            51.23765798700728,
+          ],
+          Array [
+            7.114950594139801,
+            51.237918191788964,
+          ],
+          Array [
+            7.115077278296386,
+            51.238265946176824,
+          ],
+          Array [
+            7.115150406223886,
+            51.238552424354424,
+          ],
+          Array [
+            7.115172501367681,
+            51.238652689963686,
+          ],
+          Array [
+            7.115236555289521,
+            51.23892471176361,
+          ],
+          Array [
+            7.115344451575419,
+            51.239232808148124,
+          ],
+          Array [
+            7.114543411632846,
+            51.239182582690454,
+          ],
+          Array [
+            7.114201134860515,
+            51.239064763087164,
+          ],
+          Array [
+            7.114237006976324,
+            51.2394204806278,
+          ],
+          Array [
+            7.114219830751419,
+            51.23985498580242,
+          ],
+          Array [
+            7.1142027705010245,
+            51.24028360625721,
+          ],
+          Array [
+            7.114229568611173,
+            51.240395941802454,
+          ],
+          Array [
+            7.114305731871549,
+            51.24089379160374,
+          ],
+          Array [
+            7.114088955515974,
+            51.24130618024836,
+          ],
+          Array [
+            7.114020150638328,
+            51.24142023112683,
+          ],
+          Array [
+            7.113901164789761,
+            51.24159077030735,
+          ],
+          Array [
+            7.110154484257978,
+            51.24166260896365,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Außengrenze",
+        "slug": "aussengrenze",
+        "type": "border",
+      },
+      "type": "Feature",
+    },
+  ],
+  "type": "FeatureCollection",
+}
+`;
+
+exports[`geojson get boundingbox 1`] = `
+Object {
+  "creator": "svg2geojson v0.7.1",
+  "features": Array [
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.105631546336763,
+            51.24175769601948,
+          ],
+          Array [
+            7.105631546336763,
+            51.236787035952574,
+          ],
+          Array [
+            7.1157893937833165,
+            51.236787035952574,
+          ],
+          Array [
+            7.1157893937833165,
+            51.24175769601948,
+          ],
+          Array [
+            7.105631546336763,
+            51.24175769601948,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "bounding-box",
+        "slug": "bounding-box",
+        "type": "bounding-box",
+      },
+      "type": "Feature",
+    },
+  ],
+  "type": "FeatureCollection",
+}
+`;
+
+exports[`geojson get facility-boxes 1`] = `
+Object {
+  "creator": "svg2geojson v0.7.1",
+  "features": Array [
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.108079136390546,
+            51.239293806399274,
+          ],
+          Array [
+            7.108079136390546,
+            51.23838958288827,
+          ],
+          Array [
+            7.1095008959075985,
+            51.23838958288827,
+          ],
+          Array [
+            7.1095008959075985,
+            51.239293806399274,
+          ],
+          Array [
+            7.108079136390546,
+            51.239293806399274,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Elefanten",
+        "published": true,
+        "slug": "elefanten",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.111527782426161,
+            51.23835617020035,
+          ],
+          Array [
+            7.111527782426161,
+            51.23800151942168,
+          ],
+          Array [
+            7.111998414987676,
+            51.23800151942168,
+          ],
+          Array [
+            7.111998414987676,
+            51.23835617020035,
+          ],
+          Array [
+            7.111527782426161,
+            51.23835617020035,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Kiang",
+        "published": true,
+        "slug": "kiang",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.1120622249631325,
+            51.238210955348165,
+          ],
+          Array [
+            7.1120622249631325,
+            51.23787575669869,
+          ],
+          Array [
+            7.11253980799703,
+            51.23787575669869,
+          ],
+          Array [
+            7.11253980799703,
+            51.238210955348165,
+          ],
+          Array [
+            7.1120622249631325,
+            51.238210955348165,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Rentiere",
+        "published": true,
+        "slug": "rentiere",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112278617403087,
+            51.23857463103332,
+          ],
+          Array [
+            7.112278617403087,
+            51.238067192894924,
+          ],
+          Array [
+            7.112973344711697,
+            51.238067192894924,
+          ],
+          Array [
+            7.112973344711697,
+            51.23857463103332,
+          ],
+          Array [
+            7.112278617403087,
+            51.23857463103332,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Takine",
+        "published": true,
+        "slug": "takine",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.114062265382094,
+            51.23833450942312,
+          ],
+          Array [
+            7.114062265382094,
+            51.23812198840096,
+          ],
+          Array [
+            7.11438302288406,
+            51.23812198840096,
+          ],
+          Array [
+            7.11438302288406,
+            51.23833450942312,
+          ],
+          Array [
+            7.114062265382094,
+            51.23833450942312,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "food",
+        "name": "Kiosk Tigertal",
+        "published": true,
+        "slug": "kiosk-tigertal",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.113922776039909,
+            51.240291924997315,
+          ],
+          Array [
+            7.113922776039909,
+            51.2399989661155,
+          ],
+          Array [
+            7.114258614227351,
+            51.2399989661155,
+          ],
+          Array [
+            7.114258614227351,
+            51.240291924997315,
+          ],
+          Array [
+            7.113922776039909,
+            51.240291924997315,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Katzenhaus",
+        "published": false,
+        "slug": "katzenhaus",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.108031842785022,
+            51.23917159203713,
+          ],
+          Array [
+            7.108031842785022,
+            51.23878014548268,
+          ],
+          Array [
+            7.108557791188885,
+            51.23878014548268,
+          ],
+          Array [
+            7.108557791188885,
+            51.23917159203713,
+          ],
+          Array [
+            7.108031842785022,
+            51.23917159203713,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Hirscheber",
+        "published": true,
+        "slug": "hirscheber",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.109109601908572,
+            51.23996187234752,
+          ],
+          Array [
+            7.109109601908572,
+            51.239333960221565,
+          ],
+          Array [
+            7.110279732730108,
+            51.239333960221565,
+          ],
+          Array [
+            7.110279732730108,
+            51.23996187234752,
+          ],
+          Array [
+            7.109109601908572,
+            51.23996187234752,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Affenhaus",
+        "published": true,
+        "slug": "affenhaus",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.107051038352181,
+            51.239582691051666,
+          ],
+          Array [
+            7.107051038352181,
+            51.239006476815405,
+          ],
+          Array [
+            7.107820737183094,
+            51.239006476815405,
+          ],
+          Array [
+            7.107820737183094,
+            51.239582691051666,
+          ],
+          Array [
+            7.107051038352181,
+            51.239582691051666,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "playground",
+        "name": "Spielplatz",
+        "published": true,
+        "slug": "spielplatz",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.109973244092044,
+            51.2386366584844,
+          ],
+          Array [
+            7.109973244092044,
+            51.23786752560335,
+          ],
+          Array [
+            7.111481776537615,
+            51.23786752560335,
+          ],
+          Array [
+            7.111481776537615,
+            51.2386366584844,
+          ],
+          Array [
+            7.109973244092044,
+            51.2386366584844,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Davidshirsche",
+        "published": false,
+        "slug": "davidshirsche",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.108538463436856,
+            51.23978298187313,
+          ],
+          Array [
+            7.108538463436856,
+            51.2394314487439,
+          ],
+          Array [
+            7.109065611577034,
+            51.2394314487439,
+          ],
+          Array [
+            7.109065611577034,
+            51.23978298187313,
+          ],
+          Array [
+            7.108538463436856,
+            51.23978298187313,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Kleines Affenhaus",
+        "published": true,
+        "slug": "kleines-affenhaus",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.109654514144449,
+            51.239305473169345,
+          ],
+          Array [
+            7.109654514144449,
+            51.23900436833281,
+          ],
+          Array [
+            7.1100160546828715,
+            51.23900436833281,
+          ],
+          Array [
+            7.1100160546828715,
+            51.239305473169345,
+          ],
+          Array [
+            7.109654514144449,
+            51.239305473169345,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "food",
+        "name": "Okavango",
+        "published": true,
+        "slug": "okavango",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.114276698252734,
+            51.238925836120714,
+          ],
+          Array [
+            7.114276698252734,
+            51.2381594052025,
+          ],
+          Array [
+            7.114927643184101,
+            51.2381594052025,
+          ],
+          Array [
+            7.114927643184101,
+            51.238925836120714,
+          ],
+          Array [
+            7.114276698252734,
+            51.238925836120714,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Tiger",
+        "published": true,
+        "slug": "tiger",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112140887674164,
+            51.24086727530663,
+          ],
+          Array [
+            7.112140887674164,
+            51.24064952815244,
+          ],
+          Array [
+            7.1125382563380635,
+            51.24064952815244,
+          ],
+          Array [
+            7.1125382563380635,
+            51.24086727530663,
+          ],
+          Array [
+            7.112140887674164,
+            51.24086727530663,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Seelöwen",
+        "published": true,
+        "slug": "seeloewen",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112409428652595,
+            51.241268593165564,
+          ],
+          Array [
+            7.112409428652595,
+            51.24097793057655,
+          ],
+          Array [
+            7.112803785978345,
+            51.24097793057655,
+          ],
+          Array [
+            7.112803785978345,
+            51.241268593165564,
+          ],
+          Array [
+            7.112409428652595,
+            51.241268593165564,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Brillenpinguine",
+        "published": true,
+        "slug": "brillenpinguine",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.111742015340749,
+            51.2411956752266,
+          ],
+          Array [
+            7.111742015340749,
+            51.24096724793197,
+          ],
+          Array [
+            7.112062852825137,
+            51.24096724793197,
+          ],
+          Array [
+            7.112062852825137,
+            51.2411956752266,
+          ],
+          Array [
+            7.111742015340749,
+            51.2411956752266,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Südamerikahaus",
+        "published": true,
+        "slug": "suedamerikahaus",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.113175620254348,
+            51.240846162935206,
+          ],
+          Array [
+            7.113175620254348,
+            51.24080439644927,
+          ],
+          Array [
+            7.113240158069835,
+            51.24080439644927,
+          ],
+          Array [
+            7.113240158069835,
+            51.240846162935206,
+          ],
+          Array [
+            7.113175620254348,
+            51.240846162935206,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Biber",
+        "published": false,
+        "slug": "biber",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.11187138690668,
+            51.240409050954916,
+          ],
+          Array [
+            7.11187138690668,
+            51.23982368660536,
+          ],
+          Array [
+            7.112421014106274,
+            51.23982368660536,
+          ],
+          Array [
+            7.112421014106274,
+            51.240409050954916,
+          ],
+          Array [
+            7.11187138690668,
+            51.240409050954916,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Vogelhaus",
+        "published": false,
+        "slug": "vogelhaus",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.108027439752747,
+            51.24082587943283,
+          ],
+          Array [
+            7.108027439752747,
+            51.24039018228943,
+          ],
+          Array [
+            7.108950760819631,
+            51.24039018228943,
+          ],
+          Array [
+            7.108950760819631,
+            51.24082587943283,
+          ],
+          Array [
+            7.108027439752747,
+            51.24082587943283,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Gibbons",
+        "published": true,
+        "slug": "gibbons",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.113460917549975,
+            51.23987998208892,
+          ],
+          Array [
+            7.113460917549975,
+            51.239200036519044,
+          ],
+          Array [
+            7.113831836027257,
+            51.239200036519044,
+          ],
+          Array [
+            7.113831836027257,
+            51.23987998208892,
+          ],
+          Array [
+            7.113460917549975,
+            51.23987998208892,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Katzenhaus",
+        "published": true,
+        "slug": "katzenhaus",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.11185910960506,
+            51.23800241089413,
+          ],
+          Array [
+            7.11185910960506,
+            51.237074605933515,
+          ],
+          Array [
+            7.114504628156914,
+            51.237074605933515,
+          ],
+          Array [
+            7.114504628156914,
+            51.23800241089413,
+          ],
+          Array [
+            7.11185910960506,
+            51.23800241089413,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Löwen",
+        "published": true,
+        "slug": "loewen",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.1099782829845655,
+            51.23886874181774,
+          ],
+          Array [
+            7.1099782829845655,
+            51.23871171245146,
+          ],
+          Array [
+            7.110175111724349,
+            51.23871171245146,
+          ],
+          Array [
+            7.110175111724349,
+            51.23886874181774,
+          ],
+          Array [
+            7.1099782829845655,
+            51.23886874181774,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Lachender Hans",
+        "published": false,
+        "slug": "lachender-hans",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.107526093941576,
+            51.239820220881,
+          ],
+          Array [
+            7.107526093941576,
+            51.23937471253239,
+          ],
+          Array [
+            7.108446111734475,
+            51.23937471253239,
+          ],
+          Array [
+            7.108446111734475,
+            51.239820220881,
+          ],
+          Array [
+            7.107526093941576,
+            51.239820220881,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Kangurus",
+        "published": true,
+        "slug": "kangurus",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.111299112684587,
+            51.24149267578407,
+          ],
+          Array [
+            7.111299112684587,
+            51.24116263565496,
+          ],
+          Array [
+            7.11229448991453,
+            51.24116263565496,
+          ],
+          Array [
+            7.11229448991453,
+            51.24149267578407,
+          ],
+          Array [
+            7.111299112684587,
+            51.24149267578407,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Okapis",
+        "published": true,
+        "slug": "okapis",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.111280316815657,
+            51.24163717194919,
+          ],
+          Array [
+            7.111280316815657,
+            51.24150304541165,
+          ],
+          Array [
+            7.111839745860942,
+            51.24150304541165,
+          ],
+          Array [
+            7.111839745860942,
+            51.24163717194919,
+          ],
+          Array [
+            7.111280316815657,
+            51.24163717194919,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Kirk DikDiks",
+        "published": true,
+        "slug": "kirk-dikdiks",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.113319108717582,
+            51.24070380530231,
+          ],
+          Array [
+            7.113319108717582,
+            51.239933177452,
+          ],
+          Array [
+            7.113989277423831,
+            51.239933177452,
+          ],
+          Array [
+            7.113989277423831,
+            51.24070380530231,
+          ],
+          Array [
+            7.113319108717582,
+            51.24070380530231,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "JuniorZoo",
+        "published": true,
+        "slug": "juniorzoo",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112959627726498,
+            51.240797732943115,
+          ],
+          Array [
+            7.112959627726498,
+            51.24013426709288,
+          ],
+          Array [
+            7.113475886260061,
+            51.24013426709288,
+          ],
+          Array [
+            7.113475886260061,
+            51.240797732943115,
+          ],
+          Array [
+            7.112959627726498,
+            51.240797732943115,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Steinböcke",
+        "published": true,
+        "slug": "steinboecke",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112428104547893,
+            51.24060475920732,
+          ],
+          Array [
+            7.112428104547893,
+            51.24023957352811,
+          ],
+          Array [
+            7.11286053750515,
+            51.24023957352811,
+          ],
+          Array [
+            7.11286053750515,
+            51.24060475920732,
+          ],
+          Array [
+            7.112428104547893,
+            51.24060475920732,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Pinguine",
+        "published": true,
+        "slug": "pinguine",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112453778905027,
+            51.240932946275734,
+          ],
+          Array [
+            7.112453778905027,
+            51.240803489952,
+          ],
+          Array [
+            7.1126530751024974,
+            51.240803489952,
+          ],
+          Array [
+            7.1126530751024974,
+            51.240932946275734,
+          ],
+          Array [
+            7.112453778905027,
+            51.240932946275734,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Altes Ottergehege",
+        "published": false,
+        "slug": "altes-ottergehege",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112536360754686,
+            51.24090429395053,
+          ],
+          Array [
+            7.112536360754686,
+            51.24053823933608,
+          ],
+          Array [
+            7.112965822365004,
+            51.24053823933608,
+          ],
+          Array [
+            7.112965822365004,
+            51.24090429395053,
+          ],
+          Array [
+            7.112536360754686,
+            51.24090429395053,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Eisbären",
+        "published": true,
+        "slug": "eisbaeren",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.113047408433522,
+            51.24128689088802,
+          ],
+          Array [
+            7.113047408433522,
+            51.2409357884702,
+          ],
+          Array [
+            7.113712054353602,
+            51.2409357884702,
+          ],
+          Array [
+            7.113712054353602,
+            51.24128689088802,
+          ],
+          Array [
+            7.113047408433522,
+            51.24128689088802,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Terrarium",
+        "published": false,
+        "slug": "terrarium",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.113047408433522,
+            51.24128689088802,
+          ],
+          Array [
+            7.113047408433522,
+            51.2409357884702,
+          ],
+          Array [
+            7.113712054353602,
+            51.2409357884702,
+          ],
+          Array [
+            7.113712054353602,
+            51.24128689088802,
+          ],
+          Array [
+            7.113047408433522,
+            51.24128689088802,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Aquarium",
+        "published": false,
+        "slug": "aquarium",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.109699104344144,
+            51.24051345840528,
+          ],
+          Array [
+            7.109699104344144,
+            51.240380999622374,
+          ],
+          Array [
+            7.109919263956126,
+            51.240380999622374,
+          ],
+          Array [
+            7.109919263956126,
+            51.24051345840528,
+          ],
+          Array [
+            7.109699104344144,
+            51.24051345840528,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "poi",
+        "name": "Musikmuschel",
+        "published": true,
+        "slug": "musikmuschel",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.108809631837817,
+            51.241120871673154,
+          ],
+          Array [
+            7.108809631837817,
+            51.24089274737899,
+          ],
+          Array [
+            7.109262172375707,
+            51.24089274737899,
+          ],
+          Array [
+            7.109262172375707,
+            51.241120871673154,
+          ],
+          Array [
+            7.108809631837817,
+            51.241120871673154,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "poi",
+        "name": "Eingang",
+        "published": true,
+        "slug": "eingang",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.110110853847336,
+            51.2401383964133,
+          ],
+          Array [
+            7.110110853847336,
+            51.23955324741945,
+          ],
+          Array [
+            7.111464856256457,
+            51.23955324741945,
+          ],
+          Array [
+            7.111464856256457,
+            51.2401383964133,
+          ],
+          Array [
+            7.110110853847336,
+            51.2401383964133,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Yaks",
+        "published": true,
+        "slug": "yaks",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.11001303534648,
+            51.24044165981515,
+          ],
+          Array [
+            7.11001303534648,
+            51.240142615882625,
+          ],
+          Array [
+            7.110641885134052,
+            51.240142615882625,
+          ],
+          Array [
+            7.110641885134052,
+            51.24044165981515,
+          ],
+          Array [
+            7.11001303534648,
+            51.24044165981515,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Ententeich",
+        "published": false,
+        "slug": "ententeich",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.11042954380372,
+            51.240631528422185,
+          ],
+          Array [
+            7.11042954380372,
+            51.24039231080511,
+          ],
+          Array [
+            7.110843380848099,
+            51.24039231080511,
+          ],
+          Array [
+            7.110843380848099,
+            51.240631528422185,
+          ],
+          Array [
+            7.11042954380372,
+            51.240631528422185,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Ziesel",
+        "published": false,
+        "slug": "ziesel",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.111790284731809,
+            51.23951752090978,
+          ],
+          Array [
+            7.111790284731809,
+            51.23844173903487,
+          ],
+          Array [
+            7.113862481291855,
+            51.23844173903487,
+          ],
+          Array [
+            7.113862481291855,
+            51.23951752090978,
+          ],
+          Array [
+            7.111790284731809,
+            51.23951752090978,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Tierwelt Patagoniens",
+        "published": true,
+        "slug": "tierwelt-patagoniens",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.111295673440485,
+            51.23991597153289,
+          ],
+          Array [
+            7.111295673440485,
+            51.23939615294564,
+          ],
+          Array [
+            7.112683412434774,
+            51.23939615294564,
+          ],
+          Array [
+            7.112683412434774,
+            51.23991597153289,
+          ],
+          Array [
+            7.111295673440485,
+            51.23991597153289,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Emus",
+        "published": true,
+        "slug": "emus",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.111921135972528,
+            51.239437441141575,
+          ],
+          Array [
+            7.111921135972528,
+            51.238939506199664,
+          ],
+          Array [
+            7.112676597932507,
+            51.238939506199664,
+          ],
+          Array [
+            7.112676597932507,
+            51.239437441141575,
+          ],
+          Array [
+            7.111921135972528,
+            51.239437441141575,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Pelikane",
+        "published": true,
+        "slug": "pelikane",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.10995988702774,
+            51.23967149272588,
+          ],
+          Array [
+            7.10995988702774,
+            51.239036766845615,
+          ],
+          Array [
+            7.111414335360246,
+            51.239036766845615,
+          ],
+          Array [
+            7.111414335360246,
+            51.23967149272588,
+          ],
+          Array [
+            7.10995988702774,
+            51.23967149272588,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Bären",
+        "published": true,
+        "slug": "baeren",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.11009733681819,
+            51.2390799656974,
+          ],
+          Array [
+            7.11009733681819,
+            51.23867917871531,
+          ],
+          Array [
+            7.110791056348296,
+            51.23867917871531,
+          ],
+          Array [
+            7.110791056348296,
+            51.2390799656974,
+          ],
+          Array [
+            7.11009733681819,
+            51.2390799656974,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Rothunde",
+        "published": true,
+        "slug": "rothunde",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112605545548831,
+            51.24000374150304,
+          ],
+          Array [
+            7.112605545548831,
+            51.23909757478242,
+          ],
+          Array [
+            7.113453947081987,
+            51.23909757478242,
+          ],
+          Array [
+            7.113453947081987,
+            51.24000374150304,
+          ],
+          Array [
+            7.112605545548831,
+            51.24000374150304,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Zebras",
+        "published": true,
+        "slug": "zebras",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112640337901957,
+            51.2402190170749,
+          ],
+          Array [
+            7.112640337901957,
+            51.2399899887876,
+          ],
+          Array [
+            7.112834451238548,
+            51.2399899887876,
+          ],
+          Array [
+            7.112834451238548,
+            51.2402190170749,
+          ],
+          Array [
+            7.112640337901957,
+            51.2402190170749,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Waldrapp",
+        "published": true,
+        "slug": "waldrapp",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112700364708901,
+            51.240464485015664,
+          ],
+          Array [
+            7.112700364708901,
+            51.24013878205026,
+          ],
+          Array [
+            7.112979019464465,
+            51.24013878205026,
+          ],
+          Array [
+            7.112979019464465,
+            51.240464485015664,
+          ],
+          Array [
+            7.112700364708901,
+            51.240464485015664,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Pinselohrschweine",
+        "published": true,
+        "slug": "pinselohrschweine",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112927514784476,
+            51.24045742335187,
+          ],
+          Array [
+            7.112927514784476,
+            51.23997982199505,
+          ],
+          Array [
+            7.113425085425377,
+            51.23997982199505,
+          ],
+          Array [
+            7.113425085425377,
+            51.24045742335187,
+          ],
+          Array [
+            7.112927514784476,
+            51.24045742335187,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "facilityType": "enclosure",
+        "name": "Bongos",
+        "published": true,
+        "slug": "bongos",
+        "type": "facility-boxes",
+      },
+      "type": "Feature",
+    },
+  ],
+  "type": "FeatureCollection",
+}
+`;
+
+exports[`geojson get facility-circles 1`] = `
+Object {
+  "creator": "svg2geojson v0.7.1",
+  "features": Array [
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.112548341605529,
+          51.241027797619765,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Brillenpinguine",
+        "slug": "brillenpinguine",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.11144858331709,
+          51.24157270013829,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Kirk-Dik-Dik",
+        "slug": "kirk-dik-dik",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.112508350395041,
+          51.23822967594663,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Taskine",
+        "slug": "taskine",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.112208416316375,
+          51.238091948461374,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Rentiere",
+        "slug": "rentiere",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.111728521790511,
+          51.23814203118328,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Kiang",
+        "slug": "kiang",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.113708086709702,
+          51.24052446626456,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Juiniorzoo",
+        "slug": "juiniorzoo",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.112044452353372,
+          51.23727034140843,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Löwenhaus",
+        "slug": "loewenhaus",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.113364162299499,
+          51.23772108590562,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Löwenhöhle",
+        "slug": "loewenhoehle",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.113764074404385,
+          51.23783377202992,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Löwenturm",
+        "slug": "loewenturm",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.114663876640384,
+          51.23840972333189,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Tiger",
+        "slug": "tiger",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.112148509483061,
+          51.241209600404446,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Okapis",
+        "slug": "okapis",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.111888566614887,
+          51.24107187291918,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Südamerikahaus",
+        "slug": "suedamerikahaus",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.1122884787197735,
+          51.24023298732718,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Vogelhaus",
+        "slug": "vogelhaus",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.112133832708814,
+          51.239940101065315,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Freiflughalle",
+        "slug": "freiflughalle",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.1107688127212025,
+          51.239744680788554,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Yaks",
+        "slug": "yaks",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.109789028064229,
+          51.23906856153862,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Okavango",
+        "slug": "okavango",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.109081171641217,
+          51.238508887121284,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Elefantenhaus",
+        "slug": "elefantenhaus",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.109769032458983,
+          51.239581911942345,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Affenhaus",
+        "slug": "affenhaus",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.1097830293826565,
+          51.24043331821483,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Musikmuschel",
+        "slug": "musikmuschel",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.108161373799975,
+          51.24063740530661,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Gibbons",
+        "slug": "gibbons",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.109056661028307,
+          51.24099376891437,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "name": "Eingang",
+        "slug": "eingang",
+        "type": "facility-circles",
+      },
+      "type": "Feature",
+    },
+  ],
+  "type": "FeatureCollection",
+}
+`;
+
+exports[`geojson get ways 1`] = `
+Object {
+  "creator": "svg2geojson v0.7.1",
+  "features": Array [
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.11094750996197,
+            51.240733028570546,
+          ],
+          Array [
+            7.110946018477278,
+            51.24072595172543,
+          ],
+          Array [
+            7.110945104826523,
+            51.24069749037973,
+          ],
+          Array [
+            7.110949289847143,
+            51.24068031384509,
+          ],
+          Array [
+            7.11095506711449,
+            51.240669365312115,
+          ],
+          Array [
+            7.110959059423559,
+            51.2406643025554,
+          ],
+          Array [
+            7.110985843036894,
+            51.24063660982298,
+          ],
+          Array [
+            7.111049206110572,
+            51.240578353679105,
+          ],
+          Array [
+            7.111079840877477,
+            51.2405515187698,
+          ],
+          Array [
+            7.111107686023127,
+            51.24052627333642,
+          ],
+          Array [
+            7.111164654408519,
+            51.240468835017964,
+          ],
+          Array [
+            7.111217778763775,
+            51.2404065522526,
+          ],
+          Array [
+            7.111251094310622,
+            51.24035985084744,
+          ],
+          Array [
+            7.111268635818524,
+            51.24032996445144,
+          ],
+          Array [
+            7.1112756938317245,
+            51.240315644174416,
+          ],
+          Array [
+            7.111301382123296,
+            51.240256919874476,
+          ],
+          Array [
+            7.111348549131644,
+            51.240134920633274,
+          ],
+          Array [
+            7.111369637184283,
+            51.240073546800836,
+          ],
+          Array [
+            7.111390894387246,
+            51.240009880940455,
+          ],
+          Array [
+            7.111421531950411,
+            51.239912435526435,
+          ],
+          Array [
+            7.11143672345528,
+            51.23985175262035,
+          ],
+          Array [
+            7.111441617364042,
+            51.23982412983745,
+          ],
+          Array [
+            7.111443781177528,
+            51.239802393481284,
+          ],
+          Array [
+            7.111443303298184,
+            51.23975882580743,
+          ],
+          Array [
+            7.111435210209745,
+            51.239693414285405,
+          ],
+          Array [
+            7.111428504246122,
+            51.2396499045686,
+          ],
+          Array [
+            7.111419693057699,
+            51.23960044385062,
+          ],
+          Array [
+            7.111397133765918,
+            51.239497838517444,
+          ],
+          Array [
+            7.111389064914339,
+            51.23945604186449,
+          ],
+          Array [
+            7.111386127997332,
+            51.23943196236569,
+          ],
+          Array [
+            7.11138368690885,
+            51.23938366251043,
+          ],
+          Array [
+            7.1113838700560965,
+            51.2393635791433,
+          ],
+          Array [
+            7.111385402656752,
+            51.23934910347595,
+          ],
+          Array [
+            7.111392348778528,
+            51.23932394255717,
+          ],
+          Array [
+            7.111400457668182,
+            51.239309038594506,
+          ],
+          Array [
+            7.1114056532684495,
+            51.23930321944686,
+          ],
+          Array [
+            7.111419160698142,
+            51.239291841977874,
+          ],
+          Array [
+            7.111454537907099,
+            51.23926636954358,
+          ],
+          Array [
+            7.111522274949127,
+            51.23922358169781,
+          ],
+          Array [
+            7.111572364627614,
+            51.23919372609608,
+          ],
+          Array [
+            7.1116544655829665,
+            51.23914908016665,
+          ],
+          Array [
+            7.111734940895613,
+            51.239107328392514,
+          ],
+          Array [
+            7.111767418257542,
+            51.23909116865451,
+          ],
+          Array [
+            7.111840496695918,
+            51.23906101932545,
+          ],
+          Array [
+            7.111878953243704,
+            51.23904743446538,
+          ],
+          Array [
+            7.1119323485081685,
+            51.23903055459261,
+          ],
+          Array [
+            7.112055116525467,
+            51.23899568301065,
+          ],
+          Array [
+            7.112108178863105,
+            51.23898161324811,
+          ],
+          Array [
+            7.112237487442879,
+            51.2389493950331,
+          ],
+          Array [
+            7.112332213623383,
+            51.23892613160878,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.109076841108939,
+            51.240953314918734,
+          ],
+          Array [
+            7.109140146695252,
+            51.2408940705019,
+          ],
+          Array [
+            7.109203485274315,
+            51.24083483923178,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.109645196192405,
+            51.240601831872226,
+          ],
+          Array [
+            7.109944169982128,
+            51.24072673974576,
+          ],
+          Array [
+            7.110438205899912,
+            51.24093346713604,
+          ],
+          Array [
+            7.110534588716311,
+            51.24083997521491,
+          ],
+          Array [
+            7.110545901757206,
+            51.240830700366175,
+          ],
+          Array [
+            7.110570661120129,
+            51.240813669921216,
+          ],
+          Array [
+            7.110598202840281,
+            51.24079862100601,
+          ],
+          Array [
+            7.110628452496515,
+            51.24078550065218,
+          ],
+          Array [
+            7.110661335667689,
+            51.2407742558914,
+          ],
+          Array [
+            7.11069677793266,
+            51.24076483375532,
+          ],
+          Array [
+            7.110734704870285,
+            51.24075718127559,
+          ],
+          Array [
+            7.110775042059419,
+            51.240751245483864,
+          ],
+          Array [
+            7.1107960912416965,
+            51.24074890479339,
+          ],
+          Array [
+            7.110865037838194,
+            51.24074154893274,
+          ],
+          Array [
+            7.111128619719066,
+            51.240715385195486,
+          ],
+          Array [
+            7.111319287063039,
+            51.24069948030224,
+          ],
+          Array [
+            7.111395491501864,
+            51.24069497822257,
+          ],
+          Array [
+            7.111454865514783,
+            51.24069315212045,
+          ],
+          Array [
+            7.111582562073857,
+            51.24069310868934,
+          ],
+          Array [
+            7.111707095828072,
+            51.24069747785905,
+          ],
+          Array [
+            7.111787524440045,
+            51.24070336240769,
+          ],
+          Array [
+            7.111830721274107,
+            51.240708414942446,
+          ],
+          Array [
+            7.111848343971197,
+            51.24071125761133,
+          ],
+          Array [
+            7.111895777545957,
+            51.24072174477679,
+          ],
+          Array [
+            7.111953670821821,
+            51.24073535356309,
+          ],
+          Array [
+            7.111971892379477,
+            51.240736464115656,
+          ],
+          Array [
+            7.111978576285447,
+            51.240733610510745,
+          ],
+          Array [
+            7.111980035027336,
+            51.240730862492825,
+          ],
+          Array [
+            7.111980094690004,
+            51.24072619843358,
+          ],
+          Array [
+            7.111975442626525,
+            51.24071251856185,
+          ],
+          Array [
+            7.111959143025357,
+            51.240683948134,
+          ],
+          Array [
+            7.111910192377778,
+            51.240616494880264,
+          ],
+          Array [
+            7.111880508901792,
+            51.240580231194265,
+          ],
+          Array [
+            7.1118408256236245,
+            51.240534254003485,
+          ],
+          Array [
+            7.1117958994977615,
+            51.24048050147013,
+          ],
+          Array [
+            7.1117754016279076,
+            51.24045385609262,
+          ],
+          Array [
+            7.111745258674785,
+            51.24041642955332,
+          ],
+          Array [
+            7.111723390949756,
+            51.24039662560279,
+          ],
+          Array [
+            7.111711366077031,
+            51.24038915559363,
+          ],
+          Array [
+            7.111697933596686,
+            51.24038269684218,
+          ],
+          Array [
+            7.111669443016721,
+            51.2403719174998,
+          ],
+          Array [
+            7.1116240283898255,
+            51.240360289458245,
+          ],
+          Array [
+            7.1115326985331695,
+            51.24034807164129,
+          ],
+          Array [
+            7.111479445050043,
+            51.240343455109894,
+          ],
+          Array [
+            7.111413848467259,
+            51.24033709679533,
+          ],
+          Array [
+            7.111353056828415,
+            51.24033039103188,
+          ],
+          Array [
+            7.111332613883989,
+            51.24032769544676,
+          ],
+          Array [
+            7.111293383631253,
+            51.24032137649408,
+          ],
+          Array [
+            7.1112749539943305,
+            51.24031716668916,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.111977283632054,
+            51.24073469382105,
+          ],
+          Array [
+            7.111977548418584,
+            51.240736213434275,
+          ],
+          Array [
+            7.11199153708821,
+            51.240745876345244,
+          ],
+          Array [
+            7.112039069325856,
+            51.240772333891755,
+          ],
+          Array [
+            7.112107103030222,
+            51.240805793604366,
+          ],
+          Array [
+            7.112157538751793,
+            51.24082790481063,
+          ],
+          Array [
+            7.112207621558743,
+            51.24084700004907,
+          ],
+          Array [
+            7.112253565580027,
+            51.240860628103036,
+          ],
+          Array [
+            7.112273802461344,
+            51.240864625930634,
+          ],
+          Array [
+            7.112311165936872,
+            51.24087090383895,
+          ],
+          Array [
+            7.112393386740884,
+            51.24088715012616,
+          ],
+          Array [
+            7.112425565106027,
+            51.24089452531562,
+          ],
+          Array [
+            7.11244613177326,
+            51.24090021170004,
+          ],
+          Array [
+            7.1124852945408295,
+            51.240914164042074,
+          ],
+          Array [
+            7.11250381190847,
+            51.240922175986384,
+          ],
+          Array [
+            7.112527076295281,
+            51.2409316783612,
+          ],
+          Array [
+            7.1125882583483175,
+            51.2409551961901,
+          ],
+          Array [
+            7.112622765764068,
+            51.24097072868114,
+          ],
+          Array [
+            7.112658909132759,
+            51.24098994276089,
+          ],
+          Array [
+            7.112722949182648,
+            51.24102893529007,
+          ],
+          Array [
+            7.112746218630847,
+            51.24104366164492,
+          ],
+          Array [
+            7.112755824074392,
+            51.241050310605566,
+          ],
+          Array [
+            7.112771298720155,
+            51.24106476802011,
+          ],
+          Array [
+            7.1127897471263895,
+            51.241088318451695,
+          ],
+          Array [
+            7.11280243027631,
+            51.24110445706105,
+          ],
+          Array [
+            7.112851216053875,
+            51.24116156983203,
+          ],
+          Array [
+            7.112897341416162,
+            51.24121532267841,
+          ],
+          Array [
+            7.112917187554258,
+            51.24123867781672,
+          ],
+          Array [
+            7.112936292855179,
+            51.241258158430455,
+          ],
+          Array [
+            7.1129428370418575,
+            51.24126291836278,
+          ],
+          Array [
+            7.112957243625491,
+            51.2412682575722,
+          ],
+          Array [
+            7.112967162070555,
+            51.24126857062834,
+          ],
+          Array [
+            7.112973629445991,
+            51.241267931276425,
+          ],
+          Array [
+            7.11298578249367,
+            51.24126471777531,
+          ],
+          Array [
+            7.112996145309817,
+            51.241259005342,
+          ],
+          Array [
+            7.113003820341702,
+            51.24125089093353,
+          ],
+          Array [
+            7.113006369453318,
+            51.241245963287675,
+          ],
+          Array [
+            7.1130167674179905,
+            51.24121122411191,
+          ],
+          Array [
+            7.113037329398753,
+            51.241112607006734,
+          ],
+          Array [
+            7.113045396875634,
+            51.24106811202976,
+          ],
+          Array [
+            7.113051048820915,
+            51.24103627917783,
+          ],
+          Array [
+            7.1130596728004845,
+            51.240972453835276,
+          ],
+          Array [
+            7.113060805489035,
+            51.24094160557835,
+          ],
+          Array [
+            7.113059340373547,
+            51.240912668133774,
+          ],
+          Array [
+            7.113050027545377,
+            51.24085501016541,
+          ],
+          Array [
+            7.113042297556821,
+            51.24082646289654,
+          ],
+          Array [
+            7.113029881973094,
+            51.24079032891697,
+          ],
+          Array [
+            7.112996529678464,
+            51.24071089975463,
+          ],
+          Array [
+            7.112978339613886,
+            51.240673134643416,
+          ],
+          Array [
+            7.112941817141017,
+            51.24060656907169,
+          ],
+          Array [
+            7.112903072156626,
+            51.24054047302548,
+          ],
+          Array [
+            7.112872439826686,
+            51.2404848916511,
+          ],
+          Array [
+            7.112818812667876,
+            51.24038521421547,
+          ],
+          Array [
+            7.1127802445039965,
+            51.240318069748135,
+          ],
+          Array [
+            7.112760707446407,
+            51.24028690670858,
+          ],
+          Array [
+            7.112741161093986,
+            51.24025786765086,
+          ],
+          Array [
+            7.11269834714452,
+            51.24019896786576,
+          ],
+          Array [
+            7.112630051100353,
+            51.240113353174245,
+          ],
+          Array [
+            7.112585869873271,
+            51.24006182493977,
+          ],
+          Array [
+            7.112566307196313,
+            51.24004077605211,
+          ],
+          Array [
+            7.11252294283657,
+            51.23999959244298,
+          ],
+          Array [
+            7.112453487031677,
+            51.239940731022024,
+          ],
+          Array [
+            7.112409056734338,
+            51.239903921629995,
+          ],
+          Array [
+            7.1123707114121055,
+            51.23987155074094,
+          ],
+          Array [
+            7.112311704068598,
+            51.239824783446316,
+          ],
+          Array [
+            7.112268687273091,
+            51.239795435421236,
+          ],
+          Array [
+            7.112245384707171,
+            51.2397814743832,
+          ],
+          Array [
+            7.112220409008981,
+            51.23976766627353,
+          ],
+          Array [
+            7.112167417405797,
+            51.23974087947103,
+          ],
+          Array [
+            7.112111256999073,
+            51.23971558082965,
+          ],
+          Array [
+            7.112052989555446,
+            51.239692229075835,
+          ],
+          Array [
+            7.112023397496869,
+            51.23968142663377,
+          ],
+          Array [
+            7.11198464645912,
+            51.2396680975135,
+          ],
+          Array [
+            7.111896825339104,
+            51.239640677350415,
+          ],
+          Array [
+            7.111799642339199,
+            51.239615434259775,
+          ],
+          Array [
+            7.1117237853288975,
+            51.2396002355702,
+          ],
+          Array [
+            7.111673036430064,
+            51.23959277905135,
+          ],
+          Array [
+            7.1116478560356535,
+            51.23959003317869,
+          ],
+          Array [
+            7.111595112651353,
+            51.23958556432774,
+          ],
+          Array [
+            7.111485407497393,
+            51.23957908048357,
+          ],
+          Array [
+            7.111315485398592,
+            51.23957358558242,
+          ],
+          Array [
+            7.111202657884009,
+            51.23957126217452,
+          ],
+          Array [
+            7.1111450508264875,
+            51.239570307086254,
+          ],
+          Array [
+            7.11102605679222,
+            51.23957039039769,
+          ],
+          Array [
+            7.110936527910828,
+            51.239573490504114,
+          ],
+          Array [
+            7.110878147093681,
+            51.239577619595885,
+          ],
+          Array [
+            7.110821706381376,
+            51.23958378177717,
+          ],
+          Array [
+            7.110767973792614,
+            51.239592305510406,
+          ],
+          Array [
+            7.110742363050405,
+            51.239597555603524,
+          ],
+          Array [
+            7.110718576979424,
+            51.239603208287264,
+          ],
+          Array [
+            7.1106709930744225,
+            51.239616475801874,
+          ],
+          Array [
+            7.110600647713087,
+            51.23964020289977,
+          ],
+          Array [
+            7.110511745221368,
+            51.239675957854864,
+          ],
+          Array [
+            7.110432578214923,
+            51.239712197829824,
+          ],
+          Array [
+            7.110398058723702,
+            51.23972906031058,
+          ],
+          Array [
+            7.1103720744190655,
+            51.23974280596846,
+          ],
+          Array [
+            7.1103226739953405,
+            51.239773518816186,
+          ],
+          Array [
+            7.11027775946068,
+            51.23980666087156,
+          ],
+          Array [
+            7.110238604785083,
+            51.23983999273262,
+          ],
+          Array [
+            7.1102215855100575,
+            51.23985603002717,
+          ],
+          Array [
+            7.110207576878023,
+            51.239870683326785,
+          ],
+          Array [
+            7.110182052628522,
+            51.23990212732356,
+          ],
+          Array [
+            7.110149153117189,
+            51.23994855132167,
+          ],
+          Array [
+            7.1101301536055175,
+            51.239974272829464,
+          ],
+          Array [
+            7.110123313023045,
+            51.23998188377942,
+          ],
+          Array [
+            7.110105746399569,
+            51.23999697116027,
+          ],
+          Array [
+            7.110084910307177,
+            51.24000985317976,
+          ],
+          Array [
+            7.110063098116817,
+            51.240018098634756,
+          ],
+          Array [
+            7.110052542663322,
+            51.240019722899596,
+          ],
+          Array [
+            7.110047216793835,
+            51.24001946060479,
+          ],
+          Array [
+            7.1100334995176855,
+            51.240016028038234,
+          ],
+          Array [
+            7.110008146772483,
+            51.24000571363737,
+          ],
+          Array [
+            7.109959298969487,
+            51.23998037783501,
+          ],
+          Array [
+            7.109944790345781,
+            51.2399721593386,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.1099448103413865,
+            51.2399721593386,
+          ],
+          Array [
+            7.109911859958421,
+            51.239956736520895,
+          ],
+          Array [
+            7.109860843561741,
+            51.23993579116362,
+          ],
+          Array [
+            7.109820664298833,
+            51.23992356757541,
+          ],
+          Array [
+            7.109797410737767,
+            51.23991804996585,
+          ],
+          Array [
+            7.109746990444445,
+            51.23990752085611,
+          ],
+          Array [
+            7.1096721658429765,
+            51.239894138498485,
+          ],
+          Array [
+            7.109622086256022,
+            51.239887420175236,
+          ],
+          Array [
+            7.109596798829472,
+            51.23988487517085,
+          ],
+          Array [
+            7.10956185484561,
+            51.23988210506812,
+          ],
+          Array [
+            7.1094812193025545,
+            51.239877384184666,
+          ],
+          Array [
+            7.109395185133542,
+            51.239874172825765,
+          ],
+          Array [
+            7.1093144701079565,
+            51.2398729715056,
+          ],
+          Array [
+            7.10927945657688,
+            51.239873281020735,
+          ],
+          Array [
+            7.109227029912032,
+            51.239875251971476,
+          ],
+          Array [
+            7.109120721902052,
+            51.23988438025183,
+          ],
+          Array [
+            7.109071370311344,
+            51.23989115304005,
+          ],
+          Array [
+            7.109042285859952,
+            51.23989652474455,
+          ],
+          Array [
+            7.108961022782945,
+            51.23991440775859,
+          ],
+          Array [
+            7.1088282414976725,
+            51.239945779047375,
+          ],
+          Array [
+            7.108768900789934,
+            51.239959378227965,
+          ],
+          Array [
+            7.108752212145366,
+            51.23996193706379,
+          ],
+          Array [
+            7.108717612624859,
+            51.23996286375065,
+          ],
+          Array [
+            7.108700039924593,
+            51.239961799727574,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.108700031926351,
+            51.239961799727574,
+          ],
+          Array [
+            7.1086778707970595,
+            51.23995956854231,
+          ],
+          Array [
+            7.108656117578114,
+            51.23995688661255,
+          ],
+          Array [
+            7.108625045219886,
+            51.23995196813712,
+          ],
+          Array [
+            7.108559482754603,
+            51.23993727535334,
+          ],
+          Array [
+            7.108525110371674,
+            51.23992850723818,
+          ],
+          Array [
+            7.108485050176347,
+            51.2399190513464,
+          ],
+          Array [
+            7.108417081927322,
+            51.239906859984266,
+          ],
+          Array [
+            7.10836996015903,
+            51.239901649630255,
+          ],
+          Array [
+            7.108346741574652,
+            51.2399003281947,
+          ],
+          Array [
+            7.1083206579793385,
+            51.23990014872835,
+          ],
+          Array [
+            7.108264044265995,
+            51.23990332626186,
+          ],
+          Array [
+            7.108178297471321,
+            51.23991306806534,
+          ],
+          Array [
+            7.108128585522315,
+            51.23991987297693,
+          ],
+          Array [
+            7.108110929902774,
+            51.23992249889131,
+          ],
+          Array [
+            7.108076228279708,
+            51.23992920589704,
+          ],
+          Array [
+            7.108043014329672,
+            51.239938302905045,
+          ],
+          Array [
+            7.108012097874679,
+            51.239950329634894,
+          ],
+          Array [
+            7.107997754277201,
+            51.23995761030788,
+          ],
+          Array [
+            7.107984373843035,
+            51.239965832550716,
+          ],
+          Array [
+            7.1079603562467675,
+            51.23998526462726,
+          ],
+          Array [
+            7.107940558722988,
+            51.24000792070076,
+          ],
+          Array [
+            7.1079256561233715,
+            51.24003288942221,
+          ],
+          Array [
+            7.107920251311274,
+            51.24004595622934,
+          ],
+          Array [
+            7.107916010204348,
+            51.24006035362776,
+          ],
+          Array [
+            7.107911375957266,
+            51.240091227131465,
+          ],
+          Array [
+            7.1079121851466045,
+            51.24013972200122,
+          ],
+          Array [
+            7.107916452146278,
+            51.24017116553825,
+          ],
+          Array [
+            7.107919838925349,
+            51.24018633330088,
+          ],
+          Array [
+            7.107929991428344,
+            51.24021642173836,
+          ],
+          Array [
+            7.107949176266471,
+            51.24026093447416,
+          ],
+          Array [
+            7.10796111033103,
+            51.24029019463928,
+          ],
+          Array [
+            7.107971705127442,
+            51.24031854016868,
+          ],
+          Array [
+            7.107990919654356,
+            51.24037601533511,
+          ],
+          Array [
+            7.107996826481118,
+            51.24040482146905,
+          ],
+          Array [
+            7.10799808970348,
+            51.240415824330036,
+          ],
+          Array [
+            7.107998906024063,
+            51.24042702814794,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.107998906024063,
+            51.24042702814794,
+          ],
+          Array [
+            7.1080585089241755,
+            51.240392809128195,
+          ],
+          Array [
+            7.10805734118083,
+            51.24028374648883,
+          ],
+          Array [
+            7.108697412502065,
+            51.2399785974725,
+          ],
+          Array [
+            7.108700031926351,
+            51.239961799727574,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.107998906024063,
+            51.24042702814794,
+          ],
+          Array [
+            7.107999598559354,
+            51.24045572312172,
+          ],
+          Array [
+            7.107999972852089,
+            51.2405154578797,
+          ],
+          Array [
+            7.108002449245313,
+            51.24054594456285,
+          ],
+          Array [
+            7.10800956968034,
+            51.240600567596516,
+          ],
+          Array [
+            7.108019737445607,
+            51.240656206683404,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.108019737445607,
+            51.240656206683404,
+          ],
+          Array [
+            7.10802531521969,
+            51.24067741515105,
+          ],
+          Array [
+            7.108032134720858,
+            51.24069807333479,
+          ],
+          Array [
+            7.108041769501705,
+            51.24072242632243,
+          ],
+          Array [
+            7.108061775963939,
+            51.24076395888684,
+          ],
+          Array [
+            7.108082770896419,
+            51.240798208406176,
+          ],
+          Array [
+            7.108104761422583,
+            51.24082791268374,
+          ],
+          Array [
+            7.108116132259369,
+            51.240841915920385,
+          ],
+          Array [
+            7.108125638810586,
+            51.24085267773871,
+          ],
+          Array [
+            7.108147237719697,
+            51.24087320269458,
+          ],
+          Array [
+            7.108171870087095,
+            51.2408923890332,
+          ],
+          Array [
+            7.108199038772047,
+            51.24091022830311,
+          ],
+          Array [
+            7.108213418877125,
+            51.24091864014622,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.108019737445607,
+            51.240656206683404,
+          ],
+          Array [
+            7.108169316570198,
+            51.24067067057349,
+          ],
+          Array [
+            7.108182925579127,
+            51.240764648297024,
+          ],
+          Array [
+            7.108273209735926,
+            51.240847304821266,
+          ],
+          Array [
+            7.108213418877125,
+            51.24091864014622,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.108213418877125,
+            51.24091864014622,
+          ],
+          Array [
+            7.108216064795589,
+            51.240920124472886,
+          ],
+          Array [
+            7.108218725710756,
+            51.24092159753095,
+          ],
+          Array [
+            7.108254224283664,
+            51.24094033007315,
+          ],
+          Array [
+            7.108308291572302,
+            51.240965490463715,
+          ],
+          Array [
+            7.108345065333691,
+            51.24097996719728,
+          ],
+          Array [
+            7.108363717843504,
+            51.24098642961446,
+          ],
+          Array [
+            7.1083949910325925,
+            51.24099620286637,
+          ],
+          Array [
+            7.108452175784493,
+            51.241010355803404,
+          ],
+          Array [
+            7.108495625125558,
+            51.2410172394192,
+          ],
+          Array [
+            7.1085185558122745,
+            51.241019346483434,
+          ],
+          Array [
+            7.108550807098891,
+            51.24102091383787,
+          ],
+          Array [
+            7.1086049247202165,
+            51.241019473304235,
+          ],
+          Array [
+            7.108643492899717,
+            51.2410141125162,
+          ],
+          Array [
+            7.108663180025886,
+            51.241009630435386,
+          ],
+          Array [
+            7.108679418792769,
+            51.241004804167915,
+          ],
+          Array [
+            7.1087100687907006,
+            51.24099252569413,
+          ],
+          Array [
+            7.108754204582456,
+            51.24096885179201,
+          ],
+          Array [
+            7.108784525355872,
+            51.24095058290625,
+          ],
+          Array [
+            7.108817455555773,
+            51.240930673067936,
+          ],
+          Array [
+            7.108883380441401,
+            51.2408929362065,
+          ],
+          Array [
+            7.108913393032551,
+            51.240878083158016,
+          ],
+          Array [
+            7.10893677795537,
+            51.2408688117115,
+          ],
+          Array [
+            7.108987129013909,
+            51.240854019388316,
+          ],
+          Array [
+            7.109010799623938,
+            51.24084841164942,
+          ],
+          Array [
+            7.109051080770703,
+            51.24084223613679,
+          ],
+          Array [
+            7.109092153743435,
+            51.240837816649595,
+          ],
+          Array [
+            7.109203485274315,
+            51.24083483923178,
+          ],
+          Array [
+            7.1093155736388525,
+            51.24073030156634,
+          ],
+          Array [
+            7.109428111904509,
+            51.24062595922351,
+          ],
+          Array [
+            7.1094382951038835,
+            51.240617242482266,
+          ],
+          Array [
+            7.109460642567222,
+            51.24060279799924,
+          ],
+          Array [
+            7.109474269759655,
+            51.24059618003706,
+          ],
+          Array [
+            7.109484094735028,
+            51.24059223242301,
+          ],
+          Array [
+            7.109504846709189,
+            51.24058641842547,
+          ],
+          Array [
+            7.109526679149004,
+            51.24058319433068,
+          ],
+          Array [
+            7.109549125375792,
+            51.24058233805309,
+          ],
+          Array [
+            7.1095829247069355,
+            51.24058500748173,
+          ],
+          Array [
+            7.109625783068514,
+            51.240594781281416,
+          ],
+          Array [
+            7.10964521618801,
+            51.240601831872226,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.113013975781553,
+            51.24075036470474,
+          ],
+          Array [
+            7.113010058392541,
+            51.24075128309665,
+          ],
+          Array [
+            7.1129900657866365,
+            51.240757269547004,
+          ],
+          Array [
+            7.1129815549072095,
+            51.24076143048214,
+          ],
+          Array [
+            7.112973963200761,
+            51.24076777596301,
+          ],
+          Array [
+            7.1129596795901,
+            51.240784263508075,
+          ],
+          Array [
+            7.112953936977246,
+            51.240792747208154,
+          ],
+          Array [
+            7.112937989482283,
+            51.240822531089854,
+          ],
+          Array [
+            7.1129217360545605,
+            51.24085651252969,
+          ],
+          Array [
+            7.11290579605795,
+            51.240891006691385,
+          ],
+          Array [
+            7.112890015026401,
+            51.24092296729339,
+          ],
+          Array [
+            7.112883408540915,
+            51.24093414102254,
+          ],
+          Array [
+            7.112867908572592,
+            51.24095592129401,
+          ],
+          Array [
+            7.112859081825088,
+            51.24096647665805,
+          ],
+          Array [
+            7.11284333609828,
+            51.24098347743364,
+          ],
+          Array [
+            7.112811814651255,
+            51.241012294484044,
+          ],
+          Array [
+            7.112797515356541,
+            51.241022591843816,
+          ],
+          Array [
+            7.112771455584116,
+            51.24103977209553,
+          ],
+          Array [
+            7.1127558485143325,
+            51.24105030762212,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112652255282683,
+            51.240140287036056,
+          ],
+          Array [
+            7.1126450066883224,
+            51.240144184332614,
+          ],
+          Array [
+            7.112617236612111,
+            51.24016059768287,
+          ],
+          Array [
+            7.1125970578127555,
+            51.24017480722707,
+          ],
+          Array [
+            7.112588937199115,
+            51.240181920802776,
+          ],
+          Array [
+            7.112580897825433,
+            51.240190513833824,
+          ],
+          Array [
+            7.112566863503732,
+            51.240210024282,
+          ],
+          Array [
+            7.112555074563526,
+            51.240233883240755,
+          ],
+          Array [
+            7.112544954381551,
+            51.24026358990508,
+          ],
+          Array [
+            7.1125403398801295,
+            51.24028110462525,
+          ],
+          Array [
+            7.112534319765767,
+            51.24030322768947,
+          ],
+          Array [
+            7.112518287414455,
+            51.24034619107421,
+          ],
+          Array [
+            7.1125077390453395,
+            51.24036787043682,
+          ],
+          Array [
+            7.112493038588795,
+            51.24039299959905,
+          ],
+          Array [
+            7.112456580226835,
+            51.24044976366908,
+          ],
+          Array [
+            7.112442813315111,
+            51.24047303914456,
+          ],
+          Array [
+            7.112433026083396,
+            51.240491122699794,
+          ],
+          Array [
+            7.112414052050499,
+            51.240522509453584,
+          ],
+          Array [
+            7.112393778740666,
+            51.24054957950714,
+          ],
+          Array [
+            7.112369686332716,
+            51.24057480139087,
+          ],
+          Array [
+            7.11235542052283,
+            51.24058749068481,
+          ],
+          Array [
+            7.112333147418148,
+            51.24060581704832,
+          ],
+          Array [
+            7.112285384415792,
+            51.24064070248128,
+          ],
+          Array [
+            7.112259417622931,
+            51.24065697795732,
+          ],
+          Array [
+            7.112228723244128,
+            51.24067298353445,
+          ],
+          Array [
+            7.112178627176421,
+            51.24069635173144,
+          ],
+          Array [
+            7.112147967008849,
+            51.2407128834706,
+          ],
+          Array [
+            7.112134856999622,
+            51.24072179000775,
+          ],
+          Array [
+            7.112118323196022,
+            51.240735240818275,
+          ],
+          Array [
+            7.112101138597957,
+            51.24075450419821,
+          ],
+          Array [
+            7.112095305692448,
+            51.24076336868348,
+          ],
+          Array [
+            7.112085750792482,
+            51.24077860103033,
+          ],
+          Array [
+            7.112077569590596,
+            51.240791758074394,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.110618062369964,
+            51.24078967964143,
+          ],
+          Array [
+            7.110613991264736,
+            51.240770334094535,
+          ],
+          Array [
+            7.110596348392393,
+            51.24069854229296,
+          ],
+          Array [
+            7.110580377402595,
+            51.24064995293609,
+          ],
+          Array [
+            7.110572024488449,
+            51.24063258516762,
+          ],
+          Array [
+            7.110562388559417,
+            51.24061684675051,
+          ],
+          Array [
+            7.110541270232181,
+            51.24058583803324,
+          ],
+          Array [
+            7.110516033435128,
+            51.240556405043606,
+          ],
+          Array [
+            7.11048469035515,
+            51.240529689667675,
+          ],
+          Array [
+            7.110466107767469,
+            51.24051770792423,
+          ],
+          Array [
+            7.1104432257263115,
+            51.24050537574847,
+          ],
+          Array [
+            7.110389551819964,
+            51.2404817354321,
+          ],
+          Array [
+            7.1103294302682185,
+            51.240461217695184,
+          ],
+          Array [
+            7.110267779615049,
+            51.24044593117682,
+          ],
+          Array [
+            7.110237917920421,
+            51.24044090857432,
+          ],
+          Array [
+            7.110208058201922,
+            51.24043769648667,
+          ],
+          Array [
+            7.110145957288338,
+            51.24043582753057,
+          ],
+          Array [
+            7.110083764145025,
+            51.24043941927361,
+          ],
+          Array [
+            7.110025178458843,
+            51.240447736204096,
+          ],
+          Array [
+            7.10999839456432,
+            51.240453436767204,
+          ],
+          Array [
+            7.109973279763891,
+            51.24046055632936,
+          ],
+          Array [
+            7.10992643660624,
+            51.24047944516487,
+          ],
+          Array [
+            7.109863793710214,
+            51.240514038660564,
+          ],
+          Array [
+            7.109826456353945,
+            51.2405371024583,
+          ],
+          Array [
+            7.109808932088347,
+            51.24054864387483,
+          ],
+          Array [
+            7.109770100826043,
+            51.240577627469854,
+          ],
+          Array [
+            7.109720933733848,
+            51.24061779065331,
+          ],
+          Array [
+            7.109708626251361,
+            51.24062830810317,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112376035991837,
+            51.240883477067165,
+          ],
+          Array [
+            7.112376035991837,
+            51.240883477067165,
+          ],
+          Array [
+            7.1123791148151545,
+            51.24094659663461,
+          ],
+          Array [
+            7.112382766512562,
+            51.24104915822365,
+          ],
+          Array [
+            7.112383819156205,
+            51.24108954958673,
+          ],
+          Array [
+            7.112384027094879,
+            51.24115088530446,
+          ],
+          Array [
+            7.112380271888971,
+            51.24118873726811,
+          ],
+          Array [
+            7.112376459898668,
+            51.24120584201915,
+          ],
+          Array [
+            7.1123711521355535,
+            51.241219853433364,
+          ],
+          Array [
+            7.112354267049785,
+            51.24124798284409,
+          ],
+          Array [
+            7.112324176327369,
+            51.24128779793306,
+          ],
+          Array [
+            7.112309426631647,
+            51.24131069770988,
+          ],
+          Array [
+            7.112303908781893,
+            51.241325921683526,
+          ],
+          Array [
+            7.112298397868115,
+            51.241357149043175,
+          ],
+          Array [
+            7.112294861832787,
+            51.24137268008651,
+          ],
+          Array [
+            7.112279233767618,
+            51.24141700454747,
+          ],
+          Array [
+            7.112268695583764,
+            51.24144459136277,
+          ],
+          Array [
+            7.112266730015769,
+            51.24144830061436,
+          ],
+          Array [
+            7.11226238896987,
+            51.24145337336805,
+          ],
+          Array [
+            7.112254852626253,
+            51.24145512062902,
+          ],
+          Array [
+            7.11224969176054,
+            51.24145550438787,
+          ],
+          Array [
+            7.111319432218636,
+            51.241502151435064,
+          ],
+          Array [
+            7.11131616993564,
+            51.24150242708567,
+          ],
+          Array [
+            7.1113002259399085,
+            51.24150255393581,
+          ],
+          Array [
+            7.111294313739328,
+            51.24150101956555,
+          ],
+          Array [
+            7.1112915716545,
+            51.241498630424076,
+          ],
+          Array [
+            7.111290205579744,
+            51.24149065842856,
+          ],
+          Array [
+            7.111291150434578,
+            51.24148284204163,
+          ],
+          Array [
+            7.111297472232635,
+            51.241439922753166,
+          ],
+          Array [
+            7.111311505140585,
+            51.24135911592959,
+          ],
+          Array [
+            7.111322548322822,
+            51.241313565390776,
+          ],
+          Array [
+            7.111328230284943,
+            51.241298242136935,
+          ],
+          Array [
+            7.111330669861063,
+            51.2412941726046,
+          ],
+          Array [
+            7.111337967770756,
+            51.241286696788734,
+          ],
+          Array [
+            7.111353277475232,
+            51.24127679977222,
+          ],
+          Array [
+            7.111377119032065,
+            51.24126510564251,
+          ],
+          Array [
+            7.111398292487809,
+            51.241253792650134,
+          ],
+          Array [
+            7.111405633272844,
+            51.24124782386079,
+          ],
+          Array [
+            7.111410026877504,
+            51.24124269152137,
+          ],
+          Array [
+            7.111415791688604,
+            51.24123304908123,
+          ],
+          Array [
+            7.111419644880788,
+            51.24121839130156,
+          ],
+          Array [
+            7.111421165858998,
+            51.2412071291451,
+          ],
+          Array [
+            7.111421581267697,
+            51.2411911396101,
+          ],
+          Array [
+            7.111421921692877,
+            51.241172156380394,
+          ],
+          Array [
+            7.111423320198004,
+            51.2411623134822,
+          ],
+          Array [
+            7.1114287056393595,
+            51.24114251781684,
+          ],
+          Array [
+            7.1114323514005715,
+            51.24113302424563,
+          ],
+          Array [
+            7.111439572813405,
+            51.24111642088426,
+          ],
+          Array [
+            7.111457829300884,
+            51.24108377477501,
+          ],
+          Array [
+            7.111470211079541,
+            51.24106851519567,
+          ],
+          Array [
+            7.111487139108996,
+            51.241048936764116,
+          ],
+          Array [
+            7.111516644467879,
+            51.24101469778954,
+          ],
+          Array [
+            7.111540891826147,
+            51.24099160143804,
+          ],
+          Array [
+            7.111554860474783,
+            51.240980737713116,
+          ],
+          Array [
+            7.111565295556297,
+            51.24097367201923,
+          ],
+          Array [
+            7.111591024651401,
+            51.24095875652385,
+          ],
+          Array [
+            7.111602094093491,
+            51.24095408118438,
+          ],
+          Array [
+            7.111619500400639,
+            51.240949531252234,
+          ],
+          Array [
+            7.111659893101011,
+            51.240943246545584,
+          ],
+          Array [
+            7.1117291860979375,
+            51.240938037145284,
+          ],
+          Array [
+            7.111777103628832,
+            51.240935182469265,
+          ],
+          Array [
+            7.111815909787278,
+            51.240933610497834,
+          ],
+          Array [
+            7.111893844533307,
+            51.240933534434696,
+          ],
+          Array [
+            7.111932765416538,
+            51.240932816060656,
+          ],
+          Array [
+            7.111996527152596,
+            51.24093039135263,
+          ],
+          Array [
+            7.112147091560636,
+            51.24092328915313,
+          ],
+          Array [
+            7.112211312195834,
+            51.240918447327736,
+          ],
+          Array [
+            7.112234160494409,
+            51.24091541834526,
+          ],
+          Array [
+            7.11228757008385,
+            51.24090504626246,
+          ],
+          Array [
+            7.112358022138531,
+            51.240888193568374,
+          ],
+          Array [
+            7.112376035991837,
+            51.240883477067165,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112877645744997,
+            51.24049454967362,
+          ],
+          Array [
+            7.112902912691673,
+            51.2404775900989,
+          ],
+          Array [
+            7.112939532143228,
+            51.240453574494694,
+          ],
+          Array [
+            7.11303848558214,
+            51.24038810503029,
+          ],
+          Array [
+            7.113250133057159,
+            51.24024490253513,
+          ],
+          Array [
+            7.113363229613197,
+            51.24017158085435,
+          ],
+          Array [
+            7.1134346849219865,
+            51.24012786928315,
+          ],
+          Array [
+            7.11346814396171,
+            51.24010851455727,
+          ],
+          Array [
+            7.113505007687701,
+            51.240088468057685,
+          ],
+          Array [
+            7.113583229651852,
+            51.240049682452316,
+          ],
+          Array [
+            7.113704523133859,
+            51.23999510090319,
+          ],
+          Array [
+            7.113782366899883,
+            51.23996136651203,
+          ],
+          Array [
+            7.113824182271946,
+            51.23994357427293,
+          ],
+          Array [
+            7.1138811108613975,
+            51.23991832743098,
+          ],
+          Array [
+            7.113912537032488,
+            51.23990128188417,
+          ],
+          Array [
+            7.113925607417611,
+            51.239892392587414,
+          ],
+          Array [
+            7.113937133150041,
+            51.23988277693957,
+          ],
+          Array [
+            7.113956075143105,
+            51.239861590539626,
+          ],
+          Array [
+            7.113977353919451,
+            51.2398263810558,
+          ],
+          Array [
+            7.113989225435257,
+            51.239801755381436,
+          ],
+          Array [
+            7.114000332806511,
+            51.23977704534899,
+          ],
+          Array [
+            7.114018643906986,
+            51.23973052225654,
+          ],
+          Array [
+            7.114025389486902,
+            51.23971042953803,
+          ],
+          Array [
+            7.114028953266133,
+            51.239696100054516,
+          ],
+          Array [
+            7.114031282629171,
+            51.239667169819114,
+          ],
+          Array [
+            7.114025902374176,
+            51.23962355804409,
+          ],
+          Array [
+            7.114018826929261,
+            51.23959469838424,
+          ],
+          Array [
+            7.114003805668225,
+            51.23954897481549,
+          ],
+          Array [
+            7.113960927467256,
+            51.2394406641995,
+          ],
+          Array [
+            7.1139408920582605,
+            51.239388587950494,
+          ],
+          Array [
+            7.1139068285449465,
+            51.239293277087505,
+          ],
+          Array [
+            7.113877929896467,
+            51.239204646633596,
+          ],
+          Array [
+            7.113869055221997,
+            51.239172413863294,
+          ],
+          Array [
+            7.1138547431175985,
+            51.239107605569075,
+          ],
+          Array [
+            7.11384965211153,
+            51.239075060094784,
+          ],
+          Array [
+            7.113846198058183,
+            51.23904098416294,
+          ],
+          Array [
+            7.113843291072098,
+            51.23897159275189,
+          ],
+          Array [
+            7.11384270963739,
+            51.23893886764496,
+          ],
+          Array [
+            7.113843176534772,
+            51.23888127470588,
+          ],
+          Array [
+            7.113845053122324,
+            51.23882368740111,
+          ],
+          Array [
+            7.113846903840562,
+            51.23879444609527,
+          ],
+          Array [
+            7.113851053678485,
+            51.238735753136154,
+          ],
+          Array [
+            7.113849800079009,
+            51.238707375287746,
+          ],
+          Array [
+            7.113845511396602,
+            51.238680550473234,
+          ],
+          Array [
+            7.113833584658558,
+            51.23864089406921,
+          ],
+          Array [
+            7.113820852363189,
+            51.23861528019036,
+          ],
+          Array [
+            7.1138127642189755,
+            51.23860283261403,
+          ],
+          Array [
+            7.113801384298249,
+            51.238587083789106,
+          ],
+          Array [
+            7.113773518079106,
+            51.23855205413356,
+          ],
+          Array [
+            7.113739298881259,
+            51.23851668641963,
+          ],
+          Array [
+            7.113709794172624,
+            51.23849309430298,
+          ],
+          Array [
+            7.113688423764073,
+            51.238479992633586,
+          ],
+          Array [
+            7.113677254002234,
+            51.23847447560604,
+          ],
+          Array [
+            7.113665639840022,
+            51.23846966042805,
+          ],
+          Array [
+            7.113640849515153,
+            51.23846174670139,
+          ],
+          Array [
+            7.1136005635764725,
+            51.23845326283931,
+          ],
+          Array [
+            7.1135141401023985,
+            51.23844251535618,
+          ],
+          Array [
+            7.113456838446505,
+            51.23843472995794,
+          ],
+          Array [
+            7.113379871925175,
+            51.23842217539337,
+          ],
+          Array [
+            7.113245233743335,
+            51.23839968931744,
+          ],
+          Array [
+            7.113162283302812,
+            51.2383826821837,
+          ],
+          Array [
+            7.11312789074463,
+            51.23837368162406,
+          ],
+          Array [
+            7.113101344946214,
+            51.23836478834612,
+          ],
+          Array [
+            7.113051176769356,
+            51.23834245361392,
+          ],
+          Array [
+            7.112981162805888,
+            51.23830313834953,
+          ],
+          Array [
+            7.112936368838478,
+            51.23827737505396,
+          ],
+          Array [
+            7.112912413181723,
+            51.23826352791499,
+          ],
+          Array [
+            7.1128568194317054,
+            51.23822824751325,
+          ],
+          Array [
+            7.112769481393015,
+            51.2381700098276,
+          ],
+          Array [
+            7.112720492285139,
+            51.23813825526904,
+          ],
+          Array [
+            7.112664949742617,
+            51.23810404904387,
+          ],
+          Array [
+            7.112582773335097,
+            51.238055537271194,
+          ],
+          Array [
+            7.112523544415289,
+            51.23802339417049,
+          ],
+          Array [
+            7.112491258667497,
+            51.23800695339701,
+          ],
+          Array [
+            7.112462678308437,
+            51.23799365695767,
+          ],
+          Array [
+            7.112399671875124,
+            51.23796855071416,
+          ],
+          Array [
+            7.112304364119317,
+            51.23793532058851,
+          ],
+          Array [
+            7.112251039464334,
+            51.237916674282495,
+          ],
+          Array [
+            7.112214771373055,
+            51.23790351011729,
+          ],
+          Array [
+            7.1121523376810485,
+            51.23788408241321,
+          ],
+          Array [
+            7.1121106091492745,
+            51.237875454744874,
+          ],
+          Array [
+            7.112091062625016,
+            51.237873495463795,
+          ],
+          Array [
+            7.1120806563008525,
+            51.23787328643201,
+          ],
+          Array [
+            7.112058105487676,
+            51.237874655030424,
+          ],
+          Array [
+            7.112021121700182,
+            51.23788040558823,
+          ],
+          Array [
+            7.111943626654389,
+            51.23790014291504,
+          ],
+          Array [
+            7.1118962134501515,
+            51.23791495894927,
+          ],
+          Array [
+            7.111871755747488,
+            51.23792375871827,
+          ],
+          Array [
+            7.111824727677354,
+            51.237945319408304,
+          ],
+          Array [
+            7.111757710266223,
+            51.23798427077575,
+          ],
+          Array [
+            7.11171445339848,
+            51.23801208437187,
+          ],
+          Array [
+            7.111695277753645,
+            51.2380255501094,
+          ],
+          Array [
+            7.111664770115049,
+            51.238052338848696,
+          ],
+          Array [
+            7.11162612318723,
+            51.23809360010561,
+          ],
+          Array [
+            7.111595383568371,
+            51.23812294247682,
+          ],
+          Array [
+            7.111556560163715,
+            51.238155685308335,
+          ],
+          Array [
+            7.1114750951935815,
+            51.23822172313338,
+          ],
+          Array [
+            7.11143894195206,
+            51.238249609192934,
+          ],
+          Array [
+            7.11141289648899,
+            51.238269424382736,
+          ],
+          Array [
+            7.1113702959848,
+            51.23829903543503,
+          ],
+          Array [
+            7.111338865533401,
+            51.23831583230938,
+          ],
+          Array [
+            7.111322067639407,
+            51.238322609768396,
+          ],
+          Array [
+            7.11129574300332,
+            51.23833122838369,
+          ],
+          Array [
+            7.111233017445775,
+            51.23834824669802,
+          ],
+          Array [
+            7.111124706141716,
+            51.23837266740982,
+          ],
+          Array [
+            7.111051547096056,
+            51.23838777490201,
+          ],
+          Array [
+            7.110951947924067,
+            51.238406952437025,
+          ],
+          Array [
+            7.110781540775624,
+            51.23843853017031,
+          ],
+          Array [
+            7.110679189942787,
+            51.23845895224141,
+          ],
+          Array [
+            7.110637886013003,
+            51.238468330456065,
+          ],
+          Array [
+            7.110613929020603,
+            51.23847442018247,
+          ],
+          Array [
+            7.110567454906842,
+            51.23848794013063,
+          ],
+          Array [
+            7.110523037778483,
+            51.23850354711972,
+          ],
+          Array [
+            7.110480842224354,
+            51.23852160080628,
+          ],
+          Array [
+            7.110460628971633,
+            51.238531657553786,
+          ],
+          Array [
+            7.110440199680457,
+            51.238542817417255,
+          ],
+          Array [
+            7.110399840863263,
+            51.2385674311285,
+          ],
+          Array [
+            7.11034329925907,
+            51.23860749355472,
+          ],
+          Array [
+            7.110310405988553,
+            51.238634279555114,
+          ],
+          Array [
+            7.110296408229128,
+            51.23864678007534,
+          ],
+          Array [
+            7.1102702747385305,
+            51.23867264433846,
+          ],
+          Array [
+            7.110246900453998,
+            51.23869955118298,
+          ],
+          Array [
+            7.110226617177605,
+            51.23872737055036,
+          ],
+          Array [
+            7.110217738355608,
+            51.23874158178681,
+          ],
+          Array [
+            7.110208546446175,
+            51.238758671571716,
+          ],
+          Array [
+            7.110192407446427,
+            51.238796212592106,
+          ],
+          Array [
+            7.110170786112558,
+            51.238856691014924,
+          ],
+          Array [
+            7.110155743981109,
+            51.23889649265395,
+          ],
+          Array [
+            7.110143048208963,
+            51.2389290898543,
+          ],
+          Array [
+            7.110112187366746,
+            51.23900674827941,
+          ],
+          Array [
+            7.110092281929185,
+            51.239048073020086,
+          ],
+          Array [
+            7.1100740959887005,
+            51.239082611786706,
+          ],
+          Array [
+            7.11005287141138,
+            51.23913302192441,
+          ],
+          Array [
+            7.110047887022504,
+            51.239164686021056,
+          ],
+          Array [
+            7.110049463340114,
+            51.23917967538845,
+          ],
+          Array [
+            7.110051906782572,
+            51.23918843035078,
+          ],
+          Array [
+            7.110059816136003,
+            51.239205527181014,
+          ],
+          Array [
+            7.110077980392775,
+            51.23923029408352,
+          ],
+          Array [
+            7.110128700487392,
+            51.23927768484935,
+          ],
+          Array [
+            7.110165917745057,
+            51.239308583306375,
+          ],
+          Array [
+            7.110193829672904,
+            51.23933405874367,
+          ],
+          Array [
+            7.110242596079727,
+            51.23938525846679,
+          ],
+          Array [
+            7.110266231697447,
+            51.239410514166146,
+          ],
+          Array [
+            7.110376794897195,
+            51.23952722850637,
+          ],
+          Array [
+            7.1104656518676705,
+            51.239621542723185,
+          ],
+          Array [
+            7.11049550580619,
+            51.23965121391876,
+          ],
+          Array [
+            7.110518044352531,
+            51.23967324311701,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.110185797375792,
+            51.23881407652677,
+          ],
+          Array [
+            7.110227234268539,
+            51.23880841185791,
+          ],
+          Array [
+            7.110283020007611,
+            51.23879953000019,
+          ],
+          Array [
+            7.110609525746194,
+            51.23872555030753,
+          ],
+          Array [
+            7.110982182341464,
+            51.2386411809542,
+          ],
+          Array [
+            7.11120891650845,
+            51.23858999891654,
+          ],
+          Array [
+            7.1114090885134305,
+            51.23854569824487,
+          ],
+          Array [
+            7.111462514583624,
+            51.23853389480375,
+          ],
+          Array [
+            7.111570993866388,
+            51.23851027289669,
+          ],
+          Array [
+            7.11162538497448,
+            51.2385005161173,
+          ],
+          Array [
+            7.111656056295851,
+            51.23849528309889,
+          ],
+          Array [
+            7.111706521829229,
+            51.238486455706145,
+          ],
+          Array [
+            7.111735548762013,
+            51.23848294960259,
+          ],
+          Array [
+            7.11176293199356,
+            51.23848086850899,
+          ],
+          Array [
+            7.111838285931813,
+            51.23847775054653,
+          ],
+          Array [
+            7.111867351793542,
+            51.23847822179364,
+          ],
+          Array [
+            7.111942953739787,
+            51.238484791668576,
+          ],
+          Array [
+            7.112106214982238,
+            51.23850438645527,
+          ],
+          Array [
+            7.11218293043375,
+            51.23851556096696,
+          ],
+          Array [
+            7.112245801740512,
+            51.23852575104015,
+          ],
+          Array [
+            7.112371361394248,
+            51.2385458767037,
+          ],
+          Array [
+            7.112427812612057,
+            51.23855277493348,
+          ],
+          Array [
+            7.112467628548568,
+            51.238556223207134,
+          ],
+          Array [
+            7.1125379174750405,
+            51.238558267677746,
+          ],
+          Array [
+            7.112577987605684,
+            51.23855670141888,
+          ],
+          Array [
+            7.11262727177371,
+            51.23855284630136,
+          ],
+          Array [
+            7.112736798201326,
+            51.23854074224652,
+          ],
+          Array [
+            7.1127866177516825,
+            51.23853494047621,
+          ],
+          Array [
+            7.1130200699421415,
+            51.23850758560651,
+          ],
+          Array [
+            7.1132545269117635,
+            51.23848070589665,
+          ],
+          Array [
+            7.113305867002926,
+            51.23847596012835,
+          ],
+          Array [
+            7.113408673157565,
+            51.23846752690227,
+          ],
+          Array [
+            7.113444253212564,
+            51.238463650225704,
+          ],
+          Array [
+            7.1134507577204635,
+            51.238461605285565,
+          ],
+          Array [
+            7.11346127578374,
+            51.238454539552556,
+          ],
+          Array [
+            7.113465204607739,
+            51.238451725529615,
+          ],
+          Array [
+            7.113470854366001,
+            51.23844413236294,
+          ],
+          Array [
+            7.113474746510562,
+            51.238437564639995,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.111705863286467,
+            51.23848653552548,
+          ],
+          Array [
+            7.111723332946879,
+            51.23849866305659,
+          ],
+          Array [
+            7.111746030458282,
+            51.23851454679184,
+          ],
+          Array [
+            7.111890568690791,
+            51.23861967574642,
+          ],
+          Array [
+            7.112059737509839,
+            51.23874125875325,
+          ],
+          Array [
+            7.112170435180033,
+            51.23881653840557,
+          ],
+          Array [
+            7.112275398110643,
+            51.238887823334785,
+          ],
+          Array [
+            7.112318451773047,
+            51.23891699429005,
+          ],
+          Array [
+            7.112383255108301,
+            51.238961157522795,
+          ],
+          Array [
+            7.112422862809329,
+            51.238991867494676,
+          ],
+          Array [
+            7.112440625795897,
+            51.23900785909853,
+          ],
+          Array [
+            7.112457216016785,
+            51.23902428655411,
+          ],
+          Array [
+            7.112488342097581,
+            51.2390581279384,
+          ],
+          Array [
+            7.112516591248186,
+            51.23909305181376,
+          ],
+          Array [
+            7.112541798129939,
+            51.23912877881253,
+          ],
+          Array [
+            7.112553209051665,
+            51.23914685618078,
+          ],
+          Array [
+            7.112564432834834,
+            51.23916661072353,
+          ],
+          Array [
+            7.112584456933815,
+            51.23920829371218,
+          ],
+          Array [
+            7.112593548185685,
+            51.239229768126904,
+          ],
+          Array [
+            7.1126103599906845,
+            51.23927288559427,
+          ],
+          Array [
+            7.112625537154955,
+            51.23931593544995,
+          ],
+          Array [
+            7.11263482848785,
+            51.239347039950424,
+          ],
+          Array [
+            7.112650413312522,
+            51.23941396392663,
+          ],
+          Array [
+            7.112657410149715,
+            51.23944734750397,
+          ],
+          Array [
+            7.1126637802496555,
+            51.23948880692022,
+          ],
+          Array [
+            7.112667447943547,
+            51.239528040785515,
+          ],
+          Array [
+            7.112668072314132,
+            51.239546920152264,
+          ],
+          Array [
+            7.112665933112424,
+            51.23958244089238,
+          ],
+          Array [
+            7.112655970403651,
+            51.23963412913724,
+          ],
+          Array [
+            7.112646160622204,
+            51.239670638815475,
+          ],
+          Array [
+            7.112638836841244,
+            51.23969531895969,
+          ],
+          Array [
+            7.11261861387972,
+            51.23975499366731,
+          ],
+          Array [
+            7.112593395891032,
+            51.239818161996936,
+          ],
+          Array [
+            7.112566109481955,
+            51.239872513224235,
+          ],
+          Array [
+            7.112552605184387,
+            51.23989253532317,
+          ],
+          Array [
+            7.112543204195906,
+            51.23990291370055,
+          ],
+          Array [
+            7.112518306621171,
+            51.239924575817874,
+          ],
+          Array [
+            7.1124826494971725,
+            51.239950647205326,
+          ],
+          Array [
+            7.112473170642993,
+            51.23995699178627,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.11346135745329,
+            51.24011237092686,
+          ],
+          Array [
+            7.113465028084037,
+            51.24011618719114,
+          ],
+          Array [
+            7.113477320155848,
+            51.240130539485776,
+          ],
+          Array [
+            7.113483525463883,
+            51.24014055539434,
+          ],
+          Array [
+            7.113484356398442,
+            51.24014433371998,
+          ],
+          Array [
+            7.113482448317812,
+            51.24015246402385,
+          ],
+          Array [
+            7.113473117868515,
+            51.24017094736539,
+          ],
+          Array [
+            7.113467696060153,
+            51.240180032684165,
+          ],
+          Array [
+            7.113426329152023,
+            51.240244972445524,
+          ],
+          Array [
+            7.113380247280177,
+            51.24031974594934,
+          ],
+          Array [
+            7.113364395701633,
+            51.24034811515066,
+          ],
+          Array [
+            7.1133421921675986,
+            51.24039113554362,
+          ],
+          Array [
+            7.1133303805605,
+            51.24041983106517,
+          ],
+          Array [
+            7.113325871231275,
+            51.24043410734068,
+          ],
+          Array [
+            7.113318685623072,
+            51.24046251175642,
+          ],
+          Array [
+            7.113313230923501,
+            51.240505307657486,
+          ],
+          Array [
+            7.113316031011206,
+            51.24053266209678,
+          ],
+          Array [
+            7.113320104498723,
+            51.24054565157893,
+          ],
+          Array [
+            7.113325922626229,
+            51.240558038302794,
+          ],
+          Array [
+            7.113341585871167,
+            51.24058098470936,
+          ],
+          Array [
+            7.1133618373576715,
+            51.240601670937465,
+          ],
+          Array [
+            7.11338573979175,
+            51.24062030803883,
+          ],
+          Array [
+            7.1133987672097545,
+            51.24062892412064,
+          ],
+          Array [
+            7.113411547166523,
+            51.240636615031775,
+          ],
+          Array [
+            7.113438644617131,
+            51.24065079169941,
+          ],
+          Array [
+            7.113467572790371,
+            51.24066318640032,
+          ],
+          Array [
+            7.113498068494089,
+            51.24067358902184,
+          ],
+          Array [
+            7.11351382192233,
+            51.24067797764262,
+          ],
+          Array [
+            7.113548265664575,
+            51.240686094682395,
+          ],
+          Array [
+            7.11360617869391,
+            51.24069684075694,
+          ],
+          Array [
+            7.113644182981722,
+            51.24070167860115,
+          ],
+          Array [
+            7.113661777403776,
+            51.24070304654907,
+          ],
+          Array [
+            7.113697594969073,
+            51.240704530210586,
+          ],
+          Array [
+            7.113753369421563,
+            51.240703657201244,
+          ],
+          Array [
+            7.113788855419109,
+            51.240699747922,
+          ],
+          Array [
+            7.113805301859099,
+            51.24069647068769,
+          ],
+          Array [
+            7.113820974156733,
+            51.24069210603227,
+          ],
+          Array [
+            7.113850883379977,
+            51.240680357320215,
+          ],
+          Array [
+            7.113891348259798,
+            51.24065786336507,
+          ],
+          Array [
+            7.113914761801327,
+            51.24064170272714,
+          ],
+          Array [
+            7.113925414983344,
+            51.24063347303548,
+          ],
+          Array [
+            7.113945189246611,
+            51.240615679143254,
+          ],
+          Array [
+            7.113961821887862,
+            51.24059676930626,
+          ],
+          Array [
+            7.113973994321906,
+            51.240577539605,
+          ],
+          Array [
+            7.113977995903352,
+            51.24056805358043,
+          ],
+          Array [
+            7.113980270997068,
+            51.24055863777928,
+          ],
+          Array [
+            7.11397998812174,
+            51.24053971191972,
+          ],
+          Array [
+            7.113971791766935,
+            51.2405112622388,
+          ],
+          Array [
+            7.113964498869811,
+            51.24049239110831,
+          ],
+          Array [
+            7.113944954165466,
+            51.24045052163977,
+          ],
+          Array [
+            7.113922008208667,
+            51.240407177861115,
+          ],
+          Array [
+            7.1139011409824935,
+            51.24036220999369,
+          ],
+          Array [
+            7.1138668263915505,
+            51.240276644778426,
+          ],
+          Array [
+            7.113849282106915,
+            51.24022388924338,
+          ],
+          Array [
+            7.113843997354367,
+            51.2402030056287,
+          ],
+          Array [
+            7.113842472845683,
+            51.240191749033194,
+          ],
+          Array [
+            7.113843499932444,
+            51.24016922915143,
+          ],
+          Array [
+            7.113851341990118,
+            51.24013548938518,
+          ],
+          Array [
+            7.113857746332533,
+            51.24011306707669,
+          ],
+          Array [
+            7.113869280859904,
+            51.24007743145933,
+          ],
+          Array [
+            7.113901419921186,
+            51.23999504561655,
+          ],
+          Array [
+            7.113913977973602,
+            51.239964093516235,
+          ],
+          Array [
+            7.113921848743716,
+            51.239947319873615,
+          ],
+          Array [
+            7.113928186850688,
+            51.23993081104339,
+          ],
+          Array [
+            7.113927919612548,
+            51.23992670562964,
+          ],
+          Array [
+            7.113923057837349,
+            51.23991761514609,
+          ],
+          Array [
+            7.113912562909613,
+            51.23990611165352,
+          ],
+          Array [
+            7.113909354989669,
+            51.23990323299257,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.11266353280404,
+            51.23959905057278,
+          ],
+          Array [
+            7.112683539406867,
+            51.23958111313291,
+          ],
+          Array [
+            7.112708170993188,
+            51.23955947019765,
+          ],
+          Array [
+            7.112730640304746,
+            51.239539956717124,
+          ],
+          Array [
+            7.112787099395824,
+            51.239483159154275,
+          ],
+          Array [
+            7.112812196129911,
+            51.239453334893376,
+          ],
+          Array [
+            7.112828386508991,
+            51.23943330531627,
+          ],
+          Array [
+            7.112868809999471,
+            51.239388855628945,
+          ],
+          Array [
+            7.1129170152796215,
+            51.239341774016324,
+          ],
+          Array [
+            7.112969472125337,
+            51.23929592702106,
+          ],
+          Array [
+            7.112996191690248,
+            51.2392746747995,
+          ],
+          Array [
+            7.113026072755619,
+            51.23925308276864,
+          ],
+          Array [
+            7.113093679849646,
+            51.239210238408624,
+          ],
+          Array [
+            7.113202904945053,
+            51.23914774374052,
+          ],
+          Array [
+            7.1132717551252425,
+            51.239107979467896,
+          ],
+          Array [
+            7.113334214834968,
+            51.23907004282336,
+          ],
+          Array [
+            7.113431925976607,
+            51.23901182890744,
+          ],
+          Array [
+            7.113497103135949,
+            51.23897633819739,
+          ],
+          Array [
+            7.113529022581437,
+            51.23896066614967,
+          ],
+          Array [
+            7.113559787046398,
+            51.23894705360716,
+          ],
+          Array [
+            7.1136244381026215,
+            51.238922017450115,
+          ],
+          Array [
+            7.113720484188342,
+            51.238888092059895,
+          ],
+          Array [
+            7.113777100057462,
+            51.23886646054976,
+          ],
+          Array [
+            7.1138161781561395,
+            51.23884875216009,
+          ],
+          Array [
+            7.113886615549982,
+            51.23881114081847,
+          ],
+          Array [
+            7.113922740047819,
+            51.23879102094574,
+          ],
+          Array [
+            7.113974850407188,
+            51.238762292557404,
+          ],
+          Array [
+            7.114091191462044,
+            51.238695496918176,
+          ],
+          Array [
+            7.114143875445338,
+            51.23866266393776,
+          ],
+          Array [
+            7.114188628984133,
+            51.23863262068233,
+          ],
+          Array [
+            7.114253194152983,
+            51.23858518418179,
+          ],
+          Array [
+            7.114289360672835,
+            51.238554396875145,
+          ],
+          Array [
+            7.114304052240708,
+            51.23853987612845,
+          ],
+          Array [
+            7.114318498815552,
+            51.23852471385828,
+          ],
+          Array [
+            7.114339349482866,
+            51.238500691069355,
+          ],
+          Array [
+            7.114350389931329,
+            51.238483787006246,
+          ],
+          Array [
+            7.114354457162408,
+            51.238475059069756,
+          ],
+          Array [
+            7.1143572408630895,
+            51.238465277757655,
+          ],
+          Array [
+            7.114358703666586,
+            51.23844504089482,
+          ],
+          Array [
+            7.114358664237752,
+            51.238434910255734,
+          ],
+          Array [
+            7.114358298443149,
+            51.2384191184301,
+          ],
+          Array [
+            7.114353124830236,
+            51.238388395888634,
+          ],
+          Array [
+            7.1143469508122,
+            51.23837316326789,
+          ],
+          Array [
+            7.114342311527162,
+            51.238364821071066,
+          ],
+          Array [
+            7.1143300341786775,
+            51.23834735374363,
+          ],
+          Array [
+            7.114314303651653,
+            51.238330165783864,
+          ],
+          Array [
+            7.1142957741772985,
+            51.238314845127086,
+          ],
+          Array [
+            7.114285664282126,
+            51.238308381267096,
+          ],
+          Array [
+            7.114274769442285,
+            51.23830285170909,
+          ],
+          Array [
+            7.11425013601262,
+            51.23829401849618,
+          ],
+          Array [
+            7.114208226176943,
+            51.238284404124855,
+          ],
+          Array [
+            7.1141786518019785,
+            51.2382789176018,
+          ],
+          Array [
+            7.11414227292255,
+            51.23827313684275,
+          ],
+          Array [
+            7.11406279664033,
+            51.23826313133222,
+          ],
+          Array [
+            7.114027601000842,
+            51.23825825347074,
+          ],
+          Array [
+            7.113999752933959,
+            51.23825394138751,
+          ],
+          Array [
+            7.113943563408634,
+            51.238244557528766,
+          ],
+          Array [
+            7.113922412119893,
+            51.238239835549756,
+          ],
+          Array [
+            7.113911888682798,
+            51.23823685124557,
+          ],
+          Array [
+            7.113897011296391,
+            51.23823103135939,
+          ],
+          Array [
+            7.11388997927943,
+            51.23822580389704,
+          ],
+          Array [
+            7.113887915701726,
+            51.238222669696825,
+          ],
+          Array [
+            7.113886942150074,
+            51.238218867943814,
+          ],
+          Array [
+            7.113887871414585,
+            51.23820938387071,
+          ],
+          Array [
+            7.1138948295571565,
+            51.23819360407178,
+          ],
+          Array [
+            7.113901912625397,
+            51.238184496646184,
+          ],
+          Array [
+            7.1139124833021095,
+            51.23817460699107,
+          ],
+          Array [
+            7.113939564849963,
+            51.2381534209824,
+          ],
+          Array [
+            7.113953901199032,
+            51.2381439271373,
+          ],
+          Array [
+            7.113962964621081,
+            51.238138895173634,
+          ],
+          Array [
+            7.113984387553243,
+            51.2381296482207,
+          ],
+          Array [
+            7.11402141954694,
+            51.238117328986235,
+          ],
+          Array [
+            7.11404677278715,
+            51.238109768216816,
+          ],
+          Array [
+            7.114148755872688,
+            51.23808125424513,
+          ],
+          Array [
+            7.114247472676109,
+            51.2380538784033,
+          ],
+          Array [
+            7.114268006288107,
+            51.23804809850505,
+          ],
+          Array [
+            7.114300740109294,
+            51.238038251102346,
+          ],
+          Array [
+            7.114317435971025,
+            51.23803138968141,
+          ],
+          Array [
+            7.114322596165012,
+            51.23802799565262,
+          ],
+          Array [
+            7.114324706966712,
+            51.238024783222606,
+          ],
+          Array [
+            7.114322773172983,
+            51.23801726683313,
+          ],
+          Array [
+            7.11431152072424,
+            51.238005212983296,
+          ],
+          Array [
+            7.114303924268834,
+            51.23799817389586,
+          ],
+          Array [
+            7.1142943550595135,
+            51.23799072162596,
+          ],
+          Array [
+            7.114265071370661,
+            51.23797567998473,
+          ],
+          Array [
+            7.114250020116217,
+            51.2379703504397,
+          ],
+          Array [
+            7.114224646068079,
+            51.23796456306817,
+          ],
+          Array [
+            7.114161390720724,
+            51.237955735049376,
+          ],
+          Array [
+            7.114126987157149,
+            51.237951877427726,
+          ],
+          Array [
+            7.114064094667542,
+            51.23794622101468,
+          ],
+          Array [
+            7.113911327618612,
+            51.23793537489696,
+          ],
+          Array [
+            7.113847348617806,
+            51.237929750881186,
+          ],
+          Array [
+            7.113826295635583,
+            51.23792801911946,
+          ],
+          Array [
+            7.113783583429382,
+            51.23792688526424,
+          ],
+          Array [
+            7.113741163283989,
+            51.237926874866204,
+          ],
+          Array [
+            7.113700355659187,
+            51.23792560860479,
+          ],
+          Array [
+            7.113680969185689,
+            51.23792376098764,
+          ],
+          Array [
+            7.113663052006448,
+            51.23792125641137,
+          ],
+          Array [
+            7.113627634743795,
+            51.23791485394184,
+          ],
+          Array [
+            7.113593168834546,
+            51.237906579239315,
+          ],
+          Array [
+            7.113560128549466,
+            51.237896414931335,
+          ],
+          Array [
+            7.113544291225602,
+            51.23789061874642,
+          ],
+          Array [
+            7.113494552032583,
+            51.237869155365544,
+          ],
+          Array [
+            7.113379871487771,
+            51.23781454117461,
+          ],
+          Array [
+            7.11333000632244,
+            51.237792141090324,
+          ],
+          Array [
+            7.1132969273427396,
+            51.237778808091576,
+          ],
+          Array [
+            7.1132275525903434,
+            51.237753212612255,
+          ],
+          Array [
+            7.113192804477495,
+            51.23774167273146,
+          ],
+          Array [
+            7.113157646079822,
+            51.237730392733035,
+          ],
+          Array [
+            7.113086867385993,
+            51.23770870323649,
+          ],
+          Array [
+            7.113049679934277,
+            51.23769884449182,
+          ],
+          Array [
+            7.11298533057737,
+            51.237683706363086,
+          ],
+          Array [
+            7.112910966421576,
+            51.23766676901257,
+          ],
+          Array [
+            7.112879398609742,
+            51.23766015684121,
+          ],
+          Array [
+            7.112820965952427,
+            51.23765069151978,
+          ],
+          Array [
+            7.1127951118847905,
+            51.237647524726675,
+          ],
+          Array [
+            7.112749891136181,
+            51.23764213414333,
+          ],
+          Array [
+            7.112660131988992,
+            51.23762890017534,
+          ],
+          Array [
+            7.112624577365903,
+            51.237621812257245,
+          ],
+          Array [
+            7.112603972582048,
+            51.23761612892474,
+          ],
+          Array [
+            7.112564174204177,
+            51.23760070368115,
+          ],
+          Array [
+            7.11254655451424,
+            51.23759187781436,
+          ],
+          Array [
+            7.112511972114969,
+            51.23757226616387,
+          ],
+          Array [
+            7.112447342413429,
+            51.23753602274084,
+          ],
+          Array [
+            7.112402700037701,
+            51.23751393625069,
+          ],
+          Array [
+            7.112381698747242,
+            51.237505219680635,
+          ],
+          Array [
+            7.112363560874319,
+            51.23749863854198,
+          ],
+          Array [
+            7.112326165624524,
+            51.237486775559155,
+          ],
+          Array [
+            7.1122879406820845,
+            51.23747709434402,
+          ],
+          Array [
+            7.112249681622143,
+            51.237470134146655,
+          ],
+          Array [
+            7.112230787915342,
+            51.23746784294527,
+          ],
+          Array [
+            7.112191644581002,
+            51.23746469434628,
+          ],
+          Array [
+            7.112133922056672,
+            51.23745942173611,
+          ],
+          Array [
+            7.112100835281809,
+            51.237452841345764,
+          ],
+          Array [
+            7.112087127489904,
+            51.23744793756745,
+          ],
+          Array [
+            7.112075499545564,
+            51.23744232070215,
+          ],
+          Array [
+            7.112054249840953,
+            51.23742948072476,
+          ],
+          Array [
+            7.112026474070681,
+            51.23740751071607,
+          ],
+          Array [
+            7.112009976446629,
+            51.237392072795295,
+          ],
+          Array [
+            7.1119941351158324,
+            51.23737399747144,
+          ],
+          Array [
+            7.111966862984867,
+            51.23733493670455,
+          ],
+          Array [
+            7.111956364229847,
+            51.23732068989176,
+          ],
+          Array [
+            7.111946325936125,
+            51.2373102542176,
+          ],
+          Array [
+            7.111939955836184,
+            51.23730411751908,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112122771655812,
+            51.237877454502964,
+          ],
+          Array [
+            7.112125871474515,
+            51.2378743128686,
+          ],
+          Array [
+            7.112138820472255,
+            51.23786301744919,
+          ],
+          Array [
+            7.112149882603453,
+            51.237855950141316,
+          ],
+          Array [
+            7.112155344496755,
+            51.23785380293754,
+          ],
+          Array [
+            7.112170833904899,
+            51.237851016342724,
+          ],
+          Array [
+            7.112214478937329,
+            51.237848897921836,
+          ],
+          Array [
+            7.112236534652289,
+            51.23784980884047,
+          ],
+          Array [
+            7.112273935994495,
+            51.23785315980496,
+          ],
+          Array [
+            7.112342495933787,
+            51.237861450994686,
+          ],
+          Array [
+            7.112387876225456,
+            51.23786921623268,
+          ],
+          Array [
+            7.112408248911886,
+            51.237873785943584,
+          ],
+          Array [
+            7.112444078224602,
+            51.23788317121091,
+          ],
+          Array [
+            7.112515064997697,
+            51.237904154149795,
+          ],
+          Array [
+            7.112549969763616,
+            51.237915519875756,
+          ],
+          Array [
+            7.112655535061832,
+            51.23795306470125,
+          ],
+          Array [
+            7.112757036253284,
+            51.237989319270625,
+          ],
+          Array [
+            7.112812656528722,
+            51.238009779940626,
+          ],
+          Array [
+            7.112868423771858,
+            51.23803007158144,
+          ],
+          Array [
+            7.112907366900201,
+            51.23804307802519,
+          ],
+          Array [
+            7.112974210326134,
+            51.23806449785268,
+          ],
+          Array [
+            7.1130195994596095,
+            51.238076987378186,
+          ],
+          Array [
+            7.113041309773922,
+            51.23808190719862,
+          ],
+          Array [
+            7.113061329850351,
+            51.238085740170185,
+          ],
+          Array [
+            7.113102081784268,
+            51.23809179822318,
+          ],
+          Array [
+            7.113143491886029,
+            51.238095435402606,
+          ],
+          Array [
+            7.11318521110735,
+            51.238096319284395,
+          ],
+          Array [
+            7.113206077560257,
+            51.23809562485615,
+          ],
+          Array [
+            7.113230384749125,
+            51.23809372439782,
+          ],
+          Array [
+            7.113283041863324,
+            51.23808658808925,
+          ],
+          Array [
+            7.113364708195451,
+            51.2380710899176,
+          ],
+          Array [
+            7.113415163606055,
+            51.23806031904134,
+          ],
+          Array [
+            7.113459464556822,
+            51.23805000235277,
+          ],
+          Array [
+            7.113546899714792,
+            51.2380281172206,
+          ],
+          Array [
+            7.113585030271726,
+            51.23801975704487,
+          ],
+          Array [
+            7.113612146874375,
+            51.23801508569636,
+          ],
+          Array [
+            7.113667458342684,
+            51.23800945788525,
+          ],
+          Array [
+            7.1136954859950965,
+            51.23800908692096,
+          ],
+          Array [
+            7.113725724161668,
+            51.23801072102627,
+          ],
+          Array [
+            7.113788727439425,
+            51.23801750034872,
+          ],
+          Array [
+            7.11382029056479,
+            51.23802092898056,
+          ],
+          Array [
+            7.11386164741263,
+            51.23802412711449,
+          ],
+          Array [
+            7.113954908290188,
+            51.23802730525447,
+          ],
+          Array [
+            7.113998899309074,
+            51.238026831229334,
+          ],
+          Array [
+            7.114073929318523,
+            51.23802317706874,
+          ],
+          Array [
+            7.1141462869153305,
+            51.238019481589895,
+          ],
+          Array [
+            7.11417999419444,
+            51.23801854719499,
+          ],
+          Array [
+            7.114246781890434,
+            51.23801834803791,
+          ],
+          Array [
+            7.114271439408554,
+            51.238019539185025,
+          ],
+          Array [
+            7.114303691819924,
+            51.23802436058606,
+          ],
+          Array [
+            7.114322564172044,
+            51.23802800066089,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112806541372748,
+            51.23800741916632,
+          ],
+          Array [
+            7.112696317598399,
+            51.237634741111904,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.110195235301466,
+            51.239335415124636,
+          ],
+          Array [
+            7.11018567690227,
+            51.239338949399716,
+          ],
+          Array [
+            7.110171556505736,
+            51.23934423218783,
+          ],
+          Array [
+            7.110154858550715,
+            51.23935030358317,
+          ],
+          Array [
+            7.1101237128804735,
+            51.23935948763436,
+          ],
+          Array [
+            7.110104257875164,
+            51.23936264577059,
+          ],
+          Array [
+            7.1100963050449595,
+            51.239362559959915,
+          ],
+          Array [
+            7.110091692296082,
+            51.23936168219724,
+          ],
+          Array [
+            7.110083250821322,
+            51.23935804060257,
+          ],
+          Array [
+            7.110071827682556,
+            51.23934932757168,
+          ],
+          Array [
+            7.110056891012302,
+            51.23933574303441,
+          ],
+          Array [
+            7.11004422684942,
+            51.23932749650647,
+          ],
+          Array [
+            7.110034367061386,
+            51.23932438805802,
+          ],
+          Array [
+            7.1100288678667125,
+            51.23932384351174,
+          ],
+          Array [
+            7.11001105337584,
+            51.239324677144516,
+          ],
+          Array [
+            7.109966834656999,
+            51.239332143989266,
+          ],
+          Array [
+            7.109915988144854,
+            51.23934316913315,
+          ],
+          Array [
+            7.109864304066795,
+            51.23935274320842,
+          ],
+          Array [
+            7.109839957386606,
+            51.239355420667906,
+          ],
+          Array [
+            7.109816560318018,
+            51.23935669610952,
+          ],
+          Array [
+            7.1097691575021225,
+            51.23935725679146,
+          ],
+          Array [
+            7.109698458423608,
+            51.23935420823564,
+          ],
+          Array [
+            7.109653094456476,
+            51.23935042742053,
+          ],
+          Array [
+            7.109632035264681,
+            51.239348014264785,
+          ],
+          Array [
+            7.109591628192468,
+            51.23934138286244,
+          ],
+          Array [
+            7.109533484307621,
+            51.23932873745447,
+          ],
+          Array [
+            7.109494957212841,
+            51.23931991953048,
+          ],
+          Array [
+            7.109455324236118,
+            51.23930964224292,
+          ],
+          Array [
+            7.109390645959315,
+            51.23929333039822,
+          ],
+          Array [
+            7.109358612164936,
+            51.23928886650907,
+          ],
+          Array [
+            7.109338202480778,
+            51.23928854139689,
+          ],
+          Array [
+            7.109328417815882,
+            51.23928938409493,
+          ],
+          Array [
+            7.109313005781357,
+            51.23929209011722,
+          ],
+          Array [
+            7.1092784910234705,
+            51.23930182649181,
+          ],
+          Array [
+            7.109218427115306,
+            51.23932354700638,
+          ],
+          Array [
+            7.109173583846233,
+            51.23933989752825,
+          ],
+          Array [
+            7.109098127430502,
+            51.23936554958539,
+          ],
+          Array [
+            7.10904214873384,
+            51.23938295865255,
+          ],
+          Array [
+            7.10903270318484,
+            51.23938528370868,
+          ],
+          Array [
+            7.109012012107451,
+            51.23938852442271,
+          ],
+          Array [
+            7.108979236811005,
+            51.23939104212125,
+          ],
+          Array [
+            7.108958375146108,
+            51.23939207621207,
+          ],
+          Array [
+            7.108924010136559,
+            51.2393931380049,
+          ],
+          Array [
+            7.108839437599426,
+            51.239392460401326,
+          ],
+          Array [
+            7.108797246559928,
+            51.23939084167298,
+          ],
+          Array [
+            7.108735283678507,
+            51.239388148670244,
+          ],
+          Array [
+            7.108594885536064,
+            51.23938175881921,
+          ],
+          Array [
+            7.108537763590673,
+            51.23937735439596,
+          ],
+          Array [
+            7.108509790176339,
+            51.239373739127736,
+          ],
+          Array [
+            7.108469143789537,
+            51.2393653460363,
+          ],
+          Array [
+            7.1084438072175375,
+            51.239357331607415,
+          ],
+          Array [
+            7.108431894859145,
+            51.239352485820405,
+          ],
+          Array [
+            7.108416396890384,
+            51.23934520572943,
+          ],
+          Array [
+            7.108384038877224,
+            51.2393277443493,
+          ],
+          Array [
+            7.108336095164585,
+            51.239297163976254,
+          ],
+          Array [
+            7.108307638169036,
+            51.239276079619856,
+          ],
+          Array [
+            7.108283492538409,
+            51.239256156908716,
+          ],
+          Array [
+            7.1082342789798645,
+            51.23921058327512,
+          ],
+          Array [
+            7.108214418657387,
+            51.239188918154774,
+          ],
+          Array [
+            7.108176728441172,
+            51.2391440947447,
+          ],
+          Array [
+            7.1081409787984455,
+            51.239098140717175,
+          ],
+          Array [
+            7.108122020465223,
+            51.23907078177827,
+          ],
+          Array [
+            7.108100623667942,
+            51.239040109867304,
+          ],
+          Array [
+            7.108078295575345,
+            51.23900480405249,
+          ],
+          Array [
+            7.108058804859133,
+            51.238972533250625,
+          ],
+          Array [
+            7.108027517235717,
+            51.238924591878096,
+          ],
+          Array [
+            7.107996106639329,
+            51.2388766824333,
+          ],
+          Array [
+            7.1079748685571635,
+            51.23884654245562,
+          ],
+          Array [
+            7.107927867887256,
+            51.23878031079479,
+          ],
+          Array [
+            7.107909261726632,
+            51.238749101707505,
+          ],
+          Array [
+            7.1079030121236455,
+            51.238735663182894,
+          ],
+          Array [
+            7.107893072667574,
+            51.23870698104282,
+          ],
+          Array [
+            7.107883743897595,
+            51.23866494911845,
+          ],
+          Array [
+            7.107880608024317,
+            51.23864186959162,
+          ],
+          Array [
+            7.1078792458237094,
+            51.23862841361631,
+          ],
+          Array [
+            7.107880232794287,
+            51.238608131346446,
+          ],
+          Array [
+            7.107885688470206,
+            51.23859567956883,
+          ],
+          Array [
+            7.10789056983485,
+            51.23859006652821,
+          ],
+          Array [
+            7.107897149623079,
+            51.238584884228345,
+          ],
+          Array [
+            7.107914615503072,
+            51.23857559155537,
+          ],
+          Array [
+            7.107947310239099,
+            51.23856432972171,
+          ],
+          Array [
+            7.107970116351632,
+            51.23855860456231,
+          ],
+          Array [
+            7.108037719430917,
+            51.23854462365747,
+          ],
+          Array [
+            7.108220610608982,
+            51.23851117215544,
+          ],
+          Array [
+            7.108301987410994,
+            51.23849786173304,
+          ],
+          Array [
+            7.108359851630745,
+            51.23848987909495,
+          ],
+          Array [
+            7.108476506866547,
+            51.238476584479905,
+          ],
+          Array [
+            7.108526446078104,
+            51.23847104994786,
+          ],
+          Array [
+            7.108590738947426,
+            51.23846400111777,
+          ],
+          Array [
+            7.10864542792755,
+            51.23845861440802,
+          ],
+          Array [
+            7.108676216160725,
+            51.23845608272642,
+          ],
+          Array [
+            7.108703171236375,
+            51.238455534320615,
+          ],
+          Array [
+            7.108724258101775,
+            51.238458632563,
+          ],
+          Array [
+            7.108745377959925,
+            51.23846125376746,
+          ],
+          Array [
+            7.108780318780418,
+            51.23845806881936,
+          ],
+          Array [
+            7.1088214412422746,
+            51.23845262451447,
+          ],
+          Array [
+            7.108863517931904,
+            51.23844651856987,
+          ],
+          Array [
+            7.108943181009006,
+            51.23843460720636,
+          ],
+          Array [
+            7.108989860046479,
+            51.23842969767147,
+          ],
+          Array [
+            7.109006780507284,
+            51.23842940366046,
+          ],
+          Array [
+            7.109010632485868,
+            51.23842986443006,
+          ],
+          Array [
+            7.109016894064738,
+            51.238432238475795,
+          ],
+          Array [
+            7.109023632045738,
+            51.23843847639008,
+          ],
+          Array [
+            7.109030325527729,
+            51.23844911800987,
+          ],
+          Array [
+            7.109038122954588,
+            51.23845868324241,
+          ],
+          Array [
+            7.109043704391929,
+            51.23846178965258,
+          ],
+          Array [
+            7.109050814555776,
+            51.238463808514496,
+          ],
+          Array [
+            7.109068140138479,
+            51.238466245156296,
+          ],
+          Array [
+            7.109087005695217,
+            51.23846664640498,
+          ],
+          Array [
+            7.10910429078682,
+            51.23846513152002,
+          ],
+          Array [
+            7.109111365520954,
+            51.23846369279602,
+          ],
+          Array [
+            7.109117111875173,
+            51.23846108412691,
+          ],
+          Array [
+            7.109126079326127,
+            51.23845187875634,
+          ],
+          Array [
+            7.109134191402581,
+            51.238441164448126,
+          ],
+          Array [
+            7.109141527207265,
+            51.238434887693444,
+          ],
+          Array [
+            7.1091477202113635,
+            51.238432611921596,
+          ],
+          Array [
+            7.1091513487332,
+            51.23843226087975,
+          ],
+          Array [
+            7.109176903702512,
+            51.238432688191985,
+          ],
+          Array [
+            7.109248701781668,
+            51.238437149828876,
+          ],
+          Array [
+            7.109330463858377,
+            51.23844488253266,
+          ],
+          Array [
+            7.109401045704845,
+            51.238454040363784,
+          ],
+          Array [
+            7.109425536470553,
+            51.23845857684597,
+          ],
+          Array [
+            7.109429722391367,
+            51.238459815430446,
+          ],
+          Array [
+            7.10943688374123,
+            51.23846363316811,
+          ],
+          Array [
+            7.109444925451313,
+            51.23847197747107,
+          ],
+          Array [
+            7.109453438775516,
+            51.23849324719712,
+          ],
+          Array [
+            7.109455389909184,
+            51.23850658113492,
+          ],
+          Array [
+            7.1094543076470496,
+            51.23853555179843,
+          ],
+          Array [
+            7.109450906894487,
+            51.23856229315478,
+          ],
+          Array [
+            7.109449452589123,
+            51.23857005480286,
+          ],
+          Array [
+            7.109447609259886,
+            51.23858181069474,
+          ],
+          Array [
+            7.109449030103855,
+            51.238589279182825,
+          ],
+          Array [
+            7.109451158839113,
+            51.23859278852415,
+          ],
+          Array [
+            7.1094594212731455,
+            51.23859897514888,
+          ],
+          Array [
+            7.10947616771751,
+            51.23860743048179,
+          ],
+          Array [
+            7.10948452575553,
+            51.23861426505174,
+          ],
+          Array [
+            7.109486395094676,
+            51.23861849097703,
+          ],
+          Array [
+            7.109486989604635,
+            51.238627068714266,
+          ],
+          Array [
+            7.109484397955494,
+            51.23864905149796,
+          ],
+          Array [
+            7.10947683582067,
+            51.238688270803074,
+          ],
+          Array [
+            7.109473837854582,
+            51.238714051314574,
+          ],
+          Array [
+            7.109474176030256,
+            51.238740821038085,
+          ],
+          Array [
+            7.109481281468579,
+            51.23879573431678,
+          ],
+          Array [
+            7.109487274901306,
+            51.23881788531777,
+          ],
+          Array [
+            7.109493109368971,
+            51.23883086910692,
+          ],
+          Array [
+            7.109506805764944,
+            51.238849379035344,
+          ],
+          Array [
+            7.109519384062909,
+            51.23886029045624,
+          ],
+          Array [
+            7.1095267462260585,
+            51.23886511582867,
+          ],
+          Array [
+            7.109536922434782,
+            51.238870644276446,
+          ],
+          Array [
+            7.109561790922159,
+            51.23888168614718,
+          ],
+          Array [
+            7.1096056268267,
+            51.23889711446225,
+          ],
+          Array [
+            7.109635506322103,
+            51.238905790511275,
+          ],
+          Array [
+            7.109665366196818,
+            51.23891266604732,
+          ],
+          Array [
+            7.109727927821645,
+            51.23892284590833,
+          ],
+          Array [
+            7.109759423086924,
+            51.23892742123886,
+          ],
+          Array [
+            7.109792153268286,
+            51.238931489599224,
+          ],
+          Array [
+            7.109842495375666,
+            51.23893666409323,
+          ],
+          Array [
+            7.109875390989418,
+            51.23894128972169,
+          ],
+          Array [
+            7.109891254112299,
+            51.23894441681055,
+          ],
+          Array [
+            7.109922895782901,
+            51.23895276524814,
+          ],
+          Array [
+            7.109983554700915,
+            51.23897351412856,
+          ],
+          Array [
+            7.110009100211368,
+            51.23898303309328,
+          ],
+          Array [
+            7.110046318031409,
+            51.238998867684856,
+          ],
+          Array [
+            7.11007590552849,
+            51.23901252931235,
+          ],
+          Array [
+            7.110091436614972,
+            51.23901949394086,
+          ],
+          Array [
+            7.1101038153942895,
+            51.23902509506727,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.111809640477685,
+            51.239617746452865,
+          ],
+          Array [
+            7.111810414307608,
+            51.2396295506374,
+          ],
+          Array [
+            7.111811464076884,
+            51.239646055711425,
+          ],
+          Array [
+            7.111812636319241,
+            51.23967391516454,
+          ],
+          Array [
+            7.111812131930098,
+            51.23970253149279,
+          ],
+          Array [
+            7.11180511997123,
+            51.23976088975846,
+          ],
+          Array [
+            7.1117957715258875,
+            51.239826388568204,
+          ],
+          Array [
+            7.111784787939927,
+            51.23989494492813,
+          ],
+          Array [
+            7.111776059858238,
+            51.23996388817708,
+          ],
+          Array [
+            7.111772937544479,
+            51.24002898413393,
+          ],
+          Array [
+            7.111772556628199,
+            51.240096256811086,
+          ],
+          Array [
+            7.111774939104564,
+            51.24018981916104,
+          ],
+          Array [
+            7.1117791631761715,
+            51.24027866559669,
+          ],
+          Array [
+            7.111785078875983,
+            51.24033604505817,
+          ],
+          Array [
+            7.111790376711593,
+            51.24038458053699,
+          ],
+          Array [
+            7.111788127705893,
+            51.24040362323993,
+          ],
+          Array [
+            7.111783338258547,
+            51.24042023192258,
+          ],
+          Array [
+            7.1117813478288285,
+            51.24042462031838,
+          ],
+          Array [
+            7.1117752649938755,
+            51.24043137239856,
+          ],
+          Array [
+            7.111765863536747,
+            51.24043690136966,
+          ],
+          Array [
+            7.1117632826664865,
+            51.24043788107378,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.11365531482416,
+            51.23925595638219,
+          ],
+          Array [
+            7.113655654062101,
+            51.23924821601926,
+          ],
+          Array [
+            7.113654844029197,
+            51.239219747894786,
+          ],
+          Array [
+            7.113651006450769,
+            51.23920088828724,
+          ],
+          Array [
+            7.113647476546904,
+            51.239194414733504,
+          ],
+          Array [
+            7.1136411095556555,
+            51.239189803846195,
+          ],
+          Array [
+            7.113616004417166,
+            51.23918055742148,
+          ],
+          Array [
+            7.1135622529028755,
+            51.23916769051484,
+          ],
+          Array [
+            7.113527226976086,
+            51.23916060889622,
+          ],
+          Array [
+            7.113492983377352,
+            51.2391538420162,
+          ],
+          Array [
+            7.11343877633818,
+            51.239145084279514,
+          ],
+          Array [
+            7.113407592535696,
+            51.23914320956194,
+          ],
+          Array [
+            7.113395247983231,
+            51.2391442418627,
+          ],
+          Array [
+            7.113391147477238,
+            51.23914522645343,
+          ],
+          Array [
+            7.113384132868561,
+            51.239148659923586,
+          ],
+          Array [
+            7.1133762450738685,
+            51.23915670719296,
+          ],
+          Array [
+            7.113367761836804,
+            51.23917819102265,
+          ],
+          Array [
+            7.113365590501533,
+            51.239192093399346,
+          ],
+          Array [
+            7.113357419109991,
+            51.239240342545855,
+          ],
+          Array [
+            7.113340430914072,
+            51.23933876128628,
+          ],
+          Array [
+            7.113336339986053,
+            51.23938716456554,
+          ],
+          Array [
+            7.11333729062282,
+            51.23941520922936,
+          ],
+          Array [
+            7.1133392043008525,
+            51.239427321927614,
+          ],
+          Array [
+            7.113341825370286,
+            51.23943616619394,
+          ],
+          Array [
+            7.113350756065646,
+            51.23945332627563,
+          ],
+          Array [
+            7.113370929007891,
+            51.23947798208766,
+          ],
+          Array [
+            7.113403631898376,
+            51.23950949554486,
+          ],
+          Array [
+            7.113426809477119,
+            51.23953266249148,
+          ],
+          Array [
+            7.113439174042762,
+            51.23954812101268,
+          ],
+          Array [
+            7.113443941281123,
+            51.23955590180371,
+          ],
+          Array [
+            7.113451067347724,
+            51.23957052449124,
+          ],
+          Array [
+            7.113461585489109,
+            51.23960026897193,
+          ],
+          Array [
+            7.113470829059063,
+            51.23964573377343,
+          ],
+          Array [
+            7.1134748144956195,
+            51.23967629816305,
+          ],
+          Array [
+            7.113484464874601,
+            51.239745229517354,
+          ],
+          Array [
+            7.113493806321481,
+            51.239802479076765,
+          ],
+          Array [
+            7.11350089426365,
+            51.2398352920241,
+          ],
+          Array [
+            7.113504967868328,
+            51.2398678119875,
+          ],
+          Array [
+            7.113503727704376,
+            51.23986984445648,
+          ],
+          Array [
+            7.113496756355722,
+            51.23987382301641,
+          ],
+          Array [
+            7.11347843909742,
+            51.239879808261776,
+          ],
+          Array [
+            7.113448772133431,
+            51.23988847446055,
+          ],
+          Array [
+            7.113430446017701,
+            51.23989603299788,
+          ],
+          Array [
+            7.113423464546272,
+            51.23990180960579,
+          ],
+          Array [
+            7.113422218055585,
+            51.23990496585475,
+          ],
+          Array [
+            7.113421673300315,
+            51.239915003449525,
+          ],
+          Array [
+            7.113425204274256,
+            51.2399393203326,
+          ],
+          Array [
+            7.113429608431283,
+            51.23995773050642,
+          ],
+          Array [
+            7.113444099246403,
+            51.240024947466544,
+          ],
+          Array [
+            7.1134535271742765,
+            51.24007269038629,
+          ],
+          Array [
+            7.1134577472467635,
+            51.240093875690675,
+          ],
+          Array [
+            7.113461337457685,
+            51.24011238094341,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.113494590149206,
+            51.239874678328675,
+          ],
+          Array [
+            7.1135164548436505,
+            51.2398686474299,
+          ],
+          Array [
+            7.11354142385581,
+            51.239861882193225,
+          ],
+          Array [
+            7.113594903601706,
+            51.23984785277075,
+          ],
+          Array [
+            7.113657558331068,
+            51.23983063808716,
+          ],
+          Array [
+            7.113682300955484,
+            51.2398239206247,
+          ],
+          Array [
+            7.1137206632505485,
+            51.23981082178713,
+          ],
+          Array [
+            7.113735567604662,
+            51.239802387082165,
+          ],
+          Array [
+            7.113742403486996,
+            51.23979590113125,
+          ],
+          Array [
+            7.113744643191029,
+            51.239792372383484,
+          ],
+          Array [
+            7.113746425669382,
+            51.239787560627896,
+          ],
+          Array [
+            7.113747795741307,
+            51.23977569186037,
+          ],
+          Array [
+            7.1137454204655075,
+            51.23975381273238,
+          ],
+          Array [
+            7.113731695599229,
+            51.239705526243924,
+          ],
+          Array [
+            7.113722004166771,
+            51.239678862398414,
+          ],
+          Array [
+            7.113717944652746,
+            51.239671374786944,
+          ],
+          Array [
+            7.113705756269083,
+            51.2396604069643,
+          ],
+          Array [
+            7.113691775029465,
+            51.239651412322644,
+          ],
+          Array [
+            7.113680360475725,
+            51.23964034683869,
+          ],
+          Array [
+            7.113676978062882,
+            51.23963277377357,
+          ],
+          Array [
+            7.11366718677737,
+            51.23958812299238,
+          ],
+          Array [
+            7.113647970125923,
+            51.23946877743115,
+          ],
+          Array [
+            7.113641505859179,
+            51.23941986711446,
+          ],
+          Array [
+            7.1136393077173,
+            51.2393915463134,
+          ],
+          Array [
+            7.113639032527782,
+            51.23933524652585,
+          ],
+          Array [
+            7.113639574283712,
+            51.23931329108223,
+          ],
+          Array [
+            7.113640158983328,
+            51.23930872779307,
+          ],
+          Array [
+            7.113643460164025,
+            51.239302164119785,
+          ],
+          Array [
+            7.113650368536286,
+            51.239295073257374,
+          ],
+          Array [
+            7.113653655188926,
+            51.23928934152462,
+          ],
+          Array [
+            7.113655066878655,
+            51.239270679450364,
+          ],
+          Array [
+            7.113655338818886,
+            51.239255946365645,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.1136737107809855,
+            51.23847291302512,
+          ],
+          Array [
+            7.1137522505190445,
+            51.23844070952192,
+          ],
+          Array [
+            7.1138781258533985,
+            51.23838988088046,
+          ],
+          Array [
+            7.113961405049791,
+            51.238357415069004,
+          ],
+          Array [
+            7.114052395551345,
+            51.2383239144233,
+          ],
+          Array [
+            7.11414460728449,
+            51.23829319274263,
+          ],
+          Array [
+            7.114186346110877,
+            51.23828034495937,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.1083631179753475,
+            51.23931508654781,
+          ],
+          Array [
+            7.108306630952908,
+            51.23928148166745,
+          ],
+          Array [
+            7.108194087313433,
+            51.239216643949625,
+          ],
+          Array [
+            7.108147977260281,
+            51.2391912369848,
+          ],
+          Array [
+            7.108088506768567,
+            51.23916078798108,
+          ],
+          Array [
+            7.10796297173442,
+            51.23910267519899,
+          ],
+          Array [
+            7.107912892928544,
+            51.23908183127879,
+          ],
+          Array [
+            7.107889093409347,
+            51.23907308644427,
+          ],
+          Array [
+            7.107839025913486,
+            51.23905845242944,
+          ],
+          Array [
+            7.1078133548056375,
+            51.23905302620128,
+          ],
+          Array [
+            7.107796338920492,
+            51.239050297661336,
+          ],
+          Array [
+            7.107761932232603,
+            51.239046613744556,
+          ],
+          Array [
+            7.1077097335801405,
+            51.23904375565469,
+          ],
+          Array [
+            7.107674813255142,
+            51.23904225591193,
+          ],
+          Array [
+            7.107640919501392,
+            51.239041174985935,
+          ],
+          Array [
+            7.107569289088509,
+            51.23904209322134,
+          ],
+          Array [
+            7.107494908655043,
+            51.23904651411711,
+          ],
+          Array [
+            7.107420626824905,
+            51.23905371272584,
+          ],
+          Array [
+            7.107384413081057,
+            51.239058127126505,
+          ],
+          Array [
+            7.107339463897762,
+            51.23906444133013,
+          ],
+          Array [
+            7.107236973173796,
+            51.23908121646936,
+          ],
+          Array [
+            7.1071318145362,
+            51.239100915696135,
+          ],
+          Array [
+            7.10704093426042,
+            51.23912041314432,
+          ],
+          Array [
+            7.1070061442192864,
+            51.23912910936827,
+          ],
+          Array [
+            7.1069904368824774,
+            51.239133958471314,
+          ],
+          Array [
+            7.106961284649108,
+            51.239146405279776,
+          ],
+          Array [
+            7.106936694600533,
+            51.239161477674934,
+          ],
+          Array [
+            7.106918521454113,
+            51.239177928597016,
+          ],
+          Array [
+            7.106912420818385,
+            51.23918628129947,
+          ],
+          Array [
+            7.1069088747696325,
+            51.2391955060771,
+          ],
+          Array [
+            7.106909405496736,
+            51.23921792382728,
+          ],
+          Array [
+            7.106917794871618,
+            51.239242336826145,
+          ],
+          Array [
+            7.106931276752238,
+            51.239264790260265,
+          ],
+          Array [
+            7.106939062962812,
+            51.23927404626134,
+          ],
+          Array [
+            7.1069560227743445,
+            51.23929082726475,
+          ],
+          Array [
+            7.107001443932032,
+            51.239331545896896,
+          ],
+          Array [
+            7.107079217846221,
+            51.23939628922542,
+          ],
+          Array [
+            7.107122630617198,
+            51.23943083022228,
+          ],
+          Array [
+            7.107142757256143,
+            51.23944572908864,
+          ],
+          Array [
+            7.107186491269015,
+            51.239474459120316,
+          ],
+          Array [
+            7.107208887659101,
+            51.239488052236204,
+          ],
+          Array [
+            7.107353000485108,
+            51.23956935339678,
+          ],
+          Array [
+            7.107501063442932,
+            51.23965128935586,
+          ],
+          Array [
+            7.107529725143489,
+            51.23966736481404,
+          ],
+          Array [
+            7.107589451016573,
+            51.23969955423148,
+          ],
+          Array [
+            7.107619885327535,
+            51.239714601428766,
+          ],
+          Array [
+            7.107637807419759,
+            51.23972269571122,
+          ],
+          Array [
+            7.107675091287784,
+            51.23973748802463,
+          ],
+          Array [
+            7.107732380852585,
+            51.23975656750218,
+          ],
+          Array [
+            7.1077697443906,
+            51.23976751132033,
+          ],
+          Array [
+            7.107803311559878,
+            51.23977596297529,
+          ],
+          Array [
+            7.107873380378478,
+            51.23978825366652,
+          ],
+          Array [
+            7.10794526417317,
+            51.239795434981055,
+          ],
+          Array [
+            7.108016445747201,
+            51.23979875585679,
+          ],
+          Array [
+            7.108050986577482,
+            51.23979935892319,
+          ],
+          Array [
+            7.108083596519647,
+            51.23979939318388,
+          ],
+          Array [
+            7.108144349635707,
+            51.239797749228316,
+          ],
+          Array [
+            7.108199963756248,
+            51.23979385425004,
+          ],
+          Array [
+            7.10825141891587,
+            51.2397877469849,
+          ],
+          Array [
+            7.10827589314615,
+            51.23978387584971,
+          ],
+          Array [
+            7.108294276754127,
+            51.239780180889305,
+          ],
+          Array [
+            7.108339817979174,
+            51.23976851453007,
+          ],
+          Array [
+            7.108387973317177,
+            51.239753722774225,
+          ],
+          Array [
+            7.108427841289126,
+            51.23973889744731,
+          ],
+          Array [
+            7.108441260800642,
+            51.23973243839018,
+          ],
+          Array [
+            7.108450418537899,
+            51.23972651266512,
+          ],
+          Array [
+            7.108463715365441,
+            51.23971335288216,
+          ],
+          Array [
+            7.108474521990296,
+            51.23969085298458,
+          ],
+          Array [
+            7.108478284663312,
+            51.23967441004444,
+          ],
+          Array [
+            7.108483147469536,
+            51.23962986330227,
+          ],
+          Array [
+            7.108489650290306,
+            51.23950019905699,
+          ],
+          Array [
+            7.10849123781639,
+            51.23945026732666,
+          ],
+          Array [
+            7.108493538310773,
+            51.23940681148791,
+          ],
+          Array [
+            7.108495616853938,
+            51.23937130941143,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.108050986577482,
+            51.23979935892319,
+          ],
+          Array [
+            7.108051057061991,
+            51.23982023434073,
+          ],
+          Array [
+            7.108050542675047,
+            51.23984573552368,
+          ],
+          Array [
+            7.108047910815992,
+            51.23985970124719,
+          ],
+          Array [
+            7.108043776857391,
+            51.239881860621395,
+          ],
+          Array [
+            7.108044171286326,
+            51.239895145532905,
+          ],
+          Array [
+            7.108046155639256,
+            51.2399007513937,
+          ],
+          Array [
+            7.1080579545460205,
+            51.23992272612699,
+          ],
+          Array [
+            7.108063259879982,
+            51.23993238614499,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.1100161946521085,
+            51.240449495256996,
+          ],
+          Array [
+            7.110013985637619,
+            51.24044464169346,
+          ],
+          Array [
+            7.110004438735896,
+            51.24041968907283,
+          ],
+          Array [
+            7.110002517658121,
+            51.24040884060748,
+          ],
+          Array [
+            7.110005386527584,
+            51.24037581355652,
+          ],
+          Array [
+            7.110011371712123,
+            51.240336175586265,
+          ],
+          Array [
+            7.1100271607419145,
+            51.240266555281515,
+          ],
+          Array [
+            7.110043936554825,
+            51.24019183968585,
+          ],
+          Array [
+            7.110057631544857,
+            51.24012197961007,
+          ],
+          Array [
+            7.110067163449877,
+            51.240065057779475,
+          ],
+          Array [
+            7.110066990925295,
+            51.240057737720136,
+          ],
+          Array [
+            7.110063240874504,
+            51.2400424909745,
+          ],
+          Array [
+            7.1100550701078244,
+            51.24002417525357,
+          ],
+          Array [
+            7.110052566658048,
+            51.240019722899596,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "properties": Object {
+        "name": "Alle Wege in einem Pfad",
+        "slug": "ways",
+        "type": "ways",
+      },
+      "type": "Feature",
+    },
+  ],
+  "type": "FeatureCollection",
+}
+`;

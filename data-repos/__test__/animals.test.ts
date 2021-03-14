@@ -14,7 +14,7 @@ describe('animals', () => {
 
         const animals = await list();
 
-        expect(animals.length).toBe(255);
+        expect(animals.length).toBe(45);
 
     });
 

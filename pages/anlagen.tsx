@@ -4,14 +4,8 @@ import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import {getOneGeoJson} from "./api/geojson/geojson";
-import {Feature, FeatureCollection, Polygon} from "geojson";
-import {getFullGeoJson} from "./api/geojson/list";
-import path from "path";
-import fs from "fs";
 import {facilityUrlPart} from "../constants";
 import {list} from "../data-repos/enclosures";
-const frontmatter = require('@github-docs/frontmatter')
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -105,19 +99,7 @@ export default function Index(props) {
 
 export async function getStaticProps({ params, preview = false, previewData }) {
 
-    const getJson = await getFullGeoJson();
-
-    const facilities = getJson.features
-        .filter((feature:Feature)=>{
-            return ('facility-box' === feature.properties.type);
-        })
-        .map((feature:Feature)=>{
-            return feature.properties;
-    });
-
     const enclosures = await list();
-
-    console.log(enclosures);
 
     return {
         props: {

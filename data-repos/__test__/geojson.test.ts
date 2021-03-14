@@ -1,16 +1,28 @@
-import {get, isAllowedType} from "../geojson";
+import {get, getSupportedTypes, isSupportedType} from "../geojson";
 
 describe('geojson', () => {
 
-    test('type is allowed', async () => {
+    test('supported types', async () => {
 
-        expect(isAllowedType('bounding-box')).toBeTruthy();
+        expect(getSupportedTypes()).toStrictEqual([
+            'bounding-box',
+            'border',
+            'way',
+            'facility-box',
+            'facility-circle',
+        ]);
 
     });
 
-    test('type is not allowed', async () => {
+    test('type is supported', async () => {
 
-        expect(isAllowedType('foobar')).toBeFalsy();
+        expect(isSupportedType('bounding-box')).toBeTruthy();
+
+    });
+
+    test('type is not supported', async () => {
+
+        expect(isSupportedType('foobar')).toBeFalsy();
 
     });
 

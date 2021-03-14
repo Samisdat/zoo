@@ -11,7 +11,7 @@ export const PointOfInterest = (props) => {
 
     const pois = props.geoJson.features.filter((feature:Feature) => {
 
-        if('facility-circles' === feature.properties?.type){
+        if('facility-circle' === feature.properties?.type){
             return true;
         }
 

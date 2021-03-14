@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import {getOneGeoJson} from "../geojson/geojson";
 import {Feature, FeatureCollection, Point, Polygon} from "geojson";
 import {get} from "../../../data-repos/geojson";
 
@@ -14,7 +13,7 @@ const getBorder = async ():Promise<FeatureCollection> => {
 
 const getWays = async ():Promise<FeatureCollection> => {
 
-    const ways = await get('ways') as FeatureCollection<Polygon>;
+    const ways = await get('way') as FeatureCollection<Polygon>;
 
     // @TODO does sorting make sense on this side?
     ways.features = ways.features.sort( (a:Feature<Polygon>, b:Feature<Polygon>)=>{
@@ -27,7 +26,7 @@ const getWays = async ():Promise<FeatureCollection> => {
 
 const getFacilityBoxes = async ():Promise<FeatureCollection> => {
 
-    const facilityBoxes = await get('facility-boxes') as FeatureCollection<Polygon>;
+    const facilityBoxes = await get('facility-box') as FeatureCollection<Polygon>;
 
     // @TODO does sorting make sense on this side?
     facilityBoxes.features = facilityBoxes.features.sort( (a:Feature<Polygon>, b:Feature<Polygon>)=>{
@@ -40,7 +39,7 @@ const getFacilityBoxes = async ():Promise<FeatureCollection> => {
 
 const getFacilityCircles = async ():Promise<FeatureCollection> => {
 
-    const facilityCircles = await get('facility-circles') as FeatureCollection<Point>;
+    const facilityCircles = await get('facility-circle') as FeatureCollection<Point>;
 
     return facilityCircles;
 
@@ -69,7 +68,6 @@ export const getFullGeoJson = async (): Promise<FeatureCollection> => {
     geoJson.features = geoJson.features.concat(facilityBoxes.features);
 
     const facilityCircles = await getFacilityCircles();
-    console.log(JSON.stringify(facilityCircles, null, 4));
     geoJson.features = geoJson.features.concat(facilityCircles.features);
 
     const boundingBox = await getBoundingBox();

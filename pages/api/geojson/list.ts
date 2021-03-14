@@ -2,18 +2,11 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import {getOneGeoJson} from "../geojson/geojson";
 import {Feature, FeatureCollection, Point, Polygon} from "geojson";
+import {get} from "../../../data-repos/geojson";
 
 const getBorder = async ():Promise<FeatureCollection> => {
 
-    const border = await getOneGeoJson('border') as FeatureCollection<Polygon>;
-
-    border.features = border.features.map( (feature:Feature<Polygon>)=>{
-
-        feature.properties.type = 'border';
-
-        return feature;
-
-    });
+    const border = await get('border') as FeatureCollection<Polygon>;
 
     return border;
 
@@ -21,15 +14,7 @@ const getBorder = async ():Promise<FeatureCollection> => {
 
 const getWays = async ():Promise<FeatureCollection> => {
 
-    const ways = await getOneGeoJson('ways') as FeatureCollection<Polygon>;
-
-    ways.features = ways.features.map( (feature:Feature<Polygon>)=>{
-
-        feature.properties.type = 'way';
-
-        return feature;
-
-    });
+    const ways = await get('ways') as FeatureCollection<Polygon>;
 
     // @TODO does sorting make sense on this side?
     ways.features = ways.features.sort( (a:Feature<Polygon>, b:Feature<Polygon>)=>{
@@ -42,15 +27,7 @@ const getWays = async ():Promise<FeatureCollection> => {
 
 const getFacilityBoxes = async ():Promise<FeatureCollection> => {
 
-    const facilityBoxes = await getOneGeoJson('facility-boxes') as FeatureCollection<Polygon>;
-
-    facilityBoxes.features = facilityBoxes.features.map( (feature:Feature<Polygon>)=>{
-
-        feature.properties.type = 'facility-box';
-
-        return feature;
-
-    });
+    const facilityBoxes = await get('facility-boxes') as FeatureCollection<Polygon>;
 
     // @TODO does sorting make sense on this side?
     facilityBoxes.features = facilityBoxes.features.sort( (a:Feature<Polygon>, b:Feature<Polygon>)=>{
@@ -63,15 +40,7 @@ const getFacilityBoxes = async ():Promise<FeatureCollection> => {
 
 const getFacilityCircles = async ():Promise<FeatureCollection> => {
 
-    const facilityCircles = await getOneGeoJson('facility-circles') as FeatureCollection<Point>;
-
-    facilityCircles.features = facilityCircles.features.map( (feature:Feature<Point>)=>{
-
-        feature.properties.type = 'facility-circle';
-
-        return feature;
-
-    });
+    const facilityCircles = await get('facility-circles') as FeatureCollection<Point>;
 
     return facilityCircles;
 
@@ -79,15 +48,7 @@ const getFacilityCircles = async ():Promise<FeatureCollection> => {
 
 const getBoundingBox = async ():Promise<FeatureCollection> => {
 
-    const boundingBox = await getOneGeoJson('bounding-box') as FeatureCollection<Polygon>;
-
-    boundingBox.features = boundingBox.features.map( (feature:Feature<Polygon>)=>{
-
-        feature.properties.type = 'bounding-box';
-
-        return feature;
-
-    });
+    const boundingBox = await get('bounding-box') as FeatureCollection<Polygon>;
 
     return boundingBox;
 
@@ -108,6 +69,7 @@ export const getFullGeoJson = async (): Promise<FeatureCollection> => {
     geoJson.features = geoJson.features.concat(facilityBoxes.features);
 
     const facilityCircles = await getFacilityCircles();
+    console.log(JSON.stringify(facilityCircles, null, 4));
     geoJson.features = geoJson.features.concat(facilityCircles.features);
 
     const boundingBox = await getBoundingBox();

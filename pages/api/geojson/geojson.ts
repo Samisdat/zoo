@@ -14,45 +14,6 @@ let allowList = [
     'facility-circles'
 ];
 
-export const getOneGeoJson = async (slug:string):Promise<any> => {
-
-    if(false === allowList.includes(slug)){
-        throw new Error('not allowed')
-    }
-
-    const dataDir = path.resolve(process.env.PWD + '/data');
-
-    const geojson = JSON.parse(fs.readFileSync(dataDir + '/' + slug + '/geo.json', {encoding: 'utf8'}));
-
-    geojson.features = geojson.features.map((feature:Feature)=>{
-
-        // for reason d3 v6 renders polygons as reactangle
-        // this is the workaround
-
-        const type = feature.geometry.type;
-
-        if('Polygon' !== type){
-            return feature;
-        }
-
-        const polygon:Feature<Polygon> = feature as Feature<Polygon>;
-
-        const lineString: Feature<LineString> = {
-            type: 'Feature',
-            geometry:{
-                type: 'LineString',
-                coordinates: polygon.geometry.coordinates[0]
-            },
-            properties: polygon.properties
-        };
-
-        return lineString;
-
-    });
-
-    return geojson;
-}
-
 export const getGeoJson = async () => {
 
     const dataDir = path.resolve(process.env.PWD + '/data');

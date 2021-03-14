@@ -3,7 +3,7 @@ import fs from "fs";
 import {Feature, LineString, Polygon} from "geojson";
 import {getDataDir} from "./data-helper";
 
-let allowList = [
+let supportedTypes = [
     'bounding-box',
     'border',
     'way',
@@ -11,16 +11,22 @@ let allowList = [
     'facility-circle'
 ];
 
-export const isAllowedType = (type: string) => {
+export const getSupportedTypes = () => {
 
-    return allowList.includes(type);
+    return supportedTypes;
+
+}
+
+export const isSupportedType = (type: string) => {
+
+    return supportedTypes.includes(type);
 
 }
 
 export const get = async (type:string):Promise<any> => {
 
     // why did i throw an error in a promise ?
-    if(false === allowList.includes(type)){
+    if(false === supportedTypes.includes(type)){
         throw new Error('not allowed')
     }
 

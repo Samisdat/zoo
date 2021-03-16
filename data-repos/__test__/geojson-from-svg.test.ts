@@ -1,10 +1,18 @@
-import {geojsonFromSvg} from "../geojson-from-svg";
+import {geojsonFromSvg, getSvg, getSvgPath} from "../geojson-from-svg";
 
 describe('geojson from svg', () => {
 
-    test('supported types', async () => {
 
-        geojsonFromSvg()
+    test('getSvgPath', async () => {
+
+        expect(getSvgPath()).toBe('/Users/samisdat/repos/zoo/data-repos/svg/combined.svg');
+
+    });
+
+    test('getSvg', async () => {
+
+        // ein sehr sehr guter test ;)
+        expect(getSvg()).toContain('xml');
 
     });
 

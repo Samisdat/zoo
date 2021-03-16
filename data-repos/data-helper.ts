@@ -5,6 +5,10 @@ const rootDataDir = path.resolve(process.env.PWD as string, 'data-repos');
 
 export type DataType = 'markdown' | 'geojson';
 
+export const getRootDataDir = () => {
+    return rootDataDir;
+};
+
 export const getDataDir = (dataType: DataType, dataSubDir:string): string =>{
 
     const dataDir = path.resolve(

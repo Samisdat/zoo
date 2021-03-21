@@ -90,7 +90,7 @@ export default function Tiere(props) {
     );
 }
 
-const distributionDataDir = path.resolve(process.env.PWD, 'data/iucnredlist');
+const distributionDataDir = path.resolve(process.env.PWD, 'data-repos/iucnredlist');
 
 const getDistribution = async (slug:string): Promise<FeatureCollection> => {
 

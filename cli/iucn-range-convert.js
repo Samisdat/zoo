@@ -4,8 +4,8 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const frontmatter = require('@github-docs/frontmatter')
 
-const dataImportDir = path.resolve(process.env.PWD, 'data/iucnredlist-raw');
-const dataExportDir = path.resolve(process.env.PWD, 'data/iucnredlist');
+const dataImportDir = path.resolve(process.env.PWD, 'iucnredlist-raw');
+const dataExportDir = path.resolve(process.env.PWD, 'data-repos/geojson/iucnredlist');
 
 const convertShapeFile = async function (filename) {
     try{

@@ -23,5 +23,5 @@ yarn-error.log*
 # Next.js
 /.next
 
-data/iucnredlist-raw/
+iucnredlist-raw/
 report/

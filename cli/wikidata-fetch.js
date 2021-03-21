@@ -3,8 +3,8 @@ const path = require("path");
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
-const dataDir = path.resolve(process.env.PWD, 'pages/api/data/markdown/animals');
-const wikidataDir = path.resolve(process.env.PWD, 'pages/api/data/wikidata/json');
+const dataDir = path.resolve(process.env.PWD, 'data-repos/markdown/animals');
+const wikidataDir = path.resolve(process.env.PWD, 'data-repos/wikidata/json');
 
 const animals = fs.readdirSync(dataDir);
 

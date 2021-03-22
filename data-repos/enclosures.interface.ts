@@ -3,6 +3,7 @@ export interface Enclosures {
     slug: string;
     type: string;
     animals: string[] | null;
+    images?: string[] | null;
     content: string;
     published: boolean;
 }

@@ -20,12 +20,17 @@ export const getEnclosure = async (slug:string):Promise<Enclosures> => {
         title: enclosureMarkdown.data.title,
         type: enclosureMarkdown.data.type,
         animals: enclosureMarkdown.data.animals,
+        images: enclosureMarkdown.data.images,
         content: enclosureMarkdown.content,
         published: enclosureMarkdown.data.published,
     };
 
     if(undefined === enclosure.animals){
         enclosure.animals = null;
+    }
+
+    if(undefined === enclosure.images){
+        enclosure.images = null;
     }
 
     return enclosure;

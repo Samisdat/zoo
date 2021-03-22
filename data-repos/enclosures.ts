@@ -5,7 +5,7 @@ const frontmatter = require('@github-docs/frontmatter')
 import {Enclosures} from "./enclosures.interface";
 import {getDataDir, getFileNames} from "./data-helper";
 
-export const get = async (slug:string):Promise<Enclosures> => {
+export const getEnclosure = async (slug:string):Promise<Enclosures> => {
 
     const filePath = path.resolve(
         getDataDir('markdown', 'enclosures'),
@@ -31,7 +31,7 @@ export const get = async (slug:string):Promise<Enclosures> => {
     return enclosure;
 };
 
-export const list = async ():Promise<Enclosures[]> => {
+export const listEnclosures = async ():Promise<Enclosures[]> => {
 
     const enclosures:Enclosures[] = [];
 
@@ -43,7 +43,7 @@ export const list = async ():Promise<Enclosures[]> => {
 
     for(const slug of slugs){
 
-        const enclosure = await get(slug);
+        const enclosure = await getEnclosure(slug);
 
         if(true === enclosure.published){
             enclosures.push(enclosure);

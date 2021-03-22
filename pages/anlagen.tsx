@@ -5,7 +5,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import {facilityUrlPart} from "../constants";
-import {list} from "../data-repos/enclosures";
+import {listEnclosures} from "../data-repos/enclosures";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -99,7 +99,7 @@ export default function Index(props) {
 
 export async function getStaticProps({ params, preview = false, previewData }) {
 
-    const enclosures = await list();
+    const enclosures = await listEnclosures();
 
     return {
         props: {

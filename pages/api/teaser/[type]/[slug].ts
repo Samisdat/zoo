@@ -1,10 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import {getSlug} from "helper/getSlug";
-import fs from "fs";
 import path from "path";
-import {getAnimals, getAnimal} from "../../animals";
-import {getFacilities} from "../../facilities";
-const frontmatter = require('@github-docs/frontmatter')
+import {get, list} from "../../../../data-repos/aninals";
+import {listEnclosures} from "../../../../data-repos/enclosures";
+
 
 export interface TeaserInterface {
     href: string;
@@ -31,7 +29,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<TeaserInterface[
 
     if('animal' === type){
 
-        const animals = await getAnimals();
+        let animals = await list();
 
         console.log(animals);
 
@@ -62,7 +60,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<TeaserInterface[
     }
     else if('facility' === type){
 
-        const facilities = await getFacilities();
+        const facilities = await listEnclosures();
 
 
         const facility = facilities.find((facility)=>{
@@ -96,7 +94,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<TeaserInterface[
 
             const animalSlug = facility.animals[i];
 
-            const animal = await getAnimal(animalSlug);
+            const animal = await get(animalSlug);
 
             const href = `/tiere/${animal.slug}`;
 

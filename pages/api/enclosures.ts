@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import fs from "fs";
 import path from "path";
+import {list} from "../../data-repos/enclosures";
 const frontmatter = require('@github-docs/frontmatter')
 
 export interface Facility {
@@ -59,8 +60,8 @@ export const getFacilities  = async ():Promise<Facility[]> => {
 
 export default async (req: NextApiRequest, res: NextApiResponse<Facility[]>) => {
 
-    const facilities = await getFacilities();
+    const enclosures = await list();
 
-    res.status(200).json(facilities);
+    res.status(200).json(enclosures);
 
 }

@@ -1,5 +1,28 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import {getDistribution} from "../../tiere/[slug]";
+import path from "path";
+import {FeatureCollection} from "geojson";
+import fs from "fs";
+
+const distributionDataDir = path.resolve(process.env.PWD, 'data-repos/iucnredlist');
+
+const getDistribution = async (slug:string): Promise<FeatureCollection> => {
+
+    const distributionDataPath = path.resolve(
+        distributionDataDir,
+        slug + '.json'
+    );
+
+    if (false === fs.existsSync(distributionDataPath)) {
+
+        return null;
+
+    }
+
+    const distributionData = fs.readFileSync(distributionDataPath, {encoding:'utf8'});
+
+    return JSON.parse(distributionData);
+
+}
 
 export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
 

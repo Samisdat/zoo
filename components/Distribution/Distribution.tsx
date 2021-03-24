@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
 import {Detail} from "./Detail";
 import {MiniMap} from "./MiniMap";
 import {Legend} from "./Legend";
+import {TeaserDetail, TeaserStateInterface} from "../Map/Teaser";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -19,30 +20,85 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
+const distributionService = async (apiUrl):Promise<any> => {
+
+    const promise = new Promise<any>((resolve, reject) => {
+
+        fetch(apiUrl)
+            .then(res => res.json())
+            .then(
+                (result:any) => {
+
+                    resolve(result);
+
+                },
+                (error) => {
+                    console.log(error);
+                }
+            );
+
+    });
+
+    return promise
+
+}
+
+
 export const Distribution = (props) => {
 
     const classes = useStyles();
 
-    if(!props.distributionGeoJson){
-        return (<React.Fragment/>);
-    }
+    const [distributionShape, setDistributionShape] = useState<any>(undefined);
+    const [world, setWorld] = useState<any>(undefined);
 
+    useEffect(() => {
+
+        distributionService('/api/distribution/afrikanischer-elefant')
+        .then((data) =>{
+            setDistributionShape(data);
+        });
+
+    },[])
+
+    useEffect(() => {
+
+        distributionService('/api/distribution/world')
+        .then((data) =>{
+
+            setWorld(data);
+
+        });
+
+    },[])
+
+    if(!distributionShape || ! world){
+        return (
+            <React.Fragment>
+                <div
+                    className={classes.root}
+                >
+
+                </div>
+            </React.Fragment>
+        );
+    }
+    
     return (
         <React.Fragment>
             <div
                 className={classes.root}
             >
                 <Detail
-                    distributionGeoJson={props.distributionGeoJson}
-                    worldCountriesJson={props.worldCountriesJson}
+                    distributionGeoJson={distributionShape}
+                    worldCountriesJson={world}
                 />
                 <MiniMap
-                    distributionGeoJson={props.distributionGeoJson}
-                    worldCountriesJson={props.worldCountriesJson}
+                    distributionGeoJson={distributionShape}
+                    worldCountriesJson={world}
                 />
             </div>
             <Legend
-                distributionGeoJson={props.distributionGeoJson}
+                distributionGeoJson={distributionShape}
             ></Legend>
         </React.Fragment>
     );

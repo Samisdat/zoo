@@ -82,7 +82,7 @@ export const Distribution = (props) => {
             </React.Fragment>
         );
     }
-    
+
     return (
         <React.Fragment>
             <div

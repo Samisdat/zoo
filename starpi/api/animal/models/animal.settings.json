@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "animals",
+  "info": {
+    "name": "Animal",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "individual_animals": {
+      "collection": "individual-animal",
+      "via": "animal"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "wikidata": {
+      "type": "string"
+    },
+    "wikipediaLink": {
+      "type": "string"
+    },
+    "scientificName": {
+      "type": "string"
+    },
+    "iucnID": {
+      "type": "string"
+    },
+    "iucnLink": {
+      "type": "string"
+    },
+    "iucnStatus": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "class": {
+      "type": "string"
+    },
+    "order": {
+      "type": "string"
+    },
+    "species": {
+      "type": "string"
+    },
+    "title_en": {
+      "type": "string"
+    },
+    "title_nl": {
+      "type": "string"
+    },
+    "title_de": {
+      "type": "string"
+    },
+    "raw_facility": {
+      "type": "string"
+    },
+    "family": {
+      "type": "string"
+    },
+    "raw_published": {
+      "type": "boolean"
+    },
+    "facilities": {
+      "collection": "facility",
+      "via": "animals",
+      "dominant": true
+    }
+  }
+}

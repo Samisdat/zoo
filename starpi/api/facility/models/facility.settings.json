@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "facilities",
+  "info": {
+    "name": "Facility",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "slug": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "enclosure",
+        "food",
+        "playground",
+        "toilet",
+        "poi"
+      ]
+    },
+    "raw_published": {
+      "type": "boolean"
+    },
+    "animals": {
+      "via": "facilities",
+      "collection": "animal"
+    }
+  }
+}

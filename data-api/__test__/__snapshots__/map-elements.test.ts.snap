@@ -1,0 +1,1836 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`map-elements get all published map elements 1`] = `
+Array [
+  Object {
+    "created_at": "2021-04-01T20:14:41.310Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:06.990Z",
+      "id": 13,
+      "published_at": "2021-03-30T21:08:06.988Z",
+      "raw_published": true,
+      "slug": "elefanten",
+      "title": "Elefanten",
+      "type": "enclosure",
+      "updated_at": "2021-03-31T22:37:19.151Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.108079136390546,
+            51.239293806399274,
+          ],
+          Array [
+            7.108079136390546,
+            51.23838958288827,
+          ],
+          Array [
+            7.1095008959075985,
+            51.23838958288827,
+          ],
+          Array [
+            7.1095008959075985,
+            51.239293806399274,
+          ],
+          Array [
+            7.108079136390546,
+            51.239293806399274,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 35,
+    "published_at": "2021-04-01T20:14:41.098Z",
+    "title": "Elefanten Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.317Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.333Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.140Z",
+      "id": 21,
+      "published_at": "2021-03-30T21:08:07.137Z",
+      "raw_published": true,
+      "slug": "kiang",
+      "title": "Kiang",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:54:40.190Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.111527782426161,
+            51.23835617020035,
+          ],
+          Array [
+            7.111527782426161,
+            51.23800151942168,
+          ],
+          Array [
+            7.111998414987676,
+            51.23800151942168,
+          ],
+          Array [
+            7.111998414987676,
+            51.23835617020035,
+          ],
+          Array [
+            7.111527782426161,
+            51.23835617020035,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 36,
+    "published_at": "2021-04-01T20:14:41.116Z",
+    "title": "Kiang Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.338Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.406Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.163Z",
+      "id": 22,
+      "published_at": "2021-03-30T21:08:07.162Z",
+      "raw_published": true,
+      "slug": "kiosk-tigertal",
+      "title": "Kiosk Tigertal",
+      "type": "food",
+      "updated_at": "2021-03-30T21:08:07.163Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.114062265382094,
+            51.23833450942312,
+          ],
+          Array [
+            7.114062265382094,
+            51.23812198840096,
+          ],
+          Array [
+            7.11438302288406,
+            51.23812198840096,
+          ],
+          Array [
+            7.11438302288406,
+            51.23833450942312,
+          ],
+          Array [
+            7.114062265382094,
+            51.23833450942312,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 37,
+    "published_at": "2021-04-01T20:14:41.331Z",
+    "title": "Kiosk Tigertal Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.412Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.434Z",
+    "facility": Object {
+      "body": "Some Content
+
+Some other content",
+      "created_at": "2021-03-30T21:08:06.757Z",
+      "id": 2,
+      "published_at": "2021-03-30T21:08:06.745Z",
+      "raw_published": true,
+      "slug": "affenhaus",
+      "title": "Affenhaus",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:50:51.591Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.109109601908572,
+            51.23996187234752,
+          ],
+          Array [
+            7.109109601908572,
+            51.239333960221565,
+          ],
+          Array [
+            7.110279732730108,
+            51.239333960221565,
+          ],
+          Array [
+            7.110279732730108,
+            51.23996187234752,
+          ],
+          Array [
+            7.109109601908572,
+            51.23996187234752,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 38,
+    "published_at": "2021-04-01T20:14:41.364Z",
+    "title": "Affenhaus Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.439Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.458Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.502Z",
+      "id": 37,
+      "published_at": "2021-03-30T21:08:07.500Z",
+      "raw_published": true,
+      "slug": "spielplatz",
+      "title": "Spielplatz",
+      "type": "playground",
+      "updated_at": "2021-03-30T21:08:07.502Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.107051038352181,
+            51.239582691051666,
+          ],
+          Array [
+            7.107051038352181,
+            51.239006476815405,
+          ],
+          Array [
+            7.107820737183094,
+            51.239006476815405,
+          ],
+          Array [
+            7.107820737183094,
+            51.239582691051666,
+          ],
+          Array [
+            7.107051038352181,
+            51.239582691051666,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 39,
+    "published_at": "2021-04-01T20:14:41.373Z",
+    "title": "Spielplatz Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.462Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.484Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.206Z",
+      "id": 24,
+      "published_at": "2021-03-30T21:08:07.205Z",
+      "raw_published": true,
+      "slug": "kleines-affenhaus",
+      "title": "Kleines Affenhaus",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:50:31.754Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.108538463436856,
+            51.23978298187313,
+          ],
+          Array [
+            7.108538463436856,
+            51.2394314487439,
+          ],
+          Array [
+            7.109065611577034,
+            51.2394314487439,
+          ],
+          Array [
+            7.109065611577034,
+            51.23978298187313,
+          ],
+          Array [
+            7.108538463436856,
+            51.23978298187313,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 40,
+    "published_at": "2021-04-01T20:14:41.384Z",
+    "title": "Kleines Affenhaus Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.489Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.509Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.326Z",
+      "id": 29,
+      "published_at": "2021-03-30T21:08:07.323Z",
+      "raw_published": true,
+      "slug": "okavango",
+      "title": "Okavango",
+      "type": "food",
+      "updated_at": "2021-03-30T21:08:07.326Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.109654514144449,
+            51.239305473169345,
+          ],
+          Array [
+            7.109654514144449,
+            51.23900436833281,
+          ],
+          Array [
+            7.1100160546828715,
+            51.23900436833281,
+          ],
+          Array [
+            7.1100160546828715,
+            51.239305473169345,
+          ],
+          Array [
+            7.109654514144449,
+            51.239305473169345,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 41,
+    "published_at": "2021-04-01T20:14:41.390Z",
+    "title": "Okavango Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.514Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.532Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.610Z",
+      "id": 43,
+      "published_at": "2021-03-30T21:08:07.608Z",
+      "raw_published": true,
+      "slug": "tiger",
+      "title": "Tiger",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:44:05.988Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.114276698252734,
+            51.238925836120714,
+          ],
+          Array [
+            7.114276698252734,
+            51.2381594052025,
+          ],
+          Array [
+            7.114927643184101,
+            51.2381594052025,
+          ],
+          Array [
+            7.114927643184101,
+            51.238925836120714,
+          ],
+          Array [
+            7.114276698252734,
+            51.238925836120714,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 42,
+    "published_at": "2021-04-01T20:14:41.393Z",
+    "title": "Tiger Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.537Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.552Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.485Z",
+      "id": 36,
+      "published_at": "2021-03-30T21:08:07.483Z",
+      "raw_published": true,
+      "slug": "seeloewen",
+      "title": "Seelöwen",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:46:15.570Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112140887674164,
+            51.24086727530663,
+          ],
+          Array [
+            7.112140887674164,
+            51.24064952815244,
+          ],
+          Array [
+            7.1125382563380635,
+            51.24064952815244,
+          ],
+          Array [
+            7.1125382563380635,
+            51.24086727530663,
+          ],
+          Array [
+            7.112140887674164,
+            51.24086727530663,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 43,
+    "published_at": "2021-04-01T20:14:41.396Z",
+    "title": "Seelöwen Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.560Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.575Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:06.914Z",
+      "id": 9,
+      "published_at": "2021-03-30T21:08:06.912Z",
+      "raw_published": true,
+      "slug": "brillenpinguine",
+      "title": "Brillenpinguine",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:52:35.058Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112409428652595,
+            51.241268593165564,
+          ],
+          Array [
+            7.112409428652595,
+            51.24097793057655,
+          ],
+          Array [
+            7.112803785978345,
+            51.24097793057655,
+          ],
+          Array [
+            7.112803785978345,
+            51.241268593165564,
+          ],
+          Array [
+            7.112409428652595,
+            51.241268593165564,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 44,
+    "published_at": "2021-04-01T20:14:41.401Z",
+    "title": "Brillenpinguine Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.580Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.593Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.534Z",
+      "id": 39,
+      "published_at": "2021-03-30T21:08:07.533Z",
+      "raw_published": true,
+      "slug": "suedamerikahaus",
+      "title": "Südamerikahaus",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:45:45.747Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.111742015340749,
+            51.2411956752266,
+          ],
+          Array [
+            7.111742015340749,
+            51.24096724793197,
+          ],
+          Array [
+            7.112062852825137,
+            51.24096724793197,
+          ],
+          Array [
+            7.112062852825137,
+            51.2411956752266,
+          ],
+          Array [
+            7.111742015340749,
+            51.2411956752266,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 45,
+    "published_at": "2021-04-01T20:14:41.404Z",
+    "title": "Südamerikahaus Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.598Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.608Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.044Z",
+      "id": 16,
+      "published_at": "2021-03-30T21:08:07.042Z",
+      "raw_published": true,
+      "slug": "gibbons",
+      "title": "Gibbons",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:53:51.141Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.108027439752747,
+            51.24082587943283,
+          ],
+          Array [
+            7.108027439752747,
+            51.24039018228943,
+          ],
+          Array [
+            7.108950760819631,
+            51.24039018228943,
+          ],
+          Array [
+            7.108950760819631,
+            51.24082587943283,
+          ],
+          Array [
+            7.108027439752747,
+            51.24082587943283,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 46,
+    "published_at": "2021-04-01T20:14:41.423Z",
+    "title": "Gibbons Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.614Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.624Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.097Z",
+      "id": 19,
+      "published_at": "2021-03-30T21:08:07.095Z",
+      "raw_published": true,
+      "slug": "kangurus",
+      "title": "Kangurus",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:54:27.226Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.107526093941576,
+            51.239820220881,
+          ],
+          Array [
+            7.107526093941576,
+            51.23937471253239,
+          ],
+          Array [
+            7.108446111734475,
+            51.23937471253239,
+          ],
+          Array [
+            7.108446111734475,
+            51.239820220881,
+          ],
+          Array [
+            7.107526093941576,
+            51.239820220881,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 47,
+    "published_at": "2021-04-01T20:14:41.426Z",
+    "title": "Kangurus Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.629Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.643Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.297Z",
+      "id": 28,
+      "published_at": "2021-03-30T21:08:07.295Z",
+      "raw_published": true,
+      "slug": "okapis",
+      "title": "Okapis",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:49:18.347Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.111299112684587,
+            51.24149267578407,
+          ],
+          Array [
+            7.111299112684587,
+            51.24116263565496,
+          ],
+          Array [
+            7.11229448991453,
+            51.24116263565496,
+          ],
+          Array [
+            7.11229448991453,
+            51.24149267578407,
+          ],
+          Array [
+            7.111299112684587,
+            51.24149267578407,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 48,
+    "published_at": "2021-04-01T20:14:41.428Z",
+    "title": "Okapis Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.650Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.664Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.186Z",
+      "id": 23,
+      "published_at": "2021-03-30T21:08:07.183Z",
+      "raw_published": true,
+      "slug": "kirk-dikdiks",
+      "title": "Kirk DikDiks",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:54:51.304Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.111280316815657,
+            51.24163717194919,
+          ],
+          Array [
+            7.111280316815657,
+            51.24150304541165,
+          ],
+          Array [
+            7.111839745860942,
+            51.24150304541165,
+          ],
+          Array [
+            7.111839745860942,
+            51.24163717194919,
+          ],
+          Array [
+            7.111280316815657,
+            51.24163717194919,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 49,
+    "published_at": "2021-04-01T20:14:41.430Z",
+    "title": "Kirk DikDiks Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.670Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.682Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.077Z",
+      "id": 18,
+      "published_at": "2021-03-30T21:08:07.076Z",
+      "raw_published": true,
+      "slug": "juniorzoo",
+      "title": "JuniorZoo",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T21:08:07.077Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.113319108717582,
+            51.24070380530231,
+          ],
+          Array [
+            7.113319108717582,
+            51.239933177452,
+          ],
+          Array [
+            7.113989277423831,
+            51.239933177452,
+          ],
+          Array [
+            7.113989277423831,
+            51.24070380530231,
+          ],
+          Array [
+            7.113319108717582,
+            51.24070380530231,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 50,
+    "published_at": "2021-04-01T20:14:41.431Z",
+    "title": "JuniorZoo Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.688Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.703Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.517Z",
+      "id": 38,
+      "published_at": "2021-03-30T21:08:07.516Z",
+      "raw_published": true,
+      "slug": "steinboecke",
+      "title": "Steinböcke",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:46:02.270Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112959627726498,
+            51.240797732943115,
+          ],
+          Array [
+            7.112959627726498,
+            51.24013426709288,
+          ],
+          Array [
+            7.113475886260061,
+            51.24013426709288,
+          ],
+          Array [
+            7.113475886260061,
+            51.240797732943115,
+          ],
+          Array [
+            7.112959627726498,
+            51.240797732943115,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 51,
+    "published_at": "2021-04-01T20:14:41.433Z",
+    "title": "Steinböcke Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.709Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.719Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.373Z",
+      "id": 31,
+      "published_at": "2021-03-30T21:08:07.370Z",
+      "raw_published": true,
+      "slug": "pinguine",
+      "title": "Pinguine",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:48:33.100Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112428104547893,
+            51.24060475920732,
+          ],
+          Array [
+            7.112428104547893,
+            51.24023957352811,
+          ],
+          Array [
+            7.11286053750515,
+            51.24023957352811,
+          ],
+          Array [
+            7.11286053750515,
+            51.24060475920732,
+          ],
+          Array [
+            7.112428104547893,
+            51.24060475920732,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 52,
+    "published_at": "2021-04-01T20:14:41.450Z",
+    "title": "Pinguine Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.724Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.735Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:06.969Z",
+      "id": 12,
+      "published_at": "2021-03-30T21:08:06.968Z",
+      "raw_published": true,
+      "slug": "eisbaeren",
+      "title": "Eisbären",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:53:19.635Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112536360754686,
+            51.24090429395053,
+          ],
+          Array [
+            7.112536360754686,
+            51.24053823933608,
+          ],
+          Array [
+            7.112965822365004,
+            51.24053823933608,
+          ],
+          Array [
+            7.112965822365004,
+            51.24090429395053,
+          ],
+          Array [
+            7.112536360754686,
+            51.24090429395053,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 53,
+    "published_at": "2021-04-01T20:14:41.452Z",
+    "title": "Eisbären Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.738Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.748Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.274Z",
+      "id": 27,
+      "published_at": "2021-03-30T21:08:07.271Z",
+      "raw_published": true,
+      "slug": "musikmuschel",
+      "title": "Musikmuschel",
+      "type": "poi",
+      "updated_at": "2021-03-30T21:08:07.274Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.109699104344144,
+            51.24051345840528,
+          ],
+          Array [
+            7.109699104344144,
+            51.240380999622374,
+          ],
+          Array [
+            7.109919263956126,
+            51.240380999622374,
+          ],
+          Array [
+            7.109919263956126,
+            51.24051345840528,
+          ],
+          Array [
+            7.109699104344144,
+            51.24051345840528,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 54,
+    "published_at": "2021-04-01T20:14:41.454Z",
+    "title": "Musikmuschel Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.752Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.762Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:06.950Z",
+      "id": 11,
+      "published_at": "2021-03-30T21:08:06.948Z",
+      "raw_published": true,
+      "slug": "eingang",
+      "title": "Eingang",
+      "type": "poi",
+      "updated_at": "2021-03-30T21:08:06.950Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.108809631837817,
+            51.241120871673154,
+          ],
+          Array [
+            7.108809631837817,
+            51.24089274737899,
+          ],
+          Array [
+            7.109262172375707,
+            51.24089274737899,
+          ],
+          Array [
+            7.109262172375707,
+            51.241120871673154,
+          ],
+          Array [
+            7.108809631837817,
+            51.241120871673154,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 55,
+    "published_at": "2021-04-01T20:14:41.456Z",
+    "title": "Eingang Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.767Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.778Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.668Z",
+      "id": 46,
+      "published_at": "2021-03-30T21:08:07.667Z",
+      "raw_published": true,
+      "slug": "yaks",
+      "title": "Yaks",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:43:49.882Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.110110853847336,
+            51.2401383964133,
+          ],
+          Array [
+            7.110110853847336,
+            51.23955324741945,
+          ],
+          Array [
+            7.111464856256457,
+            51.23955324741945,
+          ],
+          Array [
+            7.111464856256457,
+            51.2401383964133,
+          ],
+          Array [
+            7.110110853847336,
+            51.2401383964133,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 56,
+    "published_at": "2021-04-01T20:14:41.472Z",
+    "title": "Yaks Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.781Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.789Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.590Z",
+      "id": 42,
+      "published_at": "2021-03-30T21:08:07.588Z",
+      "raw_published": true,
+      "slug": "tierwelt-patagoniens",
+      "title": "Tierwelt Patagoniens",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:44:54.839Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.111790284731809,
+            51.23951752090978,
+          ],
+          Array [
+            7.111790284731809,
+            51.23844173903487,
+          ],
+          Array [
+            7.113862481291855,
+            51.23844173903487,
+          ],
+          Array [
+            7.113862481291855,
+            51.23951752090978,
+          ],
+          Array [
+            7.111790284731809,
+            51.23951752090978,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 57,
+    "published_at": "2021-04-01T20:14:41.475Z",
+    "title": "Tierwelt Patagoniens Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.792Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.802Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.008Z",
+      "id": 14,
+      "published_at": "2021-03-30T21:08:07.006Z",
+      "raw_published": true,
+      "slug": "emus",
+      "title": "Emus",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:53:36.205Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.111295673440485,
+            51.23991597153289,
+          ],
+          Array [
+            7.111295673440485,
+            51.23939615294564,
+          ],
+          Array [
+            7.112683412434774,
+            51.23939615294564,
+          ],
+          Array [
+            7.112683412434774,
+            51.23991597153289,
+          ],
+          Array [
+            7.111295673440485,
+            51.23991597153289,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 58,
+    "published_at": "2021-04-01T20:14:41.478Z",
+    "title": "Emus Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.805Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.814Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.350Z",
+      "id": 30,
+      "published_at": "2021-03-30T21:08:07.348Z",
+      "raw_published": true,
+      "slug": "pelikane",
+      "title": "Pelikane",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:48:44.656Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.111921135972528,
+            51.239437441141575,
+          ],
+          Array [
+            7.111921135972528,
+            51.238939506199664,
+          ],
+          Array [
+            7.112676597932507,
+            51.238939506199664,
+          ],
+          Array [
+            7.112676597932507,
+            51.239437441141575,
+          ],
+          Array [
+            7.111921135972528,
+            51.239437441141575,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 59,
+    "published_at": "2021-04-01T20:14:41.481Z",
+    "title": "Pelikane Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.819Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.830Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:06.840Z",
+      "id": 6,
+      "published_at": "2021-03-30T21:08:06.838Z",
+      "raw_published": true,
+      "slug": "baeren",
+      "title": "Bären",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:43:00.480Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.10995988702774,
+            51.23967149272588,
+          ],
+          Array [
+            7.10995988702774,
+            51.239036766845615,
+          ],
+          Array [
+            7.111414335360246,
+            51.239036766845615,
+          ],
+          Array [
+            7.111414335360246,
+            51.23967149272588,
+          ],
+          Array [
+            7.10995988702774,
+            51.23967149272588,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 60,
+    "published_at": "2021-04-01T20:14:41.499Z",
+    "title": "Bären Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.834Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.844Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.466Z",
+      "id": 35,
+      "published_at": "2021-03-30T21:08:07.465Z",
+      "raw_published": true,
+      "slug": "rothunde",
+      "title": "Rothunde",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:46:25.473Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.11009733681819,
+            51.2390799656974,
+          ],
+          Array [
+            7.11009733681819,
+            51.23867917871531,
+          ],
+          Array [
+            7.110791056348296,
+            51.23867917871531,
+          ],
+          Array [
+            7.110791056348296,
+            51.2390799656974,
+          ],
+          Array [
+            7.11009733681819,
+            51.2390799656974,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 61,
+    "published_at": "2021-04-01T20:14:41.503Z",
+    "title": "Rothunde Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.848Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.858Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.689Z",
+      "id": 47,
+      "published_at": "2021-03-30T21:08:07.687Z",
+      "raw_published": true,
+      "slug": "zebras",
+      "title": "Zebras",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:43:40.768Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112605545548831,
+            51.24000374150304,
+          ],
+          Array [
+            7.112605545548831,
+            51.23909757478242,
+          ],
+          Array [
+            7.113453947081987,
+            51.23909757478242,
+          ],
+          Array [
+            7.113453947081987,
+            51.24000374150304,
+          ],
+          Array [
+            7.112605545548831,
+            51.24000374150304,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 62,
+    "published_at": "2021-04-01T20:14:41.505Z",
+    "title": "Zebras Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.863Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.871Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.394Z",
+      "id": 32,
+      "published_at": "2021-03-30T21:08:07.392Z",
+      "raw_published": true,
+      "slug": "pinselohrschweine",
+      "title": "Pinselohrschweine",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:48:03.704Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112700364708901,
+            51.240464485015664,
+          ],
+          Array [
+            7.112700364708901,
+            51.24013878205026,
+          ],
+          Array [
+            7.112979019464465,
+            51.24013878205026,
+          ],
+          Array [
+            7.112979019464465,
+            51.240464485015664,
+          ],
+          Array [
+            7.112700364708901,
+            51.240464485015664,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 63,
+    "published_at": "2021-04-01T20:14:41.527Z",
+    "title": "Pinselohrschweine Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.876Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:14:41.886Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:06.895Z",
+      "id": 8,
+      "published_at": "2021-03-30T21:08:06.893Z",
+      "raw_published": true,
+      "slug": "bongos",
+      "title": "Bongos",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:52:22.921Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          Array [
+            7.112927514784476,
+            51.24045742335187,
+          ],
+          Array [
+            7.112927514784476,
+            51.23997982199505,
+          ],
+          Array [
+            7.113425085425377,
+            51.23997982199505,
+          ],
+          Array [
+            7.113425085425377,
+            51.24045742335187,
+          ],
+          Array [
+            7.112927514784476,
+            51.24045742335187,
+          ],
+        ],
+        "type": "LineString",
+      },
+      "type": "Feature",
+    },
+    "id": 64,
+    "published_at": "2021-04-01T20:14:41.573Z",
+    "title": "Bongos Box",
+    "type": "box",
+    "updated_at": "2021-04-01T20:14:41.890Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:16:48.856Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:06.914Z",
+      "id": 9,
+      "published_at": "2021-03-30T21:08:06.912Z",
+      "raw_published": true,
+      "slug": "brillenpinguine",
+      "title": "Brillenpinguine",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:52:35.058Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.112548341605529,
+          51.241027797619765,
+        ],
+        "type": "Point",
+      },
+      "type": "Feature",
+    },
+    "id": 66,
+    "published_at": "2021-04-01T20:16:48.821Z",
+    "title": "Brillenpinguine Point",
+    "type": "point",
+    "updated_at": "2021-04-01T20:16:48.860Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:16:48.879Z",
+    "facility": Object {
+      "body": undefined,
+      "created_at": undefined,
+      "id": undefined,
+      "published_at": undefined,
+      "raw_published": undefined,
+      "slug": undefined,
+      "title": undefined,
+      "type": undefined,
+      "updated_at": undefined,
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.112208416316375,
+          51.238091948461374,
+        ],
+        "type": "Point",
+      },
+      "type": "Feature",
+    },
+    "id": 67,
+    "published_at": "2021-04-01T20:16:48.846Z",
+    "title": "Rentiere Point",
+    "type": "point",
+    "updated_at": "2021-04-01T20:16:48.883Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:16:48.893Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.140Z",
+      "id": 21,
+      "published_at": "2021-03-30T21:08:07.137Z",
+      "raw_published": true,
+      "slug": "kiang",
+      "title": "Kiang",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:54:40.190Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.111728521790511,
+          51.23814203118328,
+        ],
+        "type": "Point",
+      },
+      "type": "Feature",
+    },
+    "id": 68,
+    "published_at": "2021-04-01T20:16:48.852Z",
+    "title": "Kiang Point",
+    "type": "point",
+    "updated_at": "2021-04-01T20:16:48.897Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:16:48.915Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.610Z",
+      "id": 43,
+      "published_at": "2021-03-30T21:08:07.608Z",
+      "raw_published": true,
+      "slug": "tiger",
+      "title": "Tiger",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:44:05.988Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.114663876640384,
+          51.23840972333189,
+        ],
+        "type": "Point",
+      },
+      "type": "Feature",
+    },
+    "id": 69,
+    "published_at": "2021-04-01T20:16:48.872Z",
+    "title": "Tiger Point",
+    "type": "point",
+    "updated_at": "2021-04-01T20:16:48.919Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:16:48.930Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.297Z",
+      "id": 28,
+      "published_at": "2021-03-30T21:08:07.295Z",
+      "raw_published": true,
+      "slug": "okapis",
+      "title": "Okapis",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:49:18.347Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.112148509483061,
+          51.241209600404446,
+        ],
+        "type": "Point",
+      },
+      "type": "Feature",
+    },
+    "id": 70,
+    "published_at": "2021-04-01T20:16:48.875Z",
+    "title": "Okapis Point",
+    "type": "point",
+    "updated_at": "2021-04-01T20:16:48.935Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:16:48.943Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.534Z",
+      "id": 39,
+      "published_at": "2021-03-30T21:08:07.533Z",
+      "raw_published": true,
+      "slug": "suedamerikahaus",
+      "title": "Südamerikahaus",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:45:45.747Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.111888566614887,
+          51.24107187291918,
+        ],
+        "type": "Point",
+      },
+      "type": "Feature",
+    },
+    "id": 71,
+    "published_at": "2021-04-01T20:16:48.877Z",
+    "title": "Südamerikahaus Point",
+    "type": "point",
+    "updated_at": "2021-04-01T20:16:48.948Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:16:48.958Z",
+    "facility": Object {
+      "body": undefined,
+      "created_at": undefined,
+      "id": undefined,
+      "published_at": undefined,
+      "raw_published": undefined,
+      "slug": undefined,
+      "title": undefined,
+      "type": undefined,
+      "updated_at": undefined,
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.1122884787197735,
+          51.24023298732718,
+        ],
+        "type": "Point",
+      },
+      "type": "Feature",
+    },
+    "id": 72,
+    "published_at": "2021-04-01T20:16:48.878Z",
+    "title": "Vogelhaus Point",
+    "type": "point",
+    "updated_at": "2021-04-01T20:16:48.964Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:16:48.972Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.668Z",
+      "id": 46,
+      "published_at": "2021-03-30T21:08:07.667Z",
+      "raw_published": true,
+      "slug": "yaks",
+      "title": "Yaks",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:43:49.882Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.1107688127212025,
+          51.239744680788554,
+        ],
+        "type": "Point",
+      },
+      "type": "Feature",
+    },
+    "id": 73,
+    "published_at": "2021-04-01T20:16:48.892Z",
+    "title": "Yaks Point",
+    "type": "point",
+    "updated_at": "2021-04-01T20:16:48.976Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:16:48.984Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.326Z",
+      "id": 29,
+      "published_at": "2021-03-30T21:08:07.323Z",
+      "raw_published": true,
+      "slug": "okavango",
+      "title": "Okavango",
+      "type": "food",
+      "updated_at": "2021-03-30T21:08:07.326Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.109789028064229,
+          51.23906856153862,
+        ],
+        "type": "Point",
+      },
+      "type": "Feature",
+    },
+    "id": 74,
+    "published_at": "2021-04-01T20:16:48.907Z",
+    "title": "Okavango Point",
+    "type": "point",
+    "updated_at": "2021-04-01T20:16:48.989Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:16:48.998Z",
+    "facility": Object {
+      "body": "Some Content
+
+Some other content",
+      "created_at": "2021-03-30T21:08:06.757Z",
+      "id": 2,
+      "published_at": "2021-03-30T21:08:06.745Z",
+      "raw_published": true,
+      "slug": "affenhaus",
+      "title": "Affenhaus",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:50:51.591Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.109769032458983,
+          51.239581911942345,
+        ],
+        "type": "Point",
+      },
+      "type": "Feature",
+    },
+    "id": 75,
+    "published_at": "2021-04-01T20:16:48.910Z",
+    "title": "Affenhaus Point",
+    "type": "point",
+    "updated_at": "2021-04-01T20:16:49.003Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:16:49.011Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.274Z",
+      "id": 27,
+      "published_at": "2021-03-30T21:08:07.271Z",
+      "raw_published": true,
+      "slug": "musikmuschel",
+      "title": "Musikmuschel",
+      "type": "poi",
+      "updated_at": "2021-03-30T21:08:07.274Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.1097830293826565,
+          51.24043331821483,
+        ],
+        "type": "Point",
+      },
+      "type": "Feature",
+    },
+    "id": 76,
+    "published_at": "2021-04-01T20:16:48.912Z",
+    "title": "Musikmuschel Point",
+    "type": "point",
+    "updated_at": "2021-04-01T20:16:49.015Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:16:49.024Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:07.044Z",
+      "id": 16,
+      "published_at": "2021-03-30T21:08:07.042Z",
+      "raw_published": true,
+      "slug": "gibbons",
+      "title": "Gibbons",
+      "type": "enclosure",
+      "updated_at": "2021-03-30T22:53:51.141Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.108161373799975,
+          51.24063740530661,
+        ],
+        "type": "Point",
+      },
+      "type": "Feature",
+    },
+    "id": 77,
+    "published_at": "2021-04-01T20:16:48.914Z",
+    "title": "Gibbons Point",
+    "type": "point",
+    "updated_at": "2021-04-01T20:16:49.028Z",
+  },
+  Object {
+    "created_at": "2021-04-01T20:16:49.036Z",
+    "facility": Object {
+      "body": "Some Content
+",
+      "created_at": "2021-03-30T21:08:06.950Z",
+      "id": 11,
+      "published_at": "2021-03-30T21:08:06.948Z",
+      "raw_published": true,
+      "slug": "eingang",
+      "title": "Eingang",
+      "type": "poi",
+      "updated_at": "2021-03-30T21:08:06.950Z",
+    },
+    "geojson": Object {
+      "geometry": Object {
+        "coordinates": Array [
+          7.109056661028307,
+          51.24099376891437,
+        ],
+        "type": "Point",
+      },
+      "type": "Feature",
+    },
+    "id": 78,
+    "published_at": "2021-04-01T20:16:48.928Z",
+    "title": "Eingang Point",
+    "type": "point",
+    "updated_at": "2021-04-01T20:16:49.040Z",
+  },
+]
+`;

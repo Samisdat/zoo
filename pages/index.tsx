@@ -8,10 +8,11 @@ import {Teaser, TeaserPropsInterface} from "../components/Map/Teaser";
 
 import createPersistedState from 'use-persisted-state';
 import SearchDialog from "../components/Search/Search";
+import {getMapElements, MapElementInterface} from "../data-api/map-elements";
 const useMapState = createPersistedState('map');
 
 export interface IndexProps{
-    geoJson: FeatureCollection;
+    mapElements: MapElementInterface[];
     navigation?: NavigationInterface;
     setFocus?: Function;
     toggleSearch?: Function;
@@ -21,7 +22,7 @@ export interface IndexProps{
 
 export interface MapState {
     openSearch: boolean;
-    focus: MapFocus | Feature<Polygon>;
+    focus: MapFocus | MapElementInterface;
 }
 
 export type MapFocus = 'none';
@@ -51,7 +52,7 @@ export default function Index(props:IndexProps) {
 
     const [hasResizeListener, setHasResizeListener] = useState<boolean>(false);
 
-    const storeFocus = (focus:MapFocus | Feature<Polygon>) => {
+    const storeFocus = (focus:MapFocus | MapElementInterface) => {
 
         setMapState({
             ...mapState,
@@ -64,7 +65,7 @@ export default function Index(props:IndexProps) {
 
     }
 
-    const setFocus = (focus:MapFocus | Feature<Polygon>) => {
+    const setFocus = (focus:MapFocus | MapElementInterface) => {
 
         if('none' === focus || undefined === focus){
 
@@ -72,7 +73,7 @@ export default function Index(props:IndexProps) {
             return;
         }
 
-        focus = focus as Feature<Polygon>;
+        focus = focus as MapElementInterface;
 
 
         if('none' === mapState.focus){
@@ -82,7 +83,7 @@ export default function Index(props:IndexProps) {
             return;
         }
 
-        if(focus.properties.slug !== mapState.focus?.properties?.slug){
+        if(focus.properties.facility.slug !== mapState.focus?.properties.facility.slug){
 
             storeFocus(focus)
 
@@ -134,13 +135,16 @@ export default function Index(props:IndexProps) {
         <React.Fragment>
             <MapRoot
                 focus={mapState.focus}
+                setFocus={setFocus}
                 setTeaser={setTeaser}
                 mapDimension={mapDimensionState}
                 fullsize={true}
-                {...props}
+                mapElements={props.mapElements}
+                navigation={props.navigation}
+                toggleTeaser={props.toggleTeaser}
             />
             <SearchDialog
-                geoJson={props.geoJson}
+                mapElements={props.mapElements}
                 setFocus={setFocus}
             />
             <Teaser
@@ -152,10 +156,10 @@ export default function Index(props:IndexProps) {
 
 export async function getStaticProps(context) {
 
-    let getJson = await getFullGeoJson();
+    const mapElements = await getMapElements();
 
     const indexProps:IndexProps = {
-        geoJson: getJson
+        mapElements
     };
 
     return {

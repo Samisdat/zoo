@@ -2,8 +2,20 @@ import * as d3 from 'd3';
 
 import React, {useEffect} from 'react';
 import {Feature} from "geojson";
+import {MapDimension, MapFocus} from "../../pages";
+import {MapElementInterface} from "../../data-api/map-elements";
+import {NavigationInterface} from "../Navigation/Interfaces";
+import {MapStateInterface} from "./Interface";
 
-export const Sketched = (props) => {
+interface MapSketchedProperties {
+    mapState:MapStateInterface;
+    boundingBox:MapElementInterface[];
+}
+
+
+export const Sketched = (props:MapSketchedProperties) => {
+
+    console.log(props)
 
     const svgId = 'main-svg';
 
@@ -46,12 +58,13 @@ export const Sketched = (props) => {
                 return 0.0;
             })
             .attr("id", (d:Feature)=>{
-                return d.properties.slug;
+                return 'bounding_box';
             })
             .attr("d", props.mapState.pathGenerator)
         ;
 
-        const bound = mapSvg.select(`#bounding-box`);
+        const bound = mapSvg.select(`#bounding_box`);
+
         const boundingBox = (bound.node() as SVGGraphicsElement).getBBox();
 
         const x = boundingBox.x;

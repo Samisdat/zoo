@@ -33,7 +33,19 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export default function PinnedSubheaderList(props) {
+interface OrderedMapElements{
+    [index: string]: MapElementInterface[];
+}
+
+interface PinnedSubheaderListProperties {
+    ordered:OrderedMapElements;
+    handleClickItem:Function;
+}
+
+export default function PinnedSubheaderList(props:PinnedSubheaderListProperties) {
+
+    console.log(props)
+
     const classes = useStyles();
 
     const onListItemClick = (item:MapElementInterface) => {

@@ -7,9 +7,11 @@ import {MapStateInterface, MapTransformInterface} from "./Interface";
 import {PointOfInterest} from "./PointOfInterest";
 import {Feature} from "geojson";
 import {centerToFeatureCollection} from "../Distribution/Detail";
-import {MapFocus} from "../../pages";
+import {MapDimension, MapFocus} from "../../pages";
 import {Segments} from "./Segments";
 import {filterGeoJson} from "helper/geojson/filterGeoJson";
+import {MapElementInterface} from "../../data-api/map-elements";
+import {NavigationInterface} from "../Navigation/Interfaces";
 
 // zoom until focus.width or focus.height extends window.width or window.height
 export const findBestZoomLevel = (x0, x1, y0, y1, maxWidth, maxHeight) => {
@@ -64,12 +66,27 @@ interface ZoomDependencies {
     zooming:any,
 }
 
-export const Group = (props) => {
+interface MapGroupProperties {
+    focus: MapFocus | MapElementInterface;
+    setFocus: Function;
+    setTeaser: Function;
+    mapDimension: MapDimension;
+    fullsize: boolean;
+    mapElements: MapElementInterface[];
+    navigation: NavigationInterface;
+    toggleTeaser: Function;
+    mapState:MapStateInterface;
+    setTransform:Function;
+}
+
+export const Group = (props:MapGroupProperties) => {
 
     const svgId = 'main-svg';
     const mapId = 'main-map';
 
-    const boundingBox = filterGeoJson('bounding-box', props.geoJson);
+    const boundingBox = filterGeoJson('bounding_box', props.mapElements);
+
+    console.log(boundingBox)
 
     const [autoZoom, setAutoZoom] = useState<boolean>(false);
     const [zoom, setZoom] = useState<number>(props.mapState.transform.k);
@@ -182,10 +199,7 @@ export const Group = (props) => {
         }
 
         //zoomDependencies.mapSvg.on('.zoom', null);
-        const centerOfEnclosure = centerToFeatureCollection({
-            features:[props.focus],
-            type:'FeatureCollection'
-        });
+        const centerOfEnclosure = centerToFeatureCollection([(props.focus as MapElementInterface)]);
 
         const [[x0, y0], [x1, y1]] = props.mapState.pathGenerator.bounds(centerOfEnclosure as any);
 
@@ -202,11 +216,13 @@ export const Group = (props) => {
 
             let href = '/api/teaser/';
 
+
+
             if(
-                'poi' === props.focus?.facility?.type ||
-                'food' === props.focus?.facility?.type ||
-                'playground' === props.focus?.facility?.type ||
-                'enclosure' === props.focus?.facility?.type
+                'poi' === (props.focus as MapElementInterface)?.properties?.facility?.type ||
+                'food' === (props.focus as MapElementInterface)?.properties?.facility?.type ||
+                'playground' === (props.focus as MapElementInterface)?.properties?.facility?.type ||
+                'enclosure' === (props.focus as MapElementInterface)?.properties?.facility?.type
             ){
                 href += 'facility/';
             }
@@ -214,7 +230,7 @@ export const Group = (props) => {
                 href += 'not-yet-implemented/';
             }
 
-            href += props.focus.properties.facility.slug;
+            href += (props.focus as MapElementInterface).properties.facility.slug;
 
             props.setTeaser({
                 apiUrl: href,

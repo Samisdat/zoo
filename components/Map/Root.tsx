@@ -6,6 +6,9 @@ import {Group} from "./Group";
 import {Feature} from "geojson";
 import {makeStyles} from "@material-ui/core/styles";
 import {ZoomLevel} from "./ZoomLevel";
+import {MapElementInterface} from "../../data-api/map-elements";
+import {MapDimension, MapFocus} from "../../pages";
+import {NavigationInterface} from "../Navigation/Interfaces";
 
 const markerDefault: MarkerInterface = {
     lat: 51.238741,
@@ -42,8 +45,18 @@ const useStyles = makeStyles({
     }
 });
 
+interface MapRootInterface{
+    focus: MapFocus | MapElementInterface;
+    setFocus: Function;
+    setTeaser: Function;
+    mapDimension: MapDimension;
+    fullsize: boolean;
+    mapElements: MapElementInterface[];
+    navigation: NavigationInterface;
+    toggleTeaser: Function;
+}
 
-export const MapRoot = (props) => {
+export const MapRoot = (props:MapRootInterface) => {
 
     const classes = useStyles();
 
@@ -51,9 +64,9 @@ export const MapRoot = (props) => {
 
     const [mapState, setMapState] = useState<MapStateInterface>(MapStateDefault);
 
-    const border = props.geoJson.features.find((feature:Feature) => {
+    const border = props.mapElements.find((mapElement:MapElementInterface) => {
 
-        if('border' === feature.properties?.type){
+        if('border' === mapElement.properties?.type){
             return true;
         }
 

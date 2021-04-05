@@ -77,9 +77,7 @@ const Transition = React.forwardRef(function Transition(
 
 export interface SearchDialogProperties{
     mapElements:MapElementInterface[];
-    geoJson:any;
-    setFocus:any;
-
+    setFocus:Function;
 };
 
 export default function SearchDialog(props:SearchDialogProperties) {
@@ -141,8 +139,6 @@ export default function SearchDialog(props:SearchDialogProperties) {
     Object.keys(group).sort().forEach(function(key) {
         ordered[key] = group[key];
     });
-
-    console.log(ordered)
 
     const [open, setOpen] = React.useState(false);
 

@@ -6,6 +6,7 @@ import {GeoPath} from "d3";
 import {GeoProjection} from "d3-geo";
 import {MapTransformInterface} from "../Map/Interface";
 import {FeatureCollection} from "geojson";
+import {MapElementInterface} from "../../data-api/map-elements";
 
 const mapTransformDefault = {
     k:1,
@@ -35,12 +36,12 @@ const MapStateDefault: DistributionDetailStateInterface = {
     },
 }
 
-export const centerToFeatureCollection = (featureset:FeatureCollection) => {
+export const centerToFeatureCollection = (mapElements:MapElementInterface[]) => {
 
     const latitudes = [];
     const longitudes = [];
 
-    for(const feature of featureset.features){
+    for(const feature of mapElements){
 
         if(undefined === feature.geometry){
             continue;

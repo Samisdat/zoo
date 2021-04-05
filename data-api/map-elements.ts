@@ -17,7 +17,7 @@ export interface FacilityInterface{
     updated_at: string;
 }
 
-export type MapElementType = 'point' | 'box' | 'border';
+export type MapElementType = 'point' | 'box' | 'border' | 'bounding_box';
 
 export interface MapElementInterface extends Feature{
     id: string;

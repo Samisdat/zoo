@@ -13,6 +13,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import {Feature} from "geojson";
 import PinnedSubheaderList from "./SearchList";
 import ChipsArray from "./Chips";
+import {MapElementInterface} from "../../data-api/map-elements";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -74,29 +75,39 @@ const Transition = React.forwardRef(function Transition(
     return <Slide direction="down" ref={ref} {...props} />;
 });
 
-export default function SearchDialog(props) {
+export interface SearchDialogProperties{
+    mapElements:MapElementInterface[];
+    geoJson:any;
+    setFocus:any;
+
+};
+
+export default function SearchDialog(props:SearchDialogProperties) {
     const classes = useStyles();
 
-    const options = props.geoJson.features.filter((feature:Feature) => {
+    const options = props.mapElements.filter((mapElement:MapElementInterface) => {
 
-        if('facility-box' !== feature.properties?.type){
+        if('box' !== mapElement.properties.type){
             return false;
         }
 
+        if(!mapElement.properties.facility){
+            return false;
+        }
 
-        if('playground' === feature.properties?.facilityType){
+        if('playground' === mapElement.properties.facility.type){
             return true;
         }
 
-        if('food' === feature.properties?.facilityType){
+        if('food' === mapElement.properties.facility.type){
             return true;
         }
 
-        if('poi' === feature.properties?.facilityType){
+        if('poi' === mapElement.properties.facility.type){
             return true;
         }
 
-        if('enclosure' === feature.properties?.facilityType){
+        if('enclosure' === mapElement.properties.facility.type){
             return true;
         }
 
@@ -106,7 +117,8 @@ export default function SearchDialog(props) {
 
     let group = options
         .reduce((r, e) => {
-            let firstLetter = e.properties.name[0].toLowerCase();
+
+            let firstLetter = e.properties.facility.title[0].toLowerCase();
 
             firstLetter = firstLetter
                 .replace('ä', 'a')
@@ -130,6 +142,8 @@ export default function SearchDialog(props) {
         ordered[key] = group[key];
     });
 
+    console.log(ordered)
+
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -143,7 +157,7 @@ export default function SearchDialog(props) {
         setOpen(false);
     };
 
-    const handleClickItem = (item:Feature) => {
+    const handleClickItem = (item:MapElementInterface) => {
 
         setOpen(false);
 
@@ -164,7 +178,7 @@ export default function SearchDialog(props) {
             </Paper>
             <Dialog
                 fullScreen
-                open={open}
+                open={open}/*open={true}*/
                 onClose={handleClose}
                 TransitionComponent={Transition}
             >

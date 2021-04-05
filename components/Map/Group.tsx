@@ -203,10 +203,10 @@ export const Group = (props) => {
             let href = '/api/teaser/';
 
             if(
-                'poi' === props.focus?.properties?.facilityType ||
-                'food' === props.focus?.properties?.facilityType ||
-                'playground' === props.focus?.properties?.facilityType ||
-                'enclosure' === props.focus?.properties?.facilityType
+                'poi' === props.focus?.facility?.type ||
+                'food' === props.focus?.facility?.type ||
+                'playground' === props.focus?.facility?.type ||
+                'enclosure' === props.focus?.facility?.type
             ){
                 href += 'facility/';
             }
@@ -214,7 +214,7 @@ export const Group = (props) => {
                 href += 'not-yet-implemented/';
             }
 
-            href += props.focus.properties.slug;
+            href += props.focus.properties.facility.slug;
 
             props.setTeaser({
                 apiUrl: href,
@@ -251,7 +251,7 @@ export const Group = (props) => {
                 pathGenerator={props.mapState.pathGenerator}
                 projection={props.mapState.projection}
                 zoom={zoom}
-                geoJson={props.geoJson}
+                mapElements={props.mapElements}
             />
         </g>
     );

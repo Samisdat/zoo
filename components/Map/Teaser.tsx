@@ -288,7 +288,7 @@ export const Teaser = (props: TeaserPropsInterface) => {
             <CardActions disableSpacing>
                 <Button
                     startIcon={<KeyboardArrowRight />}
-                    href={data.animals[activeStep].href}
+                    /*href={data.animals[activeStep].href}*/
                 >
                     Details
                 </Button>

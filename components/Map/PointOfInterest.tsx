@@ -1,17 +1,25 @@
 import React, {useEffect} from 'react';
 import * as d3 from 'd3';
 import {Feature} from "geojson";
+import {MapElementInterface} from "../../data-api/map-elements";
 
-export const PointOfInterest = (props) => {
+export interface PointOfInterestProperties{
+    mapElements:MapElementInterface[];
+    pathGenerator:any;
+    projection:any;
+    zoom:number;
+};
+
+export const PointOfInterest = (props:PointOfInterestProperties) => {
 
     const svgId = 'main-svg';
 
     const positionId = 'poi-points';
     const clickId = 'poi-click';
 
-    const pois = props.geoJson.features.filter((feature:Feature) => {
+    const pois = props.mapElements.filter((mapElement:MapElementInterface) => {
 
-        if('facility-circle' === feature.properties?.type){
+        if('point' === mapElement.properties.type){
             return true;
         }
 

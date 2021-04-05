@@ -17,17 +17,18 @@ export interface FacilityInterface{
     updated_at: string;
 }
 
-export type MapElementType = 'point' | 'box';
+export type MapElementType = 'point' | 'box' | 'border';
 
-export interface MapElementInterface {
+export interface MapElementInterface extends Feature{
     id: string;
-    title: string;
-    geojson: Feature;
-    facility: FacilityInterface;
-    type: MapElementType;
-    published_at: string;
-    created_at: string;
-    updated_at: string;
+    properties:{
+        name: string;
+        facility: FacilityInterface | null;
+        type: MapElementType;
+        published_at: string;
+        created_at: string;
+        updated_at: string;
+    }
 };
 
 const castFacility = (rawFacility:any):FacilityInterface => {
@@ -61,8 +62,12 @@ const castMapElement = (rawMapElement:any):MapElementInterface=>{
 
     const id = rawMapElement.id;
     const title = rawMapElement.title;
-    const geojson = rawMapElement.geojson;
-    const facility = castFacility(rawMapElement.facility);
+    const geojson = rawMapElement.geojson as Feature;
+    let facility = rawMapElement.facility;
+
+    if(facility){
+        facility = castFacility(facility);
+    }
     const type = rawMapElement.type;
     const published_at = rawMapElement.published_at;
     const created_at = rawMapElement.created_at;
@@ -70,13 +75,16 @@ const castMapElement = (rawMapElement:any):MapElementInterface=>{
 
     const mapElement:MapElementInterface = {
         id,
-        title,
-        geojson,
-        facility,
-        type,
-        published_at,
-        created_at,
-        updated_at,
+        type: geojson.type,
+        geometry: geojson.geometry,
+        properties:{
+            name: title,
+            facility,
+            type,
+            published_at,
+            created_at,
+            updated_at,
+        }
     };
 
     return mapElement

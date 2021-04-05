@@ -25,7 +25,8 @@
       "type": "enumeration",
       "enum": [
         "box",
-        "point"
+        "point",
+        "border"
       ]
     }
   }

@@ -54,6 +54,9 @@ export const PointOfInterest = (props:PointOfInterestProperties) => {
             .data(pois)
             .join('circle')
             .attr('transform', function(d) { return 'translate(' + props.pathGenerator.centroid(d) + ')'; })
+            .attr("id", (d:MapElementInterface)=>{
+                return d.properties.facility.slug;
+            })
             .attr('fill', (d, i)=>{
                 return 'blue';
             })
@@ -70,7 +73,7 @@ export const PointOfInterest = (props:PointOfInterestProperties) => {
             })
             .attr('d', props.pathGenerator)
             .attr('r', radius *2.5)
-            .attr('opacity', 0 )
+            .attr('opacity', 3 )
             .on("click", clicked)
         ;
 

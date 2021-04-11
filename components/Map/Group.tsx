@@ -1,14 +1,12 @@
 import * as d3 from 'd3';
 import React, {useEffect, useState} from "react";
-import {Ways} from "./Ways";
+
 import {Sketched} from "./Sketched";
 import {CurrentPosition} from "./CurrentPosition";
 import {MapStateInterface, MapTransformInterface} from "./Interface";
 import {PointOfInterest} from "./PointOfInterest";
-import {Feature} from "geojson";
 import {centerToFeatureCollection} from "../Distribution/Detail";
 import {MapDimension, MapFocus} from "../../pages";
-import {Segments} from "./Segments";
 import {filterGeoJson} from "helper/geojson/filterGeoJson";
 import {MapElementInterface} from "../../data-api/map-elements";
 import {NavigationInterface} from "../Navigation/Interfaces";
@@ -85,8 +83,6 @@ export const Group = (props:MapGroupProperties) => {
     const mapId = 'main-map';
 
     const boundingBox = filterGeoJson('bounding_box', props.mapElements);
-
-    console.log(boundingBox)
 
     const [autoZoom, setAutoZoom] = useState<boolean>(false);
     const [zoom, setZoom] = useState<number>(props.mapState.transform.k);

@@ -1,10 +1,8 @@
 import * as d3 from 'd3';
 
 import React, {useEffect} from 'react';
-import {Feature} from "geojson";
-import {MapDimension, MapFocus} from "../../pages";
+import {Feature, Polygon} from "geojson";
 import {MapElementInterface} from "../../data-api/map-elements";
-import {NavigationInterface} from "../Navigation/Interfaces";
 import {MapStateInterface} from "./Interface";
 
 interface MapSketchedProperties {
@@ -14,8 +12,6 @@ interface MapSketchedProperties {
 
 
 export const Sketched = (props:MapSketchedProperties) => {
-
-    console.log(props)
 
     const svgId = 'main-svg';
 
@@ -41,6 +37,32 @@ export const Sketched = (props:MapSketchedProperties) => {
 
         var elementsGroup = mapSvg.select(`#${mapElementId}`);
 
+        console.log(props.boundingBox[0]);
+
+        const __boundingBox = props.boundingBox.map((mapElement:MapElementInterface)=>{
+
+            // for reason d3 v6 renders polygons as rectangle
+            // this is the workaround
+
+            const type = mapElement.geometry.type;
+
+            if('Polygon' !== type){
+                return mapElement;
+            }
+
+            const polygon:Feature<Polygon> = mapElement as Feature<Polygon>;
+
+            mapElement.geometry = {
+                type: 'LineString',
+                coordinates: polygon.geometry.coordinates[0]
+            };
+
+            return mapElement;
+
+        });
+
+        console.log(props.boundingBox[0]);
+
         elementsGroup.selectAll("path")
             .data(props.boundingBox)
             .enter()
@@ -52,10 +74,10 @@ export const Sketched = (props:MapSketchedProperties) => {
                 return "blue";
             })
             .attr("stroke-width", (d:Feature)=>{
-                return '0.1px';
+                return '10px';
             })
             .attr("opacity", (d:Feature)=>{
-                return 0.0;
+                return 0;
             })
             .attr("id", (d:Feature)=>{
                 return 'bounding_box';

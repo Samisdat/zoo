@@ -1,13 +1,11 @@
 import React, {useEffect, useState} from 'react';
-
-import {Feature, FeatureCollection, LineString, Polygon} from 'geojson';
-import {MapRoot} from 'components/Map/Root';
-import {NavigationInterface} from "../components/Navigation/Interfaces";
-import {getFullGeoJson} from "./api/geojson/list";
-import {Teaser, TeaserPropsInterface} from "../components/Map/Teaser";
-
 import createPersistedState from 'use-persisted-state';
-import SearchDialog from "../components/Search/Search";
+
+import {MapRoot} from 'components/Map/Root';
+import {NavigationInterface} from "components/Navigation/Interfaces";
+import {Teaser, TeaserPropsInterface} from "components/Map/Teaser";
+
+import SearchDialog from "components/Search/Search";
 import {getMapElements, MapElementInterface} from "../data-api/map-elements";
 const useMapState = createPersistedState('map');
 
@@ -17,7 +15,6 @@ export interface IndexProps{
     setFocus?: Function;
     toggleSearch?: Function;
     toggleTeaser?: Function;
-
 }
 
 export interface MapState {
@@ -129,7 +126,6 @@ export default function Index(props:IndexProps) {
         setDimension();
 
     },[mapDimensionState]);
-
 
     return (
         <React.Fragment>

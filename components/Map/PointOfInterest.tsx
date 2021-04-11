@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import * as d3 from 'd3';
-import {Feature} from "geojson";
 import {MapElementInterface} from "../../data-api/map-elements";
+import {Feature} from "geojson";
 
 export interface PointOfInterestProperties{
     mapElements:MapElementInterface[];
@@ -82,9 +82,9 @@ export const PointOfInterest = (props:PointOfInterestProperties) => {
             .data(pois)
             .enter()
             .append("text")
-            .text((d:Feature) => {
+            .text((d:MapElementInterface) => {
                 //console.log(d)
-                return d.properties.name;
+                return d.properties.facility.title;
             })
             .attr("x", (d:Feature) => {
                 return props.projection(d.geometry.coordinates)[0] + 5;

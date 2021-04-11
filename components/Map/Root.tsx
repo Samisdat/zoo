@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
-
+import {makeStyles} from "@material-ui/core/styles";
 import * as d3 from 'd3';
+
 import {MapStateInterface, MapTransformInterface, MarkerInterface} from "components/Map/Interface";
 import {Group} from "./Group";
-import {Feature} from "geojson";
-import {makeStyles} from "@material-ui/core/styles";
 import {ZoomLevel} from "./ZoomLevel";
 import {MapElementInterface} from "../../data-api/map-elements";
 import {MapDimension, MapFocus} from "../../pages";

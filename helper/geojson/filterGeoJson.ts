@@ -1,7 +1,7 @@
 import {Feature, FeatureCollection} from "geojson";
 import {MapElementInterface} from "../../data-api/map-elements";
 
-type propertyType = 'bounding_box';
+type propertyType = 'bounding_box' | 'border';
 
 export const filterGeoJson = (type:propertyType, mapElements:MapElementInterface[]):MapElementInterface[] =>{
 

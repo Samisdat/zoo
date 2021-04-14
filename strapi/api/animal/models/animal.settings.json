@@ -76,6 +76,10 @@
       "collection": "facility",
       "via": "animals",
       "dominant": true
+    },
+    "photos": {
+      "via": "animal",
+      "collection": "photo"
     }
   }
 }

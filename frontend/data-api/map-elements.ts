@@ -2,14 +2,17 @@ import fetch from 'node-fetch';
 
 import {getStrapiUrl} from "./utils/get-strapi-url";
 import {Feature} from "geojson";
+import {castFacility, FacilityInterface, getFacilityBySlug} from "./facilities";
+import {getPhotoByAnimal, getPhotoByFacility, PhotoInterface} from "./photos";
 
 export type MapElementType = 'point' | 'box' | 'border' | 'bounding_box';
 
 export interface MapElementInterface extends Feature{
-    id: string;
+    id: number;
     properties:{
         name: string;
         facility: FacilityInterface | null;
+        photo?: PhotoInterface | null;
         type: MapElementType;
         published_at: string;
         created_at: string;
@@ -57,7 +60,34 @@ export const getMapElements = async (published:boolean = false):Promise<MapEleme
     const response = await fetch(requestUrl);
     const json = await response.json();
 
-    const mapElements = json.map(castMapElement);
+    const mapElements:MapElementInterface[] = await json.map(castMapElement);
+
+    for(const mapElement of mapElements){
+
+        if(undefined === mapElement.properties?.facility){
+            continue;
+        }
+
+        if(null  === mapElement.properties?.facility){
+            continue;
+        }
+
+        let photo = await getPhotoByFacility(mapElement.properties.facility.id);
+
+        if( undefined === photo){
+
+            const facility = await getFacilityBySlug(mapElement.properties.facility.slug);
+
+            if(facility.animals && 0 !== facility.animals.length){
+                photo = await getPhotoByAnimal(facility.animals[0].id);
+            }
+        }
+
+        if( undefined !== photo){
+            mapElement.properties.photo = photo || null;
+        }
+
+    }
 
     return mapElements;
 

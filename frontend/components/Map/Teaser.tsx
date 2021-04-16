@@ -148,6 +148,8 @@ export const Teaser = (props: TeaserPropsInterface) => {
             return;
         }
 
+        setLoading(true);
+
         animalsService(props.apiUrl, props.close)
             .then((data) =>{
 
@@ -178,14 +180,18 @@ export const Teaser = (props: TeaserPropsInterface) => {
             <Card
                 className={classes.mapTeaser}
                 elevation={2}
+                style={{
+                    height:202
+                }}
             >
                 <CircularProgress
                     size={40}
                     style={{
                         position: 'absolute',
-                        left:-20,
-                        top:50,
-                        marginLeft: '50%',
+                        left:'50%',
+                        top:'50%',
+                        marginLeft:-20,
+                        marginTop:-20,
                     }}
                 />
             </Card>

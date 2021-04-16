@@ -11,13 +11,13 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Copyright": {
+    "copyright": {
       "type": "string"
     },
-    "Image": {
+    "image": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -29,12 +29,19 @@
       "required": false
     },
     "animal": {
-      "model": "animal",
-      "via": "photos"
+      "via": "photos",
+      "model": "animal"
     },
     "facility": {
       "model": "facility",
       "via": "photos"
+    },
+    "orientation": {
+      "type": "enumeration",
+      "enum": [
+        "landscape",
+        "portrait"
+      ]
     }
   }
 }

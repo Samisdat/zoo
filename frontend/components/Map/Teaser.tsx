@@ -13,6 +13,7 @@ import SwipeableViews from 'react-swipeable-views';
 import CloseIcon from '@material-ui/icons/Close';
 import DirectionsIcon from '@material-ui/icons/Directions';
 import {relative} from "jest-haste-map/build/lib/fast_path";
+import {MapElementInterface} from "../../data-api/map-elements";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -112,6 +113,7 @@ const tutorialSteps = [
 
 
 export interface TeaserPropsInterface {
+    mapElement: MapElementInterface,
     apiUrl: string;
     close: Function;
     open:boolean;

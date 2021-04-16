@@ -228,11 +228,15 @@ export const Group = (props:MapGroupProperties) => {
 
             href += (props.focus as MapElementInterface).properties.facility.slug;
 
+
+
             props.setTeaser({
+                mapElement:props.focus,
                 apiUrl: href,
-                    close: ()=>{
-                        props.setTeaser(undefined);
-            }}  );
+                close: ()=>{
+                    props.setTeaser(undefined);
+                }
+            });
 
         });
 

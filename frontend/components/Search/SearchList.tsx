@@ -63,6 +63,7 @@ export default function PinnedSubheaderList(props:PinnedSubheaderListProperties)
                         <ul className={classes.ul}>
                             <ListSubheader>{key[0].toUpperCase()}</ListSubheader>
                             {(key[1] as MapElementInterface[]).map((item:MapElementInterface, index) => {
+                                const thumbnail = `http://127.0.0.1:1337${item.properties.photo?.image?.formats?.thumbnail?.url}`;
                                 return(
                                     <ListItem
                                         alignItems="flex-start"

@@ -70,7 +70,10 @@ export default function PinnedSubheaderList(props:PinnedSubheaderListProperties)
                                         onClick={()=>{onListItemClick(item)}}
                                     >
                                         <ListItemAvatar>
-                                            <Avatar alt={item.properties.facility.title} src="/static/images/avatar/1.jpg" />
+                                            <Avatar
+                                                alt={item.properties.facility.title}
+                                                src={thumbnail}
+                                            />
                                         </ListItemAvatar>
                                         <ListItemText
                                             primary={item.properties.facility.title}

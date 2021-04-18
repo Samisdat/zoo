@@ -5,7 +5,8 @@ module.exports = {
     "<rootDir>/pages",
     "<rootDir>/helper",
     "<rootDir>/data-repos",
-    "<rootDir>/data-api"
+    "<rootDir>/data-api",
+    "<rootDir>/strapi-api"
   ],
   setupFilesAfterEnv: ["<rootDir>/setupTests.ts"],
   globals: {

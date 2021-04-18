@@ -1,35 +1,7 @@
-import {getFixture} from "./fixtures/get-fixture";
-import {Animal, reduceAnimalApiData} from "../animal";
-import {AnimalDehydrated} from "../dehydrated-interfaces/animal";
+import {getFixture} from "../../fixtures/get-fixture";
+import {Animal} from "../animal";
 
 describe('animal value object', ()=>{
-
-    test('reduce api data', async () => {
-
-        const fixture = await getFixture('animal', 'elefant.json');
-
-        const dehydrated = reduceAnimalApiData(fixture);
-
-        const expectation: AnimalDehydrated = {
-            id: 47,
-            slug: 'afrikanischer-elefant',
-            title: 'Afrikanischer Elefant',
-            body: '\nI am content.\n',
-            className: null,
-            family: 'Elefanten',
-            iucnID: '12392',
-            iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/12392',
-            iucnStatus: 'Q278113',
-            order: 'Rüsseltiere',
-            scientificName: 'Loxodonta africana',
-            species: 'Afrikanischer Elefant',
-            wikidata: 'Q36557',
-            wikipediaLink: 'https://de.wikipedia.org/wiki/Afrikanischer_Elefant',
-        };
-
-        expect(dehydrated).toStrictEqual(expectation);
-
-    });
 
     test('create animal value object from api json', async ()=>{
 

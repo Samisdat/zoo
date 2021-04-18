@@ -1,6 +1,4 @@
-import {Data} from "../data";
-
-export interface AnimalStrapiJson{
+export interface AnimalSpore {
     id: number;
     title: string;
     slug: string;
@@ -11,16 +9,11 @@ export interface AnimalStrapiJson{
     iucnLink: string;
     iucnStatus: string;
     body: string;
-    className: string;
+    /* classname is empty|null by accident ;)*/
+    className: string | null;
     order: string;
     species: string;
-    title_en: string;
-    title_nl: string;
-    title_de: string;
     family: string;
-    published_at: string;
-    created_at: string;
-    updated_at: string;
     /*individual_animals: string;*/
     /*facilities: string;*/
     /*photos: string;*/

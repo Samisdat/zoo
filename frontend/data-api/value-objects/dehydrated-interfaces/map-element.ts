@@ -1,10 +1,8 @@
-import {Data} from "../data";
 import {Feature} from "geojson";
 
 export type MapElementType = 'point' | 'box' | 'border' | 'bounding_box';
 
-export interface MapElementDehydrated extends Data{
-    _type: 'dehydrated';
+export interface MapElementDehydrated{
     id: number;
     title: string;
     type: MapElementType;

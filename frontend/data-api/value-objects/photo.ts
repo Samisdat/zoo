@@ -1,5 +1,9 @@
 import {ImageFormatStrapiJson, PhotoStrapiJson} from "./starpi-json-interfaces/photo";
 import {PhotoDehydrated} from "./dehydrated-interfaces/photo";
+import {ValueObject} from "./value-object";
+import {FacilityDehydrated} from "./dehydrated-interfaces/facility";
+import {FacilityStrapiJson} from "./starpi-json-interfaces/facility";
+import {reduceFacilityApiData} from "./facility";
 
 export interface PhotoSize{
     width: number;
@@ -14,6 +18,14 @@ const sizeNames = [
     'small',
 ];
 
+interface PhoteSizes{
+    [index:string]: PhotoSize | null;
+    thumbnail: PhotoSize | null;
+    large: PhotoSize | null;
+    medium: PhotoSize | null;
+    small: PhotoSize | null;
+}
+
 export const reducePhotoApiData = (apiData: PhotoStrapiJson):PhotoDehydrated =>{
 
     const id = apiData.id;
@@ -27,7 +39,8 @@ export const reducePhotoApiData = (apiData: PhotoStrapiJson):PhotoDehydrated =>{
     const small: PhotoSize | null = null;
     const medium: PhotoSize | null = null;
     const large: PhotoSize | null = null;
-    const sizes = {
+
+    const sizes:PhoteSizes = {
         thumbnail,
         small,
         medium,
@@ -54,7 +67,6 @@ export const reducePhotoApiData = (apiData: PhotoStrapiJson):PhotoDehydrated =>{
     }
 
     return{
-        _type:'dehydrated',
         id,
         title,
         copyright,
@@ -67,20 +79,7 @@ export const reducePhotoApiData = (apiData: PhotoStrapiJson):PhotoDehydrated =>{
     };
 }
 
-export class Photo{
-
-    private json: PhotoDehydrated ;
-
-    constructor(json: PhotoStrapiJson | PhotoDehydrated) {
-
-        if('dehydrated' !== json._type){
-
-            json = reducePhotoApiData(json);
-
-        }
-
-        this.json = json as PhotoDehydrated;
-    }
+export class Photo extends ValueObject<PhotoDehydrated>{
 
     get id(): number {
         return this.json.id;
@@ -96,22 +95,32 @@ export class Photo{
     get thumbnail():PhotoSize | null{
         return this.json.thumbnail;
     }
-    get large():PhotoSize{
+    get large():PhotoSize | null{
         return this.json.large;
     }
-    get medium():PhotoSize{
+    get medium():PhotoSize | null{
         return this.json.medium;
     }
-    get small():PhotoSize{
+    get small():PhotoSize | null{
         return this.json.small;
     }
 
-    public dehydrate():PhotoDehydrated {
-        return this.json;
+    static hydrate(dehydrated:PhotoDehydrated):Photo{
+
+        const photo = new Photo(dehydrated);
+
+        return photo;
+
     }
 
-}
+    static fromApi(json:PhotoStrapiJson):Photo{
 
-export const createPhoto = (photoJson:PhotoStrapiJson | PhotoDehydrated) => {
-    return new Photo(photoJson);
+        const dehydrated:PhotoDehydrated = reducePhotoApiData(json);
+
+        const photo = new Photo(dehydrated);
+
+        return photo;
+
+    }
+
 }

@@ -1,7 +1,8 @@
 import {AnimalStrapiJson} from "./starpi-json-interfaces/animal";
-import {AnimalyDehydrated} from "./dehydrated-interfaces/animal";
+import {AnimalDehydrated} from "./dehydrated-interfaces/animal";
+import {ValueObject} from "./value-object";
 
-export const reduceAnimalApiData = (apiData: AnimalStrapiJson):AnimalyDehydrated =>{
+export const reduceAnimalApiData = (apiData: AnimalStrapiJson):AnimalDehydrated =>{
 
     const id = apiData.id;
     const slug = apiData.slug;
@@ -20,7 +21,6 @@ export const reduceAnimalApiData = (apiData: AnimalStrapiJson):AnimalyDehydrated
     const family = apiData.family;
 
     return{
-        _type:'dehydrated',
         id,
         title,
         slug,
@@ -38,20 +38,7 @@ export const reduceAnimalApiData = (apiData: AnimalStrapiJson):AnimalyDehydrated
     };
 }
 
-export class Animal{
-
-    private json: AnimalyDehydrated ;
-
-    constructor(json: AnimalStrapiJson | AnimalyDehydrated) {
-
-        if(undefined === json._type || 'dehydrated' !== json._type){
-
-            json = reduceAnimalApiData(json as AnimalStrapiJson);
-
-        }
-
-        this.json = json as AnimalyDehydrated;
-    }
+export class Animal extends ValueObject<AnimalDehydrated>{
 
     get id(): number {
         return this.json.id;
@@ -100,12 +87,21 @@ export class Animal{
         return this.json.family;
     }
 
-    public dehydrate():AnimalyDehydrated {
-        return this.json;
+    static hydrate(dehydrated:AnimalDehydrated):Animal{
+
+        const animal = new Animal(dehydrated);
+
+        return animal;
+
     }
 
-}
+    static fromApi(json:AnimalStrapiJson):Animal{
 
-export const createAnimal = (json:AnimalStrapiJson | AnimalyDehydrated):Animal => {
-    return new Animal(json);
+        const dehydrated:AnimalDehydrated = reduceAnimalApiData(json);
+
+        const animal = new Animal(dehydrated);
+
+        return animal;
+
+    }
 }

@@ -2,6 +2,8 @@ import fetch from 'node-fetch';
 
 import {getStrapiUrl} from "./utils/get-strapi-url";
 import {number} from "prop-types";
+import {createPhoto, Photo} from "./value-objects/photo";
+import {PhotoStrapiJson} from "./value-objects/starpi-json-interfaces/photo";
 
 export type PhotoType = 'animal' | 'facility' ;
 
@@ -146,8 +148,6 @@ const castImage = (rawImage:any):ImageInterface => {
 
 export const castPhoto = (rawPhoto:any):PhotoInterface => {
 
-    console.log('rawPhoto', rawPhoto === undefined, rawPhoto);
-
     const id: number = rawPhoto.id;
     const title: string = rawPhoto.title;
     const copyright: string = rawPhoto.copyright;
@@ -184,6 +184,24 @@ const getPhoto = async (requestUrl: string):Promise<PhotoInterface> => {
     return photo[0];
 
 }
+
+export const getPhotoObjectByFacility = async (facilityId:number, published:boolean = false):Promise<Photo> =>{
+
+    const requestUrl = getStrapiUrl(`/photos?facility=${facilityId}`);
+
+    const response = await fetch(requestUrl);
+    const json = await response.json();
+
+    if(json.length !== 1){
+        return undefined;
+    }
+
+    const photo = createPhoto(json[0] as PhotoStrapiJson);
+
+    return photo;
+
+}
+
 
 export const getPhotoByFacility = async (facilityId:number, published:boolean = false):Promise<PhotoInterface> =>{
 

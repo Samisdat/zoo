@@ -1,6 +1,6 @@
-import {PhotoDehydrated} from "./dehydrated-interfaces/photo";
 import {FacilityStrapiJson} from "./starpi-json-interfaces/facility";
 import {FacilityDehydrated, FacilityType} from "./dehydrated-interfaces/facility";
+import {ValueObject} from "./value-object";
 
 export const reduceFacilityApiData = (apiData: FacilityStrapiJson):FacilityDehydrated =>{
 
@@ -11,7 +11,6 @@ export const reduceFacilityApiData = (apiData: FacilityStrapiJson):FacilityDehyd
     const type = apiData.type;
 
     return{
-        _type:'dehydrated',
         id,
         slug,
         title,
@@ -20,20 +19,8 @@ export const reduceFacilityApiData = (apiData: FacilityStrapiJson):FacilityDehyd
     };
 }
 
-export class Facility{
 
-    private json: FacilityDehydrated ;
-
-    constructor(json: FacilityStrapiJson | FacilityDehydrated) {
-
-        if(undefined === json._type || 'dehydrated' !== json._type){
-
-            json = reduceFacilityApiData(json as FacilityStrapiJson);
-
-        }
-
-        this.json = json as FacilityDehydrated;
-    }
+export class Facility extends ValueObject<FacilityDehydrated>{
 
     get id(): number {
         return this.json.id;
@@ -55,12 +42,22 @@ export class Facility{
         return this.json.type;
     }
 
-    public dehydrate():FacilityDehydrated {
-        return this.json;
+    static hydrate(dehydrated:FacilityDehydrated):Facility{
+
+        const facility = new Facility(dehydrated);
+
+        return facility;
+
     }
 
-}
+    static fromApi(json:FacilityStrapiJson):Facility{
 
-export const createFacility = (json:FacilityStrapiJson | FacilityDehydrated):Facility => {
-    return new Facility(json);
+        const dehydrated:FacilityDehydrated = reduceFacilityApiData(json);
+
+        const facility = new Facility(dehydrated);
+
+        return facility;
+
+    }
+
 }

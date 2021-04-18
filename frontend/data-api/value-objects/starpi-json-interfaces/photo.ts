@@ -1,5 +1,3 @@
-import {Data} from "../data";
-
 export interface ImageFormatStrapiJson{
     name: string;
     hash: string;
@@ -41,7 +39,7 @@ export interface ImageStrapiJson{
     updated_at: string;
 }
 
-export interface PhotoStrapiJson extends Data{
+export interface PhotoStrapiJson{
     id: number;
     title: string;
     copyright: string;

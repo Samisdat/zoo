@@ -1,6 +1,6 @@
 import {Data} from "../data";
 
-export interface AnimalStrapiJson  extends Data{
+export interface AnimalStrapiJson{
     id: number;
     title: string;
     slug: string;

@@ -4,8 +4,7 @@ import {getStrapiUrl} from "./utils/get-strapi-url";
 import {Feature} from "geojson";
 import {castFacility, FacilityInterface, getFacilityBySlug} from "./facilities";
 import {getPhotoByAnimal, getPhotoByFacility, PhotoInterface} from "./photos";
-
-export type MapElementType = 'point' | 'box' | 'border' | 'bounding_box';
+import {MapElementType} from "./value-objects/dehydrated-interfaces/map-element";
 
 export interface MapElementInterface extends Feature{
     id: number;

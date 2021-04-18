@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 import {getStrapiUrl} from "./utils/get-strapi-url";
 import {AnimalInterface, castAnimal} from "./animals";
 import {FacilityType} from "./value-objects/dehydrated-interfaces/facility";
-import {createFacility, Facility} from "./value-objects/facility";
+import {Facility} from "./value-objects/facility";
 import {FacilityStrapiJson} from "./value-objects/starpi-json-interfaces/facility";
 
 export interface FacilityInterface{
@@ -62,7 +62,7 @@ export const getFacilityObjectBySlug = async (slug: string, published:boolean = 
         return undefined;
     }
 
-    const facility = createFacility(json[0] as FacilityStrapiJson);
+    const facility = Facility.fromApi(json[0] as FacilityStrapiJson);
 
     return facility;
 

@@ -1,9 +1,7 @@
-import {createPhoto, reducePhotoApiData} from '../photo';
-import path from 'path';
-import {PhotoDehydrated} from '../dehydrated-interfaces/photo';
 import {getFixture} from "./fixtures/get-fixture";
-import {createFacility, reduceFacilityApiData} from "../facility";
+import {Facility, reduceFacilityApiData} from "../facility";
 import {FacilityDehydrated} from "../dehydrated-interfaces/facility";
+import {FacilityStrapiJson} from "../starpi-json-interfaces/facility";
 
 describe('facility value object', ()=>{
 
@@ -14,7 +12,6 @@ describe('facility value object', ()=>{
         const dehydrated = reduceFacilityApiData(fixture);
 
         const expectation: FacilityDehydrated = {
-            _type: 'dehydrated',
             id: 2,
             slug: 'affenhaus',
             title: 'Affenhaus',
@@ -26,11 +23,11 @@ describe('facility value object', ()=>{
 
     });
 
-    test('create photo value object from api json', async ()=>{
+    test.only('create photo value object from api json', async ()=>{
 
         const fixture = await getFixture('photo', 'elefant.json');
 
-        const facility = createFacility(fixture);
+        const facility = Facility.fromApi(fixture);
 
         expect(facility.id).toBe(33);
         expect(facility.title).toBe('Elefant');
@@ -42,11 +39,11 @@ describe('facility value object', ()=>{
 
         const fixture = await getFixture('photo', 'elefant.json');
 
-        const facilityFromApi = createFacility(fixture);
+        const facilityFromApi = Facility.fromApi(fixture);
 
         const dehydrated = facilityFromApi.dehydrate();
 
-        const facility = createFacility(dehydrated);
+        const facility = Facility.hydrate(dehydrated);
 
         expect(facility.id).toBe(33);
         expect(facility.title).toBe('Elefant');
@@ -54,9 +51,8 @@ describe('facility value object', ()=>{
     });
 
     test('create photo value object from dehydrated json',()=>{
-        
-        const facility = createFacility({
-            _type: 'dehydrated',
+
+        const facility = Facility.hydrate({
             id: 33,
             slug: 'elefant',
             title: 'Elefant',

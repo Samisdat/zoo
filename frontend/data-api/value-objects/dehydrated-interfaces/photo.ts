@@ -1,8 +1,6 @@
-import {Data} from "../data";
 import {PhotoSize} from "../photo";
 
-export interface PhotoDehydrated extends Data{
-    _type: 'dehydrated';
+export interface PhotoDehydrated{
     id: number;
     title: string;
     copyright: string;

@@ -1,9 +1,6 @@
-import {PhotoDehydrated} from "./dehydrated-interfaces/photo";
-import {FacilityStrapiJson} from "./starpi-json-interfaces/facility";
-import {FacilityDehydrated, FacilityType} from "./dehydrated-interfaces/facility";
 import {MapElementStrapiJson} from "./starpi-json-interfaces/map-element";
 import {MapElementDehydrated, MapElementType} from "./dehydrated-interfaces/map-element";
-import {Feature} from "geojson";
+import {ValueObject} from "./value-object";
 
 export const reduceMapElementApiData = (apiData: MapElementStrapiJson):MapElementDehydrated =>{
 
@@ -14,7 +11,6 @@ export const reduceMapElementApiData = (apiData: MapElementStrapiJson):MapElemen
     const type = apiData.type;
 
     return{
-        _type:'dehydrated',
         id,
         title,
         geojson,
@@ -23,20 +19,7 @@ export const reduceMapElementApiData = (apiData: MapElementStrapiJson):MapElemen
     };
 }
 
-export class MapElement{
-
-    private json: MapElementDehydrated ;
-
-    constructor(json: MapElementStrapiJson | MapElementDehydrated) {
-
-        if(undefined === json._type || 'dehydrated' !== json._type){
-
-            json = reduceMapElementApiData(json as MapElementStrapiJson);
-
-        }
-
-        this.json = json as MapElementDehydrated;
-    }
+export class MapElement extends ValueObject<MapElementDehydrated>{
 
     get id(): number {
         return this.json.id;
@@ -46,8 +29,21 @@ export class MapElement{
         return this.json;
     }
 
-}
+    static hydrate(dehydrated:MapElementDehydrated):MapElement{
 
-export const createMapElement = (json:MapElementStrapiJson | MapElementDehydrated):MapElement => {
-    return new MapElement(json);
+        const mapElement = new MapElement(dehydrated);
+
+        return mapElement;
+
+    }
+
+    static fromApi(json:MapElementStrapiJson):MapElement{
+
+        const dehydrated:MapElementDehydrated = reduceMapElementApiData(json);
+
+        const mapElement = new MapElement(dehydrated);
+
+        return mapElement;
+
+    }
 }

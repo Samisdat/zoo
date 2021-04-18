@@ -1,7 +1,4 @@
-import {Data} from "../data";
-
-export interface AnimalyDehydrated extends Data{
-    _type: 'dehydrated';
+export interface AnimalDehydrated {
     id: number;
     title: string;
     slug: string;

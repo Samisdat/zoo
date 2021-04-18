@@ -1,7 +1,6 @@
 import {FacilityType} from "../dehydrated-interfaces/facility";
-import {Data} from "../data";
 
-export interface FacilityStrapiJson  extends Data{
+export interface FacilityStrapiJson{
     id: number;
     slug: string;
     title: string;

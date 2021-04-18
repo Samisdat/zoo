@@ -1,8 +1,7 @@
-import {Data} from "../data";
 import {MapElementType} from "../dehydrated-interfaces/map-element";
 import {Feature} from "geojson";
 
-export interface MapElementStrapiJson  extends Data{
+export interface MapElementStrapiJson {
     id: number;
     title: string;
     geojson: Feature;

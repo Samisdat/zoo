@@ -1,13 +1,8 @@
-import {createPhoto, reducePhotoApiData} from '../photo';
-import path from 'path';
-import {PhotoDehydrated} from '../dehydrated-interfaces/photo';
 import {getFixture} from "./fixtures/get-fixture";
-import {createFacility, reduceFacilityApiData} from "../facility";
-import {FacilityDehydrated} from "../dehydrated-interfaces/facility";
-import {createMapElement, reduceMapElementApiData} from "../map-element";
+import {MapElement, reduceMapElementApiData} from "../map-element";
 import {MapElementDehydrated} from "../dehydrated-interfaces/map-element";
 
-describe('facility value object', ()=>{
+describe('mapElement value object', ()=>{
 
     test('reduce api data', async () => {
 
@@ -16,7 +11,6 @@ describe('facility value object', ()=>{
         const dehydrated = reduceMapElementApiData(fixture);
 
         const expectation: MapElementDehydrated = {
-            "_type": "dehydrated",
             "id": 35,
             "title": "Elefanten Box",
             "geojson": {
@@ -54,11 +48,11 @@ describe('facility value object', ()=>{
 
     });
 
-    test('create photo value object from api json', async ()=>{
+    test('create mapElement value object from api json', async ()=>{
 
         const fixture = await getFixture('map-element', 'elefantenanlage.json');
 
-        const mapElement = createMapElement(fixture);
+        const mapElement = MapElement.fromApi(fixture);
 
         expect(mapElement.id).toBe(35);
 
@@ -68,11 +62,11 @@ describe('facility value object', ()=>{
 
         const fixture = await getFixture('map-element', 'elefantenanlage.json');
 
-        const mapElementFromApi = createMapElement(fixture);
+        const mapElementFromApi = MapElement.fromApi(fixture);
 
         const dehydrated = mapElementFromApi.dehydrate();
 
-        const mapElement = createMapElement(dehydrated);
+        const mapElement = MapElement.hydrate(dehydrated);
 
         expect(mapElement.id).toBe(35);
 
@@ -81,8 +75,7 @@ describe('facility value object', ()=>{
 
     test('create map-element value object from dehydrated json',()=>{
         
-        const facility = createMapElement({
-            "_type": "dehydrated",
+        const facility = MapElement.hydrate({
             "id": 35,
             "title": "Elefanten Box",
             "geojson": {

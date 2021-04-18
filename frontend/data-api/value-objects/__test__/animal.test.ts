@@ -1,11 +1,6 @@
-import {createPhoto, reducePhotoApiData} from '../photo';
-import path from 'path';
-import {PhotoDehydrated} from '../dehydrated-interfaces/photo';
 import {getFixture} from "./fixtures/get-fixture";
-import {createFacility, reduceFacilityApiData} from "../facility";
-import {FacilityDehydrated} from "../dehydrated-interfaces/facility";
-import {createAnimal, reduceAnimalApiData} from "../animal";
-import {AnimalyDehydrated} from "../dehydrated-interfaces/animal";
+import {Animal, reduceAnimalApiData} from "../animal";
+import {AnimalDehydrated} from "../dehydrated-interfaces/animal";
 
 describe('animal value object', ()=>{
 
@@ -15,8 +10,7 @@ describe('animal value object', ()=>{
 
         const dehydrated = reduceAnimalApiData(fixture);
 
-        const expectation: AnimalyDehydrated = {
-            _type: 'dehydrated',
+        const expectation: AnimalDehydrated = {
             id: 47,
             slug: 'afrikanischer-elefant',
             title: 'Afrikanischer Elefant',
@@ -41,7 +35,7 @@ describe('animal value object', ()=>{
 
         const fixture = await getFixture('animal', 'elefant.json');
 
-        const animal = createAnimal(fixture);
+        const animal = Animal.fromApi(fixture);
 
         expect(animal.id).toBe(47);
         expect(animal.slug).toBe('afrikanischer-elefant');
@@ -56,11 +50,11 @@ describe('animal value object', ()=>{
 
         const fixture = await getFixture('animal', 'elefant.json');
 
-        const animalFromApi = createAnimal(fixture);
+        const animalFromApi = Animal.fromApi(fixture);
 
         const dehydrated = animalFromApi.dehydrate();
 
-        const animal = createAnimal(dehydrated);
+        const animal = Animal.hydrate(dehydrated);
 
         expect(animal.id).toBe(47);
         expect(animal.slug).toBe('afrikanischer-elefant');
@@ -72,8 +66,7 @@ describe('animal value object', ()=>{
 
     test('create photo value object from dehydrated json',()=>{
 
-        const animal = createAnimal({
-            _type: 'dehydrated',
+        const animal = Animal.hydrate({
             id: 47,
             title: 'Afrikanischer Elefant',
             slug: 'afrikanischer-elefant',

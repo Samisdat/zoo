@@ -1,5 +1,5 @@
 import {getFixture} from "../../fixtures/get-fixture";
-import {MapElement} from "../map-element";
+import {MapElement, MapElementProperties} from "../map-element";
 
 describe('mapElement value object', ()=>{
 
@@ -10,6 +10,17 @@ describe('mapElement value object', ()=>{
         const mapElement = MapElement.fromApi(fixture);
 
         expect(mapElement.id).toBe(35);
+        expect(mapElement.type).toBe('Feature');
+
+
+        const mapElementProperties: MapElementProperties = {
+            name: 'Elefanten Box',
+            type: 'box'
+        };
+
+        expect(mapElement.properties).toStrictEqual(mapElementProperties);
+
+        console.log(mapElement.geometry)
 
     });
 

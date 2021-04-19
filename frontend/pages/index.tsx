@@ -6,18 +6,21 @@ import {NavigationInterface} from "components/Navigation/Interfaces";
 import {Teaser, TeaserPropsInterface} from "components/Map/Teaser";
 
 import SearchDialog from "components/Search/Search";
-import {getMapElements, MapElementInterface} from "../data-api/map-elements";
-import {getPhotoObjectByFacility} from "../data-api/photos";
-import {createPhoto, Photo} from "../data-api/value-objects/photo";
-import {PhotoDehydrated} from "../data-api/value-objects/dehydrated-interfaces/photo";
-import {FacilityDehydrated} from "../data-api/value-objects/dehydrated-interfaces/facility";
-import {getFacilityObjectBySlug} from "../data-api/facilities";
-import {Facility} from "../data-api/value-objects/facility";
+import {PhotoSpore} from "../strapi-api/photo/photo-spore";
+import {FacilitySpore} from "../strapi-api/facility/facility-spore";
+import {Photo} from "../strapi-api/photo/photo";
+import {Facility} from "../strapi-api/facility/facility";
+import {getMapElementEntityById, getMapElements, MapElementInterface} from "../strapi-api/map-elements";
+import {getPhotoEntityByFacility} from "../strapi-api/photos";
+import {getFacilityEntityBySlug} from "../strapi-api/facilities";
+import {MapElementSpore} from "../strapi-api/map-element/map-element-spore";
+import {MapElement} from "../strapi-api/map-element/map-element";
 const useMapState = createPersistedState('map');
 
 export interface IndexProps{
-    photoValueObject:PhotoDehydrated;
-    facility: FacilityDehydrated;
+    photoValueObject:PhotoSpore;
+    facility: FacilitySpore;
+    mapElement: MapElementSpore
     mapElements: MapElementInterface[];
     navigation?: NavigationInterface;
     setFocus?: Function;
@@ -50,8 +53,9 @@ const MapDimensionDefault:MapDimension = {
 
 export default function Index(props:IndexProps) {
 
-    console.log(createPhoto(props.photoValueObject))
-    console.log(Facility.hydrate(props.facility))
+    console.log(Photo.hydrate(props.photoValueObject));
+    console.log(Facility.hydrate(props.facility));
+    console.log(MapElement.hydrate(props.mapElement));
 
     const [mapDimensionState, setMapDimensionState] = useMapState<MapDimension>(MapDimensionDefault);
     const [mapState, setMapState] = useMapState<MapState>(defaultMapState);
@@ -163,16 +167,19 @@ export default function Index(props:IndexProps) {
 
 export async function getStaticProps(context) {
 
-    const photoValueObject = await getPhotoObjectByFacility(11)
+    const photoEntity = await getPhotoEntityByFacility(11)
 
-    const facility = await getFacilityObjectBySlug('affenhaus');
+    const facilityEntity = await getFacilityEntityBySlug('affenhaus');
+
+    const mapElementEntity = await getMapElementEntityById(35)
 
     const mapElements = await getMapElements();
 
     const indexProps:IndexProps = {
         mapElements,
-        facility: facility.dehydrate(),
-        photoValueObject:photoValueObject.dehydrate()
+        mapElement: mapElementEntity.dehydrate(),
+        facility: facilityEntity.dehydrate(),
+        photoValueObject:photoEntity.dehydrate()
     };
 
     return {

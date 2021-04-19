@@ -1,10 +1,12 @@
 import fetch from 'node-fetch';
 
-import {getStrapiUrl} from "./utils/get-strapi-url";
 import {Feature} from "geojson";
 import {castFacility, FacilityInterface, getFacilityBySlug} from "./facilities";
 import {getPhotoByAnimal, getPhotoByFacility, PhotoInterface} from "./photos";
-import {MapElementType} from "./value-objects/dehydrated-interfaces/map-element";
+import {getStrapiUrl} from "../data-api/utils/get-strapi-url";
+import {MapElementType} from "./map-element/map-element-spore";
+import {MapElement} from "./map-element/map-element";
+import {MapElementStrapi} from "./map-element/map-element-strapi";
 
 export interface MapElementInterface extends Feature{
     id: number;
@@ -51,6 +53,24 @@ const castMapElement = (rawMapElement:any):MapElementInterface=>{
     return mapElement
 
 }
+
+export const getMapElementEntityById = async (mapElementId:number, published:boolean = false):Promise<MapElement> =>{
+
+    const requestUrl = getStrapiUrl(`/map-elements?id=${mapElementId}`);
+
+    const response = await fetch(requestUrl);
+    const json = await response.json();
+
+    if(json.length !== 1){
+        return undefined;
+    }
+
+    const mapElement = MapElement.fromApi(json[0] as MapElementStrapi);
+
+    return mapElement;
+
+}
+
 
 export const getMapElements = async (published:boolean = false):Promise<MapElementInterface[]> =>{
 

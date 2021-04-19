@@ -1,10 +1,10 @@
 import fetch from 'node-fetch';
 
-import {getStrapiUrl} from "./utils/get-strapi-url";
 import {AnimalInterface, castAnimal} from "./animals";
-import {FacilityType} from "./value-objects/dehydrated-interfaces/facility";
-import {Facility} from "./value-objects/facility";
-import {FacilityStrapiJson} from "./value-objects/starpi-json-interfaces/facility";
+import {FacilityType} from "./facility/facility-spore";
+import {getStrapiUrl} from "../data-api/utils/get-strapi-url";
+import {Facility} from "./facility/facility";
+import {FacilityStrapi} from "./facility/facility-strapi";
 
 export interface FacilityInterface{
     id: number;
@@ -51,7 +51,7 @@ export const castFacility = (rawFacility:any):FacilityInterface => {
     return facility;
 }
 
-export const getFacilityObjectBySlug = async (slug: string, published:boolean = false):Promise<Facility> =>{
+export const getFacilityEntityBySlug = async (slug: string, published:boolean = false):Promise<Facility> =>{
 
     const requestUrl = getStrapiUrl(`/facilities?slug=${slug}`);
 
@@ -62,7 +62,7 @@ export const getFacilityObjectBySlug = async (slug: string, published:boolean = 
         return undefined;
     }
 
-    const facility = Facility.fromApi(json[0] as FacilityStrapiJson);
+    const facility = Facility.fromApi(json[0] as FacilityStrapi);
 
     return facility;
 

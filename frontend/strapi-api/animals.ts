@@ -1,6 +1,5 @@
 import fetch from 'node-fetch';
-
-import {getStrapiUrl} from "./utils/get-strapi-url";
+import {getStrapiUrl} from "../data-api/utils/get-strapi-url";
 
 export interface AnimalInterface{
     id: number;

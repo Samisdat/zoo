@@ -1,9 +1,9 @@
 import {FacilitySpore, FacilityType} from "./facility-spore";
-import {ValueObject} from "../value-object";
+import {Entity} from "../entity";
 import {facilityReduceApiData} from "./facility-reduce-api-data";
 import {FacilityStrapi} from "./facility-strapi";
 
-export class Facility extends ValueObject<FacilitySpore>{
+export class Facility extends Entity<FacilitySpore>{
 
     get id(): number {
         return this.json.id;

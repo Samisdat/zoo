@@ -1,4 +1,4 @@
-export class ValueObject<Dehydrated>{
+export class Entity<Dehydrated>{
 
     protected json: Dehydrated;
 

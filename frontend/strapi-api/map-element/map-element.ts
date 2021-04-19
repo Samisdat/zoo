@@ -1,9 +1,9 @@
-import {ValueObject} from "../value-object";
+import {Entity} from "../entity";
 import {MapElementSpore} from "./map-element-spore";
 import {mapElementReduceApiData} from "./map-element-reduce-api-data";
 import {MapElementStrapi} from "./map-element-strapi";
 
-export class MapElement extends ValueObject<MapElementSpore>{
+export class MapElement extends Entity<MapElementSpore>{
 
     get id(): number {
         return this.json.id;

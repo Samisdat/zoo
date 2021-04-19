@@ -1,9 +1,9 @@
 import {AnimalStrapi} from "./animal-strapi-interface";
 import {AnimalSpore} from "./animal-spore";
-import {ValueObject} from "../value-object";
+import {Entity} from "../entity";
 import {animalReduceApiData} from "./animal-reduce-api-data";
 
-export class Animal extends ValueObject<AnimalSpore>{
+export class Animal extends Entity<AnimalSpore>{
 
     get id(): number {
         return this.json.id;

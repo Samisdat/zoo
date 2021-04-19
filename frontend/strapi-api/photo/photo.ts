@@ -1,9 +1,9 @@
 import {PhotoSize, PhotoSpore} from "./photo-spore";
 import {PhotoStrapiJson} from "./photo-strapi";
-import {ValueObject} from "../value-object";
+import {Entity} from "../entity";
 import {reducePhotoApiData} from "./photo-reduce-api-data";
 
-export class Photo extends ValueObject<PhotoSpore>{
+export class Photo extends Entity<PhotoSpore>{
 
     get id(): number {
         return this.json.id;

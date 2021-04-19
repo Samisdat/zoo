@@ -1,4 +1,4 @@
-export interface ImageFormatStrapiJson{
+export interface ImageFormatStrapi {
     name: string;
     hash: string;
     ext: string;
@@ -10,23 +10,23 @@ export interface ImageFormatStrapiJson{
     url: string;
 }
 
-export interface ImageFormatsStrapiJson{
-    [index:string]: ImageFormatStrapiJson;
-    thumbnail?: ImageFormatStrapiJson;
-    large?: ImageFormatStrapiJson;
-    medium?: ImageFormatStrapiJson;
-    small?: ImageFormatStrapiJson;
+export interface ImageFormatsStrapi{
+    [index:string]: ImageFormatStrapi;
+    thumbnail?: ImageFormatStrapi;
+    large?: ImageFormatStrapi;
+    medium?: ImageFormatStrapi;
+    small?: ImageFormatStrapi;
 }
 
 
-export interface ImageStrapiJson{
+export interface ImageStrapi {
     id: number,
     name: string,
     alternativeText:string,
     caption: string,
     width: number,
     height: number,
-    formats: ImageFormatsStrapiJson;
+    formats: ImageFormatsStrapi;
     hash: string;
     ext: string;
     mime: string,
@@ -45,5 +45,5 @@ export interface PhotoStrapiJson{
     copyright: string;
     animal: number;
     facility: number;
-    image: ImageStrapiJson;
+    image: ImageStrapi;
 }

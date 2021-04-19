@@ -1,6 +1,6 @@
 export type FacilityType = 'enclosure' | 'food' | 'playground' | 'toilet' | 'poi';
 
-export interface FacilityDehydrated{
+export interface FacilitySpore{
     id: number;
     slug: string;
     title: string;

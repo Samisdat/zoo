@@ -2,7 +2,7 @@ import {Feature} from "geojson";
 
 export type MapElementType = 'point' | 'box' | 'border' | 'bounding_box';
 
-export interface MapElementDehydrated{
+export interface MapElementSpore{
     id: number;
     title: string;
     type: MapElementType;

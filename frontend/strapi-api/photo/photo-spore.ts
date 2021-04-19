@@ -1,6 +1,10 @@
-import {PhotoSize} from "../photo";
+export interface PhotoSize{
+    width: number;
+    height: number;
+    src: string;
+}
 
-export interface PhotoDehydrated{
+export interface PhotoSpore{
     id: number;
     title: string;
     copyright: string;

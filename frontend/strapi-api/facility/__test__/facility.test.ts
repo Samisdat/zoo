@@ -1,27 +1,7 @@
-import {getFixture} from "./fixtures/get-fixture";
-import {Facility, reduceFacilityApiData} from "../facility";
-import {FacilityDehydrated} from "../dehydrated-interfaces/facility";
-import {FacilityStrapiJson} from "../starpi-json-interfaces/facility";
+import {getFixture} from "../../fixtures/get-fixture";
+import {Facility} from "../facility";
 
 describe('facility value object', ()=>{
-
-    test('reduce api data', async () => {
-
-        const fixture = await getFixture('facility', 'affenhaus.json');
-
-        const dehydrated = reduceFacilityApiData(fixture);
-
-        const expectation: FacilityDehydrated = {
-            id: 2,
-            slug: 'affenhaus',
-            title: 'Affenhaus',
-            body: 'Some Content Some other content',
-            type: 'enclosure'
-        };
-
-        expect(dehydrated).toStrictEqual(expectation);
-
-    });
 
     test.only('create photo value object from api json', async ()=>{
 

@@ -1,6 +1,6 @@
-import {FacilityType} from "../dehydrated-interfaces/facility";
+import {FacilityType} from "./facility-spore";
 
-export interface FacilityStrapiJson{
+export interface FacilityStrapi{
     id: number;
     slug: string;
     title: string;

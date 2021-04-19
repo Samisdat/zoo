@@ -1,5 +1,5 @@
 import {PhotoSize, PhotoSpore} from "./photo-spore";
-import {PhotoStrapiJson} from "./photo-strapi";
+import {PhotoStrapi} from "./photo-strapi";
 
 const sizeNames = [
     'thumbnail',
@@ -19,7 +19,7 @@ interface PhoteSizes{
     small: PhotoSize | null;
 }
 
-export const reducePhotoApiData = (apiData: PhotoStrapiJson):PhotoSpore =>{
+export const reducePhotoApiData = (apiData: PhotoStrapi):PhotoSpore =>{
 
     const id = apiData.id;
     const title = apiData.title;

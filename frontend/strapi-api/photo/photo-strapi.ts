@@ -18,7 +18,6 @@ export interface ImageFormatsStrapi{
     small?: ImageFormatStrapi;
 }
 
-
 export interface ImageStrapi {
     id: number,
     name: string,
@@ -39,7 +38,7 @@ export interface ImageStrapi {
     updated_at: string;
 }
 
-export interface PhotoStrapiJson{
+export interface PhotoStrapi {
     id: number;
     title: string;
     copyright: string;

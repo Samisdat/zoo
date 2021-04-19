@@ -1,5 +1,5 @@
 import {PhotoSize, PhotoSpore} from "./photo-spore";
-import {PhotoStrapiJson} from "./photo-strapi";
+import {PhotoStrapi} from "./photo-strapi";
 import {Entity} from "../entity";
 import {reducePhotoApiData} from "./photo-reduce-api-data";
 
@@ -37,7 +37,7 @@ export class Photo extends Entity<PhotoSpore>{
 
     }
 
-    static fromApi(json:PhotoStrapiJson):Photo{
+    static fromApi(json:PhotoStrapi):Photo{
 
         const dehydrated:PhotoSpore = reducePhotoApiData(json);
 

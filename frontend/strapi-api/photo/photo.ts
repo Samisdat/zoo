@@ -2,6 +2,10 @@ import {PhotoSize, PhotoSpore} from "./photo-spore";
 import {PhotoStrapi} from "./photo-strapi";
 import {Entity} from "../entity";
 import {reducePhotoApiData} from "./photo-reduce-api-data";
+import {Animal} from "../animal/animal";
+import {AnimalSpore} from "../animal/animal-spore";
+import {Facility} from "../facility/facility";
+import {FacilitySpore} from "../facility/facility-spore";
 
 export class Photo extends Entity<PhotoSpore>{
 
@@ -27,6 +31,24 @@ export class Photo extends Entity<PhotoSpore>{
     }
     get small():PhotoSize | null{
         return this.json.small;
+    }
+
+    get animal(): Animal | number | null{
+
+        if(this.json.animal){
+            return Animal.hydrate(this.json.animal as AnimalSpore);
+        }
+
+        return null;
+    }
+
+    get facility(): Facility | number | null{
+
+        if(this.json.facility){
+            return Facility.hydrate(this.json.facility as FacilitySpore);
+        }
+
+        return null;
     }
 
     static hydrate(dehydrated:PhotoSpore):Photo{

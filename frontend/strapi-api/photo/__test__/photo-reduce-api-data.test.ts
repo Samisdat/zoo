@@ -6,6 +6,7 @@ import {reducePhotoApiData} from "../photo-reduce-api-data";
 describe('photo reduce api data', ()=>{
 
     test('standard data', async () => {
+
         const fixture = await getFixture('photo', 'elefant.json');
 
         const dehydrated = reducePhotoApiData(fixture);
@@ -34,9 +35,41 @@ describe('photo reduce api data', ()=>{
                 src: '/uploads/small_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef.jpeg',
                 width: 500,
             },
+            animal: {
+                id: 47,
+                slug: 'afrikanischer-elefant',
+                title: 'Afrikanischer Elefant',
+                body: '\nI am content.\n',
+                className: null,
+                family: 'Elefanten',
+                iucnID: '12392',
+                iucnLink: 'https://apiv3.iucnredlist.org/api/v3/taxonredirect/12392',
+                iucnStatus: 'Q278113',
+                order: 'Rüsseltiere',
+                scientificName: 'Loxodonta africana',
+                species: 'Afrikanischer Elefant',
+                wikidata: 'Q36557',
+                wikipediaLink: 'https://de.wikipedia.org/wiki/Afrikanischer_Elefant',
+            }
         };
 
         expect(dehydrated).toStrictEqual(expectation);
+
+    });
+
+    test('standard data with facility', async () => {
+
+        const fixture = await getFixture('photo', 'musikmuschel.json');
+
+        const photoSpore = reducePhotoApiData(fixture);
+
+        expect(photoSpore.facility).toStrictEqual(      {
+            id: 27,
+            slug: 'musikmuschel',
+            title: 'Musikmuschel',
+            body: 'Some Content\n',
+            type: 'poi'
+        });
 
     });
 

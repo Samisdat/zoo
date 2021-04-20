@@ -3,11 +3,12 @@ import {MapElementSpore, MapElementType} from "./map-element-spore";
 import {mapElementReduceApiData} from "./map-element-reduce-api-data";
 import {MapElementStrapi} from "./map-element-strapi";
 import {GeometryCollection, LineString, MultiLineString, MultiPoint, MultiPolygon, Point, Polygon} from "geojson";
+import {FacilitySpore} from "../facility/facility-spore";
 
 
 export interface MapElementProperties{
     name: string;
-    /*facility,*/
+    facility?:FacilitySpore,
     type: MapElementType
 }
 
@@ -31,6 +32,10 @@ export class MapElement extends Entity<MapElementSpore>{
             name: this.json.title,
             type: this.json.type
         };
+
+        if(this.json.facility){
+            mapElementProperties.facility = this.json.facility;
+        }
 
         return mapElementProperties;
     }

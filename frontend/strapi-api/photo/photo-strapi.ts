@@ -1,3 +1,6 @@
+import {AnimalStrapi} from "../animal/animal-strapi-interface";
+import {FacilityStrapi} from "../facility/facility-strapi";
+
 export interface ImageFormatStrapi {
     name: string;
     hash: string;
@@ -42,7 +45,7 @@ export interface PhotoStrapi {
     id: number;
     title: string;
     copyright: string;
-    animal: number;
-    facility: number;
+    animal?: AnimalStrapi;
+    facility?: FacilityStrapi;
     image: ImageStrapi;
 }

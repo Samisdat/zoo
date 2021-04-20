@@ -1,5 +1,10 @@
 import {PhotoSize, PhotoSpore} from "./photo-spore";
 import {PhotoStrapi} from "./photo-strapi";
+import {animalReduceApiData} from "../animal/animal-reduce-api-data";
+import {AnimalSpore} from "../animal/animal-spore";
+import {AnimalStrapi} from "../animal/animal-strapi-interface";
+import {FacilityStrapi} from "../facility/facility-strapi";
+import {facilityReduceApiData} from "../facility/facility-reduce-api-data";
 
 const sizeNames = [
     'thumbnail',
@@ -59,7 +64,7 @@ export const reducePhotoApiData = (apiData: PhotoStrapi):PhotoSpore =>{
 
     }
 
-    return{
+    const photoSpore: PhotoSpore = {
         id,
         title,
         copyright,
@@ -70,4 +75,30 @@ export const reducePhotoApiData = (apiData: PhotoStrapi):PhotoSpore =>{
         medium:sizes.medium,
         large:sizes.large,
     };
+
+    let animal = undefined;
+
+    if(apiData.animal){
+
+        animal = animalReduceApiData(apiData.animal as AnimalStrapi)
+
+    }
+
+    if(undefined !== animal){
+        photoSpore.animal = animal;
+    }
+
+    let facility = undefined;
+
+    if(apiData.facility){
+
+        facility = facilityReduceApiData(apiData.facility as FacilityStrapi)
+
+    }
+
+    if(undefined !== facility){
+        photoSpore.facility = facility;
+    }
+
+    return photoSpore;
 }

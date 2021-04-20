@@ -200,6 +200,22 @@ export const getPhotoEntityByFacility = async (facilityId:number, published:bool
 
 }
 
+export const getPhotoEntityById = async (photoId:number, published:boolean = false):Promise<Photo> =>{
+
+    const requestUrl = getStrapiUrl(`/photos?id=${photoId}`);
+
+    const response = await fetch(requestUrl);
+    const json = await response.json();
+
+    if(json.length !== 1){
+        return undefined;
+    }
+
+    const photo = Photo.fromApi(json[0] as PhotoStrapi);
+
+    return photo;
+
+}
 
 export const getPhotoByFacility = async (facilityId:number, published:boolean = false):Promise<PhotoInterface> =>{
 

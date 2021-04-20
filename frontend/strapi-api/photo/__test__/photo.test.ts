@@ -1,5 +1,7 @@
 import {Photo} from "../photo";
 import {getFixture} from "../../fixtures/get-fixture";
+import {Animal} from "../../animal/animal";
+import {Facility} from "../../facility/facility";
 
 describe('photo value object', ()=>{
 
@@ -18,6 +20,31 @@ describe('photo value object', ()=>{
             height: 156,
             src: '/uploads/thumbnail_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef.jpeg',
         });
+
+    });
+
+    test.only('create photo value entity with animal from api json', async ()=>{
+
+        const fixture = await getFixture('photo', 'elefant.json');
+
+        const photo = Photo.fromApi(fixture);
+
+        expect((photo.animal as Animal).id).toBe(47);
+        expect((photo.animal as Animal).title).toBe('Afrikanischer Elefant');
+
+    });
+
+    test('create photo value entity with facility from api json', async ()=>{
+
+        const fixture = await getFixture('photo', 'musikmuschel.json');
+
+        const photo = Photo.fromApi(fixture);
+
+        expect((photo.facility as Facility).id).toBe(27);
+        expect((photo.facility as Facility).slug).toBe('musikmuschel');
+        expect((photo.facility as Facility).title).toBe('Musikmuschel');
+        expect((photo.facility as Facility).body).toBe('Some Content\n');
+        expect((photo.facility as Facility).type).toBe('poi');
 
     });
 

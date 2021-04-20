@@ -15,12 +15,18 @@ describe('mapElement value object', ()=>{
 
         const mapElementProperties: MapElementProperties = {
             name: 'Elefanten Box',
-            type: 'box'
+            type: 'box',
+            facility: {
+                body: "Some Content\n",
+                id: 13,
+                slug: "elefanten",
+                title: "Elefanten",
+                type: "enclosure",
+            },
         };
 
         expect(mapElement.properties).toStrictEqual(mapElementProperties);
-
-        console.log(mapElement.geometry)
+        expect(mapElement.geometry).toStrictEqual(fixture.geojson.geometry);
 
     });
 

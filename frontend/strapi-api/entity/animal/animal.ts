@@ -2,6 +2,7 @@ import {AnimalStrapi} from "./animal-strapi-interface";
 import {AnimalSpore} from "./animal-spore";
 import {Entity} from "../entity";
 import {animalReduceApiData} from "./animal-reduce-api-data";
+import {Warehouse} from "../../warehouse/warehouse";
 
 export class Animal extends Entity<AnimalSpore>{
 
@@ -65,6 +66,12 @@ export class Animal extends Entity<AnimalSpore>{
         const dehydrated: AnimalSpore = animalReduceApiData(json);
 
         const animal = new Animal(dehydrated);
+
+        console.log(Warehouse.get().hasAnimal(animal.id))
+
+        Warehouse.get().addAnimal(animal);
+
+        console.log(Warehouse.get().hasAnimal(animal.id))
 
         return animal;
 

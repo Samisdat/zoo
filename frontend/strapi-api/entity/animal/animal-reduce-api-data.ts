@@ -34,5 +34,8 @@ export const animalReduceApiData = (animalStrapi: AnimalStrapi):AnimalSpore =>{
         order,
         species,
         family,
+        individual_animals: [],
+        facilities: [],
+        photos: [],
     };
 }

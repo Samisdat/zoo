@@ -4,6 +4,7 @@ import {mapElementReduceApiData} from "./map-element-reduce-api-data";
 import {MapElementStrapi} from "./map-element-strapi";
 import {GeometryCollection, LineString, MultiLineString, MultiPoint, MultiPolygon, Point, Polygon} from "geojson";
 import {FacilitySpore} from "../facility/facility-spore";
+import {Warehouse} from "../../warehouse/warehouse";
 
 
 export interface MapElementProperties{
@@ -33,10 +34,11 @@ export class MapElement extends Entity<MapElementSpore>{
             type: this.json.type
         };
 
+        /*
         if(this.json.facility){
             mapElementProperties.facility = this.json.facility;
         }
-
+        */
         return mapElementProperties;
     }
 
@@ -71,6 +73,8 @@ export class MapElement extends Entity<MapElementSpore>{
         const dehydrated:MapElementSpore = mapElementReduceApiData(json);
 
         const mapElement = new MapElement(dehydrated);
+
+        Warehouse.get().addMapElement(mapElement);
 
         return mapElement;
 

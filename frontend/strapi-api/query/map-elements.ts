@@ -1,18 +1,20 @@
-import fetch from 'node-fetch';
-
 import {Feature} from "geojson";
 import {castFacility, FacilityInterface, getFacilityBySlug} from "./facilities";
-import {getPhotoByAnimal, getPhotoByFacility, PhotoInterface} from "./photos";
-import {getStrapiUrl} from "../data-api/utils/get-strapi-url";
-import {MapElementType} from "./map-element/map-element-spore";
-import {MapElement} from "./map-element/map-element";
-import {MapElementStrapi} from "./map-element/map-element-strapi";
+import {MapElementType} from "../entity/map-element/map-element-spore";
+import {MapElement} from "../entity/map-element/map-element";
+import {getStrapiUrl} from "../../data-api/utils/get-strapi-url";
+import {getJsonFromApi} from "../../data-api/utils/get-json-from-api";
+import {MapElementStrapi} from "../entity/map-element/map-element-strapi";
+import {PhotoInterface} from "./photos";
+import {AnimalStrapi} from "../entity/animal/animal-strapi-interface";
+import {Animal} from "../entity/animal/animal";
+
 
 export interface MapElementInterface extends Feature{
     id: number;
     properties:{
         name: string;
-        facility: FacilityInterface | null;
+        facility?: FacilityInterface | null;
         photo?: PhotoInterface | null;
         type: MapElementType;
         published_at: string;
@@ -54,24 +56,32 @@ const castMapElement = (rawMapElement:any):MapElementInterface=>{
 
 }
 
-export const getMapElementEntityById = async (mapElementId:number, published:boolean = false):Promise<MapElement> =>{
+export const getMapElementById = async (mapElementId:number, published:boolean = false):Promise<MapElement> =>{
 
     const requestUrl = getStrapiUrl(`/map-elements?id=${mapElementId}`);
 
-    const response = await fetch(requestUrl);
-    const json = await response.json();
+    const json = await getJsonFromApi<MapElementStrapi>(requestUrl);
 
-    if(json.length !== 1){
-        return undefined;
-    }
-
-    const mapElement = MapElement.fromApi(json[0] as MapElementStrapi);
+    const mapElement = MapElement.fromApi(json);
 
     return mapElement;
 
 }
 
+export const getMapElements = async ():Promise<MapElement[]> =>{
 
+    const requestUrl = getStrapiUrl(`/map-elements`);
+
+    const json = await getJsonFromApi<MapElementStrapi[]>(requestUrl);
+
+    const mapElements = json.map(MapElement.fromApi);
+
+    return mapElements;
+
+
+}
+
+/*
 export const getMapElements = async (published:boolean = false):Promise<MapElementInterface[]> =>{
 
     const requestUrl = getStrapiUrl('/map-elements')
@@ -91,8 +101,9 @@ export const getMapElements = async (published:boolean = false):Promise<MapEleme
             continue;
         }
 
-        let photo = await getPhotoByFacility(mapElement.properties.facility.id);
+        let photo = undefined
 
+        let photo = await getPhotoByFacility(mapElement.properties.facility.id);
         if( undefined === photo){
 
             const facility = await getFacilityBySlug(mapElement.properties.facility.slug);
@@ -101,6 +112,7 @@ export const getMapElements = async (published:boolean = false):Promise<MapEleme
                 photo = await getPhotoByAnimal(facility.animals[0].id);
             }
         }
+
 
         if( undefined !== photo){
             mapElement.properties.photo = photo || null;
@@ -111,3 +123,4 @@ export const getMapElements = async (published:boolean = false):Promise<MapEleme
     return mapElements;
 
 }
+*/

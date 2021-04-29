@@ -6,6 +6,7 @@ import {Animal} from "../animal/animal";
 import {AnimalSpore} from "../animal/animal-spore";
 import {Facility} from "../facility/facility";
 import {FacilitySpore} from "../facility/facility-spore";
+import {Warehouse} from "../../warehouse/warehouse";
 
 export class Photo extends Entity<PhotoSpore>{
 
@@ -35,18 +36,22 @@ export class Photo extends Entity<PhotoSpore>{
 
     get animal(): Animal | number | null{
 
+        /*
         if(this.json.animal){
             return Animal.hydrate(this.json.animal as AnimalSpore);
         }
+         */
 
         return null;
     }
 
     get facility(): Facility | number | null{
 
+        /*
         if(this.json.facility){
             return Facility.hydrate(this.json.facility as FacilitySpore);
         }
+         */
 
         return null;
     }
@@ -64,6 +69,8 @@ export class Photo extends Entity<PhotoSpore>{
         const dehydrated:PhotoSpore = reducePhotoApiData(json);
 
         const photo = new Photo(dehydrated);
+
+        Warehouse.get().addPhoto(photo);
 
         return photo;
 

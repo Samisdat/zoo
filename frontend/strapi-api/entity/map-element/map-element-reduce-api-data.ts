@@ -16,6 +16,7 @@ export const mapElementReduceApiData = (apiData: MapElementStrapi):MapElementSpo
         title,
         geojson,
         type,
+        facility: null
     };
 
     let facility = undefined;

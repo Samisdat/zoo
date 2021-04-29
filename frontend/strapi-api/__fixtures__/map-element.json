@@ -1,0 +1,2099 @@
+[
+  {
+    "id": 35,
+    "title": "Elefanten Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.108079136390546,
+            51.239293806399274
+          ],
+          [
+            7.108079136390546,
+            51.23838958288827
+          ],
+          [
+            7.1095008959075985,
+            51.23838958288827
+          ],
+          [
+            7.1095008959075985,
+            51.239293806399274
+          ],
+          [
+            7.108079136390546,
+            51.239293806399274
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 13,
+      "slug": "elefanten",
+      "title": "Elefanten",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:06.988Z",
+      "created_at": "2021-03-30T21:08:06.990Z",
+      "updated_at": "2021-04-21T21:40:05.276Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.098Z",
+    "created_at": "2021-04-01T20:14:41.310Z",
+    "updated_at": "2021-04-21T21:40:05.267Z"
+  },
+  {
+    "id": 36,
+    "title": "Kiang Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.111527782426161,
+            51.23835617020035
+          ],
+          [
+            7.111527782426161,
+            51.23800151942168
+          ],
+          [
+            7.111998414987676,
+            51.23800151942168
+          ],
+          [
+            7.111998414987676,
+            51.23835617020035
+          ],
+          [
+            7.111527782426161,
+            51.23835617020035
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 21,
+      "slug": "kiang",
+      "title": "Kiang",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.137Z",
+      "created_at": "2021-03-30T21:08:07.140Z",
+      "updated_at": "2021-03-30T22:54:40.190Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.116Z",
+    "created_at": "2021-04-01T20:14:41.333Z",
+    "updated_at": "2021-04-01T20:14:41.338Z"
+  },
+  {
+    "id": 37,
+    "title": "Kiosk Tigertal Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.114062265382094,
+            51.23833450942312
+          ],
+          [
+            7.114062265382094,
+            51.23812198840096
+          ],
+          [
+            7.11438302288406,
+            51.23812198840096
+          ],
+          [
+            7.11438302288406,
+            51.23833450942312
+          ],
+          [
+            7.114062265382094,
+            51.23833450942312
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 22,
+      "slug": "kiosk-tigertal",
+      "title": "Kiosk Tigertal",
+      "body": "Some Content\n",
+      "type": "food",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.162Z",
+      "created_at": "2021-03-30T21:08:07.163Z",
+      "updated_at": "2021-03-30T21:08:07.163Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.331Z",
+    "created_at": "2021-04-01T20:14:41.406Z",
+    "updated_at": "2021-04-01T20:14:41.412Z"
+  },
+  {
+    "id": 38,
+    "title": "Affenhaus Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.109109601908572,
+            51.23996187234752
+          ],
+          [
+            7.109109601908572,
+            51.239333960221565
+          ],
+          [
+            7.110279732730108,
+            51.239333960221565
+          ],
+          [
+            7.110279732730108,
+            51.23996187234752
+          ],
+          [
+            7.109109601908572,
+            51.23996187234752
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 2,
+      "slug": "affenhaus",
+      "title": "Affenhaus",
+      "body": "Some Content\n\nSome other content",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:06.745Z",
+      "created_at": "2021-03-30T21:08:06.757Z",
+      "updated_at": "2021-03-30T22:50:51.591Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.364Z",
+    "created_at": "2021-04-01T20:14:41.434Z",
+    "updated_at": "2021-04-01T20:14:41.439Z"
+  },
+  {
+    "id": 39,
+    "title": "Spielplatz Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.107051038352181,
+            51.239582691051666
+          ],
+          [
+            7.107051038352181,
+            51.239006476815405
+          ],
+          [
+            7.107820737183094,
+            51.239006476815405
+          ],
+          [
+            7.107820737183094,
+            51.239582691051666
+          ],
+          [
+            7.107051038352181,
+            51.239582691051666
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 37,
+      "slug": "spielplatz",
+      "title": "Spielplatz",
+      "body": "Some Content\n",
+      "type": "playground",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.500Z",
+      "created_at": "2021-03-30T21:08:07.502Z",
+      "updated_at": "2021-03-30T21:08:07.502Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.373Z",
+    "created_at": "2021-04-01T20:14:41.458Z",
+    "updated_at": "2021-04-01T20:14:41.462Z"
+  },
+  {
+    "id": 40,
+    "title": "Kleines Affenhaus Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.108538463436856,
+            51.23978298187313
+          ],
+          [
+            7.108538463436856,
+            51.2394314487439
+          ],
+          [
+            7.109065611577034,
+            51.2394314487439
+          ],
+          [
+            7.109065611577034,
+            51.23978298187313
+          ],
+          [
+            7.108538463436856,
+            51.23978298187313
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 24,
+      "slug": "kleines-affenhaus",
+      "title": "Kleines Affenhaus",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.205Z",
+      "created_at": "2021-03-30T21:08:07.206Z",
+      "updated_at": "2021-03-30T22:50:31.754Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.384Z",
+    "created_at": "2021-04-01T20:14:41.484Z",
+    "updated_at": "2021-04-01T20:14:41.489Z"
+  },
+  {
+    "id": 41,
+    "title": "Okavango Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.109654514144449,
+            51.239305473169345
+          ],
+          [
+            7.109654514144449,
+            51.23900436833281
+          ],
+          [
+            7.1100160546828715,
+            51.23900436833281
+          ],
+          [
+            7.1100160546828715,
+            51.239305473169345
+          ],
+          [
+            7.109654514144449,
+            51.239305473169345
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 29,
+      "slug": "okavango",
+      "title": "Okavango",
+      "body": "Some Content\n",
+      "type": "food",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.323Z",
+      "created_at": "2021-03-30T21:08:07.326Z",
+      "updated_at": "2021-03-30T21:08:07.326Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.390Z",
+    "created_at": "2021-04-01T20:14:41.509Z",
+    "updated_at": "2021-04-01T20:14:41.514Z"
+  },
+  {
+    "id": 42,
+    "title": "Tiger Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.114276698252734,
+            51.238925836120714
+          ],
+          [
+            7.114276698252734,
+            51.2381594052025
+          ],
+          [
+            7.114927643184101,
+            51.2381594052025
+          ],
+          [
+            7.114927643184101,
+            51.238925836120714
+          ],
+          [
+            7.114276698252734,
+            51.238925836120714
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 43,
+      "slug": "tiger",
+      "title": "Tiger",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.608Z",
+      "created_at": "2021-03-30T21:08:07.610Z",
+      "updated_at": "2021-03-30T22:44:05.988Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.393Z",
+    "created_at": "2021-04-01T20:14:41.532Z",
+    "updated_at": "2021-04-01T20:14:41.537Z"
+  },
+  {
+    "id": 43,
+    "title": "Seelöwen Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.112140887674164,
+            51.24086727530663
+          ],
+          [
+            7.112140887674164,
+            51.24064952815244
+          ],
+          [
+            7.1125382563380635,
+            51.24064952815244
+          ],
+          [
+            7.1125382563380635,
+            51.24086727530663
+          ],
+          [
+            7.112140887674164,
+            51.24086727530663
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 36,
+      "slug": "seeloewen",
+      "title": "Seelöwen",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.483Z",
+      "created_at": "2021-03-30T21:08:07.485Z",
+      "updated_at": "2021-03-30T22:46:15.570Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.396Z",
+    "created_at": "2021-04-01T20:14:41.552Z",
+    "updated_at": "2021-04-01T20:14:41.560Z"
+  },
+  {
+    "id": 44,
+    "title": "Brillenpinguine Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.112409428652595,
+            51.241268593165564
+          ],
+          [
+            7.112409428652595,
+            51.24097793057655
+          ],
+          [
+            7.112803785978345,
+            51.24097793057655
+          ],
+          [
+            7.112803785978345,
+            51.241268593165564
+          ],
+          [
+            7.112409428652595,
+            51.241268593165564
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 9,
+      "slug": "brillenpinguine",
+      "title": "Brillenpinguine",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:06.912Z",
+      "created_at": "2021-03-30T21:08:06.914Z",
+      "updated_at": "2021-03-30T22:52:35.058Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.401Z",
+    "created_at": "2021-04-01T20:14:41.575Z",
+    "updated_at": "2021-04-01T20:14:41.580Z"
+  },
+  {
+    "id": 45,
+    "title": "Südamerikahaus Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.111742015340749,
+            51.2411956752266
+          ],
+          [
+            7.111742015340749,
+            51.24096724793197
+          ],
+          [
+            7.112062852825137,
+            51.24096724793197
+          ],
+          [
+            7.112062852825137,
+            51.2411956752266
+          ],
+          [
+            7.111742015340749,
+            51.2411956752266
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 39,
+      "slug": "suedamerikahaus",
+      "title": "Südamerikahaus",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.533Z",
+      "created_at": "2021-03-30T21:08:07.534Z",
+      "updated_at": "2021-03-30T22:45:45.747Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.404Z",
+    "created_at": "2021-04-01T20:14:41.593Z",
+    "updated_at": "2021-04-01T20:14:41.598Z"
+  },
+  {
+    "id": 46,
+    "title": "Gibbons Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.108027439752747,
+            51.24082587943283
+          ],
+          [
+            7.108027439752747,
+            51.24039018228943
+          ],
+          [
+            7.108950760819631,
+            51.24039018228943
+          ],
+          [
+            7.108950760819631,
+            51.24082587943283
+          ],
+          [
+            7.108027439752747,
+            51.24082587943283
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 16,
+      "slug": "gibbons",
+      "title": "Gibbons",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.042Z",
+      "created_at": "2021-03-30T21:08:07.044Z",
+      "updated_at": "2021-03-30T22:53:51.141Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.423Z",
+    "created_at": "2021-04-01T20:14:41.608Z",
+    "updated_at": "2021-04-01T20:14:41.614Z"
+  },
+  {
+    "id": 47,
+    "title": "Kangurus Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.107526093941576,
+            51.239820220881
+          ],
+          [
+            7.107526093941576,
+            51.23937471253239
+          ],
+          [
+            7.108446111734475,
+            51.23937471253239
+          ],
+          [
+            7.108446111734475,
+            51.239820220881
+          ],
+          [
+            7.107526093941576,
+            51.239820220881
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 19,
+      "slug": "kangurus",
+      "title": "Kangurus",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.095Z",
+      "created_at": "2021-03-30T21:08:07.097Z",
+      "updated_at": "2021-03-30T22:54:27.226Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.426Z",
+    "created_at": "2021-04-01T20:14:41.624Z",
+    "updated_at": "2021-04-01T20:14:41.629Z"
+  },
+  {
+    "id": 48,
+    "title": "Okapis Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.111299112684587,
+            51.24149267578407
+          ],
+          [
+            7.111299112684587,
+            51.24116263565496
+          ],
+          [
+            7.11229448991453,
+            51.24116263565496
+          ],
+          [
+            7.11229448991453,
+            51.24149267578407
+          ],
+          [
+            7.111299112684587,
+            51.24149267578407
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 28,
+      "slug": "okapis",
+      "title": "Okapis",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.295Z",
+      "created_at": "2021-03-30T21:08:07.297Z",
+      "updated_at": "2021-03-30T22:49:18.347Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.428Z",
+    "created_at": "2021-04-01T20:14:41.643Z",
+    "updated_at": "2021-04-01T20:14:41.650Z"
+  },
+  {
+    "id": 49,
+    "title": "Kirk DikDiks Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.111280316815657,
+            51.24163717194919
+          ],
+          [
+            7.111280316815657,
+            51.24150304541165
+          ],
+          [
+            7.111839745860942,
+            51.24150304541165
+          ],
+          [
+            7.111839745860942,
+            51.24163717194919
+          ],
+          [
+            7.111280316815657,
+            51.24163717194919
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 23,
+      "slug": "kirk-dikdiks",
+      "title": "Kirk DikDiks",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.183Z",
+      "created_at": "2021-03-30T21:08:07.186Z",
+      "updated_at": "2021-03-30T22:54:51.304Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.430Z",
+    "created_at": "2021-04-01T20:14:41.664Z",
+    "updated_at": "2021-04-01T20:14:41.670Z"
+  },
+  {
+    "id": 50,
+    "title": "JuniorZoo Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.113319108717582,
+            51.24070380530231
+          ],
+          [
+            7.113319108717582,
+            51.239933177452
+          ],
+          [
+            7.113989277423831,
+            51.239933177452
+          ],
+          [
+            7.113989277423831,
+            51.24070380530231
+          ],
+          [
+            7.113319108717582,
+            51.24070380530231
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 18,
+      "slug": "juniorzoo",
+      "title": "JuniorZoo",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.076Z",
+      "created_at": "2021-03-30T21:08:07.077Z",
+      "updated_at": "2021-03-30T21:08:07.077Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.431Z",
+    "created_at": "2021-04-01T20:14:41.682Z",
+    "updated_at": "2021-04-01T20:14:41.688Z"
+  },
+  {
+    "id": 51,
+    "title": "Steinböcke Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.112959627726498,
+            51.240797732943115
+          ],
+          [
+            7.112959627726498,
+            51.24013426709288
+          ],
+          [
+            7.113475886260061,
+            51.24013426709288
+          ],
+          [
+            7.113475886260061,
+            51.240797732943115
+          ],
+          [
+            7.112959627726498,
+            51.240797732943115
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 38,
+      "slug": "steinboecke",
+      "title": "Steinböcke",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.516Z",
+      "created_at": "2021-03-30T21:08:07.517Z",
+      "updated_at": "2021-03-30T22:46:02.270Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.433Z",
+    "created_at": "2021-04-01T20:14:41.703Z",
+    "updated_at": "2021-04-01T20:14:41.709Z"
+  },
+  {
+    "id": 52,
+    "title": "Pinguine Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.112428104547893,
+            51.24060475920732
+          ],
+          [
+            7.112428104547893,
+            51.24023957352811
+          ],
+          [
+            7.11286053750515,
+            51.24023957352811
+          ],
+          [
+            7.11286053750515,
+            51.24060475920732
+          ],
+          [
+            7.112428104547893,
+            51.24060475920732
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 31,
+      "slug": "pinguine",
+      "title": "Pinguine",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.370Z",
+      "created_at": "2021-03-30T21:08:07.373Z",
+      "updated_at": "2021-03-30T22:48:33.100Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.450Z",
+    "created_at": "2021-04-01T20:14:41.719Z",
+    "updated_at": "2021-04-01T20:14:41.724Z"
+  },
+  {
+    "id": 53,
+    "title": "Eisbären Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.112536360754686,
+            51.24090429395053
+          ],
+          [
+            7.112536360754686,
+            51.24053823933608
+          ],
+          [
+            7.112965822365004,
+            51.24053823933608
+          ],
+          [
+            7.112965822365004,
+            51.24090429395053
+          ],
+          [
+            7.112536360754686,
+            51.24090429395053
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 12,
+      "slug": "eisbaeren",
+      "title": "Eisbären",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:06.968Z",
+      "created_at": "2021-03-30T21:08:06.969Z",
+      "updated_at": "2021-03-30T22:53:19.635Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.452Z",
+    "created_at": "2021-04-01T20:14:41.735Z",
+    "updated_at": "2021-04-01T20:14:41.738Z"
+  },
+  {
+    "id": 54,
+    "title": "Musikmuschel Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.109699104344144,
+            51.24051345840528
+          ],
+          [
+            7.109699104344144,
+            51.240380999622374
+          ],
+          [
+            7.109919263956126,
+            51.240380999622374
+          ],
+          [
+            7.109919263956126,
+            51.24051345840528
+          ],
+          [
+            7.109699104344144,
+            51.24051345840528
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 27,
+      "slug": "musikmuschel",
+      "title": "Musikmuschel",
+      "body": "Some Content\n",
+      "type": "poi",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.271Z",
+      "created_at": "2021-03-30T21:08:07.274Z",
+      "updated_at": "2021-03-30T21:08:07.274Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.454Z",
+    "created_at": "2021-04-01T20:14:41.748Z",
+    "updated_at": "2021-04-01T20:14:41.752Z"
+  },
+  {
+    "id": 55,
+    "title": "Eingang Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.108809631837817,
+            51.241120871673154
+          ],
+          [
+            7.108809631837817,
+            51.24089274737899
+          ],
+          [
+            7.109262172375707,
+            51.24089274737899
+          ],
+          [
+            7.109262172375707,
+            51.241120871673154
+          ],
+          [
+            7.108809631837817,
+            51.241120871673154
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 11,
+      "slug": "eingang",
+      "title": "Eingang",
+      "body": "Some Content\n",
+      "type": "poi",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:06.948Z",
+      "created_at": "2021-03-30T21:08:06.950Z",
+      "updated_at": "2021-03-30T21:08:06.950Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.456Z",
+    "created_at": "2021-04-01T20:14:41.762Z",
+    "updated_at": "2021-04-01T20:14:41.767Z"
+  },
+  {
+    "id": 56,
+    "title": "Yaks Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.110110853847336,
+            51.2401383964133
+          ],
+          [
+            7.110110853847336,
+            51.23955324741945
+          ],
+          [
+            7.111464856256457,
+            51.23955324741945
+          ],
+          [
+            7.111464856256457,
+            51.2401383964133
+          ],
+          [
+            7.110110853847336,
+            51.2401383964133
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 46,
+      "slug": "yaks",
+      "title": "Yaks",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.667Z",
+      "created_at": "2021-03-30T21:08:07.668Z",
+      "updated_at": "2021-03-30T22:43:49.882Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.472Z",
+    "created_at": "2021-04-01T20:14:41.778Z",
+    "updated_at": "2021-04-01T20:14:41.781Z"
+  },
+  {
+    "id": 57,
+    "title": "Tierwelt Patagoniens Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.111790284731809,
+            51.23951752090978
+          ],
+          [
+            7.111790284731809,
+            51.23844173903487
+          ],
+          [
+            7.113862481291855,
+            51.23844173903487
+          ],
+          [
+            7.113862481291855,
+            51.23951752090978
+          ],
+          [
+            7.111790284731809,
+            51.23951752090978
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 42,
+      "slug": "tierwelt-patagoniens",
+      "title": "Tierwelt Patagoniens",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.588Z",
+      "created_at": "2021-03-30T21:08:07.590Z",
+      "updated_at": "2021-03-30T22:44:54.839Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.475Z",
+    "created_at": "2021-04-01T20:14:41.789Z",
+    "updated_at": "2021-04-01T20:14:41.792Z"
+  },
+  {
+    "id": 58,
+    "title": "Emus Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.111295673440485,
+            51.23991597153289
+          ],
+          [
+            7.111295673440485,
+            51.23939615294564
+          ],
+          [
+            7.112683412434774,
+            51.23939615294564
+          ],
+          [
+            7.112683412434774,
+            51.23991597153289
+          ],
+          [
+            7.111295673440485,
+            51.23991597153289
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 14,
+      "slug": "emus",
+      "title": "Emus",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.006Z",
+      "created_at": "2021-03-30T21:08:07.008Z",
+      "updated_at": "2021-03-30T22:53:36.205Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.478Z",
+    "created_at": "2021-04-01T20:14:41.802Z",
+    "updated_at": "2021-04-01T20:14:41.805Z"
+  },
+  {
+    "id": 59,
+    "title": "Pelikane Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.111921135972528,
+            51.239437441141575
+          ],
+          [
+            7.111921135972528,
+            51.238939506199664
+          ],
+          [
+            7.112676597932507,
+            51.238939506199664
+          ],
+          [
+            7.112676597932507,
+            51.239437441141575
+          ],
+          [
+            7.111921135972528,
+            51.239437441141575
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 30,
+      "slug": "pelikane",
+      "title": "Pelikane",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.348Z",
+      "created_at": "2021-03-30T21:08:07.350Z",
+      "updated_at": "2021-03-30T22:48:44.656Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.481Z",
+    "created_at": "2021-04-01T20:14:41.814Z",
+    "updated_at": "2021-04-01T20:14:41.819Z"
+  },
+  {
+    "id": 60,
+    "title": "Bären Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.10995988702774,
+            51.23967149272588
+          ],
+          [
+            7.10995988702774,
+            51.239036766845615
+          ],
+          [
+            7.111414335360246,
+            51.239036766845615
+          ],
+          [
+            7.111414335360246,
+            51.23967149272588
+          ],
+          [
+            7.10995988702774,
+            51.23967149272588
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 6,
+      "slug": "baeren",
+      "title": "Bären",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:06.838Z",
+      "created_at": "2021-03-30T21:08:06.840Z",
+      "updated_at": "2021-03-30T22:43:00.480Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.499Z",
+    "created_at": "2021-04-01T20:14:41.830Z",
+    "updated_at": "2021-04-01T20:14:41.834Z"
+  },
+  {
+    "id": 61,
+    "title": "Rothunde Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.11009733681819,
+            51.2390799656974
+          ],
+          [
+            7.11009733681819,
+            51.23867917871531
+          ],
+          [
+            7.110791056348296,
+            51.23867917871531
+          ],
+          [
+            7.110791056348296,
+            51.2390799656974
+          ],
+          [
+            7.11009733681819,
+            51.2390799656974
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 35,
+      "slug": "rothunde",
+      "title": "Rothunde",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.465Z",
+      "created_at": "2021-03-30T21:08:07.466Z",
+      "updated_at": "2021-03-30T22:46:25.473Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.503Z",
+    "created_at": "2021-04-01T20:14:41.844Z",
+    "updated_at": "2021-04-01T20:14:41.848Z"
+  },
+  {
+    "id": 62,
+    "title": "Zebras Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.112605545548831,
+            51.24000374150304
+          ],
+          [
+            7.112605545548831,
+            51.23909757478242
+          ],
+          [
+            7.113453947081987,
+            51.23909757478242
+          ],
+          [
+            7.113453947081987,
+            51.24000374150304
+          ],
+          [
+            7.112605545548831,
+            51.24000374150304
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 47,
+      "slug": "zebras",
+      "title": "Zebras",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.687Z",
+      "created_at": "2021-03-30T21:08:07.689Z",
+      "updated_at": "2021-03-30T22:43:40.768Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.505Z",
+    "created_at": "2021-04-01T20:14:41.858Z",
+    "updated_at": "2021-04-01T20:14:41.863Z"
+  },
+  {
+    "id": 63,
+    "title": "Pinselohrschweine Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.112700364708901,
+            51.240464485015664
+          ],
+          [
+            7.112700364708901,
+            51.24013878205026
+          ],
+          [
+            7.112979019464465,
+            51.24013878205026
+          ],
+          [
+            7.112979019464465,
+            51.240464485015664
+          ],
+          [
+            7.112700364708901,
+            51.240464485015664
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 32,
+      "slug": "pinselohrschweine",
+      "title": "Pinselohrschweine",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.392Z",
+      "created_at": "2021-03-30T21:08:07.394Z",
+      "updated_at": "2021-03-30T22:48:03.704Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.527Z",
+    "created_at": "2021-04-01T20:14:41.871Z",
+    "updated_at": "2021-04-01T20:14:41.876Z"
+  },
+  {
+    "id": 64,
+    "title": "Bongos Box",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.112927514784476,
+            51.24045742335187
+          ],
+          [
+            7.112927514784476,
+            51.23997982199505
+          ],
+          [
+            7.113425085425377,
+            51.23997982199505
+          ],
+          [
+            7.113425085425377,
+            51.24045742335187
+          ],
+          [
+            7.112927514784476,
+            51.24045742335187
+          ]
+        ]
+      }
+    },
+    "facility": {
+      "id": 8,
+      "slug": "bongos",
+      "title": "Bongos",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:06.893Z",
+      "created_at": "2021-03-30T21:08:06.895Z",
+      "updated_at": "2021-03-30T22:52:22.921Z"
+    },
+    "type": "box",
+    "published_at": "2021-04-01T20:14:41.573Z",
+    "created_at": "2021-04-01T20:14:41.886Z",
+    "updated_at": "2021-04-01T20:14:41.890Z"
+  },
+  {
+    "id": 66,
+    "title": "Brillenpinguine Point",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.112548341605529,
+          51.241027797619765
+        ]
+      }
+    },
+    "facility": {
+      "id": 9,
+      "slug": "brillenpinguine",
+      "title": "Brillenpinguine",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:06.912Z",
+      "created_at": "2021-03-30T21:08:06.914Z",
+      "updated_at": "2021-03-30T22:52:35.058Z"
+    },
+    "type": "point",
+    "published_at": "2021-04-01T20:16:48.821Z",
+    "created_at": "2021-04-01T20:16:48.856Z",
+    "updated_at": "2021-04-01T20:16:48.860Z"
+  },
+  {
+    "id": 68,
+    "title": "Kiang Point",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.111728521790511,
+          51.23814203118328
+        ]
+      }
+    },
+    "facility": {
+      "id": 21,
+      "slug": "kiang",
+      "title": "Kiang",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.137Z",
+      "created_at": "2021-03-30T21:08:07.140Z",
+      "updated_at": "2021-03-30T22:54:40.190Z"
+    },
+    "type": "point",
+    "published_at": "2021-04-01T20:16:48.852Z",
+    "created_at": "2021-04-01T20:16:48.893Z",
+    "updated_at": "2021-04-01T20:16:48.897Z"
+  },
+  {
+    "id": 69,
+    "title": "Tiger Point",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.114663876640384,
+          51.23840972333189
+        ]
+      }
+    },
+    "facility": {
+      "id": 43,
+      "slug": "tiger",
+      "title": "Tiger",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.608Z",
+      "created_at": "2021-03-30T21:08:07.610Z",
+      "updated_at": "2021-03-30T22:44:05.988Z"
+    },
+    "type": "point",
+    "published_at": "2021-04-01T20:16:48.872Z",
+    "created_at": "2021-04-01T20:16:48.915Z",
+    "updated_at": "2021-04-01T20:16:48.919Z"
+  },
+  {
+    "id": 70,
+    "title": "Okapis Point",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.112148509483061,
+          51.241209600404446
+        ]
+      }
+    },
+    "facility": {
+      "id": 28,
+      "slug": "okapis",
+      "title": "Okapis",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.295Z",
+      "created_at": "2021-03-30T21:08:07.297Z",
+      "updated_at": "2021-03-30T22:49:18.347Z"
+    },
+    "type": "point",
+    "published_at": "2021-04-01T20:16:48.875Z",
+    "created_at": "2021-04-01T20:16:48.930Z",
+    "updated_at": "2021-04-01T20:16:48.935Z"
+  },
+  {
+    "id": 71,
+    "title": "Südamerikahaus Point",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.111888566614887,
+          51.24107187291918
+        ]
+      }
+    },
+    "facility": {
+      "id": 39,
+      "slug": "suedamerikahaus",
+      "title": "Südamerikahaus",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.533Z",
+      "created_at": "2021-03-30T21:08:07.534Z",
+      "updated_at": "2021-03-30T22:45:45.747Z"
+    },
+    "type": "point",
+    "published_at": "2021-04-01T20:16:48.877Z",
+    "created_at": "2021-04-01T20:16:48.943Z",
+    "updated_at": "2021-04-01T20:16:48.948Z"
+  },
+  {
+    "id": 73,
+    "title": "Yaks Point",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1107688127212025,
+          51.239744680788554
+        ]
+      }
+    },
+    "facility": {
+      "id": 46,
+      "slug": "yaks",
+      "title": "Yaks",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.667Z",
+      "created_at": "2021-03-30T21:08:07.668Z",
+      "updated_at": "2021-03-30T22:43:49.882Z"
+    },
+    "type": "point",
+    "published_at": "2021-04-01T20:16:48.892Z",
+    "created_at": "2021-04-01T20:16:48.972Z",
+    "updated_at": "2021-04-01T20:16:48.976Z"
+  },
+  {
+    "id": 74,
+    "title": "Okavango Point",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.109789028064229,
+          51.23906856153862
+        ]
+      }
+    },
+    "facility": {
+      "id": 29,
+      "slug": "okavango",
+      "title": "Okavango",
+      "body": "Some Content\n",
+      "type": "food",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.323Z",
+      "created_at": "2021-03-30T21:08:07.326Z",
+      "updated_at": "2021-03-30T21:08:07.326Z"
+    },
+    "type": "point",
+    "published_at": "2021-04-01T20:16:48.907Z",
+    "created_at": "2021-04-01T20:16:48.984Z",
+    "updated_at": "2021-04-01T20:16:48.989Z"
+  },
+  {
+    "id": 75,
+    "title": "Affenhaus Point",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.109769032458983,
+          51.239581911942345
+        ]
+      }
+    },
+    "facility": {
+      "id": 2,
+      "slug": "affenhaus",
+      "title": "Affenhaus",
+      "body": "Some Content\n\nSome other content",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:06.745Z",
+      "created_at": "2021-03-30T21:08:06.757Z",
+      "updated_at": "2021-03-30T22:50:51.591Z"
+    },
+    "type": "point",
+    "published_at": "2021-04-01T20:16:48.910Z",
+    "created_at": "2021-04-01T20:16:48.998Z",
+    "updated_at": "2021-04-01T20:16:49.003Z"
+  },
+  {
+    "id": 76,
+    "title": "Musikmuschel Point",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1097830293826565,
+          51.24043331821483
+        ]
+      }
+    },
+    "facility": {
+      "id": 27,
+      "slug": "musikmuschel",
+      "title": "Musikmuschel",
+      "body": "Some Content\n",
+      "type": "poi",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.271Z",
+      "created_at": "2021-03-30T21:08:07.274Z",
+      "updated_at": "2021-03-30T21:08:07.274Z"
+    },
+    "type": "point",
+    "published_at": "2021-04-01T20:16:48.912Z",
+    "created_at": "2021-04-01T20:16:49.011Z",
+    "updated_at": "2021-04-01T20:16:49.015Z"
+  },
+  {
+    "id": 77,
+    "title": "Gibbons Point",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.108161373799975,
+          51.24063740530661
+        ]
+      }
+    },
+    "facility": {
+      "id": 16,
+      "slug": "gibbons",
+      "title": "Gibbons",
+      "body": "Some Content\n",
+      "type": "enclosure",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:07.042Z",
+      "created_at": "2021-03-30T21:08:07.044Z",
+      "updated_at": "2021-03-30T22:53:51.141Z"
+    },
+    "type": "point",
+    "published_at": "2021-04-01T20:16:48.914Z",
+    "created_at": "2021-04-01T20:16:49.024Z",
+    "updated_at": "2021-04-01T20:16:49.028Z"
+  },
+  {
+    "id": 78,
+    "title": "Eingang Point",
+    "geojson": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.109056661028307,
+          51.24099376891437
+        ]
+      }
+    },
+    "facility": {
+      "id": 11,
+      "slug": "eingang",
+      "title": "Eingang",
+      "body": "Some Content\n",
+      "type": "poi",
+      "raw_published": true,
+      "published_at": "2021-03-30T21:08:06.948Z",
+      "created_at": "2021-03-30T21:08:06.950Z",
+      "updated_at": "2021-03-30T21:08:06.950Z"
+    },
+    "type": "point",
+    "published_at": "2021-04-01T20:16:48.928Z",
+    "created_at": "2021-04-01T20:16:49.036Z",
+    "updated_at": "2021-04-01T20:16:49.040Z"
+  },
+  {
+    "id": 79,
+    "title": "Außengrenze",
+    "geojson": {
+      "type": "Feature",
+      "properties": {
+        "name": "Außengrenze",
+        "slug": "aussengrenze"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.110154484257978,
+            51.24166260896365
+          ],
+          [
+            7.110154484257978,
+            51.24166260896365
+          ],
+          [
+            7.10855216442557,
+            51.241059229859026
+          ],
+          [
+            7.1079009915443025,
+            51.241018294746276
+          ],
+          [
+            7.107857965000938,
+            51.24067848848638
+          ],
+          [
+            7.107803696928305,
+            51.24027141361856
+          ],
+          [
+            7.107623116617343,
+            51.24003798055587
+          ],
+          [
+            7.106862963688374,
+            51.23977247702221
+          ],
+          [
+            7.106460800078336,
+            51.23966423073121
+          ],
+          [
+            7.106441772260386,
+            51.239609908506885
+          ],
+          [
+            7.106524702033576,
+            51.23944014060029
+          ],
+          [
+            7.106542146199591,
+            51.23943051720527
+          ],
+          [
+            7.106617301681463,
+            51.23941571525681
+          ],
+          [
+            7.106640864502682,
+            51.23932168745056
+          ],
+          [
+            7.106556563030972,
+            51.2393184295695
+          ],
+          [
+            7.106671121852538,
+            51.239175245571694
+          ],
+          [
+            7.106753947648581,
+            51.23903172101138
+          ],
+          [
+            7.10676065017546,
+            51.23896586223207
+          ],
+          [
+            7.106647786981218,
+            51.23880372693229
+          ],
+          [
+            7.10647595274799,
+            51.2386008117762
+          ],
+          [
+            7.1063783661961555,
+            51.23850480570243
+          ],
+          [
+            7.106425651803438,
+            51.23847430782892
+          ],
+          [
+            7.106586876368523,
+            51.23854723578444
+          ],
+          [
+            7.106850738375327,
+            51.23861280909223
+          ],
+          [
+            7.1071974021834485,
+            51.23866870892229
+          ],
+          [
+            7.107354027759327,
+            51.238678169548464
+          ],
+          [
+            7.10735609530491,
+            51.238624217936284
+          ],
+          [
+            7.1075504845808535,
+            51.23856477976192
+          ],
+          [
+            7.107662515957917,
+            51.23852424030267
+          ],
+          [
+            7.1077456736810065,
+            51.23849756624498
+          ],
+          [
+            7.107998250168212,
+            51.23842199642589
+          ],
+          [
+            7.108327165877117,
+            51.23835293235238
+          ],
+          [
+            7.108521923072198,
+            51.238322950330904
+          ],
+          [
+            7.1088455439448355,
+            51.23828126147318
+          ],
+          [
+            7.1090959849014,
+            51.23822614042945
+          ],
+          [
+            7.109130965213215,
+            51.23821081261241
+          ],
+          [
+            7.109166621376486,
+            51.23819228450944
+          ],
+          [
+            7.1092027054457105,
+            51.238156615594896
+          ],
+          [
+            7.109295996941539,
+            51.23790620448948
+          ],
+          [
+            7.109351284790039,
+            51.237849137732
+          ],
+          [
+            7.109563610123887,
+            51.23777860122646
+          ],
+          [
+            7.109717020406443,
+            51.237780519394704
+          ],
+          [
+            7.110024716779064,
+            51.237827947732356
+          ],
+          [
+            7.110550157294554,
+            51.237930719981854
+          ],
+          [
+            7.111016230858073,
+            51.23802494811899
+          ],
+          [
+            7.111353868649988,
+            51.237961092648554
+          ],
+          [
+            7.111882564450012,
+            51.23785993556684
+          ],
+          [
+            7.11203720646185,
+            51.2378307047862
+          ],
+          [
+            7.112087127489904,
+            51.237763115648846
+          ],
+          [
+            7.112091818458894,
+            51.23771195865255
+          ],
+          [
+            7.111731977546916,
+            51.23744878897372
+          ],
+          [
+            7.11052555070274,
+            51.2374221474698
+          ],
+          [
+            7.110522523368106,
+            51.23719875599286
+          ],
+          [
+            7.111152216970219,
+            51.23713674106245
+          ],
+          [
+            7.113305267759632,
+            51.2369509366683
+          ],
+          [
+            7.11418582222602,
+            51.23686719585313
+          ],
+          [
+            7.114636895086485,
+            51.236822048783466
+          ],
+          [
+            7.114737129056453,
+            51.23731244877987
+          ],
+          [
+            7.114851128001073,
+            51.23765798700728
+          ],
+          [
+            7.114950594139801,
+            51.237918191788964
+          ],
+          [
+            7.115077278296386,
+            51.238265946176824
+          ],
+          [
+            7.115150406223886,
+            51.238552424354424
+          ],
+          [
+            7.115172501367681,
+            51.238652689963686
+          ],
+          [
+            7.115236555289521,
+            51.23892471176361
+          ],
+          [
+            7.115344451575419,
+            51.239232808148124
+          ],
+          [
+            7.114543411632846,
+            51.239182582690454
+          ],
+          [
+            7.114201134860515,
+            51.239064763087164
+          ],
+          [
+            7.114237006976324,
+            51.2394204806278
+          ],
+          [
+            7.114219830751419,
+            51.23985498580242
+          ],
+          [
+            7.1142027705010245,
+            51.24028360625721
+          ],
+          [
+            7.114229568611173,
+            51.240395941802454
+          ],
+          [
+            7.114305731871549,
+            51.24089379160374
+          ],
+          [
+            7.114088955515974,
+            51.24130618024836
+          ],
+          [
+            7.114020150638328,
+            51.24142023112683
+          ],
+          [
+            7.113901164789761,
+            51.24159077030735
+          ],
+          [
+            7.110154484257978,
+            51.24166260896365
+          ]
+        ]
+      }
+    },
+    "facility": null,
+    "type": "border",
+    "published_at": "2021-04-04T21:41:29.115Z",
+    "created_at": "2021-04-04T21:41:13.897Z",
+    "updated_at": "2021-04-11T22:24:36.662Z"
+  },
+  {
+    "id": 80,
+    "title": "Bounding Box",
+    "geojson": {
+      "type": "Feature",
+      "properties": {
+        "name": "bounding-box",
+        "slug": "bounding-box"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              7.105631546336763,
+              51.24175769601948
+            ],
+            [
+              7.105631546336763,
+              51.236787035952574
+            ],
+            [
+              7.1157893937833165,
+              51.236787035952574
+            ],
+            [
+              7.1157893937833165,
+              51.24175769601948
+            ],
+            [
+              7.105631546336763,
+              51.24175769601948
+            ]
+          ]
+        ]
+      }
+    },
+    "facility": null,
+    "type": "bounding_box",
+    "published_at": "2021-04-05T21:36:23.382Z",
+    "created_at": "2021-04-05T21:36:21.060Z",
+    "updated_at": "2021-04-05T21:36:23.394Z"
+  }
+]

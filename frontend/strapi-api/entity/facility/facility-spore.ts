@@ -6,4 +6,6 @@ export interface FacilitySpore{
     title: string;
     body: string;
     type: FacilityType;
+    animals: number[];
+    photos: number[];
 }

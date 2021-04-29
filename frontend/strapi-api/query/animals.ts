@@ -1,5 +1,8 @@
 import fetch from 'node-fetch';
-import {getStrapiUrl} from "../data-api/utils/get-strapi-url";
+import {getStrapiUrl} from "../../data-api/utils/get-strapi-url";
+import {Animal} from "../entity/animal/animal";
+import {AnimalStrapi} from "../entity/animal/animal-strapi-interface";
+import {getJsonFromApi} from "../../data-api/utils/get-json-from-api";
 
 export interface AnimalInterface{
     id: number;
@@ -76,26 +79,38 @@ export const castAnimal = (rawAnimal:any):AnimalInterface => {
     return animal;
 }
 
-export const getAnimalBySlug = async (slug: string, published:boolean = false):Promise<AnimalInterface[]> =>{
+export const getAnimalById = async (id: number):Promise<Animal> =>{
 
-    const requestUrl = getStrapiUrl(`/animals?slug=${slug}`);
+    const requestUrl = getStrapiUrl(`/animals/${id}`);
 
-    const response = await fetch(requestUrl);
-    const json = await response.json();
+    const json = await getJsonFromApi<AnimalStrapi>(requestUrl);
 
-    const animal = json.map(castAnimal);
+    const animal = Animal.fromApi(json);
 
     return animal;
 
 }
-export const getAnimals = async (published:boolean = false):Promise<AnimalInterface[]> =>{
+
+
+export const getAnimalBySlug = async (slug: string):Promise<Animal> =>{
+
+    const requestUrl = getStrapiUrl(`/animals?slug=${slug}`);
+
+    const json = await getJsonFromApi<AnimalStrapi>(requestUrl);
+
+    const animal = Animal.fromApi(json);
+
+    return animal;
+
+}
+
+export const getAnimals = async ():Promise<Animal[]> =>{
 
     const requestUrl = getStrapiUrl('/animals')
 
-    const response = await fetch(requestUrl);
-    const json = await response.json();
+    const json = await getJsonFromApi<AnimalStrapi[]>(requestUrl);
 
-    const animals = json.map(castAnimal);
+    const animals = json.map(Animal.fromApi);
 
     return animals;
 

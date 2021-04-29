@@ -1,6 +1,3 @@
-import {AnimalSpore} from "../animal/animal-spore";
-import {FacilitySpore} from "../facility/facility-spore";
-
 export interface PhotoSize{
     width: number;
     height: number;
@@ -11,8 +8,8 @@ export interface PhotoSpore{
     id: number;
     title: string;
     copyright: string;
-    facility?: FacilitySpore | null,
-    animal?: AnimalSpore | number,
+    facility?: number | null,
+    animal?: number | number,
     thumbnail: PhotoSize | null;
     small: PhotoSize | null;
     medium: PhotoSize | null;

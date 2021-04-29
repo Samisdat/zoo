@@ -1,7 +1,10 @@
-import fetch from 'node-fetch';
-import {getStrapiUrl} from "../data-api/utils/get-strapi-url";
-import {Photo} from "./photo/photo";
-import {PhotoStrapi} from "./photo/photo-strapi";
+import {getStrapiUrl} from "../../data-api/utils/get-strapi-url";
+import {Photo} from "../entity/photo/photo";
+import {PhotoStrapi} from "../entity/photo/photo-strapi";
+import {getJsonFromApi} from "../../data-api/utils/get-json-from-api";
+import {Animal} from "../entity/animal/animal";
+import {AnimalStrapi} from "../entity/animal/animal-strapi-interface";
+import {Facility} from "../entity/facility/facility";
 
 export type PhotoType = 'animal' | 'facility' ;
 
@@ -19,10 +22,10 @@ export interface ImageFormat{
 }
 
 export interface ImageFormats{
-    thumbnail?: ImageFormat;
-    large?: ImageFormat;
-    medium?: ImageFormat;
-    small?: ImageFormat;
+    thumbnail?: ImageFormat | null;
+    large?: ImageFormat | null;
+    medium?: ImageFormat | null;
+    small?: ImageFormat | null;
 }
 
 
@@ -168,71 +171,49 @@ export const castPhoto = (rawPhoto:any):PhotoInterface => {
     return photo;
 }
 
-const getPhoto = async (requestUrl: string):Promise<PhotoInterface> => {
+export const getPhotoById = async (id: number):Promise<Photo> =>{
 
-    const response = await fetch(requestUrl);
-    const json = await response.json();
+    const requestUrl = getStrapiUrl(`/photos/${id}`);
 
-    if(json.length !== 1){
-        return undefined;
-    }
+    const json = await getJsonFromApi<PhotoStrapi>(requestUrl);
 
-    const photo = json.map(castPhoto);
+    const photo = Photo.fromApi(json);
 
-    return photo[0];
+    return photo;
 
 }
 
-export const getPhotoEntityByFacility = async (facilityId:number, published:boolean = false):Promise<Photo> =>{
+export const getPhotos = async ():Promise<Photo[]> =>{
+
+    const requestUrl = getStrapiUrl('/animals')
+
+    const json = await getJsonFromApi<PhotoStrapi[]>(requestUrl);
+
+    const photos = json.map(Photo.fromApi);
+
+    return photos;
+
+}
+
+export const getPhotoByFacility = async (facilityId:number):Promise<Photo> =>{
 
     const requestUrl = getStrapiUrl(`/photos?facility=${facilityId}`);
 
-    const response = await fetch(requestUrl);
-    const json = await response.json();
+    const json = await getJsonFromApi<PhotoStrapi>(requestUrl);
 
-    if(json.length !== 1){
-        return undefined;
-    }
-
-    const photo = Photo.fromApi(json[0] as PhotoStrapi);
+    const photo = Photo.fromApi(json);
 
     return photo;
 
 }
 
-export const getPhotoEntityById = async (photoId:number, published:boolean = false):Promise<Photo> =>{
-
-    const requestUrl = getStrapiUrl(`/photos?id=${photoId}`);
-
-    const response = await fetch(requestUrl);
-    const json = await response.json();
-
-    if(json.length !== 1){
-        return undefined;
-    }
-
-    const photo = Photo.fromApi(json[0] as PhotoStrapi);
-
-    return photo;
-
-}
-
-export const getPhotoByFacility = async (facilityId:number, published:boolean = false):Promise<PhotoInterface> =>{
-
-    const requestUrl = getStrapiUrl(`/photos?facility=${facilityId}`);
-
-    const photo = await getPhoto(requestUrl);
-
-    return photo;
-
-}
-
-export const getPhotoByAnimal = async (animalId:number, published:boolean = false):Promise<PhotoInterface> =>{
+export const getPhotoByAnimal = async (animalId:number):Promise<Photo> =>{
 
     const requestUrl = getStrapiUrl(`/photos?animal=${animalId}`)
 
-    const photo = await getPhoto(requestUrl);
+    const json = await getJsonFromApi<PhotoStrapi>(requestUrl);
+
+    const photo = Photo.fromApi(json);
 
     return photo;
-
 }

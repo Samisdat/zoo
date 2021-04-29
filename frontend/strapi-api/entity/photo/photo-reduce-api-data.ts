@@ -80,7 +80,7 @@ export const reducePhotoApiData = (apiData: PhotoStrapi):PhotoSpore =>{
 
     if(apiData.animal){
 
-        animal = animalReduceApiData(apiData.animal as AnimalStrapi)
+        animal = apiData.animal.id;
 
     }
 
@@ -92,7 +92,7 @@ export const reducePhotoApiData = (apiData: PhotoStrapi):PhotoSpore =>{
 
     if(apiData.facility){
 
-        facility = facilityReduceApiData(apiData.facility as FacilityStrapi)
+        //facility = facilityReduceApiData(apiData.facility as FacilityStrapi)
 
     }
 

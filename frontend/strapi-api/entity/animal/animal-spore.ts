@@ -14,7 +14,7 @@ export interface AnimalSpore {
     order: string;
     species: string;
     family: string;
-    /*individual_animals: string;*/
-    /*facilities: string;*/
-    /*photos: string;*/
+    individual_animals: number[];
+    facilities: number[];
+    photos: number[];
 }

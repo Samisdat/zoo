@@ -232,9 +232,6 @@ export class Warehouse{
             return undefined;
         }
 
-        console.log('getAnimal', animalId)
-
-
         return this.animals.find((animal:Animal)=>{
             return (animalId === animal.id);
         });

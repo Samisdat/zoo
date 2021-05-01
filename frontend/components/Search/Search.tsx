@@ -13,7 +13,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import {Feature} from "geojson";
 import PinnedSubheaderList from "./SearchList";
 import ChipsArray from "./Chips";
-import {MapElementInterface} from "../../data-api/map-elements";
+import {MapElement} from "../../strapi-api/entity/map-element/map-element";
+
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -76,14 +77,15 @@ const Transition = React.forwardRef(function Transition(
 });
 
 export interface SearchDialogProperties{
-    mapElements:MapElementInterface[];
+    mapElements:MapElement[];
     setFocus:Function;
 };
 
 export default function SearchDialog(props:SearchDialogProperties) {
     const classes = useStyles();
 
-    const options = props.mapElements.filter((mapElement:MapElementInterface) => {
+    const options = props.mapElements.filter((mapElement:MapElement) => {
+
 
         if('box' !== mapElement.properties.type){
             return false;
@@ -153,7 +155,7 @@ export default function SearchDialog(props:SearchDialogProperties) {
         setOpen(false);
     };
 
-    const handleClickItem = (item:MapElementInterface) => {
+    const handleClickItem = (item:MapElement) => {
 
         setOpen(false);
 
@@ -174,7 +176,7 @@ export default function SearchDialog(props:SearchDialogProperties) {
             </Paper>
             <Dialog
                 fullScreen
-                open={open}/*open={true}*/
+                open={true}/*open={open}*/
                 onClose={handleClose}
                 TransitionComponent={Transition}
             >

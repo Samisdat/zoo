@@ -1,23 +1,34 @@
 import {AnimalStrapi} from "./animal-strapi-interface";
 import {AnimalSpore} from "./animal-spore";
 
-export const animalReduceApiData = (animalStrapi: AnimalStrapi):AnimalSpore =>{
+export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
 
-    const id = animalStrapi.id;
-    const slug = animalStrapi.slug;
-    const title = animalStrapi.title;
+    const id = apiData.id;
+    const slug = apiData.slug;
+    const title = apiData.title;
 
-    const wikidata = animalStrapi.wikidata;
-    const wikipediaLink = animalStrapi.wikipediaLink;
-    const scientificName = animalStrapi.scientificName;
-    const iucnID = animalStrapi.iucnID;
-    const iucnLink = animalStrapi.iucnLink;
-    const iucnStatus = animalStrapi.iucnStatus;
-    const body = animalStrapi.body;
-    const className = animalStrapi.className;
-    const order = animalStrapi.order;
-    const species = animalStrapi.species;
-    const family = animalStrapi.family;
+    const wikidata = apiData.wikidata;
+    const wikipediaLink = apiData.wikipediaLink;
+    const scientificName = apiData.scientificName;
+    const iucnID = apiData.iucnID;
+    const iucnLink = apiData.iucnLink;
+    const iucnStatus = apiData.iucnStatus;
+    const body = apiData.body;
+    const className = apiData.className;
+    const order = apiData.order;
+    const species = apiData.species;
+    const family = apiData.family;
+
+    let photos:number[] = [];
+
+    if (undefined !== apiData.photos) {
+
+        photos = apiData.photos.map((photo) => {
+            return photo.id;
+        });
+
+    }
+
 
     return{
         id,
@@ -36,6 +47,6 @@ export const animalReduceApiData = (animalStrapi: AnimalStrapi):AnimalSpore =>{
         family,
         individual_animals: [],
         facilities: [],
-        photos: [],
+        photos,
     };
 }

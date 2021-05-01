@@ -6,8 +6,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import {Feature} from "geojson";
 import {Avatar, ListItemAvatar} from "@material-ui/core";
-import {MapElementInterface} from "../../data-api/map-elements";
-
+import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
@@ -34,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface OrderedMapElements{
-    [index: string]: MapElementInterface[];
+    [index: string]: MapElement[];
 }
 
 interface PinnedSubheaderListProperties {
@@ -44,11 +43,9 @@ interface PinnedSubheaderListProperties {
 
 export default function PinnedSubheaderList(props:PinnedSubheaderListProperties) {
 
-    console.log(props)
-
     const classes = useStyles();
 
-    const onListItemClick = (item:MapElementInterface) => {
+    const onListItemClick = (item:MapElement) => {
 
         props.handleClickItem(item);
     };
@@ -62,8 +59,14 @@ export default function PinnedSubheaderList(props:PinnedSubheaderListProperties)
                     <li key={`section-${key[0]}`} className={classes.listSection}>
                         <ul className={classes.ul}>
                             <ListSubheader>{key[0].toUpperCase()}</ListSubheader>
-                            {(key[1] as MapElementInterface[]).map((item:MapElementInterface, index) => {
-                                const thumbnail = `http://127.0.0.1:1337${item.properties.photo?.image?.formats?.thumbnail?.url}`;
+                            {(key[1] as MapElement[]).map((item:MapElement, index) => {
+
+                                let thumbnail = '';
+
+                                if(0 !== item.photos.length && item.photos[0].thumbnail){
+                                    thumbnail = `http://127.0.0.1:1337${item.photos[0].thumbnail.src}`
+                                }
+                                
                                 return(
                                     <ListItem
                                         alignItems="flex-start"

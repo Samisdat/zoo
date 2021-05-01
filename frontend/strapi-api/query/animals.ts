@@ -3,6 +3,10 @@ import {getStrapiUrl} from "../../data-api/utils/get-strapi-url";
 import {Animal} from "../entity/animal/animal";
 import {AnimalStrapi} from "../entity/animal/animal-strapi-interface";
 import {getJsonFromApi} from "../../data-api/utils/get-json-from-api";
+import {MapElement} from "../entity/map-element/map-element";
+import {Warehouse} from "../warehouse/warehouse";
+import {getFacilityById} from "./facilities";
+import {getPhotoById} from "./photos";
 
 export interface AnimalInterface{
     id: number;
@@ -79,6 +83,22 @@ export const castAnimal = (rawAnimal:any):AnimalInterface => {
     return animal;
 }
 
+export const loadRelations = async (animal:Animal) => {
+
+    if(null !== animal.photosRaw){
+
+        for (const photoId of animal.photosRaw) {
+
+            if (false === Warehouse.get().hasPhoto(photoId)) {
+                await getPhotoById(photoId);
+            }
+
+        }
+
+    }
+
+}
+
 export const getAnimalById = async (id: number):Promise<Animal> =>{
 
     const requestUrl = getStrapiUrl(`/animals/${id}`);
@@ -86,6 +106,8 @@ export const getAnimalById = async (id: number):Promise<Animal> =>{
     const json = await getJsonFromApi<AnimalStrapi>(requestUrl);
 
     const animal = Animal.fromApi(json);
+
+    await loadRelations(animal);
 
     return animal;
 

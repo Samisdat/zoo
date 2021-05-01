@@ -1,14 +1,11 @@
 import {MapElementStrapi} from "./map-element-strapi";
 import {MapElementSpore} from "./map-element-spore";
-import {facilityReduceApiData} from "../facility/facility-reduce-api-data";
-import {FacilityStrapi} from "../facility/facility-strapi";
 
 export const mapElementReduceApiData = (apiData: MapElementStrapi):MapElementSpore =>{
 
     const id = apiData.id;
     const title = apiData.title;
     const geojson = apiData.geojson;
-    /*const facility = apiData.facility;*/
     const type = apiData.type;
 
     const mapElementSpore: MapElementSpore = {
@@ -19,17 +16,15 @@ export const mapElementReduceApiData = (apiData: MapElementStrapi):MapElementSpo
         facility: null
     };
 
-    let facility = undefined;
+    let facility = null;
 
-    if(apiData.facility){
+    if(undefined !== apiData.facility?.id){
 
-        facility = facilityReduceApiData(apiData.facility as FacilityStrapi)
+        facility = apiData.facility.id;
 
     }
 
-    if(undefined !== facility){
-        mapElementSpore.facility = facility;
-    }
+    mapElementSpore.facility = facility;
 
     return mapElementSpore;
 }

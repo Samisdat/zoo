@@ -5,11 +5,14 @@ import {MapElementStrapi} from "./map-element-strapi";
 import {GeometryCollection, LineString, MultiLineString, MultiPoint, MultiPolygon, Point, Polygon} from "geojson";
 import {FacilitySpore} from "../facility/facility-spore";
 import {Warehouse} from "../../warehouse/warehouse";
+import {Facility} from "../facility/facility";
+import {randomExponential} from "d3-random";
+import {Photo} from "../photo/photo";
 
 
 export interface MapElementProperties{
     name: string;
-    facility?:FacilitySpore,
+    facility?:Facility,
     type: MapElementType
 }
 
@@ -31,14 +34,13 @@ export class MapElement extends Entity<MapElementSpore>{
 
         const mapElementProperties: MapElementProperties = {
             name: this.json.title,
-            type: this.json.type
+            type: this.json.type,
         };
 
-        /*
-        if(this.json.facility){
-            mapElementProperties.facility = this.json.facility;
+        if(null !== this.facilityRaw){
+            mapElementProperties.facility = this.facility;
         }
-        */
+
         return mapElementProperties;
     }
 
@@ -79,4 +81,47 @@ export class MapElement extends Entity<MapElementSpore>{
         return mapElement;
 
     }
+
+    get facilityRaw(): number  | null {
+
+        return this.json.facility;
+    }
+
+    get facility(): Facility  | null{
+
+        if(null === this.facilityRaw){
+            return null;
+        }
+
+        return Warehouse.get().getFacility(this.facilityRaw);
+
+    }
+
+    get photos(): Photo[] {
+
+        let photos = [];
+
+        // use image(s) of facility or images if facility's animals
+        if(0 !== this.facility.photos.length){
+            photos = this.facility.photos;
+        }
+        else if(0 !== this.facility.animals.length){
+
+            for(const animal of this.facility.animals){
+
+                for(const photo of animal.photos){
+
+                    photos.push(photo);
+
+                }
+
+            }
+
+        }
+
+        return photos;
+
+    }
+
+
 }

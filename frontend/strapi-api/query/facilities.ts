@@ -65,8 +65,6 @@ export const loadRelations = async (facility:Facility) => {
 
     }
 
-    console.log(facility.animalsRaw)
-
     for (const animalId of facility.animalsRaw) {
 
         if (false === Warehouse.get().hasAnimal(animalId)) {

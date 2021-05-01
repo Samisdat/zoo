@@ -6,22 +6,28 @@ import {NavigationInterface} from "components/Navigation/Interfaces";
 import {Teaser, TeaserPropsInterface} from "components/Map/Teaser";
 
 import SearchDialog from "components/Search/Search";
-import {PhotoSpore} from "../strapi-api/photo/photo-spore";
-import {FacilitySpore} from "../strapi-api/facility/facility-spore";
-import {Photo} from "../strapi-api/photo/photo";
-import {Facility} from "../strapi-api/facility/facility";
-import {getMapElementEntityById, getMapElements, MapElementInterface} from "../strapi-api/map-elements";
-import {getPhotoEntityByFacility} from "../strapi-api/photos";
-import {getFacilityEntityBySlug} from "../strapi-api/facilities";
-import {MapElementSpore} from "../strapi-api/map-element/map-element-spore";
-import {MapElement} from "../strapi-api/map-element/map-element";
+import {Warehouse, WarehouseSpore} from "../strapi-api/warehouse/warehouse";
+import {PhotoSpore} from "../strapi-api/entity/photo/photo-spore";
+import {FacilitySpore} from "../strapi-api/entity/facility/facility-spore";
+import {MapElementSpore} from "../strapi-api/entity/map-element/map-element-spore";
+import {
+    getMapElementById,
+    getMapElements,
+    MapElementInterface
+} from "../strapi-api/query/map-elements";
+import {MapElement} from "../strapi-api/entity/map-element/map-element";
+import {getPhotoById} from "../strapi-api/query/photos";
+import {getFacilityById, getFacilityBySlug} from "../strapi-api/query/facilities";
+import {getAnimalById} from "../strapi-api/query/animals";
+
 const useMapState = createPersistedState('map');
 
 export interface IndexProps{
+    warehouse: WarehouseSpore;
     photoValueObject:PhotoSpore;
     facility: FacilitySpore;
-    mapElement: MapElementSpore
-    mapElements: MapElementInterface[];
+    mapElement: MapElementSpore;
+    //mapElements: MapElementInterface[];
     navigation?: NavigationInterface;
     setFocus?: Function;
     toggleSearch?: Function;
@@ -53,9 +59,53 @@ const MapDimensionDefault:MapDimension = {
 
 export default function Index(props:IndexProps) {
 
-    console.log(Photo.hydrate(props.photoValueObject));
-    console.log(Facility.hydrate(props.facility));
-    console.log(MapElement.hydrate(props.mapElement));
+    Warehouse.get().hydrate(props.warehouse);
+
+    //console.log(Warehouse.get().hasPhoto(11));
+    //console.log(Warehouse.get().getPhoto(11));
+
+    //console.log(Warehouse.get().hasFacility(13));
+    //console.log(Warehouse.get().getFacility(13).photos);
+    //console.log(Warehouse.get().getFacility(13).animalsRaw);
+    //console.log(Warehouse.get().getFacility(13).animals);
+
+    console.log(Warehouse.get().getMapElement(35).properties.name, Warehouse.get().getMapElement(35).photos)
+    console.log(Warehouse.get().getMapElement(48).properties.name, Warehouse.get().getMapElement(48).photos)
+
+    //console.log(Warehouse.get().getAnimal(47))
+
+    const mapElements = Warehouse.get().getMapElements();
+
+    //console.log(Photo.hydrate(props.photoValueObject));
+    //console.log(Facility.hydrate(props.facility));
+    //console.log(MapElement.hydrate(props.mapElement));
+
+    /*
+    const mapElements = props.mapElements.map((mapElement)=>{
+
+        if(35 === mapElement.id){
+            return MapElement.hydrate(props.mapElement);
+        }
+
+        return mapElement;
+
+    });
+
+    console.log(mapElements)
+
+    const mapElementInterfaced = props.mapElements.find((mapElement)=>{
+
+        if(35 === mapElement.id){
+            return true;
+        }
+
+        return false;
+
+    });
+    console.log(mapElementInterfaced)
+
+    */
+
 
     const [mapDimensionState, setMapDimensionState] = useMapState<MapDimension>(MapDimensionDefault);
     const [mapState, setMapState] = useMapState<MapState>(defaultMapState);
@@ -142,20 +192,31 @@ export default function Index(props:IndexProps) {
 
     },[mapDimensionState]);
 
+    /*
     return (
         <React.Fragment>
+            nothing
+        </React.Fragment>
+    );
+
+     */
+
+    return (
+        <React.Fragment>
+            {/*
             <MapRoot
                 focus={mapState.focus}
                 setFocus={setFocus}
                 setTeaser={setTeaser}
                 mapDimension={mapDimensionState}
                 fullsize={true}
-                mapElements={props.mapElements}
+                mapElements={mapElements}
                 navigation={props.navigation}
                 toggleTeaser={props.toggleTeaser}
             />
+            */}
             <SearchDialog
-                mapElements={props.mapElements}
+                mapElements={mapElements}
                 setFocus={setFocus}
             />
             <Teaser
@@ -163,23 +224,32 @@ export default function Index(props:IndexProps) {
             />
         </React.Fragment>
   );
+
 }
 
 export async function getStaticProps(context) {
 
-    const photoEntity = await getPhotoEntityByFacility(11)
+    //await getPhotoById(11);
 
-    const facilityEntity = await getFacilityEntityBySlug('affenhaus');
+    //const foo = await getFacilityBySlug('eingang');
+    //const bar = await getFacilityBySlug('elefanten');
 
-    const mapElementEntity = await getMapElementEntityById(35)
 
-    const mapElements = await getMapElements();
+    //console.log('photosRaw', foo.photosRaw)
+    //console.log('photos', foo.photos)
 
-    const indexProps:IndexProps = {
-        mapElements,
-        mapElement: mapElementEntity.dehydrate(),
-        facility: facilityEntity.dehydrate(),
-        photoValueObject:photoEntity.dehydrate()
+    //console.log(Warehouse.get().hasFacility(11));
+    //console.log(Warehouse.get().getFacility(11));
+
+
+    await getMapElements();
+    //await getMapElementById(35);
+    //await getMapElementById(35);
+
+    await getAnimalById(47);
+
+    const indexProps:any = {
+        warehouse: Warehouse.get().dehydrate()
     };
 
     return {

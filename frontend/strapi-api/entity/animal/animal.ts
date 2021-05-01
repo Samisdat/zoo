@@ -3,6 +3,7 @@ import {AnimalSpore} from "./animal-spore";
 import {Entity} from "../entity";
 import {animalReduceApiData} from "./animal-reduce-api-data";
 import {Warehouse} from "../../warehouse/warehouse";
+import {Photo} from "../photo/photo";
 
 export class Animal extends Entity<AnimalSpore>{
 
@@ -51,6 +52,16 @@ export class Animal extends Entity<AnimalSpore>{
     }
     get family(): string{
         return this.json.family;
+    }
+
+    get photosRaw(): number[]{
+        return this.json.photos;
+    }
+
+    get photos(): Photo[]{
+        return this.json.photos.map((photoId)=>{
+            return Warehouse.get().getPhoto(photoId);
+        });
     }
 
     static hydrate(dehydrated: AnimalSpore):Animal{

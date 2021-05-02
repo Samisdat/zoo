@@ -1,7 +1,6 @@
 import * as d3 from 'd3';
 
 import React, {useEffect} from 'react';
-import {Feature, Polygon} from "geojson";
 import {MapStateInterface} from "./Interface";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 
@@ -37,33 +36,6 @@ export const Sketched = (props:MapSketchedProperties) => {
 
         var elementsGroup = mapSvg.select(`#${mapElementId}`);
 
-        console.log(props.boundingBox[0]);
-
-        /*
-        const __boundingBox = props.boundingBox.map((mapElement:MapElement)=>{
-
-            // for reason d3 v6 renders polygons as rectangle
-            // this is the workaround
-
-            const type = mapElement.geometry.type;
-
-            if('Polygon' !== type){
-                return mapElement;
-            }
-
-            const polygon:Feature<Polygon> = mapElement as Feature<Polygon>;
-
-            mapElement.geometry = {
-                type: 'LineString',
-                coordinates: polygon.geometry.coordinates[0]
-            };
-
-            return mapElement;
-
-        });
-         */
-        console.log(props.boundingBox[0]);
-
         elementsGroup.selectAll("path")
             .data(props.boundingBox)
             .enter()
@@ -78,7 +50,7 @@ export const Sketched = (props:MapSketchedProperties) => {
                 return '10px';
             })
             .attr("opacity", (d:MapElement)=>{
-                return 1;
+                return 0;
             })
             .attr("id", (d:MapElement)=>{
                 return 'bounding_box';
@@ -86,16 +58,12 @@ export const Sketched = (props:MapSketchedProperties) => {
             .attr("d", props.mapState.pathGenerator)
         ;
 
-        console.log(props.mapState.pathGenerator)
-
         const bound = mapSvg.select(`#bounding_box`);
 
         const boundingBox = (bound.node() as SVGGraphicsElement).getBBox();
 
         const x = boundingBox.x;
         const y = boundingBox.y;
-
-        console.log(x, y, boundingBox.width)
 
         const scale = boundingBox.width / 2550;
 

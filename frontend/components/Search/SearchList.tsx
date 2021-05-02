@@ -52,6 +52,7 @@ export default function PinnedSubheaderList(props:PinnedSubheaderListProperties)
 
     return (
         <List
+            key={`searchlist`}
             className={classes.root}
             subheader={<li />}
         >

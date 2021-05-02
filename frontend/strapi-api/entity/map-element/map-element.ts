@@ -43,8 +43,6 @@ export class MapElement extends Entity<MapElementSpore>{
 
         const type = this.json.geojson.geometry.type;
 
-        console.log(this.json.geojson)
-
         if('Polygon' !== type){
             return this.json.geojson.geometry;
         }

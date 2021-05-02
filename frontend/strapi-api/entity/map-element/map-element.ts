@@ -2,7 +2,16 @@ import {Entity} from "../entity";
 import {MapElementSpore, MapElementType} from "./map-element-spore";
 import {mapElementReduceApiData} from "./map-element-reduce-api-data";
 import {MapElementStrapi} from "./map-element-strapi";
-import {GeometryCollection, LineString, MultiLineString, MultiPoint, MultiPolygon, Point, Polygon} from "geojson";
+import {
+    Feature,
+    GeometryCollection,
+    LineString,
+    MultiLineString,
+    MultiPoint,
+    MultiPolygon,
+    Point,
+    Polygon
+} from "geojson";
 import {FacilitySpore} from "../facility/facility-spore";
 import {Warehouse} from "../../warehouse/warehouse";
 import {Facility} from "../facility/facility";
@@ -26,8 +35,31 @@ export class MapElement extends Entity<MapElementSpore>{
         return 'Feature';
     }
 
+    // @TODO use only supported types
     get geometry(): Point | MultiPoint | LineString | MultiLineString | Polygon | MultiPolygon | GeometryCollection{
-        return this.json.geojson.geometry;
+
+        // for reason d3 v6 renders polygons as rectangle
+        // this is the workaround
+
+        const type = this.json.geojson.geometry.type;
+
+        console.log(this.json.geojson)
+
+        if('Polygon' !== type){
+            return this.json.geojson.geometry;
+        }
+
+        const polygon:Feature<Polygon> = this.json.geojson as Feature<Polygon>;
+
+        const geojson = this.json.geojson;
+
+        geojson.geometry = {
+            type: 'LineString',
+            coordinates: polygon.geometry.coordinates[0]
+        };
+
+        return geojson.geometry;
+
     }
 
     get properties(): MapElementProperties{

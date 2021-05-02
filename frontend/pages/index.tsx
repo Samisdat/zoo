@@ -24,10 +24,6 @@ const useMapState = createPersistedState('map');
 
 export interface IndexProps{
     warehouse: WarehouseSpore;
-    photoValueObject:PhotoSpore;
-    facility: FacilitySpore;
-    mapElement: MapElementSpore;
-    //mapElements: MapElementInterface[];
     navigation?: NavigationInterface;
     setFocus?: Function;
     toggleSearch?: Function;
@@ -69,8 +65,8 @@ export default function Index(props:IndexProps) {
     //console.log(Warehouse.get().getFacility(13).animalsRaw);
     //console.log(Warehouse.get().getFacility(13).animals);
 
-    console.log(Warehouse.get().getMapElement(35).properties.name, Warehouse.get().getMapElement(35).photos)
-    console.log(Warehouse.get().getMapElement(48).properties.name, Warehouse.get().getMapElement(48).photos)
+    //console.log(Warehouse.get().getMapElement(35).properties.name, Warehouse.get().getMapElement(35).photos)
+    //console.log(Warehouse.get().getMapElement(48).properties.name, Warehouse.get().getMapElement(48).photos)
 
     //console.log(Warehouse.get().getAnimal(47))
 
@@ -203,7 +199,6 @@ export default function Index(props:IndexProps) {
 
     return (
         <React.Fragment>
-            {/*
             <MapRoot
                 focus={mapState.focus}
                 setFocus={setFocus}
@@ -214,7 +209,6 @@ export default function Index(props:IndexProps) {
                 navigation={props.navigation}
                 toggleTeaser={props.toggleTeaser}
             />
-            */}
             <SearchDialog
                 mapElements={mapElements}
                 setFocus={setFocus}

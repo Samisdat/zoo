@@ -5,9 +5,9 @@ import * as d3 from 'd3';
 import {MapStateInterface, MapTransformInterface, MarkerInterface} from "components/Map/Interface";
 import {Group} from "./Group";
 import {ZoomLevel} from "./ZoomLevel";
-import {MapElementInterface} from "../../data-api/map-elements";
 import {MapDimension, MapFocus} from "../../pages";
 import {NavigationInterface} from "../Navigation/Interfaces";
+import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 
 const markerDefault: MarkerInterface = {
     lat: 51.238741,
@@ -45,12 +45,12 @@ const useStyles = makeStyles({
 });
 
 interface MapRootInterface{
-    focus: MapFocus | MapElementInterface;
+    focus: MapFocus | MapElement;
     setFocus: Function;
     setTeaser: Function;
     mapDimension: MapDimension;
     fullsize: boolean;
-    mapElements: MapElementInterface[];
+    mapElements: MapElement[];
     navigation: NavigationInterface;
     toggleTeaser: Function;
 }
@@ -63,7 +63,7 @@ export const MapRoot = (props:MapRootInterface) => {
 
     const [mapState, setMapState] = useState<MapStateInterface>(MapStateDefault);
 
-    const border = props.mapElements.find((mapElement:MapElementInterface) => {
+    const border = props.mapElements.find((mapElement:MapElement) => {
 
         if('border' === mapElement.properties?.type){
             return true;

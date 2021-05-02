@@ -66,7 +66,7 @@ export default function PinnedSubheaderList(props:PinnedSubheaderListProperties)
                                 if(0 !== item.photos.length && item.photos[0].thumbnail){
                                     thumbnail = `http://127.0.0.1:1337${item.photos[0].thumbnail.src}`
                                 }
-                                
+
                                 return(
                                     <ListItem
                                         alignItems="flex-start"

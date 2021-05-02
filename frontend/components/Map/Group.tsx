@@ -8,8 +8,8 @@ import {PointOfInterest} from "./PointOfInterest";
 import {centerToFeatureCollection} from "../Distribution/Detail";
 import {MapDimension, MapFocus} from "../../pages";
 import {filterGeoJson} from "helper/geojson/filterGeoJson";
-import {MapElementInterface} from "../../data-api/map-elements";
 import {NavigationInterface} from "../Navigation/Interfaces";
+import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 
 // zoom until focus.width or focus.height extends window.width or window.height
 export const findBestZoomLevel = (x0, x1, y0, y1, maxWidth, maxHeight) => {
@@ -65,12 +65,12 @@ interface ZoomDependencies {
 }
 
 interface MapGroupProperties {
-    focus: MapFocus | MapElementInterface;
+    focus: MapFocus | MapElement;
     setFocus: Function;
     setTeaser: Function;
     mapDimension: MapDimension;
     fullsize: boolean;
-    mapElements: MapElementInterface[];
+    mapElements: MapElement[];
     navigation: NavigationInterface;
     toggleTeaser: Function;
     mapState:MapStateInterface;
@@ -195,7 +195,7 @@ export const Group = (props:MapGroupProperties) => {
         }
 
         //zoomDependencies.mapSvg.on('.zoom', null);
-        const centerOfEnclosure = centerToFeatureCollection([(props.focus as MapElementInterface)]);
+        const centerOfEnclosure = centerToFeatureCollection([(props.focus as MapElement)]);
 
         const [[x0, y0], [x1, y1]] = props.mapState.pathGenerator.bounds(centerOfEnclosure as any);
 
@@ -215,10 +215,10 @@ export const Group = (props:MapGroupProperties) => {
 
 
             if(
-                'poi' === (props.focus as MapElementInterface)?.properties?.facility?.type ||
-                'food' === (props.focus as MapElementInterface)?.properties?.facility?.type ||
-                'playground' === (props.focus as MapElementInterface)?.properties?.facility?.type ||
-                'enclosure' === (props.focus as MapElementInterface)?.properties?.facility?.type
+                'poi' === (props.focus as MapElement)?.properties?.facility?.type ||
+                'food' === (props.focus as MapElement)?.properties?.facility?.type ||
+                'playground' === (props.focus as MapElement)?.properties?.facility?.type ||
+                'enclosure' === (props.focus as MapElement)?.properties?.facility?.type
             ){
                 href += 'facility/';
             }
@@ -226,7 +226,7 @@ export const Group = (props:MapGroupProperties) => {
                 href += 'not-yet-implemented/';
             }
 
-            href += (props.focus as MapElementInterface).properties.facility.slug;
+            href += (props.focus as MapElement).properties.facility.slug;
 
 
 

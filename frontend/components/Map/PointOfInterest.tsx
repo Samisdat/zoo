@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import * as d3 from 'd3';
-import {MapElementInterface} from "../../data-api/map-elements";
 import {Feature} from "geojson";
+import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 
 export interface PointOfInterestProperties{
-    mapElements:MapElementInterface[];
+    mapElements:MapElement[];
     pathGenerator:any;
     projection:any;
     zoom:number;
@@ -17,7 +17,7 @@ export const PointOfInterest = (props:PointOfInterestProperties) => {
     const positionId = 'poi-points';
     const clickId = 'poi-click';
 
-    const pois = props.mapElements.filter((mapElement:MapElementInterface) => {
+    const pois = props.mapElements.filter((mapElement:MapElement) => {
 
         if('point' === mapElement.properties.type){
             return true;
@@ -54,7 +54,7 @@ export const PointOfInterest = (props:PointOfInterestProperties) => {
             .data(pois)
             .join('circle')
             .attr('transform', function(d) { return 'translate(' + props.pathGenerator.centroid(d) + ')'; })
-            .attr("id", (d:MapElementInterface)=>{
+            .attr("id", (d:MapElement)=>{
                 return d.properties.facility.slug;
             })
             .attr('fill', (d, i)=>{

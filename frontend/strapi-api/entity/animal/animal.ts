@@ -78,11 +78,7 @@ export class Animal extends Entity<AnimalSpore>{
 
         const animal = new Animal(dehydrated);
 
-        console.log(Warehouse.get().hasAnimal(animal.id))
-
         Warehouse.get().addAnimal(animal);
-
-        console.log(Warehouse.get().hasAnimal(animal.id))
 
         return animal;
 

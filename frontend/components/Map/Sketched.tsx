@@ -2,12 +2,12 @@ import * as d3 from 'd3';
 
 import React, {useEffect} from 'react';
 import {Feature, Polygon} from "geojson";
-import {MapElementInterface} from "../../data-api/map-elements";
 import {MapStateInterface} from "./Interface";
+import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 
 interface MapSketchedProperties {
     mapState:MapStateInterface;
-    boundingBox:MapElementInterface[];
+    boundingBox:MapElement[];
 }
 
 
@@ -39,7 +39,8 @@ export const Sketched = (props:MapSketchedProperties) => {
 
         console.log(props.boundingBox[0]);
 
-        const __boundingBox = props.boundingBox.map((mapElement:MapElementInterface)=>{
+        /*
+        const __boundingBox = props.boundingBox.map((mapElement:MapElement)=>{
 
             // for reason d3 v6 renders polygons as rectangle
             // this is the workaround
@@ -60,30 +61,32 @@ export const Sketched = (props:MapSketchedProperties) => {
             return mapElement;
 
         });
-
+         */
         console.log(props.boundingBox[0]);
 
         elementsGroup.selectAll("path")
             .data(props.boundingBox)
             .enter()
             .append("path")
-            .attr("stroke", (d:Feature)=>{
+            .attr("stroke", (d:MapElement)=>{
                 return "red";
             })
-            .attr("fill", (d:Feature)=>{
+            .attr("fill", (d:MapElement)=>{
                 return "blue";
             })
-            .attr("stroke-width", (d:Feature)=>{
+            .attr("stroke-width", (d:MapElement)=>{
                 return '10px';
             })
-            .attr("opacity", (d:Feature)=>{
-                return 0;
+            .attr("opacity", (d:MapElement)=>{
+                return 1;
             })
-            .attr("id", (d:Feature)=>{
+            .attr("id", (d:MapElement)=>{
                 return 'bounding_box';
             })
             .attr("d", props.mapState.pathGenerator)
         ;
+
+        console.log(props.mapState.pathGenerator)
 
         const bound = mapSvg.select(`#bounding_box`);
 
@@ -91,6 +94,8 @@ export const Sketched = (props:MapSketchedProperties) => {
 
         const x = boundingBox.x;
         const y = boundingBox.y;
+
+        console.log(x, y, boundingBox.width)
 
         const scale = boundingBox.width / 2550;
 

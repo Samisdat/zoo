@@ -176,7 +176,7 @@ export default function SearchDialog(props:SearchDialogProperties) {
             </Paper>
             <Dialog
                 fullScreen
-                open={true}/*open={open}*/
+                open={open}/*open={true}*/
                 onClose={handleClose}
                 TransitionComponent={Transition}
             >

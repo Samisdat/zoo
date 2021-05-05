@@ -145,7 +145,7 @@ export default function ButtonAppBar() {
                     <ListItemIcon><StoreIcon /></ListItemIcon>
                     <ListItemText primary='Anlagen' />
                 </ListItemLink>
-                <ListItemLink key='nes' href={blogUrlPart} onClick={onClick}>
+                <ListItemLink key='blog' href={`/${blogUrlPart}`} onClick={onClick}>
                     <ListItemIcon><BookIcon /></ListItemIcon>
                     <ListItemText primary='Neuigkeiten' />
                 </ListItemLink>

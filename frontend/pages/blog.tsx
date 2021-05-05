@@ -7,6 +7,9 @@ import Moment from 'react-moment';
 import {ListItemLink} from "./anlagen";
 import {blogUrlPart} from "../constants";
 import {list} from "../data-repos/post";
+import {getPosts} from "../strapi-api/query/posts";
+import {Warehouse} from "../strapi-api/warehouse/warehouse";
+import {Post} from "../strapi-api/entity/post/post";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -20,17 +23,21 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function Blog(props) {
 
+    Warehouse.get().hydrate(props.warehouse);
+
+    const posts = Warehouse.get().getPosts();
+
   const classes = useStyles();
 
     return (
         <List className={classes.root}>
             {
-                props.newsPosts.map( (newsPost) => {
-                    const href =  `/${blogUrlPart}/${newsPost.slug}`
+                posts.map( (post:Post) => {
+                    const href =  `/${blogUrlPart}/${post.slug}`
                     return (
-                        <ListItem key={newsPost.slug}>
+                        <ListItem key={post.slug}>
                             <ListItemLink href={href}>
-                                {newsPost.title} - <Moment format="DD.MM.YYYY" date={newsPost.date} /><br/>
+                                {post.title} - <Moment format="DD.MM.YYYY" date={post.date} /><br/>
                             </ListItemLink>
                         </ListItem>
                     );
@@ -66,9 +73,13 @@ export async function getStaticProps({ params, preview = false, previewData }) {
 
         });
 
+    await getPosts();
+
     return {
         props: {
-            newsPosts:newsPosts
+            newsPosts:newsPosts,
+            warehouse: Warehouse.get().dehydrate(),
         },
     }
+
 }

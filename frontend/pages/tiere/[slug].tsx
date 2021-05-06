@@ -6,20 +6,31 @@ import {Feature, Polygon} from "geojson";
 import {MapRoot} from "../../components/Map/Root";
 import {getFullGeoJson} from "../api/geojson/list";
 import {MapDimension, MapFocus} from "../index";
-import {get, list} from "../../data-repos/aninals";
-import {Animal} from "../../data-repos/aninals.interface";
+import {get} from "../../data-repos/aninals";
+import {getAnimalBySlug, getAnimals} from "../../strapi-api/query/animals";
+import {Animal} from "../../strapi-api/entity/animal/animal";
+import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 
 export default function Tiere(props) {
+
+    console.log(props.warehouse)
 
     const router = useRouter()
     const { slug } = router.query
 
-    const animal: Animal = props.animal as Animal;
+    Warehouse.get().hydrate(props.warehouse);
 
-    const image = props.animal.images[0];
+    const animal: Animal = Warehouse.get().getAnimals().find((animal:Animal)=>{
+        return (slug === animal.slug);
+    });
+
+    console.log(animal)
+
+    const image = animal.photos[0];
 
     let focus: MapFocus | Feature<Polygon> = 'none';
 
+    /*
     if(animal.facility){
 
         focus = props.geoJson.features.find((feature:Feature)=>{
@@ -36,7 +47,7 @@ export default function Tiere(props) {
         });
 
     }
-
+    */
     const setTeaser = () => {
 
     };
@@ -52,17 +63,17 @@ export default function Tiere(props) {
             <Typography component="h1">
                 {animal.title}
             </Typography>
-            <Distribution/>
-            {animal.facility &&
+            {/*<Distribution/>*/}
+            {/*animal.facility &&
                 <MapRoot
                     focus={focus}
                     setTeaser={setTeaser}
                     mapDimension={mapDimension}
                     {...props}
                 />
-            }
+            */}
             <img
-                src={image}
+                src={image.medium.src}
                 style={{
                     width: 300
                 }}
@@ -84,13 +95,13 @@ export default function Tiere(props) {
 
 export async function getStaticProps(context) {
 
-    const animal = await get(context.params.slug);
+    await getAnimalBySlug(context.params.slug);
 
     let getJson = await getFullGeoJson();
 
     return {
         props: {
-            animal:animal,
+            warehouse: Warehouse.get().dehydrate(),
             geoJson:getJson
         }
     }
@@ -98,7 +109,7 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
 
-    let animals = await list();
+    let animals = await getAnimals();
 
     const animalPaths = animals.map((animal:Animal)=>{
         return {

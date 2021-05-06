@@ -17,8 +17,8 @@
       "unique": false
     },
     "individual_animals": {
-      "collection": "individual-animal",
-      "via": "animal"
+      "via": "animal",
+      "collection": "individual-animal"
     },
     "slug": {
       "type": "uid",
@@ -80,6 +80,10 @@
     "photos": {
       "collection": "photo",
       "via": "animal"
+    },
+    "posts": {
+      "via": "animals",
+      "collection": "post"
     }
   }
 }

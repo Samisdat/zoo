@@ -5,8 +5,9 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import {animalUrlPart} from "../constants";
-import {list} from "../data-repos/aninals";
 import {Animal} from "../data-repos/aninals.interface";
+import {Warehouse} from "../strapi-api/warehouse/warehouse";
+import {getAnimals} from "../strapi-api/query/animals";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -47,9 +48,13 @@ function ListItemLink(props) {
 
 export default function Index(props) {
 
-  const classes = useStyles();
+    Warehouse.get().hydrate(props.warehouse);
 
-    let group = props.animals
+    const animals = Warehouse.get().getAnimals();
+
+    const classes = useStyles();
+
+    let group = animals
         .reduce((r, e) => {
             let firstLetter = e.title[0].toLowerCase();
 
@@ -76,7 +81,7 @@ export default function Index(props) {
     });
 
     return (
-  <List className={classes.list}>
+  <List key={`list-animals`} className={classes.list}>
 
       {Object.entries(ordered)
           .map(([key, value], i) => {
@@ -98,11 +103,11 @@ export default function Index(props) {
 
 export async function getStaticProps({ params, preview = false, previewData }) {
 
-    let animals = await list();
+    await getAnimals();
 
     return {
         props: {
-            animals: animals,
+            warehouse: Warehouse.get().dehydrate(),
         },
     }
 }

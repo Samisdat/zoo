@@ -6,12 +6,18 @@ import {MapElement} from "../entity/map-element/map-element";
 import {MapElementSpore} from "../entity/map-element/map-element-spore";
 import {Animal} from "../entity/animal/animal";
 import {AnimalSpore} from "../entity/animal/animal-spore";
+import {IndividualAnimal} from "../entity/individual-animal/individual-animal";
+import {IndividualAnimalSpore} from "../entity/individual-animal/individual-animal-spore";
+import {Post} from "../entity/post/post";
+import {PostSpore} from "../entity/post/post-spore";
 
 export interface WarehouseSpore{
     facilities:FacilitySpore[];
     photos:PhotoSpore[];
     mapElements:MapElementSpore[];
     animals: AnimalSpore[]
+    individualAnimals: IndividualAnimalSpore[]
+    posts: PostSpore[]
 }
 
 export class Warehouse{
@@ -29,6 +35,12 @@ export class Warehouse{
 
     private animalsIds: number[] = [];
     private animals:Animal[] = [];
+
+    private individualAnimalsIds: number[] = [];
+    private individualAnimals:IndividualAnimal[] = [];
+
+    private postsIds: number[] = [];
+    private posts:Post[] = [];
 
     private constructor() {
     }
@@ -61,11 +73,21 @@ export class Warehouse{
             return animal.dehydrate();
         });
 
+        const individualAnimals = this.individualAnimals.map((individualAnimal:IndividualAnimal)=>{
+            return individualAnimal.dehydrate();
+        });
+
+        const posts = this.posts.map((post:Post)=>{
+            return post.dehydrate();
+        });
+
         return {
             facilities,
             photos,
             mapElements,
-            animals
+            animals,
+            individualAnimals,
+            posts
         };
     }
 
@@ -98,11 +120,29 @@ export class Warehouse{
 
         }
 
+        if(spore.individualAnimals){
+
+            this.individualAnimals = spore.individualAnimals.map((individualAnimalsSpore:IndividualAnimalSpore)=>{
+                this.individualAnimalsIds.push(individualAnimalsSpore.id);
+                return IndividualAnimal.hydrate(individualAnimalsSpore);
+            });
+
+        }
+
         if(spore.mapElements){
 
             this.mapElements = spore.mapElements.map((mapElementSpore:MapElementSpore)=>{
                 this.mapElementIds.push(mapElementSpore.id);
                 return MapElement.hydrate(mapElementSpore);
+            });
+
+        }
+
+        if(spore.posts){
+
+            this.posts = spore.posts.map((postSpore:PostSpore)=>{
+                this.postsIds.push(postSpore.id);
+                return Post.hydrate(postSpore);
             });
 
         }
@@ -241,6 +281,76 @@ export class Warehouse{
     public getAnimals():Animal[]{
 
         return this.animals;
+
+    }
+
+    public addIndividualAnimal(individualAnimal: IndividualAnimal){
+
+        if(false === this.hasAnimal(individualAnimal.id)){
+
+            this.individualAnimalsIds.push(individualAnimal.id);
+            this.individualAnimals.push(individualAnimal);
+
+        }
+    }
+
+    public hasIndividualAnimal(id: number):boolean{
+
+        return this.individualAnimalsIds.includes(id);
+
+    }
+
+    public getIndividualAnimal(id: number):IndividualAnimal{
+
+
+        if(false === this.hasIndividualAnimal(id)){
+            return undefined;
+        }
+
+        return this.individualAnimals.find((individualAnimal:IndividualAnimal)=>{
+            return (id === individualAnimal.id);
+        });
+
+    }
+
+    public getIndividualAnimals():IndividualAnimal[]{
+
+        return this.individualAnimals;
+
+    }
+
+    public addPost(post: Post){
+
+        if(false === this.hasPost(post.id)){
+
+            this.postsIds.push(post.id);
+            this.posts.push(post);
+
+        }
+    }
+
+    public hasPost(id: number):boolean{
+
+        return this.postsIds.includes(id);
+
+    }
+
+    public getPost(id: number):Post{
+
+
+        if(false === this.hasPost(id)){
+            return undefined;
+        }
+
+        return this.posts.find((post:Post)=>{
+            return (id === post.id);
+        });
+
+    }
+
+    public getPosts():Post[]{
+
+        return this.posts;
 
     }
 

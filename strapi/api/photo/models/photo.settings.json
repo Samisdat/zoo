@@ -42,6 +42,14 @@
         "landscape",
         "portrait"
       ]
+    },
+    "individual_animal": {
+      "via": "photos",
+      "model": "individual-animal"
+    },
+    "post": {
+      "via": "photos",
+      "model": "post"
     }
   }
 }

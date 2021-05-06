@@ -29,6 +29,14 @@ export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
 
     }
 
+    let individual_animals:number[] = [];
+    if (undefined !== apiData.individual_animals) {
+
+        individual_animals = apiData.individual_animals.map((individual_animal) => {
+            return individual_animal.id;
+        });
+
+    }
 
     return{
         id,
@@ -45,7 +53,7 @@ export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
         order,
         species,
         family,
-        individual_animals: [],
+        individual_animals,
         facilities: [],
         photos,
     };

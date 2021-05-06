@@ -6,6 +6,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import {facilityUrlPart} from "../constants";
 import {listEnclosures} from "../data-repos/enclosures";
+import {getFacilities} from "../strapi-api/query/facilities";
+import {Warehouse} from "../strapi-api/warehouse/warehouse";
+import {Facility} from "../strapi-api/entity/facility/facility";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -45,9 +48,13 @@ export const ListItemLink = (props)  => {
 
 export default function Index(props) {
 
+    Warehouse.get().hydrate(props.warehouse);
+
+    const facilities = Warehouse.get().getFacilities();
+
   const classes = useStyles();
 
-    let group = props.facilities
+    let group = facilities
         .reduce((r, e) => {
             let firstLetter = e.title[0].toLowerCase();
 
@@ -74,13 +81,13 @@ export default function Index(props) {
     });
 
     return (
-  <List className={classes.list}>
+  <List key={`facilities-list`}  className={classes.list}>
 
       {Object.entries(ordered)
           .map(([key, value], i) => {
               return <React.Fragment>
                   <ListSubheader className={classes.subheader}>{key.toUpperCase()}</ListSubheader>
-                  {group[key].map(( facility: any ) => {
+                  {group[key].map(( facility: Facility ) => {
                       const href =  `/${facilityUrlPart}/${facility.slug}`
                       return (
                           <ListItem button>
@@ -99,11 +106,11 @@ export default function Index(props) {
 
 export async function getStaticProps({ params, preview = false, previewData }) {
 
-    const enclosures = await listEnclosures();
+    await getFacilities();
 
     return {
         props: {
-            facilities: enclosures,
+            warehouse: Warehouse.get().dehydrate(),
         },
     }
 }

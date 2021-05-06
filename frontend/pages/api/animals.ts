@@ -2,11 +2,47 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import {Animal} from "../../data-repos/aninals.interface";
 import {list} from "../../data-repos/aninals";
-import {getStrapiURL} from "../../helper/strapi";
+import {getAnimals} from "../../strapi-api/query/animals";
 
 export default async (req: NextApiRequest, res: NextApiResponse<Animal[]>) => {
 
-    const animals = await list();
+    const animals = await getAnimals();
+
+    /*
+    for (const animalStrapi of animalsStarpi){
+
+        const hydrate = animalStrapi.dehydrate();
+
+        const slug = hydrate.slug;
+
+        const animal = animals.find((animal)=>{
+            return (animal.slug == slug)
+        });
+
+        if(undefined === animal){
+
+            console.log('slug', slug, 'not found');
+
+            continue;
+        }
+
+        if(hydrate.className === animal.taxonomy?.class){
+            continue;
+        }
+
+        hydrate.className = animal.taxonomy?.class;
+
+        const requestUrl = getStrapiUrl('/animals/' + hydrate.id);
+
+        const update = await fetch(requestUrl, {
+            method: 'PUT',
+            body:    JSON.stringify(hydrate),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+
+    }
 
     /*
     for(const animal of animals){

@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "name": "post",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "slug": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "animals": {
+      "collection": "animal",
+      "via": "posts",
+      "dominant": true
+    },
+    "individual_animals": {
+      "collection": "individual-animal",
+      "via": "posts",
+      "dominant": true
+    },
+    "facilities": {
+      "collection": "facility",
+      "via": "posts",
+      "dominant": true
+    },
+    "photos": {
+      "collection": "photo",
+      "via": "post"
+    }
+  }
+}

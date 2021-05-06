@@ -44,6 +44,10 @@
     "photos": {
       "via": "facility",
       "collection": "photo"
+    },
+    "posts": {
+      "via": "facilities",
+      "collection": "post"
     }
   }
 }

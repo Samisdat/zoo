@@ -15,12 +15,23 @@
       "type": "string"
     },
     "animal": {
-      "via": "individual_animals",
-      "model": "animal"
+      "model": "animal",
+      "via": "individual_animals"
     },
     "slug": {
       "type": "uid",
       "targetField": "name"
+    },
+    "photos": {
+      "collection": "photo",
+      "via": "individual_animal"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "posts": {
+      "via": "individual_animals",
+      "collection": "post"
     }
   }
 }

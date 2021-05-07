@@ -8,11 +8,8 @@ import {Teaser, TeaserPropsInterface} from "components/Map/Teaser";
 import SearchDialog from "components/Search/Search";
 import {Warehouse, WarehouseSpore} from "../strapi-api/warehouse/warehouse";
 import {
-    getMapElements,
-    MapElementInterface
+    getMapElements
 } from "../strapi-api/query/map-elements";
-import {getAnimalById} from "../strapi-api/query/animals";
-import {Facility} from "../strapi-api/entity/facility/facility";
 import {MapElement} from "../strapi-api/entity/map-element/map-element";
 
 const useMapState = createPersistedState('map');

@@ -102,7 +102,11 @@ export default function Index(props:IndexProps) {
 
     useEffect(() => {
 
-        console.log('hasResizeListener', hasResizeListener);
+        console.log(teaser)
+
+    },[teaser]);
+
+    useEffect(() => {
 
         // register event listener only once
         if(false === hasResizeListener){

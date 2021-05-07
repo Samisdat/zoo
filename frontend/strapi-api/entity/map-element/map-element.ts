@@ -129,13 +129,18 @@ export class MapElement extends Entity<MapElementSpore>{
 
     get photos(): Photo[] {
 
-        let photos = [];
+        // if no facility there can be no direct photo and or photos of animals inherited by facility
+        if(null === this.facility){
+            return [];
+        }
 
         // use image(s) of facility or images if facility's animals
-        if(0 !== this.facility.photos.length){
-            photos = this.facility.photos;
+        if(null !== this.facility && 0 !== this.facility.photos.length){
+            return this.facility.photos;
         }
-        else if(0 !== this.facility.animals.length){
+        else if(0 !== this.facility?.animals.length){
+
+            const photos = [];
 
             for(const animal of this.facility.animals){
 
@@ -147,11 +152,11 @@ export class MapElement extends Entity<MapElementSpore>{
 
             }
 
+            return photos;
+
         }
 
-        return photos;
-
+        return [];
     }
-
 
 }

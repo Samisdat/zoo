@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
-import {CardHeader, CircularProgress} from "@material-ui/core";
 
 import {useTheme } from '@material-ui/core/styles';
 import MobileStepper from '@material-ui/core/MobileStepper';
@@ -12,8 +11,9 @@ import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import CloseIcon from '@material-ui/icons/Close';
 import DirectionsIcon from '@material-ui/icons/Directions';
-import {relative} from "jest-haste-map/build/lib/fast_path";
-import {MapElementInterface} from "../../data-api/map-elements";
+import {MapElement} from "../../strapi-api/entity/map-element/map-element";
+import {Animal} from "../../strapi-api/entity/animal/animal";
+
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -84,89 +84,29 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export interface TeaserPropsInterface {
-    mapElement: MapElementInterface,
-    apiUrl: string;
+    mapElement: MapElement,
     close: Function;
-    open:boolean;
 }
 
-export interface TeaserDetail{
-    image: string;
+export interface TeaserItem{
+    slug: string;
     title: string;
+    photo: string;
     href: string;
 }
-
-export interface TeaserStateInterface{
-    apiUrl:string;
-    animals:TeaserDetail[]
-}
-
-const animalsService = async (apiUrl, close):Promise<TeaserStateInterface> => {
-
-    const promise = new Promise<TeaserStateInterface>((resolve, reject) => {
-
-        fetch(apiUrl)
-            .then(res => res.json())
-            .then(
-                (result:TeaserDetail[]) => {
-
-                    const state:TeaserStateInterface = {
-                        apiUrl: apiUrl,
-                        animals: result
-                    };
-
-                    resolve(state)
-
-                },
-                (error) => {
-                    console.log(error);
-                }
-            );
-
-    });
-
-    return promise
-
-}
-
 
 export const Teaser = (props: TeaserPropsInterface) => {
 
     const classes = useStyles();
 
-    const visible = (undefined === props.apiUrl) ? false: true;
-
-    const [loading, setLoading] = useState<boolean>(true);
-
-    const [data, setData] = useState<TeaserStateInterface>(undefined);
+    const visible = (undefined === props.mapElement)? false : true;
 
     const [activeStep, setActiveStep] = React.useState(0);
 
-    useEffect(() => {
-
-        if(undefined === props.apiUrl){
-            return;
-        }
-
-        setLoading(true);
-
-        animalsService(props.apiUrl, props.close)
-            .then((data) =>{
-
-                setActiveStep(0);
-                setData(data);
-                setLoading(false);
-            });
-
-    }, [props.apiUrl])
-
     const handleClose = () => {
-        setLoading(true);
         setActiveStep(0)
         props.close();
     };
-
-    const theme = useTheme();
 
     if (false === visible) {
         return (
@@ -174,32 +114,43 @@ export const Teaser = (props: TeaserPropsInterface) => {
         );
     }
 
-    if (true === loading) {
+    let teaserItems:TeaserItem[] = [];
 
-        return (
-            <Card
-                className={classes.mapTeaser}
-                elevation={2}
-                style={{
-                    height:202
-                }}
-            >
-                <CircularProgress
-                    size={40}
-                    style={{
-                        position: 'absolute',
-                        left:'50%',
-                        top:'50%',
-                        marginLeft:-20,
-                        marginTop:-20,
-                    }}
-                />
-            </Card>
-        );
+    if('enclosure' === props.mapElement.facility.type){
+
+        teaserItems = props.mapElement.facility.animals.map((animal:Animal)=>{
+
+            const slug = `animal-${animal.slug}`;
+            const title = animal.title;
+            const photo = animal.photos[0].medium.src;
+            const href = `/tiere/${animal.slug}`;
+
+            return {
+                slug,
+                title,
+                photo,
+                href
+            }
+
+        });
 
     }
+    else{
 
-    const maxSteps = data.animals.length;
+        const slug = `facility-${props.mapElement.facility.slug}`;
+        const title = props.mapElement.facility.title;
+        const photo = props.mapElement.facility.photos[0].medium.src;
+        const href = `/anlagen/${props.mapElement.facility.slug}`;
+
+        teaserItems.push({
+            slug,
+            title,
+            photo,
+            href
+        });
+    }
+
+    let maxSteps = teaserItems.length;
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -225,16 +176,16 @@ export const Teaser = (props: TeaserPropsInterface) => {
                     onChangeIndex={handleStepChange}
                     enableMouseEvents
                 >
-                    {data.animals.map((step, index) => (
-                        <div className={classes.step} key={step.href}>
+                    {teaserItems.map((teaserItem:TeaserItem, index) => (
+                        <div className={classes.step} key={teaserItem.slug}>
                             {
                                 Math.abs(activeStep - index) <= 2 ? (
                                     <React.Fragment>
-                                        <h1 className={classes.title}>{step.title}</h1>
+                                        <h1 className={classes.title}>{teaserItem.title}</h1>
                                         <div
                                             className={classes.img}
                                             style={{
-                                                backgroundImage: 'url("' + step.image + '")'
+                                                backgroundImage: 'url("http://127.0.0.1:1337' + teaserItem.photo + '")'
                                             }}
                                         />
                                     </React.Fragment>
@@ -267,7 +218,7 @@ export const Teaser = (props: TeaserPropsInterface) => {
             <CardActions disableSpacing>
                 <Button
                     startIcon={<KeyboardArrowRight />}
-                    /*href={data.animals[activeStep].href}*/
+                    href={teaserItems[activeStep].href}
                 >
                     Details
                 </Button>

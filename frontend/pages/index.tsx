@@ -59,7 +59,7 @@ export default function Index(props:IndexProps) {
 
     const [mapState, setMapState] = useMapState<MapState>(defaultMapState);
 
-    const [teaser, setTeaser] = useState<TeaserPropsInterface>();
+    const [teaser, setTeaser] = useState<MapElement>(undefined);
 
     const [hasResizeListener, setHasResizeListener] = useState<boolean>(false);
 
@@ -69,6 +69,8 @@ export default function Index(props:IndexProps) {
             ...mapState,
             focus: focus,
         });
+
+        setTeaser(focus);
 
     }
 
@@ -125,6 +127,10 @@ export default function Index(props:IndexProps) {
 
     },[mapDimensionState]);
 
+    const closeTeaser = () => {
+        setTeaser(undefined);
+    };
+
     return (
         <React.Fragment>
             <MapRoot
@@ -141,7 +147,8 @@ export default function Index(props:IndexProps) {
                 setFocus={setFocus}
             />
             <Teaser
-                {...teaser}
+                close={closeTeaser}
+                mapElement={teaser}
             />
         </React.Fragment>
   );

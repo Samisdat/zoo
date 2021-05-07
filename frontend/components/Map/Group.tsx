@@ -209,33 +209,7 @@ export const Group = (props:MapGroupProperties) => {
         )
         .on("end", ()=>{
 
-            let href = '/api/teaser/';
-
-
-
-            if(
-                'poi' === (props.focus as MapElement)?.properties?.facility?.type ||
-                'food' === (props.focus as MapElement)?.properties?.facility?.type ||
-                'playground' === (props.focus as MapElement)?.properties?.facility?.type ||
-                'enclosure' === (props.focus as MapElement)?.properties?.facility?.type
-            ){
-                href += 'facility/';
-            }
-            else{
-                href += 'not-yet-implemented/';
-            }
-
-            href += (props.focus as MapElement).properties.facility.slug;
-
-
-
-            props.setTeaser({
-                mapElement:props.focus,
-                apiUrl: href,
-                close: ()=>{
-                    props.setTeaser(undefined);
-                }
-            });
+            console.log('zoomend')
 
         });
 

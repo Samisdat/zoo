@@ -130,7 +130,6 @@ export default function Index(props:IndexProps) {
             <MapRoot
                 focus={mapState.focus}
                 setFocus={setFocus}
-                setTeaser={setTeaser}
                 mapDimension={mapDimensionState}
                 fullsize={true}
                 mapElements={mapElements}

@@ -47,7 +47,6 @@ const useStyles = makeStyles({
 interface MapRootInterface{
     focus: MapFocus | MapElement;
     setFocus: Function;
-    setTeaser: Function;
     mapDimension: MapDimension;
     fullsize: boolean;
     mapElements: MapElement[];
@@ -208,7 +207,6 @@ export const MapRoot = (props:MapRootInterface) => {
             <Group
                 mapState={mapState}
                 setTransform={setTransform}
-                setTeaser={props.setTeaser}
                 setFocus={props.setFocus}
                 {...props}
             />

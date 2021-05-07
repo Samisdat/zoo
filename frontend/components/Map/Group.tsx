@@ -67,7 +67,6 @@ interface ZoomDependencies {
 interface MapGroupProperties {
     focus: MapFocus | MapElement;
     setFocus: Function;
-    setTeaser: Function;
     mapDimension: MapDimension;
     fullsize: boolean;
     mapElements: MapElement[];

@@ -4,7 +4,6 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import {Feature} from "geojson";
 import {Avatar, ListItemAvatar} from "@material-ui/core";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 const useStyles = makeStyles((theme: Theme) =>

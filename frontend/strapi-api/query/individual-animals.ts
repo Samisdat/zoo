@@ -1,5 +1,5 @@
-import {getStrapiUrl} from "../../data-api/utils/get-strapi-url";
-import {getJsonFromApi} from "../../data-api/utils/get-json-from-api";
+import {getStrapiUrl} from "../utils/get-strapi-url";
+import {getJsonFromApi} from "../utils/get-json-from-api";
 import {Warehouse} from "../warehouse/warehouse";
 import {getPhotoById} from "./photos";
 import {IndividualAnimalStrapi} from "../entity/individual-animal/individual-animal-strapi-interface";

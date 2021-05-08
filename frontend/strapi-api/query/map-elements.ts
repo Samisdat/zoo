@@ -1,7 +1,7 @@
 import {getFacilityById} from "./facilities";
 import {MapElement} from "../entity/map-element/map-element";
-import {getStrapiUrl} from "../../data-api/utils/get-strapi-url";
-import {getJsonFromApi} from "../../data-api/utils/get-json-from-api";
+import {getStrapiUrl} from "../utils/get-strapi-url";
+import {getJsonFromApi} from "../utils/get-json-from-api";
 import {MapElementStrapi} from "../entity/map-element/map-element-strapi";
 import {Warehouse} from "../warehouse/warehouse";
 

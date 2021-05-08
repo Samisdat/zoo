@@ -1,5 +1,5 @@
-import {getStrapiUrl} from "../../data-api/utils/get-strapi-url";
-import {getJsonFromApi} from "../../data-api/utils/get-json-from-api";
+import {getStrapiUrl} from "../utils/get-strapi-url";
+import {getJsonFromApi} from "../utils/get-json-from-api";
 import {Post} from "../entity/post/post";
 import {PostStrapi} from "../entity/post/post-strapi-interface";
 import {Warehouse} from "../warehouse/warehouse";

@@ -16,7 +16,8 @@
     "pages/*.ts",
     "components/*.ts",
     "helper/*.ts",
-    "data-repos/*.ts"
+    "data-repos/*.ts",
+    "strapi-api/*.ts"
   ],
   "exclude": [
     "cypress/**/*"

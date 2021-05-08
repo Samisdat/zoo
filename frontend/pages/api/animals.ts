@@ -1,8 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import {Animal} from "../../data-repos/aninals.interface";
-import {list} from "../../data-repos/aninals";
 import {getAnimals} from "../../strapi-api/query/animals";
+import {Animal} from "../../strapi-api/entity/animal/animal";
 
 export default async (req: NextApiRequest, res: NextApiResponse<Animal[]>) => {
 

@@ -5,9 +5,9 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import {animalUrlPart} from "../constants";
-import {Animal} from "../data-repos/aninals.interface";
 import {Warehouse} from "../strapi-api/warehouse/warehouse";
 import {getAnimals} from "../strapi-api/query/animals";
+import {Animal} from "../strapi-api/entity/animal/animal";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

@@ -6,7 +6,6 @@ import {getDataDir, getRootDataDir} from "./data-helper";
 import {getSupportedTypes} from "./geojson";
 import {xmlTemplate} from "./xml-template";
 import {getSlug} from "../helper/getSlug";
-import {TeaserStateInterface} from "../components/Map/Teaser";
 
 export const getSvgPath = () => {
 

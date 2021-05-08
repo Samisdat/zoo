@@ -1,12 +1,9 @@
 import React from 'react';
 import { useRouter } from 'next/router'
 import Typography from "@material-ui/core/Typography";
-import {Distribution} from "../../components/Distribution/Distribution";
 import {Feature, Polygon} from "geojson";
-import {MapRoot} from "../../components/Map/Root";
 import {getFullGeoJson} from "../api/geojson/list";
 import {MapDimension, MapFocus} from "../index";
-import {get} from "../../data-repos/aninals";
 import {getAnimalBySlug, getAnimals} from "../../strapi-api/query/animals";
 import {Animal} from "../../strapi-api/entity/animal/animal";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";

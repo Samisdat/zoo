@@ -5,6 +5,7 @@ import {getJsonFromApi} from "../utils/get-json-from-api";
 import {Warehouse} from "../warehouse/warehouse";
 import {getPhotoById} from "./photos";
 import {getIndividualAnimalById} from "./individual-animals";
+import {getFacilityById} from "./facilities";
 
 export const loadRelations = async (animal:Animal) => {
 
@@ -14,6 +15,18 @@ export const loadRelations = async (animal:Animal) => {
 
             if (false === Warehouse.get().hasPhoto(photoId)) {
                 await getPhotoById(photoId);
+            }
+
+        }
+
+    }
+
+    if(null !== animal.facilitiesRaw){
+
+        for (const facilityId of animal.facilitiesRaw) {
+
+            if (false === Warehouse.get().hasFacility(facilityId)) {
+                await getFacilityById(facilityId);
             }
 
         }
@@ -65,7 +78,7 @@ export const getAnimalBySlug = async (slug: string):Promise<Animal> =>{
 
 export const getAnimals = async ():Promise<Animal[]> =>{
 
-    const requestUrl = getStrapiUrl('/animals')
+    const requestUrl = getStrapiUrl('/animals?_publicationState=preview&_limit=-1')
 
     const json = await getJsonFromApi<AnimalStrapi[]>(requestUrl);
 

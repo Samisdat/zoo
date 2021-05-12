@@ -5,6 +5,7 @@ import {FacilityStrapi} from "./facility-strapi";
 import {Warehouse} from "../../warehouse/warehouse";
 import {Photo} from "../photo/photo";
 import {Animal} from "../animal/animal";
+import {MapElement} from "../map-element/map-element";
 
 export class Facility extends Entity<FacilitySpore>{
 
@@ -46,6 +47,17 @@ export class Facility extends Entity<FacilitySpore>{
 
         return this.json.animals.map((animalId)=>{
             return Warehouse.get().getAnimal(animalId);
+        });
+    }
+
+    get mapElementsRaw(): number[]{
+        return this.json.map_elements;
+    }
+
+    get mapElements(): MapElement[]{
+
+        return this.json.map_elements.map((id)=>{
+            return Warehouse.get().getMapElement(id);
         });
     }
 

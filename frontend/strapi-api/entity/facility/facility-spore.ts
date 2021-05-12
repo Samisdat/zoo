@@ -8,4 +8,5 @@ export interface FacilitySpore{
     type: FacilityType;
     animals: number[];
     photos: number[];
+    map_elements: number[];
 }

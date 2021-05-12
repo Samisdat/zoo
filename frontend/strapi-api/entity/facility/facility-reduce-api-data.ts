@@ -19,6 +19,16 @@ export const facilityReduceApiData = (apiData: FacilityStrapi):FacilitySpore => 
 
     }
 
+    let map_elements:number[] = [];
+
+    if (undefined !== apiData.map_elements) {
+
+        map_elements = apiData.map_elements.map((map_elements) => {
+            return map_elements.id;
+        });
+
+    }
+
     let animals:number[] = [];
 
     if (undefined !== apiData.animals) {
@@ -37,5 +47,6 @@ export const facilityReduceApiData = (apiData: FacilityStrapi):FacilitySpore => 
         type,
         animals,
         photos,
+        map_elements,
     };
 }

@@ -5,6 +5,7 @@ import {Facility} from "../entity/facility/facility";
 import {FacilityStrapi} from "../entity/facility/facility-strapi";
 import {Warehouse} from "../warehouse/warehouse";
 import {getPhotoById} from "./photos";
+import {getMapElementById} from "./map-elements";
 
 export const loadRelations = async (facility:Facility) => {
 
@@ -20,6 +21,14 @@ export const loadRelations = async (facility:Facility) => {
 
         if (false === Warehouse.get().hasAnimal(animalId)) {
             await getAnimalById(animalId);
+        }
+
+    }
+
+    for (const mapElementId of facility.mapElementsRaw) {
+
+        if (false === Warehouse.get().hasMapElement(mapElementId)) {
+            await getMapElementById(mapElementId);
         }
 
     }

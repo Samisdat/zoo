@@ -7,10 +7,17 @@ import {MapDimension, MapFocus} from "../index";
 import {getAnimalBySlug, getAnimals} from "../../strapi-api/query/animals";
 import {Animal} from "../../strapi-api/entity/animal/animal";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
+import Container from "@material-ui/core/Container";
+import {Breadcrumb} from "../../components/Navigation/Breadcrumb";
+import {Distribution} from "../../components/Distribution/Distribution";
+import {getMapElementById} from "../../strapi-api/query/map-elements";
+import {MapRoot} from "../../components/Map/Root";
+import {MapElement} from "../../strapi-api/entity/map-element/map-element";
+import Endanger from "../../components/Animal/Endanger";
 
 export default function Tiere(props) {
 
-    console.log(props.warehouse)
+    console.log(props.navigation)
 
     const router = useRouter()
     const { slug } = router.query
@@ -21,11 +28,18 @@ export default function Tiere(props) {
         return (slug === animal.slug);
     });
 
-    console.log(animal)
+    let facility = undefined;
+
+    /* same animals can be found in more then one enclosure. But the most common case is one */
+    if(0 !== animal.facilities.length){
+        facility = animal.facilities[0]
+    }
 
     const image = animal.photos[0];
 
-    let focus: MapFocus | Feature<Polygon> = 'none';
+    let focus: MapElement = facility.mapElements.find((mapElement:MapElement)=>{
+        return ('box' === mapElement.properties.type);
+    });
 
     /*
     if(animal.facility){
@@ -54,12 +68,42 @@ export default function Tiere(props) {
         height: 300
     };
 
+    const mapElements = Warehouse.get().getMapElements();
 
     return (
-        <React.Fragment>
+
+        <Container>
+            <Breadcrumb />
             <Typography component="h1">
                 {animal.title}
             </Typography>
+            <Typography component="h2">
+                Tiere oder Bilder
+            </Typography>
+            <Typography component="h2">
+                Gehege
+            </Typography>
+            {JSON.stringify(facility)}
+            <Typography component="h2">
+                Tabelle
+            </Typography>
+            <Typography component="h2">
+                Beschreibung
+            </Typography>
+            <Typography component="h2">
+                Bedrohung
+            </Typography>
+            <Endanger
+                iucnStatus={animal.iucnStatus}
+            />
+            <Typography component="h2">
+                Verbereitung
+            </Typography>
+            <Distribution />
+            <Typography component="h2">
+                Links
+            </Typography>
+
             {/*<Distribution/>*/}
             {/*animal.facility &&
                 <MapRoot
@@ -86,13 +130,17 @@ export default function Tiere(props) {
                     {animal.iucnLink}
                 </a>
             </div>
-        </React.Fragment>
+        </Container>
+
     );
 }
 
 export async function getStaticProps(context) {
 
     await getAnimalBySlug(context.params.slug);
+
+    await getMapElementById(80);
+    await getMapElementById(79);
 
     let getJson = await getFullGeoJson();
 

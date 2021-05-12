@@ -1,5 +1,8 @@
 import {AnimalStrapi} from "./animal-strapi-interface";
 import {AnimalSpore} from "./animal-spore";
+import {Facility} from "../facility/facility";
+import {FacilityStrapi} from "../facility/facility-strapi";
+import {IUCN_STATI, IucnStatus} from "./iucnStatus";
 
 export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
 
@@ -12,7 +15,12 @@ export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
     const scientificName = apiData.scientificName;
     const iucnID = apiData.iucnID;
     const iucnLink = apiData.iucnLink;
-    const iucnStatus = apiData.iucnStatus;
+    let iucnStatus:IucnStatus = null;
+
+    if(true === IUCN_STATI.includes(apiData.iucnStatus as IucnStatus)){
+        iucnStatus = apiData.iucnStatus as IucnStatus;
+    }
+
     const body = apiData.body;
     const className = apiData.className;
     const order = apiData.order;
@@ -25,6 +33,16 @@ export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
 
         photos = apiData.photos.map((photo) => {
             return photo.id;
+        });
+
+    }
+
+    let facilities:number[] = [];
+
+    if (undefined !== apiData.facilities) {
+
+        facilities = apiData.facilities.map((facilitiy:FacilityStrapi) => {
+            return facilitiy.id;
         });
 
     }
@@ -54,7 +72,7 @@ export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
         species,
         family,
         individual_animals,
-        facilities: [],
+        facilities,
         photos,
     };
 }

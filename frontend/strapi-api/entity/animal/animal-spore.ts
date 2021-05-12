@@ -1,3 +1,5 @@
+import {IucnStatus} from "./iucnStatus";
+
 export interface AnimalSpore {
     id: number;
     title: string;
@@ -7,7 +9,7 @@ export interface AnimalSpore {
     scientificName: string;
     iucnID: string;
     iucnLink: string;
-    iucnStatus: string;
+    iucnStatus: IucnStatus | null;
     body: string;
     /* classname is empty|null by accident ;)*/
     className: string | null;

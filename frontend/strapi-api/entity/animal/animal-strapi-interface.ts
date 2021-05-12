@@ -1,5 +1,6 @@
 import {PhotoStrapi} from "../photo/photo-strapi";
 import {IndividualAnimalStrapi} from "../individual-animal/individual-animal-strapi-interface";
+import {FacilityStrapi} from "../facility/facility-strapi";
 
 export interface AnimalStrapi {
     id: number;
@@ -23,6 +24,6 @@ export interface AnimalStrapi {
     created_at: string;
     updated_at: string;
     individual_animals: IndividualAnimalStrapi[];
-    /*facilities: string;*/
+    facilities: FacilityStrapi[];
     photos: PhotoStrapi[];
 }

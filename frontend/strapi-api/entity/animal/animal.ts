@@ -5,6 +5,8 @@ import {animalReduceApiData} from "./animal-reduce-api-data";
 import {Warehouse} from "../../warehouse/warehouse";
 import {Photo} from "../photo/photo";
 import {IndividualAnimal} from "../individual-animal/individual-animal";
+import {Facility} from "../facility/facility";
+import {IucnStatus} from "./iucnStatus";
 
 export interface Taxonomy{
     className: string;
@@ -41,7 +43,7 @@ export class Animal extends Entity<AnimalSpore>{
     get iucnLink(): string{
         return this.json.iucnLink;
     }
-    get iucnStatus(): string{
+    get iucnStatus(): IucnStatus{
         return this.json.iucnStatus;
     }
     get body(): string{
@@ -95,6 +97,16 @@ export class Animal extends Entity<AnimalSpore>{
     get individualAnimals(): IndividualAnimal[]{
         return this.json.individual_animals.map((individualAnimalId)=>{
             return Warehouse.get().getIndividualAnimal(individualAnimalId);
+        });
+    }
+
+    get facilitiesRaw(): number[]{
+        return this.json.facilities;
+    }
+
+    get facilities(): Facility[]{
+        return this.json.facilities.map((facilityId)=>{
+            return Warehouse.get().getFacility(facilityId);
         });
     }
 

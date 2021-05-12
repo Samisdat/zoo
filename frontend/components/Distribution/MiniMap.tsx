@@ -19,7 +19,6 @@ export const MiniMap = (props) => {
 
     const createMiniMap = () => {
 
-
         const projection = d3.geoNaturalEarth1()
 
         const path = d3.geoPath().projection(projection);
@@ -60,7 +59,7 @@ export const MiniMap = (props) => {
             }
         };
 
-        const centerRect = centerToFeatureCollection(props.distributionGeoJson);
+        const centerRect = centerToFeatureCollection(props.distributionGeoJson.features);
 
         rect
             .selectAll("path")

@@ -4,7 +4,6 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {Detail} from "./Detail";
 import {MiniMap} from "./MiniMap";
 import {Legend} from "./Legend";
-import {TeaserDetail, TeaserStateInterface} from "../Map/Teaser";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -93,8 +92,8 @@ export const Distribution = (props) => {
                     worldCountriesJson={world}
                 />
                 <MiniMap
-                    distributionGeoJson={distributionShape}
-                    worldCountriesJson={world}
+                        distributionGeoJson={distributionShape}
+                        worldCountriesJson={world}
                 />
             </div>
             <Legend

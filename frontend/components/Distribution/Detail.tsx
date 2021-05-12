@@ -36,6 +36,9 @@ const MapStateDefault: DistributionDetailStateInterface = {
     },
 }
 
+/**
+ * To be refactored, param has wrong type
+ */
 export const centerToFeatureCollection = (mapElements:MapElementInterface[]) => {
 
     const latitudes = [];
@@ -177,7 +180,7 @@ export const Detail = (props) => {
             })
             .attr("d", path)
 
-        const center = centerToFeatureCollection(props.distributionGeoJson);
+        const center = centerToFeatureCollection(props.distributionGeoJson.features);
 
         rect
             .selectAll("path")

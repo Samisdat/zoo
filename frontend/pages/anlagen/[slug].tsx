@@ -3,6 +3,13 @@ import {Feature} from "geojson";
 import {getFullGeoJson} from "../api/geojson/list";
 import path from "path";
 import fs from "fs";
+import {getFacilities, getFacilityBySlug} from "../../strapi-api/query/facilities";
+import {Animal} from "../../strapi-api/entity/animal/animal";
+import {Facility} from "../../strapi-api/entity/facility/facility";
+import {Warehouse} from "../../strapi-api/warehouse/warehouse";
+import {useRouter} from "next/router";
+import {Breadcrumb, BreadcrumbProps} from "../../components/Navigation/Breadcrumb";
+import Container from "@material-ui/core/Container";
 const frontmatter = require('@github-docs/frontmatter')
 
 const ReactMarkdown = require('react-markdown')
@@ -11,10 +18,36 @@ const gfm = require('remark-gfm')
 
 export default function Gehege(props) {
 
+    const router = useRouter()
+    const { slug } = router.query
+    const { asPath } = router;
+
+    Warehouse.get().hydrate(props.warehouse);
+
+    const facility: Facility = Warehouse.get().getFacilities().find((facility:Facility)=>{
+        return (slug === facility.slug);
+    });
+
+    const breadcrumbProps:BreadcrumbProps = {
+        category: {
+            href: '/anlagen',
+            title: 'Anlagen',
+            icon: 'building',
+        },
+        page: {
+            href: asPath,
+            title: facility.title,
+        },
+    };
+
+
     return (
         <React.Fragment>
-            <h1>{props.frontmatterMd.data.title}</h1>
-            <ReactMarkdown plugins={[gfm]} children={props.frontmatterMd.content} />
+            <Breadcrumb
+                {...breadcrumbProps}
+            />
+            <h1>{facility.title}</h1>
+            <ReactMarkdown plugins={[gfm]} children={facility.body} />
         </React.Fragment>
     );
 }
@@ -23,19 +56,13 @@ export async function getStaticProps(context) {
 
     const slug = context.params.slug
 
-    const dataDir = path.resolve(process.env.PWD, 'data-repos/markdown/enclosures');
-
-    const facilityFilePath = path.resolve(dataDir, slug + '.md');
-
-    const facilityFileContent = fs.readFileSync(facilityFilePath, {encoding:'utf8'});
-
-    const frontmatterMd = frontmatter(facilityFileContent);
+    await getFacilityBySlug(slug);
 
     let getJson = await getFullGeoJson();
 
     const props: any = {
         geoJson: getJson,
-        frontmatterMd:frontmatterMd
+        warehouse: Warehouse.get().dehydrate()
     };
 
     return {
@@ -46,26 +73,20 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
 
-    const getJson = await getFullGeoJson();
+    const facilities = await getFacilities();
 
-    const facilitySlugs = getJson.features
-    .filter((feature:Feature)=>{
-        return ('facility-box' === feature.properties.type);
-    })
-    .map((feature:Feature)=>{
-
+    const facilityPaths = facilities.map((facility:Facility)=>{
         return {
             params:{
-                slug: feature.properties.slug
+                slug: facility.slug
             }
         }
-
     });
+
 
     return {
 
-        paths: facilitySlugs,
-
+        paths: facilityPaths,
         fallback: false,
     }
 }

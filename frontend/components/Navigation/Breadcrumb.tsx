@@ -4,6 +4,10 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
 import HomeIcon from '@material-ui/icons/Home';
 import PetsIcon from '@material-ui/icons/Pets';
+import Icon from '@material-ui/core/Icon'
+import exp from "constants";
+import Container from "@material-ui/core/Container";
+import BookIcon from '@material-ui/icons/Book';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -23,31 +27,58 @@ function handleClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
     console.info('You clicked a breadcrumb.');
 }
 
-export function Breadcrumb() {
+export type BreadcumbCategoryIcon = 'pet' | 'building' | 'blog';
+
+export interface BreadcrumbLink {
+    href:string;
+    title:string;
+}
+
+export interface BreadcrumbCategoryLink extends BreadcrumbLink{
+    icon:BreadcumbCategoryIcon
+}
+
+export interface BreadcrumbProps{
+    category:BreadcrumbCategoryLink,
+    page:BreadcrumbLink,
+}
+
+export const Breadcrumb = (props:BreadcrumbProps)    => {
+
     const classes = useStyles();
+
+    const getIcon = (categoryIcon:BreadcumbCategoryIcon) => {
+
+        if('pet' === categoryIcon){
+            return (<PetsIcon className={classes.icon} />);
+        }
+
+        if('blog' === categoryIcon){
+            return (<BookIcon className={classes.icon} />);
+        }
+
+    };
 
     return (
         <Breadcrumbs aria-label="breadcrumb">
-            <Link color="inherit" href="/" onClick={handleClick} className={classes.link}>
+            <Link color="inherit" href="/" className={classes.link}>
                 <HomeIcon className={classes.icon} />
                 Startseite
             </Link>
             <Link
                 color="inherit"
-                href="/getting-started/installation/"
-                onClick={handleClick}
+                href={props.category.href}
                 className={classes.link}
             >
-                <PetsIcon className={classes.icon} />
-                Tiere
+                {getIcon(props.category.icon)}
+                {props.category.title}
             </Link>
             <Link
                 color="inherit"
-                href="/getting-started/installation/"
-                onClick={handleClick}
+                href={props.page.href}
                 className={classes.link}
             >
-                Orange-Utan
+                {props.page.title}
             </Link>
         </Breadcrumbs>
     );

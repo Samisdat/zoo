@@ -8,25 +8,36 @@ import {getAnimalBySlug, getAnimals} from "../../strapi-api/query/animals";
 import {Animal} from "../../strapi-api/entity/animal/animal";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 import Container from "@material-ui/core/Container";
-import {Breadcrumb} from "../../components/Navigation/Breadcrumb";
+import {Breadcrumb, BreadcrumbLink, BreadcrumbProps} from "../../components/Navigation/Breadcrumb";
 import {Distribution} from "../../components/Distribution/Distribution";
 import {getMapElementById} from "../../strapi-api/query/map-elements";
 import {MapRoot} from "../../components/Map/Root";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
-import Endanger from "../../components/Animal/Endanger";
+import {Endanger} from "../../components/Animal/Endanger";
 
 export default function Tiere(props) {
 
-    console.log(props.navigation)
-
     const router = useRouter()
     const { slug } = router.query
+    const { asPath } = router;
 
     Warehouse.get().hydrate(props.warehouse);
 
     const animal: Animal = Warehouse.get().getAnimals().find((animal:Animal)=>{
         return (slug === animal.slug);
     });
+
+    const breadcrumbProps:BreadcrumbProps = {
+        category: {
+            href: '/tiere',
+            title: 'Tiere',
+            icon: 'pet',
+        },
+        page: {
+            href: asPath,
+            title: animal.title,
+        },
+    };
 
     let facility = undefined;
 
@@ -73,7 +84,9 @@ export default function Tiere(props) {
     return (
 
         <Container>
-            <Breadcrumb />
+            <Breadcrumb
+                {...breadcrumbProps}
+            />
             <Typography component="h1">
                 {animal.title}
             </Typography>
@@ -89,9 +102,6 @@ export default function Tiere(props) {
             </Typography>
             <Typography component="h2">
                 Beschreibung
-            </Typography>
-            <Typography component="h2">
-                Bedrohung
             </Typography>
             <Endanger
                 iucnStatus={animal.iucnStatus}

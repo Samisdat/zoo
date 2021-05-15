@@ -16,7 +16,7 @@
     "leaflet": "^1.6.0",
     "lodash.throttle": "^4.1.1",
     "moment": "^2.29.1",
-    "next": "10.0.9",
+    "next": "^10.2.0",
     "next-mdx-remote": "^2.0.1",
     "node-fetch": "^2.6.1",
     "prop-types": "15.7.2",

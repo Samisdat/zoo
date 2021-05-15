@@ -1,4 +1,5 @@
 import React, {useState, createContext, useEffect} from 'react';
+import throttle from 'lodash.throttle';
 
 export type Breakpoint = 'extra-small' | 'small' | 'medium' | 'large';
 
@@ -55,8 +56,16 @@ export const ViewportProvider = ({ children }) => {
         };
 
     };
+
     const handleWindowResize = () => {
+        
+        return throttle(() => {
+
+            console.log('throttle')
+
             setViewport(getViewport());
+
+        }, 200);
 
 
     }
@@ -69,9 +78,9 @@ export const ViewportProvider = ({ children }) => {
 
     useEffect(() => {
 
-        window.addEventListener("resize", handleWindowResize);
+        window.addEventListener("resize", handleWindowResize());
 
-        return () => window.removeEventListener("resize", handleWindowResize);
+        return () => window.removeEventListener("resize", handleWindowResize());
 
     }, []);
 

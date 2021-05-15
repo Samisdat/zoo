@@ -42,31 +42,28 @@ export const ViewportProvider = ({ children }) => {
 
     const [viewport, setViewport] = useState<Viewport>(defaultViewport);
 
-    const handleWindowResize = () => {
+    const getViewport = ():Viewport => {
 
         const width = window.innerWidth;
         const height = window.innerHeight;
         const breakpoint = getBreakpointName(width);
 
-        setViewport({
+        return {
             width,
             height,
             breakpoint,
-        });
+        };
+
+    };
+    const handleWindowResize = () => {
+            setViewport(getViewport());
+
 
     }
 
     useEffect(() => {
 
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-        const breakpoint = getBreakpointName(width);
-
-        setViewport({
-            width,
-            height,
-            breakpoint,
-        });
+        setViewport(getViewport());
 
     }, []);
 

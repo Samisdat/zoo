@@ -8,9 +8,12 @@ import NavigationSidebar from '../components/Navigation/Sidebar';
 import {makeStyles} from '@material-ui/core/styles';
 import {NavigationInterface} from "../components/Navigation/Interfaces";
 import createPersistedState from 'use-persisted-state';
-import ButtonAppBar from "../components/Menu/Menu";
+import ButtonAppBar from "../components/Navigation/Menu";
 
 import { createMuiTheme } from '@material-ui/core/styles';
+import {ViewportProvider} from "../components/viewport/ViewportProvider";
+import {Navigation} from "../components/Navigation/Navigation";
+import {navigationCategories} from "../components/Navigation/NavigationCategory";
 
 const theme = createMuiTheme({
     palette: {
@@ -25,6 +28,7 @@ const theme = createMuiTheme({
         },
     },
 });
+
 
 
 const useNavigationState = createPersistedState('navigation');
@@ -78,6 +82,7 @@ export default function ZooWuppertal(props) {
 
     const classes = useStyles();
     return (
+        <ViewportProvider>
         <ThemeProvider theme={theme}>
             <Head>
                 <title>Der grüne Zoo Wuppertal</title>
@@ -95,12 +100,12 @@ export default function ZooWuppertal(props) {
                         />
                     </Grid>
                 </Grid>
-                <ButtonAppBar></ButtonAppBar>
-                <NavigationSidebar
-                    toggleSideMenu={toggleSideMenu}
-                    {...navigationState}
-                />
+            {/*<ButtonAppBar></ButtonAppBar>*/}
+            <Navigation
+                categories={navigationCategories}
+            />
         </ThemeProvider>
+        </ViewportProvider>
     );
 }
 

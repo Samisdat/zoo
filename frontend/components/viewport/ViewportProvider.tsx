@@ -58,7 +58,7 @@ export const ViewportProvider = ({ children }) => {
     };
 
     const handleWindowResize = () => {
-        
+
         return throttle(() => {
 
             console.log('throttle')

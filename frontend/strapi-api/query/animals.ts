@@ -78,11 +78,17 @@ export const getAnimalBySlug = async (slug: string):Promise<Animal> =>{
 
 export const getAnimals = async ():Promise<Animal[]> =>{
 
-    const requestUrl = getStrapiUrl('/animals?_publicationState=preview&_limit=-1')
+    const requestUrl = getStrapiUrl('/animals' /*'/animals?_publicationState=preview&_limit=-1'*/)
 
     const json = await getJsonFromApi<AnimalStrapi[]>(requestUrl);
 
     const animals = json.map(Animal.fromApi);
+
+    for(const animal of animals){
+
+        await loadRelations(animal);
+
+    }
 
     return animals;
 

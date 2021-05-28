@@ -1,46 +1,10 @@
 import React from 'react';
-import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
-
-import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListSubheader from '@material-ui/core/ListSubheader';
 import {facilityUrlPart} from "../constants";
-import {listEnclosures} from "../data-repos/enclosures";
 import {getFacilities} from "../strapi-api/query/facilities";
 import {Warehouse} from "../strapi-api/warehouse/warehouse";
-import {Facility} from "../strapi-api/entity/facility/facility";
-
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-      text: {
-        padding: theme.spacing(2, 2, 0),
-      },
-      paper: {
-        paddingBottom: 50,
-      },
-      list: {
-        marginBottom: theme.spacing(2),
-      },
-      subheader: {
-        backgroundColor: theme.palette.background.paper,
-      },
-      appBar: {
-        top: 'auto',
-        bottom: 0,
-      },
-      grow: {
-        flexGrow: 1,
-      },
-      fabButton: {
-        position: 'absolute',
-        zIndex: 1,
-        top: -30,
-        left: 0,
-        right: 0,
-        margin: '0 auto',
-      },
-    }),
-);
+import {PinnedSubheaderList, PinnedSubheaderListItemProps} from "../components/PinnedSubheaderList/PinnedSubheaderList";
+import {groupByFirstLetter} from "../components/PinnedSubheaderList/groupByFirstLetter";
 
 export const ListItemLink = (props)  => {
     return <ListItem button component="a" {...props} />;
@@ -52,57 +16,53 @@ export default function Index(props) {
 
     const facilities = Warehouse.get().getFacilities();
 
-  const classes = useStyles();
+    const listItems:PinnedSubheaderListItemProps[] = facilities.map((facilitiy):PinnedSubheaderListItemProps=>{
 
-    let group = facilities
-        .reduce((r, e) => {
-            let firstLetter = e.title[0].toLowerCase();
+        const item:PinnedSubheaderListItemProps = {
+            key: facilitiy.slug,
+            text: facilitiy.title,
+            href:`/${facilityUrlPart}/${facilitiy.slug}`,
+        };
 
-            firstLetter = firstLetter
-                .replace('ä', 'a')
-                .replace('ü', 'u')
-                .replace('ö', 'o')
-            ;
+        let image:string = undefined;
 
-            if(undefined === r[firstLetter]) {
-                r[firstLetter] = []
+        if(0 !== facilitiy.photos.length && undefined !== facilitiy.photos[0] && facilitiy.photos[0].thumbnail){
+            image = `http://127.0.0.1:1337${facilitiy.photos[0].thumbnail.src}`
+        }
+
+        if(undefined === image){
+
+            const animalWithImage = facilitiy.animals.find((animal)=>{
+                return (0 < animal.photos.length);
+            });
+
+            if(undefined !== animalWithImage){
+
+                if(0 !== animalWithImage.photos.length && undefined !== animalWithImage.photos[0] && animalWithImage.photos[0].thumbnail){
+                    image = `http://127.0.0.1:1337${animalWithImage.photos[0].thumbnail.src}`
+                }
+
             }
 
-            r[firstLetter].push(e);
+        }
 
-            return r;
+        if(undefined !== image){
+            item.image = image;
+        }
 
-        }, {});
+        return item;
 
-
-    const ordered = {};
-    Object.keys(group).sort().forEach(function(key) {
-        ordered[key] = group[key];
     });
 
+    const listGroups = groupByFirstLetter('facilities', listItems);
+
     return (
-  <List key={`facilities-list`}  className={classes.list}>
-
-      {Object.entries(ordered)
-          .map(([key, value], i) => {
-              return <React.Fragment>
-                  <ListSubheader className={classes.subheader}>{key.toUpperCase()}</ListSubheader>
-                  {group[key].map(( facility: Facility ) => {
-                      const href =  `/${facilityUrlPart}/${facility.slug}`
-                      return (
-                          <ListItem button>
-                              <ListItemLink href={href}>{facility.title}</ListItemLink>
-                          </ListItem>
-                      );
-                  })}
-              </React.Fragment>
-          })}
-
-  </List>
+        <PinnedSubheaderList
+            groups={listGroups}
+        />
   );
+
 }
-
-
 
 export async function getStaticProps({ params, preview = false, previewData }) {
 

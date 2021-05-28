@@ -5,8 +5,6 @@ import {useRouter} from "next/router";
 
 export const Navigation = (props) => {
 
-    console.log(props)
-
     const { width, height, breakpoint } = useViewport();
 
     const router = useRouter();

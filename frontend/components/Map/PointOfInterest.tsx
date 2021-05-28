@@ -43,11 +43,9 @@ export const PointOfInterest = (props:PointOfInterestProperties) => {
             radius = 8
         }
 
-
         const clicked = (event:any, d:any) => {
             console.log(d.properties);
         }
-
 
         clickGroup.selectAll('circle')
             .data(pois)

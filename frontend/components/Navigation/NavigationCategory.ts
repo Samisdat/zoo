@@ -1,19 +1,6 @@
-export type NavigationIconType = 'Map' | 'Pets' | 'Store' | 'Book' | 'Code' | 'MenuBook';
+import {PinnedSubheaderListGroupProps} from "../PinnedSubheaderList/PinnedSubheaderList";
 
-export interface NavigationItem{
-    key: string;
-    href: string;
-    icon: NavigationIconType;
-    text: string;
-}
-
-export interface NavigationCategory {
-    key: string;
-    text: string;
-    items: NavigationItem[]
-}
-
-export const navigationCategories:NavigationCategory[] = [
+export const navigationCategories:PinnedSubheaderListGroupProps[] = [
     {
         key: 'main',
         text: 'Hauptmenü',

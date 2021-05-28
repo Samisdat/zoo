@@ -61,8 +61,6 @@ export const ViewportProvider = ({ children }) => {
 
         return throttle(() => {
 
-            console.log('throttle')
-
             setViewport(getViewport());
 
         }, 200);

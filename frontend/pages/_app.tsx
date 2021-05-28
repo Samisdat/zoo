@@ -4,11 +4,9 @@ import Head from 'next/head';
 import {ThemeProvider} from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import CssBaseline from '@material-ui/core/CssBaseline';
-import NavigationSidebar from '../components/Navigation/Sidebar';
 import {makeStyles} from '@material-ui/core/styles';
 import {NavigationInterface} from "../components/Navigation/Interfaces";
 import createPersistedState from 'use-persisted-state';
-import ButtonAppBar from "../components/Navigation/Menu";
 
 import { createMuiTheme } from '@material-ui/core/styles';
 import {ViewportProvider} from "../components/viewport/ViewportProvider";

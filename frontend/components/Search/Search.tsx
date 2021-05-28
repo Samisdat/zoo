@@ -10,10 +10,10 @@ import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import { TransitionProps } from '@material-ui/core/transitions';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import {Feature} from "geojson";
-import PinnedSubheaderList from "./SearchList";
 import ChipsArray from "./Chips";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
+import {PinnedSubheaderList, PinnedSubheaderListItemProps} from "../PinnedSubheaderList/PinnedSubheaderList";
+import {groupByFirstLetter} from "../PinnedSubheaderList/groupByFirstLetter";
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -84,8 +84,7 @@ export interface SearchDialogProperties{
 export default function SearchDialog(props:SearchDialogProperties) {
     const classes = useStyles();
 
-    const options = props.mapElements.filter((mapElement:MapElement) => {
-
+    const mapElements = props.mapElements.filter((mapElement:MapElement) => {
 
         if('box' !== mapElement.properties.type){
             return false;
@@ -115,38 +114,31 @@ export default function SearchDialog(props:SearchDialogProperties) {
 
     });
 
-    let group = options
-        .reduce((r, e) => {
+    const listItems:PinnedSubheaderListItemProps[] = mapElements.map((mapElement):PinnedSubheaderListItemProps=>{
 
-            let firstLetter = e.properties.facility.title[0].toLowerCase();
+        const listItem: PinnedSubheaderListItemProps = {
+            key: mapElement.properties.facility.slug,
+            text: mapElement.properties.facility.title,
+        };
 
-            firstLetter = firstLetter
-                .replace('ä', 'a')
-                .replace('ü', 'u')
-                .replace('ö', 'o')
-            ;
+        let image:string = undefined;
 
-            if(undefined === r[firstLetter]) {
-                r[firstLetter] = []
-            }
+        if(0 !== mapElement.photos.length && undefined !== mapElement.photos[0] && mapElement.photos[0].thumbnail){
+            image = `http://127.0.0.1:1337${mapElement.photos[0].thumbnail.src}`
+        }
 
-            r[firstLetter].push(e);
+        if(undefined !== image){
+            listItem.image = image;
+        }
 
-            return r;
-
-        }, {});
-
-
-    const ordered = {};
-    Object.keys(group).sort().forEach(function(key) {
-        ordered[key] = group[key];
+        return listItem;
     });
+
+    const listGroups = groupByFirstLetter('facilities', listItems);
 
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
-
-        console.log('handleClickOpen')
 
         setOpen(true);
     };
@@ -155,11 +147,16 @@ export default function SearchDialog(props:SearchDialogProperties) {
         setOpen(false);
     };
 
-    const handleClickItem = (item:MapElement) => {
+    const handleClickItem = (itemKey:string) => {
 
         setOpen(false);
 
-        props.setFocus(item);
+        const mapElement = mapElements.find((mapElement)=>{
+            return (itemKey === mapElement.properties.facility.slug);
+        })
+
+        props.setFocus(mapElement);
+
     };
 
     return (
@@ -176,7 +173,8 @@ export default function SearchDialog(props:SearchDialogProperties) {
             </Paper>
             <Dialog
                 fullScreen
-                open={open}/*open={true}*/
+                /*open={true}*/
+                open={open}
                 onClose={handleClose}
                 TransitionComponent={Transition}
             >
@@ -206,8 +204,8 @@ export default function SearchDialog(props:SearchDialogProperties) {
                 </Box>
                 */}
                 <PinnedSubheaderList
-                    ordered={ordered}
                     handleClickItem={handleClickItem}
+                    groups={listGroups}
                 />
                 <Fab
                     color="primary"

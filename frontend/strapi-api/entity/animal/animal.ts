@@ -85,6 +85,7 @@ export class Animal extends Entity<AnimalSpore>{
     }
 
     get photos(): Photo[]{
+
         return this.json.photos.map((photoId)=>{
             return Warehouse.get().getPhoto(photoId);
         });

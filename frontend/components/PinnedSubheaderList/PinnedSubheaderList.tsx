@@ -196,6 +196,7 @@ export const PinnedSubheaderList = (props:PinnedSubheaderListProps) => {
                     )
                 })
             }
+            <ListItem style={{height:56}}></ListItem>
         </List>
     );
 }

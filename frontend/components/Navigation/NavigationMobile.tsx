@@ -118,7 +118,7 @@ export default function NavigationMobile(props) {
             <PinnedSubheaderList
                 groups={navigationCategories}
             />
-            <ListItem>Empty</ListItem>;
+
             <Fab
                 color="primary"
                 className={classes.fab}

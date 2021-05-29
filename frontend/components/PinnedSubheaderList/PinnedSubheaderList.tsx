@@ -13,6 +13,7 @@ export interface PinnedSubheaderListItemProps{
     key: string;
     href?: string;
     text: string;
+    secondary?: string;
     icon?: PinnedListItemIcon;
     image?: string;
 }

@@ -159,6 +159,7 @@ export const PinnedSubheaderGroup = (props:PinnedSubheaderGroup) => {
                 Object.entries(group.items).map(([key, item], i)=>{
                     return (
                         <PinnedSubheaderItem
+                            key={item.key}
                             handleClickItem={handleClickItem}
                             item={item}
                         />

@@ -123,19 +123,18 @@ export const PinnedSubheaderItem = (props:PinnedSubheaderItemProps) => {
 
     return (
         <React.Fragment>
-            <ListItem
-                alignItems="flex-start"
-                button={true}
-                component="a"
-                onClick={()=>{onListItemClick(item)}}
-                {...item}
-            >
-                <PinnedSubheaderImage {...item} />
-                <ListItemText
-                    primary={item.text}
-                    secondary='Lorem Ipsum'
-                />
-            </ListItem>
+        <ListItem
+            button={true}
+            component="a"
+            onClick={()=>{onListItemClick(item)}}
+            {...item}
+        >
+            <PinnedSubheaderImage {...item} />
+            <ListItemText
+                primary={item.text}
+                secondary={item.secondary}
+            />
+        </ListItem>
         </React.Fragment>
     );
 

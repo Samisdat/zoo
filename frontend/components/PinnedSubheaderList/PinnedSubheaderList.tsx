@@ -119,7 +119,8 @@ export const PinnedSubheaderItem = (props:PinnedSubheaderItemProps) => {
         handleClickItem(item.key);
     };
 
-
+    const inset = (undefined === item.icon && item.icon === item.image)? true: false;
+    
     return (
         <React.Fragment>
         <ListItem
@@ -130,6 +131,7 @@ export const PinnedSubheaderItem = (props:PinnedSubheaderItemProps) => {
         >
             <PinnedSubheaderImage {...item} />
             <ListItemText
+                inset={inset}
                 primary={item.text}
                 secondary={item.secondary}
             />

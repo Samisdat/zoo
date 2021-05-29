@@ -6,6 +6,12 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {Avatar, ListItemAvatar} from "@material-ui/core";
 import ListItemText from "@material-ui/core/ListItemText";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
+import PetsIcon from "@material-ui/icons/Pets";
+import BookIcon from "@material-ui/icons/Book";
+import MenuBookIcon from "@material-ui/icons/MenuBook";
+import CodeIcon from "@material-ui/icons/Code";
+import StoreIcon from "@material-ui/icons/Store";
+import MapIcon from "@material-ui/icons/Map";
 
 export type PinnedListItemIcon = 'Map' | 'Pets' | 'Store' | 'Book' | 'Code' | 'MenuBook';
 
@@ -35,15 +41,64 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
+export const PinnedSubheaderIcon = (props) => {
+
+    const icon: PinnedListItemIcon = props.icon as PinnedListItemIcon;
+
+    if('Map' === icon){
+        return (<MapIcon />);
+    }
+
+    if('Pets' === icon){
+        return (<PetsIcon />);
+    }
+
+    if('Store' === icon){
+        return (<StoreIcon />);
+    }
+
+    if('Book' === icon){
+        return (<BookIcon />);
+    }
+
+    if('Code' === icon){
+        return (<CodeIcon />);
+    }
+
+    if('MenuBook' === icon){
+        return (<MenuBookIcon />);
+    }
+
+}
+
 export const PinnedSubheaderImage = (props:PinnedSubheaderListItemProps) => {
 
-    return (<ListItemAvatar>
-        <Avatar
-            alt={props.text}
-            src={props.image}
-        />
-    </ListItemAvatar>);
+    if(undefined === props.icon && undefined === props.image){
+        return (<React.Fragment></React.Fragment>);
+    }
 
+    if(undefined !== props.icon){
+
+        return (
+            <ListItemIcon>
+                <PinnedSubheaderIcon
+                    icon={props.icon}
+                />
+            </ListItemIcon>
+        );
+
+    }
+
+    if(undefined !== props.image) {
+
+        return (<ListItemAvatar>
+            <Avatar
+                alt={props.text}
+                src={props.image}
+            />
+        </ListItemAvatar>);
+
+    }
 }
 
 export interface PinnedSubheaderItemProps{

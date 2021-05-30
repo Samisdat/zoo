@@ -1,17 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import * as d3 from "d3";
+import {Paper} from "@material-ui/core";
 
 const logoSmallWidth = 100 - 16;
 const logoSmallHeight = Math.ceil(logoSmallWidth / 1709 * 1395)
 
-import createPersistedState from 'use-persisted-state';
-import {Paper} from "@material-ui/core";
-const useAnimationPlayedState = createPersistedState('animation');
-
 const useStyles = makeStyles((theme: Theme) => {
-
-    console.log(theme)
 
     return createStyles({
         logo: {
@@ -21,9 +15,6 @@ const useStyles = makeStyles((theme: Theme) => {
             width: logoSmallWidth,
             height: logoSmallHeight,
             display: 'block',
-            /*display: 'none',*/
-            zIndex: 1500,
-            background: 'white'
         },
         logoImg: {
             position: 'absolute',
@@ -31,9 +22,9 @@ const useStyles = makeStyles((theme: Theme) => {
             right: 0,
         },
         root: {
-            position: 'relative',
+            position: 'absolute',
+            right:0,
             width: 100,
-            background: 'white',
             ...theme.mixins.toolbar
         },
         square: {
@@ -41,7 +32,8 @@ const useStyles = makeStyles((theme: Theme) => {
             top: 0,
             left: 0,
             width: 100,
-            height: 100,
+            height: 86,
+            background: 'white',
         },
         paperCut: {
             position: 'absolute',
@@ -49,19 +41,14 @@ const useStyles = makeStyles((theme: Theme) => {
             left: -8,
             width: 100 + 2 * 8,
             height: 36,
-            /*backgroundColor: theme.palette.primary.main*/
-            /*backgroundColor:'red',*/
             overflow:'hidden',
         },
         paper: {
             position: 'absolute',
-
             top: -26,
             left: 8,
             width: 100,
             height: 50,
-            /*backgroundColor: theme.palette.primary.main,*/
-            backgroundColor: 'white'
         }
     });
 });

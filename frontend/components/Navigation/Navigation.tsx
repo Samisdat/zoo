@@ -11,11 +11,6 @@ export const Navigation = (props) => {
 
     const router = useRouter();
 
-    return <NavigationLarge
-        router={router}
-        {...props}
-    />
-
     if('extra-small' === breakpoint){
         return <NavigationMobile
             router={router}
@@ -25,6 +20,20 @@ export const Navigation = (props) => {
 
     if('small' === breakpoint){
         return <NavigationMobile
+            router={router}
+            {...props}
+        />
+    }
+
+    if('medium' === breakpoint){
+        return <NavigationLarge
+            router={router}
+            {...props}
+        />
+    }
+
+    if('large' === breakpoint){
+        return <NavigationLarge
             router={router}
             {...props}
         />

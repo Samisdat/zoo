@@ -11,6 +11,7 @@ import Slide from "@material-ui/core/Slide";
 import List from "@material-ui/core/List";
 import {ListItem, ListItemText} from "@material-ui/core";
 import Container from "@material-ui/core/Container";
+import {NavigationListGroupInterface} from "../NavigationList/NavigationListInterfaces";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -30,6 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
         navDisplayFlex: {
             display: `flex`,
             justifyContent: `space-between`,
+            marginLeft: theme.spacing(2),
         },
         linkText: {
             textDecoration: `none`,
@@ -61,23 +63,21 @@ function HideOnScroll(props: Props) {
     );
 }
 
-const navLinks = [
-    { title: `Der grüne Zoo`, path: `/about-us` },
-    { title: `product`, path: `/product` },
-    { title: `blog`, path: `/blog` },
-    { title: `contact`, path: `/contact` },
-    { title: `faq`, path: `/faq` }
-];
-
 export const NavigationMedium = (props) => {
+
+    const navigationCategories = props.categories as NavigationListGroupInterface[];
+
+    const mainItems = navigationCategories.find((navigationCategory)=>{
+        return ('main' === navigationCategory.key);
+    });
 
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
+        <React.Fragment>
             <div className={classes.toolbarPadding}></div>
             <HideOnScroll {...props}>
-            <AppBar>
+            <AppBar className={classes.root}>
                 <Toolbar>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <MenuIcon />
@@ -89,10 +89,10 @@ export const NavigationMedium = (props) => {
                         component="nav"
                         className={classes.navDisplayFlex}
                     >
-                        {navLinks.map(({ title, path }) => (
-                            <a href={path} key={title} className={classes.linkText}>
+                        {mainItems.items.map((item) => (
+                            <a href={item.href} key={item.key} className={classes.linkText}>
                                 <ListItem button>
-                                    <ListItemText primary={title} />
+                                    <ListItemText primary={item.text} />
                                 </ListItem>
                             </a>
                         ))}
@@ -100,6 +100,6 @@ export const NavigationMedium = (props) => {
                 </Toolbar>
             </AppBar>
             </HideOnScroll>
-        </div>
+        </React.Fragment>
     );
 }

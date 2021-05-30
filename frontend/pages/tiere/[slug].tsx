@@ -82,8 +82,7 @@ export default function Tiere(props) {
     const mapElements = Warehouse.get().getMapElements();
 
     return (
-
-        <Container>
+        <React.Fragment>
             <Breadcrumb
                 {...breadcrumbProps}
             />
@@ -140,7 +139,7 @@ export default function Tiere(props) {
                     {animal.iucnLink}
                 </a>
             </div>
-        </Container>
+        </React.Fragment>
 
     );
 }

@@ -12,6 +12,8 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import {ViewportProvider} from "../components/viewport/ViewportProvider";
 import {Navigation} from "../components/Navigation/Navigation";
 import {navigationCategories} from "../components/Navigation/NavigationCategory";
+import {relative} from "jest-haste-map/build/lib/fast_path";
+import Container from "@material-ui/core/Container";
 
 const theme = createMuiTheme({
     palette: {
@@ -92,16 +94,13 @@ export default function ZooWuppertal(props) {
                 <Navigation
                     categories={navigationCategories}
                 />
-                <Grid container>
-                    <Grid item xs={12}>
-                        <Component
-                            toggleTeaser={toggleTeaser}
-                            navigation={navigationState}
-                            {...pageProps}
-                        />
-                    </Grid>
-                </Grid>
-            {/*<ButtonAppBar></ButtonAppBar>*/}
+                <Container maxWidth="md">
+                    <Component
+                        toggleTeaser={toggleTeaser}
+                        navigation={navigationState}
+                        {...pageProps}
+                    />
+                </Container>
         </ThemeProvider>
         </ViewportProvider>
     );

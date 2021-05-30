@@ -22,17 +22,17 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         toolbarPadding:{
             ...theme.mixins.toolbar,
+            paddingTop:20
         },
         menuButton: {
-            marginRight: theme.spacing(1),
+            marginLeft: theme.spacing(0),
         },
         title: {
             flexGrow: 1,
         },
         navDisplayFlex: {
             display: `flex`,
-            justifyContent: `space-between`,
-            marginLeft: theme.spacing(2),
+
         },
         linkText: {
             textDecoration: `none`,
@@ -57,7 +57,23 @@ export const NavigationLarge = (props) => {
 
             <AppBar>
                 <Toolbar>
-                    <Container maxWidth="md">
+                    <Container maxWidth="md" style={{display:'flex', position:'relative'}}>
+
+                        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                            <MenuIcon />
+                        </IconButton>
+                        <List
+                            component="nav"
+                            className={classes.navDisplayFlex}
+                        >
+                            {mainItems.items.map((item) => (
+                                <a href={item.href} key={item.key} className={classes.linkText}>
+                                    <ListItem button>
+                                        <ListItemText primary={item.text} />
+                                    </ListItem>
+                                </a>
+                            ))}
+                        </List>
                         <StaticLogo/>
                     </Container>
                 </Toolbar>

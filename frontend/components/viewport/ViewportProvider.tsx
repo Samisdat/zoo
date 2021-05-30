@@ -84,7 +84,9 @@ export const ViewportProvider = ({ children }) => {
 
     return (
         <viewportContext.Provider value={ viewport }>
-            {children}
+            <div className={`viewport-${viewport.breakpoint}`}>
+                {children}
+            </div>
         </viewportContext.Provider>
     );
 };

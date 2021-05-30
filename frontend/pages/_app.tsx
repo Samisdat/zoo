@@ -89,6 +89,9 @@ export default function ZooWuppertal(props) {
             </Head>
                 {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                 <CssBaseline/>
+                <Navigation
+                    categories={navigationCategories}
+                />
                 <Grid container>
                     <Grid item xs={12}>
                         <Component
@@ -99,9 +102,6 @@ export default function ZooWuppertal(props) {
                     </Grid>
                 </Grid>
             {/*<ButtonAppBar></ButtonAppBar>*/}
-            <Navigation
-                categories={navigationCategories}
-            />
         </ThemeProvider>
         </ViewportProvider>
     );

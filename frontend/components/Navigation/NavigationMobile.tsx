@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme: Theme) =>
         subheader: {
             backgroundColor: theme.palette.background.paper,
         },
-    }),
+    })
 );
 
 const Transition = React.forwardRef(function Transition(

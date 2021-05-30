@@ -2,6 +2,7 @@ import React from 'react';
 import {useViewport} from "../viewport/useViewport";
 import NavigationMobile from "./NavigationMobile";
 import {useRouter} from "next/router";
+import NavigationMedium from "./NavigationMedium";
 
 export const Navigation = (props) => {
 
@@ -11,6 +12,20 @@ export const Navigation = (props) => {
 
     if('extra-small' === breakpoint){
         return <NavigationMobile
+            router={router}
+            {...props}
+        />
+    }
+
+    if('small' === breakpoint){
+        return <NavigationMobile
+            router={router}
+            {...props}
+        />
+    }
+
+    if('medium' === breakpoint){
+        return <NavigationMedium
             router={router}
             {...props}
         />

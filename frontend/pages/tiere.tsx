@@ -2,8 +2,8 @@ import React from 'react';
 import {animalUrlPart} from "../constants";
 import {Warehouse} from "../strapi-api/warehouse/warehouse";
 import {getAnimals} from "../strapi-api/query/animals";
-import {PinnedSubheaderList, PinnedSubheaderListItemProps} from "../components/PinnedSubheaderList/PinnedSubheaderList";
-import {groupByFirstLetter} from "../components/PinnedSubheaderList/groupByFirstLetter";
+import {NavigationList, NavigationListItemInterface} from "../components/NavigationList/NavigationList";
+import {groupByFirstLetter} from "../components/NavigationList/groupByFirstLetter";
 
 export default function Index(props) {
 
@@ -11,9 +11,9 @@ export default function Index(props) {
 
     const animals = Warehouse.get().getAnimals();
 
-    const listItems:PinnedSubheaderListItemProps[] = animals.map((animals):PinnedSubheaderListItemProps=>{
+    const listItems:NavigationListItemInterface[] = animals.map((animals):NavigationListItemInterface=>{
 
-        const item:PinnedSubheaderListItemProps = {
+        const item:NavigationListItemInterface = {
             key: animals.slug,
             text: animals.title,
             href:`/${animalUrlPart}/${animals.slug}`,
@@ -36,7 +36,7 @@ export default function Index(props) {
     const listGroups = groupByFirstLetter('facilities', listItems);
 
     return (
-        <PinnedSubheaderList
+        <NavigationList
             groups={listGroups}
         />
     );

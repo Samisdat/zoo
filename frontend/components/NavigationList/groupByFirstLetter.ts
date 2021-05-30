@@ -1,14 +1,10 @@
-import {
-    PinnedSubheaderListGroupProps,
-    PinnedSubheaderListItemProps
-} from "./PinnedSubheaderList";
+import {NavigationListGroupInterface, NavigationListItemInterface} from "./NavigationListInterfaces";
 
 interface GroupListItem{
-    [index:string]:PinnedSubheaderListItemProps[];
+    [index:string]:NavigationListItemInterface[];
 }
 
-
-export const groupByFirstLetter = (listKey:string, items:PinnedSubheaderListItemProps[]):PinnedSubheaderListGroupProps[] => {
+export const groupByFirstLetter = (listKey:string, items:NavigationListItemInterface[]):NavigationListGroupInterface[] => {
 
     const seedGroup:GroupListItem = {};
 
@@ -37,11 +33,11 @@ export const groupByFirstLetter = (listKey:string, items:PinnedSubheaderListItem
         ordered[key] = group[key];
     });
 
-    const pinnedSubheaderListGroupProps:PinnedSubheaderListGroupProps[] = [];
+    const pinnedSubheaderListGroupProps:NavigationListGroupInterface[] = [];
 
     for(const key in ordered){
 
-        const pinnedGroup: PinnedSubheaderListGroupProps = {
+        const pinnedGroup: NavigationListGroupInterface = {
             key: `${listKey}-${key.toLowerCase()}`,
             text: key,
             items: ordered[key],

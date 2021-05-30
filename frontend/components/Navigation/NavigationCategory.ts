@@ -1,6 +1,6 @@
-import {PinnedSubheaderListGroupProps} from "../PinnedSubheaderList/PinnedSubheaderList";
+import {NavigationListGroupInterface} from "../NavigationList/NavigationListInterfaces";
 
-export const navigationCategories:PinnedSubheaderListGroupProps[] = [
+export const navigationCategories:NavigationListGroupInterface[] = [
     {
         key: 'main',
         text: 'Hauptmenü',

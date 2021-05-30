@@ -4,9 +4,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import {Logo} from "./Logo";
 import {Fab, Icon, ListItemIcon} from "@material-ui/core";
 import Dialog from '@material-ui/core/Dialog';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItem from '@material-ui/core/ListItem';
-import List from '@material-ui/core/List';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -14,19 +11,10 @@ import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import { TransitionProps } from '@material-ui/core/transitions';
-import ListSubheader from "@material-ui/core/ListSubheader";
-import MapIcon from "@material-ui/icons/Map";
-import PetsIcon from "@material-ui/icons/Pets";
-import CodeIcon from "@material-ui/icons/Code";
-import MenuBookIcon from "@material-ui/icons/MenuBook";
-import BookIcon from '@material-ui/icons/Book';
-import StoreIcon from '@material-ui/icons/Store';
-import Link from 'next/link'
 import {
-    PinnedListItemIcon,
-    PinnedSubheaderList,
-    PinnedSubheaderListGroupProps
-} from "../PinnedSubheaderList/PinnedSubheaderList";
+    NavigationList,
+} from "../NavigationList/NavigationList";
+import {NavigationListGroupInterface} from "../NavigationList/NavigationListInterfaces";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -72,7 +60,7 @@ const Transition = React.forwardRef(function Transition(
 
 export default function NavigationMobile(props) {
 
-    const navigationCategories = props.categories as PinnedSubheaderListGroupProps[];
+    const navigationCategories = props.categories as NavigationListGroupInterface[];
 
     const classes = useStyles();
 
@@ -115,7 +103,7 @@ export default function NavigationMobile(props) {
                     </Toolbar>
                 </AppBar>
 
-            <PinnedSubheaderList
+            <NavigationList
                 groups={navigationCategories}
             />
 

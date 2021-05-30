@@ -12,8 +12,9 @@ import { TransitionProps } from '@material-ui/core/transitions';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ChipsArray from "./Chips";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
-import {PinnedSubheaderList, PinnedSubheaderListItemProps} from "../PinnedSubheaderList/PinnedSubheaderList";
-import {groupByFirstLetter} from "../PinnedSubheaderList/groupByFirstLetter";
+import {NavigationList} from "../NavigationList/NavigationList";
+import {groupByFirstLetter} from "../NavigationList/groupByFirstLetter";
+import {NavigationListItemInterface} from "../NavigationList/NavigationListInterfaces";
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -114,9 +115,9 @@ export default function SearchDialog(props:SearchDialogProperties) {
 
     });
 
-    const listItems:PinnedSubheaderListItemProps[] = mapElements.map((mapElement):PinnedSubheaderListItemProps=>{
+    const listItems:NavigationListItemInterface[] = mapElements.map((mapElement):NavigationListItemInterface=>{
 
-        const listItem: PinnedSubheaderListItemProps = {
+        const listItem: NavigationListItemInterface = {
             key: mapElement.properties.facility.slug,
             text: mapElement.properties.facility.title,
         };
@@ -203,7 +204,7 @@ export default function SearchDialog(props:SearchDialogProperties) {
                     <ChipsArray />
                 </Box>
                 */}
-                <PinnedSubheaderList
+                <NavigationList
                     handleClickItem={handleClickItem}
                     groups={listGroups}
                 />

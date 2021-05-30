@@ -3,8 +3,8 @@ import ListItem from '@material-ui/core/ListItem';
 import {facilityUrlPart} from "../constants";
 import {getFacilities} from "../strapi-api/query/facilities";
 import {Warehouse} from "../strapi-api/warehouse/warehouse";
-import {PinnedSubheaderList, PinnedSubheaderListItemProps} from "../components/PinnedSubheaderList/PinnedSubheaderList";
-import {groupByFirstLetter} from "../components/PinnedSubheaderList/groupByFirstLetter";
+import {NavigationList, NavigationListItemInterface} from "../components/NavigationList/NavigationList";
+import {groupByFirstLetter} from "../components/NavigationList/groupByFirstLetter";
 
 export const ListItemLink = (props)  => {
     return <ListItem button component="a" {...props} />;
@@ -16,9 +16,9 @@ export default function Index(props) {
 
     const facilities = Warehouse.get().getFacilities();
 
-    const listItems:PinnedSubheaderListItemProps[] = facilities.map((facilitiy):PinnedSubheaderListItemProps=>{
+    const listItems:NavigationListItemInterface[] = facilities.map((facilitiy):NavigationListItemInterface=>{
 
-        const item:PinnedSubheaderListItemProps = {
+        const item:NavigationListItemInterface = {
             key: facilitiy.slug,
             text: facilitiy.title,
             href:`/${facilityUrlPart}/${facilitiy.slug}`,
@@ -57,7 +57,7 @@ export default function Index(props) {
     const listGroups = groupByFirstLetter('facilities', listItems);
 
     return (
-        <PinnedSubheaderList
+        <NavigationList
             groups={listGroups}
         />
   );

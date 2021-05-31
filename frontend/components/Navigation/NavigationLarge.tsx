@@ -1,34 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import Slide from "@material-ui/core/Slide";
 import List from "@material-ui/core/List";
-import {ListItem, ListItemText} from "@material-ui/core";
+import {Divider, Drawer, Link, ListItem, ListItemIcon, ListItemText} from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 import {NavigationListGroupInterface} from "../NavigationList/NavigationListInterfaces";
 import {StaticLogo} from "./StaticLogo";
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        root: {
+        root:{
+            position: 'relative',
+
             flexGrow: 1,
-            flexDirection: 'inherit',
-        },
-        toolbarPadding:{
+            display: 'flex',
             ...theme.mixins.toolbar,
-            paddingTop:20
         },
-        menuButton: {
-            marginLeft: theme.spacing(0),
-        },
-        title: {
-            flexGrow: 1,
+        menu:{
+            ...theme.mixins.toolbar,
+            display:'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
         },
         navDisplayFlex: {
             display: `flex`,
@@ -51,34 +47,86 @@ export const NavigationLarge = (props) => {
 
     const classes = useStyles();
 
-    return (
-        <React.Fragment>
-            <div className={classes.toolbarPadding}></div>
+    const [open, setOpen] = useState<boolean>(false);
 
+    const list = () => (
+        <div
+            role="presentation"
+            onClick={toggleDrawer(true)}
+            onKeyDown={toggleDrawer(true)}
+        >
+            <List>
+                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                    <ListItem button key={text}>
+                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                        <ListItemText primary={text} />
+                    </ListItem>
+                ))}
+            </List>
+            <Divider />
+            <List>
+                {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                    <ListItem button key={text}>
+                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                        <ListItemText primary={text} />
+                    </ListItem>
+                ))}
+            </List>
+        </div>
+    );
+
+    const toggleDrawer = (nextOpen: boolean) => (
+        event: React.KeyboardEvent | React.MouseEvent,
+    ) => {
+        if (
+            event.type === 'keydown' &&
+            ((event as React.KeyboardEvent).key === 'Tab' ||
+                (event as React.KeyboardEvent).key === 'Shift')
+        ) {
+            return;
+        }
+
+        setOpen(nextOpen);
+        console.log(open)
+    };
+
+    return(
+        <React.Fragment>
+            <Drawer open={open} onClose={toggleDrawer(false)}>
+                {list()}
+            </Drawer>
             <AppBar>
                 <Toolbar>
-                    <Container maxWidth="md" style={{display:'flex', position:'relative'}}>
-
-                        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                            <MenuIcon />
-                        </IconButton>
-                        <List
-                            component="nav"
-                            className={classes.navDisplayFlex}
-                        >
-                            {mainItems.items.map((item) => (
-                                <a href={item.href} key={item.key} className={classes.linkText}>
-                                    <ListItem button>
-                                        <ListItemText primary={item.text} />
-                                    </ListItem>
-                                </a>
-                            ))}
-                        </List>
-                        <StaticLogo/>
+                    <Container maxWidth="md">
+                        <div className={classes.root}>
+                            <Link
+                                className={classes.menu}
+                                onClick={toggleDrawer(true)}
+                                color="inherit">
+                                <MenuIcon/>
+                            </Link>
+                            <List
+                                component="nav"
+                                className={classes.navDisplayFlex}
+                                disablePadding
+                            >
+                                {mainItems.items.map((item) => (
+                                        <Link className={classes.menu} href="#"  color="inherit">
+                                            <ListItem button>
+                                                <ListItemText
+                                                    primaryTypographyProps={{variant:'h6'}}
+                                                    primary={item.text}
+                                                />
+                                            </ListItem>
+                                        </Link>
+                                ))}
+                            </List>
+                            <StaticLogo/>
+                        </div>
                     </Container>
                 </Toolbar>
             </AppBar>
-
         </React.Fragment>
     );
+
 }

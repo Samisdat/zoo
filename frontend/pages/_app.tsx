@@ -26,15 +26,22 @@ const theme = createMuiTheme({
             // This is green.A700 as hex.
             main: '#11cb5f',
         },
+        background:{
+            default:'#f5f5f5'
+        }
     },
 });
 
 
 
 const useNavigationState = createPersistedState('navigation');
-const useStyles = makeStyles(theme => ({
-    offset: theme.mixins.toolbar,
-}))
+const useStyles = makeStyles((theme) => {
+
+    return ({
+        offset: theme.mixins.toolbar,
+    });
+
+});
 
 export default function ZooWuppertal(props) {
 
@@ -94,7 +101,7 @@ export default function ZooWuppertal(props) {
                 <Navigation
                     categories={navigationCategories}
                 />
-                <Container maxWidth="md">
+                <Container maxWidth="md" className={classes.content}>
                     <Component
                         toggleTeaser={toggleTeaser}
                         navigation={navigationState}

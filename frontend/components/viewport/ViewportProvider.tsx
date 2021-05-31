@@ -1,7 +1,7 @@
 import React, {useState, createContext, useEffect} from 'react';
 import throttle from 'lodash.throttle';
 
-export type Breakpoint = 'extra-small' | 'small' | 'medium' | 'large';
+export type Breakpoint = 'small' | 'large';
 
 export interface Viewport {
     width: number;
@@ -9,10 +9,10 @@ export interface Viewport {
     breakpoint: string;
 }
 
-const defaultViewport = {
+const defaultViewport:Viewport = {
     width: undefined,
     height: undefined,
-    breakpoint: 'extra-small',
+    breakpoint: 'small',
 };
 
 export const viewportContext = createContext<Viewport>(defaultViewport);
@@ -20,19 +20,11 @@ export const viewportContext = createContext<Viewport>(defaultViewport);
 const getBreakpointName = (width:number):Breakpoint => {
 
     if( undefined === width){
-        return 'extra-small';
-    }
-
-    if( 600 > width){
-        return 'extra-small';
+        return 'small';
     }
 
     if( 960 > width){
         return 'small';
-    }
-
-    if( 1280 > width){
-        return 'medium';
     }
 
     return 'large'

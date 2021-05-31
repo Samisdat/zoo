@@ -10,6 +10,7 @@ import {NavigationListGroupInterface} from "../NavigationList/NavigationListInte
 import {StaticLogo} from "./StaticLogo";
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import {NavigationList} from "../NavigationList/NavigationList";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -34,6 +35,9 @@ const useStyles = makeStyles((theme: Theme) =>
             textDecoration: `none`,
             color: `white`
         },
+        list: {
+            width: 400,
+        },
     }),
 );
 
@@ -48,32 +52,6 @@ export const NavigationLarge = (props) => {
     const classes = useStyles();
 
     const [open, setOpen] = useState<boolean>(false);
-
-    const list = () => (
-        <div
-            role="presentation"
-            onClick={toggleDrawer(true)}
-            onKeyDown={toggleDrawer(true)}
-        >
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-            <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-        </div>
-    );
 
     const toggleDrawer = (nextOpen: boolean) => (
         event: React.KeyboardEvent | React.MouseEvent,
@@ -93,7 +71,11 @@ export const NavigationLarge = (props) => {
     return(
         <React.Fragment>
             <Drawer open={open} onClose={toggleDrawer(false)}>
-                {list()}
+                <div className={classes.list}>
+                    <NavigationList
+                        groups={navigationCategories}
+                    />
+                </div>
             </Drawer>
             <AppBar>
                 <Toolbar>
@@ -111,7 +93,7 @@ export const NavigationLarge = (props) => {
                                 disablePadding
                             >
                                 {mainItems.items.map((item) => (
-                                        <Link className={classes.menu} href="#"  color="inherit">
+                                        <Link className={classes.menu} href={item.href}  color="inherit">
                                             <ListItem button>
                                                 <ListItemText
                                                     primaryTypographyProps={{variant:'h6'}}

@@ -22,8 +22,6 @@ export const AnimalsOrderFilter = (props) => {
         return (<React.Fragment></React.Fragment>);
     }
 
-    console.log('AnimalsOrderFilter');
-
     const filterKey = 'order';
 
     const classes = useStyles();

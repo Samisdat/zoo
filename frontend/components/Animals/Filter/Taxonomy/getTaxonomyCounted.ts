@@ -88,7 +88,7 @@ export const getTaxonomyCounted = (animals: Animal[]) => {
     });
 
     for(const classCounted of taxonomyCounted){
-        
+
         classCounted.members.sort((valueA, valueB)=>{
 
             const firstCount = valueA.count;

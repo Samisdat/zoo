@@ -30,8 +30,6 @@ const iucnStatusDe = {
 
 export const AnimalsIucnFilter = (props) => {
 
-    console.log('AnimalsIucnFilter');
-
     const filterKey = 'iucnStatus';
 
     const classes = useStyles();

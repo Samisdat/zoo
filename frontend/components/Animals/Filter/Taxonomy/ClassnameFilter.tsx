@@ -18,8 +18,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const AnimalsClassnameFilter = (props) => {
 
-    console.log('AnimalsClassnameFilter');
-
     const filterKey = 'className';
 
     const classes = useStyles();
@@ -41,9 +39,6 @@ export const AnimalsClassnameFilter = (props) => {
             key:filterKey,
             value: key,
         };
-
-        console.log('changeActive', filterCriteria)
-
 
         props.setFilterCriteria([
             filterCriteria

@@ -16,9 +16,7 @@ export const AnimalsTaxonomyFilter = (props) => {
             return (taxonomyCounted.key === filteredClassName.value)
         });
     }
-
-    console.log(activeClass)
-
+    
     for(const taxonomyCounted of props.taxonomyCounted){
         //console.log(taxonomyCounted)
     }

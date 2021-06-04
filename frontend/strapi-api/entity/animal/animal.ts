@@ -8,13 +8,6 @@ import {IndividualAnimal} from "../individual-animal/individual-animal";
 import {Facility} from "../facility/facility";
 import {IucnStatus} from "./iucnStatus";
 
-export interface Taxonomy{
-    className: string;
-    order: string;
-    family: string;
-    species: string;
-}
-
 export class Animal extends Entity<AnimalSpore>{
 
     get id(): number {
@@ -50,34 +43,20 @@ export class Animal extends Entity<AnimalSpore>{
         return this.json.body;
     }
 
-    get taxonomy(): Taxonomy {
-
-        const className = this.json.className;
-        const order = this.json.order;
-        const family = this.json.family;
-        const species = this.json.species;
-
-        return{
-            className,
-            order,
-            family,
-            species,
-        };
-
+    get className(): string {
+        return this.json.className
     }
 
-    /* classname is empty|null by accident ;)*/
-    get className():string | null{
-        return this.json.className;
+    get order(): string {
+        return this.json.order
     }
-    get order(): string{
-        return this.json.order;
+
+    get family(): string {
+        return this.json.family
     }
-    get species(): string{
-        return this.json.species;
-    }
-    get family(): string{
-        return this.json.family;
+
+    get species(): string {
+        return this.json.species
     }
 
     get photosRaw(): number[]{

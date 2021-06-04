@@ -14,11 +14,13 @@ import {getMapElementById} from "../../strapi-api/query/map-elements";
 import {MapRoot} from "../../components/Map/Root";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {Endanger} from "../../components/Animal/Endanger";
+import {DistributionGlobe} from "../../components/Distribution/DistributionGlobe";
 
 export default function Tiere(props) {
 
     const router = useRouter()
     const { slug } = router.query
+
     const { asPath } = router;
 
     Warehouse.get().hydrate(props.warehouse);
@@ -108,7 +110,9 @@ export default function Tiere(props) {
             <Typography component="h2">
                 Verbereitung
             </Typography>
-            <Distribution />
+            <DistributionGlobe
+                slug={slug}
+            />
             <Typography component="h2">
                 Links
             </Typography>

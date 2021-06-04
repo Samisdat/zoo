@@ -9,7 +9,7 @@ const getDistribution = async (slug:string): Promise<FeatureCollection> => {
 
     const distributionDataPath = path.resolve(
         distributionDataDir,
-        slug + '.json'
+        slug + '.topo.json'
     );
 
     if (false === fs.existsSync(distributionDataPath)) {

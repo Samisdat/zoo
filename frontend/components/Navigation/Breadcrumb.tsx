@@ -24,27 +24,37 @@ function handleClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
     console.info('You clicked a breadcrumb.');
 }
 
-export type BreadcumbCategoryIcon = 'pet' | 'building' | 'blog';
+export type BreadcumbCategoryIcon = 'home' | 'pet' | 'building' | 'blog';
 
 export interface BreadcrumbLink {
     href:string;
     title:string;
-}
-
-export interface BreadcrumbCategoryLink extends BreadcrumbLink{
-    icon:BreadcumbCategoryIcon
+    icon?:BreadcumbCategoryIcon
 }
 
 export interface BreadcrumbProps{
-    category:BreadcrumbCategoryLink,
-    page:BreadcrumbLink,
+    links:BreadcrumbLink[];
 }
 
 export const Breadcrumb = (props:BreadcrumbProps)    => {
 
+    const links:BreadcrumbLink[] = [{
+        href: '/',
+        title: 'Startseite',
+        icon: 'home',
+    }];
+
+    for(const link of props.links){
+        links.push(link);
+    }
+
     const classes = useStyles();
 
     const getIcon = (categoryIcon:BreadcumbCategoryIcon) => {
+
+        if('home' === categoryIcon){
+            return (<HomeIcon className={classes.icon} />);
+        }
 
         if('pet' === categoryIcon){
             return (<PetsIcon className={classes.icon} />);
@@ -58,6 +68,28 @@ export const Breadcrumb = (props:BreadcrumbProps)    => {
 
     return (
         <Breadcrumbs aria-label="breadcrumb">
+            {
+                links.map((link:BreadcrumbLink)=> {
+                    return (
+                        <Link
+                            key={link.href}
+                            color="inherit"
+                            href={link.href}
+                            className={classes.link}
+                        >
+                            {getIcon(link.icon)}
+                            {link.title}
+                        </Link>
+
+                    );
+                })
+            }
+        </Breadcrumbs>
+    );
+
+    /*
+    return (
+        <Breadcrumbs aria-label="breadcrumb">
             <Link color="inherit" href="/" className={classes.link}>
                 <HomeIcon className={classes.icon} />
                 Startseite
@@ -67,16 +99,19 @@ export const Breadcrumb = (props:BreadcrumbProps)    => {
                 href={props.category.href}
                 className={classes.link}
             >
-                {getIcon(props.category.icon)}
+
                 {props.category.title}
             </Link>
             <Link
                 color="inherit"
-                href={props.page.href}
+                href={props.href}
                 className={classes.link}
             >
-                {props.page.title}
-            </Link>
+                {props.title}
+            </Link>)
+
         </Breadcrumbs>
+
     );
+     */
 }

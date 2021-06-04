@@ -27,17 +27,17 @@ export default function Tiere(props) {
         return (slug === animal.slug);
     });
 
-    const breadcrumbProps:BreadcrumbProps = {
-        category: {
+    const breadcrumbProps:BreadcrumbLink[] = [
+        {
             href: '/tiere',
             title: 'Tiere',
             icon: 'pet',
         },
-        page: {
+        {
             href: asPath,
             title: animal.title,
         },
-    };
+    ];
 
     let facility = undefined;
 
@@ -84,7 +84,7 @@ export default function Tiere(props) {
     return (
         <React.Fragment>
             <Breadcrumb
-                {...breadcrumbProps}
+                links={breadcrumbProps}
             />
             <Typography component="h1">
                 {animal.title}

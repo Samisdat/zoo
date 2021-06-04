@@ -1,7 +1,7 @@
 import React from 'react';
-import {Avatar, Chip, Typography} from "@material-ui/core";
+import {Avatar, Chip, Divider, Typography} from "@material-ui/core";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import {FilterCriteria} from "../FilteredNavigationList";
+import {AnimalFilter} from "../FilteredNavigationList";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -26,40 +26,47 @@ export const AnimalsOrderFilter = (props) => {
 
     const classes = useStyles();
 
-    const [active, setActive] = React.useState<string>(undefined);
+    const active = props.filters.find((filter)=>{
+        return (filterKey === filter.key);
+    });
 
     const changeActive = (key:string)=>{
 
-        if(active === key){
+        const classNameCriteria = props.filters.find((filter)=>{
+            return ('className' === filter.key);
+        });
 
-            props.setFilterCriteria([]);
-            setActive(undefined)
+        if(active?.value === key){
+
+            props.setFilters([classNameCriteria]);
 
             return;
 
         }
 
-        const filterCriteria:FilterCriteria = {
+        const filter:AnimalFilter = {
             key:filterKey,
             value: key,
         };
 
-        props.setFilterCriteria([
-            filterCriteria
+        props.setFilters([
+            classNameCriteria,
+            filter
         ]);
 
-        setActive(key);
     };
 
     return (
         <React.Fragment>
+            <Divider />
             <div className={classes.root}>
                 {
                     props.orderCounted.members.map((filter:any)=>{
 
-                        const color = (filter.key === active)?'primary':'default';
+                        const color = (filter.key === active?.value)?'primary':'default';
                         return (
                             <Chip
+                                key={`${filter.key}`}
                                 className={classes.avatar}
                                 avatar={<Avatar>{filter.count}</Avatar>}
                                 label={filter.key}

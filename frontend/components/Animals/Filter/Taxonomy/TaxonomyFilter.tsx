@@ -1,11 +1,12 @@
 import React from 'react';
 import {AnimalsClassnameFilter} from "./ClassnameFilter";
 import {AnimalsOrderFilter} from "./OrderFilter";
+import {Typography} from "@material-ui/core";
 
 export const AnimalsTaxonomyFilter = (props) => {
 
-    const filteredClassName = props.filterCriteria.find((afilterCriteria)=>{
-        return ('className' === afilterCriteria.key);
+    const filteredClassName = props.filters.find((filter)=>{
+        return ('className' === filter.key);
     });
 
     let activeClass = undefined;
@@ -16,16 +17,19 @@ export const AnimalsTaxonomyFilter = (props) => {
             return (taxonomyCounted.key === filteredClassName.value)
         });
     }
-    
+
     for(const taxonomyCounted of props.taxonomyCounted){
         //console.log(taxonomyCounted)
     }
 
     return (
         <React.Fragment>
+            <Typography variant="h4" gutterBottom>
+                Systematik
+            </Typography>
             <ul>
                 {
-                    props.filterCriteria.map((filter:any)=>{
+                    props.filters.map((filter:any)=>{
 
                         return (
                             <li>{filter.key} {filter.value}</li>
@@ -36,13 +40,13 @@ export const AnimalsTaxonomyFilter = (props) => {
             </ul>
             <AnimalsClassnameFilter
                 taxonomyCounted={props.taxonomyCounted}
-                filterCriteria={props.filterCriteria}
-                setFilterCriteria={props.setFilterCriteria}
+                filters={props.filters}
+                setFilters={props.setFilters}
             />
             <AnimalsOrderFilter
                 orderCounted={activeClass}
-                filterCriteria={props.filterCriteria}
-                setFilterCriteria={props.setFilterCriteria}
+                filters={props.filters}
+                setFilters={props.setFilters}
             />
         </React.Fragment>
     );

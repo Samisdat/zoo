@@ -4,12 +4,12 @@ export const getTaxonomyCounted = (animals: Animal[]) => {
 
     const taxonomyCounted = animals.reduce((uniqueAndCounted, animal) => {
 
-        if (!animal.taxonomy.className) {
+        if (!animal.className) {
             return uniqueAndCounted;
         }
 
         const already = uniqueAndCounted.find((prev) => {
-                return (animal.taxonomy.className === prev.key)
+                return (animal.className === prev.key)
             }
         );
 
@@ -17,7 +17,7 @@ export const getTaxonomyCounted = (animals: Animal[]) => {
             already.count += 1;
         } else {
             const newElem = {
-                key: animal.taxonomy.className,
+                key: animal.className,
                 count: 1,
                 members: []
             }
@@ -36,20 +36,20 @@ export const getTaxonomyCounted = (animals: Animal[]) => {
 
         const menbers = animals.reduce((uniqueAndCounted, animal) => {
 
-            if (!animal.taxonomy.className) {
+            if (!animal.className) {
                 return uniqueAndCounted;
             }
 
-            if (!animal.taxonomy.order) {
+            if (!animal.order) {
                 return uniqueAndCounted;
             }
 
-            if (className !== animal.taxonomy.className) {
+            if (className !== animal.className) {
                 return uniqueAndCounted;
             }
 
             const already = uniqueAndCounted.find((prev) => {
-                    return (animal.taxonomy.order === prev.key)
+                    return (animal.order === prev.key)
                 }
             );
 
@@ -57,7 +57,7 @@ export const getTaxonomyCounted = (animals: Animal[]) => {
                 already.count += 1;
             } else {
                 const newElem = {
-                    key: animal.taxonomy.order,
+                    key: animal.order,
                     count: 1,
                     members: []
                 }

@@ -11,7 +11,7 @@ import {getTaxonomyCounted} from "./Taxonomy/getTaxonomyCounted";
 import {AnimalsTaxonomyFilter} from "./Taxonomy/TaxonomyFilter";
 
 
-export interface FilterCriteria{
+export interface AnimalFilter{
     key:string,
     value:string;
 }
@@ -24,19 +24,15 @@ export const FilteredNavigationList = (props:FilteredNavigationListProps) => {
 
     const animals = props.animals;
 
-    const [filterCriteria, setFilterCriteria] = React.useState<FilterCriteria[]>([]);
+    const [filters, setFilters] = React.useState<AnimalFilter[]>([]);
 
     const filteredAnimals = animals.filter((animal)=>{
 
-        if(0 === filterCriteria.length){
+        if(0 === filters.length){
             return true;
         }
 
-        let hit:boolean[] = filterCriteria.map((filterCriteria)=>{
-
-            if('className' === filterCriteria.key){
-                return (filterCriteria.value === animal.taxonomy.className);
-            }
+        let hit:boolean[] = filters.map((filterCriteria)=>{
 
             return (filterCriteria.value === animal[filterCriteria.key]);
 
@@ -83,13 +79,13 @@ export const FilteredNavigationList = (props:FilteredNavigationListProps) => {
             */}
             <AnimalsIucnFilter
                 iucnCounted={iucnCounted}
-                filterCriteria={filterCriteria}
-                setFilterCriteria={setFilterCriteria}
+                filters={filters}
+                setFilters={setFilters}
             />
             <AnimalsTaxonomyFilter
                 taxonomyCounted={taxonomyCounted}
-                filterCriteria={filterCriteria}
-                setFilterCriteria={setFilterCriteria}
+                filters={filters}
+                setFilters={setFilters}
             />
 
             <NavigationList

@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
 import {Detail} from "./Detail";
 import {MiniMap} from "./MiniMap";
 import {Legend} from "./Legend";
 import {Globe} from "./Globe";
+import {SvgGlobe} from "./SvgGlobe";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -46,11 +47,13 @@ const distributionService = async (apiUrl):Promise<any> => {
 
 export const DistributionGlobe = (props) => {
 
+    const globeContainer = useRef(null);
+
     const classes = useStyles();
 
     const [distributionShape, setDistributionShape] = useState<any>(undefined);
     const [world, setWorld] = useState<any>(undefined);
-    const [names, setNames] = useState(undefined);
+    const [size, setSize] = useState(undefined);
 
     useEffect(() => {
 
@@ -72,18 +75,15 @@ export const DistributionGlobe = (props) => {
 
     useEffect(() => {
 
-        distributionService('/api/globe/world-country-names')
-            .then((data) =>{
-                setNames(data);
-            });
+        setSize(globeContainer.current.clientWidth);
 
     },[])
 
-
-    if(!distributionShape || ! world || ! names){
+    if(!distributionShape || ! world){
         return (
             <React.Fragment>
                 <div
+                    ref={globeContainer}
                     className={classes.root}
                 >
 
@@ -95,12 +95,13 @@ export const DistributionGlobe = (props) => {
     return (
         <React.Fragment>
             <div
-                className={classes.root}
+                ref={globeContainer}
+
             >
                 <Globe
+                    size={size}
                     distributionShape={distributionShape}
                     world={world}
-                    names={names}
                 />
             </div>
             {/*

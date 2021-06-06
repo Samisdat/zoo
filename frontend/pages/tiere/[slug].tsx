@@ -15,6 +15,25 @@ import {MapRoot} from "../../components/Map/Root";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {Endanger} from "../../components/Animal/Endanger";
 import {DistributionGlobe} from "../../components/Distribution/DistributionGlobe";
+import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import {Grid, Paper} from "@material-ui/core";
+
+const useStyles = makeStyles((theme: Theme) => {
+
+    return createStyles({
+        root: {
+            flexGrow: 1,
+        },
+        paper: {
+            padding: theme.spacing(2),
+            textAlign: 'center',
+            color: theme.palette.text.secondary,
+        },
+        toolbarPadding:{
+            ...theme.mixins.toolbar,
+        }
+    })
+});
 
 export default function Tiere(props) {
 
@@ -22,6 +41,7 @@ export default function Tiere(props) {
     const { slug } = router.query
 
     const { asPath } = router;
+    const classes = useStyles();
 
     Warehouse.get().hydrate(props.warehouse);
 
@@ -91,6 +111,22 @@ export default function Tiere(props) {
             <Typography component="h1">
                 {animal.title}
             </Typography>
+            <Grid container spacing={3}>
+                <Grid item xs={12} md={7}>
+                    <Paper className={classes.paper}>xs=6
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    </Paper>
+                </Grid>
+                <Grid item xs={12} md={5}>
+                    <Typography component="h2">
+                        Verbereitung
+                    </Typography>
+                    <DistributionGlobe
+                        slug={slug}
+                    />
+                </Grid>
+            </Grid>
+
             <Typography component="h2">
                 Tiere oder Bilder
             </Typography>
@@ -106,12 +142,6 @@ export default function Tiere(props) {
             </Typography>
             <Endanger
                 iucnStatus={animal.iucnStatus}
-            />
-            <Typography component="h2">
-                Verbereitung
-            </Typography>
-            <DistributionGlobe
-                slug={slug}
             />
             <Typography component="h2">
                 Links

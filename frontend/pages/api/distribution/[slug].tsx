@@ -3,13 +3,13 @@ import path from "path";
 import {FeatureCollection} from "geojson";
 import fs from "fs";
 
-const distributionDataDir = path.resolve(process.env.PWD, 'data-repos/iucnredlist');
+const distributionDataDir = path.resolve(process.env.PWD, 'data-repos/iucnredlist/topojson');
 
 const getDistribution = async (slug:string): Promise<FeatureCollection> => {
 
     const distributionDataPath = path.resolve(
         distributionDataDir,
-        slug + '.topo.json'
+        slug + '.json'
     );
 
     if (false === fs.existsSync(distributionDataPath)) {
@@ -36,6 +36,21 @@ export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
 
     const distribution = await getDistribution(slug)
 
+    /*
+    distribution.features = distribution.features.filter((feature)=>{
+
+        return ('Forest' !== feature.properties.SUBSPECIES);
+
+    });
+
+    distribution.features = distribution.features.map((feature)=>{
+
+        delete feature.properties;
+
+        return feature;
+
+    });
+    */
     res.status(200).json(distribution);
 
 }

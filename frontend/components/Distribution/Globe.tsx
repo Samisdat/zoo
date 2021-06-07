@@ -202,8 +202,7 @@ export const Globe = (props) => {
 
     const d3Canvas = useRef(null);
     const canvasContext = useRef(null);
-
-    const size = props.size;
+    const plane = useRef(null);
 
     const globe = {type: "Sphere"};
     const distributionCenter = d3.geoCentroid(props.distributionShape);
@@ -390,7 +389,11 @@ export const Globe = (props) => {
                 height={size}
             />
             <div style={{display:'none'}}>
-                <img id="plane" src="https://bl.ocks.org/wwymak/raw/dcdd12937bd4643cd9b3/ac65045feb4cba0dd692f6a2c100175cab901915/plane-2_03-black.png" />
+                <img
+                    ref={plane}
+                    src="https://bl.ocks.org/wwymak/raw/dcdd12937bd4643cd9b3/ac65045feb4cba0dd692f6a2c100175cab901915/plane-2_03-black.png"
+                    alt={'a plane'}
+                />
             </div>
         </React.Fragment>
     );

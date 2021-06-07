@@ -39,13 +39,34 @@ const useStyles = makeStyles((theme) => {
 
     return ({
         offset: theme.mixins.toolbar,
+        content: {
+            position: 'relative',
+            width: '100%',
+        }
     });
 
 });
 
+const LayoutContainer = (props) => {
+
+    const {router, children} = props;
+
+    if('/' === router.pathname){
+        return (<React.Fragment>{children}</React.Fragment>);
+    }
+
+    return (
+        <Container maxWidth="md">
+            {children}
+        </Container>
+    );
+
+}
+
+
 export default function ZooWuppertal(props) {
 
-    const {Component, pageProps} = props;
+    const {Component, pageProps, router} = props;
 
     const [navigationState, setNavigationState] = useNavigationState<NavigationInterface>({
         activeMainItem: 'map',
@@ -101,13 +122,18 @@ export default function ZooWuppertal(props) {
                 <Navigation
                     categories={navigationCategories}
                 />
-                <Container maxWidth="md" className={classes.content}>
-                    <Component
-                        toggleTeaser={toggleTeaser}
-                        navigation={navigationState}
-                        {...pageProps}
-                    />
-                </Container>
+                <LayoutContainer
+                    router={router}
+                    {...props}
+                >
+                    <div className={classes.content}>
+                        <Component
+                            toggleTeaser={toggleTeaser}
+                            navigation={navigationState}
+                            {...pageProps}
+                        />
+                    </div>
+                </LayoutContainer>
         </ThemeProvider>
         </ViewportProvider>
     );

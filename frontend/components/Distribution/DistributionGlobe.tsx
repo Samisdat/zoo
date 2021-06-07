@@ -7,6 +7,10 @@ import {Legend} from "./Legend";
 import {Globe} from "./Globe";
 import {SvgGlobe} from "./SvgGlobe";
 
+import * as topojson from 'topojson-client';
+
+const simplify = require('simplify-geojson');
+
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
@@ -53,13 +57,16 @@ export const DistributionGlobe = (props) => {
 
     const [distributionShape, setDistributionShape] = useState<any>(undefined);
     const [world, setWorld] = useState<any>(undefined);
-    const [size, setSize] = useState(undefined);
+    const [size, setSize] = useState(350);
 
     useEffect(() => {
 
         distributionService('/api/globe/world')
             .then((data) =>{
-                setWorld(data);
+
+                let land = topojson.feature(data, data.objects.land);
+                land = simplify(land, 0.1)
+                setWorld(land);
             });
 
     },[])
@@ -68,14 +75,23 @@ export const DistributionGlobe = (props) => {
 
         distributionService(`/api/distribution/${props.slug}`)
         .then((data) =>{
-            setDistributionShape(data);
+
+            let distributionShape = topojson.feature(data, data.objects.distribution);
+            distributionShape = simplify(distributionShape, 0.1)
+            setDistributionShape(distributionShape);
+
         });
 
     },[])
 
     useEffect(() => {
 
-        setSize(globeContainer.current.clientWidth);
+        const currentSize = globeContainer.current.clientWidth;
+        const maxSize = 350;
+
+        const useSize = (currentSize > maxSize)?maxSize:currentSize;
+
+        setSize(useSize);
 
     },[])
 

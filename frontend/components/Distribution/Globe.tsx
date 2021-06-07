@@ -1,10 +1,8 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef} from 'react';
 
 import * as d3 from 'd3';
 
-import * as topojson from "topojson-client";
 
-var simplify = require('simplify-geojson')
 
 //interpolator from http://bl.ocks.org/jasondavies/4183701
 const d3_geo_greatArcInterpolator = function() {
@@ -142,8 +140,6 @@ export const Globe = (props) => {
     const d3Canvas = useRef(null);
     const canvasContext = useRef(null);
 
-    const world = props.world;
-
     const flightPathColor = "#007ea3";
     const landFill = "#FBF8F3";
     const seaFill = "#8AB4F8";
@@ -154,11 +150,8 @@ export const Globe = (props) => {
     const size = props.size;
 
     const globe = {type: "Sphere"};
-    let land = topojson.feature(world, world.objects.land);
-    let distributionShape = topojson.feature(props.distributionShape, props.distributionShape.objects.distribution);
+    const distributionCenter = d3.geoCentroid(props.distributionShape);
 
-    land = simplify(land, 0.2)
-    distributionShape = simplify(distributionShape, 0.1)
 
     const wuppertal = [7.150829, 51.256176];
 

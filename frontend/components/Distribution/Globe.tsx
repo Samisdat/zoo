@@ -202,11 +202,6 @@ export const Globe = (props) => {
 
     const d3Canvas = useRef(null);
     const canvasContext = useRef(null);
-
-    const flightPathColor = "#007ea3";
-    const landFill = "#FBF8F3";
-    const seaFill = "#8AB4F8";
-    const distributionFill = "#00ff00";
     const width = props.size;
     const height = props.size;
 

@@ -75,6 +75,11 @@ const drawPlane = (context, image, xPos, yPos, angleInRad, imageWidth, imageHeig
     context.restore();
 }
 
+const checkVisibilityTester = (projection) => {
+    let visible;
+    const stream = projection.stream({point() { visible = true; }});
+    return (x, y) => (visible = false, stream.point(x, y), visible);
+}
 
 interface DrawGlobeParameter {
     ctx:CanvasRenderingContext2D,
@@ -210,165 +215,182 @@ export const Globe = (props) => {
 
     //the scale corresponds to the radius more or less so 1/2 width
     const projection = d3.geoOrthographic()
-        .scale(size*2)
+        .scale(props.size * 2)
         .clipAngle(90)
-        .translate([width/2,height/2]);
-
+        .translate([props.size/2,props.size/2]);
 
     const createGlobe = ()=> {
+
+        d3.select(d3Canvas.current).style('cursor', 'default');
 
         const ctx = canvasContext.current;
         ctx.shadowBlur = 0;
         ctx.shadowOffsetX = 0;
         ctx.shadowOffsetY = 0;
 
-        const plane = document.getElementById('plane');
-
         const path = d3.geoPath()
             .projection(projection)
             .context(ctx);
 
-        var journey = [];
+        const journey = [];
         journey[0] = wuppertal;
+        journey[1] = distributionCenter;
 
-        journey[1] = distributionShape.features[0];
+        const dragBehaviour = d3.drag()
+            .on('drag', function(event){
+                const dx = event.dx;
+                const dy = event.dy;
 
-        const redraw = () => {
+                let rotation = projection.rotate();
+                const radius = projection.scale();
+                const scale = d3.scaleLinear()
+                    .domain([-1 * radius, radius])
+                    .range([-90, 90]);
+                const degX = scale(dx);
+                const degY = scale(dy);
+                rotation[0] += degX;
+                rotation[1] -= degY;
+                if (rotation[1] > 90)   rotation[1] = 90;
+                if (rotation[1] < -90)  rotation[1] = -90;
 
-            console.log('redraw')
+                if (rotation[0] >= 180) rotation[0] -= 360;
+                projection.rotate(rotation);
+                drawGlobe();
+            })
+
+        const drawGlobe = () => {
 
             unifiedDraw({
                 ctx,
-                width,
-                height,
-                seaFill,
-                landFill,
+                size:props.size,
                 globe,
-                land,
+                land:props.world,
                 path,
-                distributionFill,
-                distributionShape
+                distributionShape: props.distributionShape,
+                projection
             });
-
-            var wuppertalCartesianCoord = projection([wuppertal[0], wuppertal[1], 0]);
-
-            const x = wuppertalCartesianCoord[0];
-            const y = wuppertalCartesianCoord[1];
-            const radius = 5;
-
-            ctx.beginPath();
-            ctx.arc(x, y, radius, 0, 2 * Math.PI);
-            ctx.fillStyle = '#f00';
-            ctx.fill();
-
-            ctx.font = '12px serif';
-            ctx.fillText('Wuppertal', x + 2 * radius, y);
-
 
         }
 
-        const redraw3 = (flightPath, angle, planeSize) => {
+        const drawGlobeWithPlane = (flightPath, angle, planeSize) => {
 
             unifiedDraw({
                 ctx,
-                width,
-                height,
-                seaFill,
-                landFill,
+                size: props.size,
                 globe,
-                land,
+                land: props.world,
                 path,
-                distributionFill,
-                distributionShape,
+                distributionShape: props.distributionShape,
+                projection,
+            }, {
                 flightPath,
-                flightPathColor
+                angle,
+                planeSize,
+                plane,
             });
 
-            var pt = projection.rotate();
-            var planeCartesianCoord = projection([-pt[0], -pt[1], 0]);
-
-            drawPlane(ctx, plane, planeCartesianCoord[0], planeCartesianCoord[1], angle, planeSize,planeSize);
-
-
-            var wuppertalCartesianCoord = projection([wuppertal[0], wuppertal[1], 0]);
-
-            const x = wuppertalCartesianCoord[0];
-            const y = wuppertalCartesianCoord[1];
-            const radius = 5;
-
-            ctx.beginPath();
-            ctx.arc(x, y, radius, 0, 2 * Math.PI);
-            ctx.fillStyle = '#f00';
-            ctx.fill();
-
-            ctx.font = '12px serif';
-            ctx.fillText('Wuppertal', x + 2 * radius, y);
-
-
-        }
-
-        var endCoord = d3.geoCentroid(props.distributionShape.bbox);
-
-        // wuppertal
-        const coords = [-7.150829, -51.256176]
+        };
 
         const flightPath:any = {}
         flightPath.type = "LineString";
-        flightPath.coordinates = [wuppertal, endCoord];
+        flightPath.coordinates = [wuppertal, distributionCenter];
 
-        projection.rotate(coords);
-        redraw();
+        projection.rotate([-wuppertal[0], -wuppertal[1], 0]);
+        drawGlobe();
 
-        customTransition(journey)
+        const zoomOut = (callback:Function) => {
 
-
-        //this is to make the globe rotate and the plane fly along the path
-        function customTransition(journey){
-            var rotateFunc = d3_geo_greatArcInterpolator();
             d3.transition()
-                .delay(1000)
+                .delay(0)
+                .duration(1000)
+                .tween("rotate", () => {
+
+                    return (t) => {
+
+                        const scale = props.size - props.size/2 * t;
+
+                        projection.scale(scale);
+
+                        drawGlobe();
+                    }
+
+                }).on('end', ()=>{
+                    callback();
+                })
+        };
+
+        const move = () => {
+
+            const rotateFunc = d3_geo_greatArcInterpolator();
+
+            d3.transition()
+                .delay(0)
                 .duration(4000)
                 .tween("rotate", function() {
-                    var point = d3.geoCentroid(journey[1])
-                    rotateFunc.source(projection.rotate()).target([-point[0], -point[1]]).distance();
-                    var pathInterpolate = d3.geoInterpolate(projection.rotate(), [-point[0], -point[1]]);
-                    var oldPath = wuppertal;
+
+                    rotateFunc.source(projection.rotate()).target([-distributionCenter[0], -distributionCenter[1]]).distance();
+
+                    const currentRotation = projection.rotate();
+
+                    const pathInterpolate = d3.geoInterpolate(
+                        [currentRotation[0], currentRotation[1]],
+                        [-distributionCenter[0], -distributionCenter[1]]
+                    );
+
+                    const oldPath = wuppertal;
+
                     return function (t) {
 
-                        projection.rotate(rotateFunc(t));
-                        var newPath = [-pathInterpolate(t)[0], -pathInterpolate(t)[1]];
-                        var planeAngle = calcAngle(projection(oldPath), projection(newPath));
-                        var flightPathDynamic = {}
-                        flightPathDynamic.type = "LineString";
-                        flightPathDynamic.coordinates = [wuppertal, [-pathInterpolate(t)[0], -pathInterpolate(t)[1]]];
-                        var maxPlaneSize =  0.1 * projection.scale();
+                        const rotate:number[] = rotateFunc(t);
+                        projection.rotate([
+                            rotate[0],
+                            rotate[1]
+                        ]);
+
+                        const newPath = [-pathInterpolate(t)[0], -pathInterpolate(t)[1]];
+                        const planeAngle = calcAngle(
+                            projection([oldPath[0], oldPath[1]]),
+                            projection([newPath[0], newPath[1]])
+                        );
+                        const flightPathDynamic = {
+                            type: 'LineString',
+                            coordinates: [
+                                wuppertal,
+                                [
+                                    -pathInterpolate(t)[0],
+                                    -pathInterpolate(t)[1]
+                                ]
+                            ]
+                        };
+
+                        const maxPlaneSize =  0.1 * projection.scale();
+                        let planeSize = maxPlaneSize
+
                         //this makes the plane grows and shrinks at the takeoff, landing
-
-                        if (t <0.1){
-
-                            const  scale = (size/2) + (0.1 - t) * 10 * (size/2);
-                            //console.log(scale);
-                            projection.scale(scale);
-                            redraw3(flightPathDynamic, planeAngle, Math.pow(t/0.1, 0.5) * maxPlaneSize);
-                        }else if(t > 0.9){
-                            projection.scale(size/2);
-                            redraw3(flightPathDynamic, planeAngle, Math.pow((1-t)/0.1, 0.5) * maxPlaneSize );
-                        }else{
-                            projection.scale(size/2);
-                            redraw3(flightPathDynamic, planeAngle, maxPlaneSize);
+                        if (t < 0.1){
+                            planeSize = Math.pow(t/0.1, 0.5) * maxPlaneSize;
+                        }
+                        else if(t > 0.9){
+                            planeSize = Math.pow((1-t)/0.1, 0.5) * maxPlaneSize;
                         }
 
-                    };
-                    //}
-                }).each( function(){
-                    console.log('end')
-                //make the plane disappears after it's reached the destination
-                //also enable the drag interaction at this point
+                        drawGlobeWithPlane(flightPathDynamic, planeAngle, planeSize);
 
-            }).on('end', ()=>{
-                redraw();
+                    };
+                })
+
+            .on('end', ()=>{
+                drawGlobe();
+
+                // start dragging
+                d3.select(d3Canvas.current)
+                    .style("cursor", "move")
+                    .call(dragBehaviour);
             })
-        }
+
+        };
+
+        zoomOut(move);
 
     };
 
@@ -385,8 +407,8 @@ export const Globe = (props) => {
         <React.Fragment>
             <canvas
                 ref={d3Canvas}
-                width={size}
-                height={size}
+                width={props.size}
+                height={props.size}
             />
             <div style={{display:'none'}}>
                 <img

@@ -23,8 +23,8 @@
       "type": "richtext"
     },
     "animals": {
-      "collection": "animal",
       "via": "posts",
+      "collection": "animal",
       "dominant": true
     },
     "individual_animals": {

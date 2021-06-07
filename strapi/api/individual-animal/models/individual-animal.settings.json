@@ -15,8 +15,8 @@
       "type": "string"
     },
     "animal": {
-      "model": "animal",
-      "via": "individual_animals"
+      "via": "individual_animals",
+      "model": "animal"
     },
     "slug": {
       "type": "uid",

@@ -78,58 +78,123 @@ const drawPlane = (context, image, xPos, yPos, angleInRad, imageWidth, imageHeig
 }
 
 
-interface DrawParameter {
+interface DrawGlobeParameter {
     ctx:CanvasRenderingContext2D,
-    width:number
-    height:number
+    size:number;
     globe:any;
     land:any;
-    seaFill:string;
-    landFill:string;
     path:any;
     distributionShape:any;
-    distributionFill:string;
-    flightPathColor?:string;
-    flightPath?:any;
+    projection:any;
 }
-const unifiedDraw = (param:DrawParameter) =>{
+interface DrawFlightParameter {
+    flightPath:any;
+    angle:number;
+    planeSize:number;
+    plane:any;
+}
 
-    param.ctx.clearRect(0, 0, param.width, param.height);
-    param.ctx.shadowBlur = 0;
-    param.ctx.shadowOffsetX = 0;
-    param.ctx.shadowOffsetY = 0;
+const wuppertal = [7.150829, 51.256176];
 
-    param.ctx.fillStyle = param.seaFill;
-    param.ctx.beginPath();
-    param.path(param.globe);
-    param.ctx.fill();
+const colors = {
+    see:{
+        fill: '#8AB4F8'
+    },
+    land:{
+        fill: '#FBF8F3',
+        stroke: '#A4A3A1'
+    },
+    flight:{
+        stroke: '#007ea3'
+    },
+    distribution:{
+        fill: '#00a800',
+        stroke: '#A4A3A1'
+    },
+};
 
-    param.ctx.fillStyle = param.landFill;
-    param.ctx.beginPath();
-    param.path(param.land);
-    param.ctx.fill();
 
-    param.ctx.fillStyle = param.distributionFill;
-    param.ctx.beginPath();
-    param.path(param.distributionShape);
-    param.ctx.fill();
+const unifiedDraw = (drawGlobeParameter:DrawGlobeParameter, drawFlightParameter?:DrawFlightParameter) =>{
 
+    const {
+        ctx,
+        size,
+        globe,
+        land,
+        path,
+        distributionShape,
+        projection,
+    } = drawGlobeParameter;
 
-    if(undefined !== param.flightPathColor && undefined !== param.flightPath){
+    ctx.clearRect(0, 0, size, size);
+    ctx.shadowBlur = 0;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
 
-        param.ctx.strokeStyle = param.flightPathColor;
-        param.ctx.lineWidth = 3;
-        param.ctx.setLineDash([5, 5]);
+    ctx.fillStyle = colors.see.fill;
+    ctx.beginPath();
+    path(globe);
+    ctx.fill();
 
-        param.ctx.beginPath();
-        param.path(param.flightPath);
-        param.ctx.stroke();
+    ctx.fillStyle = colors.land.fill;
+    ctx.setLineDash([]);
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = colors.land.stroke;
+    ctx.beginPath();
+    path(land);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.fillStyle = colors.distribution.fill;
+    ctx.setLineDash([]);
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = colors.distribution.stroke;
+    ctx.beginPath();
+    path(distributionShape);
+    ctx.fill();
+    ctx.stroke();
+
+    const checkVisibility = checkVisibilityTester(projection);
+    const visible = checkVisibility(wuppertal[0], wuppertal[1]);
+
+    if(true === visible){
+
+        const wuppertalCartesianCoord = projection([wuppertal[0], wuppertal[1], 0]);
+
+        const x = wuppertalCartesianCoord[0];
+        const y = wuppertalCartesianCoord[1];
+        const radius = 5;
+
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, 2 * Math.PI);
+        ctx.fillStyle = '#00a800';
+        ctx.fill();
+
+        ctx.font = '14px sans-serif';
+        ctx.fillStyle = '#000000';
+        ctx.fillText('Wuppertal', x + 2 * radius, y);
+
+    }
+
+    if(undefined !== drawFlightParameter){
+
+        const {flightPath, angle, planeSize, plane} = drawFlightParameter;
+
+        ctx.strokeStyle = colors.flight.stroke;
+        ctx.lineWidth = 3;
+        ctx.setLineDash([5, 5]);
+        ctx.beginPath();
+        path(flightPath);
+        ctx.stroke();
+
+        const rotate = projection.rotate();
+        const planeCartesianCoord = projection([-rotate[0], -rotate[1], 0]);
+
+        drawPlane(ctx, plane.current, planeCartesianCoord[0], planeCartesianCoord[1], angle, planeSize,planeSize);
 
     }
 
 }
-
-
 
 /**
  * Borrowing heavily from

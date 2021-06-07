@@ -202,16 +202,12 @@ export const Globe = (props) => {
 
     const d3Canvas = useRef(null);
     const canvasContext = useRef(null);
-    const width = props.size;
-    const height = props.size;
 
     const size = props.size;
 
     const globe = {type: "Sphere"};
     const distributionCenter = d3.geoCentroid(props.distributionShape);
 
-
-    const wuppertal = [7.150829, 51.256176];
 
     //the scale corresponds to the radius more or less so 1/2 width
     const projection = d3.geoOrthographic()

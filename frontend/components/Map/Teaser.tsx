@@ -87,11 +87,6 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export interface TeaserPropsInterface {
-    mapElement: MapElement,
-    close: Function;
-}
-
 export interface TeaserItem{
     slug: string;
     title: string;
@@ -99,7 +94,7 @@ export interface TeaserItem{
     href: string;
 }
 
-export const Teaser = (props: TeaserPropsInterface) => {
+export const Teaser = () => {
 
     const {
         state: {teaser},

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import {MapRoot} from 'components/Map/Root';
-import {Teaser, TeaserPropsInterface} from "components/Map/Teaser";
+import {Teaser} from "components/Map/Teaser";
 
 import SearchDialog from "components/Search/Search";
 import {Warehouse, WarehouseSpore} from "../strapi-api/warehouse/warehouse";
@@ -42,10 +42,6 @@ export default function Index(props:IndexProps) {
 
     },[teaser]);
 
-    const closeTeaser = () => {
-        setTeaser(undefined);
-    };
-
     return (
         <MapProvider>
             <div className={classes.root}>
@@ -56,10 +52,7 @@ export default function Index(props:IndexProps) {
             <SearchDialog
                 mapElements={mapElements}
             />
-            <Teaser
-                close={closeTeaser}
-                mapElement={teaser}
-            />
+                <Teaser/>
             </div>
         </MapProvider>
     );

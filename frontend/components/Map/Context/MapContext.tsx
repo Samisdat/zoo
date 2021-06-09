@@ -18,7 +18,7 @@ export interface MapTransformInterface {
     k: number;
 }
 
-const mapTransformDefault: MapTransformInterface = {
+export const mapTransformDefault: MapTransformInterface = {
     k:1,
     x:0,
     y:0
@@ -29,8 +29,6 @@ type Action =
         type: 'SET_PATH_AND_PROJECTION',
         path:GeoPath,
         projection:GeoProjection,
-        width:number,
-        height:number,
     } |
     {
         type: 'SET_TRANSFORM',
@@ -53,8 +51,6 @@ type Dispatch = (action: Action) => void;
 type State = {
     path:GeoPath,
     projection:GeoProjection,
-    width:number,
-    height:number,
     transform:MapTransformInterface,
     focus?:MapElement
     teaser?:MapElement
@@ -75,14 +71,12 @@ function mapReducer(state: State, action: Action):State {
     switch (action.type) {
         case 'SET_PATH_AND_PROJECTION': {
 
-            const {path, projection, width, height} = action;
+            const {path, projection} = action;
 
             return {
                 ...state,
                 path,
                 projection,
-                width,
-                height,
             };
 
         }
@@ -138,8 +132,6 @@ function MapProvider({children}: MapProviderProps) {
     const [state, dispatch] = React.useReducer(mapReducer, {
         path: undefined,
         projection: undefined,
-        width: undefined,
-        height: undefined,
         transform:mapTransformDefault,
     });
     const value = {state, dispatch};

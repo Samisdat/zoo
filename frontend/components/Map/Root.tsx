@@ -139,8 +139,6 @@ export const MapRoot = (props:MapRootInterface) => {
             type: 'SET_PATH_AND_PROJECTION',
             path: pathGenerator,
             projection: projection,
-            width,
-            height
         });
 
     }

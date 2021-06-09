@@ -172,23 +172,6 @@ export default function SearchDialog(props:SearchDialogProperties) {
 
     };
 
-
-    useEffect(() => {
-        return;
-
-        const fakeFocus = mapElements.find((mapElement)=>{
-            return (38 === mapElement.id)
-        });
-        console.log(fakeFocus);
-
-        dispatch({
-            type: 'SET_TEASER',
-            teaser: fakeFocus
-        });
-
-
-    }, []);
-
     return (
         <React.Fragment>
             <Paper

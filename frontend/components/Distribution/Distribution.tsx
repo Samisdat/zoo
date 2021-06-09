@@ -5,6 +5,9 @@ import {Detail} from "./Detail";
 import {MiniMap} from "./MiniMap";
 import {Legend} from "./Legend";
 
+import * as topojson from 'topojson-client';
+const simplify = require('simplify-geojson');
+
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
@@ -54,7 +57,10 @@ export const Distribution = (props) => {
 
         distributionService('/api/distribution/afrikanischer-elefant')
         .then((data) =>{
-            setDistributionShape(data);
+            let distribution = topojson.feature(data, data.objects.distribution);
+            distribution = simplify(distribution, 0.1)
+
+            setDistributionShape(distribution);
         });
 
     },[])
@@ -63,9 +69,7 @@ export const Distribution = (props) => {
 
         distributionService('/api/distribution/world')
         .then((data) =>{
-
             setWorld(data);
-
         });
 
     },[])

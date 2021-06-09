@@ -4,9 +4,8 @@ import * as d3 from 'd3';
 
 import {GeoPath} from "d3";
 import {GeoProjection} from "d3-geo";
-import {MapTransformInterface} from "../Map/Interface";
-import {FeatureCollection} from "geojson";
-import {MapElementInterface} from "../../data-api/map-elements";
+import {MapTransformInterface} from "../Map/Context/MapContext";
+import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 
 const mapTransformDefault = {
     k:1,
@@ -39,7 +38,7 @@ const MapStateDefault: DistributionDetailStateInterface = {
 /**
  * To be refactored, param has wrong type
  */
-export const centerToFeatureCollection = (mapElements:MapElementInterface[]) => {
+export const centerToFeatureCollection = (mapElements:MapElement[]) => {
 
     const latitudes = [];
     const longitudes = [];

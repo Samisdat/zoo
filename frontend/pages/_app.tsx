@@ -2,17 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import {ThemeProvider} from '@material-ui/core/styles';
-import Grid from "@material-ui/core/Grid";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {makeStyles} from '@material-ui/core/styles';
-import {NavigationInterface} from "../components/Navigation/Interfaces";
 import createPersistedState from 'use-persisted-state';
 
 import { createMuiTheme } from '@material-ui/core/styles';
 import {ViewportProvider} from "../components/viewport/ViewportProvider";
 import {Navigation} from "../components/Navigation/Navigation";
 import {navigationCategories} from "../components/Navigation/NavigationCategory";
-import {relative} from "jest-haste-map/build/lib/fast_path";
 import Container from "@material-ui/core/Container";
 
 const theme = createMuiTheme({
@@ -68,36 +65,6 @@ export default function ZooWuppertal(props) {
 
     const {Component, pageProps, router} = props;
 
-    const [navigationState, setNavigationState] = useNavigationState<NavigationInterface>({
-        activeMainItem: 'map',
-        openSideMenu: false,
-        openTeaser: false
-    });
-
-    const toggleTeaser = () => {
-
-        console.log('toggleTeaser')
-
-        const open = (true === navigationState.openTeaser) ? false : true;
-
-        setNavigationState({
-            ...navigationState,
-            openTeaser: open
-        });
-
-    };
-
-    const toggleSideMenu = () => {
-
-        const open = (true === navigationState.openSideMenu) ? false : true;
-
-        setNavigationState({
-            ...navigationState,
-            openSideMenu: open
-        });
-
-    };
-
     React.useEffect(() => {
 
         // Remove the server-side injected CSS.
@@ -128,8 +95,6 @@ export default function ZooWuppertal(props) {
                 >
                     <div className={classes.content}>
                         <Component
-                            toggleTeaser={toggleTeaser}
-                            navigation={navigationState}
                             {...pageProps}
                         />
                     </div>

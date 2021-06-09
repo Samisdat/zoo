@@ -16,6 +16,8 @@ const markerDefault: PositionInterface = {
     isGPS: false,
     text: 'Map Marker Text'
 };
+import {getTransformFromStorage} from "./getTransformFromStorage";
+import {getMarkerFromStorage} from "./getMarkerFromStorage";
 
 const useStyles = makeStyles({
     fullScreenMap: {
@@ -49,76 +51,6 @@ export const MapRoot = (props:MapRootInterface) => {
         return false;
 
     });
-
-    const getTransformFromStorage = ():MapTransformInterface => {
-
-        const zoomFromStorage = window.localStorage.getItem('transform');
-
-        const defaultTransform = {
-            k:1,
-            x:0,
-            y:0
-        };
-
-        if(null === zoomFromStorage){
-            return defaultTransform;
-        }
-
-        let json = undefined;
-
-        try {
-            json = JSON.parse(zoomFromStorage);
-        } catch (e) {
-            return defaultTransform;
-        }
-
-        if(undefined === json.x){
-            return defaultTransform;
-        }
-
-        if(undefined === json.y){
-            return defaultTransform;
-        }
-
-        if(undefined === json.y){
-            return defaultTransform;
-        }
-
-        return json as MapTransformInterface;
-
-    }
-
-    const getMarkerFromStorage = (): PositionInterface => {
-
-        const markerFromStorage = window.localStorage.getItem('position');
-
-        const defaultMarker = {
-            ...markerDefault
-        };
-
-        if(null === markerFromStorage){
-            return defaultMarker;
-        }
-
-        let json = undefined;
-
-        try {
-            json = JSON.parse(markerFromStorage);
-        } catch (e) {
-            return defaultMarker;
-        }
-
-        if(!json.lat){
-            return defaultMarker;
-        }
-
-        if(!json.lng){
-            return defaultMarker;
-        }
-
-        return json as PositionInterface;
-
-    }
 
     const createMap = (width, height) => {
 

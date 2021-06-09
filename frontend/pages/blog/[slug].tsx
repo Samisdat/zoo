@@ -4,7 +4,7 @@ import {getPostBySlug, getPosts} from "../../strapi-api/query/posts";
 import {Post} from "../../strapi-api/entity/post/post";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 import {useRouter} from "next/router";
-import {Breadcrumb, BreadcrumbProps} from "../../components/Navigation/Breadcrumb";
+import {Breadcrumb, BreadcrumbLink, BreadcrumbProps} from "../../components/Navigation/Breadcrumb";
 import Container from "@material-ui/core/Container";
 
 const ReactMarkdown = require('react-markdown')
@@ -22,23 +22,22 @@ export default function BlogPost(props) {
         return (slug === post.slug);
     });
 
-    const breadcrumbProps:BreadcrumbProps = {
-        category: {
+    const breadcrumbProps:BreadcrumbLink[] = [
+        {
             href: '/blog',
             title: 'Blog',
             icon: 'blog',
         },
-        page: {
+        {
             href: asPath,
             title: post.title,
         },
-    };
-
+    ];
 
     return (
         <Container>
             <Breadcrumb
-                {...breadcrumbProps}
+                links={breadcrumbProps}
             />
             <h1>{post.title}</h1>
             <h2><Moment format="DD.MM.YYYY" date={post.date} /></h2>

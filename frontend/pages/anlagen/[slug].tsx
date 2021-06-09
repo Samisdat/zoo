@@ -1,16 +1,10 @@
 import React from 'react';
-import {Feature} from "geojson";
 import {getFullGeoJson} from "../api/geojson/list";
-import path from "path";
-import fs from "fs";
 import {getFacilities, getFacilityBySlug} from "../../strapi-api/query/facilities";
-import {Animal} from "../../strapi-api/entity/animal/animal";
 import {Facility} from "../../strapi-api/entity/facility/facility";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 import {useRouter} from "next/router";
-import {Breadcrumb, BreadcrumbProps} from "../../components/Navigation/Breadcrumb";
-import Container from "@material-ui/core/Container";
-const frontmatter = require('@github-docs/frontmatter')
+import {Breadcrumb, BreadcrumbLink, BreadcrumbProps} from "../../components/Navigation/Breadcrumb";
 
 const ReactMarkdown = require('react-markdown')
 
@@ -28,23 +22,23 @@ export default function Gehege(props) {
         return (slug === facility.slug);
     });
 
-    const breadcrumbProps:BreadcrumbProps = {
-        category: {
+    const breadcrumbProps:BreadcrumbLink[] = [
+        {
             href: '/anlagen',
             title: 'Anlagen',
             icon: 'building',
         },
-        page: {
+        {
             href: asPath,
             title: facility.title,
         },
-    };
+    ];
 
 
     return (
         <React.Fragment>
             <Breadcrumb
-                {...breadcrumbProps}
+                links={breadcrumbProps}
             />
             <h1>{facility.title}</h1>
             <ReactMarkdown plugins={[gfm]} children={facility.body} />

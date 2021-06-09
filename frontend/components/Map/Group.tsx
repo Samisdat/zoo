@@ -82,7 +82,6 @@ export const Group = (props:MapGroupProperties) => {
 
     const boundingBox = filterGeoJson('bounding_box', props.mapElements);
 
-    const [autoZoom, setAutoZoom] = useState<boolean>(false);
     const [zoom, setZoom] = useState<number>(transform.k);
     const [zoomDependencies, setZoomDependencies] = useState<ZoomDependencies>({
         mapSvg:undefined,
@@ -174,8 +173,6 @@ export const Group = (props:MapGroupProperties) => {
         const centerOfEnclosure = centerToFeatureCollection([(  focus as MapElement)]);
 
         const [[x0, y0], [x1, y1]] = path.bounds(centerOfEnclosure as any);
-
-        setAutoZoom(true);
 
         zoomDependencies.mapSvg.transition().delay(300).duration(750).call(
             zoomDependencies.zooming.transform as any,

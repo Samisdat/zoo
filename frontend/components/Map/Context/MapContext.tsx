@@ -2,6 +2,7 @@ import * as React from 'react'
 import {GeoPath} from "d3";
 import {GeoProjection} from "d3-geo";
 import {useEffect} from "react";
+import {MapElement} from "../../../strapi-api/entity/map-element/map-element";
 
 export interface PositionInterface {
     lat: number;
@@ -38,6 +39,14 @@ type Action =
     {
         type: 'SET_POSITION',
         position: PositionInterface,
+    } |
+    {
+        type: 'SET_FOCUS',
+        focus: MapElement,
+    } |
+    {
+        type: 'SET_TEASER',
+        teaser: MapElement,
     }
 ;
 type Dispatch = (action: Action) => void;
@@ -47,7 +56,9 @@ type State = {
     width:number,
     height:number,
     transform:MapTransformInterface,
-    position?: PositionInterface
+    focus?:MapElement
+    teaser?:MapElement
+    position?: PositionInterface,
 }
 type MapProviderProps = {
     children: React.ReactNode
@@ -95,6 +106,27 @@ function mapReducer(state: State, action: Action):State {
             };
 
         }
+        case 'SET_FOCUS': {
+
+            const {focus} = action;
+
+            return {
+                ...state,
+                focus,
+            };
+
+        }
+        case 'SET_TEASER': {
+
+            const {teaser} = action;
+            console.log(teaser)
+
+            return {
+                ...state,
+                teaser,
+            };
+
+        }
         default: {
             throw new Error(`Unhandled action type: ${(action as any).type}`)
         }
@@ -113,7 +145,6 @@ function MapProvider({children}: MapProviderProps) {
     const value = {state, dispatch};
 
     useEffect(() => {
-        console.log(state.transform)
         localStorage.setItem("transform", JSON.stringify(state.transform));
     }, [state.transform]);
 

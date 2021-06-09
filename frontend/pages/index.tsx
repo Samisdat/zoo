@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import createPersistedState from 'use-persisted-state';
 
 import {MapRoot} from 'components/Map/Root';
 import {Teaser, TeaserPropsInterface} from "components/Map/Teaser";
@@ -11,58 +10,31 @@ import {
 } from "../strapi-api/query/map-elements";
 import {MapElement} from "../strapi-api/entity/map-element/map-element";
 import {MapProvider} from "../components/Map/Context/MapContext";
-
-const useFocusState = createPersistedState('focus');
+import {makeStyles} from "@material-ui/core/styles";
 
 export interface IndexProps{
     warehouse: WarehouseSpore;
 }
 
-export interface MapState {
-    focus: MapElement;
-}
+const useStyles = makeStyles({
+    root: {
+        position: 'fixed',
+        width:'100%',
+        height:'100%',
+    }
+});
 
 export default function Index(props:IndexProps) {
 
+    const classes = useStyles();
     Warehouse.get().hydrate(props.warehouse);
 
     const boundingBox = Warehouse.get().getMapElement(55/*80*/);
-
-    const defaultMapState:MapState = {
-        focus:boundingBox
-    }
+    console.log('@TODO', boundingBox, 'as default focus');
 
     const mapElements = Warehouse.get().getMapElements();
 
-    const [mapState, setMapState] = useFocusState<MapState>(defaultMapState);
-
     const [teaser, setTeaser] = useState<MapElement>(undefined);
-
-    const storeFocus = (focus: MapElement) => {
-
-        setMapState({
-            ...mapState,
-            focus: focus,
-        });
-
-        setTeaser(focus);
-
-    }
-
-    const setFocus = (focus:MapElement) => {
-
-        /*
-            If bounding box => no focus
-         */
-
-        if(focus.id !== mapState.focus.id){
-
-            storeFocus(focus)
-
-            return;
-        }
-
-    };
 
     useEffect(() => {
 
@@ -70,31 +42,27 @@ export default function Index(props:IndexProps) {
 
     },[teaser]);
 
-
     const closeTeaser = () => {
         setTeaser(undefined);
     };
 
     return (
-        <React.Fragment>
-            <MapProvider>
-                <MapRoot
-                    focus={mapState.focus}
-                    setFocus={setFocus}
-                    fullsize={true}
-                    mapElements={mapElements}
-                />
-            </MapProvider>
+        <MapProvider>
+            <div className={classes.root}>
+            <MapRoot
+                fullsize={true}
+                mapElements={mapElements}
+            />
             <SearchDialog
                 mapElements={mapElements}
-                setFocus={setFocus}
             />
             <Teaser
                 close={closeTeaser}
                 mapElement={teaser}
             />
-        </React.Fragment>
-  );
+            </div>
+        </MapProvider>
+    );
 
 }
 

@@ -1,17 +1,13 @@
 import React from 'react';
 import { useRouter } from 'next/router'
 import Typography from "@material-ui/core/Typography";
-import {Feature, Polygon} from "geojson";
 import {getFullGeoJson} from "../api/geojson/list";
-import {MapDimension, MapFocus} from "../index";
 import {getAnimalBySlug, getAnimals} from "../../strapi-api/query/animals";
 import {Animal} from "../../strapi-api/entity/animal/animal";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
-import Container from "@material-ui/core/Container";
 import {Breadcrumb, BreadcrumbLink, BreadcrumbProps} from "../../components/Navigation/Breadcrumb";
 import {Distribution} from "../../components/Distribution/Distribution";
 import {getMapElementById} from "../../strapi-api/query/map-elements";
-import {MapRoot} from "../../components/Map/Root";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {Endanger} from "../../components/Animal/Endanger";
 import {DistributionGlobe} from "../../components/Distribution/DistributionGlobe";
@@ -96,11 +92,6 @@ export default function Tiere(props) {
 
     };
 
-    const mapDimension: MapDimension = {
-        width: 300,
-        height: 300
-    };
-
     const mapElements = Warehouse.get().getMapElements();
 
     return (
@@ -126,7 +117,7 @@ export default function Tiere(props) {
                     />
                 </Grid>
             </Grid>
-
+            <Distribution />
             <Typography component="h2">
                 Tiere oder Bilder
             </Typography>

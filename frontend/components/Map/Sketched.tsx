@@ -1,7 +1,6 @@
 import * as d3 from 'd3';
 
 import React, {useEffect, useRef} from 'react';
-import {MapStateInterface} from "./Interface";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {useMap} from "./Context/MapContext";
 

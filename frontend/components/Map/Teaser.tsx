@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -13,13 +13,17 @@ import CloseIcon from '@material-ui/icons/Close';
 import DirectionsIcon from '@material-ui/icons/Directions';
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {Animal} from "../../strapi-api/entity/animal/animal";
+import {useMap} from "./Context/MapContext";
+import {useViewport} from "../viewport/useViewport";
+import {set} from "timm";
+import {getImagePath} from "../../helper/getImagePath";
 
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         mapTeaser: {
             display: 'flex',
-            position: 'absolute'    ,
+            position: 'absolute',
             bottom:90,
             left: theme.spacing(2),
             right: theme.spacing(2  ),
@@ -97,16 +101,47 @@ export interface TeaserItem{
 
 export const Teaser = (props: TeaserPropsInterface) => {
 
+    const {
+        state: {teaser},
+        dispatch
+    } = useMap()
+
     const classes = useStyles();
 
-    const visible = (undefined === props.mapElement)? false : true;
+    const [visible, setVisible] = React.useState<boolean>(false);
 
     const [activeStep, setActiveStep] = React.useState(0);
 
     const handleClose = () => {
         setActiveStep(0)
-        props.close();
+        setVisible(false);
+
+        dispatch({
+            type: 'SET_TEASER',
+            teaser: undefined
+        });
+
     };
+
+    useEffect(() => {
+
+        if(undefined === teaser){
+
+            setActiveStep(0);
+            setVisible(false);
+            return;
+
+        }
+
+        console.log(teaser?.facility?.title)
+
+        const nextVisible = (undefined !== teaser);
+
+        console.log('teaser', teaser, nextVisible)
+
+        setVisible(nextVisible);
+
+    }, [teaser]);
 
     if (false === visible) {
         return (
@@ -116,13 +151,13 @@ export const Teaser = (props: TeaserPropsInterface) => {
 
     let teaserItems:TeaserItem[] = [];
 
-    if('enclosure' === props.mapElement.facility.type){
+    if('enclosure' === teaser.facility.type){
 
-        teaserItems = props.mapElement.facility.animals.map((animal:Animal)=>{
+        teaserItems = teaser.facility.animals.map((animal:Animal)=>{
 
             const slug = `animal-${animal.slug}`;
             const title = animal.title;
-            const photo = animal.photos[0].medium.src;
+            const photo = getImagePath(animal.photos[0].medium.src);
             const href = `/tiere/${animal.slug}`;
 
             return {
@@ -137,10 +172,10 @@ export const Teaser = (props: TeaserPropsInterface) => {
     }
     else{
 
-        const slug = `facility-${props.mapElement.facility.slug}`;
-        const title = props.mapElement.facility.title;
-        const photo = props.mapElement.facility.photos[0].medium.src;
-        const href = `/anlagen/${props.mapElement.facility.slug}`;
+        const slug = `facility-${teaser.facility.slug}`;
+        const title = teaser.facility.title;
+        const photo = getImagePath(teaser.facility.photos[0].medium.src);
+        const href = `/anlagen/${teaser.facility.slug}`;
 
         teaserItems.push({
             slug,
@@ -185,7 +220,7 @@ export const Teaser = (props: TeaserPropsInterface) => {
                                         <div
                                             className={classes.img}
                                             style={{
-                                                backgroundImage: 'url("http://127.0.0.1:1337' + teaserItem.photo + '")'
+                                                backgroundImage: 'url("' + teaserItem.photo + '")'
                                             }}
                                         />
                                     </React.Fragment>

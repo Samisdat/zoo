@@ -26,8 +26,6 @@ const useStyles = makeStyles({
 });
 
 interface MapRootInterface{
-    focus: MapElement;
-    setFocus: Function;
     fullsize: boolean;
     mapElements: MapElement[];
 }
@@ -36,9 +34,7 @@ export const MapRoot = (props:MapRootInterface) => {
 
     const { width, height } = useViewport();
 
-    const {
-        dispatch
-    } = useMap()
+    const { dispatch } = useMap()
 
     const classes = useStyles();
 
@@ -187,8 +183,8 @@ export const MapRoot = (props:MapRootInterface) => {
             className={`${props.fullsize ? classes.fullScreenMap : ""}`}
         >
             <Group
-                setFocus={props.setFocus}
-                {...props}
+                fullsize={props.fullsize}
+                mapElements={props.mapElements}
             />
             <ZoomLevel />
         </svg>

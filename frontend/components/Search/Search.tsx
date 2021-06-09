@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import {Paper, Fab} from "@material-ui/core";
 import Dialog from '@material-ui/core/Dialog';
@@ -15,6 +15,8 @@ import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {NavigationList} from "../NavigationList/NavigationList";
 import {groupByFirstLetter} from "../NavigationList/groupByFirstLetter";
 import {NavigationListItemInterface} from "../NavigationList/NavigationListInterfaces";
+import {useMap} from "../Map/Context/MapContext";
+import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -79,10 +81,12 @@ const Transition = React.forwardRef(function Transition(
 
 export interface SearchDialogProperties{
     mapElements:MapElement[];
-    setFocus:Function;
 };
 
 export default function SearchDialog(props:SearchDialogProperties) {
+
+    const { dispatch } = useMap()
+
     const classes = useStyles();
 
     const mapElements = props.mapElements.filter((mapElement:MapElement) => {
@@ -152,13 +156,38 @@ export default function SearchDialog(props:SearchDialogProperties) {
 
         setOpen(false);
 
-        const mapElement = mapElements.find((mapElement)=>{
+        const focus = mapElements.find((mapElement)=>{
             return (itemKey === mapElement.properties.facility.slug);
         })
 
-        props.setFocus(mapElement);
+        dispatch({
+            type: 'SET_FOCUS',
+            focus
+        });
+
+        dispatch({
+            type: 'SET_TEASER',
+            teaser: focus
+        });
 
     };
+
+
+    useEffect(() => {
+        return;
+
+        const fakeFocus = mapElements.find((mapElement)=>{
+            return (38 === mapElement.id)
+        });
+        console.log(fakeFocus);
+
+        dispatch({
+            type: 'SET_TEASER',
+            teaser: fakeFocus
+        });
+
+
+    }, []);
 
     return (
         <React.Fragment>

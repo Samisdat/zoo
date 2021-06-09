@@ -1,16 +1,56 @@
 import * as React from 'react'
-import {useViewport} from "../../viewport/useViewport";
+import {GeoPath} from "d3";
+import {GeoProjection} from "d3-geo";
 import {useEffect} from "react";
-type Action = {type: 'increment'} | {type: 'decrement'} | {type: 'SET_PATH', width:number}
+
+export interface PositionInterface {
+    lat: number;
+    lng: number;
+    isWithin: boolean;
+    isGPS: boolean
+    text: string;
+}
+
+export interface MapTransformInterface {
+    x: number;
+    y: number;
+    k: number;
+}
+
+const mapTransformDefault: MapTransformInterface = {
+    k:1,
+    x:0,
+    y:0
+}
+
+type Action =
+    {
+        type: 'SET_PATH_AND_PROJECTION',
+        path:GeoPath,
+        projection:GeoProjection,
+        width:number,
+        height:number,
+    } |
+    {
+        type: 'SET_TRANSFORM',
+        transform:MapTransformInterface,
+    } |
+    {
+        type: 'SET_POSITION',
+        position: PositionInterface,
+    }
+;
 type Dispatch = (action: Action) => void;
 type State = {
-    count: number,
-    path: string,
+    path:GeoPath,
+    projection:GeoProjection,
+    width:number,
+    height:number,
+    transform:MapTransformInterface,
+    position?: PositionInterface
 }
 type MapProviderProps = {
     children: React.ReactNode
-    width: number,
-    height:number,
 }
 
 const MapStateContext = React.createContext<
@@ -22,30 +62,36 @@ MapStateContext.displayName = "Context Display Name";
 function mapReducer(state: State, action: Action):State {
 
     switch (action.type) {
-        case 'increment': {
+        case 'SET_PATH_AND_PROJECTION': {
 
-            const count =  state.count + 1;
-            console.log(count);
-            return {
-                ...state,
-                count,
-            };
-        }
-        case 'decrement': {
-            const count =  state.count - 1;
-
-            return {
-                ...state,
-                count,
-            };
-        }
-        case 'SET_PATH': {
-
-            const path =  `path ${action.width}`;
+            const {path, projection, width, height} = action;
 
             return {
                 ...state,
                 path,
+                projection,
+                width,
+                height,
+            };
+
+        }
+        case 'SET_TRANSFORM': {
+
+            const {transform} = action;
+
+            return {
+                ...state,
+                transform,
+            };
+
+        }
+        case 'SET_POSITION': {
+
+            const {position} = action;
+
+            return {
+                ...state,
+                position,
             };
 
         }
@@ -57,12 +103,20 @@ function mapReducer(state: State, action: Action):State {
 
 function MapProvider({children}: MapProviderProps) {
 
-
     const [state, dispatch] = React.useReducer(mapReducer, {
-        count: 0,
-        path:'no'
+        path: undefined,
+        projection: undefined,
+        width: undefined,
+        height: undefined,
+        transform:mapTransformDefault,
     });
-    const value = {state, dispatch}
+    const value = {state, dispatch};
+
+    useEffect(() => {
+        console.log(state.transform)
+        localStorage.setItem("transform", JSON.stringify(state.transform));
+    }, [state.transform]);
+
     return <MapStateContext.Provider value={value}>{children}</MapStateContext.Provider>
 }
 

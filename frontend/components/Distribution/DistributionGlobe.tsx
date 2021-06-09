@@ -1,14 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
-import {Detail} from "./Detail";
-import {MiniMap} from "./MiniMap";
-import {Legend} from "./Legend";
 import {Globe} from "./Globe";
-import {SvgGlobe} from "./SvgGlobe";
 
 import * as topojson from 'topojson-client';
-
 const simplify = require('simplify-geojson');
 
 const useStyles = makeStyles((theme: Theme) =>

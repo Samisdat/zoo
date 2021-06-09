@@ -1,24 +1,33 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
 import {getCurrentPositionGeoJson} from 'helper/getCurrentPosition';
+import {useMap} from "./Context/MapContext";
 
 export const CurrentPosition = (props) => {
 
-    const svgId = 'main-svg';
+    const {
+        state: {path, position},
+    } = useMap();
 
-    const positionId = 'main-position';
+    const positionG = useRef(null);
 
     useEffect(() => {
 
-        if(undefined === props.pathGenerator){
+        if(!path){
             return;
         }
 
-        var mapSvg = d3.select(`#${svgId}`)
+        if(!position){
+            return;
+        }
 
-        var positionGroup = mapSvg.select(`#${positionId}`);
-        const currentPosition = getCurrentPositionGeoJson('initial', props.marker.lat, props.marker.lng);
+        var positionGroup = d3.select(positionG.current);
+        const currentPosition = getCurrentPositionGeoJson(
+            'initial',
+            position.lat,
+            position.lng
+        );
 
         let radius = 8  / props.zoom;
 
@@ -30,7 +39,7 @@ export const CurrentPosition = (props) => {
             .data(currentPosition)
             .join('circle')
 
-            .attr('transform', function(d) { return 'translate(' + props.pathGenerator.centroid(d) + ')'; })
+            .attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
             .attr('title', (d)=>{
                 return d.properties.slug;
             })
@@ -40,14 +49,14 @@ export const CurrentPosition = (props) => {
             .attr('fill', (d, i)=>{
                 return 'red';
             })
-            .attr('d', props.pathGenerator)
+            .attr('d', path)
             .attr('r', radius );
 
 
     });
 
     return (
-        <g id={positionId}></g>
+        <g ref={positionG}></g>
     );
 
 }

@@ -1,38 +1,21 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {makeStyles} from "@material-ui/core/styles";
 import * as d3 from 'd3';
 
-import {MapStateInterface, MapTransformInterface, MarkerInterface} from "components/Map/Interface";
 import {Group} from "./Group";
 import {ZoomLevel} from "./ZoomLevel";
-import {MapDimension, MapFocus} from "../../pages";
-import {NavigationInterface} from "../Navigation/Interfaces";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
+import {useViewport} from "../viewport/useViewport";
+import {MapTransformInterface, PositionInterface, useMap} from "./Context/MapContext";
+import {Feature} from "geojson";
 
-const markerDefault: MarkerInterface = {
+const markerDefault: PositionInterface = {
     lat: 51.238741,
     lng: 7.107757,
     isWithin: true,
     isGPS: false,
     text: 'Map Marker Text'
 };
-
-const mapTransformDefault: MapTransformInterface = {
-    k:1,
-    x:0,
-    y:0
-}
-
-const MapStateDefault: MapStateInterface = {
-    marker: {
-        ...markerDefault
-    },
-    pathGenerator: undefined,
-    projection: undefined,
-    transform: {
-        ...mapTransformDefault
-    },
-}
 
 const useStyles = makeStyles({
     fullScreenMap: {
@@ -43,22 +26,23 @@ const useStyles = makeStyles({
 });
 
 interface MapRootInterface{
-    focus: MapFocus | MapElement;
+    focus: MapElement;
     setFocus: Function;
-    mapDimension: MapDimension;
     fullsize: boolean;
     mapElements: MapElement[];
-    navigation: NavigationInterface;
-    toggleTeaser: Function;
 }
 
 export const MapRoot = (props:MapRootInterface) => {
 
+    const { width, height } = useViewport();
+
+    const {
+        dispatch
+    } = useMap()
+
     const classes = useStyles();
 
     const svgId = 'main-svg';
-
-    const [mapState, setMapState] = useState<MapStateInterface>(MapStateDefault);
 
     const border = props.mapElements.find((mapElement:MapElement) => {
 
@@ -70,33 +54,14 @@ export const MapRoot = (props:MapRootInterface) => {
 
     });
 
-    const setTransform = (transform:MapTransformInterface) => {
-
-        if(
-            transform.x === mapState.transform.x &&
-            transform.y === mapState.transform.y &&
-            transform.k === mapState.transform.k
-        ){
-            return;
-        }
-
-        window.localStorage.setItem('pan-zoom', JSON.stringify(transform));
-
-        setMapState({
-            ...mapState,
-            transform: transform,
-        });
-
-        //props.setFocus('none');
-
-    };
-
     const getTransformFromStorage = ():MapTransformInterface => {
 
-        const zoomFromStorage = window.localStorage.getItem('pan-zoom');
+        const zoomFromStorage = window.localStorage.getItem('transform');
 
         const defaultTransform = {
-            ...mapTransformDefault
+            k:1,
+            x:0,
+            y:0
         };
 
         if(null === zoomFromStorage){
@@ -127,9 +92,9 @@ export const MapRoot = (props:MapRootInterface) => {
 
     }
 
-    const getMarkerFromStorage = (): MarkerInterface => {
+    const getMarkerFromStorage = (): PositionInterface => {
 
-        const markerFromStorage = window.localStorage.getItem('current-position');
+        const markerFromStorage = window.localStorage.getItem('position');
 
         const defaultMarker = {
             ...markerDefault
@@ -147,55 +112,74 @@ export const MapRoot = (props:MapRootInterface) => {
             return defaultMarker;
         }
 
-        if(undefined === json.lat){
+        if(!json.lat){
             return defaultMarker;
         }
 
-        if(undefined === json.lng){
+        if(!json.lng){
             return defaultMarker;
         }
 
-        return json as MarkerInterface;
+        return json as PositionInterface;
 
     }
 
-    const createMap = () => {
-
-        const width = props.mapDimension.width;
-        const height = props.mapDimension.height;
-
-        const transform = getTransformFromStorage();
-        const marker = getMarkerFromStorage()
+    const createMap = (width, height) => {
 
         const margin = 20;
         const projection = d3.geoMercator()
             .angle(180)
             .scale(1)
-            .fitExtent([[margin, margin], [width - margin, height - margin]], border)
+            .fitExtent(
+                [[margin, margin],
+                [width - margin, height - margin]],
+                border as Feature
+            )
         ;
 
         const pathGenerator = d3.geoPath().projection(projection)
 
-        const nextMapState: MapStateInterface = {
-            ...mapState,
-            pathGenerator,
+        dispatch({
+            type: 'SET_PATH_AND_PROJECTION',
+            path: pathGenerator,
             projection: projection,
-            transform,
-            marker,
-        };
-
-        setMapState(nextMapState)
+            width,
+            height
+        });
 
     }
 
-    // @TODO add reducer to prevent render twice
     useEffect(() => {
 
-        if (undefined === mapState.pathGenerator) {
-            createMap();
+        if(!width || ! height){
+            return;
         }
 
-    }, [mapState, props.focus]);
+        createMap(width, height);
+
+    }, [width,height]);
+
+    useEffect(() => {
+
+        const position = getMarkerFromStorage()
+
+        dispatch({
+            type: 'SET_POSITION',
+            position
+        });
+
+    }, []);
+
+    useEffect(()=>{
+
+        const transform = getTransformFromStorage();
+
+        dispatch({
+            type: 'SET_TRANSFORM',
+            transform
+        });
+
+    },[]);
 
     return (
         <svg
@@ -203,14 +187,10 @@ export const MapRoot = (props:MapRootInterface) => {
             className={`${props.fullsize ? classes.fullScreenMap : ""}`}
         >
             <Group
-                mapState={mapState}
-                setTransform={setTransform}
                 setFocus={props.setFocus}
                 {...props}
             />
-            <ZoomLevel
-                mapState={mapState}
-            />
+            <ZoomLevel />
         </svg>
     );
 

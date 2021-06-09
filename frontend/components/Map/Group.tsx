@@ -1,15 +1,14 @@
 import * as d3 from 'd3';
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 import {Sketched} from "./Sketched";
 import {CurrentPosition} from "./CurrentPosition";
-import {MapStateInterface, MapTransformInterface} from "./Interface";
 import {PointOfInterest} from "./PointOfInterest";
 import {centerToFeatureCollection} from "../Distribution/Detail";
-import {MapDimension, MapFocus} from "../../pages";
 import {filterGeoJson} from "helper/geojson/filterGeoJson";
-import {NavigationInterface} from "../Navigation/Interfaces";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
+import {MapTransformInterface, useMap} from "./Context/MapContext";
+import {useViewport} from "../viewport/useViewport";
 
 // zoom until focus.width or focus.height extends window.width or window.height
 export const findBestZoomLevel = (x0, x1, y0, y1, maxWidth, maxHeight) => {
@@ -65,27 +64,29 @@ interface ZoomDependencies {
 }
 
 interface MapGroupProperties {
-    focus: MapFocus | MapElement;
+    focus: MapElement;
     setFocus: Function;
-    mapDimension: MapDimension;
     fullsize: boolean;
     mapElements: MapElement[];
-    navigation: NavigationInterface;
-    toggleTeaser: Function;
-    mapState:MapStateInterface;
-    setTransform:Function;
 }
 
 export const Group = (props:MapGroupProperties) => {
 
+    const { width, height } = useViewport();
+
+    const {
+        state: {path, projection, transform},
+        dispatch
+    } = useMap()
+
+    const map = useRef(null);
     const svgId = 'main-svg';
-    const mapId = 'main-map';
 
     const boundingBox = filterGeoJson('bounding_box', props.mapElements);
 
     const [autoZoom, setAutoZoom] = useState<boolean>(false);
-    const [zoom, setZoom] = useState<number>(props.mapState.transform.k);
-    const [focus, setFocus] = useState<MapFocus>("none");
+    const [zoom, setZoom] = useState<number>(transform.k);
+    const [focus, setFocus] = useState<MapElement>(undefined);
     const [zoomDependencies, setZoomDependencies] = useState<ZoomDependencies>({
         mapSvg:undefined,
         zooming:undefined,
@@ -95,10 +96,10 @@ export const Group = (props:MapGroupProperties) => {
 
         var mapSvg = d3.select(`#${svgId}`)
 
-        mapSvg.attr('width', props.mapDimension.width)
-        mapSvg.attr('height', props.mapDimension.height)
+        mapSvg.attr('width', width)
+        mapSvg.attr('height', height)
 
-        const mapGroup = d3.select(`#${mapId}`);
+        const mapGroup = d3.select(map.current);
 
         const zooming = d3.zoom()
             .scaleExtent([0.5, 30])
@@ -122,7 +123,11 @@ export const Group = (props:MapGroupProperties) => {
                     y: event.transform.y
                 }
 
-                props.setTransform(transform);
+                dispatch({
+                    type: 'SET_TRANSFORM',
+                    transform
+                });
+                //props.setTransform(transform);
 
             });
 
@@ -136,58 +141,33 @@ export const Group = (props:MapGroupProperties) => {
 
         const t = d3.zoomIdentity
             .translate(
-                props.mapState.transform.x,
-                props.mapState.transform.y
+                transform.x,
+                transform.y
             )
-            .scale(props.mapState.transform.k);
+            .scale(transform.k);
 
         mapSvg.call(
             (zooming.transform as any),
             t
         );
 
-        /*
-        if('none' !== props.focus){
-
-            //mapSvg.on('.zoom', null);
-            const centerOfEnclosure = centerToFeatureCollection({
-                features:[props.focus],
-                type:'FeatureCollection'
-            });
-
-            const [[x0, y0], [x1, y1]] = props.mapState.pathGenerator.bounds(centerOfEnclosure as any);
-
-            mapSvg.call(
-                zooming.transform as any,
-                d3.zoomIdentity
-                    .translate(props.mapDimension.width / 2, props.mapDimension.height / 2)
-                    .scale(Math.min(8, 0.9 / Math.max((x1 - x0) / props.mapDimension.width, (y1 - y0) / props.mapDimension.height)))
-                    .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
-            );
-
-            //props.setFocus('none')
-
-        }
-
-         */
-
     };
 
     useEffect(() => {
 
-        if (undefined === props.mapState) {
-            return;
-        }
-
-        if (undefined === props.mapState.pathGenerator) {
+        if (!path) {
             return;
         }
 
         createD3Map();
 
-    }, [props.mapState]);
+    }, [path]);
 
     useEffect(()=>{
+
+        if (!path) {
+            return;
+        }
 
         if(undefined === zoomDependencies.mapSvg || undefined === zoomDependencies.zooming){
             return;
@@ -196,15 +176,15 @@ export const Group = (props:MapGroupProperties) => {
         //zoomDependencies.mapSvg.on('.zoom', null);
         const centerOfEnclosure = centerToFeatureCollection([(props.focus as MapElement)]);
 
-        const [[x0, y0], [x1, y1]] = props.mapState.pathGenerator.bounds(centerOfEnclosure as any);
+        const [[x0, y0], [x1, y1]] = path.bounds(centerOfEnclosure as any);
 
         setAutoZoom(true);
 
         zoomDependencies.mapSvg.transition().duration(500).call(
             zoomDependencies.zooming.transform as any,
             d3.zoomIdentity
-                .translate(props.mapDimension.width / 2, props.mapDimension.height / 2)
-                .scale(Math.min(8, 0.9 / Math.max((x1 - x0) / props.mapDimension.width, (y1 - y0) / props.mapDimension.height)))
+                .translate(width / 2, height / 2)
+                .scale(Math.min(8, 0.9 / Math.max((x1 - x0) / width, (y1 - y0) /height)))
                 .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
         )
         .on("end", ()=>{
@@ -213,12 +193,11 @@ export const Group = (props:MapGroupProperties) => {
 
         });
 
-    }, [props.focus])
+    }, [props.focus,path])
 
     return (
-        <g id={mapId}>
+        <g ref={map}>
             <Sketched
-                mapState={props.mapState}
                 boundingBox={boundingBox}
             />
             {/*
@@ -231,17 +210,15 @@ export const Group = (props:MapGroupProperties) => {
                 geoJson={props.geoJson}
             />
             */}
+
             <CurrentPosition
-                pathGenerator={props.mapState.pathGenerator}
                 zoom={zoom}
-                marker={props.mapState.marker}
             />
             <PointOfInterest
-                pathGenerator={props.mapState.pathGenerator}
-                projection={props.mapState.projection}
                 zoom={zoom}
                 mapElements={props.mapElements}
             />
+
         </g>
     );
 

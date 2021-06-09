@@ -6,16 +6,8 @@ import {Group} from "./Group";
 import {ZoomLevel} from "./ZoomLevel";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {useViewport} from "../viewport/useViewport";
-import {MapTransformInterface, PositionInterface, useMap} from "./Context/MapContext";
+import {useMap} from "./Context/MapContext";
 import {Feature} from "geojson";
-
-const markerDefault: PositionInterface = {
-    lat: 51.238741,
-    lng: 7.107757,
-    isWithin: true,
-    isGPS: false,
-    text: 'Map Marker Text'
-};
 import {getTransformFromStorage} from "./getTransformFromStorage";
 import {getMarkerFromStorage} from "./getMarkerFromStorage";
 
@@ -87,7 +79,7 @@ export const MapRoot = (props:MapRootInterface) => {
 
     useEffect(() => {
 
-        const position = getMarkerFromStorage()
+        const position = getMarkerFromStorage();
 
         dispatch({
             type: 'SET_POSITION',
@@ -111,6 +103,8 @@ export const MapRoot = (props:MapRootInterface) => {
         <svg
             id={svgId}
             className={`${props.fullsize ? classes.fullScreenMap : ""}`}
+            width={width}
+            height={height}
         >
             <Group
                 fullsize={props.fullsize}

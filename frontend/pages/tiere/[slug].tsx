@@ -117,7 +117,7 @@ export default function Tiere(props) {
                     />
                 </Grid>
             </Grid>
-            <Distribution />
+
             <Typography component="h2">
                 Tiere oder Bilder
             </Typography>

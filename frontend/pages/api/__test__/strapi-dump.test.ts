@@ -1,11 +1,12 @@
+import {getStrapiUrl} from "../../../strapi-api/utils/get-strapi-url";
+
 const fetch = require('node-fetch');
-import {getStrapiURL} from "../../../helper/strapi";
 
 describe('dump current database', () => {
 
     test('dump animals', async () => {
 
-        const requestUrl = getStrapiURL('/animals?_publicationState=preview&_limit=-1');
+        const requestUrl = getStrapiUrl('/animals?_publicationState=preview&_limit=-1');
 
         await fetch(requestUrl)
         .then(
@@ -23,7 +24,7 @@ describe('dump current database', () => {
 
     test('dump facilities', async () => {
 
-        const requestUrl = getStrapiURL('/facilities?_publicationState=preview&_limit=-1');
+        const requestUrl = getStrapiUrl('/facilities?_publicationState=preview&_limit=-1');
 
         await fetch(requestUrl)
             .then(
@@ -41,7 +42,7 @@ describe('dump current database', () => {
 
     test('dump individual-animals', async () => {
 
-        const requestUrl = getStrapiURL('/individual-animals?_publicationState=preview&_limit=-1');
+        const requestUrl = getStrapiUrl('/individual-animals?_publicationState=preview&_limit=-1');
 
         await fetch(requestUrl)
             .then(
@@ -59,7 +60,7 @@ describe('dump current database', () => {
 
     test('dump map-elements', async () => {
 
-        const requestUrl = getStrapiURL('/map-elements?_publicationState=preview&_limit=-1');
+        const requestUrl = getStrapiUrl('/map-elements?_publicationState=preview&_limit=-1');
 
         await fetch(requestUrl)
             .then(

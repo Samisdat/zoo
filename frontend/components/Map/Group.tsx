@@ -64,8 +64,6 @@ interface ZoomDependencies {
 }
 
 interface MapGroupProperties {
-    focus: MapElement;
-    setFocus: Function;
     fullsize: boolean;
     mapElements: MapElement[];
 }
@@ -75,7 +73,7 @@ export const Group = (props:MapGroupProperties) => {
     const { width, height } = useViewport();
 
     const {
-        state: {path, projection, transform},
+        state: {path, focus, transform},
         dispatch
     } = useMap()
 
@@ -86,7 +84,6 @@ export const Group = (props:MapGroupProperties) => {
 
     const [autoZoom, setAutoZoom] = useState<boolean>(false);
     const [zoom, setZoom] = useState<number>(transform.k);
-    const [focus, setFocus] = useState<MapElement>(undefined);
     const [zoomDependencies, setZoomDependencies] = useState<ZoomDependencies>({
         mapSvg:undefined,
         zooming:undefined,
@@ -174,13 +171,13 @@ export const Group = (props:MapGroupProperties) => {
         }
 
         //zoomDependencies.mapSvg.on('.zoom', null);
-        const centerOfEnclosure = centerToFeatureCollection([(props.focus as MapElement)]);
+        const centerOfEnclosure = centerToFeatureCollection([(  focus as MapElement)]);
 
         const [[x0, y0], [x1, y1]] = path.bounds(centerOfEnclosure as any);
 
         setAutoZoom(true);
 
-        zoomDependencies.mapSvg.transition().duration(500).call(
+        zoomDependencies.mapSvg.transition().delay(300).duration(750).call(
             zoomDependencies.zooming.transform as any,
             d3.zoomIdentity
                 .translate(width / 2, height / 2)
@@ -193,7 +190,7 @@ export const Group = (props:MapGroupProperties) => {
 
         });
 
-    }, [props.focus,path])
+    }, [focus, path])
 
     return (
         <g ref={map}>

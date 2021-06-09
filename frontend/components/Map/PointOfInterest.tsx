@@ -2,6 +2,7 @@ import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {useMap} from "./Context/MapContext";
+import {Feature} from "geojson";
 
 export interface PointOfInterestProperties{
     mapElements:MapElement[];
@@ -49,25 +50,25 @@ export const PointOfInterest = (props:PointOfInterestProperties) => {
         clickGroupSelection.selectAll('circle')
             .data(pois)
             .join('circle')
-            .attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
+            .attr('transform', function(d) { return 'translate(' + path.centroid( (d as Feature)) + ')'; })
             .attr("id", (d:MapElement)=>{
                 return d.properties.facility.slug;
             })
             .attr('fill', (d, i)=>{
                 return 'blue';
             })
-            .attr('d', path)
+            .attr('d', path as any)
             .attr('r', radius )
             .on("click", clicked)
 
         positionGroupSelection.selectAll('circle')
             .data(pois)
             .join('circle')
-            .attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
+            .attr('transform', function(d) { return 'translate(' + path.centroid(d as Feature) + ')'; })
             .attr('fill', (d, i)=>{
                 return 'red';
             })
-            .attr('d', path)
+            .attr('d', path as any)
             .attr('r', radius *2.5)
             .attr('opacity', 3 )
             .on("click", clicked)

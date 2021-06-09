@@ -50,7 +50,7 @@ export const Sketched = (props:MapSketchedProperties) => {
             .attr("id", (d:MapElement)=>{
                 return 'bounding_box';
             })
-            .attr("d", path)
+            .attr("d", path as any)
         ;
 
         const bound = mapSvg.select(`#bounding_box`);

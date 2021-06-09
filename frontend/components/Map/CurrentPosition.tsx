@@ -3,6 +3,7 @@ import * as d3 from 'd3';
 
 import {getCurrentPositionGeoJson} from 'helper/getCurrentPosition';
 import {useMap} from "./Context/MapContext";
+import {Feature} from "geojson";
 
 export const CurrentPosition = (props) => {
 
@@ -39,7 +40,7 @@ export const CurrentPosition = (props) => {
             .data(currentPosition)
             .join('circle')
 
-            .attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
+            .attr('transform', function(d) { return 'translate(' + path.centroid(d as Feature) + ')'; })
             .attr('title', (d)=>{
                 return d.properties.slug;
             })
@@ -49,7 +50,7 @@ export const CurrentPosition = (props) => {
             .attr('fill', (d, i)=>{
                 return 'red';
             })
-            .attr('d', path)
+            .attr('d', path as any)
             .attr('r', radius );
 
 

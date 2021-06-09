@@ -45,7 +45,7 @@ export const centerToFeatureCollection = (mapElements:MapElement[]) => {
 
     for(const feature of mapElements){
 
-        if(undefined === feature.geometry){
+        if(undefined === feature?.geometry){
             continue;
         }
 

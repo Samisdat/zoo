@@ -11,6 +11,7 @@ import {
 import {MapElement} from "../strapi-api/entity/map-element/map-element";
 import {MapProvider} from "../components/Map/Context/MapContext";
 import {makeStyles} from "@material-ui/core/styles";
+import {HashNavigation} from "../components/Map/HashNavication";
 
 export interface IndexProps{
     warehouse: WarehouseSpore;
@@ -45,14 +46,14 @@ export default function Index(props:IndexProps) {
     return (
         <MapProvider>
             <div className={classes.root}>
-            <MapRoot
-                fullsize={true}
-                mapElements={mapElements}
-            />
-            <SearchDialog
-                mapElements={mapElements}
-            />
                 <HashNavigation
+                    mapElements={mapElements}
+                />
+                <MapRoot
+                    fullsize={true}
+                    mapElements={mapElements}
+                />
+                <SearchDialog
                     mapElements={mapElements}
                 />
                 <Teaser/>

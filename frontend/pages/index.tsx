@@ -52,6 +52,9 @@ export default function Index(props:IndexProps) {
             <SearchDialog
                 mapElements={mapElements}
             />
+                <HashNavigation
+                    mapElements={mapElements}
+                />
                 <Teaser/>
             </div>
         </MapProvider>

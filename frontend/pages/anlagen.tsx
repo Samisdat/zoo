@@ -5,6 +5,7 @@ import {getFacilities} from "../strapi-api/query/facilities";
 import {Warehouse} from "../strapi-api/warehouse/warehouse";
 import {NavigationList, NavigationListItemInterface} from "../components/NavigationList/NavigationList";
 import {groupByFirstLetter} from "../components/NavigationList/groupByFirstLetter";
+import {getImagePath} from "../helper/getImagePath";
 
 export const ListItemLink = (props)  => {
     return <ListItem button component="a" {...props} />;
@@ -27,7 +28,7 @@ export default function Index(props) {
         let image:string = undefined;
 
         if(0 !== facilitiy.photos.length && undefined !== facilitiy.photos[0] && facilitiy.photos[0].thumbnail){
-            image = `http://127.0.0.1:1337${facilitiy.photos[0].thumbnail.src}`
+            image = getImagePath(facilitiy.photos[0].thumbnail.src);
         }
 
         if(undefined === image){
@@ -39,7 +40,7 @@ export default function Index(props) {
             if(undefined !== animalWithImage){
 
                 if(0 !== animalWithImage.photos.length && undefined !== animalWithImage.photos[0] && animalWithImage.photos[0].thumbnail){
-                    image = `http://127.0.0.1:1337${animalWithImage.photos[0].thumbnail.src}`
+                    image = getImagePath(animalWithImage.photos[0].thumbnail.src);
                 }
 
             }

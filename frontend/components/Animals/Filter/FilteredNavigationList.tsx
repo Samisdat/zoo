@@ -9,6 +9,7 @@ import {groupByFirstLetter} from "../../NavigationList/groupByFirstLetter";
 import {getIucnCounted} from "./Iucn/getIucnCounted";
 import {getTaxonomyCounted} from "./Taxonomy/getTaxonomyCounted";
 import {AnimalsTaxonomyFilter} from "./Taxonomy/TaxonomyFilter";
+import {getImagePath} from "../../../helper/getImagePath";
 
 
 export interface AnimalFilter{
@@ -54,7 +55,7 @@ export const FilteredNavigationList = (props:FilteredNavigationListProps) => {
             let image:string = undefined;
 
             if(0 !== animal.photos.length && undefined !== animal.photos[0] && animal.photos[0].thumbnail){
-                image = `http://127.0.0.1:1337${animal.photos[0].thumbnail.src}`
+                image = getImagePath(animal.photos[0].thumbnail.src);
             }
 
             if(undefined !== image){

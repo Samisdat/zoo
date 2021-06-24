@@ -1,15 +1,13 @@
 import React from 'react';
 import {Animal} from "../../../strapi-api/entity/animal/animal";
-import AnimalFilters from "./Filters";
-import {AnimalsIucnFilter} from "./Iucn/IucnFilter";
 import {NavigationList} from "../../NavigationList/NavigationList";
 import {NavigationListItemInterface} from "../../NavigationList/NavigationListInterfaces";
 import {animalUrlPart} from "../../../constants";
 import {groupByFirstLetter} from "../../NavigationList/groupByFirstLetter";
 import {getIucnCounted} from "./Iucn/getIucnCounted";
 import {getTaxonomyCounted} from "./Taxonomy/getTaxonomyCounted";
-import {AnimalsTaxonomyFilter} from "./Taxonomy/TaxonomyFilter";
 import {getImagePath} from "../../../helper/getImagePath";
+import {FilterAccordion} from "./FilterAccordion";
 
 
 export interface AnimalFilter{
@@ -78,17 +76,12 @@ export const FilteredNavigationList = (props:FilteredNavigationListProps) => {
             {/*
             <AnimalFilters/>
             */}
-            <AnimalsIucnFilter
+            <FilterAccordion
                 iucnCounted={iucnCounted}
-                filters={filters}
-                setFilters={setFilters}
-            />
-            <AnimalsTaxonomyFilter
                 taxonomyCounted={taxonomyCounted}
                 filters={filters}
                 setFilters={setFilters}
             />
-
             <NavigationList
                 groups={listGroups}
             />

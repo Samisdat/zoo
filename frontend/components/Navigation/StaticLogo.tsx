@@ -34,16 +34,34 @@ const useStyles = makeStyles((theme: Theme) => {
             width: 100,
             height: 86,
             background: 'white',
+
         },
-        paperCut: {
+        backCut: {
+            position: 'absolute',
+            top: 0,
+            left: -8,
+            width: 100 + 2 * 8,
+            height: 100 - 36,
+            overflow:'hidden',
+
+        },
+        backPaper: {
+            position: 'absolute',
+            bottom: 0,
+            left: 8,
+            width: 100,
+            height: 70,
+        },
+        frontCut: {
             position: 'absolute',
             top: 100 - 36,
             left: -8,
             width: 100 + 2 * 8,
             height: 36,
             overflow:'hidden',
+
         },
-        paper: {
+        frontPaper: {
             position: 'absolute',
             top: -26,
             left: 8,
@@ -60,8 +78,11 @@ export function StaticLogo() {
     return (
         <div className={classes.root}>
             <div className={classes.square}>
-                <div className={classes.paperCut}>
-                    <Paper className={classes.paper} square elevation={4} />
+                <div className={classes.backCut}>
+                    <Paper className={classes.backPaper} square elevation={3} />
+                </div>
+                <div className={classes.frontCut}>
+                    <Paper className={classes.frontPaper} square elevation={3} />
                 </div>
                     <a href="/" className={classes.logo}>
                     <svg

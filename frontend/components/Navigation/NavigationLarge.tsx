@@ -4,7 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
 import List from "@material-ui/core/List";
-import {Divider, Drawer, Link, ListItem, ListItemIcon, ListItemText} from "@material-ui/core";
+import {Divider, Drawer, Grid, Link, ListItem, ListItemIcon, ListItemText} from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 import {NavigationListGroupInterface} from "../NavigationList/NavigationListInterfaces";
 import {StaticLogo} from "./StaticLogo";
@@ -43,6 +43,9 @@ const useStyles = makeStyles((theme: Theme) =>
         toolbarPadding:{
             ...theme.mixins.toolbar,
         },
+        logoBar:{
+            position: 'relative'
+        }
     }),
 );
 
@@ -63,7 +66,7 @@ function HideOnScroll(props: Props) {
     const trigger = useScrollTrigger({ target: window ? window() : undefined });
 
     return (
-        <Slide appear={false} direction="down" in={true}>
+        <Slide appear={false} direction="down" in={!trigger}>
             {children}
         </Slide>
     );
@@ -106,11 +109,16 @@ export const NavigationLarge = (props) => {
                 </div>
             </Drawer>
             <div className={classes.toolbarPadding}></div>
+
             <HideOnScroll {...props}>
 
             <AppBar>
-                <Toolbar>
-                    <Container maxWidth="md">
+                <Toolbar
+                    disableGutters={true}
+                >
+                    <Container
+                        maxWidth="md"
+                    >
                         <div className={classes.root}>
                             <Link
                                 className={classes.menu}
@@ -134,12 +142,26 @@ export const NavigationLarge = (props) => {
                                         </Link>
                                 ))}
                             </List>
-                            <StaticLogo/>
                         </div>
                     </Container>
                 </Toolbar>
             </AppBar>
             </HideOnScroll>
+            <AppBar
+                color={'transparent'}
+                elevation={0}
+            >
+                <Container
+                    maxWidth="md"
+                >
+                    <div
+                        className={classes.logoBar}
+                    >
+                        <StaticLogo/>
+                    </div>
+
+                </Container>
+            </AppBar>
         </React.Fragment>
     );
 

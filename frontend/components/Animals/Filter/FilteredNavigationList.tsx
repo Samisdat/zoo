@@ -48,7 +48,7 @@ export const FilteredNavigationList = (props:FilteredNavigationListProps) => {
 
             const item:NavigationListItemInterface = {
                 key: animal.slug,
-                text: `${animal.title} ${animal.iucnStatus}`,
+                text: animal.title,
                 href:`/${animalUrlPart}/${animal.slug}`,
             };
 

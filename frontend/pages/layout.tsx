@@ -5,6 +5,9 @@ import {MapElement} from "../strapi-api/entity/map-element/map-element";
 import { Grid, Paper} from "@material-ui/core";
 import {Small} from "../components/viewport/Small";
 import {Large} from "../components/viewport/Large";
+import SimpleTabs from "../components/Tabs";
+import DetailedAccordion from "../components/Accordion";
+import BasicTable from "../components/Table";
 
 const useStyles = makeStyles((theme: Theme) => {
 
@@ -32,10 +35,7 @@ export default function Layout (props) {
     const classes = useStyles();
 
     return (
-        <React.Fragment><div style={{background:'red'}}>
-            <p>one</p>
-            <p>two</p>
-            <p>three</p>
+        <React.Fragment><div style={{background:''}}>
             <h1>Lorem ipsum</h1>
             <Small>
                 <h1>Small</h1>
@@ -46,13 +46,15 @@ export default function Layout (props) {
                     <div className={classes.root}>
                         <Grid container spacing={3}>
                             <Grid item xs={12}>
-                                <Paper className={classes.paper}>xs=12</Paper>
+                                <SimpleTabs />
+                            </Grid>
+
+                            <Grid item xs={12}>
+                                <BasicTable />
                             </Grid>
 
                             <Grid item xs={12} md={7}>
-                                <Paper className={classes.paper}>xs=6
-                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                </Paper>
+                                <DetailedAccordion/>
                             </Grid>
                             <Grid item xs={12} md={5}>
                                 <Paper className={classes.paper}>xs=6</Paper>

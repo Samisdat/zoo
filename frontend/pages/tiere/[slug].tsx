@@ -13,6 +13,10 @@ import {Endanger} from "../../components/Animal/Endanger";
 import {DistributionGlobe} from "../../components/Distribution/DistributionGlobe";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {Grid, Paper} from "@material-ui/core";
+import {getImagePath} from "../../helper/getImagePath";
+import SimpleTabs from "../../components/Tabs";
+import BasicTable from "../../components/Table";
+import DetailedAccordion from "../../components/Accordion";
 
 const useStyles = makeStyles((theme: Theme) => {
 
@@ -22,7 +26,6 @@ const useStyles = makeStyles((theme: Theme) => {
         },
         paper: {
             padding: theme.spacing(2),
-            textAlign: 'center',
             color: theme.palette.text.secondary,
         },
         toolbarPadding:{
@@ -99,6 +102,72 @@ export default function Tiere(props) {
             <Breadcrumb
                 links={breadcrumbProps}
             />
+            <div className={classes.root}>
+                <Grid container spacing={3}>
+                    <Grid item xs={12} md={7}>
+                            <Typography variant="h1" component="h1">
+                                {animal.title}
+                            </Typography>
+
+                    </Grid>
+                    <Grid
+                        item
+                        xs={12}
+                        md={5}>
+                        <Paper
+                            className={classes.paper}
+                            square={true}
+                            elevation={0}
+                        >
+                            <Typography variant="h4" component="h4">
+                                Verbereitung
+                            </Typography>
+                            <DistributionGlobe
+                                slug={slug}
+                            />
+                        </Paper>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <SimpleTabs />
+                    </Grid>
+
+                    <Grid item xs={12}>
+                        <BasicTable />
+                    </Grid>
+
+                    <Grid item xs={12} md={7}>
+                        <DetailedAccordion/>
+                    </Grid>
+                    <Grid item xs={12} md={5}>
+                        <Paper className={classes.paper}>xs=6</Paper>
+                    </Grid>
+
+                    <Grid item xs={12} sm={6}>
+                        <Paper className={classes.paper}>xs=12</Paper>
+                    </Grid>
+
+                    <Grid item xs={6}>
+                        <Paper className={classes.paper}>xs=6</Paper>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Paper className={classes.paper}>xs=6</Paper>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Paper className={classes.paper}>xs=3</Paper>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Paper className={classes.paper}>xs=3</Paper>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Paper className={classes.paper}>xs=3</Paper>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Paper className={classes.paper}>xs=3</Paper>
+                    </Grid>
+                </Grid>
+            </div>
+
+
             <Typography component="h1">
                 {animal.title}
             </Typography>
@@ -108,13 +177,27 @@ export default function Tiere(props) {
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
                     </Paper>
                 </Grid>
-                <Grid item xs={12} md={5}>
+                <Grid
+                    item
+                    xs={12}
+                    md={5}
+                    style={{
+                        background:'white'
+                    }}
+                >
+                    foo
+                </Grid>
+                <Grid
+                    item
+                    xs={12}
+                    md={5}
+                    style={{
+                        background:'white'
+                    }}
+                >
                     <Typography component="h2">
                         Verbereitung
                     </Typography>
-                    <DistributionGlobe
-                        slug={slug}
-                    />
                 </Grid>
             </Grid>
 
@@ -148,9 +231,9 @@ export default function Tiere(props) {
                 />
             */}
             <img
-                src={image.medium.src}
+
                 style={{
-                    width: 300
+                    height: 300
                 }}
             />
 

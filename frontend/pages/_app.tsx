@@ -24,7 +24,7 @@ const theme = createMuiTheme({
             main: '#11cb5f',
         },
         background:{
-            default:'#f5f5f5'
+            default:'#E8E8E8',
         }
     },
 });
@@ -53,7 +53,9 @@ const LayoutContainer = (props) => {
     }
 
     return (
-        <Container maxWidth="md">
+        <Container
+            maxWidth="md"
+        >
             {children}
         </Container>
     );

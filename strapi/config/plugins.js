@@ -6,7 +6,7 @@ module.exports = ({ env }) => ({
         port: 465   , //SMTP Port
         secure: true,
         username: 'bastian@pertz.eu',
-        password: 'nosobZNrfrV9b$ZsyQKUq6NXPM7rCGr86AFXp2BdUhyM',
+        password: '',
         rejectUnauthorized: true,
         requireTLS: true,
         connectionTimeout: 1,

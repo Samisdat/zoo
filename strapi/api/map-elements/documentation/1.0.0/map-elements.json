@@ -615,6 +615,9 @@
               "bounding_box"
             ]
           },
+          "slug": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -640,6 +643,9 @@
               "border",
               "bounding_box"
             ]
+          },
+          "slug": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

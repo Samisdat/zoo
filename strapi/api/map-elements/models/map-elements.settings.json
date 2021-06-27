@@ -29,6 +29,11 @@
         "border",
         "bounding_box"
       ]
+    },
+    "slug": {
+      "type": "string",
+      "unique": false,
+      "required": false
     }
   }
 }

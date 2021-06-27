@@ -673,6 +673,9 @@
                     "bounding_box"
                   ]
                 },
+                "slug": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },

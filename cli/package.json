@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "svg2geojson": "^0.7.1",
-    "slugify": "^1.4.6"
+    "axios": "^0.21.1",
+    "slugify": "^1.4.6",
+    "svg2geojson": "^0.7.1"
   }
 }

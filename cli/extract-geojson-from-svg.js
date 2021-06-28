@@ -1,5 +1,5 @@
 var slugify = require('slugify')
-
+const axios = require('axios');
 const fs = require("fs");
 const path = require("path");
 const {geoFromSVGXML} = require('svg2geojson');
@@ -62,11 +62,11 @@ const getElementIds = (svg) => {
         matches.forEach((match, groupIndex) => {
             if (2 === groupIndex) {
                 pathIds[index] = match;
-                console.log(`Found match, group ${groupIndex}: ${match}`);
+                //console.log(`Found match, group ${groupIndex}: ${match}`);
             }
             if (3 === groupIndex && undefined !== match) {
                 pathIds[index] = match;
-                console.log(`Found match, group ${groupIndex}: ${match}`);
+                //console.log(`Found match, group ${groupIndex}: ${match}`);
             }
         });
 
@@ -83,83 +83,170 @@ const types = [
     'facility-circles',
 ];
 
-const generateGeoJsonFromSvg = async (svg) => {
+const generateGeoJsonByType = async (svg, type) => {
 
     const promise = new Promise((resolve, reject) => {
 
+        const typeGroup = getGroupById(svg, type);
 
-        for (const type of types) {
+        const dataSvg = xmlTemplateWithMetaInfo(typeGroup);
 
-            const typeGroup = getGroupById(svg, type);
+        const pathIds = getElementIds(dataSvg);
 
-            const dataSvg = xmlTemplateWithMetaInfo(typeGroup);
+        geoFromSVGXML(dataSvg, (geoJson) => {
 
-            const pathIds = getElementIds(dataSvg);
+            for (let i = 0, x = geoJson.features.length; i < x; i += 1) {
 
-            geoFromSVGXML(dataSvg, (geoJson) => {
+                const name = pathIds[i];
+
+                geoJson.features[i].properties = {
+                    name,
+                    type
+                };
+
+            }
+
+            if ('facility-circles' === type) {
 
                 for (let i = 0, x = geoJson.features.length; i < x; i += 1) {
 
-                    const name = pathIds[i];
+                    geoJson.features[i].properties.slug = getSlug(geoJson.features[i].properties.name);
 
-                    geoJson.features[i].properties = {
-                        name,
-                        type
-                    };
+                    const coordinates = geoJson.features[i].geometry.coordinates[0];
 
-                }
+                    const latitudes = coordinates.map((coordinate) => {
+                        return coordinate[1];
+                    }).reduce((a, b) => {
+                        return a + b
+                    }, 0);
 
-                if ('facility-circles' === type) {
+                    const longidues = coordinates.map((coordinate) => {
+                        return coordinate[0];
+                    }).reduce((a, b) => {
+                        return a + b
+                    }, 0);
 
-                    for (let i = 0, x = geoJson.features.length; i < x; i += 1) {
-
-                        geoJson.features[i].properties.slug = getSlug(geoJson.features[i].properties.name);
-
-                        const coordinates = geoJson.features[i].geometry.coordinates[0];
-
-                        const latitudes = coordinates.map((coordinate) => {
-                            return coordinate[1];
-                        }).reduce((a, b) => {
-                            return a + b
-                        }, 0);
-
-                        const longidues = coordinates.map((coordinate) => {
-                            return coordinate[0];
-                        }).reduce((a, b) => {
-                            return a + b
-                        }, 0);
-
-                        geoJson.features[i].geometry = {
-                            "type": "Point",
-                            "coordinates": [
-                                longidues / coordinates.length,
-                                latitudes / coordinates.length
-                            ]
-                        }
+                    geoJson.features[i].geometry = {
+                        "type": "Point",
+                        "coordinates": [
+                            longidues / coordinates.length,
+                            latitudes / coordinates.length
+                        ]
                     }
-
                 }
 
-                resolve(geoJson);
+            }
 
+            resolve(geoJson);
 
-            });
-
-        }
+        });
 
     });
 
     return promise;
+
 }
+
+const generateGeoJsonFromSvg = async (svg) => {
+
+    let featues = [];
+
+    for (const type of types) {
+
+        const typeFeatures = await generateGeoJsonByType(svg, type);
+
+        featues = featues.concat(typeFeatures.features);
+
+    }
+
+    return featues;
+
+}
+
+const createMapElement = async (geojsonFeature) => {
+
+    let type = geojsonFeature.properties.type;
+
+    if('facility-circles' === type){
+        type = 'point';
+    }
+    else if('facility-boxes' === type){
+        type = 'box';
+    }
+
+    let facilitySlug = geojsonFeature.properties.name.replace(/(.+?)-/, '');
+    facilitySlug = getSlug(facilitySlug);
+
+    let facility = undefined;
+
+    let facilityRequest = await axios.get('http://127.0.0.1:1337/facilities?slug=' + facilitySlug + '&_publicationState=preview');
+
+    if(0 !== facilityRequest.data.length){
+        facility = facilityRequest.data[0].id;
+    }
+
+    const json = {
+        "title": geojsonFeature.properties.name,
+        "geojson": geojsonFeature,
+        "facility": facility,
+        "type": type,
+        "slug": getSlug(geojsonFeature.properties.name) + '-' + type,
+        "published_at": new Date(),
+        "created_by": "cli",
+    };
+
+    let id = undefined
+
+    const mapElementRequest = await axios.get('http://127.0.0.1:1337/map-elements?slug=' + json.slug + '&_publicationState=preview');
+
+    if(0 !== mapElementRequest.data.length){
+        id = mapElementRequest.data[0].id;
+    }
+
+    if(undefined === id){
+
+        axios.post('http://127.0.0.1:1337/map-elements', json)
+            .then(function (response) {
+                console.log('response');
+            })
+            .catch(function (error) {
+                console.log(JSON.stringify(error.response.data, null, 4));
+            });
+
+    }
+    else{
+
+        axios.put('http://127.0.0.1:1337/map-elements/' + id, json)
+            .then(function (response) {
+                console.log('response');
+            })
+            .catch(function (error) {
+                console.log(JSON.stringify(error.response.data, null, 4));
+            });
+
+
+    }
+
+
+
+
+}
+
 
 const foo = async () => {
 
     const svg = getSvg();
 
-    const geojson = await generateGeoJsonFromSvg(svg);
+    const features = await generateGeoJsonFromSvg(svg);
 
-    console.log(geojson);
+    for(const feature of features){
+
+        createMapElement(feature);
+        //break;
+        //console.log(JSON.stringify(feature, null, 4));
+
+    }
+
 }
 
 foo();
-

@@ -30,7 +30,7 @@ export default function Index(props:IndexProps) {
     const classes = useStyles();
     Warehouse.get().hydrate(props.warehouse);
 
-    const boundingBox = Warehouse.get().getMapElement(55/*80*/);
+    const boundingBox = Warehouse.get().getMapElement(80);
     console.log('@TODO', boundingBox, 'as default focus');
 
     const mapElements = Warehouse.get().getMapElements();

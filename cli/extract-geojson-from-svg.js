@@ -205,6 +205,8 @@ const createMapElement = async (geojsonFeature) => {
 
     if(undefined === id){
 
+        console.log('Create', "\t", json.title);
+
         axios.post('http://127.0.0.1:1337/map-elements', json)
             .then(function (response) {
                 console.log('response');
@@ -216,7 +218,20 @@ const createMapElement = async (geojsonFeature) => {
     }
     else{
 
-        axios.put('http://127.0.0.1:1337/map-elements/' + id, json)
+        const existingJson = mapElementRequest.data[0];
+
+        const updateJson = {
+            geojson:geojsonFeature
+        };
+
+        if(JSON.stringify(updateJson.geojson) === JSON.stringify(existingJson.geojson)){
+            console.log('Skip', "\t", json.title);
+            return;
+        }
+
+        console.log('Update', "\t", json.title);
+
+        axios.put('http://127.0.0.1:1337/map-elements/' + id, updateJson)
             .then(function (response) {
                 console.log('response');
             })

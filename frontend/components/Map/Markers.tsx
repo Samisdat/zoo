@@ -10,12 +10,10 @@ export interface PointOfInterestProperties{
     zoom:number;
 };
 
-interface MarkerInterface{
+interface PointInterface{
     id:number;
-    left:number;
-    right:number;
-    top:number;
-    bottom:number;
+    x:number;
+    y:number;
     overlap:number[];
 }
 
@@ -59,22 +57,18 @@ export const Markers = (props:PointOfInterestProperties) => {
 
         const overlappingMarkers = ():number[] => {
 
-            let markers:MarkerInterface[] = pois.map((poi)=>{
+            let markers:PointInterface[] = pois.map((poi)=>{
 
                 const center = path.centroid( ( poi as Feature));
 
                 const id = poi.id;
-                const left = center[0] - radius;
-                const right = center[0] + radius;
-                const top = center[1] - radius;
-                const bottom = center[1] + radius;
+                const x = center[0];
+                const y = center[1];
 
                 return{
                     id,
-                    left,
-                    right,
-                    top,
-                    bottom,
+                    x,
+                    y,
                     overlap:[],
                 };
 
@@ -88,10 +82,21 @@ export const Markers = (props:PointOfInterestProperties) => {
                         return false;
                     }
 
-                     return !(markerB.left > markerA.right ||
-                         markerB.right < markerA.left ||
-                         markerB.top > markerA.bottom ||
-                         markerB.bottom < markerA.top);
+                    const catheti = [
+                        markerB.x - markerA.x,
+                        markerB.y - markerA.y
+                    ];
+
+                    const hypotenuse = Math.sqrt(
+                        Math.pow(catheti[0], 2) +
+                        Math.pow(catheti[1], 2)
+                    );
+
+                    if((radius * 2) > hypotenuse){
+                        return true;
+                    }
+
+                    return false;
 
                 });
 

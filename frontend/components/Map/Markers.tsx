@@ -17,6 +17,12 @@ interface PointInterface{
     overlap:number[];
 }
 
+interface ClusterInterface{
+    ids:number[],
+    contains:MapElement[];
+}
+
+
 export const Markers = (props:PointOfInterestProperties) => {
 
     const {
@@ -32,6 +38,21 @@ export const Markers = (props:PointOfInterestProperties) => {
         }
 
         return false;
+
+    });
+
+    const subset = [
+        413,
+        412,
+        415,
+        414,
+        462,
+        410
+    ]
+
+    let pois2 = pois.filter((poi)=>{
+
+        return subset.includes(poi.id);
 
     });
 
@@ -55,7 +76,7 @@ export const Markers = (props:PointOfInterestProperties) => {
             console.log(d.properties);
         }
 
-        const overlappingMarkers = ():number[] => {
+        const overlappingMarkers = ():any[] => {
 
             let markers:PointInterface[] = pois.map((poi)=>{
 
@@ -108,6 +129,98 @@ export const Markers = (props:PointOfInterestProperties) => {
 
             });
 
+            const clustered = markers.reduce((accumulator, currentValue) => {
+
+                const ids = [currentValue.id].concat(currentValue.overlap);
+
+                const findAlreadyInAnCluster = accumulator.filter((previous)=>{
+
+                    var intersect = ids.filter(function(n) {
+                        return (true === previous.ids.includes(n));
+                    });
+
+                    console.log('previous', previous, ids, intersect);
+
+                    return (0 !== intersect.length);
+                });
+
+                const alreadyInAnCluster = (0 !== findAlreadyInAnCluster.length);
+
+                console.log('alreadyInAnCluster', alreadyInAnCluster);
+
+                // is not overlapping with any other marker: A "cluster" on it's own
+                if(!alreadyInAnCluster){
+
+                    const mapElements = pois.filter((poi)=>{
+                        return (ids.includes(poi.id));
+                    });
+
+                    const cluster:ClusterInterface = {
+                        ids,
+                        contains:mapElements
+                    }
+
+                    accumulator.push(cluster);
+
+                }
+                // add to an existing cluster
+                else{
+
+                    var missing = ids.filter(function(n) {
+                        return (false === findAlreadyInAnCluster[0].ids.includes(n));
+                    });
+
+                    if(0 !== missing.length){
+
+                        for(const missingId of missing){
+                            console.log(missingId)
+
+                            const mapElement = pois.find((poi)=>{
+                                return (ids.includes(poi.id));
+                            })
+
+                            findAlreadyInAnCluster[0].ids.push(missingId);
+                            findAlreadyInAnCluster[0].contains.push(mapElement);
+
+                        }
+
+                    }
+
+                    console.log('add to an existing cluster', findAlreadyInAnCluster[0].ids, ids, missing);
+
+
+                }
+                // create on new cluster
+
+                return accumulator
+
+                if(0 === currentValue.overlap.length){
+
+                    const mapElement = pois.find((poi)=>{
+                        return (poi.id === currentValue.id);
+                    })
+
+                    const cluster:ClusterInterface = {
+                        ids: [currentValue.id],
+                        contains:[mapElement]
+                    }
+
+                    accumulator.push(cluster);
+                }
+                else{
+
+                    //console.log([currentValue.id].concat(currentValue.overlap), currentValue.overlap)
+
+                }
+
+                return accumulator;
+            }, []);
+
+            for(const cluster of clustered){
+                console.log(cluster.ids)
+            }
+
+
             const markersThatOverlay:number[] = markers.filter((marker)=>{
                 return (0 !== marker.overlap.length);
             }).map((marker)=>{
@@ -115,12 +228,34 @@ export const Markers = (props:PointOfInterestProperties) => {
             });
 
 
-            return markersThatOverlay;
+            return clustered;
 
         }
 
         const markersThatOverlay = overlappingMarkers();
+        console.log(markersThatOverlay)
+        groupSelection.selectAll('circle')
+            .data(markersThatOverlay)
+            .join('circle')
+            .attr('cx', function(d) {
+                return path.centroid( (d.contains[0] as Feature))[0];
+            })
+            .attr('cy', function(d) {
+                return path.centroid( (d.contains[0] as Feature))[1];
+            })
+            .attr('fill', (d, i)=>{
 
+                if(markersThatOverlay.includes(d.id)){
+                    return 'red';
+                }
+
+                return 'blue';
+            })
+            .attr('r', radius)
+        //.attr('opacity',0.5)
+
+
+        /*
         groupSelection.selectAll('circle')
             .data(pois)
             .join('circle')
@@ -140,6 +275,20 @@ export const Markers = (props:PointOfInterestProperties) => {
             })
             .attr('r', radius)
             //.attr('opacity',0.5)
+
+
+        groupSelection.selectAll('text')
+            .data(pois)
+            .join('text')
+            .attr('x', function(d) {
+                return path.centroid( (d as Feature))[0];
+            })
+            .attr('y', function(d) {
+                return path.centroid( (d as Feature))[1];
+            })
+            .text(function(d){return d.id})
+        //.attr('opacity',0.5)
+        */
 
         /*
         groupSelection.selectAll('rect')

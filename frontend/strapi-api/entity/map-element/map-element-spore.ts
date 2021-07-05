@@ -7,5 +7,6 @@ export interface MapElementSpore{
     geojson: any;
     facility: number | null;
     photo?: number | null;
+    priority:number;
 }
 

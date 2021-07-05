@@ -676,6 +676,9 @@
                 "slug": {
                   "type": "string"
                 },
+                "priority": {
+                  "type": "integer"
+                },
                 "published_at": {
                   "type": "string"
                 },

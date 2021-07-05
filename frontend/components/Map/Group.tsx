@@ -4,7 +4,7 @@ import React, {useEffect, useRef, useState} from "react";
 import {Sketched} from "./Sketched";
 import {CurrentPosition} from "./CurrentPosition";
 import {PointOfInterest} from "./PointOfInterest";
-import {Markers} from "./Markers";
+import {Markers} from "./Markers/Markers";
 import {centerToFeatureCollection} from "../Distribution/Detail";
 import {filterGeoJson} from "helper/geojson/filterGeoJson";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";

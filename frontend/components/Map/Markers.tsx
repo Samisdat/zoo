@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import * as d3 from 'd3';
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {useMap} from "./Context/MapContext";
@@ -22,11 +22,44 @@ interface ClusterInterface{
     contains:MapElement[];
 }
 
+const getImage = (mapElement:MapElement) => {
+
+    const  facilitiy = mapElement.facility;
+
+    if(!facilitiy){
+        return undefined;
+    }
+
+    let image:string = undefined;
+
+    if(0 !== facilitiy.photos.length && undefined !== facilitiy.photos[0] && facilitiy.photos[0].thumbnail){
+        image = getImagePath(facilitiy.photos[0].thumbnail.src);
+    }
+
+    if(undefined === image){
+
+        const animalWithImage = facilitiy.animals.find((animal)=>{
+            return (0 < animal.photos.length);
+        });
+
+        if(undefined !== animalWithImage){
+
+            if(0 !== animalWithImage.photos.length && undefined !== animalWithImage.photos[0] && animalWithImage.photos[0].thumbnail){
+                image = getImagePath(animalWithImage.photos[0].thumbnail.src);
+            }
+
+        }
+
+    }
+
+    return image;
+
+}
 
 export const Markers = (props:PointOfInterestProperties) => {
 
     const {
-        state: {path},
+        state: {path, transform},
     } = useMap();
 
     const markersGroup = useRef(null);
@@ -41,20 +74,15 @@ export const Markers = (props:PointOfInterestProperties) => {
 
     });
 
-    const subset = [
-        413,
-        412,
-        415,
-        414,
-        462,
-        410
-    ]
+    const initialCluster = ()
 
-    let pois2 = pois.filter((poi)=>{
+    const [cluster, setCluster] = useState<number>(transform.k);
 
-        return subset.includes(poi.id);
 
-    });
+
+    useEffect(() => {
+        console.log('zoom changed', transform.k)
+    },[transform.k]);
 
     useEffect(() => {
 
@@ -62,14 +90,12 @@ export const Markers = (props:PointOfInterestProperties) => {
             return;
         }
 
-        console.log('Zoomed');
-
         var groupSelection = d3.select(markersGroup.current);
 
-        let radius = 30  / props.zoom;
+        let radius = 20  / props.zoom;
 
-        if(30 < radius){
-            radius = 30
+        if(20 < radius){
+            radius = 20
         }
 
         const clicked = (event:any, d:any) => {
@@ -139,14 +165,10 @@ export const Markers = (props:PointOfInterestProperties) => {
                         return (true === previous.ids.includes(n));
                     });
 
-                    console.log('previous', previous, ids, intersect);
-
                     return (0 !== intersect.length);
                 });
 
                 const alreadyInAnCluster = (0 !== findAlreadyInAnCluster.length);
-
-                console.log('alreadyInAnCluster', alreadyInAnCluster);
 
                 // is not overlapping with any other marker: A "cluster" on it's own
                 if(!alreadyInAnCluster){
@@ -173,7 +195,7 @@ export const Markers = (props:PointOfInterestProperties) => {
                     if(0 !== missing.length){
 
                         for(const missingId of missing){
-                            console.log(missingId)
+
 
                             const mapElement = pois.find((poi)=>{
                                 return (ids.includes(poi.id));
@@ -186,54 +208,40 @@ export const Markers = (props:PointOfInterestProperties) => {
 
                     }
 
-                    console.log('add to an existing cluster', findAlreadyInAnCluster[0].ids, ids, missing);
-
 
                 }
                 // create on new cluster
 
                 return accumulator
 
-                if(0 === currentValue.overlap.length){
-
-                    const mapElement = pois.find((poi)=>{
-                        return (poi.id === currentValue.id);
-                    })
-
-                    const cluster:ClusterInterface = {
-                        ids: [currentValue.id],
-                        contains:[mapElement]
-                    }
-
-                    accumulator.push(cluster);
-                }
-                else{
-
-                    //console.log([currentValue.id].concat(currentValue.overlap), currentValue.overlap)
-
-                }
-
-                return accumulator;
             }, []);
-
-            for(const cluster of clustered){
-                console.log(cluster.ids)
-            }
-
-
-            const markersThatOverlay:number[] = markers.filter((marker)=>{
-                return (0 !== marker.overlap.length);
-            }).map((marker)=>{
-                return marker.id
-            });
-
 
             return clustered;
 
         }
 
         const markersThatOverlay = overlappingMarkers();
-        console.log(markersThatOverlay)
+
+        /*
+        groupSelection.selectAll('defs')
+            .data(pois)
+            .join("defs")
+            .append('pattern')
+            .attr('id', function(d) { return (d.id + '-icon');}) // just create a unique id (id comes from the json)
+            .attr('width', 1)
+            .attr('height', 1)
+            .attr('patternContentUnits', 'objectBoundingBox')
+            .append("image")
+            .attr("xlink:href", (d:MapElement)=>{
+                return getImage(d);
+            })
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("height", 1)
+            .attr("width", 1)
+            .attr("preserveAspectRatio", "xMinYMin slice");
+        */
+
         groupSelection.selectAll('circle')
             .data(markersThatOverlay)
             .join('circle')
@@ -245,27 +253,7 @@ export const Markers = (props:PointOfInterestProperties) => {
             })
             .attr('fill', (d, i)=>{
 
-                if(markersThatOverlay.includes(d.id)){
-                    return 'red';
-                }
-
-                return 'blue';
-            })
-            .attr('r', radius)
-        //.attr('opacity',0.5)
-
-
-        /*
-        groupSelection.selectAll('circle')
-            .data(pois)
-            .join('circle')
-            .attr('cx', function(d) {
-                return path.centroid( (d as Feature))[0];
-            })
-            .attr('cy', function(d) {
-                return path.centroid( (d as Feature))[1];
-            })
-            .attr('fill', (d, i)=>{
+                //return ("url(#"+d.contains[0].id + "-icon)");
 
                 if(markersThatOverlay.includes(d.id)){
                     return 'red';
@@ -274,40 +262,7 @@ export const Markers = (props:PointOfInterestProperties) => {
                 return 'blue';
             })
             .attr('r', radius)
-            //.attr('opacity',0.5)
-
-
-        groupSelection.selectAll('text')
-            .data(pois)
-            .join('text')
-            .attr('x', function(d) {
-                return path.centroid( (d as Feature))[0];
-            })
-            .attr('y', function(d) {
-                return path.centroid( (d as Feature))[1];
-            })
-            .text(function(d){return d.id})
         //.attr('opacity',0.5)
-        */
-
-        /*
-        groupSelection.selectAll('rect')
-            .data(pois)
-            .join('rect')
-            .attr('x', function(d) {
-                return path.centroid( (d as Feature))[0] - radius;
-            })
-            .attr('y', function(d) {
-                return path.centroid( (d as Feature))[1] - radius;
-            })
-            .attr('fill', (d, i)=>{
-                return 'green';
-            })
-            .attr('width', radius * 2)
-            .attr('height', radius * 2)
-            .attr('opacity',0.5)
-
-         */
 
     });
 

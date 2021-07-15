@@ -109,7 +109,7 @@ export const Group = (props:MapGroupProperties) => {
         const mapGroup = d3.select(map.current);
 
         const zooming = d3.zoom()
-            .scaleExtent([0.5, 30])
+            .scaleExtent([1, 25])
             //.translateExtent([[-100,0], [props.mapDimension.width, props.mapDimension.height]])
             //.extent([[-100, 0], [props.mapDimension.width, props.mapDimension.height]])
             .on('zoom', (event) => {

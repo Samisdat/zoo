@@ -9,7 +9,7 @@ import {MarkerImages} from "./MarkerImages";
 
 export interface ClusteredMarkersProperties{
     clusters:ClusterInterface[];
-    zoom:number;
+    radius:number;
 };
 
 interface ClusterInterface{
@@ -24,8 +24,6 @@ export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
         state: {path},
     } = useMap();
 
-    const maxRadius = 30;
-
     const clusteredGroup = useRef(null);
 
     useEffect(() => {
@@ -33,20 +31,6 @@ export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
         if(! path){
             return;
         }
-
-        let radius = maxRadius  / props.zoom;
-
-        if(maxRadius < radius){
-            radius = maxRadius;
-        }
-
-        let stroke = 2  / props.zoom;
-
-        if(2 < stroke){
-            stroke = 2;
-        }
-
-        console.log(stroke);
 
         const groupSelection = d3.select(clusteredGroup.current);
 
@@ -65,7 +49,7 @@ export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
 
                 return 'blue';
             })
-            .attr('r', radius)
+            .attr('r', props.radius)
 
         groupSelection.selectAll('text')
             .data(props.clusters)
@@ -86,9 +70,9 @@ export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
 
                 return 'white';
             })
-            .attr('width', radius/1.5)
-            .attr('height', radius/1.5)
-            .attr('font-size', radius/1.5)
+            .attr('width', props.radius/1.5)
+            .attr('height', props.radius/1.5)
+            .attr('font-size', props.radius/1.5)
 
 
     });

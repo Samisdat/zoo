@@ -56,21 +56,13 @@ export const Markers = (props:PointOfInterestProperties) => {
         state: {path, transform},
     } = useMap();
 
-    const maxRadius = 30;
+    const maxRadius = 25;
 
     const markersGroup = useRef(null);
 
-    let pois = props.mapElements.filter((mapElement:MapElement) => {
+    const points = props.mapElements.filter((poi)=>{
 
-        if('point' === mapElement.properties.type){
-            return true;
-        }
-
-        return false;
-
-    });
-
-    pois = pois.filter((poi)=>{
+        return true;
 
         if(428 === poi.id){
             return true;
@@ -131,11 +123,11 @@ export const Markers = (props:PointOfInterestProperties) => {
 
     const initialClusters:ClusterInterface[] = [];
 
-    for(const poi of pois){
+    for(const point of points){
 
         const initialCluster = {
-            ids:[poi.id],
-            contains:[poi],
+            ids:[point.id],
+            contains:[point],
             remove:false
         };
 
@@ -144,6 +136,7 @@ export const Markers = (props:PointOfInterestProperties) => {
     }
 
     const [clusters, setClusters] = useState<ClusterInterface[]>(initialClusters);
+    const [radius, setRadius] = useState<number>(maxRadius);
 
     useEffect(() => {
 
@@ -155,8 +148,14 @@ export const Markers = (props:PointOfInterestProperties) => {
         let radius = maxRadius  / props.zoom
 
         if(maxRadius < radius){
-            radius = maxRadius
+            radius = maxRadius;
         }
+
+        if(2 > radius){
+            radius = 2;
+        }
+
+        setRadius(radius);
 
         for(const cluster of clusters) {
 
@@ -174,7 +173,7 @@ export const Markers = (props:PointOfInterestProperties) => {
                         markerB
                     );
 
-                    if((radius * 2) > hypotenuse){
+                    if((radius * 3) > hypotenuse){
                         continue;
                     }
 
@@ -362,12 +361,11 @@ export const Markers = (props:PointOfInterestProperties) => {
     return (
         <g ref={markersGroup}>
             <MarkerImages
-                zoom={props.zoom}
-                mapElements={pois}
+                mapElements={props.mapElements}
             />
             <ClusteredMarkers
                 clusters={clusters}
-                zoom={props.zoom}
+                radius={radius}
             />
         </g>
     );

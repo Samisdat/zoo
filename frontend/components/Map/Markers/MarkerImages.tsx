@@ -3,9 +3,8 @@ import * as d3 from 'd3';
 import {MapElement} from "../../../strapi-api/entity/map-element/map-element";
 import {getImagePath} from "../../../helper/getImagePath";
 
-export interface PointOfInterestProperties{
+export interface MarkerImagesProperties{
     mapElements:MapElement[];
-    zoom:number;
 };
 
 const getImage = (mapElement:MapElement) => {
@@ -42,26 +41,16 @@ const getImage = (mapElement:MapElement) => {
 
 }
 
-export const MarkerImages = (props:PointOfInterestProperties) => {
+export const MarkerImages = (props:MarkerImagesProperties) => {
 
     const markerImagesGroup = useRef(null);
-
-    let pois = props.mapElements.filter((mapElement:MapElement) => {
-
-        if('point' === mapElement.properties.type){
-            return true;
-        }
-
-        return false;
-
-    });
 
     useEffect(() => {
 
         var groupSelection = d3.select(markerImagesGroup.current);
 
         groupSelection.selectAll('defs')
-            .data(pois)
+            .data(props.mapElements)
             .join("defs")
             .append('pattern')
             .attr('id', function(d) { return (d.id + '-icon');}) // just create a unique id (id comes from the json)

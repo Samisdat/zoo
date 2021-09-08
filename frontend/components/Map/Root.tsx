@@ -10,6 +10,7 @@ import {useMap} from "./Context/MapContext";
 import {Feature} from "geojson";
 import {getTransformFromStorage} from "./getTransformFromStorage";
 import {getMarkerFromStorage} from "./getMarkerFromStorage";
+import {MarkerImages} from "./Markers/MarkerImages";
 
 const useStyles = makeStyles({
     fullScreenMap: {
@@ -106,6 +107,9 @@ export const MapRoot = (props:MapRootInterface) => {
             width={width}
             height={height}
         >
+            <MarkerImages
+                mapElements={props.mapElements}
+            />
             <Group
                 fullsize={props.fullsize}
                 mapElements={props.mapElements}

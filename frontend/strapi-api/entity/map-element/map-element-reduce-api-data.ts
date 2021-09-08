@@ -7,12 +7,14 @@ export const mapElementReduceApiData = (apiData: MapElementStrapi):MapElementSpo
     const title = apiData.title;
     const geojson = apiData.geojson;
     const type = apiData.type;
+    const priority = apiData.priority;
 
     const mapElementSpore: MapElementSpore = {
         id,
         title,
         geojson,
         type,
+        priority,
         facility: null
     };
 

@@ -4,6 +4,7 @@ import React, {useEffect, useRef, useState} from "react";
 import {Sketched} from "./Sketched";
 import {CurrentPosition} from "./CurrentPosition";
 import {PointOfInterest} from "./PointOfInterest";
+import {Markers} from "./Markers/Markers";
 import {centerToFeatureCollection} from "../Distribution/Detail";
 import {filterGeoJson} from "helper/geojson/filterGeoJson";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
@@ -88,6 +89,16 @@ export const Group = (props:MapGroupProperties) => {
         zooming:undefined,
     });
 
+    const points = props.mapElements.filter((mapElement:MapElement) => {
+
+        if('point' === mapElement.properties.type){
+            return true;
+        }
+
+        return false;
+
+    });
+
     const createD3Map = ()=> {
 
         var mapSvg = d3.select(`#${svgId}`)
@@ -98,7 +109,7 @@ export const Group = (props:MapGroupProperties) => {
         const mapGroup = d3.select(map.current);
 
         const zooming = d3.zoom()
-            .scaleExtent([0.5, 30])
+            .scaleExtent([1, 25])
             //.translateExtent([[-100,0], [props.mapDimension.width, props.mapDimension.height]])
             //.extent([[-100, 0], [props.mapDimension.width, props.mapDimension.height]])
             .on('zoom', (event) => {
@@ -208,9 +219,14 @@ export const Group = (props:MapGroupProperties) => {
             <CurrentPosition
                 zoom={zoom}
             />
+            {/*
             <PointOfInterest
                 zoom={zoom}
                 mapElements={props.mapElements}
+            />*/}
+            <Markers
+                zoom={zoom}
+                mapElements={points}
             />
 
         </g>

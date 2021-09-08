@@ -21,8 +21,9 @@ import {Photo} from "../photo/photo";
 
 export interface MapElementProperties{
     name: string;
-    facility?:Facility,
-    type: MapElementType
+    facility?:Facility;
+    type: MapElementType;
+    priority:number;
 }
 
 export class MapElement extends Entity<MapElementSpore>{
@@ -65,6 +66,7 @@ export class MapElement extends Entity<MapElementSpore>{
         const mapElementProperties: MapElementProperties = {
             name: this.json.title,
             type: this.json.type,
+            priority: this.json.priority,
         };
 
         if(null !== this.facilityRaw){
@@ -157,6 +159,10 @@ export class MapElement extends Entity<MapElementSpore>{
         }
 
         return [];
+    }
+
+    get priority(): number {
+        return this.json.priority;
     }
 
 }

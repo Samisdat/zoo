@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "07/05/2021 8:43:00 PM"
+    "x-generation-date": "09/08/2021 10:27:21 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1853,7 +1853,7 @@
     "/map-elements/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of map-elements documents",
+        "description": "Retrieve the number of map-elements documents",
         "responses": {
           "200": {
             "description": "Retrieve map-elements document(s)",

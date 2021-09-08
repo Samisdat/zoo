@@ -43,6 +43,10 @@ export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
             .attr('cy', function(d) {
                 return path.centroid( (d.contains[0] as Feature))[1];
             })
+            .attr('stroke', (d, i)=>{
+
+                return 'white';
+            })
             .attr('fill', (d, i)=>{
 
                 //return ("url(#"+d.contains[0].id + "-icon)");

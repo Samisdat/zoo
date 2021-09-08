@@ -360,9 +360,6 @@ export const Markers = (props:PointOfInterestProperties) => {
     
     return (
         <g ref={markersGroup}>
-            <MarkerImages
-                mapElements={props.mapElements}
-            />
             <ClusteredMarkers
                 clusters={clusters}
                 radius={radius}

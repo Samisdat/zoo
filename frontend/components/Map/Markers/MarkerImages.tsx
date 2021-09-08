@@ -45,12 +45,22 @@ export const MarkerImages = (props:MarkerImagesProperties) => {
 
     const markerImagesGroup = useRef(null);
 
+    const points = props.mapElements.filter((mapElement:MapElement) => {
+
+        if('point' === mapElement.properties.type){
+            return true;
+        }
+
+        return false;
+
+    });
+
     useEffect(() => {
 
         var groupSelection = d3.select(markerImagesGroup.current);
 
         groupSelection.selectAll('defs')
-            .data(props.mapElements)
+            .data(points)
             .join("defs")
             .append('pattern')
             .attr('id', function(d) { return (d.id + '-icon');}) // just create a unique id (id comes from the json)
@@ -68,7 +78,7 @@ export const MarkerImages = (props:MarkerImagesProperties) => {
             .attr("preserveAspectRatio", "xMinYMin slice");
 
 
-    });
+    },[]);
 
     return (
         <g ref={markerImagesGroup} />

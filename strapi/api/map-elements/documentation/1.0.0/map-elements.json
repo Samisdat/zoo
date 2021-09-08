@@ -262,7 +262,7 @@
     "/map-elements/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of map-elements documents",
+        "description": "Retrieve the number of map-elements documents",
         "responses": {
           "200": {
             "description": "Retrieve map-elements document(s)",

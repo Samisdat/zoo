@@ -6,13 +6,13 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import {makeStyles} from '@material-ui/core/styles';
 import createPersistedState from 'use-persisted-state';
 
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 import {ViewportProvider} from "../components/viewport/ViewportProvider";
 import {Navigation} from "../components/Navigation/Navigation";
 import {navigationCategories} from "../components/Navigation/NavigationCategory";
 import Container from "@material-ui/core/Container";
 
-const theme = createMuiTheme({
+const theme = createTheme({
     palette: {
         primary: {
             // Purple and green play nicely together.

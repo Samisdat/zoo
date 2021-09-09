@@ -1,8 +1,15 @@
 import * as React from 'react'
 import {GeoPath} from "d3";
 import {GeoProjection} from "d3-geo";
-import {useEffect} from "react";
+import {MutableRefObject, useEffect, useRef} from "react";
 import {MapElement} from "../../../strapi-api/entity/map-element/map-element";
+
+import throttle from 'lodash.throttle';
+
+export interface Dimension {
+    width: number;
+    height: number;
+}
 
 export interface PositionInterface {
     lat: number;
@@ -45,10 +52,16 @@ type Action =
     {
         type: 'SET_TEASER',
         teaser: MapElement,
+    } |
+    {
+        type: 'SET_DIMENSION',
+        dimension: Dimension,
     }
 ;
 type Dispatch = (action: Action) => void;
 type State = {
+    ref: MutableRefObject<SVGSVGElement>,
+    dimension:Dimension,
     path:GeoPath,
     projection:GeoProjection,
     transform:MapTransformInterface,
@@ -113,11 +126,20 @@ function mapReducer(state: State, action: Action):State {
         case 'SET_TEASER': {
 
             const {teaser} = action;
-            console.log(teaser)
 
             return {
                 ...state,
                 teaser,
+            };
+
+        }
+        case 'SET_DIMENSION': {
+
+            const {dimension} = action;
+
+            return {
+                ...state,
+                dimension,
             };
 
         }
@@ -127,9 +149,20 @@ function mapReducer(state: State, action: Action):State {
     }
 }
 
+
+const defaultDimension:Dimension = {
+    width: 0,
+    height: 0,
+};
+
+
 function MapProvider({children}: MapProviderProps) {
 
+    const ref = useRef(null);
+
     const [state, dispatch] = React.useReducer(mapReducer, {
+        ref: ref,
+        dimension:defaultDimension,
         path: undefined,
         projection: undefined,
         transform:mapTransformDefault,
@@ -140,14 +173,67 @@ function MapProvider({children}: MapProviderProps) {
         localStorage.setItem("transform", JSON.stringify(state.transform));
     }, [state.transform]);
 
+    const getDimension = ():Dimension => {
+
+        if(null === ref.current){
+            return defaultDimension;
+        }
+
+        const width = ref.current.clientWidth;
+        const height = ref.current.clientHeight;
+
+        return {
+            width,
+            height,
+        };
+
+    };
+
+    const handleWindowResize = () => {
+
+        return throttle(() => {
+
+            dispatch({
+                type: 'SET_DIMENSION',
+                dimension:getDimension()
+            });
+
+            //setDimension(getDimension());
+            console.log(getDimension());
+
+        }, 200);
+
+
+    }
+
+    useEffect(() => {
+
+        dispatch({
+            type: 'SET_DIMENSION',
+            dimension:getDimension()
+        });
+
+    }, []);
+
+    useEffect(() => {
+
+        window.addEventListener("resize", handleWindowResize());
+
+        return () => window.removeEventListener("resize", handleWindowResize());
+
+    }, []);
+
     return <MapStateContext.Provider value={value}>{children}</MapStateContext.Provider>
 }
 
 const useMap = () => {
-    const context = React.useContext(MapStateContext)
+
+    const context = React.useContext(MapStateContext);
+
     if (context === undefined) {
-        throw new Error('useCount must be used within a MapProvider')
+        throw new Error('useMap must be used within a MapProvider')
     }
+
     return context
 }
 

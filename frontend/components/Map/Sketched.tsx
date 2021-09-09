@@ -8,18 +8,15 @@ interface MapSketchedProperties {
     boundingBox:MapElement[];
 }
 
-
 export const Sketched = (props:MapSketchedProperties) => {
 
     const mainElements = useRef(null);
     const graficElement = useRef(null);
 
     const {
-        state: {path, projection},
+        state: {path, projection, ref},
         dispatch
     } = useMap()
-
-    const svgId = 'main-svg';
 
     const scaleToBound = () => {
 
@@ -27,7 +24,7 @@ export const Sketched = (props:MapSketchedProperties) => {
             return;
         }
 
-        var mapSvg = d3.select(`#${svgId}`)
+        var mapSvg = d3.select(ref.current)
 
         var elementsGroup = d3.select(mainElements.current);
 

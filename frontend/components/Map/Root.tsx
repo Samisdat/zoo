@@ -5,7 +5,6 @@ import * as d3 from 'd3';
 import {Group} from "./Group";
 import {ZoomLevel} from "./ZoomLevel";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
-import {useViewport} from "../viewport/useViewport";
 import {useMap} from "./Context/MapContext";
 import {Feature} from "geojson";
 import {getTransformFromStorage} from "./getTransformFromStorage";
@@ -13,10 +12,18 @@ import {getMarkerFromStorage} from "./getMarkerFromStorage";
 import {MarkerImages} from "./Markers/MarkerImages";
 
 const useStyles = makeStyles({
-    fullScreenMap: {
+    svgWrap:{
         position: 'absolute',
-        top: 0,
-        left:0,
+        top: '1px',
+        bottom: '1px',
+        left: '1px',
+        right: '1px',
+    },
+    fullScreenMap: {
+        display: 'block',
+        width:'100%',
+        height:'100%',
+        background:'green'
     }
 });
 
@@ -27,13 +34,9 @@ interface MapRootInterface{
 
 export const MapRoot = (props:MapRootInterface) => {
 
-    const { width, height } = useViewport();
-
-    const { dispatch } = useMap()
+    const { state, dispatch } = useMap()
 
     const classes = useStyles();
-
-    const svgId = 'main-svg';
 
     const border = props.mapElements.find((mapElement:MapElement) => {
 
@@ -48,6 +51,7 @@ export const MapRoot = (props:MapRootInterface) => {
     const createMap = (width, height) => {
 
         const margin = 20;
+
         const projection = d3.geoMercator()
             .angle(180)
             .scale(1)
@@ -70,13 +74,16 @@ export const MapRoot = (props:MapRootInterface) => {
 
     useEffect(() => {
 
-        if(!width || ! height){
+        if(!state.dimension.width || !state.dimension.height){
             return;
         }
 
-        createMap(width, height);
+        createMap(state.dimension.width,state.dimension.height);
 
-    }, [width,height]);
+    }, [
+        state.dimension.width,
+        state.dimension.height
+    ]);
 
     useEffect(() => {
 
@@ -101,11 +108,14 @@ export const MapRoot = (props:MapRootInterface) => {
     },[]);
 
     return (
+        <div
+            className={classes.svgWrap}
+        >
         <svg
-            id={svgId}
+            ref={state.ref}
             className={`${props.fullsize ? classes.fullScreenMap : ""}`}
-            width={width}
-            height={height}
+            width={state.dimension.width}
+            height={state.dimension.height}
         >
             <MarkerImages
                 mapElements={props.mapElements}
@@ -116,6 +126,7 @@ export const MapRoot = (props:MapRootInterface) => {
             />
             <ZoomLevel />
         </svg>
+        </div>
     );
 
 }

@@ -71,15 +71,12 @@ interface MapGroupProperties {
 
 export const Group = (props:MapGroupProperties) => {
 
-    const { width, height } = useViewport();
-
     const {
-        state: {path, focus, transform},
+        state: {path, focus, transform, ref, dimension},
         dispatch
     } = useMap()
 
     const map = useRef(null);
-    const svgId = 'main-svg';
 
     const boundingBox = filterGeoJson('bounding_box', props.mapElements);
 
@@ -101,10 +98,10 @@ export const Group = (props:MapGroupProperties) => {
 
     const createD3Map = ()=> {
 
-        var mapSvg = d3.select(`#${svgId}`)
+        var mapSvg = d3.select(ref.current)
 
-        mapSvg.attr('width', width)
-        mapSvg.attr('height', height)
+        mapSvg.attr('width', dimension.width);
+        mapSvg.attr('height', dimension.height);
 
         const mapGroup = d3.select(map.current);
 
@@ -188,8 +185,8 @@ export const Group = (props:MapGroupProperties) => {
         zoomDependencies.mapSvg.transition().delay(300).duration(750).call(
             zoomDependencies.zooming.transform as any,
             d3.zoomIdentity
-                .translate(width / 2, height / 2)
-                .scale(Math.min(8, 0.9 / Math.max((x1 - x0) / width, (y1 - y0) /height)))
+                .translate(dimension.width / 2, dimension.height / 2)
+                .scale(Math.min(8, 0.9 / Math.max((x1 - x0) / dimension.width, (y1 - y0) / dimension.height)))
                 .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
         )
         .on("end", ()=>{

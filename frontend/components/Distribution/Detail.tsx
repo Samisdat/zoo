@@ -90,6 +90,13 @@ export const centerToFeatureCollection = (mapElements:MapElement[]) => {
 
         }
 
+        else if('Point' === feature.geometry.type){
+
+            latitudes.push(feature.geometry.coordinates[1]);
+            longitudes.push(feature.geometry.coordinates[0]);
+
+        }
+
     }
 
     let north = Math.max(...latitudes);

@@ -14,10 +14,10 @@ import {MarkerImages} from "./Markers/MarkerImages";
 const useStyles = makeStyles({
     svgWrap:{
         position: 'absolute',
-        top: '1px',
-        bottom: '1px',
-        left: '1px',
-        right: '1px',
+        top: '0px',
+        bottom: '0px',
+        left: '0px',
+        right: '0px',
     },
     fullScreenMap: {
         display: 'block',
@@ -73,6 +73,8 @@ export const MapRoot = (props:MapRootInterface) => {
     }
 
     useEffect(() => {
+
+        // @todo one to create and one to resize
 
         if(!state.dimension.width || !state.dimension.height){
             return;

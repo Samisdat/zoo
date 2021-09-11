@@ -72,7 +72,7 @@ interface MapGroupProperties {
 export const Group = (props:MapGroupProperties) => {
 
     const {
-        state: {path, focus, transform, ref, dimension},
+        state: {path, focus, transform, ref, dimension, center},
         dispatch
     } = useMap()
 
@@ -185,7 +185,7 @@ export const Group = (props:MapGroupProperties) => {
         zoomDependencies.mapSvg.transition().delay(300).duration(750).call(
             zoomDependencies.zooming.transform as any,
             d3.zoomIdentity
-                .translate(dimension.width / 2, dimension.height / 2)
+                .translate(dimension.width / 2, (dimension.height - 200) / 2)
                 .scale(Math.min(8, 0.9 / Math.max((x1 - x0) / dimension.width, (y1 - y0) / dimension.height)))
                 .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
         )
@@ -196,6 +196,45 @@ export const Group = (props:MapGroupProperties) => {
         });
 
     }, [focus, path])
+
+    useEffect(()=>{
+
+        if (!path) {
+            return;
+        }
+
+        if(undefined === zoomDependencies.mapSvg || undefined === zoomDependencies.zooming){
+            return;
+        }
+
+        if(undefined === center){
+            return;
+        }
+
+        const centerOfEnclosure = centerToFeatureCollection(center);
+
+        const [[x0, y0], [x1, y1]] = path.bounds(centerOfEnclosure as any);
+
+        zoomDependencies.mapSvg.transition().delay(300).duration(750).call(
+            zoomDependencies.zooming.transform as any,
+            d3.zoomIdentity
+                .translate(dimension.width / 2, (dimension.height - 200) / 2)
+                .scale(Math.min(8, 0.9 / Math.max((x1 - x0) / dimension.width, (y1 - y0) / dimension.height)))
+                .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
+        )
+            .on("end", ()=>{
+
+                console.log('zoomend')
+
+                dispatch({
+                    type: 'SET_ZOOM_AND_PAN',
+                    center: undefined,
+                });
+
+
+            });
+
+    }, [center, path])
 
     return (
         <g ref={map}>

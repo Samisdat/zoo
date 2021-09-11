@@ -5,6 +5,7 @@ import {MutableRefObject, useEffect, useRef} from "react";
 import {MapElement} from "../../../strapi-api/entity/map-element/map-element";
 
 import throttle from 'lodash.throttle';
+import {Feature} from "geojson";
 
 export interface Dimension {
     width: number;
@@ -56,6 +57,10 @@ type Action =
     {
         type: 'SET_DIMENSION',
         dimension: Dimension,
+    } |
+    {
+        type: 'SET_ZOOM_AND_PAN',
+        center: MapElement[]
     }
 ;
 type Dispatch = (action: Action) => void;
@@ -66,6 +71,7 @@ type State = {
     projection:GeoProjection,
     transform:MapTransformInterface,
     focus?:MapElement
+    center?:MapElement[]
     teaser?:MapElement
     position?: PositionInterface,
 }
@@ -123,6 +129,17 @@ function mapReducer(state: State, action: Action):State {
             };
 
         }
+        case 'SET_ZOOM_AND_PAN': {
+
+            const {center} = action;
+
+            return {
+                ...state,
+                center,
+            };
+
+        }
+
         case 'SET_TEASER': {
 
             const {teaser} = action;

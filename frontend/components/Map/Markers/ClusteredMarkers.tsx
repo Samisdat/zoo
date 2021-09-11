@@ -21,10 +21,25 @@ interface ClusterInterface{
 export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
 
     const {
-        state: {path},
+        state: {path, transform, dimension},
+        dispatch
     } = useMap();
 
     const clusteredGroup = useRef(null);
+
+    const handleClick = (event, d) => {
+
+        if(1 === d.contains.length){
+            console.log('zeig die beschreibung');
+            return;
+        }
+
+        dispatch({
+            type: 'SET_ZOOM_AND_PAN',
+            center: d.contains,
+        });
+
+    }
 
     useEffect(() => {
 
@@ -54,6 +69,8 @@ export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
                 return 'blue';
             })
             .attr('r', props.radius)
+            .on("click", handleClick);
+        ;
 
         groupSelection.selectAll('text')
             .data(props.clusters)

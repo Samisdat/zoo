@@ -158,7 +158,7 @@ export default function SearchDialog(props:SearchDialogProperties) {
 
         const focus = mapElements.find((mapElement)=>{
             return (itemKey === mapElement.properties.facility.slug);
-        })
+        });
 
         dispatch({
             type: 'SET_FOCUS',

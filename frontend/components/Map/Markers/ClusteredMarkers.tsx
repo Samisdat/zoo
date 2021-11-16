@@ -27,7 +27,14 @@ export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
     const handleClick = (event, d) => {
 
         if(1 === d.contains.length){
-            console.log('zeig die beschreibung');
+
+            const clickedMapElement = d.contains[0];
+            
+            dispatch({
+                type: 'SET_TEASER',
+                teaser: clickedMapElement
+            });
+
             return;
         }
 

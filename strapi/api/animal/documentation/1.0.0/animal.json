@@ -797,6 +797,46 @@
               }
             }
           },
+          "profile": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string",
+                  "enum": [
+                    "europe",
+                    "asia",
+                    "afrika",
+                    "americas",
+                    "height",
+                    "length",
+                    "weight",
+                    "baby",
+                    "egg",
+                    "carrot",
+                    "utensils",
+                    "hourglass",
+                    "fish",
+                    "meat",
+                    "calendar"
+                  ]
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -884,6 +924,46 @@
             "type": "array",
             "items": {
               "type": "string"
+            }
+          },
+          "profile": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string",
+                  "enum": [
+                    "europe",
+                    "asia",
+                    "afrika",
+                    "americas",
+                    "height",
+                    "length",
+                    "weight",
+                    "baby",
+                    "egg",
+                    "carrot",
+                    "utensils",
+                    "hourglass",
+                    "fish",
+                    "meat",
+                    "calendar"
+                  ]
+                }
+              }
             }
           },
           "published_at": {

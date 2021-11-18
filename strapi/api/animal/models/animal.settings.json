@@ -84,6 +84,11 @@
     "posts": {
       "collection": "post",
       "via": "animals"
+    },
+    "profile": {
+      "type": "component",
+      "repeatable": true,
+      "component": "profile.feature"
     }
   }
 }

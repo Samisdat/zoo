@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/08/2021 10:27:21 PM"
+    "x-generation-date": "11/18/2021 4:24:40 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -5649,6 +5649,46 @@
               }
             }
           },
+          "profile": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string",
+                  "enum": [
+                    "europe",
+                    "asia",
+                    "afrika",
+                    "americas",
+                    "height",
+                    "length",
+                    "weight",
+                    "baby",
+                    "egg",
+                    "carrot",
+                    "utensils",
+                    "hourglass",
+                    "fish",
+                    "meat",
+                    "calendar"
+                  ]
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -5736,6 +5776,46 @@
             "type": "array",
             "items": {
               "type": "string"
+            }
+          },
+          "profile": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string",
+                  "enum": [
+                    "europe",
+                    "asia",
+                    "afrika",
+                    "americas",
+                    "height",
+                    "length",
+                    "weight",
+                    "baby",
+                    "egg",
+                    "carrot",
+                    "utensils",
+                    "hourglass",
+                    "fish",
+                    "meat",
+                    "calendar"
+                  ]
+                }
+              }
             }
           },
           "published_at": {
@@ -5868,6 +5948,9 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "profile": {
+                  "type": "component"
                 },
                 "published_at": {
                   "type": "string"
@@ -6196,6 +6279,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "profile": {
+                "type": "component"
               },
               "published_at": {
                 "type": "string"
@@ -6670,6 +6756,9 @@
                   "type": "string"
                 }
               },
+              "profile": {
+                "type": "component"
+              },
               "published_at": {
                 "type": "string"
               },
@@ -7000,6 +7089,9 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "profile": {
+                  "type": "component"
                 },
                 "published_at": {
                   "type": "string"

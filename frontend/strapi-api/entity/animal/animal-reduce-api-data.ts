@@ -27,6 +27,14 @@ export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
     const species = apiData.species;
     const family = apiData.family;
 
+    let profile:any[] = [];
+
+    if (0 !== apiData.profile.length) {
+
+        profile = apiData.profile;
+    }
+
+
     let photos:number[] = [];
 
     if (undefined !== apiData.photos) {
@@ -71,6 +79,7 @@ export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
         order,
         species,
         family,
+        profile,
         individual_animals,
         facilities,
         photos,

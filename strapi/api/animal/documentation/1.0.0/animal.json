@@ -808,9 +808,6 @@
                 "id": {
                   "type": "string"
                 },
-                "label": {
-                  "type": "string"
-                },
                 "value": {
                   "type": "string"
                 },
@@ -832,6 +829,19 @@
                     "fish",
                     "meat",
                     "calendar"
+                  ]
+                },
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "Lebensraum",
+                    "Nahrung",
+                    "Bestand",
+                    "Groesse",
+                    "Gewicht",
+                    "Tragzeit",
+                    "Brutdauer",
+                    "Lebenserwartung"
                   ]
                 }
               }
@@ -937,9 +947,6 @@
                 "id": {
                   "type": "string"
                 },
-                "label": {
-                  "type": "string"
-                },
                 "value": {
                   "type": "string"
                 },
@@ -961,6 +968,19 @@
                     "fish",
                     "meat",
                     "calendar"
+                  ]
+                },
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "Lebensraum",
+                    "Nahrung",
+                    "Bestand",
+                    "Groesse",
+                    "Gewicht",
+                    "Tragzeit",
+                    "Brutdauer",
+                    "Lebenserwartung"
                   ]
                 }
               }

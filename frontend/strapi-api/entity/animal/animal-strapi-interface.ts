@@ -2,6 +2,13 @@ import {PhotoStrapi} from "../photo/photo-strapi";
 import {IndividualAnimalStrapi} from "../individual-animal/individual-animal-strapi-interface";
 import {FacilityStrapi} from "../facility/facility-strapi";
 
+export interface AnimalProfileStrapi{
+    icon: string;
+    label: string;
+    value: string;
+
+}
+
 export interface AnimalStrapi {
     id: number;
     title: string;
@@ -23,6 +30,7 @@ export interface AnimalStrapi {
     published_at: string;
     created_at: string;
     updated_at: string;
+    profile: AnimalProfileStrapi[];
     individual_animals: IndividualAnimalStrapi[];
     facilities: FacilityStrapi[];
     photos: PhotoStrapi[];

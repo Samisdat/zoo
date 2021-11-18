@@ -1,4 +1,5 @@
 import {IucnStatus} from "./iucnStatus";
+import {AnimalProfileStrapi} from "./animal-strapi-interface";
 
 export interface AnimalSpore {
     id: number;
@@ -16,6 +17,7 @@ export interface AnimalSpore {
     order: string;
     species: string;
     family: string;
+    profile:AnimalProfileStrapi[];
     individual_animals: number[];
     facilities: number[];
     photos: number[];

@@ -18,6 +18,9 @@ import SimpleTabs from "../../components/Tabs";
 import BasicTable from "../../components/Table";
 import DetailedAccordion from "../../components/Accordion";
 
+
+import {Profile} from "../../components/Animal/Profile";
+
 const useStyles = makeStyles((theme: Theme) => {
 
     return createStyles({
@@ -110,6 +113,9 @@ export default function Tiere(props) {
                             </Typography>
 
                     </Grid>
+                    <Profile
+                        profile={animal.profile}
+                    />
                     <Grid
                         item
                         xs={12}

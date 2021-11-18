@@ -1,4 +1,4 @@
-import {AnimalStrapi} from "./animal-strapi-interface";
+import {AnimalProfileStrapi, AnimalStrapi} from "./animal-strapi-interface";
 import {AnimalSpore} from "./animal-spore";
 import {Entity} from "../entity";
 import {animalReduceApiData} from "./animal-reduce-api-data";
@@ -53,6 +53,10 @@ export class Animal extends Entity<AnimalSpore>{
 
     get family(): string {
         return this.json.family
+    }
+
+    get profile(): AnimalProfileStrapi[] {
+        return this.json.profile;
     }
 
     get species(): string {

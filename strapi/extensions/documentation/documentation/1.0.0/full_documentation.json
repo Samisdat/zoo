@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "11/18/2021 4:24:40 PM"
+    "x-generation-date": "11/18/2021 10:19:42 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -5660,9 +5660,6 @@
                 "id": {
                   "type": "string"
                 },
-                "label": {
-                  "type": "string"
-                },
                 "value": {
                   "type": "string"
                 },
@@ -5684,6 +5681,19 @@
                     "fish",
                     "meat",
                     "calendar"
+                  ]
+                },
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "Lebensraum",
+                    "Nahrung",
+                    "Bestand",
+                    "Groesse",
+                    "Gewicht",
+                    "Tragzeit",
+                    "Brutdauer",
+                    "Lebenserwartung"
                   ]
                 }
               }
@@ -5789,9 +5799,6 @@
                 "id": {
                   "type": "string"
                 },
-                "label": {
-                  "type": "string"
-                },
                 "value": {
                   "type": "string"
                 },
@@ -5813,6 +5820,19 @@
                     "fish",
                     "meat",
                     "calendar"
+                  ]
+                },
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "Lebensraum",
+                    "Nahrung",
+                    "Bestand",
+                    "Groesse",
+                    "Gewicht",
+                    "Tragzeit",
+                    "Brutdauer",
+                    "Lebenserwartung"
                   ]
                 }
               }

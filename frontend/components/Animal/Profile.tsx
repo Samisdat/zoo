@@ -3,6 +3,8 @@ import Typography from "@material-ui/core/Typography";
 import {Grid, Paper} from "@material-ui/core";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {ProfilePart} from "./ProfilePart";
+import {AnimalProfileStrapi} from "../../strapi-api/entity/animal/animal-strapi-interface";
+import {NavigationListGroup} from "../NavigationList/NavigationListGroup";
 
 const useStyles = makeStyles((theme: Theme) => {
 
@@ -14,60 +16,33 @@ const useStyles = makeStyles((theme: Theme) => {
     })
 });
 
-export const Profile = () => {
+export interface ProfileProps{
+    profile:AnimalProfileStrapi[];
+}
+
+export const Profile = ({
+    profile
+}:ProfileProps
+) => {
 
     const classes = useStyles();
+
+    console.log(profile);
+
 
     return (
 
             <Grid container item spacing={2}>
-                
-                <ProfilePart
-                    icon={'foo'}
-                    label={'Herkunft'}
-                    value={'Afrika'}
-                />
 
-                <ProfilePart
-                    icon={'foo'}
-                    label={'Lebensraum'}
-                    value={'Afrika'}
-                />
-
-                <ProfilePart
-                    icon={'foo'}
-                    label={'Nahrung'}
-                    value={'Afrika'}
-                />
-
-                <ProfilePart
-                    icon={'foo'}
-                    label={'Bestand'}
-                    value={'Afrika'}
-                />
-
-                <ProfilePart
-                    icon={'foo'}
-                    label={'Größe'}
-                    value={'Afrika'}
-                />
-
-                <ProfilePart
-                    icon={'foo'}
-                    label={'Gewicht'}
-                    value={'Afrika'}
-                />
-                <ProfilePart
-                    icon={'foo'}
-                    label={'Tragzeit'}
-                    value={'Afrika'}
-                />
-                <ProfilePart
-                    icon={'foo'}
-                    label={'Erreichbares Alter'}
-                    value={'Afrika'}
-                />
-
+                {
+                    profile.map((feature, i)=>{
+                        return (
+                            <ProfilePart
+                                {...feature}
+                            />
+                        )
+                    })
+                }
 
             </Grid>
 

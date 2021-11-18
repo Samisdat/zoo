@@ -131,6 +131,7 @@ export default function Tiere(props) {
                         <SimpleTabs />
                     </Grid>
 
+                    <Profile />
                     <Grid item xs={12}>
                         <BasicTable />
                     </Grid>

@@ -1,19 +1,23 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
 import {Logo} from "./Logo";
-import {Fab, Icon, ListItemIcon} from "@material-ui/core";
+import {Fab} from "@material-ui/core";
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import CloseIcon from '@material-ui/icons/Close';
+
 import Slide from '@material-ui/core/Slide';
 import { TransitionProps } from '@material-ui/core/transitions';
 import {
     NavigationList,
 } from "../NavigationList/NavigationList";
+
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faBars} from "@fortawesome/free-solid-svg-icons/faBars";
+import {faTimes} from "@fortawesome/free-solid-svg-icons/faTimes";
+
 import {NavigationListGroupInterface} from "../NavigationList/NavigationListInterfaces";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -82,7 +86,7 @@ export default function NavigationMobile(props) {
                     className={classes.fab}
                     onClick={handleClickOpen}
                 >
-                    <MenuIcon/>
+                    <FontAwesomeIcon icon={faBars} size="lg" />
                 </Fab>
         <Dialog
             fullScreen
@@ -95,7 +99,7 @@ export default function NavigationMobile(props) {
                         color="primary"
                     >
                         <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
-                            <CloseIcon />
+                            <FontAwesomeIcon icon={faTimes} size="sm" />
                         </IconButton>
                         <Typography variant="h6" className={classes.title}>
                             Der grüne Zoo
@@ -115,7 +119,7 @@ export default function NavigationMobile(props) {
                     zIndex:5
                 }}
             >
-                <CloseIcon/>
+                <FontAwesomeIcon icon={faTimes} size="lg" />
             </Fab>
 
             </Dialog>

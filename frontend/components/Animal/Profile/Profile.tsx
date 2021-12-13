@@ -20,6 +20,7 @@ export const Profile = ({
                     profile.map((feature, i)=>{
                         return (
                             <Feature
+                                key={i}
                                 {...feature}
                             />
                         )

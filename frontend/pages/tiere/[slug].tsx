@@ -19,7 +19,7 @@ import BasicTable from "../../components/Table";
 import DetailedAccordion from "../../components/Accordion";
 
 
-import {Profile} from "../../components/Animal/Profile";
+import {Profile} from "../../components/Animal/Profile/Profile";
 
 const useStyles = makeStyles((theme: Theme) => {
 
@@ -108,13 +108,16 @@ export default function Tiere(props) {
             <div className={classes.root}>
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={7}>
-                            <Typography variant="h1" component="h1">
-                                {animal.title}
-                            </Typography>
+                        <Typography variant="h1" component="h1">
+                            {animal.title}
+                        </Typography>
 
                     </Grid>
                     <Profile
                         profile={animal.profile}
+                    />
+                    <Endanger
+                        iucnStatus={animal.iucnStatus}
                     />
                     <Grid
                         item
@@ -133,80 +136,9 @@ export default function Tiere(props) {
                             />
                         </Paper>
                     </Grid>
-                    <Grid item xs={12}>
-                        <SimpleTabs />
-                    </Grid>
 
-                    <Profile />
-                    <Grid item xs={12}>
-                        <BasicTable />
-                    </Grid>
-
-                    <Grid item xs={12} md={7}>
-                        <DetailedAccordion/>
-                    </Grid>
-                    <Grid item xs={12} md={5}>
-                        <Paper className={classes.paper}>xs=6</Paper>
-                    </Grid>
-
-                    <Grid item xs={12} sm={6}>
-                        <Paper className={classes.paper}>xs=12</Paper>
-                    </Grid>
-
-                    <Grid item xs={6}>
-                        <Paper className={classes.paper}>xs=6</Paper>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <Paper className={classes.paper}>xs=6</Paper>
-                    </Grid>
-                    <Grid item xs={3}>
-                        <Paper className={classes.paper}>xs=3</Paper>
-                    </Grid>
-                    <Grid item xs={3}>
-                        <Paper className={classes.paper}>xs=3</Paper>
-                    </Grid>
-                    <Grid item xs={3}>
-                        <Paper className={classes.paper}>xs=3</Paper>
-                    </Grid>
-                    <Grid item xs={3}>
-                        <Paper className={classes.paper}>xs=3</Paper>
-                    </Grid>
                 </Grid>
             </div>
-
-
-            <Typography component="h1">
-                {animal.title}
-            </Typography>
-            <Grid container spacing={3}>
-                <Grid item xs={12} md={7}>
-                    <Paper className={classes.paper}>xs=6
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                    </Paper>
-                </Grid>
-                <Grid
-                    item
-                    xs={12}
-                    md={5}
-                    style={{
-                        background:'white'
-                    }}
-                >
-                    foo
-                </Grid>
-                <Grid
-                    item
-                    xs={12}
-                    md={5}
-                    style={{
-                        background:'white'
-                    }}
-                >
-                    <Typography component="h2">
-                        Verbereitung
-                    </Typography>
-                </Grid>
-            </Grid>
 
             <Typography component="h2">
                 Tiere oder Bilder
@@ -221,14 +153,11 @@ export default function Tiere(props) {
             <Typography component="h2">
                 Beschreibung
             </Typography>
-            <Endanger
-                iucnStatus={animal.iucnStatus}
-            />
             <Typography component="h2">
                 Links
             </Typography>
 
-            {/*<Distribution/>*/}
+
             {/*animal.facility &&
                 <MapRoot
                     focus={focus}

@@ -2,9 +2,7 @@ import React from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
-import HomeIcon from '@material-ui/icons/Home';
-import PetsIcon from '@material-ui/icons/Pets';
-import BookIcon from '@material-ui/icons/Book';
+import {Icon} from "../Animal/Profile/Icon";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -53,15 +51,27 @@ export const Breadcrumb = (props:BreadcrumbProps)    => {
     const getIcon = (categoryIcon:BreadcumbCategoryIcon) => {
 
         if('home' === categoryIcon){
-            return (<HomeIcon className={classes.icon} />);
+            return (
+                <Icon
+                    icon={'home'}
+                />
+            );
         }
 
         if('pet' === categoryIcon){
-            return (<PetsIcon className={classes.icon} />);
+            return (
+                <Icon
+                    icon={'paw'}
+                />
+            );
         }
 
         if('blog' === categoryIcon){
-            return (<BookIcon className={classes.icon} />);
+            return (
+                <Icon
+                    icon={'book'}
+                />
+            );
         }
 
     };

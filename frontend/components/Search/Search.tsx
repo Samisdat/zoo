@@ -1,22 +1,20 @@
 import React, {useEffect} from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import {Paper, Fab} from "@material-ui/core";
+import {Paper, Fab, Link} from "@material-ui/core";
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import { TransitionProps } from '@material-ui/core/transitions';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ChipsArray from "./Chips";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {NavigationList} from "../NavigationList/NavigationList";
 import {groupByFirstLetter} from "../NavigationList/groupByFirstLetter";
 import {NavigationListItemInterface} from "../NavigationList/NavigationListInterfaces";
 import {useMap} from "../Map/Context/MapContext";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
+import {Icon} from "../Icon/Icon";
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -180,8 +178,9 @@ export default function SearchDialog(props:SearchDialogProperties) {
                 onClick={handleClickOpen}
                 square={true}
             >
-                <ExpandMoreIcon
-                    fontSize={"large"}
+                <Icon
+                    icon={'chevron_down'}
+                    size={'lg'}
                 />
             </Paper>
             <Dialog
@@ -202,7 +201,10 @@ export default function SearchDialog(props:SearchDialogProperties) {
                             Auf der Karte zeigen
                         </Typography>
                         <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
-                            <CloseIcon />
+                            <Icon
+                                icon={'close'}
+                                size={'sm'}
+                            />
                         </IconButton>
                     </Toolbar>
                 </AppBar>
@@ -228,7 +230,10 @@ export default function SearchDialog(props:SearchDialogProperties) {
                         zIndex:5
                     }}
                 >
-                    <CloseIcon/>
+                    <Icon
+                        icon={'close'}
+                        size={'lg'}
+                    />
                 </Fab>
 
             </Dialog>

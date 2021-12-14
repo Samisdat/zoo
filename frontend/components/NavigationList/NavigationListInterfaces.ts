@@ -1,11 +1,12 @@
 import {NavigationListIconType} from "./NavigationListIcon";
+import {IconName} from "../Icon/IconNames";
 
 export interface NavigationListItemInterface {
     key: string;
     href?: string;
     text: string;
     secondary?: string;
-    icon?: NavigationListIconType;
+    icon?: IconName;
     image?: string;
 }
 

@@ -6,17 +6,14 @@ import Button from '@material-ui/core/Button';
 
 import {useTheme } from '@material-ui/core/styles';
 import MobileStepper from '@material-ui/core/MobileStepper';
-import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
-import CloseIcon from '@material-ui/icons/Close';
-import DirectionsIcon from '@material-ui/icons/Directions';
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {Animal} from "../../strapi-api/entity/animal/animal";
 import {useMap} from "./Context/MapContext";
 import {useViewport} from "../viewport/useViewport";
 import {set} from "timm";
 import {getImagePath} from "../../helper/getImagePath";
+import {Icon} from "../Icon/Icon";
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -233,12 +230,18 @@ export const Teaser = () => {
                         nextButton={
                             <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
                                 Next
-                                <KeyboardArrowRight />
+                                <Icon
+                                    icon={'chevron_right'}
+                                    size={'lg'}
+                                />
                             </Button>
                         }
                         backButton={
                             <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-                                <KeyboardArrowLeft />
+                                <Icon
+                                    icon={'chevron_left'}
+                                    size={'lg'}
+                                />
                                 Back
                             </Button>
                         }
@@ -247,18 +250,29 @@ export const Teaser = () => {
 
             <CardActions disableSpacing>
                 <Button
-                    startIcon={<KeyboardArrowRight />}
+                    startIcon={<Icon
+                        icon={'chevron_right'}
+                        size={'lg'}
+                    />}
                     href={teaserItems[activeStep].href}
                 >
                     Details
                 </Button>
                 <Button
-                    startIcon={<DirectionsIcon />}
+                    startIcon={<Icon
+                        icon={'directions'}
+                        size={'lg'}
+                    />}
                 >
                     Hierhin
                 </Button>
                 <Button
-                    startIcon={<CloseIcon />}
+                    startIcon={
+                        <Icon
+                            icon={'close'}
+                            size={'lg'}
+                        />
+                    }
                     onClick={handleClose}
                 >
                     Schließen

@@ -2,17 +2,15 @@ import React, {useState} from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import MenuIcon from '@material-ui/icons/Menu';
 import List from "@material-ui/core/List";
-import {Divider, Drawer, Grid, Link, ListItem, ListItemIcon, ListItemText} from "@material-ui/core";
+import {Drawer, Link, ListItem, ListItemText} from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 import {NavigationListGroupInterface} from "../NavigationList/NavigationListInterfaces";
 import {StaticLogo} from "./StaticLogo";
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import {NavigationList} from "../NavigationList/NavigationList";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Slide from "@material-ui/core/Slide";
+import {Icon} from "../Icon/Icon";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -124,7 +122,10 @@ export const NavigationLarge = (props) => {
                                 className={classes.menu}
                                 onClick={toggleDrawer(true)}
                                 color="inherit">
-                                <MenuIcon/>
+                                <Icon
+                                    icon={'menu'}
+                                    size={'lg'}
+                                />
                             </Link>
                             <List
                                 component="nav"

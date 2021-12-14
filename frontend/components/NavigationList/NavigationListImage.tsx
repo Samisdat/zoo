@@ -1,8 +1,8 @@
 import React from "react";
 import {Avatar, ListItemAvatar, ListItemIcon} from "@material-ui/core";
-import {NavigationListIcon} from "./NavigationListIcon";
 import {NavigationListItemInterface} from "./NavigationListInterfaces";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import {Icon} from "../Icon/Icon";
 
 export const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -27,8 +27,9 @@ export const NavigationListImage = (props: NavigationListItemInterface) => {
 
         return (
             <ListItemIcon>
-                <NavigationListIcon
+                <Icon
                     icon={props.icon}
+                    size="lg"
                 />
             </ListItemIcon>
         );

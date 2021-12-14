@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
-import {Icon} from "../Animal/Profile/Icon";
+import {Icon} from "../Icon/Icon";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

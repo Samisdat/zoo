@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import {Logo} from "./Logo";
-import {Fab} from "@material-ui/core";
+import {Fab, Link} from "@material-ui/core";
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -19,6 +19,7 @@ import {faBars} from "@fortawesome/free-solid-svg-icons/faBars";
 import {faTimes} from "@fortawesome/free-solid-svg-icons/faTimes";
 
 import {NavigationListGroupInterface} from "../NavigationList/NavigationListInterfaces";
+import {Icon} from "../Icon/Icon";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -86,7 +87,10 @@ export default function NavigationMobile(props) {
                     className={classes.fab}
                     onClick={handleClickOpen}
                 >
-                    <FontAwesomeIcon icon={faBars} size="lg" />
+                    <Icon
+                        icon={'menu'}
+                        size={'lg'}
+                    />
                 </Fab>
         <Dialog
             fullScreen
@@ -99,7 +103,10 @@ export default function NavigationMobile(props) {
                         color="primary"
                     >
                         <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
-                            <FontAwesomeIcon icon={faTimes} size="sm" />
+                            <Icon
+                                icon={'close'}
+                                size={'lg'}
+                            />
                         </IconButton>
                         <Typography variant="h6" className={classes.title}>
                             Der grüne Zoo
@@ -119,7 +126,11 @@ export default function NavigationMobile(props) {
                     zIndex:5
                 }}
             >
-                <FontAwesomeIcon icon={faTimes} size="lg" />
+                <Icon
+                    icon={'close'}
+                    size={'lg'}
+                />
+
             </Fab>
 
             </Dialog>

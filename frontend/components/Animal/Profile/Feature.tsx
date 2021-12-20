@@ -3,6 +3,7 @@ import {Grid, Paper} from "@material-ui/core";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {Icon} from "../../Icon/Icon";
 import Typography from "@material-ui/core/Typography";
+import {IconName} from "../../Icon/IconNames";
 
 const useStyles = makeStyles((theme: Theme) => {
 
@@ -15,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) => {
 });
 
 export interface FeatureProps {
-    icon:string;
+    icon:IconName;
     label:string;
     value:string;
 }

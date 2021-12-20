@@ -1,9 +1,10 @@
 import {PhotoStrapi} from "../photo/photo-strapi";
 import {IndividualAnimalStrapi} from "../individual-animal/individual-animal-strapi-interface";
 import {FacilityStrapi} from "../facility/facility-strapi";
+import {IconName} from "../../../components/Icon/IconNames";
 
 export interface AnimalProfileStrapi{
-    icon: string;
+    icon: IconName;
     label: string;
     value: string;
 

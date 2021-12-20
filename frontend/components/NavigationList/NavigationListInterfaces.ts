@@ -1,4 +1,3 @@
-import {NavigationListIconType} from "./NavigationListIcon";
 import {IconName} from "../Icon/IconNames";
 
 export interface NavigationListItemInterface {

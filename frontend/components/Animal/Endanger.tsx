@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Typography from "@material-ui/core/Typography";
 import {Grid, Paper, Tooltip} from "@material-ui/core";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
@@ -19,7 +19,6 @@ const possibleStati = [
     VULNERABLE,
     ENDANGERED,
     CRITICALLY_ENDANGERED,
-    EXTINCT_IN_THE_WILD,
 ];
 
 const catText = {
@@ -28,7 +27,6 @@ const catText = {
     'VU': 'Gefährdet',
     'EN': 'Stark gefährdet',
     'CR': 'Vom Aussterben bedroht',
-    'EW': '#591B09',
 };
 
 const statusColors = {
@@ -42,7 +40,7 @@ const statusColors = {
 
 const useStyles = makeStyles((theme: Theme) => {
 
-    const styles = {
+    return createStyles({
         paper: {
             padding: theme.spacing(2),
             color: theme.palette.text.secondary,
@@ -72,43 +70,50 @@ const useStyles = makeStyles((theme: Theme) => {
             textAlign:'center',
             color:'#fff',
             borderRight:'1px solid #fff',
+            fontWeight: 'bold',
             "&:last-child": {
                 borderRight:'0px solid #fff',
             }
         },
         iucnIndicator:{
-          position: 'absolute',
+            position: 'absolute',
             /*top:`-${ ( (60 + 2 * 3 - 30)  / 2)}px`,*/
             top:'0px',
-            left:'10px',
+            left:'-66px',
             width:'60px',
             height:'60px',
             background: 'red',
             border:'3px solid #fff',
             borderRadius: '100px',
-            borderTopRightRadius: '0'
-
+            borderTopRightRadius: '0',
+            lineHeight: '60px',
+            textAlign: 'center',
+            fontWeight: 'bold',
+            color:'#fff',
+            fontSize:'16px',
+            transition: 'left 5s'
         },
-    };
-
-    for(const possibleStatus of possibleStati){
-        /*
-        styles[`iucnCat${possibleStatus}`] = {
-            background: statusColors[possibleStatus]
-        };
-
-         */
-
-    }
-
-    return createStyles(styles);
+    });
 
 });
 
 export const Endanger = ({iucnStatus}) => {
 
+    const [catWidth, setCatWith] = useState(0);
+
     const [ref, inView] = useInView({
         threshold: 0,
+    });
+
+    const rangeRef = React.createRef<HTMLDivElement>();
+    const indicatorRef = React.createRef<HTMLDivElement>();
+
+    useEffect(() => {
+
+        setCatWith(
+            rangeRef.current.offsetWidth / possibleStati.length
+        );
+
     });
 
     useEffect(() => {
@@ -118,9 +123,14 @@ export const Endanger = ({iucnStatus}) => {
     const { width} = useViewport();
 
     const classes = useStyles();
-``
-    const imgName = (width > 600 ) ? `${iucnStatus}-scale.svg`: `${iucnStatus}.svg`;
-    const imgPath = `/iucn/${imgName}`;
+
+    const getPosition = () => {
+
+        const pos = 4 * (catWidth / 2) - (66 /2)
+
+        return pos;
+
+    };
 
     return (
         <Grid
@@ -143,9 +153,11 @@ export const Endanger = ({iucnStatus}) => {
                     {inView.toString()}
                 </Typography>
 
-                <div className={classes.iucn}>
+                <div
+                    className={classes.iucn}
+                    ref={rangeRef}
+                >
                     <div className={classes.iucnRange}>
-
                         {
                             possibleStati.map((possibleStatus, i)=>{
 
@@ -167,8 +179,14 @@ export const Endanger = ({iucnStatus}) => {
                         }
                     </div>
                     <div
+                        ref={indicatorRef}
                         className={classes.iucnIndicator}
-                    />
+                        style={{
+                            left: `${getPosition()}px`
+                        }}
+                    >
+                        {iucnStatus}
+                    </div>
                 </div>
             </Paper>
         </Grid>

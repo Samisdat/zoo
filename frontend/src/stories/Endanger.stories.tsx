@@ -12,16 +12,6 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Endanger> = (args) => <Endanger {...args} />;
 
-export const Extinct = Template.bind({});
-Extinct.args = {
-  iucnStatus:'EX'
-};
-
-export const ExtinctInTheWild = Template.bind({});
-ExtinctInTheWild.args = {
-  iucnStatus:'EW'
-};
-
 export const CriticallyEndangered = Template.bind({});
 
 CriticallyEndangered.decorators = [

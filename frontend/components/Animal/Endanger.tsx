@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Typography from "@material-ui/core/Typography";
 import {Grid, Paper, Tooltip} from "@material-ui/core";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {useViewport} from "../viewport/useViewport";
+import { useInView } from 'react-intersection-observer';
+
 import {
     CRITICALLY_ENDANGERED,
     ENDANGERED, EXTINCT_IN_THE_WILD, LEAST_CONCERN,
@@ -48,36 +50,44 @@ const useStyles = makeStyles((theme: Theme) => {
         img:{
             width:'100%',
         },
+        iucn:{
+            position:'relative',
+            height: '66px',
+            background: 'blue',
+            overflow:'hidden'
+        },
         iucnRange:{
             position:'relative',
+            top:`${( (66 - 30) / 2)}px`,
             width: '100%',
-            height: '40px',
+            height: '30px',
             display: 'flex',
             background: 'linear-gradient(90deg, rgba(0,135,84,1) 0%, rgba(240,202,1,1) 50%, rgba(193,18,28,1) 100%)',
             borderRadius:'100px',
         },
-        iucnIndicator:{
-          position: 'absolute',
-            top:'-20px',
-            left:'10px',
-            width:'80px',
-            height:'80px',
-            background: 'red',
-            border:'3px solid #fff',
-            borderRadius: '100px',
-            borderTopRightRadius: '0'
-
-        },
         iucnCat:{
             width: (100/possibleStati.length ) + '%',
-            height: '40px',
-            lineHeight: '40px',
+            height: '30px',
+            lineHeight: '30px',
             textAlign:'center',
             color:'#fff',
             borderRight:'1px solid #fff',
             "&:last-child": {
                 borderRight:'0px solid #fff',
             }
+        },
+        iucnIndicator:{
+          position: 'absolute',
+            /*top:`-${ ( (60 + 2 * 3 - 30)  / 2)}px`,*/
+            top:'0px',
+            left:'10px',
+            width:'60px',
+            height:'60px',
+            background: 'red',
+            border:'3px solid #fff',
+            borderRadius: '100px',
+            borderTopRightRadius: '0'
+
         },
     };
 
@@ -91,18 +101,21 @@ const useStyles = makeStyles((theme: Theme) => {
 
     }
 
-    console.log(styles)
-
     return createStyles(styles);
 
 });
 
 export const Endanger = ({iucnStatus}) => {
 
-    console.log(iucnStatus)
+    const [ref, inView] = useInView({
+        threshold: 0,
+    });
+
+    useEffect(() => {
+       console.log(inView)
+    },[inView]);
 
     const { width} = useViewport();
-    console.log(width)
 
     const classes = useStyles();
 ``
@@ -115,6 +128,7 @@ export const Endanger = ({iucnStatus}) => {
             id={'endanger'}
             item
             xs={12}
+            ref={ref}
         >
             <Paper
                 className={classes.paper}
@@ -125,33 +139,36 @@ export const Endanger = ({iucnStatus}) => {
                     Bedrohung<br/>
                     {iucnStatus}
                     <br/>
-                    {width}
+                    {width}<br/>
+                    {inView.toString()}
                 </Typography>
 
-                <div className={classes.iucnRange}>
+                <div className={classes.iucn}>
+                    <div className={classes.iucnRange}>
+
+                        {
+                            possibleStati.map((possibleStatus, i)=>{
+
+                                const statusClass = classes[`iucnCat${possibleStatus}`];
+
+                                const className = `${classes.iucnCat} ${statusClass}`;
+
+                                return (
+                                    <Tooltip title={catText[possibleStatus]}>
+                                        <div
+                                            key={i}
+                                            className={className}
+                                        >
+                                            {possibleStatus}
+                                        </div>
+                                    </Tooltip>
+                                )
+                            })
+                        }
+                    </div>
                     <div
                         className={classes.iucnIndicator}
                     />
-
-                    {
-                        possibleStati.map((possibleStatus, i)=>{
-
-                            const statusClass = classes[`iucnCat${possibleStatus}`];
-
-                            const className = `${classes.iucnCat} ${statusClass}`;
-
-                            return (
-                                <Tooltip title={catText[possibleStatus]}>
-                                    <div
-                                        key={i}
-                                        className={className}
-                                    >
-                                        {possibleStatus}
-                                    </div>
-                                </Tooltip>
-                            )
-                        })
-                    }
                 </div>
             </Paper>
         </Grid>

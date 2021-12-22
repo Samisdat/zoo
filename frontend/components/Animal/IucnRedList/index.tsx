@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Typography from "@material-ui/core/Typography";
 import {Grid, Paper, Tooltip} from "@material-ui/core";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import {useViewport} from "../viewport/useViewport";
+import {useViewport} from "../../viewport/useViewport";
 import { useInView } from 'react-intersection-observer';
 
 import {
@@ -10,7 +10,8 @@ import {
     ENDANGERED, EXTINCT_IN_THE_WILD, LEAST_CONCERN,
     NEAR_THREATENED,
     VULNERABLE
-} from "../../strapi-api/entity/animal/iucnStatus";
+} from "../../../strapi-api/entity/animal/iucnStatus";
+import {IucnRedListIndicator} from "./Indicator";
 
 
 const possibleStati = [
@@ -29,24 +30,12 @@ const catText = {
     'CR': 'Vom Aussterben bedroht',
 };
 
-const statusColors = {
-    'LC': '#176E24',
-    'NT': '#C59820',
-    'VU': '#F0A017',
-    'EN': '#E5751C',
-    'CR': '#D2281C',
-    'EW': '#591B09',
-}
-
 const useStyles = makeStyles((theme: Theme) => {
 
     return createStyles({
         paper: {
             padding: theme.spacing(2),
             color: theme.palette.text.secondary,
-        },
-        img:{
-            width:'100%',
         },
         iucn:{
             position:'relative',
@@ -75,70 +64,48 @@ const useStyles = makeStyles((theme: Theme) => {
                 borderRight:'0px solid #fff',
             }
         },
-        iucnIndicator:{
-            position: 'absolute',
-            /*top:`-${ ( (60 + 2 * 3 - 30)  / 2)}px`,*/
-            top:'0px',
-            left:'-66px',
-            width:'60px',
-            height:'60px',
-            background: 'red',
-            border:'3px solid #fff',
-            borderRadius: '100px',
-            borderTopRightRadius: '0',
-            lineHeight: '60px',
-            textAlign: 'center',
-            fontWeight: 'bold',
-            color:'#fff',
-            fontSize:'16px',
-            transition: 'left 5s'
-        },
     });
 
 });
 
-export const Endanger = ({iucnStatus}) => {
+export const IucnRedList = ({iucnStatus}) => {
 
-    const [catWidth, setCatWith] = useState(0);
+    const [width, setWidth] = useState(0);
+    const [firstTimeInView, setFirstTimeInView] = useState(false);
 
     const [ref, inView] = useInView({
         threshold: 0,
     });
 
     const rangeRef = React.createRef<HTMLDivElement>();
-    const indicatorRef = React.createRef<HTMLDivElement>();
+
+    const viewport = useViewport();
 
     useEffect(() => {
 
-        setCatWith(
-            rangeRef.current.offsetWidth / possibleStati.length
+        setWidth(
+            rangeRef.current.offsetWidth
         );
 
     });
 
     useEffect(() => {
-       console.log(inView)
+
+        if(false === firstTimeInView && true === inView){
+            setFirstTimeInView(true);
+        }
+
     },[inView]);
 
-    const { width} = useViewport();
-
     const classes = useStyles();
-
-    const getPosition = () => {
-
-        const pos = 4 * (catWidth / 2) - (66 /2)
-
-        return pos;
-
-    };
-
+    
     return (
         <Grid
             component={'section'}
             id={'endanger'}
             item
             xs={12}
-            ref={ref}
+
         >
             <Paper
                 className={classes.paper}
@@ -149,15 +116,17 @@ export const Endanger = ({iucnStatus}) => {
                     Bedrohung<br/>
                     {iucnStatus}
                     <br/>
-                    {width}<br/>
                     {inView.toString()}
                 </Typography>
 
                 <div
                     className={classes.iucn}
-                    ref={rangeRef}
+                    ref={ref}
                 >
-                    <div className={classes.iucnRange}>
+                    <div
+                        className={classes.iucnRange}
+                        ref={rangeRef}
+                    >
                         {
                             possibleStati.map((possibleStatus, i)=>{
 
@@ -178,15 +147,13 @@ export const Endanger = ({iucnStatus}) => {
                             })
                         }
                     </div>
-                    <div
-                        ref={indicatorRef}
-                        className={classes.iucnIndicator}
-                        style={{
-                            left: `${getPosition()}px`
-                        }}
-                    >
-                        {iucnStatus}
-                    </div>
+                    <IucnRedListIndicator
+                        firstTimeInView={firstTimeInView}
+                        width={width}
+                        pos={possibleStati.indexOf(iucnStatus)}
+                        left={100}
+                        iucnStatus={iucnStatus}
+                    />
                 </div>
             </Paper>
         </Grid>

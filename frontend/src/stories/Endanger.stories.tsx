@@ -1,16 +1,17 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import {IucnRedList} from "../../components/Animal/IucnRedList";
 
-import {Endanger} from "../../components/Animal/Endanger";
+
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Component/Endanger',
-  component: Endanger,
-} as ComponentMeta<typeof Endanger>;
+  component: IucnRedList,
+} as ComponentMeta<typeof IucnRedList>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Endanger> = (args) => <Endanger {...args} />;
+const Template: ComponentStory<typeof IucnRedList> = (args) => <IucnRedList {...args} />;
 
 export const CriticallyEndangered = Template.bind({});
 
@@ -53,9 +54,4 @@ NearThreatened.args = {
 export const LeastConcern = Template.bind({});
 LeastConcern.args = {
   iucnStatus:'LC'
-};
-
-export const DataDeficient = Template.bind({});
-DataDeficient.args = {
-  iucnStatus:'DD'
 };

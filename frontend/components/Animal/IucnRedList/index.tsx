@@ -7,12 +7,11 @@ import { useInView } from 'react-intersection-observer';
 
 import {
     CRITICALLY_ENDANGERED,
-    ENDANGERED, EXTINCT_IN_THE_WILD, LEAST_CONCERN,
+    ENDANGERED, IucnStatus, LEAST_CONCERN,
     NEAR_THREATENED,
     VULNERABLE
 } from "../../../strapi-api/entity/animal/iucnStatus";
 import {IucnRedListIndicator} from "./Indicator";
-
 
 const possibleStati = [
     LEAST_CONCERN,
@@ -22,7 +21,7 @@ const possibleStati = [
     CRITICALLY_ENDANGERED,
 ];
 
-const catText = {
+export const catText = {
     'LC': 'Nicht gefährdet',
     'NT': 'Potenziell gefährdet',
     'VU': 'Gefährdet',
@@ -40,7 +39,6 @@ const useStyles = makeStyles((theme: Theme) => {
         iucn:{
             position:'relative',
             height: '66px',
-            background: 'blue',
             overflow:'hidden'
         },
         iucnRange:{
@@ -68,7 +66,11 @@ const useStyles = makeStyles((theme: Theme) => {
 
 });
 
-export const IucnRedList = ({iucnStatus}) => {
+export interface IucnRedListProps{
+    iucnStatus:IucnStatus
+}
+
+export const IucnRedList = ({iucnStatus}:IucnRedListProps) => {
 
     const [width, setWidth] = useState(0);
     const [firstTimeInView, setFirstTimeInView] = useState(false);
@@ -79,7 +81,7 @@ export const IucnRedList = ({iucnStatus}) => {
 
     const rangeRef = React.createRef<HTMLDivElement>();
 
-    const viewport = useViewport();
+    useViewport();
 
     useEffect(() => {
 
@@ -98,7 +100,7 @@ export const IucnRedList = ({iucnStatus}) => {
     },[inView]);
 
     const classes = useStyles();
-    
+
     return (
         <Grid
             component={'section'}
@@ -113,10 +115,7 @@ export const IucnRedList = ({iucnStatus}) => {
                 elevation={0}
             >
                 <Typography component="h2">
-                    Bedrohung<br/>
-                    {iucnStatus}
-                    <br/>
-                    {inView.toString()}
+                    Bedrohung
                 </Typography>
 
                 <div
@@ -151,7 +150,6 @@ export const IucnRedList = ({iucnStatus}) => {
                         firstTimeInView={firstTimeInView}
                         width={width}
                         pos={possibleStati.indexOf(iucnStatus)}
-                        left={100}
                         iucnStatus={iucnStatus}
                     />
                 </div>

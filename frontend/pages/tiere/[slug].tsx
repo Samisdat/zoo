@@ -9,7 +9,6 @@ import {Breadcrumb, BreadcrumbLink, BreadcrumbProps} from "../../components/Navi
 import {Distribution} from "../../components/Distribution/Distribution";
 import {getMapElementById} from "../../strapi-api/query/map-elements";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
-import {Endanger} from "../../components/Animal/Endanger";
 import {DistributionGlobe} from "../../components/Distribution/DistributionGlobe";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {Grid, Paper} from "@material-ui/core";
@@ -17,9 +16,8 @@ import {getImagePath} from "../../helper/getImagePath";
 import SimpleTabs from "../../components/Tabs";
 import BasicTable from "../../components/Table";
 import DetailedAccordion from "../../components/Accordion";
-
-
 import {Profile} from "../../components/Animal/Profile/Profile";
+import {IucnRedList} from "../../components/Animal/IucnRedList";
 
 const useStyles = makeStyles((theme: Theme) => {
 
@@ -116,7 +114,7 @@ export default function Tiere(props) {
                     <Profile
                         profile={animal.profile}
                     />
-                    <Endanger
+                    <IucnRedList
                         iucnStatus={animal.iucnStatus}
                     />
                     <Grid

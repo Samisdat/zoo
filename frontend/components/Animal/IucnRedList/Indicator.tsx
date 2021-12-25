@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import {Tooltip} from "@material-ui/core";
+import {catText} from "./index";
 const useStyles = makeStyles((theme: Theme) => {
 
     return createStyles({
@@ -27,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) => {
 
 });
 
-export const IucnRedListIndicator = ({firstTimeInView, pos, left, iucnStatus, width}) => {
+export const IucnRedListIndicator = ({firstTimeInView, pos, iucnStatus, width}) => {
 
     const ref = React.createRef<HTMLDivElement>();
 
@@ -77,6 +79,7 @@ export const IucnRedListIndicator = ({firstTimeInView, pos, left, iucnStatus, wi
     };
 
     return (
+        <Tooltip title={catText[iucnStatus]}>
         <div
             ref={ref}
             className={getClassName()}
@@ -84,5 +87,6 @@ export const IucnRedListIndicator = ({firstTimeInView, pos, left, iucnStatus, wi
         >
             {iucnStatus}
         </div>
+        </Tooltip>
     );
 }

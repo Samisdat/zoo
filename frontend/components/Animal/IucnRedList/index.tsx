@@ -134,9 +134,11 @@ export const IucnRedList = ({iucnStatus}:IucnRedListProps) => {
                                 const className = `${classes.iucnCat} ${statusClass}`;
 
                                 return (
-                                    <Tooltip title={catText[possibleStatus]}>
+                                    <Tooltip
+                                        key={i}
+                                        title={catText[possibleStatus]}
+                                    >
                                         <div
-                                            key={i}
                                             className={className}
                                         >
                                             {possibleStatus}

@@ -34,6 +34,7 @@
     "shapefile": "^0.6.6",
     "simplify-geojson": "^1.0.4",
     "slugify": "^1.4.6",
+    "storybook-addon-mock": "^2.0.1",
     "svg2geojson": "0.7.1",
     "topojson": "^3.0.2",
     "topojson-client": "^3.1.0",

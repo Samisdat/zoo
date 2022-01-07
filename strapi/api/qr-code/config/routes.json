@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/qr-codes",
+      "handler": "qr-code.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/qr-codes/count",
+      "handler": "qr-code.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/qr-codes/:id",
+      "handler": "qr-code.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/qr-codes",
+      "handler": "qr-code.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/qr-codes/:id",
+      "handler": "qr-code.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/qr-codes/:id",
+      "handler": "qr-code.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

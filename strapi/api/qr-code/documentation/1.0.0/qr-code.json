@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/posts": {
+    "/qr-codes": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,9 +10,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Post"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -51,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Qr-code"
         ],
         "parameters": [
           {
@@ -201,72 +202,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Post"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Post"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewPost"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/posts/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
                   "properties": {
-                    "count": {
-                      "type": "integer"
+                    "foo": {
+                      "type": "string"
                     }
                   }
                 }
@@ -306,12 +244,22 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Qr-code"
         ],
-        "parameters": []
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewQr-code"
+              }
+            }
+          }
+        }
       }
     },
-    "/posts/{id}": {
+    "/qr-codes/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +269,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Post"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -359,7 +311,64 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Qr-code"
+        ],
+        "parameters": []
+      }
+    },
+    "/qr-codes/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Qr-code"
         ],
         "parameters": [
           {
@@ -383,7 +392,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Post"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -421,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Qr-code"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPost"
+                "$ref": "#/components/schemas/NewQr-code"
               }
             }
           }
@@ -495,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Qr-code"
         ],
         "parameters": [
           {
@@ -514,297 +527,93 @@
   },
   "components": {
     "schemas": {
-      "Post": {
+      "Qr-code": {
         "required": [
-          "id",
-          "slug"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "slug": {
-            "type": "string"
-          },
           "title": {
             "type": "string"
           },
-          "body": {
+          "facility": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "body": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "enclosure",
+                  "food",
+                  "playground",
+                  "toilet",
+                  "poi"
+                ]
+              },
+              "raw_published": {
+                "type": "boolean"
+              },
+              "animals": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "map_elements": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "photos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "posts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "qr_codes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "lat": {
             "type": "string"
           },
-          "animals": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "title"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "individual_animals": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "slug": {
-                  "type": "uid"
-                },
-                "wikidata": {
-                  "type": "string"
-                },
-                "wikipediaLink": {
-                  "type": "string"
-                },
-                "scientificName": {
-                  "type": "string"
-                },
-                "iucnID": {
-                  "type": "string"
-                },
-                "iucnLink": {
-                  "type": "string"
-                },
-                "iucnStatus": {
-                  "type": "string"
-                },
-                "body": {
-                  "type": "string"
-                },
-                "className": {
-                  "type": "string"
-                },
-                "order": {
-                  "type": "string"
-                },
-                "species": {
-                  "type": "string"
-                },
-                "title_en": {
-                  "type": "string"
-                },
-                "title_nl": {
-                  "type": "string"
-                },
-                "title_de": {
-                  "type": "string"
-                },
-                "raw_facility": {
-                  "type": "string"
-                },
-                "family": {
-                  "type": "string"
-                },
-                "raw_published": {
-                  "type": "boolean"
-                },
-                "facilities": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "photos": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "posts": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "profile": {
-                  "type": "component"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "individual_animals": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "animal": {
-                  "type": "string"
-                },
-                "slug": {
-                  "type": "uid"
-                },
-                "photos": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "body": {
-                  "type": "string"
-                },
-                "posts": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "facilities": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "slug": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "body": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string",
-                  "enum": [
-                    "enclosure",
-                    "food",
-                    "playground",
-                    "toilet",
-                    "poi"
-                  ]
-                },
-                "raw_published": {
-                  "type": "boolean"
-                },
-                "animals": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "map_elements": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "photos": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "posts": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "qr_codes": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "photos": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "copyright": {
-                  "type": "string"
-                },
-                "image": {
-                  "type": "string"
-                },
-                "animal": {
-                  "type": "string"
-                },
-                "facility": {
-                  "type": "string"
-                },
-                "orientation": {
-                  "type": "string",
-                  "enum": [
-                    "landscape",
-                    "portrait"
-                  ]
-                },
-                "individual_animal": {
-                  "type": "string"
-                },
-                "post": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "lng": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -812,43 +621,19 @@
           }
         }
       },
-      "NewPost": {
-        "required": [
-          "slug"
-        ],
+      "NewQr-code": {
         "properties": {
-          "slug": {
-            "type": "string"
-          },
           "title": {
             "type": "string"
           },
-          "body": {
+          "facility": {
             "type": "string"
           },
-          "animals": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "lat": {
+            "type": "string"
           },
-          "individual_animals": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "facilities": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "photos": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "lng": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -864,9 +649,5 @@
       }
     }
   },
-  "tags": [
-    {
-      "name": "Post"
-    }
-  ]
+  "tags": []
 }

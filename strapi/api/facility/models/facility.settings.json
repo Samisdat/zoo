@@ -48,6 +48,10 @@
     "posts": {
       "via": "facilities",
       "collection": "post"
+    },
+    "qr_codes": {
+      "via": "facility",
+      "collection": "qr-code"
     }
   }
 }

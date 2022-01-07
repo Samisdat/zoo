@@ -10,6 +10,8 @@ import {IndividualAnimal} from "../entity/individual-animal/individual-animal";
 import {IndividualAnimalSpore} from "../entity/individual-animal/individual-animal-spore";
 import {Post} from "../entity/post/post";
 import {PostSpore} from "../entity/post/post-spore";
+import {QrCodeSpore} from "../entity/qr-code/qr-code-spore";
+import {QrCode} from "../entity/qr-code/qr-code";
 
 export interface WarehouseSpore{
     facilities:FacilitySpore[];
@@ -18,6 +20,7 @@ export interface WarehouseSpore{
     animals: AnimalSpore[]
     individualAnimals: IndividualAnimalSpore[]
     posts: PostSpore[]
+    qrCodes: QrCodeSpore[]
 }
 
 export class Warehouse{
@@ -41,6 +44,9 @@ export class Warehouse{
 
     private postsIds: number[] = [];
     private posts:Post[] = [];
+
+    private qrCodesIds: number[] = [];
+    private qrCodes:QrCode[] = [];
 
     private constructor() {
     }
@@ -81,13 +87,18 @@ export class Warehouse{
             return post.dehydrate();
         });
 
+        const qrCodes = this.qrCodes.map((qrCode:QrCode)=>{
+            return qrCode.dehydrate();
+        });
+
         return {
             facilities,
             photos,
             mapElements,
             animals,
             individualAnimals,
-            posts
+            posts,
+            qrCodes
         };
     }
 
@@ -143,6 +154,15 @@ export class Warehouse{
             this.posts = spore.posts.map((postSpore:PostSpore)=>{
                 this.postsIds.push(postSpore.id);
                 return Post.hydrate(postSpore);
+            });
+
+        }
+
+        if(spore.qrCodes){
+
+            this.qrCodes = spore.qrCodes.map((qrCodeSpore:QrCodeSpore)=>{
+                this.qrCodesIds.push(qrCodeSpore.id);
+                return QrCode.hydrate(qrCodeSpore);
             });
 
         }
@@ -351,6 +371,41 @@ export class Warehouse{
     public getPosts():Post[]{
 
         return this.posts;
+
+    }
+
+    public addQrCode(qrCode: QrCode){
+
+        if(false === this.hasPost(qrCode.id)){
+
+            this.qrCodesIds.push(qrCode.id);
+            this.qrCodes.push(qrCode);
+
+        }
+    }
+
+    public hasQrCode(id: number):boolean{
+
+        return this.qrCodesIds.includes(id);
+
+    }
+
+    public getQrCode(id: number):QrCode{
+
+
+        if(false === this.hasQrCode(id)){
+            return undefined;
+        }
+
+        return this.qrCodes.find((qrCode:QrCode)=>{
+            return (id === qrCode.id);
+        });
+
+    }
+
+    public getQrCodes():QrCode[]{
+
+        return this.qrCodes;
 
     }
 

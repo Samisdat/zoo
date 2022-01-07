@@ -6,6 +6,7 @@ import {Warehouse} from "../warehouse/warehouse";
 import {getPhotoById} from "./photos";
 import {getIndividualAnimalById} from "./individual-animals";
 import {getAnimalById} from "./animals";
+import {getFacilityById} from "./facilities";
 
 export const loadRelations = async (post:Post) => {
 
@@ -14,7 +15,7 @@ export const loadRelations = async (post:Post) => {
         for (const facilityId of post.facilitiesRaw) {
 
             if (false === Warehouse.get().hasFacility(facilityId)) {
-                await getPhotoById(facilityId);
+                await getFacilityById(facilityId);
             }
 
         }

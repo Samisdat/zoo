@@ -11,24 +11,27 @@ export const CurrentPosition = (props) => {
         state: {path, position},
     } = useMap();
 
-    const positionG = useRef(null);
+    const ref = useRef(null);
 
     useEffect(() => {
-
+        
         if(!path){
             return;
         }
 
-        if(!position){
+        if(!position || undefined === position.lat || undefined === position.lng){
             return;
         }
 
-        var positionGroup = d3.select(positionG.current);
+        var positionGroup = d3.select(ref.current);
+
         const currentPosition = getCurrentPositionGeoJson(
             'initial',
             position.lat,
-            position.lng
-        );
+            position.lng,
+
+
+    );
 
         let radius = 8  / props.zoom;
 
@@ -54,10 +57,10 @@ export const CurrentPosition = (props) => {
             .attr('r', radius );
 
 
-    });
+    },[path, position]);
 
     return (
-        <g ref={positionG}></g>
+        <g ref={ref}></g>
     );
 
 }

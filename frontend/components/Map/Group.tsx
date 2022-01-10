@@ -251,12 +251,13 @@ export const Group = (props:MapGroupProperties) => {
             />
             */}
 
-            <CurrentPosition
-                zoom={zoom}
-            />
             <Markers
                 zoom={zoom}
                 mapElements={points}
+            />
+
+            <CurrentPosition
+                zoom={zoom}
             />
 
         </g>

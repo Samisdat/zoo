@@ -1,16 +1,18 @@
 import React from "react";
 import {useRouter} from "next/router";
-import {getQrCodeById, getQrCodes} from "../../strapi-api/query/qr-codes";
-import {Warehouse} from "../../strapi-api/warehouse/warehouse";
+import {getQrCodeById, getQrCodes} from "../../../strapi-api/query/qr-codes";
+import {Warehouse} from "../../../strapi-api/warehouse/warehouse";
 
 import QRCode from "react-qr-code";
-import {QrCode} from "../../strapi-api/entity/qr-code/qr-code";
-import {domain, protocol, qrCodeUrlPart} from "../../constants";
+import {QrCode} from "../../../strapi-api/entity/qr-code/qr-code";
+import {domain, protocol, qrCodeUrlPart} from "../../../constants";
 
 export default function Index(props) {
 
     Warehouse.get().hydrate(props.warehouse);
     const router = useRouter()
+
+    console.log(router);
 
     const id = parseInt(router.query.id as string, 10);
 
@@ -27,7 +29,7 @@ export default function Index(props) {
 
     return (
         <div>
-            <QRCode value={url} />
+            <QRCode value={url} level={'L'} size={500}/>
 
             <p>{qrCode.id}</p>
             <p>{qrCode.title}</p>

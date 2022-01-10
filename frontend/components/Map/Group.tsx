@@ -7,8 +7,7 @@ import {Markers} from "./Markers/Markers";
 import {centerToFeatureCollection} from "../Distribution/Detail";
 import {filterGeoJson} from "helper/geojson/filterGeoJson";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
-import {MapTransformInterface, useMap} from "./Context/MapContext";
-import {useViewport} from "../viewport/useViewport";
+import {MapTransformInterface, PositionInterface, useMap} from "./Context/MapContext";
 
 // zoom until focus.width or focus.height extends window.width or window.height
 export const findBestZoomLevel = (x0, x1, y0, y1, maxWidth, maxHeight) => {
@@ -71,9 +70,9 @@ interface MapGroupProperties {
 export const Group = (props:MapGroupProperties) => {
 
     const {
-        state: {path, focus, transform, ref, dimension, center},
+        state: {path, focus, transform, ref, dimension, center, projection, position},
         dispatch
-    } = useMap()
+    } = useMap();
 
     const map = useRef(null);
 
@@ -141,6 +140,31 @@ export const Group = (props:MapGroupProperties) => {
 
         // enable zooming
         mapSvg.call(zooming);
+
+        mapSvg.on("click", (event, d)=>{
+            //console.log(event);
+            //console.log(projection.invert(d3.pointer(event)));
+            //console.log(d3.pointer(event));
+
+            const [lng, lat] = projection.invert(d3.pointer(event));
+
+            const newPosition: PositionInterface = {
+                isGPS: false,
+                isWithin: true,
+                text: 'click',
+                lat,
+                lng
+            };
+
+            dispatch({
+                type: 'SET_POSITION',
+                position: newPosition
+            });
+
+
+
+
+        });
 
         const t = d3.zoomIdentity
             .translate(

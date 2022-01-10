@@ -216,7 +216,6 @@ function MapProvider({children}: MapProviderProps) {
             });
 
             //setDimension(getDimension());
-            console.log(getDimension());
 
         }, 200);
 

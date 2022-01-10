@@ -3,7 +3,6 @@ import React, {useEffect, useRef, useState} from "react";
 
 import {Sketched} from "./Sketched";
 import {CurrentPosition} from "./CurrentPosition";
-import {PointOfInterest} from "./PointOfInterest";
 import {Markers} from "./Markers/Markers";
 import {centerToFeatureCollection} from "../Distribution/Detail";
 import {filterGeoJson} from "helper/geojson/filterGeoJson";
@@ -255,11 +254,6 @@ export const Group = (props:MapGroupProperties) => {
             <CurrentPosition
                 zoom={zoom}
             />
-            {/*
-            <PointOfInterest
-                zoom={zoom}
-                mapElements={props.mapElements}
-            />*/}
             <Markers
                 zoom={zoom}
                 mapElements={points}

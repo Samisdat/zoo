@@ -20,6 +20,14 @@ export const loadRelations = async (qrCode:QrCode) => {
 
     }
 
+    if(null !== qrCode.animalRaw){
+
+        if (false === Warehouse.get().hasAnimal(qrCode.animalRaw)) {
+            await getAnimalById(qrCode.animalRaw);
+        }
+
+    }
+
 }
 
 export const getQrCodeById = async (id: number):Promise<QrCode> =>{
@@ -27,7 +35,7 @@ export const getQrCodeById = async (id: number):Promise<QrCode> =>{
     const requestUrl = getStrapiUrl(`/qr-codes/${id}`);
 
     const json = await getJsonFromApi<QrCodeStrapi>(requestUrl);
-    console.log(json)
+
     const qrCode = QrCode.fromApi(json);
 
     await loadRelations(qrCode);
@@ -41,8 +49,6 @@ export const getQrCodes = async ():Promise<QrCode[]> =>{
     const requestUrl = getStrapiUrl('/qr-codes')
 
     const json = await getJsonFromApi<QrCodeStrapi[]>(requestUrl);
-
-
 
     const qrCodes = json.map(QrCode.fromApi);
 

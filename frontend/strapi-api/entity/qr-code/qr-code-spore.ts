@@ -3,5 +3,6 @@ export interface QrCodeSpore {
     title: string;
     lat: string;
     lng: string;
-    facility: number;
+    facility?: number;
+    animal?: number;
 }

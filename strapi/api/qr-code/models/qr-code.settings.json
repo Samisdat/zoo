@@ -24,6 +24,10 @@
     },
     "lng": {
       "type": "string"
+    },
+    "animal": {
+      "model": "animal",
+      "via": "qr_codes"
     }
   }
 }

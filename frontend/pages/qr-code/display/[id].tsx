@@ -12,20 +12,13 @@ export default function Index(props) {
     Warehouse.get().hydrate(props.warehouse);
     const router = useRouter()
 
-    console.log(router);
-
     const id = parseInt(router.query.id as string, 10);
-
 
     const qrCode = Warehouse.get().getQrCode(
         id
     );
 
-    console.log(Warehouse.get().dehydrate());
-
     const url = `${protocol}${domain}/${qrCodeUrlPart}/${id}`
-
-    console.log(url);
 
     return (
         <div>
@@ -35,7 +28,8 @@ export default function Index(props) {
             <p>{qrCode.title}</p>
             <p>{qrCode.lat}</p>
             <p>{qrCode.lng}</p>
-            <p>{qrCode.facility.title}</p>
+            <p>{qrCode.facility?.title}</p>
+            <p>{qrCode.animal?.title}</p>
         </div>
 
     );

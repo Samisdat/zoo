@@ -615,6 +615,113 @@
           "lng": {
             "type": "string"
           },
+          "animal": {
+            "required": [
+              "id",
+              "title"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "individual_animals": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "slug": {
+                "type": "uid"
+              },
+              "wikidata": {
+                "type": "string"
+              },
+              "wikipediaLink": {
+                "type": "string"
+              },
+              "scientificName": {
+                "type": "string"
+              },
+              "iucnID": {
+                "type": "string"
+              },
+              "iucnLink": {
+                "type": "string"
+              },
+              "iucnStatus": {
+                "type": "string"
+              },
+              "body": {
+                "type": "string"
+              },
+              "className": {
+                "type": "string"
+              },
+              "order": {
+                "type": "string"
+              },
+              "species": {
+                "type": "string"
+              },
+              "title_en": {
+                "type": "string"
+              },
+              "title_nl": {
+                "type": "string"
+              },
+              "title_de": {
+                "type": "string"
+              },
+              "raw_facility": {
+                "type": "string"
+              },
+              "family": {
+                "type": "string"
+              },
+              "raw_published": {
+                "type": "boolean"
+              },
+              "facilities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "photos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "posts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "profile": {
+                "type": "component"
+              },
+              "qr_codes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -633,6 +740,9 @@
             "type": "string"
           },
           "lng": {
+            "type": "string"
+          },
+          "animal": {
             "type": "string"
           },
           "published_at": {

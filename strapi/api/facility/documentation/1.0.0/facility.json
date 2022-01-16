@@ -636,6 +636,12 @@
                 "profile": {
                   "type": "component"
                 },
+                "qr_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -820,6 +826,9 @@
                   "type": "string"
                 },
                 "lng": {
+                  "type": "string"
+                },
+                "animal": {
                   "type": "string"
                 },
                 "published_at": {

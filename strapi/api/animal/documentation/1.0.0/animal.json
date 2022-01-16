@@ -853,6 +853,43 @@
               }
             }
           },
+          "qr_codes": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "facility": {
+                  "type": "string"
+                },
+                "lat": {
+                  "type": "string"
+                },
+                "lng": {
+                  "type": "string"
+                },
+                "animal": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -990,6 +1027,12 @@
                   ]
                 }
               }
+            }
+          },
+          "qr_codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           },
           "published_at": {

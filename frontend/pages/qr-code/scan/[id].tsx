@@ -30,6 +30,7 @@ export default function Index(props) {
     const classes = useStyles();
 
     Warehouse.get().hydrate(props.warehouse);
+
     const router = useRouter()
 
     const {height} = useViewport();
@@ -56,12 +57,14 @@ export default function Index(props) {
 
         setMarkerToStorage(position);
 
-        //router.push('/hello-nextjs')
+        if(qrCode.facility){
+            router.push(`/anlagen/${qrCode.facility.slug}`);
+        }
+        else if (qrCode.animal){
+            router.push(`/tiere/${qrCode.animal.slug}`);
+        }
 
-
-    })
-
-
+    });
 
     return (
         <React.Fragment>
@@ -69,7 +72,6 @@ export default function Index(props) {
             <p>{qrCode.title}</p>
             <p>{lat}</p>
             <p>{lng}</p>
-            <p>{qrCode.facility.title}</p>
             <div
                 className={classes.alignCenter}
                 style={{

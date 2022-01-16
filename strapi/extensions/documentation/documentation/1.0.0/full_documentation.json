@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "01/07/2022 5:16:06 PM"
+    "x-generation-date": "01/16/2022 3:57:10 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6229,6 +6229,43 @@
               }
             }
           },
+          "qr_codes": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "facility": {
+                  "type": "string"
+                },
+                "lat": {
+                  "type": "string"
+                },
+                "lng": {
+                  "type": "string"
+                },
+                "animal": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -6368,6 +6405,12 @@
               }
             }
           },
+          "qr_codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -6501,6 +6544,12 @@
                 },
                 "profile": {
                   "type": "component"
+                },
+                "qr_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"
@@ -6688,6 +6737,9 @@
                 "lng": {
                   "type": "string"
                 },
+                "animal": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -6872,6 +6924,12 @@
               },
               "profile": {
                 "type": "component"
+              },
+              "qr_codes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "published_at": {
                 "type": "string"
@@ -7355,6 +7413,12 @@
               "profile": {
                 "type": "component"
               },
+              "qr_codes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "published_at": {
                 "type": "string"
               },
@@ -7695,6 +7759,12 @@
                 "profile": {
                   "type": "component"
                 },
+                "qr_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -8021,6 +8091,113 @@
           "lng": {
             "type": "string"
           },
+          "animal": {
+            "required": [
+              "id",
+              "title"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "individual_animals": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "slug": {
+                "type": "uid"
+              },
+              "wikidata": {
+                "type": "string"
+              },
+              "wikipediaLink": {
+                "type": "string"
+              },
+              "scientificName": {
+                "type": "string"
+              },
+              "iucnID": {
+                "type": "string"
+              },
+              "iucnLink": {
+                "type": "string"
+              },
+              "iucnStatus": {
+                "type": "string"
+              },
+              "body": {
+                "type": "string"
+              },
+              "className": {
+                "type": "string"
+              },
+              "order": {
+                "type": "string"
+              },
+              "species": {
+                "type": "string"
+              },
+              "title_en": {
+                "type": "string"
+              },
+              "title_nl": {
+                "type": "string"
+              },
+              "title_de": {
+                "type": "string"
+              },
+              "raw_facility": {
+                "type": "string"
+              },
+              "family": {
+                "type": "string"
+              },
+              "raw_published": {
+                "type": "boolean"
+              },
+              "facilities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "photos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "posts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "profile": {
+                "type": "component"
+              },
+              "qr_codes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -8039,6 +8216,9 @@
             "type": "string"
           },
           "lng": {
+            "type": "string"
+          },
+          "animal": {
             "type": "string"
           },
           "published_at": {

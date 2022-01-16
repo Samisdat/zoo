@@ -4,6 +4,7 @@ import {Facility} from "../facility/facility";
 import {Warehouse} from "../../warehouse/warehouse";
 import {QrCodeStrapi} from "./qr-code-strapi-interface";
 import {qrCodeReduceApiData} from "./qr-code-reduce-api-data";
+import {Animal} from "../animal/animal";
 
 export class QrCode extends Entity<QrCodeSpore>{
 
@@ -31,11 +32,19 @@ export class QrCode extends Entity<QrCodeSpore>{
         return Warehouse.get().getFacility(this.json.facility);
     }
 
+    get animalRaw(): number{
+        return this.json.animal;
+    }
+
+    get animal(): Animal{
+        return Warehouse.get().getAnimal(this.json.animal);
+    }
+
     static hydrate(dehydrated: QrCodeSpore):QrCode{
 
-        const animal = new QrCode(dehydrated);
+        const qrCode = new QrCode(dehydrated);
 
-        return animal;
+        return qrCode;
 
     }
 

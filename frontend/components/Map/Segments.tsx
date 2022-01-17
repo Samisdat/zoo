@@ -3,10 +3,29 @@ import * as d3 from 'd3';
 import React, {useEffect, useRef} from 'react';
 import {useMap} from "./Context/MapContext";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
+import {Feature} from "geojson";
+
+interface Point {
+    x:number;
+    y:number;
+}
+
+interface Points{
+    [key:string]: Point
+}
+
+interface Edge {
+    start:string;
+    end:string;
+    length:number;
+}
+
+
 
 export const Segments = (props) => {
 
     const segmentElement = useRef(null);
+    const nodesElement = useRef(null);
 
     const {
         state: {path, projection, ref}
@@ -43,16 +62,97 @@ export const Segments = (props) => {
             .attr('visibility', 'visible')
         ;
 
-        console.log(segmentElementGroup
-            .selectAll('path'))
-
         segmentElementGroup
             .selectAll("path")
             .style('fill', 'none')
             .style('stroke','#fe0000')
             .style('stroke-width', '2.08px')
-
         ;
+
+        const allSegments = segmentElementGroup
+            .selectAll('path')
+
+        const edges:Edge[] = [];
+        const points:Points = {};
+
+        allSegments.each(function(d,i) {
+
+            const pathElement = this as SVGGeometryElement;
+
+            const length = pathElement.getTotalLength();
+            const startPos = pathElement.getPointAtLength(0);
+            const endPos = pathElement.getPointAtLength(length);
+
+            const key = (pos:Point):string=>{
+
+                const x = Math.floor(pos.x * 100);
+                const y = Math.floor(pos.y * 100);
+
+                return `${x}-${y}`
+            }
+
+            if(undefined === points[key(startPos)]){
+                points[key(startPos)] = startPos;
+            }
+
+            if(undefined === points[key(endPos)]){
+                points[key(endPos)] = endPos;
+            }
+
+            const edge:Edge = {
+                length,
+                start:`${startPos.x}-${startPos.y}`,
+                end:`${endPos.x}-${endPos.y}`
+            };
+
+            edges.push(edge);
+
+        });
+
+        var nodesGroup = d3.select(nodesElement.current);
+
+        const pointsArray = [];
+
+        for(const pointKey in points){
+            pointsArray.push(
+                points[pointKey]
+            );
+        }
+
+        nodesGroup.selectAll('circle')
+            .data(pointsArray)
+            .join('circle')
+            .attr('cx', function(d) {
+                return d.x;
+            })
+            .attr('cy', function(d) {
+                return d.y;
+            })
+            .attr('stroke', (d, i)=>{
+
+                return '#000';
+            })
+            .attr('stroke-width', (d, i)=>{
+                return 1;
+            })
+            .attr('vector-effect', (d, i)=>{
+                return 'non-scaling-stroke'
+                return 1;
+            })
+            .attr('fill', (d, i)=>{
+
+                return 'red';
+
+            })
+            .attr('r', 5)
+            .attr('d', path as any)
+        ;
+
+        nodesGroup
+            .attr("transform", "translate(" + x + "," + y + ") scale(" + scale +  ") " + rotate)
+            .attr('visibility', 'visible')
+        ;
+
 
     };
 
@@ -165,6 +265,8 @@ export const Segments = (props) => {
                 <path id="_0097" d="M1735.5,485.048l6.181,3.068"/>
                 <path id="_0098" d="M1745.05,592.949l-1.236,-7.589"/>
             </g>
+
+            <g ref={nodesElement}></g>
             
         </React.Fragment>
     );

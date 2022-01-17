@@ -8,6 +8,7 @@ import {centerToFeatureCollection} from "../Distribution/Detail";
 import {filterGeoJson} from "helper/geojson/filterGeoJson";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {MapTransformInterface, PositionInterface, useMap} from "./Context/MapContext";
+import {Segments} from "./Segments";
 
 // zoom until focus.width or focus.height extends window.width or window.height
 export const findBestZoomLevel = (x0, x1, y0, y1, maxWidth, maxHeight) => {
@@ -269,17 +270,17 @@ export const Group = (props:MapGroupProperties) => {
                 pathGenerator={props.mapState.pathGenerator}
                 geoJson={props.geoJson}
             />
-            <Segments
-                pathGenerator={props.mapState.pathGenerator}
-                geoJson={props.geoJson}
-            />
             */}
+            <Segments
+                boundingBox={boundingBox}
+            />
 
+            {/*
             <Markers
                 zoom={zoom}
                 mapElements={points}
             />
-
+            */}
             <CurrentPosition
                 zoom={zoom}
             />

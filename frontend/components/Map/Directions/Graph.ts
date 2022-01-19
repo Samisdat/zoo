@@ -14,6 +14,13 @@ interface NodesMapping{
     [key:string]: number
 }
 
+interface Route {
+    start: number;
+    end: number;
+    length: number;
+    nodes:number[];
+}
+
 
 export class Graph{
 
@@ -135,6 +142,14 @@ export class Graph{
 
     private getEdgesOnNode(id:number):Edge[]{
 
+        const edges = this.edges.filter((edge)=>{
+            return (edge.start === id || edge.end === id);
+        });
+
+        console.log(edges);
+
+        return edges;
+
     }
 
 
@@ -144,10 +159,22 @@ export class Graph{
 
     }
 
+
+
     public getRoute(start:number, end:number){
-        console.log(start, end);
 
+        const routes = [];
 
+        const startRoute:Route = {
+            start,
+            end,
+            length:0,
+            nodes:[start]
+        }
+
+        console.log(startRoute);
+
+        console.log(this.getEdgesOnNode(start));
 
 
     }

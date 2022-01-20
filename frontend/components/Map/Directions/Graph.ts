@@ -173,16 +173,22 @@ export class Graph{
         for(const edge of this.edges){
 
             if(undefined === graph[edge.start]){
-                graph[edge.start] = {};
+                graph[edge.start] = [];
             }
 
-            graph[edge.start][edge.end] = edge.length;
+            graph[edge.start].push({
+                id:edge.end,
+                distance:edge.length
+            });
 
             if(undefined === graph[edge.end]){
-                graph[edge.end] = {};
+                graph[edge.end] = [];
             }
 
-            graph[edge.end][edge.start] = edge.length;
+            graph[edge.end].push({
+                id:edge.start,
+                distance:edge.length
+            });
 
         }
 

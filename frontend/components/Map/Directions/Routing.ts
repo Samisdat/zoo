@@ -4,17 +4,22 @@ interface Route {
     finished:boolean;
 }
 
-export interface Neighbours {
-    [key:number]: number
+export interface Neighbour {
+    id: number,
+    distance:number
 }
 
 export interface RoutingGraph{
-    [key:number]: Neighbours
+    [key:number]: Neighbour[]
 }
 
 export class Routing{
 
-    private shortest:number = Infinity
+    private shortest:Route = {
+        finished:true,
+        length:Infinity,
+        nodes:[]
+    };
 
     private routes:Route[] = [];
 
@@ -40,24 +45,8 @@ export class Routing{
         this.route();
         this.route();
         this.route();
-        this.route();
-        this.route();
-        this.route();
-        this.route();
-        this.route();
-        this.route();
-        this.route();
-        this.route();
-        this.route();
-        this.route();
-        this.route();
-        this.route();
-        this.route();
-        this.route();
-        this.route();
-        this.route();
 
-        console.table(this.routes)
+        console.log(this.routes)
 
     }
 
@@ -71,12 +60,55 @@ export class Routing{
 
     private route(){
 
+        const routes:Route[] = [];
+
         for(const route of this.routes){
 
             if(true === route.finished){
                 continue;
             }
 
+            const currentId = route.nodes[route.nodes.length - 1];
+
+            // @TODO sackgassen handling
+            const current = this.graph[currentId];
+
+            for(const index in current){
+
+                const neighbour = current[index];
+
+                // prevent back and forth
+                if(true === route.nodes.includes(neighbour.id)){
+
+                    // @TODO sackgassen handling
+                    continue;
+
+                }
+
+                const fork:Route = {
+                    length:route.length,
+                    finished:false,
+                    nodes: [
+                        ...route.nodes
+                    ]
+                };
+
+                fork.nodes.push(neighbour.id);
+                console.log(fork.nodes, route.nodes)
+                fork.length += neighbour.distance;
+
+                routes.push(fork);
+
+
+                //console.log(route)
+
+
+            }
+
+            //console.log(current);
+
+            continue;
+/*
             const currentId = route.nodes[route.nodes.length - 1];
 
             const current = this.graph[currentId];
@@ -119,10 +151,10 @@ export class Routing{
                 }
 
             }
-
+        */
         }
 
-        for(const route of this.routes){
+        for(const route of routes){
 
             const last = route.nodes[route.nodes.length - 1];
 
@@ -130,25 +162,32 @@ export class Routing{
 
                 route.finished = true;
 
-                if(route.length < this.shortest){
-                    this.shortest = route.length;
+                if(route.length < this.shortest.length){
+                    this.shortest = route;
                 }
 
-                //console.log('hit', route, this.shortest)
+                console.log('hit', this.shortest)
 
             }
 
-            if(route.length > this.shortest){
+            if(route.length > this.shortest.length){
                 route.finished = true;
             }
 
         }
 
+        this.routes = routes.filter((route)=>{
+            return (!route.finished);
+        });
+
+        /*
         const atLeastOneUnfinished = this.routes.filter((route)=>{
             return (false === route.finished);
         });
 
         console.log(atLeastOneUnfinished);
+
+         */
 
     }
 

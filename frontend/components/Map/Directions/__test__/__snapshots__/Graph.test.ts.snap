@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Graph data structure 1`] = `
+Array [
+  Object {
+    "finished": true,
+    "length": 204.71543502807617,
+    "nodes": Array [
+      171,
+      169,
+      11,
+    ],
+  },
+  Object {
+    "finished": false,
+    "length": 177.33635330200195,
+    "nodes": Array [
+      171,
+      169,
+      170,
+      187,
+    ],
+  },
+  Object {
+    "finished": false,
+    "length": 183.72320175170898,
+    "nodes": Array [
+      171,
+      169,
+      189,
+    ],
+  },
+  Object {
+    "finished": true,
+    "length": 343.3695945739746,
+    "nodes": Array [
+      171,
+      169,
+      11,
+      170,
+      187,
+    ],
+  },
+]
+`;

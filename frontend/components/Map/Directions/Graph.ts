@@ -1,3 +1,5 @@
+import {RoutingGraph} from "./Routing";
+
 interface Node {
     id: number;
     x: number;
@@ -21,6 +23,13 @@ interface Route {
     nodes:number[];
 }
 
+interface Neighbours {
+    [key:number]: number
+}
+
+interface Grap{
+    [key:number]: Neighbours
+}
 
 export class Graph{
 
@@ -32,8 +41,6 @@ export class Graph{
     private nodesMapping: NodesMapping = {}
 
     private constructor(segments:d3.Selection<d3.BaseType, unknown, any, unknown>) {
-
-        console.log('constructor')
 
         segments.each((d,i)=> {
             const path = segments.nodes()[i];
@@ -146,8 +153,6 @@ export class Graph{
             return (edge.start === id || edge.end === id);
         });
 
-        console.log(edges);
-
         return edges;
 
     }
@@ -163,19 +168,25 @@ export class Graph{
 
     public getRoute(start:number, end:number){
 
-        const routes = [];
+        const graph:RoutingGraph = {}
 
-        const startRoute:Route = {
-            start,
-            end,
-            length:0,
-            nodes:[start]
+        for(const edge of this.edges){
+
+            if(undefined === graph[edge.start]){
+                graph[edge.start] = {};
+            }
+
+            graph[edge.start][edge.end] = edge.length;
+
+            if(undefined === graph[edge.end]){
+                graph[edge.end] = {};
+            }
+
+            graph[edge.end][edge.start] = edge.length;
+
         }
 
-        console.log(startRoute);
-
-        console.log(this.getEdgesOnNode(start));
-
+        console.log(JSON.stringify(graph))
 
     }
 

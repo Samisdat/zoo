@@ -37,17 +37,37 @@ export class Dijkstra{
         //console.log(JSON.stringify(this.nodeChecks, null, 4))
 
         this.visitNode();
+        console.log('queue',this.queue)
         this.visitNode();
+        console.log('queue',this.queue)
         this.visitNode();
+        console.log('queue',this.queue)
         this.visitNode();
+        console.log('queue',this.queue)
+        this.visitNode();
+        console.log('queue',this.queue)
+        this.visitNode();
+        console.log('queue',this.queue)
+        this.visitNode();
+        console.log('queue',this.queue)
 
         this.getShortestRoute();
 
-        console.log(this.visited)
-        console.log(JSON.stringify(this.nodeChecks, null, 4))
+        //console.log(this.visited)
+        //console.log(JSON.stringify(this.nodeChecks, null, 4))
 
 
 
+    }
+
+    private addQueue(id){
+
+        if(true === this.queue.includes(id)){
+            console.log('schon drin')
+            return;
+        }
+
+        this.queue.push(id);
     }
 
     private visitNode(){
@@ -58,26 +78,54 @@ export class Dijkstra{
             return;
         }
 
-        if('A' === nodeId){
-            console.log('debugg', nodeId)
+        const node = this.getNodeCheck(nodeId);
+
+        const debug = ('F' === nodeId) ? true:false;
+
+        if(true === debug){
+            console.log('node ', nodeId, node)
         }
 
         for(const neighbor of this.graph[nodeId]){
+
+            if(true === debug){
+                console.log('debug', neighbor)
+            }
 
             const neighborCheck = this.nodeChecks.find((nodeCheck)=>{
                 return (neighbor.id === nodeCheck.id);
             });
 
-            if(neighbor.distance < neighborCheck.distance){
+            if(true === debug){
+                console.log('debug', neighborCheck)
+                console.log(
+                    'distance',
+                    neighbor.distance < neighborCheck.distance,
+                    neighbor.id,
+                    neighbor.distance, neighborCheck.distance
+                )
+            }
 
-                neighborCheck.distance = neighbor.distance;
+            console.log(
+                (neighbor.distance + node.distance)  < neighborCheck.distance,
+                (neighbor.distance + node.distance), neighborCheck.distance
+            )
+
+            if((neighbor.distance + node.distance)  < neighborCheck.distance){
+
+                neighborCheck.distance = neighbor.distance + node.distance;
                 neighborCheck.previous = nodeId;
 
             }
 
-            this.queue.push(neighbor.id);
+            this.addQueue(neighbor.id)
 
         }
+
+        if(true === debug){
+            console.log('debug', this.nodeChecks)
+        }
+
 
         this.visited.push(nodeId)
 
@@ -98,6 +146,8 @@ export class Dijkstra{
 
         let current = this.getNodeCheck(this.end);
 
+        console.log('jippia', current.distance)
+
         let distance = current.distance;
         let route = [current.id];
 
@@ -114,7 +164,7 @@ export class Dijkstra{
 
         }
 
-        console.log(distance, route)
+        console.log(    route.reverse())
 
     }
 

@@ -36,489 +36,9 @@ export class Dijkstra{
         }
 
         this.queue.push(this.start);
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
-        this.visitNode();
 
-        console.log(JSON.stringify(this.nodeChecks, null, 4));
-        return;
-
-
-        //console.log(JSON.stringify(this.nodeChecks, null, 4))
-        return
         while (0 !== this.queue.length){
-            console.log('queue',this.queue.length);
+
             this.visitNode();
 
             this.hops += 1;
@@ -529,42 +49,15 @@ export class Dijkstra{
 
         }
 
-        /*
-        console.log(JSON.stringify(
-            this.getShortestRoute()
-        ));
-         */
-
-        console.log(this.visited)
-        //console.log(JSON.stringify(this.nodeChecks, null, 4))
-
-
-
-    }
-
-    private check(){
-
-        console.log('gecheckte ', this.nodeChecks.filter((nodeCheck)=>{
-
-            return (nodeCheck.distance !== Number.MAX_VALUE)
-
-
-        }).length)
-
-        console.log('besuchte ', this.visited)
-
-
     }
 
     private addQueue(id:string){
 
         if(true === this.queue.includes(id)){
-            console.log('schon in der queue');
             return;
         }
 
         if(true === this.visited.includes(id)){
-            console.log('schon da gewesen');
             return;
         }
 
@@ -572,8 +65,6 @@ export class Dijkstra{
     }
 
     private addVisited(id:string){
-
-        console.log('addVisited', id)
 
         if(true === this.visited.includes(id)){
             return;
@@ -591,7 +82,6 @@ export class Dijkstra{
         }
 
         if(true === this.visited.includes(nodeId)){
-            console.log('schon besucht')
             return;
         }
 
@@ -601,48 +91,23 @@ export class Dijkstra{
             return;
         }
 
-        const debug = ('F' === nodeId) ? true:false;
-
-        if(true === debug){
-            console.log('node ', nodeId, node)
-        }
-
         for(const neighbor of this.graph[nodeId]){
 
             if(undefined === neighbor){
                 continue;
             }
 
-            if(true === debug){
-                console.log('debug', neighbor)
-            }
-
             const neighborCheck = this.nodeChecks.find((nodeCheck)=>{
                 return (neighbor.id === nodeCheck.id);
             });
-
-            console.log('neighborCheck', neighborCheck)
 
             if(undefined === neighborCheck){
                 continue;
             }
 
-            if(true === debug){
-                console.log('debug', neighborCheck)
-                console.log(
-                    'distance',
-                    undefined !== neighborCheck && neighbor.distance < neighborCheck.distance,
-                    neighbor.id,
-                    neighbor.distance,
-                    neighborCheck?.distance
-                )
-            }
-
             const neighborDistance = neighbor?.distance | 0;
             const nodeDistance = node?.distance | 0;
             const checkDistance = neighborCheck.distance;
-
-            console.log(neighborDistance, nodeDistance, checkDistance)
 
             if((neighborDistance + nodeDistance)  < checkDistance){
 
@@ -651,21 +116,11 @@ export class Dijkstra{
 
             }
 
-            console.log(neighborCheck)
-
             this.addQueue(neighbor.id)
-            console.log('Queue', this.queue)
 
         }
-
-        if(true === debug){
-            //console.log('debug', JSON.stringify(this.nodeChecks, null, 4))
-        }
-
 
         this.addVisited(nodeId);
-
-        this.check();
 
     }
 
@@ -687,25 +142,20 @@ export class Dijkstra{
             return undefined;
         }
 
-        console.log('jippia', current.distance)
-
         let distance = current.distance;
         let route = [current.id];
 
         while(true){
 
             if(undefined === current.previous){
-                console.log(current)
                 break;
             }
 
             current = this.getNodeCheck(current.previous);
 
             if(undefined === current || undefined === current.previous){
-                console.log(current?.previous)
                 break;
             }
-
 
             route.push(current.id);
 

@@ -1,4 +1,5 @@
 import {RoutingGraph} from "./Routing";
+import {Dijkstra} from "./Dijkstra";
 
 interface Node {
     id: number;
@@ -86,7 +87,7 @@ export class Graph{
 
     private reduceDecimals(num:number){
 
-        return Math.floor(num * 10)
+        return Math.floor(num)
 
     }
 
@@ -177,7 +178,7 @@ export class Graph{
             }
 
             graph[edge.start].push({
-                id:edge.end,
+                id:edge.end + '',
                 distance:edge.length
             });
 
@@ -186,13 +187,24 @@ export class Graph{
             }
 
             graph[edge.end].push({
-                id:edge.start,
+                id:edge.start + '',
                 distance:edge.length
             });
 
         }
 
-        console.log(JSON.stringify(graph))
+        //console.log(JSON.stringify(graph))
+
+        //return;
+
+        const routing = new Dijkstra(
+            graph,
+            start + '',
+            end + ''
+        );
+
+        return routing.getShortestRoute();
+
 
     }
 

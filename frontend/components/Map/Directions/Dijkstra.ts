@@ -1,4 +1,5 @@
-import {RoutingGraph} from "./Routing";
+import {RoutingGraph, Route} from "./Routing";
+
 
 interface NodeCheck{
     distance:number,
@@ -11,6 +12,8 @@ export class Dijkstra{
     private queue: string[] = [];
     private visited:string[] = [];
     private nodeChecks:NodeCheck[] = [];
+
+    private hops = 0;
 
     constructor(
         private graph:RoutingGraph,
@@ -32,42 +35,551 @@ export class Dijkstra{
 
         }
 
-        this.queue.push('start');
+        this.queue.push(this.start);
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+        this.visitNode();
+
+        console.log(JSON.stringify(this.nodeChecks, null, 4));
+        return;
+
 
         //console.log(JSON.stringify(this.nodeChecks, null, 4))
+        return
+        while (0 !== this.queue.length){
+            console.log('queue',this.queue.length);
+            this.visitNode();
 
-        this.visitNode();
-        console.log('queue',this.queue)
-        this.visitNode();
-        console.log('queue',this.queue)
-        this.visitNode();
-        console.log('queue',this.queue)
-        this.visitNode();
-        console.log('queue',this.queue)
-        this.visitNode();
-        console.log('queue',this.queue)
-        this.visitNode();
-        console.log('queue',this.queue)
-        this.visitNode();
-        console.log('queue',this.queue)
+            this.hops += 1;
 
-        this.getShortestRoute();
+            if(300 < this.hops){
+                break;
+            }
 
-        //console.log(this.visited)
+        }
+
+        /*
+        console.log(JSON.stringify(
+            this.getShortestRoute()
+        ));
+         */
+
+        console.log(this.visited)
         //console.log(JSON.stringify(this.nodeChecks, null, 4))
 
 
 
     }
 
-    private addQueue(id){
+    private check(){
+
+        console.log('gecheckte ', this.nodeChecks.filter((nodeCheck)=>{
+
+            return (nodeCheck.distance !== Number.MAX_VALUE)
+
+
+        }).length)
+
+        console.log('besuchte ', this.visited)
+
+
+    }
+
+    private addQueue(id:string){
 
         if(true === this.queue.includes(id)){
-            console.log('schon drin')
+            console.log('schon in der queue');
+            return;
+        }
+
+        if(true === this.visited.includes(id)){
+            console.log('schon da gewesen');
             return;
         }
 
         this.queue.push(id);
+    }
+
+    private addVisited(id:string){
+
+        console.log('addVisited', id)
+
+        if(true === this.visited.includes(id)){
+            return;
+        }
+
+        this.visited.push(id);
     }
 
     private visitNode(){
@@ -78,7 +590,16 @@ export class Dijkstra{
             return;
         }
 
+        if(true === this.visited.includes(nodeId)){
+            console.log('schon besucht')
+            return;
+        }
+
         const node = this.getNodeCheck(nodeId);
+
+        if(undefined === node){
+            return;
+        }
 
         const debug = ('F' === nodeId) ? true:false;
 
@@ -88,6 +609,10 @@ export class Dijkstra{
 
         for(const neighbor of this.graph[nodeId]){
 
+            if(undefined === neighbor){
+                continue;
+            }
+
             if(true === debug){
                 console.log('debug', neighbor)
             }
@@ -96,39 +621,51 @@ export class Dijkstra{
                 return (neighbor.id === nodeCheck.id);
             });
 
+            console.log('neighborCheck', neighborCheck)
+
+            if(undefined === neighborCheck){
+                continue;
+            }
+
             if(true === debug){
                 console.log('debug', neighborCheck)
                 console.log(
                     'distance',
-                    neighbor.distance < neighborCheck.distance,
+                    undefined !== neighborCheck && neighbor.distance < neighborCheck.distance,
                     neighbor.id,
-                    neighbor.distance, neighborCheck.distance
+                    neighbor.distance,
+                    neighborCheck?.distance
                 )
             }
 
-            console.log(
-                (neighbor.distance + node.distance)  < neighborCheck.distance,
-                (neighbor.distance + node.distance), neighborCheck.distance
-            )
+            const neighborDistance = neighbor?.distance | 0;
+            const nodeDistance = node?.distance | 0;
+            const checkDistance = neighborCheck.distance;
 
-            if((neighbor.distance + node.distance)  < neighborCheck.distance){
+            console.log(neighborDistance, nodeDistance, checkDistance)
 
-                neighborCheck.distance = neighbor.distance + node.distance;
+            if((neighborDistance + nodeDistance)  < checkDistance){
+
+                neighborCheck.distance = neighborDistance + nodeDistance;
                 neighborCheck.previous = nodeId;
 
             }
 
+            console.log(neighborCheck)
+
             this.addQueue(neighbor.id)
+            console.log('Queue', this.queue)
 
         }
 
         if(true === debug){
-            console.log('debug', this.nodeChecks)
+            //console.log('debug', JSON.stringify(this.nodeChecks, null, 4))
         }
 
 
-        this.visited.push(nodeId)
+        this.addVisited(nodeId);
 
+        this.check();
 
     }
 
@@ -142,9 +679,13 @@ export class Dijkstra{
 
     }
 
-    private getShortestRoute(){
+    public getShortestRoute(){
 
         let current = this.getNodeCheck(this.end);
+
+        if(undefined === current){
+            return undefined;
+        }
 
         console.log('jippia', current.distance)
 
@@ -153,9 +694,19 @@ export class Dijkstra{
 
         while(true){
 
+            if(undefined === current.previous){
+                console.log(current)
+                break;
+            }
+
             current = this.getNodeCheck(current.previous);
 
-            distance += current.distance;
+            if(undefined === current || undefined === current.previous){
+                console.log(current?.previous)
+                break;
+            }
+
+
             route.push(current.id);
 
             if(this.start === current.id){
@@ -164,7 +715,13 @@ export class Dijkstra{
 
         }
 
-        console.log(    route.reverse())
+        const shortestRoute: Route = {
+            length: distance,
+            nodes: route.reverse(),
+            finished: true
+        }
+
+        return shortestRoute;
 
     }
 

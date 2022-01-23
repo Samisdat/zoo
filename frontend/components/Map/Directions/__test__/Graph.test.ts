@@ -544,10 +544,10 @@ const foo = {
     "183": [{"id": 184, "distance": 84.04998779296875}],
     "184": [{"id": 183, "distance": 84.04998779296875}],
     "185": [{"id": 186, "distance": 117.69244384765625}, {"id": 186, "distance": 147.69143676757812}],
-    "186": [{"id": 185, "distance": 117.69244384765625}, {"id": 177, "distance": 230.02955627441406}, {
+    "186": [{
         "id": 185,
-        "distance": 147.69143676757812
-    }],
+        "distance": 117.69244384765625},
+        {"id": 177, "distance": 230.02955627441406}, ],
     "187": [{"id": 170, "distance": 45.23902893066406}],
     "188": [{"id": 38, "distance": 129.23394775390625}],
     "189": [{"id": 171, "distance": 120.1754150390625}],
@@ -597,12 +597,12 @@ describe('Graph', () => {
         const routing = new Routing(
             foo,
             178,
-            11
+            60
         );
 
         console.log(routing.getShortest());
 
-        //expect(routing.getRoutes()).toMatchSnapshot()
+        expect(routing.getRoutes()).toMatchSnapshot()
 
     });
 

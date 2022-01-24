@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "graph_nodes",
+  "info": {
+    "name": "graphNode",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "IdFromEdges": {
+      "type": "string"
+    },
+    "graph_edge_starts": {
+      "collection": "edge",
+      "via": "graph_node_start"
+    },
+    "graph_edge_ends": {
+      "collection": "edge",
+      "via": "graph_node_end"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/graph-nodes",
+      "handler": "graph-node.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/graph-nodes/count",
+      "handler": "graph-node.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/graph-nodes/:id",
+      "handler": "graph-node.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/graph-nodes",
+      "handler": "graph-node.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/graph-nodes/:id",
+      "handler": "graph-node.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/graph-nodes/:id",
+      "handler": "graph-node.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

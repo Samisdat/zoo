@@ -1,4 +1,4 @@
-import {Position} from "./Edge";
+import {Edge, Position} from "./Edge";
 
 export type NodePos = 'start' | 'end';
 
@@ -15,6 +15,20 @@ export class Node{
 
     }
 
+    public get id():string|undefined{
+
+        if(0 === this.edges.length){
+            return undefined;
+        }
+
+        const id = this.edges.map((edge:NodeEdge)=>{
+            return `${edge.edgeId}_${edge.posOnEdge}`;
+        });
+
+        return id.join('-');
+
+    }
+
     public addEdge(edgeId:string, posOnEdge:NodePos){
 
         this.edges.push({
@@ -23,6 +37,7 @@ export class Node{
         });
 
     }
+
 }
 
 interface NodesMapping{
@@ -45,7 +60,11 @@ export class Nodes{
 
     }
 
-    public add(edgeId:string, position:Position, posOnEdge:NodePos){
+    public getNodes():Node[]{
+        return this.nodes;
+    }
+
+    public add(edge:Edge, position:Position, posOnEdge:NodePos){
 
         const roundedX = this.reduceDecimals(position.x);
         const roundedY = this.reduceDecimals(position.y);
@@ -57,11 +76,14 @@ export class Nodes{
         if(undefined === node){
 
             node = new Node(position);
+            this.nodes.push(node);
             this.mapping[mappingKey] = node;
-
         }
 
-        node.addEdge(edgeId, posOnEdge);
+        node.addEdge(edge.id, posOnEdge);
+
+        edge.addNode(node, posOnEdge);
 
     }
+
 }

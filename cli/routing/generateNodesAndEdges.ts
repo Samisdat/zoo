@@ -3,7 +3,7 @@ import {Edge} from "./Edge";
 const path = require("svg-path-properties");
 
 import {SegmentAttributes} from "./getSegments";
-import {Node, Nodes} from "./Node";
+import {Node,Nodes} from "./Node";
 
 const createEdge = (segmentAttribute:SegmentAttributes):Edge => {
 
@@ -14,17 +14,20 @@ const createEdge = (segmentAttribute:SegmentAttributes):Edge => {
     const startPos = properties.getPointAtLength(0);
     const endPos = properties.getPointAtLength(length);
 
-    return{
+    return new Edge(
         id,
         d,
         length,
         startPos,
         endPos
-    };
+    );
 
 };
 
-export const createGraph = (segmentAttributes:SegmentAttributes[]) => {
+export const generateNodesAndEdges = (segmentAttributes:SegmentAttributes[]):{
+    nodes:Node[],
+    edges:Edge[]
+} => {
 
     const nodes = new Nodes();
 
@@ -32,11 +35,14 @@ export const createGraph = (segmentAttributes:SegmentAttributes[]) => {
 
     for(const edge of edges){
 
-        nodes.add(edge.id, edge.startPos, 'start');
-        nodes.add(edge.id, edge.endPos, 'end');
+        nodes.add(edge, edge.startPos, 'start');
+        nodes.add(edge, edge.endPos, 'end');
 
     }
 
-    console.log(JSON.stringify(nodes, null, 4));
+    return {
+        nodes:nodes.getNodes(),
+        edges
+    };
 
 }

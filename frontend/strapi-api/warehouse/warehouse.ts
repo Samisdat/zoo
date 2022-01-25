@@ -12,6 +12,10 @@ import {Post} from "../entity/post/post";
 import {PostSpore} from "../entity/post/post-spore";
 import {QrCodeSpore} from "../entity/qr-code/qr-code-spore";
 import {QrCode} from "../entity/qr-code/qr-code";
+import {Edge} from "../entity/edge/edge";
+import {Node} from "../entity/node/node";
+import {NodeSpore} from "../entity/node/node-spore";
+import {EdgeSpore} from "../entity/edge/edge-spore";
 
 export interface WarehouseSpore{
     facilities:FacilitySpore[];
@@ -21,6 +25,8 @@ export interface WarehouseSpore{
     individualAnimals: IndividualAnimalSpore[]
     posts: PostSpore[]
     qrCodes: QrCodeSpore[]
+    nodes: NodeSpore[]
+    edges: EdgeSpore[]
 }
 
 export class Warehouse{
@@ -47,6 +53,12 @@ export class Warehouse{
 
     private qrCodesIds: number[] = [];
     private qrCodes:QrCode[] = [];
+
+    private nodesIds: number[] = [];
+    private nodes:Node[] = [];
+
+    private edgesIds: number[] = [];
+    private edges:Edge[] = [];
 
     private constructor() {
     }
@@ -91,6 +103,14 @@ export class Warehouse{
             return qrCode.dehydrate();
         });
 
+        const nodes = this.nodes.map((node:Node)=>{
+            return node.dehydrate();
+        });
+
+        const edges = this.edges.map((edge:Edge)=>{
+            return edge.dehydrate();
+        });
+
         return {
             facilities,
             photos,
@@ -98,7 +118,9 @@ export class Warehouse{
             animals,
             individualAnimals,
             posts,
-            qrCodes
+            qrCodes,
+            nodes,
+            edges
         };
     }
 
@@ -163,6 +185,24 @@ export class Warehouse{
             this.qrCodes = spore.qrCodes.map((qrCodeSpore:QrCodeSpore)=>{
                 this.qrCodesIds.push(qrCodeSpore.id);
                 return QrCode.hydrate(qrCodeSpore);
+            });
+
+        }
+
+        if(spore.nodes){
+
+            this.nodes = spore.nodes.map((nodeSpore:NodeSpore)=>{
+                this.nodesIds.push(nodeSpore.id);
+                return Node.hydrate(nodeSpore);
+            });
+
+        }
+
+        if(spore.edges){
+
+            this.edges = spore.edges.map((edgesSpore:EdgeSpore)=>{
+                this.edgesIds.push(edgesSpore.id);
+                return Edge.hydrate(edgesSpore);
             });
 
         }
@@ -376,7 +416,7 @@ export class Warehouse{
 
     public addQrCode(qrCode: QrCode){
 
-        if(false === this.hasPost(qrCode.id)){
+        if(false === this.hasQrCode(qrCode.id)){
 
             this.qrCodesIds.push(qrCode.id);
             this.qrCodes.push(qrCode);
@@ -406,6 +446,76 @@ export class Warehouse{
     public getQrCodes():QrCode[]{
 
         return this.qrCodes;
+
+    }
+
+    public addNode(node: Node){
+
+        if(false === this.hasNode(node.id)){
+
+            this.nodesIds.push(node.id);
+            this.nodes.push(node);
+
+        }
+    }
+
+    public hasNode(id: number):boolean{
+
+        return this.qrCodesIds.includes(id);
+
+    }
+
+    public getNode(id: number):Node{
+
+
+        if(false === this.hasNode(id)){
+            return undefined;
+        }
+
+        return this.nodes.find((node:Node)=>{
+            return (id === node.id);
+        });
+
+    }
+
+    public getNodes():Node[]{
+
+        return this.nodes;
+
+    }
+
+    public hasEdge(id: number):boolean{
+
+        return this.edgesIds.includes(id);
+
+    }
+
+    public addEdge(edge: Edge){
+
+        if(false === this.hasEdge(edge.id)){
+
+            this.edgesIds.push(edge.id);
+            this.edges.push(edge);
+
+        }
+    }
+
+    public getEdge(id: number):Edge{
+
+
+        if(false === this.hasEdge(id)){
+            return undefined;
+        }
+
+        return this.edges.find((edge:Edge)=>{
+            return (id === edge.id);
+        });
+
+    }
+
+    public getEdges():Edge[]{
+
+        return this.edges;
 
     }
 

@@ -12,6 +12,7 @@ import {MapElement} from "../strapi-api/entity/map-element/map-element";
 import {MapProvider} from "../components/Map/Context/MapContext";
 import {makeStyles} from "@material-ui/core/styles";
 import {HashNavigation} from "../components/Map/HashNavication";
+import {getGraphElements} from "../strapi-api/query/graph-elements";
 
 export interface IndexProps{
     warehouse: WarehouseSpore;
@@ -66,6 +67,7 @@ export default function Index(props:IndexProps) {
 export async function getStaticProps(context) {
 
     await getMapElements();
+    await getGraphElements();
 
     const indexProps:any = {
         warehouse: Warehouse.get().dehydrate()

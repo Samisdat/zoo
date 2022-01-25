@@ -7,6 +7,8 @@ export interface Position{
 
 export class Edge{
 
+    public strapiId:number | undefined = undefined
+
     public id: string;
     public d: string;
     public length: number;
@@ -26,9 +28,15 @@ export class Edge{
 
         this.id = id;
         this.d = d;
-        this.length = length;
-        this.startPos = startPos;
-        this.endPos = endPos;
+        this.length = Math.round(length);
+        this.startPos = {
+            x: Math.round(startPos.x),
+            y: Math.round(startPos.y),
+        };
+        this.endPos = {
+            x: Math.round(endPos.x),
+            y: Math.round(endPos.y),
+        };
 
     }
 

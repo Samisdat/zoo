@@ -1,6 +1,6 @@
 {
   "kind": "collectionType",
-  "collectionName": "graph_nodes",
+  "collectionName": "nodes",
   "info": {
     "name": "graphNode",
     "description": ""
@@ -22,6 +22,14 @@
     "graph_edge_ends": {
       "collection": "edge",
       "via": "graph_node_end"
+    },
+    "x": {
+      "type": "integer",
+      "required": true
+    },
+    "y": {
+      "type": "integer",
+      "required": true
     }
   }
 }

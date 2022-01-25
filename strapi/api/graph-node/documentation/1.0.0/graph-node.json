@@ -529,7 +529,9 @@
     "schemas": {
       "Graph-node": {
         "required": [
-          "id"
+          "id",
+          "x",
+          "y"
         ],
         "properties": {
           "id": {
@@ -609,10 +611,20 @@
                 }
               }
             }
+          },
+          "x": {
+            "type": "integer"
+          },
+          "y": {
+            "type": "integer"
           }
         }
       },
       "NewGraph-node": {
+        "required": [
+          "x",
+          "y"
+        ],
         "properties": {
           "IdFromEdges": {
             "type": "string"
@@ -628,6 +640,12 @@
             "items": {
               "type": "string"
             }
+          },
+          "x": {
+            "type": "integer"
+          },
+          "y": {
+            "type": "integer"
           },
           "created_by": {
             "type": "string"

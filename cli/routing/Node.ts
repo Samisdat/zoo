@@ -9,11 +9,11 @@ interface NodeEdge{
 
 export class Node{
 
+    public strapiId:number | undefined = undefined
+
     private edges:NodeEdge[] = []
 
-    constructor(private position:Position) {
-
-    }
+    constructor(public position:Position) {}
 
     public get id():string|undefined{
 

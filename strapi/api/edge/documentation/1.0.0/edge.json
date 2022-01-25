@@ -535,7 +535,9 @@
           },
           "graph_node_start": {
             "required": [
-              "id"
+              "id",
+              "x",
+              "y"
             ],
             "properties": {
               "id": {
@@ -555,6 +557,12 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "x": {
+                "type": "integer"
+              },
+              "y": {
+                "type": "integer"
               },
               "created_by": {
                 "type": "string"
@@ -566,7 +574,9 @@
           },
           "graph_node_end": {
             "required": [
-              "id"
+              "id",
+              "x",
+              "y"
             ],
             "properties": {
               "id": {
@@ -586,6 +596,12 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "x": {
+                "type": "integer"
+              },
+              "y": {
+                "type": "integer"
               },
               "created_by": {
                 "type": "string"

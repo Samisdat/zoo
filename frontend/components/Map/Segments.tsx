@@ -58,27 +58,25 @@ export const Segments = (props) => {
 
         const graph = Graph.get(allSegments);
 
-        console.log(graph);
-
         var nodesGroup = d3.select(nodesElement.current);
 
         const pointsArray = graph.getNodes();
 
-        const route = graph.getRoute(184, 36);
-        console.log(route);
-
+        const route = graph.getRoute('0001-end', '0091-end');
 
         nodesGroup.selectAll('circle')
             .data(pointsArray)
             .join('circle')
             .attr('cx', function(d) {
-                return d.x;
+                return Math.round(d.x);
             })
             .attr('cy', function(d) {
-                return d.y;
+                return Math.round(d.y);
+            })
+            .attr('data-pos', function(d) {
+                return d.x + '-' + d.y;
             })
             .attr('stroke', (d, i)=>{
-
                 return '#000';
             })
             .attr('stroke-width', (d, i)=>{

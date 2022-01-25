@@ -1,5 +1,17 @@
-import {RoutingGraph, Route} from "./Routing";
+export interface Route {
+    length: number;
+    nodes:string[];
+    finished:boolean;
+}
 
+export interface Neighbour {
+    id: string,
+    distance:number
+}
+
+export interface RoutingGraph{
+    [key:string]: Neighbour[]
+}
 
 interface NodeCheck{
     distance:number,
@@ -164,6 +176,8 @@ export class Dijkstra{
             }
 
         }
+
+        route.push(this.start);
 
         const shortestRoute: Route = {
             length: distance,

@@ -1,20 +1,22 @@
-import {RoutingGraph} from "./Routing";
-import {Dijkstra} from "./Dijkstra";
+
+import {Dijkstra, RoutingGraph} from "./Dijkstra";
 
 interface Node {
-    id: number;
+    id: string;
     x: number;
     y: number;
 }
 
+type NodePos = 'start' | 'end';
+
 interface Edge {
-    start: number;
-    end: number;
+    start: string;
+    end: string;
     length: number;
 }
 
 interface NodesMapping{
-    [key:string]: number
+    [key:string]: string
 }
 
 interface Route {
@@ -54,21 +56,32 @@ export class Graph{
 
         const pathElement = path as SVGGeometryElement;
 
+        const pathId = pathElement.getAttribute('id').replace('_', '');
+
+
         const length = pathElement.getTotalLength();
         const startPos = pathElement.getPointAtLength(0);
         const endPos = pathElement.getPointAtLength(length);
 
+        if('0694' === pathId){
+            console.log(
+                length,
+                startPos,
+                endPos
+            );
+        }
+
+
         let startNode = this.getNodeByPos(startPos.x, startPos.y);
 
         if(undefined === startNode){
-            startNode = this.createNode(startPos.x, startPos.y);
+            startNode = this.createNode(startPos.x, startPos.y, pathId, 'start');
         }
-
 
         let endNode = this.getNodeByPos(endPos.x, endPos.y);
 
         if(undefined === endNode){
-            endNode = this.createNode(endPos.x, endPos.y);
+            endNode = this.createNode(endPos.x, endPos.y, pathId, 'end');
         }
 
         const edge:Edge = {
@@ -104,7 +117,7 @@ export class Graph{
 
     }
 
-    private getNodeById(id:number):Node{
+    private getNodeById(id:string):Node{
 
         if (undefined === id){
             return undefined;
@@ -119,10 +132,10 @@ export class Graph{
     }
 
 
-    private createNode(x:number, y:number):Node{
+    private createNode(x:number, y:number, pathId:string, pos:NodePos):Node{
 
         const node:Node = {
-            id: this.getNextNodeId(),
+            id: `${pathId}-${pos}`,
             x,
             y
         };
@@ -148,7 +161,7 @@ export class Graph{
 
     }
 
-    private getEdgesOnNode(id:number):Edge[]{
+    private getEdgesOnNode(id:string):Edge[]{
 
         const edges = this.edges.filter((edge)=>{
             return (edge.start === id || edge.end === id);
@@ -167,7 +180,7 @@ export class Graph{
 
 
 
-    public getRoute(start:number, end:number){
+    public getRoute(start:string, end:string){
 
         const graph:RoutingGraph = {}
 

@@ -461,7 +461,7 @@ export class Warehouse{
 
     public hasNode(id: number):boolean{
 
-        return this.qrCodesIds.includes(id);
+        return this.nodesIds.includes(id);
 
     }
 

@@ -28,7 +28,7 @@ export class Edge extends Entity<EdgeSpore>{
     }
 
     get startNode(): Node{
-        return Warehouse.get().getNode(this.json.startNode);
+        return Warehouse.get().getNode(this.startNodeRaw);
     }
 
     get endNodeRaw(): number{
@@ -36,7 +36,8 @@ export class Edge extends Entity<EdgeSpore>{
     }
 
     get endNode(): Node{
-        return Warehouse.get().getNode(this.json.endNode);
+
+        return Warehouse.get().getNode(this.endNodeRaw);
     }
 
     static hydrate(dehydrated: EdgeSpore):Edge{

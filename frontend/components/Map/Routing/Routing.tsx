@@ -6,11 +6,44 @@ import {Nodes} from "./Nodes";
 import {Edges} from "./Edges";
 import {Node} from "../../../strapi-api/entity/node/node";
 import {Edge} from "../../../strapi-api/entity/edge/edge";
+import {Dijkstra, RoutingGraph} from "../Directions/Dijkstra";
+import {Warehouse} from "../../../strapi-api/warehouse/warehouse";
 
 interface RoutingProperties {
     nodes: Node[];
     edges:Edge[];
 }
+
+const createGraph = (edges:Edge[]):RoutingGraph => {
+
+    const graph:RoutingGraph = {}
+
+    for(const edge of edges){
+
+
+        if(undefined === graph[edge.startNode.id]){
+            graph[edge.startNode.id] = [];
+        }
+
+        graph[edge.startNode.id].push({
+            id:edge.endNode.id + '',
+            distance:edge.edgeLength
+        });
+
+        if(undefined === graph[edge.endNode.id]){
+            graph[edge.endNode.id] = [];
+        }
+
+        graph[edge.endNode.id].push({
+            id:edge.startNode.id + '',
+            distance:edge.edgeLength
+        });
+
+    }
+
+    return graph;
+
+};
 
 export const Routing = (props:RoutingProperties) => {
 
@@ -19,6 +52,8 @@ export const Routing = (props:RoutingProperties) => {
     const {
         state: {path, projection, ref},
     } = useMap();
+
+    const graph = createGraph(props.edges);
 
     const scaleToBound = () => {
 
@@ -58,6 +93,15 @@ export const Routing = (props:RoutingProperties) => {
 
     useEffect(() => {
         scaleToBound();
+
+        const routing = new Dijkstra(
+            graph,
+            399 + '',
+            232 + '',
+        );
+
+        console.log(routing.getShortestRoute());
+
     },[path, projection]);
 
     return (

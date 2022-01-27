@@ -8,7 +8,6 @@ import {centerToFeatureCollection} from "../Distribution/Detail";
 import {filterGeoJson} from "helper/geojson/filterGeoJson";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {MapTransformInterface, PositionInterface, useMap} from "./Context/MapContext";
-import {Segments} from "./Segments";
 import {Edge} from "../../strapi-api/entity/edge/edge";
 import {Node} from "../../strapi-api/entity/node/node";
 import {Routing} from "./Routing/Routing";

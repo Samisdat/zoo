@@ -6,8 +6,7 @@ import {Nodes} from "./Nodes";
 import {Edges} from "./Edges";
 import {Node} from "../../../strapi-api/entity/node/node";
 import {Edge} from "../../../strapi-api/entity/edge/edge";
-import {Dijkstra, RoutingGraph} from "../Directions/Dijkstra";
-import {Warehouse} from "../../../strapi-api/warehouse/warehouse";
+import {Dijkstra, RoutingGraph} from "./Dijkstra";
 
 interface RoutingProperties {
     nodes: Node[];
@@ -50,10 +49,12 @@ export const Routing = (props:RoutingProperties) => {
     const refRouting = useRef(null);
 
     const {
-        state: {path, projection, ref},
+        state: {path, ref},
     } = useMap();
 
     const graph = createGraph(props.edges);
+
+    const [route, setRoute] = React.useState<RoutingGraph>(undefined);
 
     const scaleToBound = () => {
 
@@ -102,7 +103,19 @@ export const Routing = (props:RoutingProperties) => {
 
         console.log(routing.getShortestRoute());
 
-    },[path, projection]);
+    },[path]);
+
+    useEffect(() => {
+
+        const routing = new Dijkstra(
+            graph,
+            399 + '',
+            232 + '',
+        );
+
+        console.log(routing.getShortestRoute());
+
+    },[route]);
 
     return (
         <g ref={refRouting}>

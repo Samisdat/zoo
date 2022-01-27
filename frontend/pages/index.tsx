@@ -31,6 +31,9 @@ export default function Index(props:IndexProps) {
     const classes = useStyles();
     Warehouse.get().hydrate(props.warehouse);
 
+    const nodes = Warehouse.get().getNodes();
+    const edges = Warehouse.get().getEdges();
+
     const boundingBox = Warehouse.get().getMapElement(80);
     console.log('@TODO', boundingBox, 'as default focus');
 
@@ -53,6 +56,8 @@ export default function Index(props:IndexProps) {
                 <MapRoot
                     fullsize={true}
                     mapElements={mapElements}
+                    nodes={nodes}
+                    edges={edges}
                 />
                 <SearchDialog
                     mapElements={mapElements}

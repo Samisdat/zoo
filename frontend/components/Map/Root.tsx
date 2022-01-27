@@ -10,6 +10,8 @@ import {Feature} from "geojson";
 import {getTransformFromStorage} from "./getTransformFromStorage";
 import {getMarkerFromStorage} from "./getMarkerFromStorage";
 import {MarkerImages} from "./Markers/MarkerImages";
+import {Edge} from "../../strapi-api/entity/edge/edge";
+import {Node} from "../../strapi-api/entity/node/node";
 
 const useStyles = makeStyles({
     svgWrap:{
@@ -30,6 +32,8 @@ const useStyles = makeStyles({
 interface MapRootInterface{
     fullsize: boolean;
     mapElements: MapElement[];
+    nodes: Node[],
+    edges: Edge[]
 }
 
 export const MapRoot = (props:MapRootInterface) => {
@@ -125,6 +129,8 @@ export const MapRoot = (props:MapRootInterface) => {
             <Group
                 fullsize={props.fullsize}
                 mapElements={props.mapElements}
+                nodes={props.nodes}
+                edges={props.edges}
             />
             <ZoomLevel />
         </svg>

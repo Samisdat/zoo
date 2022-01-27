@@ -9,6 +9,9 @@ import {filterGeoJson} from "helper/geojson/filterGeoJson";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {MapTransformInterface, PositionInterface, useMap} from "./Context/MapContext";
 import {Segments} from "./Segments";
+import {Edge} from "../../strapi-api/entity/edge/edge";
+import {Node} from "../../strapi-api/entity/node/node";
+import {Routing} from "./Routing/Routing";
 
 // zoom until focus.width or focus.height extends window.width or window.height
 export const findBestZoomLevel = (x0, x1, y0, y1, maxWidth, maxHeight) => {
@@ -66,6 +69,8 @@ interface ZoomDependencies {
 interface MapGroupProperties {
     fullsize: boolean;
     mapElements: MapElement[];
+    nodes: Node[];
+    edges:Edge[];
 }
 
 export const Group = (props:MapGroupProperties) => {
@@ -270,9 +275,15 @@ export const Group = (props:MapGroupProperties) => {
                 pathGenerator={props.mapState.pathGenerator}
                 geoJson={props.geoJson}
             />
-            */}
+
             <Segments
                 boundingBox={boundingBox}
+            />
+            */}
+
+            <Routing
+                nodes={props.nodes}
+                edges={props.edges}
             />
 
             {/*

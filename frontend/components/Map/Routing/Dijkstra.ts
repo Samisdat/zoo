@@ -146,7 +146,7 @@ export class Dijkstra{
 
     }
 
-    public getShortestRoute(){
+    public getShortestRoute():Route{
 
         let current = this.getNodeCheck(this.end);
 

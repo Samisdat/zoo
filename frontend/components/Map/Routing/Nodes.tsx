@@ -3,9 +3,11 @@ import * as d3 from 'd3';
 
 import {useMap} from "../Context/MapContext";
 import {Node} from "../../../strapi-api/entity/node/node";
+import {Route} from "./Dijkstra";
 
 interface RoutingProperties {
     nodes: Node[];
+    route: Route
 }
 
 export const Nodes = (props:RoutingProperties) => {
@@ -47,15 +49,17 @@ export const Nodes = (props:RoutingProperties) => {
                 return 1;
         })
         .attr('fill', (d, i)=>{
-                return 'red';
-                /*
-                if(true === route.nodes.includes(d.id + '')){
-                        return 'red';
-                }
 
-                 */
-
+            if(undefined === props.route){
                 return 'lightgrey';
+            }
+
+            if(true === props.route.nodes.includes(d.id + '')){
+                    return 'red';
+            }
+
+
+            return 'lightgrey';
 
         })
         .attr('title', (d, i)=>{

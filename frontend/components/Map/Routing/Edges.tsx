@@ -2,9 +2,11 @@ import React, {useEffect, useRef} from 'react';
 import {useMap} from "../Context/MapContext";
 import {Edge} from "../../../strapi-api/entity/edge/edge";
 import * as d3 from "d3";
+import {Route} from "./Dijkstra";
 
 interface EdgesProperties {
     edges: Edge[];
+    route: Route
 }
 
 export const Edges = (props:EdgesProperties) => {
@@ -27,7 +29,24 @@ export const Edges = (props:EdgesProperties) => {
         .data(props.edges)
         .join('path')
         .style('fill', 'none')
-        .style('stroke','#fe0000')
+        .attr('stroke',(edge)=>{
+
+            if(undefined === props.route){
+                return 'lightgrey';
+            }
+
+            if( 
+                true === props.route.nodes.includes(edge.startNode.id + '') &&
+                true === props.route.nodes.includes(edge.endNode.id + '')
+            ){
+                return 'red';
+            }
+
+
+            return 'lightgrey';
+
+
+        })
         .style('stroke-width', '2.08px')
         .attr('d', (d, i)=>{
                 return d.d;

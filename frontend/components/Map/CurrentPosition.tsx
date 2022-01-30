@@ -51,7 +51,10 @@ export const CurrentPosition = (props) => {
                 return 1;
             })
             .attr('fill', (d, i)=>{
-                return 'red';
+                return 'green';
+            })
+            .attr('stroke', (d, i)=>{
+                return 'blue';
             })
             .attr('d', path as any)
             .attr('r', radius );

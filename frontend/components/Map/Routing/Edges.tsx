@@ -35,7 +35,7 @@ export const Edges = (props:EdgesProperties) => {
                 return 'lightgrey';
             }
 
-            if( 
+            if(
                 true === props.route.nodes.includes(edge.startNode.id + '') &&
                 true === props.route.nodes.includes(edge.endNode.id + '')
             ){

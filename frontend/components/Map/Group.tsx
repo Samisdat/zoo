@@ -153,73 +153,6 @@ export const Group = (props:MapGroupProperties) => {
 
             const [lng, lat] = projection.invert(d3.pointer(event));
 
-            console.log(lng, lat);
-
-            const currentPosition = getCurrentPositionGeoJson('click', lat, lng);
-
-
-            var positionGroup = d3.select('#foobar');
-
-            console.log(d3.pointer(event))
-
-            const radius = 8;
-
-            positionGroup.selectAll('circle')
-                .data([d3.pointer(event)])
-                .join('circle')
-                .attr('cx', function(d) {
-                    return d[0];
-                })
-                .attr('cy', function(d) {
-                    return d[1];
-                })
-                .attr('stroke', (d, i)=>{
-                    return 'blue';
-                })
-                .attr('stroke-width', (d, i)=>{
-                    return 1;
-                })
-                .attr('vector-effect', (d, i)=>{
-                    return 'non-scaling-stroke'
-                    return 1;
-                })
-                .attr('fill', (d, i)=>{
-
-                    return 'green';
-
-                })
-                .attr('r', 5)
-                
-            ;
-
-
-            /*
-            positionGroup.selectAll('circle')
-                .data(currentPosition)
-                .join('circle')
-
-                .attr('transform', function(d) { return 'translate(' + path.centroid(d as Feature) + ')'; })
-                .attr('title', (d)=>{
-                    //return d.properties.slug;
-                })
-                .attr('opacity', (d, i)=>{
-                    return 1;
-                })
-                .attr('fill', (d, i)=>{
-                    return 'green';
-                })
-                .attr('stroke', (d, i)=>{
-                    return 'blue';
-                })
-                .attr('d', path as any)
-                .attr('r', 8 );
-                */
-
-            return;
-
-            /*
-            const [lng, lat] = projection.invert(d3.pointer(event));
-
             const newPosition: PositionInterface = {
                 isGPS: false,
                 isWithin: true,
@@ -232,9 +165,6 @@ export const Group = (props:MapGroupProperties) => {
                 type: 'SET_POSITION',
                 position: newPosition
             });
-
-            */
-
 
         });
 

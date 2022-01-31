@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-import {MapRoot} from 'components/Map/Root';
+import {MapSvg} from "../components/Map/MapSvg";
 import {Teaser} from "components/Map/Teaser";
 
 import SearchDialog from "components/Search/Search";
@@ -53,9 +53,10 @@ export default function Index(props:IndexProps) {
                 <HashNavigation
                     mapElements={mapElements}
                 />
-                <MapRoot
+                <MapSvg
                     fullsize={true}
                     mapElements={mapElements}
+                    boundingBox={boundingBox}
                     nodes={nodes}
                     edges={edges}
                 />

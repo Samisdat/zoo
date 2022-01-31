@@ -87,9 +87,30 @@ export const Group = (props:MapGroupProperties) => {
         // enable zooming
         mapSvg.call(zooming);
 
-        mapSvg.on("click", (event, d)=>{
+        const t = d3.zoomIdentity
+            .translate(
+                transform.x,
+                transform.y
+            )
+            .scale(transform.k);
 
-            const [lng, lat] = projection.invert(d3.pointer(event));
+        mapSvg.call(
+            (zooming.transform as any),
+            t
+        );
+
+    };
+
+    useEffect(() => {
+
+        d3.select(ref.current).on("click", (event, d)=>{
+
+            const [clickX, clickY] = d3.pointer(event);
+
+            const x = (clickX - transform.x) / transform.k;
+            const y = (clickY - transform.y) / transform.k
+
+            const [lng, lat] = projection.invert([x, y]);
 
             const newPosition: PositionInterface = {
                 isGPS: false,
@@ -106,19 +127,8 @@ export const Group = (props:MapGroupProperties) => {
 
         });
 
-        const t = d3.zoomIdentity
-            .translate(
-                transform.x,
-                transform.y
-            )
-            .scale(transform.k);
+    }, [transform]);
 
-        mapSvg.call(
-            (zooming.transform as any),
-            t
-        );
-
-    };
 
     useEffect(() => {
 

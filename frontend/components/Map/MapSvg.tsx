@@ -107,8 +107,6 @@ export const MapSvg = (props:MapRootInterface) => {
 
         const transform = getTransformFromStorage();
 
-        console.log(transform)
-
         if(!transform.k){
             transform.k = 1;
         }

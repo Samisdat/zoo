@@ -46,8 +46,6 @@ export const getIndividualAnimalBySlug = async (slug: string):Promise<Individual
 
     const json = await getJsonFromApi<IndividualAnimalStrapi>(requestUrl);
 
-    console.log(json)
-
     const individualAnimal = IndividualAnimal.fromApi(json[0]);
 
     await loadRelations(individualAnimal);

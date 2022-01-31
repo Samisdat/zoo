@@ -49,8 +49,6 @@ export const getEdges = async ():Promise<Edge[]> =>{
 
     const edges = json.map(Edge.fromApi);
 
-    console.log(edges);
-
     for(const mapElement of edges){
 
         //await loadRelations(mapElement);

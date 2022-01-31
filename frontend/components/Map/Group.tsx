@@ -10,58 +10,7 @@ import {MapTransformInterface, PositionInterface, useMap} from "./Context/MapCon
 import {Edge} from "../../strapi-api/entity/edge/edge";
 import {Node} from "../../strapi-api/entity/node/node";
 import {Routing} from "./Routing/Routing";
-import {Feature} from "geojson";
-import {getCurrentPositionGeoJson} from "../../helper/getCurrentPosition";
 import {Cartesian} from "./Cartesian";
-
-
-// zoom until focus.width or focus.height extends window.width or window.height
-export const findBestZoomLevel = (x0, x1, y0, y1, maxWidth, maxHeight) => {
-
-    const minZoom = 0.1;
-    const maxZoom = 20;
-
-    const width = Math.abs(x0 - x1);
-    const height = Math.abs(y0 - y1);
-
-    let k = minZoom;
-
-    while ( ( 1.1 * width ) * k < maxWidth && ( 1.1 * height ) * k < maxHeight) {
-
-        if(k >= maxZoom){
-            break;
-        }
-
-        k += 0.01;
-    }
-
-    return k;
-}
-
-
-const centerToPolygon = (polygon) => {
-
-    const latitudes = polygon.geometry.coordinates[0].map((coordinate)=>{
-        return coordinate[1];
-    });
-
-    const longitudes = polygon.geometry.coordinates[0].map((coordinate)=>{
-        return coordinate[0];
-    });
-
-
-    let north = Math.max(...latitudes);
-    let south = Math.min(...latitudes);
-
-    let west = Math.max(...longitudes);
-    let east = Math.min(...longitudes);
-
-    return [
-        [east, north],
-        [west, south],
-    ];
-
-}
 
 interface ZoomDependencies {
     mapSvg:any,
@@ -89,16 +38,6 @@ export const Group = (props:MapGroupProperties) => {
     const [zoomDependencies, setZoomDependencies] = useState<ZoomDependencies>({
         mapSvg:undefined,
         zooming:undefined,
-    });
-
-    const points = props.mapElements.filter((mapElement:MapElement) => {
-
-        if('point' === mapElement.properties.type){
-            return true;
-        }
-
-        return false;
-
     });
 
     const createD3Map = ()=> {

@@ -103,6 +103,18 @@ function mapReducer(state: State, action: Action):State {
 
             const {transform} = action;
 
+            if(!transform.x){
+                transform.x = 0;
+            }
+
+            if(!transform.y){
+                transform.y = 0;
+            }
+
+            if(!transform.k){
+                transform.k = 1;
+            }
+
             return {
                 ...state,
                 transform,

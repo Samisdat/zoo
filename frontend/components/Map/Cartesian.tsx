@@ -3,6 +3,7 @@ import * as d3 from 'd3';
 import React, {FunctionComponent, useEffect, useRef} from 'react';
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {useMap} from "./Context/MapContext";
+import {svg} from "../../constants";
 
 interface CartesianProps{
     boundingBox:MapElement;
@@ -19,7 +20,7 @@ interface CartesianProps{
  * Then I know the width, height of the bounding box and with that information
  * I can just render all elements from my svg by their cartesian coords
  *
- * that is much faster then generate for each path an geojson and render that
+ * that is much faster then generate for each path an geojson and render that back to svg
  */
 export const Cartesian:FunctionComponent<CartesianProps> = (props) => {
 
@@ -36,9 +37,7 @@ export const Cartesian:FunctionComponent<CartesianProps> = (props) => {
             return;
         }
 
-        var boundingGroup = d3.select(boundingRef.current);
-
-        console.log(props.boundingBox);
+        const boundingGroup = d3.select(boundingRef.current);
 
         boundingGroup.selectAll("path")
             .data([props.boundingBox])
@@ -56,28 +55,25 @@ export const Cartesian:FunctionComponent<CartesianProps> = (props) => {
             .attr("d", path as any)
         ;
 
-        const bound = boundingGroup.select(`#bounding_box`);
+        const boundElement = boundingGroup.select(`#bounding_box`);
 
-        const boundingBox = (bound.node() as SVGGraphicsElement).getBBox();
-        console.log('boundingBox', boundingBox)
+        const bBox = (boundElement.node() as SVGGraphicsElement).getBBox();
 
+        const x = bBox.x;
+        const y = bBox.y;
 
-        const x = boundingBox.x;
-        const y = boundingBox.y;
-
-        const scale = boundingBox.width / 2550;
-
-        const cartesianGroup = d3.select(cartesianRef.current);
+        const scale = bBox.width / svg.width;
 
         const center = {
-            y: 997,
-            x: 1275
+            y: (svg.height / 2),
+            x: (svg.width / 2)
         };
 
         const angle = 180
 
         const rotate = `rotate(${angle} ${center.x} ${center.y})`;
-        cartesianGroup
+
+        d3.select(cartesianRef.current)
             .attr("transform", "translate(" + x + "," + y + ") scale(" + scale +  ") " + rotate)
             .attr('visibility', 'visible')
         ;

@@ -9,3 +9,8 @@ export const animalUrlPart = 'tiere';
 export const blogUrlPart = 'blog';
 
 export const qrCodeUrlPart = 'qr-code';
+
+export const svg = {
+    width:2550,
+    height:1994
+};

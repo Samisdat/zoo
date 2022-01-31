@@ -36,7 +36,7 @@ interface MapRootInterface{
     edges: Edge[]
 }
 
-export const MapRoot = (props:MapRootInterface) => {
+export const MapSvg = (props:MapRootInterface) => {
 
     const { state, dispatch } = useMap()
 
@@ -105,6 +105,20 @@ export const MapRoot = (props:MapRootInterface) => {
     useEffect(()=>{
 
         const transform = getTransformFromStorage();
+
+        console.log(transform)
+
+        if(!transform.k){
+            transform.k = 1;
+        }
+
+        if(!transform.x){
+            transform.x = 1;
+        }
+
+        if(!transform.y){
+            transform.y = 1;
+        }
 
         dispatch({
             type: 'SET_TRANSFORM',

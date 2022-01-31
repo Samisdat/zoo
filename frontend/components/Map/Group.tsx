@@ -5,7 +5,6 @@ import {Sketched} from "./Sketched";
 import {CurrentPosition} from "./CurrentPosition";
 import {Markers} from "./Markers/Markers";
 import {centerToFeatureCollection} from "../Distribution/Detail";
-import {filterGeoJson} from "helper/geojson/filterGeoJson";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {MapTransformInterface, PositionInterface, useMap} from "./Context/MapContext";
 import {Edge} from "../../strapi-api/entity/edge/edge";
@@ -13,6 +12,7 @@ import {Node} from "../../strapi-api/entity/node/node";
 import {Routing} from "./Routing/Routing";
 import {Feature} from "geojson";
 import {getCurrentPositionGeoJson} from "../../helper/getCurrentPosition";
+import {Cartesian} from "./Cartesian";
 
 
 // zoom until focus.width or focus.height extends window.width or window.height
@@ -73,6 +73,7 @@ interface MapGroupProperties {
     mapElements: MapElement[];
     nodes: Node[];
     edges:Edge[];
+    boundingBox:MapElement;
 }
 
 export const Group = (props:MapGroupProperties) => {
@@ -83,8 +84,6 @@ export const Group = (props:MapGroupProperties) => {
     } = useMap();
 
     const map = useRef(null);
-
-    const boundingBox = filterGeoJson('bounding_box', props.mapElements);
 
     const [zoom, setZoom] = useState<number>(transform.k);
     const [zoomDependencies, setZoomDependencies] = useState<ZoomDependencies>({
@@ -263,14 +262,15 @@ export const Group = (props:MapGroupProperties) => {
 
     return (
         <g ref={map}>
-            <Sketched
-                boundingBox={boundingBox}
-            />
-
-            <Routing
-                nodes={props.nodes}
-                edges={props.edges}
-            />
+            <Cartesian
+                boundingBox={props.boundingBox}
+            >
+                <Sketched />
+                <Routing
+                    nodes={props.nodes}
+                    edges={props.edges}
+                />
+            </Cartesian>
 
             {/*
             <Markers

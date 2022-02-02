@@ -8,7 +8,7 @@ import {Feature} from "geojson";
 export const CurrentPosition = (props) => {
 
     const {
-        state: {path, position},
+        state: {path, position, projection},
     } = useMap();
 
     const ref = useRef(null);
@@ -39,16 +39,21 @@ export const CurrentPosition = (props) => {
             radius = 8
         }
 
+        var coordinates = projection([position.lng, position.lat]);
+
         positionGroup.selectAll('circle')
-            .data(currentPosition)
+            .data([coordinates])
             .join('circle')
 
-            .attr('transform', function(d) { return 'translate(' + path.centroid(d as Feature) + ')'; })
-            .attr('title', (d)=>{
-                return d.properties.slug;
+            //.attr('transform', function(d) { return 'translate(' + path.centroid(d as Feature) + ')'; })
+            .attr("cx", (d, i)=>{
+                return d[0];
+            })
+            .attr("cy", (d, i)=>{
+                return d[1];
             })
             .attr('opacity', (d, i)=>{
-                return 1;
+                return 0.5;
             })
             .attr('fill', (d, i)=>{
                 return 'green';
@@ -57,7 +62,21 @@ export const CurrentPosition = (props) => {
                 return 'blue';
             })
             .attr('d', path as any)
-            .attr('r', radius );
+            .attr('r', radius )
+            .attr('id', 'super' )
+
+        ;
+
+        const element:unknown = document.getElementById('super')
+        const posElement = element as SVGElement;
+        console.log(posElement)
+
+        var point:any = document.getElementsByTagName('svg')[0].createSVGPoint();//here roor is the svg's id
+        point.x = d3.select(posElement).attr("cx");//get the circle cx
+        point.y = d3.select(posElement).attr("cy");//get the circle cy
+        var newPoint = point.matrixTransform((posElement as SVGGraphicsElement).getCTM());//new point after the transform
+        console.log(newPoint);
+
 
 
     },[path, position]);

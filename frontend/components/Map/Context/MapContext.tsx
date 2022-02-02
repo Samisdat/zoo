@@ -7,6 +7,8 @@ import {MapElement} from "../../../strapi-api/entity/map-element/map-element";
 import throttle from 'lodash.throttle';
 import {Feature} from "geojson";
 
+// @refresh reset
+
 export interface Dimension {
     width: number;
     height: number;

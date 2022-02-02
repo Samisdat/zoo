@@ -60,10 +60,12 @@ export default function Index(props:IndexProps) {
                     nodes={nodes}
                     edges={edges}
                 />
+                {/*
                 <SearchDialog
                     mapElements={mapElements}
                 />
                 <Teaser/>
+                */}
             </div>
         </MapProvider>
     );

@@ -11,6 +11,7 @@ import {Edge} from "../../strapi-api/entity/edge/edge";
 import {Node} from "../../strapi-api/entity/node/node";
 import {Routing} from "./Routing/Routing";
 import {Cartesian} from "./Cartesian";
+import {GeoBorder} from "./GeoBorder";
 
 interface ZoomDependencies {
     mapSvg:any,
@@ -31,6 +32,7 @@ export const Group = (props:MapGroupProperties) => {
         state: {path, focus, transform, ref, dimension, center, projection, position},
         dispatch
     } = useMap();
+
 
     const map = useRef(null);
 
@@ -211,6 +213,9 @@ export const Group = (props:MapGroupProperties) => {
 
     return (
         <g ref={map}>
+
+            <GeoBorder />
+
             <Cartesian
                 boundingBox={props.boundingBox}
             >
@@ -231,8 +236,6 @@ export const Group = (props:MapGroupProperties) => {
             <CurrentPosition
                 zoom={zoom}
             />
-
-            <g id="foobar"></g>
 
         </g>
     );

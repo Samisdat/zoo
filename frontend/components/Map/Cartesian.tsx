@@ -53,6 +53,7 @@ export const Cartesian:FunctionComponent<CartesianProps> = (props) => {
                 return 'bounding_box';
             })
             .attr("d", path as any)
+            .attr('opacity', '.5')
         ;
 
         const boundElement = boundingGroup.select(`#bounding_box`);
@@ -76,6 +77,7 @@ export const Cartesian:FunctionComponent<CartesianProps> = (props) => {
         d3.select(cartesianRef.current)
             .attr("transform", "translate(" + x + "," + y + ") scale(" + scale +  ") " + rotate)
             .attr('visibility', 'visible')
+            .attr('opacity', '.5')
         ;
 
     };
@@ -87,7 +89,7 @@ export const Cartesian:FunctionComponent<CartesianProps> = (props) => {
     return (
         <React.Fragment>
             <g ref={boundingRef}></g>
-            <g ref={cartesianRef} visibility="hidden">
+            <g ref={cartesianRef}>
                 { props.children }
             </g>
         </React.Fragment>

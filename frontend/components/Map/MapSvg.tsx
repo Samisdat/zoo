@@ -37,9 +37,10 @@ interface MapRootInterface{
     edges: Edge[]
 }
 
+// @refresh reset
 export const MapSvg = (props:MapRootInterface) => {
 
-    const { state, dispatch } = useMap()
+    const { state, dispatch } = useMap();
 
     const classes = useStyles();
 

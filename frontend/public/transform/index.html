@@ -1,0 +1,109 @@
+<html>
+<head>
+    <title>Transform</title>
+</head>
+<style>
+    body{
+        background: lightblue;
+    }
+
+    svg{
+        background: yellow;
+        position: absolute;
+        top:0px;
+        left:0px;
+    }
+
+</style>
+<body>
+
+<svg height="400px" width="400px" viewBox="0 0 400 400">
+    <circle id="circle" r="10" cx="100" cy="100" fill="red" opacity="0.5"/>
+    <g id="pushed" transform="translate(88, 77) scale(1) rotate(90)">
+        <circle id="pushed_circle" r="8" cx="100" cy="100" fill="green" opacity="0.5"/>
+    </g>
+    <g id="pushed_far" transform="translate(60, 60)">
+        <circle id="pushed_far_circle" r="6" cx="100" cy="100" fill="blue" opacity="0.5"/>
+    </g>
+</svg>
+
+<script>
+
+    SVGElement.prototype.getTransformToElement = SVGElement.prototype.getTransformToElement || function(elem) {
+        return elem.getScreenCTM().inverse().multiply(this.getScreenCTM());
+    };
+
+    const getAbsolutePos = (element) => {
+        const boundingClientRect = element.getBoundingClientRect();
+
+        return{
+            x: boundingClientRect.x + (boundingClientRect.width / 2),
+            y: boundingClientRect.y + (boundingClientRect.height / 2),
+        }
+
+    };
+
+    const svg = document.getElementsByTagName('svg')[0];
+
+    const convertCoord = (source, target) => {
+        console.log('source', source);
+        console.log('target', target);
+
+        const absolute = getAbsolutePos(source);
+        console.log('absolute', absolute);
+
+        var pt = svg.createSVGPoint();
+        pt.x = absolute.x;
+        pt.y = absolute.y;
+        var globalPoint = pt.matrixTransform(svg.getScreenCTM().inverse());
+
+        var globalToLocal = target.getTransformToElement(svg).inverse();
+
+        var inObjectSpace = globalPoint.matrixTransform( globalToLocal );
+
+        return inObjectSpace;
+
+    }
+
+    const pushed = document.getElementById('pushed');
+
+    const circle = document.getElementById('circle');
+    const pushed_circle = document.getElementById('pushed_circle');
+    const pushed_far_circle = document.getElementById('pushed_far_circle');
+
+    const circleAbsolute = getAbsolutePos(circle);
+    //console.log(getAbsolutePos(pushed_circle));
+    //console.log(getAbsolutePos(pushed_far_circle));
+
+    var pt = svg.createSVGPoint();
+    pt.x = circleAbsolute.x;
+    pt.y = circleAbsolute.y;
+    var globalPoint = pt.matrixTransform(svg.getScreenCTM().inverse());
+
+    //console.log(globalPoint);
+
+    var globalToLocal = pushed_circle.getTransformToElement(svg).inverse();
+    //console.log(globalToLocal)
+
+    var inObjectSpace = globalPoint.matrixTransform( globalToLocal );
+
+    //console.log(inObjectSpace);
+
+    pushed_circle.setAttribute('cy', inObjectSpace.y);
+    pushed_circle.setAttribute('cx', inObjectSpace.x);
+
+    const coord = convertCoord(circle, pushed_far_circle);
+
+    console.log(coord)
+
+    pushed_far_circle.setAttribute('cy', coord.y);
+    pushed_far_circle.setAttribute('cx', coord.x);
+
+    /*
+    newPath.matrixTransform(rect.getScreenCTM().inverse());
+    */
+
+
+</script>
+</body>
+</html>

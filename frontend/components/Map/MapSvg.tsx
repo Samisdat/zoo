@@ -12,6 +12,7 @@ import {getMarkerFromStorage} from "./getMarkerFromStorage";
 import {MarkerImages} from "./Markers/MarkerImages";
 import {Edge} from "../../strapi-api/entity/edge/edge";
 import {Node} from "../../strapi-api/entity/node/node";
+import {angle} from "../../constants";
 
 const useStyles = makeStyles({
     svgWrap:{
@@ -59,7 +60,7 @@ export const MapSvg = (props:MapRootInterface) => {
         const margin = 20;
 
         const projection = d3.geoMercator()
-            .angle(180)
+            .angle(angle)
             .scale(1)
             .fitExtent(
                 [[margin, margin],

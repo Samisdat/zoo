@@ -32,8 +32,6 @@ const __closestPoint =  (pathNode, point) => {
         bestLength,
         bestDistance = Infinity;
 
-    console.log(pathLength)
-
     // linear scan for coarse approximation
     for (var scan, scanLength = 0, scanDistance; scanLength <= pathLength; scanLength += precision) {
         if ((scanDistance = distance2(scan = pathNode.getPointAtLength(scanLength))) < bestDistance) {
@@ -68,7 +66,13 @@ const __closestPoint =  (pathNode, point) => {
 
 
 
-const getAbsolutePos = (element) => {
+export const getAbsolutePos = (element) => {
+
+    if(!element){
+        return undefined;
+    }
+
+
     const boundingClientRect = element.getBoundingClientRect();
 
     return{
@@ -110,10 +114,6 @@ export const Edges = (props:EdgesProperties) => {
 
     const convertCoord_ = (absoluteX:number, absoluteY:number, target) => {
 
-        console.log('target', target);
-
-        console.log('absolute', absoluteX, absoluteY);
-
         var pt = ref.current.createSVGPoint();
         pt.x = absoluteX;
         pt.y = absoluteY;
@@ -135,6 +135,7 @@ export const Edges = (props:EdgesProperties) => {
             return;
         }
 
+        return;
         const nodesGroup = d3.select(refEdges.current);
 
         nodesGroup.selectAll('path')
@@ -217,9 +218,15 @@ export const Edges = (props:EdgesProperties) => {
             .attr('r', 20 );
 
         const currentPosElement = nodesGroup.select('circle').node();
-        console.log(currentPosElement);
 
-        const coord = convertCoord_(point[0], point[1], currentPosElement);
+        const superElem = document.getElementById('super');
+
+        if(!superElem){
+            return;
+        }
+
+        console.log(superElem);
+        const coord = convertCoord(superElem, currentPosElement);
 
         (currentPosElement as any).setAttribute('cy', coord.y);
         (currentPosElement as any).setAttribute('cx', coord.x);
@@ -262,10 +269,11 @@ export const Edges = (props:EdgesProperties) => {
             return;
         }
 
-        addPolyfill();
+        // for whatever reason
+        return;
 
         const cartesianPos = projection([position.lng, position.lat]);
-        console.log('cartesianPos', cartesianPos)
+        console.log(cartesianPos);
 
 
         const nodesGroup = d3.select(refEdges.current);

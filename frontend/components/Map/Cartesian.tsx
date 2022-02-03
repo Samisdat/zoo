@@ -1,9 +1,12 @@
 import * as d3 from 'd3';
 
-import React, {FunctionComponent, useEffect, useRef} from 'react';
+import React, {FunctionComponent, useEffect, useRef, useState} from 'react';
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {useMap} from "./Context/MapContext";
 import {svg} from "../../constants";
+import {angle} from "../../constants";
+
+import {CartesianCurrentPosition} from "./Routing/CartesianCurrentPosition";
 
 interface CartesianProps{
     boundingBox:MapElement;
@@ -26,6 +29,8 @@ export const Cartesian:FunctionComponent<CartesianProps> = (props) => {
 
     const boundingRef = useRef(null);
     const cartesianRef = useRef(null);
+
+    const [groupProps, setGroupProps] = useState<any>(undefined);
 
     const {
         state: {path},
@@ -65,12 +70,16 @@ export const Cartesian:FunctionComponent<CartesianProps> = (props) => {
 
         const scale = bBox.width / svg.width;
 
+        setGroupProps({
+            x,
+            y,
+            scale
+        });
+
         const center = {
             y: (svg.height / 2),
             x: (svg.width / 2)
         };
-
-        const angle = 180
 
         const rotate = `rotate(${angle} ${center.x} ${center.y})`;
 
@@ -86,11 +95,18 @@ export const Cartesian:FunctionComponent<CartesianProps> = (props) => {
         scaleToBound();
     },[path]);
 
+    useEffect(() => {
+        console.log(groupProps);
+    },[groupProps]);
+
     return (
         <React.Fragment>
             <g ref={boundingRef}></g>
             <g ref={cartesianRef}>
                 { props.children }
+                <CartesianCurrentPosition
+                    groupProps={groupProps}
+                />
             </g>
         </React.Fragment>
     );

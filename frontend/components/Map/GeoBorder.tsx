@@ -12,9 +12,7 @@ export const GeoBorder = (props) => {
         state: {path, position, projection},
     } = useMap();
 
-    const border = Warehouse.get().getMapElement(79);
-
-    console.log(border)
+    const border = Warehouse.get().getMapElement(80);
 
     const ref = useRef(null);
 
@@ -28,11 +26,8 @@ export const GeoBorder = (props) => {
         borderGroup.selectAll('path')
             .data([border])
             .join('path')
-            .attr('stroke', (d, i)=>{
-                return 'blue';
-            })
-            .attr('stroke-width', (d, i)=>{
-                return '10px';
+            .attr('fill', (d, i)=>{
+                return 'yellow';
             })
             .attr('d', path as any);
 

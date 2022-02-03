@@ -19,7 +19,7 @@ export interface PositionInterface {
     lng: number;
     isWithin: boolean;
     isGPS: boolean
-    text: string;
+    text: string
 }
 
 export interface MapTransformInterface {

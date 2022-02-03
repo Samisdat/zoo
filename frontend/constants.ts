@@ -14,3 +14,5 @@ export const svg = {
     width:2550,
     height:1994
 };
+
+export const angle = 180;

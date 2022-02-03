@@ -67,18 +67,6 @@ export const CurrentPosition = (props) => {
 
         ;
 
-        const element:unknown = document.getElementById('super')
-        const posElement = element as SVGElement;
-        console.log(posElement)
-
-        var point:any = document.getElementsByTagName('svg')[0].createSVGPoint();//here roor is the svg's id
-        point.x = d3.select(posElement).attr("cx");//get the circle cx
-        point.y = d3.select(posElement).attr("cy");//get the circle cy
-        var newPoint = point.matrixTransform((posElement as SVGGraphicsElement).getCTM());//new point after the transform
-        console.log(newPoint);
-
-
-
     },[path, position]);
 
     return (

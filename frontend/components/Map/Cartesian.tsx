@@ -7,9 +7,16 @@ import {svg} from "../../constants";
 import {angle} from "../../constants";
 
 import {CartesianCurrentPosition} from "./Routing/CartesianCurrentPosition";
+import {Sketched} from "./Sketched";
+import {Routing} from "./Routing/Routing";
+import {Edge} from "../../strapi-api/entity/edge/edge";
+import {Route} from "./Routing/Dijkstra";
+import {Node} from "../../strapi-api/entity/node/node";
 
 interface CartesianProps{
     boundingBox:MapElement;
+    edges: Edge[];
+    nodes: Node[];
 }
 
 /**
@@ -25,7 +32,7 @@ interface CartesianProps{
  *
  * that is much faster then generate for each path an geojson and render that back to svg
  */
-export const Cartesian:FunctionComponent<CartesianProps> = (props) => {
+export const Cartesian = (props:CartesianProps) => {
 
     const boundingRef = useRef(null);
     const cartesianRef = useRef(null);
@@ -52,13 +59,13 @@ export const Cartesian:FunctionComponent<CartesianProps> = (props) => {
                 return "yellow";
             })
             .attr("opacity", (d:MapElement)=>{
-                return 1;
+                return 0;
             })
             .attr("id", (d:MapElement)=>{
                 return 'bounding_box';
             })
             .attr("d", path as any)
-            .attr('opacity', '.5')
+            .attr('opacity', '0')
         ;
 
         const boundElement = boundingGroup.select(`#bounding_box`);
@@ -86,7 +93,7 @@ export const Cartesian:FunctionComponent<CartesianProps> = (props) => {
         d3.select(cartesianRef.current)
             .attr("transform", "translate(" + x + "," + y + ") scale(" + scale +  ") " + rotate)
             .attr('visibility', 'visible')
-            .attr('opacity', '.5')
+            .attr('opacity', '1')
         ;
 
     };
@@ -103,10 +110,15 @@ export const Cartesian:FunctionComponent<CartesianProps> = (props) => {
         <React.Fragment>
             <g ref={boundingRef}></g>
             <g ref={cartesianRef}>
-                { props.children }
+                <Sketched />
                 <CartesianCurrentPosition
                     groupProps={groupProps}
                 />
+                <Routing
+                    nodes={props.nodes}
+                    edges={props.edges}
+                />
+
             </g>
         </React.Fragment>
     );

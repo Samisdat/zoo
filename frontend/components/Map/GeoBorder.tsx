@@ -29,6 +29,9 @@ export const GeoBorder = (props) => {
             .attr('fill', (d, i)=>{
                 return 'yellow';
             })
+            .attr('opacity', (d, i)=>{
+                return 0;
+            })
             .attr('d', path as any);
 
         ;

@@ -218,13 +218,10 @@ export const Group = (props:MapGroupProperties) => {
 
             <Cartesian
                 boundingBox={props.boundingBox}
-            >
-                <Sketched />
-                <Routing
-                    nodes={props.nodes}
-                    edges={props.edges}
-                />
-            </Cartesian>
+                nodes={props.nodes}
+                edges={props.edges}
+
+            />
 
             {/*
             <Markers

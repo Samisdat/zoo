@@ -53,7 +53,7 @@ export const CurrentPosition = (props) => {
                 return d[1];
             })
             .attr('opacity', (d, i)=>{
-                return 0.5;
+                return 1;
             })
             .attr('fill', (d, i)=>{
                 return 'green';

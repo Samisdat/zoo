@@ -4,10 +4,12 @@ import {Edges} from "./Edges";
 import {Node} from "../../../strapi-api/entity/node/node";
 import {Edge} from "../../../strapi-api/entity/edge/edge";
 import {Dijkstra, Route, RoutingGraph} from "./Dijkstra";
+import {MapTransformInterface} from "../Context/MapContext";
 
 interface RoutingProperties {
     nodes: Node[];
     edges:Edge[];
+    cartesianTransform:MapTransformInterface
 }
 
 const createGraph = (edges:Edge[]):RoutingGraph => {
@@ -66,6 +68,7 @@ export const Routing = (props:RoutingProperties) => {
             <Edges
                 edges={props.edges}
                 route={route}
+                cartesianTransform={props.cartesianTransform}
             />
             <Nodes
                 nodes={props.nodes}

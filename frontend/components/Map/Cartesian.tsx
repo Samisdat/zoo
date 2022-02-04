@@ -101,10 +101,6 @@ export const Cartesian = (props:CartesianProps) => {
         scaleToBound();
     },[path]);
 
-    useEffect(() => {
-        console.log(cartesianTransform);
-    },[cartesianTransform]);
-
     return (
         <React.Fragment>
             <g ref={boundingRef}></g>
@@ -114,6 +110,7 @@ export const Cartesian = (props:CartesianProps) => {
                     cartesianTransform={cartesianTransform}
                 />
                 <Routing
+                    cartesianTransform={cartesianTransform}
                     nodes={props.nodes}
                     edges={props.edges}
                 />

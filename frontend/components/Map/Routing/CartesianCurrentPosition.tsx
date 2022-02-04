@@ -3,11 +3,12 @@ import * as d3 from 'd3';
 import {MapTransformInterface, useMap} from "../Context/MapContext";
 import {angle, svg} from "../../../constants";
 
-interface Coordinate{
+export interface Coordinate{
     x:number;
     y:number;
 }
-const rotateCords = (coordinate: Coordinate, degree:number):Coordinate => {
+
+export const rotateCords = (coordinate: Coordinate, degree:number):Coordinate => {
 
     if(180 !== degree){
         throw new Error('only 180 is implemented');
@@ -108,7 +109,7 @@ export const CartesianCurrentPosition = ({cartesianTransform}:CartesianCurrentPo
             return 'purple';
 
         })
-        .attr('r', 100)
+        .attr('r', 20)
 
         .attr('transform', rotate)
 
@@ -135,8 +136,9 @@ export const CartesianCurrentPosition = ({cartesianTransform}:CartesianCurrentPo
             return 'yellow';
 
         })
-        .attr('r', 110)
+        .attr('r', 30)
         .attr('opacity', .5)
+        console.log(circle2.node())
 
     },[position, transform]);
 

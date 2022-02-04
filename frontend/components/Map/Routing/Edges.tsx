@@ -11,29 +11,51 @@ interface EdgesProperties {
     cartesianTransform:MapTransformInterface
 }
 
+interface EdgeSample{
+    sampleAtLength:number;
+    samplePos:Coordinate;
+    length:number;
+}
+
 const transposeCoords = (coordinate:Coordinate, transform:MapTransformInterface):Coordinate => {
 
-    console.log('transposeCoords')
-    console.log('')
-    console.log('coordinate', coordinate);
-    console.log('transform', transform);
+    // console.log('transposeCoords')
+    // console.log('')
+    // console.log('coordinate', coordinate);
+    // console.log('transform', transform);
 
     const x = (coordinate.x - transform.x) / transform.k;
     const y = (coordinate.y - transform.y) / transform.k;
 
-    console.log('x', x);
-    console.log('y', y);
+    // console.log('x', x);
+    // console.log('y', y);
 
 
     const rotated = rotateCords({x,y},180);
 
-    console.log('rotated', rotated);
+    // console.log('rotated', rotated);
 
-    console.log('/transposeCoords');
+    // console.log('/transposeCoords');
 
     return rotated;
 
 }
+
+const getDistance = (source:Coordinate, target:Coordinate):number => {
+
+    // console.log('getDistance')
+    // console.log('')
+    // console.log('source', source);
+    // console.log('target', target);
+
+    const x = source.x - target.x;
+    const y = source.y - target.y;
+
+    return Math.sqrt(
+        x * x + y * y
+    );
+
+};
 
 export const Edges = (props:EdgesProperties) => {
 
@@ -94,7 +116,7 @@ export const Edges = (props:EdgesProperties) => {
 
     });
 
-    const closestPoint =  (pathNode, point) => {
+    const closestPoint =  (pathNode, point:Coordinate):EdgeSample[] => {
 
         const path = pathNode as SVGPathElement;
 
@@ -102,35 +124,28 @@ export const Edges = (props:EdgesProperties) => {
 
         const pointsOnPath = [];
 
+        const samples: EdgeSample[] = []
+
         for(let i = 0; i < length; i += 10){
 
             const pointOnPath = path.getPointAtLength(i);
+
+            const edgeSample: EdgeSample = {
+                sampleAtLength: i,
+                samplePos:pointOnPath,
+                length:getDistance(pointOnPath, point)
+            };
+
+            samples.push(edgeSample);
+
+            //console.log(edgeSample);
+
 
             pointsOnPath.push(pointOnPath);
 
         }
 
-        const nodesGroup = d3.select(refDump.current);
-
-        nodesGroup.selectAll('line')
-            .data(pointsOnPath)
-            .join('line')
-            .attr('x1', function(d) {
-                return d.x;
-            })
-            .attr('y1', function(d) {
-                return d.y;
-            })
-            .attr('x2', function(d) {
-                    return point.attr('cx');
-            })
-            .attr('y2', function(d) {
-                return point.attr('cy');
-            })
-
-            .style("stroke", "black")
-
-
+        return samples;
 
     }
 
@@ -170,6 +185,7 @@ export const Edges = (props:EdgesProperties) => {
 
         const trippleCheckGroup = d3.select(refTrippleCheck.current);
 
+        /*
         let circle2 = trippleCheckGroup.select('circle')
 
         if(!circle2.node()){
@@ -193,26 +209,60 @@ export const Edges = (props:EdgesProperties) => {
             .attr('opacity', .5)
 
         console.log(transposedCoord);
-
+        */
 
         const nodesGroup = d3.select(refEdges.current);
 
-        const edges = [nodesGroup.select('#edge-517').node()];
+        const edges = nodesGroup.selectAll('path').nodes();
 
-        const distances = []
+        let distances = []
 
         for(let i = 0, x = edges.length; i < x; i += 1){
 
-            distances.push(
+            distances = distances.concat(
                 closestPoint(
                     edges[i],
-                    pos
+                    transposedCoord
                 )
             );
 
         }
 
-},[position, projection, workaround, props.cartesianTransform]);
+        distances.sort((a:EdgeSample, b:EdgeSample) => {
+            if (a.length < b.length){
+                return -1;
+            }
+            if (a.length > b.length) {
+                return 1;
+            }
+
+            return 0;
+
+        });
+
+        const dmpGroup = d3.select(refDump.current);
+
+        dmpGroup.selectAll('line')
+            .data(distances.slice(0, 20))
+            .join('line')
+            .attr('x1', function(d) {
+                return d.samplePos.x;
+            })
+            .attr('y1', function(d) {
+                return d.samplePos.y;
+            })
+            .attr('x2', function(d) {
+                return transposedCoord.x;
+            })
+            .attr('y2', function(d) {
+                return transposedCoord.y;
+            })
+
+            .style("stroke", "black")
+
+
+
+    },[position, projection, workaround, props.cartesianTransform]);
 
     return (
         <React.Fragment>

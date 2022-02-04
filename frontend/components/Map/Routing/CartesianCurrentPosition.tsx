@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
-import {useMap} from "../Context/MapContext";
+import {MapTransformInterface, useMap} from "../Context/MapContext";
 import {angle, svg} from "../../../constants";
 
 interface Coordinate{
@@ -53,7 +53,11 @@ const rotateCords = (coordinate: Coordinate, degree:number):Coordinate => {
 
 }
 
-export const CartesianCurrentPosition = (props) => {
+interface CartesianCurrentPositionProps{
+    cartesianTransform:MapTransformInterface
+}
+
+export const CartesianCurrentPosition = ({cartesianTransform}:CartesianCurrentPositionProps) => {
 
     const {
         state: {position, projection, transform},
@@ -68,14 +72,14 @@ export const CartesianCurrentPosition = (props) => {
         if(!position || undefined === position.lat || undefined === position.lng){
             return;
         }
-        if(!props.groupProps){
+        if(!cartesianTransform){
             return;
         }
 
         const cartesianPos = projection([position.lng, position.lat]);
 
-        const x = (cartesianPos[0] - props.groupProps.x) / props.groupProps.scale;
-        const y = (cartesianPos[1] - props.groupProps.y) / props.groupProps.scale;
+        const x = (cartesianPos[0] - cartesianTransform.x) / cartesianTransform.k;
+        const y = (cartesianPos[1] - cartesianTransform.y) / cartesianTransform.k;
 
         const center = {
             y: (svg.height / 2),

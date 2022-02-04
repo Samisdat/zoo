@@ -2,7 +2,7 @@ import * as d3 from 'd3';
 
 import React, {FunctionComponent, useEffect, useRef, useState} from 'react';
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
-import {useMap} from "./Context/MapContext";
+import {MapTransformInterface, useMap} from "./Context/MapContext";
 import {svg} from "../../constants";
 import {angle} from "../../constants";
 
@@ -10,7 +10,6 @@ import {CartesianCurrentPosition} from "./Routing/CartesianCurrentPosition";
 import {Sketched} from "./Sketched";
 import {Routing} from "./Routing/Routing";
 import {Edge} from "../../strapi-api/entity/edge/edge";
-import {Route} from "./Routing/Dijkstra";
 import {Node} from "../../strapi-api/entity/node/node";
 
 interface CartesianProps{
@@ -37,7 +36,7 @@ export const Cartesian = (props:CartesianProps) => {
     const boundingRef = useRef(null);
     const cartesianRef = useRef(null);
 
-    const [groupProps, setGroupProps] = useState<any>(undefined);
+    const [cartesianTransform, setCartesianTransform] = useState<MapTransformInterface>(undefined);
 
     const {
         state: {path},
@@ -75,12 +74,12 @@ export const Cartesian = (props:CartesianProps) => {
         const x = bBox.x;
         const y = bBox.y;
 
-        const scale = bBox.width / svg.width;
+        const k = bBox.width / svg.width;
 
-        setGroupProps({
+        setCartesianTransform({
             x,
             y,
-            scale
+            k
         });
 
         const center = {
@@ -91,7 +90,7 @@ export const Cartesian = (props:CartesianProps) => {
         const rotate = `rotate(${angle} ${center.x} ${center.y})`;
 
         d3.select(cartesianRef.current)
-            .attr("transform", "translate(" + x + "," + y + ") scale(" + scale +  ") " + rotate)
+            .attr("transform", "translate(" + x + "," + y + ") scale(" + k +  ") " + rotate)
             .attr('visibility', 'visible')
             .attr('opacity', '1')
         ;
@@ -103,8 +102,8 @@ export const Cartesian = (props:CartesianProps) => {
     },[path]);
 
     useEffect(() => {
-        console.log(groupProps);
-    },[groupProps]);
+        console.log(cartesianTransform);
+    },[cartesianTransform]);
 
     return (
         <React.Fragment>
@@ -112,7 +111,7 @@ export const Cartesian = (props:CartesianProps) => {
             <g ref={cartesianRef}>
                 <Sketched />
                 <CartesianCurrentPosition
-                    groupProps={groupProps}
+                    cartesianTransform={cartesianTransform}
                 />
                 <Routing
                     nodes={props.nodes}

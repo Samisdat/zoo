@@ -138,7 +138,6 @@ export const CartesianCurrentPosition = ({cartesianTransform}:CartesianCurrentPo
         })
         .attr('r', 30)
         .attr('opacity', .5)
-        console.log(circle2.node())
 
     },[position, transform]);
 

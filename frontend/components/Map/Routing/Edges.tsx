@@ -12,6 +12,7 @@ interface EdgesProperties {
 }
 
 interface EdgeSample{
+    edgeId:number;
     sampleAtLength:number;
     samplePos:Coordinate;
     length:number;
@@ -57,18 +58,16 @@ const getDistance = (source:Coordinate, target:Coordinate):number => {
 
 };
 
+const idPrefix = 'edge-';
+
 export const Edges = (props:EdgesProperties) => {
 
     const {
         state: {ref, path, position, projection, transform},
     } = useMap();
 
-    const [workaround, setWorkaround] = useState<number>(0);
-
     const refEdges = useRef(null);
     const refDump = useRef(null);
-    const refTrippleCheck = useRef(null);
-
 
     useEffect(() => {
 
@@ -100,17 +99,13 @@ export const Edges = (props:EdgesProperties) => {
 
 
         })
-        .style('stroke-width', '2.08px')
-
+        .style('stroke-width', '2px')
         .attr('d', (d, i)=>{
                 return d.d;
 
         })
-        .attr('title', (d, i)=>{
-            return d.id;
-        })
         .attr('id', (d, i)=>{
-            return `edge-${d.id}`;
+            return `${idPrefix}${d.id}`;
         })
         ;
 
@@ -119,6 +114,8 @@ export const Edges = (props:EdgesProperties) => {
     const closestPoint =  (pathNode, point:Coordinate):EdgeSample[] => {
 
         const path = pathNode as SVGPathElement;
+
+        const id = parseInt(path.getAttribute('id').replace(idPrefix, ''), 10);
 
         const length = path.getTotalLength();
 
@@ -131,15 +128,13 @@ export const Edges = (props:EdgesProperties) => {
             const pointOnPath = path.getPointAtLength(i);
 
             const edgeSample: EdgeSample = {
+                edgeId:id,
                 sampleAtLength: i,
                 samplePos:pointOnPath,
                 length:getDistance(pointOnPath, point)
             };
 
             samples.push(edgeSample);
-
-            //console.log(edgeSample);
-
 
             pointsOnPath.push(pointOnPath);
 
@@ -163,14 +158,8 @@ export const Edges = (props:EdgesProperties) => {
             return;
         }
 
-        const pos = d3.select('#CartesianCurrentPosition_Without_Rotate');
-
-        if(!pos.node()){
-
-            setTimeout(()=>{
-                setWorkaround(workaround + 1)
-            },100);
-            return
+        if(!props.cartesianTransform){
+            return;
         }
 
         const currentPos = projection([position.lng, position.lat]);
@@ -182,34 +171,6 @@ export const Edges = (props:EdgesProperties) => {
             },
             props.cartesianTransform
         );
-
-        const trippleCheckGroup = d3.select(refTrippleCheck.current);
-
-        /*
-        let circle2 = trippleCheckGroup.select('circle')
-
-        if(!circle2.node()){
-            trippleCheckGroup.append('circle');
-            circle2 = trippleCheckGroup.select('circle');
-            circle2.attr('id', 'trippleCheck');
-        }
-
-        circle2.attr('cx', function(d) {
-            return transposedCoord.x;
-        })
-            .attr('cy', function(d) {
-                return transposedCoord.y;
-            })
-            .attr('fill', (d, i)=>{
-
-                return 'blue';
-
-            })
-            .attr('r', 60)
-            .attr('opacity', .5)
-
-        console.log(transposedCoord);
-        */
 
         const nodesGroup = d3.select(refEdges.current);
 
@@ -240,10 +201,19 @@ export const Edges = (props:EdgesProperties) => {
 
         });
 
+        distances = distances.slice(0, 10);
+
+        // @todo cut if diff between first is more the standard abr
+        distances.reduce((accumulator:any, currentValue, currentIndex, array) => {
+
+            return accumulator + currentValue;
+        }, {});
+
+
         const dmpGroup = d3.select(refDump.current);
 
         dmpGroup.selectAll('line')
-            .data(distances.slice(0, 20))
+            .data(distances)
             .join('line')
             .attr('x1', function(d) {
                 return d.samplePos.x;
@@ -262,7 +232,7 @@ export const Edges = (props:EdgesProperties) => {
 
 
 
-    },[position, projection, workaround, props.cartesianTransform]);
+    },[position, projection, props.cartesianTransform]);
 
     return (
         <React.Fragment>
@@ -270,7 +240,6 @@ export const Edges = (props:EdgesProperties) => {
                 ref={refEdges}
             />
             <g ref={refDump} />
-            <g ref={refTrippleCheck} />
         </React.Fragment>
 
     );

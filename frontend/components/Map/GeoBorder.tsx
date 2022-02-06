@@ -12,7 +12,7 @@ export const GeoBorder = (props) => {
         state: {path, position, projection},
     } = useMap();
 
-    const border = Warehouse.get().getMapElement(80);
+    const border = Warehouse.get().getMapElement(79);
 
     const ref = useRef(null);
 
@@ -30,7 +30,7 @@ export const GeoBorder = (props) => {
                 return 'yellow';
             })
             .attr('opacity', (d, i)=>{
-                return 0;
+                return 1;
             })
             .attr('d', path as any);
 

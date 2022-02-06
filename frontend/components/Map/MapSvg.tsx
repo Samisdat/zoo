@@ -13,6 +13,7 @@ import {MarkerImages} from "./Markers/MarkerImages";
 import {Edge} from "../../strapi-api/entity/edge/edge";
 import {Node} from "../../strapi-api/entity/node/node";
 import {angle} from "../../constants";
+import {Compass} from "./Compass";
 
 const useStyles = makeStyles({
     svgWrap:{
@@ -149,6 +150,7 @@ export const MapSvg = (props:MapRootInterface) => {
                 edges={props.edges}
             />
             <ZoomLevel />
+            <Compass />
         </svg>
         </div>
     );

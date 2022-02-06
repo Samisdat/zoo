@@ -216,12 +216,14 @@ export const Group = (props:MapGroupProperties) => {
 
             <GeoBorder />
 
+            {/*
             <Cartesian
                 boundingBox={props.boundingBox}
                 nodes={props.nodes}
                 edges={props.edges}
 
             />
+            */}
 
             {/*
             <Markers
@@ -230,9 +232,11 @@ export const Group = (props:MapGroupProperties) => {
             />
             */}
 
+            {/*
             <CurrentPosition
                 zoom={zoom}
             />
+            */}
 
         </g>
     );

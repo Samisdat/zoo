@@ -45,6 +45,10 @@ type Action =
         transform:MapTransformInterface,
     } |
     {
+        type: 'SET_ANGLE',
+        angle: number,
+    } |
+    {
         type: 'SET_POSITION',
         position: PositionInterface,
     } |
@@ -75,6 +79,7 @@ type State = {
     focus?:MapElement
     center?:MapElement[]
     teaser?:MapElement
+    angle:number,
     position?: PositionInterface,
 }
 type MapProviderProps = {
@@ -120,6 +125,16 @@ function mapReducer(state: State, action: Action):State {
             return {
                 ...state,
                 transform,
+            };
+
+        }
+        case 'SET_ANGLE': {
+
+            const {angle} = action;
+
+            return {
+                ...state,
+                angle,
             };
 
         }
@@ -197,6 +212,7 @@ function MapProvider({children}: MapProviderProps) {
         path: undefined,
         projection: undefined,
         transform:mapTransformDefault,
+        angle:180
     });
     const value = {state, dispatch};
 

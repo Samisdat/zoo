@@ -8,7 +8,7 @@ import {makeStyles} from "@material-ui/core/styles";
 const useStyles = makeStyles({
     angle:{
         position: 'absolute',
-        top: '10px',
+        top: '50px',
         left: '10px',
         right: '10px',
 

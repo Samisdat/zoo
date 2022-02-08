@@ -14,7 +14,6 @@ export const Crosshairs = (props) => {
     const svgPoint = (element, x, y) => {
 
         const svg = d3.select('svg').node() as any;
-        console.log(svg)
 
         const pt = svg.createSVGPoint();
         pt.x = x;
@@ -55,9 +54,7 @@ export const Crosshairs = (props) => {
             y: dimension.height / 2,
         };
 
-        const transformed = svgPoint(zoomGroup, center.x, center.y);
-
-        console.log(center, transformed)
+        const transformed = svgPoint(ref.current, center.x, center.y);
 
         var coordinates = [transformed.x, transformed.y];
 
@@ -86,6 +83,8 @@ export const Crosshairs = (props) => {
             })
             .attr('d', path as any)
             .attr('r', radius )
+            .attr('opacity', 0.5 )
+            .attr('id', 'crosshair' )
         ;
 
     },[path, transform, dimension]);

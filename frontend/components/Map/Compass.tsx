@@ -1,43 +1,230 @@
 import * as d3 from 'd3';
 
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {angle, svg} from "../../constants";
-import {useMap} from "./Context/MapContext";
+import {MapTransformInterface, useMap} from "./Context/MapContext";
 
 export const Compass = (props) => {
 
+    const offset = 200;
+    const width = 112;
+    const viewport = 393;
+
     const compassRef = useRef(null);
+    const mouseRef = useRef(null);
+
+
 
     const {
         state: {path, focus, transform, ref, dimension, center, projection, position},
         dispatch
     } = useMap();
 
+    const [startPos, setStartPos] = useState<any>(undefined);
+    const [pos, setPos] = useState<any>(undefined);
+
+    const [angleState, setAngleState] = useState<any>(angle);
+
+    useEffect(()=>{
+        //console.log(angle)
+
+        dispatch({
+            type: 'SET_ANGLE',
+            angle: angleState
+        });
+
+    },[angleState]);
+    /*
+    useEffect(()=>{
+
+        setTimeout(()=>{
+
+            const update: MapTransformInterface = {
+                x: transform.x,
+                y: transform.y,
+                k: transform.k,
+                angle: (transform.angle + 10)
+            };
+
+            dispatch({
+                type: 'SET_TRANSFORM',
+                transform: update
+            });
+
+        }, 1000)
+
+    },[transform]);
+     */
 
     useEffect(() => {
 
         const center = {
-            y: (393 / 2),
-            x: (393 / 2)
+            y: (viewport / 2),
+            x: (viewport / 2)
         };
 
 
-        const rotate = `rotate(${45} ${center.x} ${center.y})`;
-
-        console.log(rotate);
+        const rotate = `rotate(${angleState} ${center.x} ${center.y})`;
 
         d3.select(compassRef.current).select('#Layer1')
-            .attr('transform', rotate)
+            //.transition(200)
+            .attr('transform', rotate);
 
 
     },[transform]);
+
+    useEffect(() => {
+
+        if(startPos && pos){
+
+            const x = startPos.x - pos.x;
+            const y = startPos.y - pos.y;
+
+            const newAngle = Math.atan2(y, x) * 180 / Math.PI;
+
+            setAngleState(newAngle);
+
+        }
+
+    },[startPos, pos]);
+
+    useEffect(() => {
+
+        if(!startPos){
+            return;
+        }
+
+        const scaledStartPos = {
+            x: startPos.x / width * viewport,
+            y: startPos.y / width * viewport
+        }
+
+        const points = [scaledStartPos];
+
+        if(pos){
+            const scaledPos = {
+                x: pos.x / width * viewport,
+                y: pos.y / width * viewport
+            }
+
+            points.push(scaledPos);
+
+        }
+
+        d3.select(mouseRef.current)
+            .selectAll('circle')
+            .data(points)
+            .join('circle')
+            .attr('cx', (d)=>{
+                return d.x
+            })
+            .attr('cy', (d)=>{
+                return d.y
+            })
+            .attr('r', '10')
+            .attr('fill', 'red')
+
+        if(2 === points.length){
+
+            d3.select(mouseRef.current)
+                .selectAll('line')
+                .data(points)
+                .join('line')
+                .attr('x1', (d)=>{
+                    return points[0].x;
+                })
+                .attr('y1', (d)=>{
+                    return points[0].y;
+                })
+                .attr('x2', (d)=>{
+                    return points[1].x;
+                })
+                .attr('y2', (d)=>{
+                    return points[1].y;
+                })
+                .attr('stroke', 'blue')
+                .attr('stroke-width', '10px')
+
+
+        }
+
+    },[startPos, pos]);
+
+    useEffect(() => {
+
+        const startMove = (event) => {
+
+            event.preventDefault();
+
+            if('pointerdown' === event.type){
+                setStartPos({
+                    x:event.x - offset,
+                    y:event.y - offset
+                });
+                return;
+            }
+
+            if('pointerup' === event.type){
+                setStartPos(undefined);
+                setPos(undefined);
+                return;
+            }
+
+            if('pointermove' === event.type){
+
+                setPos({
+                    x:event.x - offset,
+                    y:event.y - offset
+                });
+
+                return;
+            }
+
+            //console.log('move', event.type, 'pointerdown' === event.type);
+
+        }
+
+        const move = (event) => {
+
+            if('pointerdown' === event.type){
+                console.log(event);
+            }
+
+            console.log('move', event.type, 'pointerdown' === event.type);
+
+        }
+
+        const endMove = (event) => {
+
+            console.log('endMove', event.type);
+
+        }
+
+        if (compassRef && compassRef.current) {
+
+            const compassGroup = d3.select(compassRef.current);
+
+            compassGroup.select('#compass')
+                .on('pointerenter pointerout pointerup pointerdown pointermove', startMove)
+
+            return () => {
+
+                compassGroup.select('#compass')
+                    .on('pointerout pointerup pointerdown pointermove', null)
+
+            };
+
+        }
+    });
 
 
     return (
         <svg
             ref={compassRef}
-            width="56"
-            height="56"
+            width="112"
+            height="112"
+            x={offset}
+            y={offset}
             viewBox="0 0 393 393"
             style={{
                 fillRule:'evenodd',
@@ -80,6 +267,12 @@ export const Compass = (props) => {
                             N
                             </text>
                 <path d="M196.436,39.092l-14.583,62.5l29.166,0l-14.583,-62.5Z" style={{fill:'#cecdce'}}/>
+                <circle id="compass" cx="196.436" cy="196.399" r="196.41" style={{fill:'red', opacity:0}}/>
+            </g>
+            <g
+                ref={mouseRef}
+            >
+
             </g>
         </svg>
     );

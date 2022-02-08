@@ -12,6 +12,7 @@ import {Node} from "../../strapi-api/entity/node/node";
 import {Routing} from "./Routing/Routing";
 import {Cartesian} from "./Cartesian";
 import {GeoBorder} from "./GeoBorder";
+import {angle} from "../../constants";
 import {Crosshairs} from "./Crosshairs";
 
 interface ZoomDependencies {
@@ -36,6 +37,7 @@ export const Group = (props:MapGroupProperties) => {
 
 
     const map = zoomRef;
+    const rotateRef = useRef(null);
 
     const [zoom, setZoom] = useState<number>(transform.k);
     const [zoomDependencies, setZoomDependencies] = useState<ZoomDependencies>({
@@ -58,9 +60,11 @@ export const Group = (props:MapGroupProperties) => {
             //.extent([[-100, 0], [props.mapDimension.width, props.mapDimension.height]])
             .on('zoom', (event) => {
 
+                const transformTextWithRotate = getTransformTextWithRotate(event.transform + '');
+
                 mapGroup.attr(
                     'transform',
-                    event.transform
+                    transformTextWithRotate
                 );
 
                 setZoom(event.transform.k);
@@ -68,15 +72,15 @@ export const Group = (props:MapGroupProperties) => {
             })
             .on('end', (event) => {
 
-                const transform: MapTransformInterface = {
+                const update: MapTransformInterface = {
                     k: event.transform.k,
                     x: event.transform.x,
-                    y: event.transform.y
+                    y: event.transform.y,
                 }
 
                 dispatch({
                     type: 'SET_TRANSFORM',
-                    transform
+                    transform:update
                 });
                 //props.setTransform(transform);
 
@@ -96,6 +100,7 @@ export const Group = (props:MapGroupProperties) => {
                 transform.y
             )
             .scale(transform.k);
+        ;
 
         mapSvg.call(
             (zooming.transform as any),
@@ -132,6 +137,68 @@ export const Group = (props:MapGroupProperties) => {
 
     }, [transform]);
 
+    const svgPoint = (element, x, y) => {
+
+        const svg = d3.select('svg').node() as any;
+
+        const pt = svg.createSVGPoint();
+        pt.x = x;
+        pt.y = y;
+
+        return pt.matrixTransform( element.getScreenCTM().inverse() );
+
+    }
+
+    const getTransformTextWithRotate = (transformText:string):string => {
+
+        const center = {
+            x: dimension.width / 2,
+            y: dimension.height / 2,
+        };
+
+        var zoomGroup = d3.select(zoomRef.current).node();
+
+        const transformed = svgPoint(zoomRef.current, 100, 100);
+
+        console.log(transformed)
+
+        if(transformText){
+            transformText = transformText.replace(/rotate\((.*?)\)/, '')
+        }
+        else{
+            transformText = '';
+        }
+        const rotate = `rotate(${angle} ${center.x} ${center.y})`;
+
+        transformText = `${transformText.trim()} ${rotate}`;
+
+        return transformText;
+
+    }
+
+    useEffect(() => {
+
+        /*
+        const center = {
+            x: dimension.width / 2 / transform.k,
+            y: dimension.height / 2 / transform.k
+        };
+         */
+
+        const center = {
+            x: dimension.width / 2 / transform.k - transform.x / transform.k,
+            y: dimension.height / 2 / transform.k - transform.y / transform.k,
+        };
+
+        const mapSvg = d3.select(map.current)
+
+        let transformText = mapSvg.attr('transform');
+
+        transformText = getTransformTextWithRotate(transformText);
+
+        mapSvg.attr('transform', transformText);
+
+    }, [angle, dimension]);
 
     useEffect(() => {
 
@@ -141,7 +208,7 @@ export const Group = (props:MapGroupProperties) => {
 
         createD3Map();
 
-    }, [path]);
+    }, [path, angle]);
 
     useEffect(()=>{
 
@@ -217,14 +284,12 @@ export const Group = (props:MapGroupProperties) => {
 
             <GeoBorder />
 
-            {/*
             <Cartesian
                 boundingBox={props.boundingBox}
                 nodes={props.nodes}
                 edges={props.edges}
 
             />
-            */}
 
             {/*
             <Markers

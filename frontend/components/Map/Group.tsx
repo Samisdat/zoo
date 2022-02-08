@@ -29,12 +29,12 @@ interface MapGroupProperties {
 export const Group = (props:MapGroupProperties) => {
 
     const {
-        state: {path, focus, transform, ref, dimension, center, projection, position},
+        state: {path, angle, focus, transform, ref, zoomRef, dimension, center, projection, position},
         dispatch
     } = useMap();
 
 
-    const map = useRef(null);
+    const map = zoomRef;
 
     const [zoom, setZoom] = useState<number>(transform.k);
     const [zoomDependencies, setZoomDependencies] = useState<ZoomDependencies>({

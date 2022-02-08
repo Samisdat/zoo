@@ -72,6 +72,7 @@ type Action =
 type Dispatch = (action: Action) => void;
 type State = {
     ref: MutableRefObject<SVGSVGElement>,
+    zoomRef: MutableRefObject<SVGSVGElement>,
     dimension:Dimension,
     path:GeoPath,
     projection:GeoProjection,
@@ -205,9 +206,11 @@ const defaultDimension:Dimension = {
 function MapProvider({children}: MapProviderProps) {
 
     const ref = useRef(null);
+    const zoomRef = useRef(null);
 
     const [state, dispatch] = React.useReducer(mapReducer, {
         ref: ref,
+        zoomRef: zoomRef,
         dimension:defaultDimension,
         path: undefined,
         projection: undefined,

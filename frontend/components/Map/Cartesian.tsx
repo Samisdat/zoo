@@ -92,7 +92,7 @@ export const Cartesian = (props:CartesianProps) => {
         d3.select(cartesianRef.current)
             .attr("transform", "translate(" + x + "," + y + ") scale(" + k +  ") " + rotate)
             .attr('visibility', 'visible')
-            .attr('opacity', '1')
+            .attr('opacity', '0.7')
         ;
 
     };

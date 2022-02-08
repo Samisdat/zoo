@@ -14,6 +14,7 @@ import {Edge} from "../../strapi-api/entity/edge/edge";
 import {Node} from "../../strapi-api/entity/node/node";
 import {angle} from "../../constants";
 import {Compass} from "./Compass";
+import {Multitouch} from "./Multitouch";
 import {Angle} from "./Angle";
 
 const useStyles = makeStyles({
@@ -151,7 +152,10 @@ export const MapSvg = (props:MapRootInterface) => {
                 edges={props.edges}
             />
             <ZoomLevel />
+            {/*
             <Compass />
+            <Multitouch />
+            */}
         </svg>
         <Angle
         />

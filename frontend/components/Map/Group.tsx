@@ -12,6 +12,7 @@ import {Node} from "../../strapi-api/entity/node/node";
 import {Routing} from "./Routing/Routing";
 import {Cartesian} from "./Cartesian";
 import {GeoBorder} from "./GeoBorder";
+import {Crosshairs} from "./Crosshairs";
 
 interface ZoomDependencies {
     mapSvg:any,
@@ -237,6 +238,9 @@ export const Group = (props:MapGroupProperties) => {
                 zoom={zoom}
             />
             */}
+            <Crosshairs
+                zoom={zoom}
+            />
 
         </g>
     );

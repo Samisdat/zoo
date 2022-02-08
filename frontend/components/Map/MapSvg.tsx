@@ -14,6 +14,7 @@ import {Edge} from "../../strapi-api/entity/edge/edge";
 import {Node} from "../../strapi-api/entity/node/node";
 import {angle} from "../../constants";
 import {Compass} from "./Compass";
+import {Angle} from "./Angle";
 
 const useStyles = makeStyles({
     svgWrap:{
@@ -61,7 +62,7 @@ export const MapSvg = (props:MapRootInterface) => {
         const margin = 20;
 
         const projection = d3.geoMercator()
-            .angle(angle)
+            .angle(state.angle)
             .scale(1)
             .fitExtent(
                 [[margin, margin],
@@ -152,6 +153,8 @@ export const MapSvg = (props:MapRootInterface) => {
             <ZoomLevel />
             <Compass />
         </svg>
+        <Angle
+        />
         </div>
     );
 

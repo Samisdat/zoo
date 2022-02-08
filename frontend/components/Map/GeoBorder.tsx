@@ -29,6 +29,12 @@ export const GeoBorder = (props) => {
             .attr('fill', (d, i)=>{
                 return 'yellow';
             })
+            .attr('stroke', (d, i)=>{
+                return 'blue';
+            })
+            .attr('stroke-width', (d, i)=>{
+                return '10';
+            })
             .attr('opacity', (d, i)=>{
                 return 1;
             })

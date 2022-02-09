@@ -5,7 +5,8 @@
   "main": "extract-geojson-from-svg.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "routing": "ts-node routing.ts  "
+    "routing": "ts-node routing.ts",
+    "gpx-convert": "ts-node gpx-convert.ts"
   },
   "author": "",
   "license": "ISC",

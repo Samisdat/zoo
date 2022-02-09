@@ -18,6 +18,37 @@ interface EdgeSample{
     length:number;
 }
 
+const filterDistances = (distances:EdgeSample[]):EdgeSample[] => {
+
+    const sum = distances.reduce((accumulator:any, currentValue, currentIndex, array) => {
+        return accumulator + currentValue.length;
+    }, 0);
+
+    const average = sum/ distances.length;
+
+    const variance1 = distances.reduce((accumulator, currentValue, currentIndex, array) => {
+        accumulator += Math.pow(currentValue.length - average, 2);
+        return accumulator;
+    }, 0);
+
+    const variance = Math.sqrt(variance1 / (distances.length - 1));
+
+    const firstThree = distances.slice(0, 3);
+
+    const sumFirstThree = firstThree.reduce((accumulator:any, currentValue, currentIndex, array) => {
+        return accumulator + currentValue.length;
+    }, 0);
+
+    const averageFirstThree = sumFirstThree/ firstThree.length;
+
+    distances = distances.filter((distance)=>{
+        return (distance.length - averageFirstThree < variance);
+    });
+
+    return (distances);
+
+}
+
 const transposeCoords = (coordinate:Coordinate, transform:MapTransformInterface):Coordinate => {
 
     // console.log('transposeCoords')
@@ -68,6 +99,7 @@ export const Edges = (props:EdgesProperties) => {
 
     const refEdges = useRef(null);
     const refDump = useRef(null);
+    const refMatch = useRef(null);
 
     useEffect(() => {
 
@@ -111,7 +143,7 @@ export const Edges = (props:EdgesProperties) => {
 
     });
 
-    const closestPoint =  (pathNode, point:Coordinate):EdgeSample[] => {
+    const firstSample =  (pathNode, point:Coordinate, samplingRate= 20):EdgeSample[] => {
 
         const path = pathNode as SVGPathElement;
 
@@ -123,7 +155,7 @@ export const Edges = (props:EdgesProperties) => {
 
         const samples: EdgeSample[] = []
 
-        for(let i = 0; i < length; i += 10){
+        for(let i = 0; i < length; i += samplingRate){
 
             const pointOnPath = path.getPointAtLength(i);
 
@@ -141,6 +173,60 @@ export const Edges = (props:EdgesProperties) => {
         }
 
         return samples;
+
+    }
+
+    const sampleMatches = (samples:EdgeSample[], transposedCoord):EdgeSample[] => {
+
+        const matches:EdgeSample[] = [];
+
+        samples = samples.reduce((accumulator:any, currentValue)=>{
+
+            const edgeAlreadyWithin = accumulator.find((elem)=>{
+                return (currentValue.edgeId === elem?.edgeId);
+            });
+
+            if(!edgeAlreadyWithin){
+                accumulator.push(currentValue);
+            }
+
+            return accumulator;
+
+        }, [])
+
+        for(let i = 0, x = samples.length; i < x; i += 1){
+
+            let distances:EdgeSample[] = []
+
+            const sample = samples[i];
+
+            const edge = d3.select(`#${idPrefix}${sample.edgeId}`).node();
+
+            distances = distances.concat(
+                firstSample(
+                    edge,
+                    transposedCoord,
+                    5
+                )
+            );
+
+            distances.sort((a:EdgeSample, b:EdgeSample) => {
+                if (a.length < b.length){
+                    return -1;
+                }
+                if (a.length > b.length) {
+                    return 1;
+                }
+
+                return 0;
+
+            });
+
+            matches.push(distances[0]);
+
+        }
+
+        return matches;
 
     }
 
@@ -176,12 +262,12 @@ export const Edges = (props:EdgesProperties) => {
 
         const edges = nodesGroup.selectAll('path').nodes();
 
-        let distances = []
+        let distances:EdgeSample[] = []
 
         for(let i = 0, x = edges.length; i < x; i += 1){
 
             distances = distances.concat(
-                closestPoint(
+                firstSample(
                     edges[i],
                     transposedCoord
                 )
@@ -201,14 +287,9 @@ export const Edges = (props:EdgesProperties) => {
 
         });
 
-        distances = distances.slice(0, 10);
+        distances = distances.slice(0, 40);
 
-        // @todo cut if diff between first is more the standard abr
-        distances.reduce((accumulator:any, currentValue, currentIndex, array) => {
-
-            return accumulator + currentValue;
-        }, {});
-
+        distances = filterDistances(distances);
 
         const dmpGroup = d3.select(refDump.current);
 
@@ -230,8 +311,37 @@ export const Edges = (props:EdgesProperties) => {
 
             .style("stroke", "black")
 
+        const matches = sampleMatches(distances, transposedCoord);
 
+        const matchGroup = d3.select(refMatch.current);
 
+        matchGroup.selectAll('circle')
+            .data(matches)
+            .join('circle')
+            .attr('cx', function(d) {
+                return d.samplePos.x;
+            })
+            .attr('cy', function(d) {
+                return d.samplePos.y;
+            })
+            .attr('stroke', (d, i)=>{
+                return '#000';
+            })
+            .attr('stroke-width', (d, i)=>{
+                return 1;
+            })
+            .attr('vector-effect', (d, i)=>{
+                return 'non-scaling-stroke'
+                return 1;
+            })
+            .attr('fill', (d, i)=>{
+
+                return 'yellow';
+
+            })
+            .attr('r', 5)
+        ;
+        
     },[position, projection, props.cartesianTransform]);
 
     return (
@@ -240,6 +350,7 @@ export const Edges = (props:EdgesProperties) => {
                 ref={refEdges}
             />
             <g ref={refDump} />
+            <g ref={refMatch} />
         </React.Fragment>
 
     );

@@ -12,6 +12,7 @@ import {Node} from "../../strapi-api/entity/node/node";
 import {Routing} from "./Routing/Routing";
 import {Cartesian} from "./Cartesian";
 import {GeoBorder} from "./GeoBorder";
+import {GPXViewer} from "../GPX/Viewer";
 
 interface ZoomDependencies {
     mapSvg:any,
@@ -233,6 +234,7 @@ export const Group = (props:MapGroupProperties) => {
             <CurrentPosition
                 zoom={zoom}
             />
+            <GPXViewer/>
 
         </g>
     );

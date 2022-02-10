@@ -68,51 +68,10 @@ export const CartesianCurrentPosition = ({cartesianTransform}:CartesianCurrentPo
     const refPoint2 = useRef(null);
 
     useEffect(() => {
-        
 
-        if(!position || undefined === position.lat || undefined === position.lng){
+        if(!position || undefined === position.x || undefined === position.y){
             return;
         }
-        if(!cartesianTransform){
-            return;
-        }
-
-        const cartesianPos = projection([position.lng, position.lat]);
-
-        const x = (cartesianPos[0] - cartesianTransform.x) / cartesianTransform.k;
-        const y = (cartesianPos[1] - cartesianTransform.y) / cartesianTransform.k;
-
-        const center = {
-            y: (svg.height / 2),
-            x: (svg.width / 2)
-        };
-
-        const rotate = `rotate(${ -1 * angle} ${center.x} ${center.y})`;
-
-        const nodesGroup = d3.select(refPoint.current);
-        let circle = nodesGroup.select('circle')
-
-        if(!circle.node()){
-            nodesGroup.append('circle');
-            circle = nodesGroup.select('circle');
-            circle.attr('id', 'CartesianCurrentPosition')
-        }
-
-        circle.attr('cx', function(d) {
-            return x;
-        })
-        .attr('cy', function(d) {
-            return y;
-        })
-        .attr('fill', (d, i)=>{
-
-            return 'purple';
-
-        })
-        .attr('r', 20)
-
-        .attr('transform', rotate)
-
 
         const nodesGroup2 = d3.select(refPoint2.current);
         let circle2 = nodesGroup2.select('circle')
@@ -122,14 +81,12 @@ export const CartesianCurrentPosition = ({cartesianTransform}:CartesianCurrentPo
             circle2 = nodesGroup2.select('circle');
             circle2.attr('id', 'CartesianCurrentPosition_Without_Rotate')
         }
-
-        const rotateCords1 = rotateCords({x,y},180);
-
+        
         circle2.attr('cx', function(d) {
-            return rotateCords1.x;
+            return position.x;
         })
         .attr('cy', function(d) {
-            return rotateCords1.y;
+            return position.y;
         })
         .attr('fill', (d, i)=>{
 
@@ -137,7 +94,7 @@ export const CartesianCurrentPosition = ({cartesianTransform}:CartesianCurrentPo
 
         })
         .attr('r', 30)
-        .attr('opacity', .5)
+        .attr('opacity', 1)
 
     },[position, transform]);
 

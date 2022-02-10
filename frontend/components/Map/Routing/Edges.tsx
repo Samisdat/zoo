@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {MapTransformInterface, useMap} from "../Context/MapContext";
+import {MapTransformInterface, PositionInterface, useMap} from "../Context/MapContext";
 import {Edge} from "../../../strapi-api/entity/edge/edge";
 import * as d3 from "d3";
 import {Route} from "./Dijkstra";
@@ -94,12 +94,24 @@ const idPrefix = 'edge-';
 export const Edges = (props:EdgesProperties) => {
 
     const {
-        state: {ref, path, position, projection, transform},
+        state: {ref, path, position_raw, projection, transform},
+        dispatch
     } = useMap();
 
     const refEdges = useRef(null);
     const refDump = useRef(null);
     const refMatch = useRef(null);
+
+    const svgPoint =  (element, x, y) => {
+
+        const pt = ref.current.createSVGPoint();
+        pt.x = x;
+        pt.y = y;
+
+        return pt.matrixTransform( element.getScreenCTM().inverse() );
+
+    }
+
 
     useEffect(() => {
 
@@ -232,11 +244,7 @@ export const Edges = (props:EdgesProperties) => {
 
     useEffect(() => {
 
-        if(!position){
-            return;
-        }
-
-        if(false === position.isWithin){
+        if(!position_raw){
             return;
         }
 
@@ -248,7 +256,7 @@ export const Edges = (props:EdgesProperties) => {
             return;
         }
 
-        const currentPos = projection([position.lng, position.lat]);
+        const currentPos = projection([position_raw.lng, position_raw.lat]);
 
         const transposedCoord = transposeCoords(
             {
@@ -315,7 +323,7 @@ export const Edges = (props:EdgesProperties) => {
 
         const matchGroup = d3.select(refMatch.current);
 
-        matchGroup.selectAll('circle')
+        const circles = matchGroup.selectAll('circle')
             .data(matches)
             .join('circle')
             .attr('cx', function(d) {
@@ -341,8 +349,44 @@ export const Edges = (props:EdgesProperties) => {
             })
             .attr('r', 5)
         ;
-        
-    },[position, projection, props.cartesianTransform]);
+
+
+        if(1 === matches.length){
+
+            const bbox = (circles.nodes()[0] as any).getClientRects()[0];
+
+            const clickX = bbox.x - bbox.width / 2;
+            const clickY = bbox.y - bbox.height / 2;
+
+            const x = (clickX - transform.x) / transform.k;
+            const y = (clickY - transform.y) / transform.k
+
+            const [lng, lat] = projection.invert([x, y]);
+
+            const isWithin = true;
+            const isGPS = true;
+            const text = 'refactor interface';
+            const fuzziness = 0;
+
+            const position:PositionInterface = {
+                lat: lat,
+                lng: lng,
+                isWithin,
+                isGPS,
+                text,
+                fuzziness,
+                x: matches[0].samplePos.x,
+                y: matches[0].samplePos.y
+            };
+
+            dispatch({
+                type: 'SET_POSITION',
+                position
+            });
+
+        }
+
+    },[position_raw, projection, props.cartesianTransform, transform]);
 
     return (
         <React.Fragment>

@@ -14,12 +14,24 @@ export interface Dimension {
     height: number;
 }
 
+export type PositionType = 'gps' | 'gpx' | 'qr' | 'dev';
+
+export interface PositionRawInterface {
+    lat: number;
+    lng: number;
+    type:PositionType;
+    data?:any;
+}
+
 export interface PositionInterface {
     lat: number;
     lng: number;
     isWithin: boolean;
     isGPS: boolean
-    text: string
+    text: string;
+    fuzziness?: number;
+    x?:number;
+    y?:number;
 }
 
 export interface MapTransformInterface {
@@ -43,6 +55,10 @@ type Action =
     {
         type: 'SET_TRANSFORM',
         transform:MapTransformInterface,
+    } |
+    {
+        type: 'SET_POSITION_RAW',
+        position_raw: PositionRawInterface,
     } |
     {
         type: 'SET_POSITION',
@@ -75,6 +91,7 @@ type State = {
     focus?:MapElement
     center?:MapElement[]
     teaser?:MapElement
+    position_raw?: PositionRawInterface,
     position?: PositionInterface,
 }
 type MapProviderProps = {
@@ -120,6 +137,16 @@ function mapReducer(state: State, action: Action):State {
             return {
                 ...state,
                 transform,
+            };
+
+        }
+        case 'SET_POSITION_RAW': {
+
+            const {position_raw} = action;
+
+            return {
+                ...state,
+                position_raw,
             };
 
         }

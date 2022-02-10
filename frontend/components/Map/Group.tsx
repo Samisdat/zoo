@@ -6,7 +6,7 @@ import {CurrentPosition} from "./CurrentPosition";
 import {Markers} from "./Markers/Markers";
 import {centerToFeatureCollection} from "../Distribution/Detail";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
-import {MapTransformInterface, PositionInterface, useMap} from "./Context/MapContext";
+import {MapTransformInterface, PositionInterface, PositionRawInterface, useMap} from "./Context/MapContext";
 import {Edge} from "../../strapi-api/entity/edge/edge";
 import {Node} from "../../strapi-api/entity/node/node";
 import {Routing} from "./Routing/Routing";
@@ -115,19 +115,23 @@ export const Group = (props:MapGroupProperties) => {
 
             const [lng, lat] = projection.invert([x, y]);
 
-            const newPosition: PositionInterface = {
-                isGPS: false,
-                isWithin: true,
-                text: 'click',
+            const position_raw: PositionRawInterface = {
                 lat,
-                lng
+                lng,
+                type:'dev'
             };
 
+            dispatch({
+                type: 'SET_POSITION_RAW',
+                position_raw
+            });
+
+            /*
             dispatch({
                 type: 'SET_POSITION',
                 position: newPosition
             });
-
+            */
         });
 
     }, [transform]);

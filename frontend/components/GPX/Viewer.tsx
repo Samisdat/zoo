@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {PositionInterface, useMap} from "../Map/Context/MapContext";
+import {PositionInterface, PositionRawInterface, useMap} from "../Map/Context/MapContext";
 import {getData, TrackPoint} from "./getData";
 
 const gpxTrack = getData();
@@ -7,7 +7,6 @@ const gpxTrack = getData();
 export const GPXViewer = () => {
 
     const {
-        state: {teaser},
         dispatch
     } = useMap()
 
@@ -15,32 +14,36 @@ export const GPXViewer = () => {
 
     const gpxRef = useRef(null);
 
+    const speed =
+
     useEffect(() => {
 
         const trackPoint:TrackPoint = gpxTrack[index];
 
-        const newPosition: PositionInterface = {
-            isGPS: false,
-            isWithin: true,
-            text: 'gpx',
+        const position_raw: PositionRawInterface = {
             lat:trackPoint.lat,
-            lng:trackPoint.lng
+            lng:trackPoint.lng,
+            type: 'gpx',
+            data: trackPoint
         };
 
+        /*
         dispatch({
-            type: 'SET_POSITION',
-            position: newPosition
+            type: 'SET_POSITION_RAW',
+            position_raw
         });
-
+        */
         const nextIndex = index + 1;
 
         if(gpxTrack.length === nextIndex){
             return;
         }
         return;
+        const timeDiff = (gpxTrack[(index + 1)].time -  trackPoint.time)/2;
+
         setTimeout(()=>{
             setIndex( index + 1);
-        }, 50);
+        }, timeDiff);
 
     },[index]);
 

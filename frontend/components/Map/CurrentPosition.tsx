@@ -29,9 +29,7 @@ export const CurrentPosition = (props) => {
             'initial',
             position.lat,
             position.lng,
-
-
-    );
+        );
 
         let radius = 8  / props.zoom;
 

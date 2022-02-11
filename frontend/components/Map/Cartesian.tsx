@@ -6,7 +6,7 @@ import {MapTransformInterface, useMap} from "./Context/MapContext";
 import {svg} from "../../constants";
 import {angle} from "../../constants";
 
-import {CartesianCurrentPosition} from "./Routing/CartesianCurrentPosition";
+import {CurrentPosition} from "./Routing/CurrentPosition";
 import {Sketched} from "./Sketched";
 import {Routing} from "./Routing/Routing";
 import {Edge} from "../../strapi-api/entity/edge/edge";
@@ -29,7 +29,7 @@ interface CartesianProps{
  * Then I know the width, height of the bounding box and with that information
  * I can just render all elements from my svg by their cartesian coords
  *
- * that is much faster then generate for each path an geojson and render that back to svg
+ * that is much leaner and faster then generate for each path an geojson and render that back to svg
  */
 export const Cartesian = (props:CartesianProps) => {
 
@@ -106,9 +106,7 @@ export const Cartesian = (props:CartesianProps) => {
             <g ref={boundingRef}></g>
             <g ref={cartesianRef}>
                 <Sketched />
-                <CartesianCurrentPosition
-                    cartesianTransform={cartesianTransform}
-                />
+                <CurrentPosition />
                 <Routing
                     cartesianTransform={cartesianTransform}
                     nodes={props.nodes}

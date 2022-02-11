@@ -53,19 +53,13 @@ export const rotateCords = (coordinate: Coordinate, degree:number):Coordinate =>
     return rotated;
 
 }
-
-interface CartesianCurrentPositionProps{
-    cartesianTransform:MapTransformInterface
-}
-
-export const CartesianCurrentPosition = ({cartesianTransform}:CartesianCurrentPositionProps) => {
+export const CurrentPosition = () => {
 
     const {
-        state: {position, projection, transform},
+        state: {position},
     } = useMap();
 
-    const refPoint = useRef(null);
-    const refPoint2 = useRef(null);
+    const ref = useRef(null);
 
     useEffect(() => {
 
@@ -73,35 +67,22 @@ export const CartesianCurrentPosition = ({cartesianTransform}:CartesianCurrentPo
             return;
         }
 
-        const nodesGroup2 = d3.select(refPoint2.current);
-        let circle2 = nodesGroup2.select('circle')
+        d3.select(ref.current)
+            .attr('cx', function(d) {
+                return position.x;
+            })
+            .attr('cy', function(d) {
+                return position.y;
+            })
+            .attr('r', 30)
+        ;
 
-        if(!circle2.node()){
-            nodesGroup2.append('circle');
-            circle2 = nodesGroup2.select('circle');
-            circle2.attr('id', 'CartesianCurrentPosition_Without_Rotate')
-        }
-        
-        circle2.attr('cx', function(d) {
-            return position.x;
-        })
-        .attr('cy', function(d) {
-            return position.y;
-        })
-        .attr('fill', (d, i)=>{
-
-            return 'yellow';
-
-        })
-        .attr('r', 30)
-        .attr('opacity', 1)
-
-    },[position, transform]);
+    },[position]);
 
     return (
-        <React.Fragment>
-            <g ref={refPoint}></g>
-            <g ref={refPoint2}></g>
-        </React.Fragment>
+        <circle
+            ref={ref}
+            fill={'yellow'}
+        />
     );
 }

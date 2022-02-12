@@ -1,7 +1,5 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from "d3";
-import {Edge} from "../../../strapi-api/entity/edge/edge";
-import {Route} from "./Dijkstra";
 import {MapTransformInterface, PositionInterface, useMap} from "../Context/MapContext";
 import {edgeIdPrefix, svg} from "../../../constants";
 
@@ -245,11 +243,10 @@ interface ResolvePositionProps {
 export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
 
     const {
-        state: {ref, path, position_raw, projection, transform},
+        state: {position_raw, projection, transform},
         dispatch
     } = useMap();
 
-    const refDump = useRef(null);
     const refMatch = useRef(null);
 
     useEffect(() => {
@@ -330,30 +327,11 @@ export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
 
         distances = filterDistances(distances);
 
-        const dmpGroup = d3.select(refDump.current);
-
-        dmpGroup.selectAll('line')
-            .data(distances)
-            .join('line')
-            .attr('x1', function(d) {
-                return d.samplePos.x;
-            })
-            .attr('y1', function(d) {
-                return d.samplePos.y;
-            })
-            .attr('x2', function(d) {
-                return transposedCoord.x;
-            })
-            .attr('y2', function(d) {
-                return transposedCoord.y;
-            })
-
-            .style("stroke", "black")
-
         const matches = sampleMatches(distances, transposedCoord);
 
         const matchGroup = d3.select(refMatch.current);
 
+        // @TODO if i could resolve matches positions without rendering, this whole component could live without an dependency to d3 or manipulating svg
         const circles = matchGroup.selectAll('circle')
             .data(matches)
             .join('circle')
@@ -363,22 +341,13 @@ export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
             .attr('cy', function(d) {
                 return d.samplePos.y;
             })
-            .attr('stroke', (d, i)=>{
-                return '#000';
-            })
-            .attr('stroke-width', (d, i)=>{
-                return 1;
-            })
-            .attr('vector-effect', (d, i)=>{
-                return 'non-scaling-stroke'
-                return 1;
-            })
             .attr('fill', (d, i)=>{
 
                 return 'yellow';
 
             })
-            .attr('r', 5)
+            .attr('r', 1)
+            .attr('opacity', 0)
         ;
 
         const bbox = (circles.nodes()[0] as any).getClientRects()[0];
@@ -405,30 +374,28 @@ export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
             y: matches[0].samplePos.y
         };
 
+
         if(1 < matches.length){
+
             const farthest = matches.pop();
-            const fuzziness = farthest.samplePos;
-            const fuzzinessNumber = farthest.length
-            position.fuzziness = fuzziness;
-            position.fuzzinessNumber = getDistance(
+
+            position.fuzziness = getDistance(
                 farthest.samplePos,
                 matches[0].samplePos
             );
+
+        }
+
         dispatch({
             type: 'SET_POSITION',
             position
         });
 
 
-        // console.log(edges)
-
     },[position_raw, projection, cartesianTransform, transform]);
 
     return (
-        <React.Fragment>
-            <g ref={refDump} />
-            <g ref={refMatch} />
-        </React.Fragment>
+        <g ref={refMatch} />
     );
 
 }

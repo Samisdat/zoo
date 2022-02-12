@@ -16,3 +16,5 @@ export const svg = {
 };
 
 export const angle = 180;
+
+export const edgeIdPrefix = 'edge-';

@@ -67,8 +67,6 @@ export const Routing = (props:RoutingProperties) => {
         <g ref={refRouting}>
             <Edges
                 edges={props.edges}
-                route={route}
-                cartesianTransform={props.cartesianTransform}
             />
             {/*
             <Nodes

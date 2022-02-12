@@ -67,6 +67,12 @@ export const CurrentPosition = () => {
             return;
         }
 
+        let radius = 30;
+
+        if(position.fuzzinessNumber && 30 < position.fuzzinessNumber){
+            radius = position.fuzzinessNumber;
+        }
+
         d3.select(ref.current)
             .attr('cx', function(d) {
                 return position.x;
@@ -74,7 +80,7 @@ export const CurrentPosition = () => {
             .attr('cy', function(d) {
                 return position.y;
             })
-            .attr('r', 30)
+            .attr('r', radius)
         ;
 
     },[position]);

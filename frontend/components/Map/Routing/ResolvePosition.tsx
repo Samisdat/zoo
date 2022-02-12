@@ -405,6 +405,15 @@ export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
             y: matches[0].samplePos.y
         };
 
+        if(1 < matches.length){
+            const farthest = matches.pop();
+            const fuzziness = farthest.samplePos;
+            const fuzzinessNumber = farthest.length
+            position.fuzziness = fuzziness;
+            position.fuzzinessNumber = getDistance(
+                farthest.samplePos,
+                matches[0].samplePos
+            );
         dispatch({
             type: 'SET_POSITION',
             position

@@ -35,6 +35,7 @@ export interface PositionInterface {
     isGPS: boolean
     text: string;
     fuzziness?: Position;
+    fuzzinessNumber?: number;
     x?:number;
     y?:number;
 }

@@ -27,7 +27,7 @@ export const Edges = ({edges}:EdgesProperties) => {
                     <path
                         key={i}
                         id={`${edgeIdPrefix}${edge.id}`}
-                        className={classes.path}
+                        className={`edge ${classes.path}`}
                         d={edge.d}
                     />
                 );

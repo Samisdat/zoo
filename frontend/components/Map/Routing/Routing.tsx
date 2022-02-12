@@ -69,7 +69,9 @@ export const Routing = (props:RoutingProperties) => {
             <Edges
                 edges={props.edges}
             />
-            <ResolvePosition />
+            <ResolvePosition
+                cartesianTransform={props.cartesianTransform}
+            />
             {/*
             <Nodes
                 nodes={props.nodes}

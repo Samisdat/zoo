@@ -10,13 +10,11 @@ export const GPXViewer = () => {
         dispatch
     } = useMap()
 
-    const [index, setIndex] = useState<number>(100);
+    const [index, setIndex] = useState<number>(0);
 
     const gpxRef = useRef(null);
 
     useEffect(() => {
-
-        return;
 
         const trackPoint:TrackPoint = gpxTrack[index];
 
@@ -35,7 +33,7 @@ export const GPXViewer = () => {
 
         let nextIndex = index + 1;
 
-        if(gpxTrack.length === nextIndex){
+        if((gpxTrack.length - 2) === nextIndex){
             nextIndex = 0;
         }
 

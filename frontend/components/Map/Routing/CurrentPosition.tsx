@@ -18,8 +18,8 @@ export const CurrentPosition = () => {
 
         let radius = 30;
 
-        if(position.fuzzinessNumber && 30 < position.fuzzinessNumber){
-            radius = position.fuzzinessNumber;
+        if(position.fuzziness && 30 < position.fuzziness){
+            radius = position.fuzziness;
         }
 
         d3.select(ref.current)

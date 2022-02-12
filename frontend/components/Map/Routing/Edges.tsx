@@ -3,7 +3,8 @@ import {MapTransformInterface, PositionInterface, useMap} from "../Context/MapCo
 import {Edge} from "../../../strapi-api/entity/edge/edge";
 import * as d3 from "d3";
 import {Route} from "./Dijkstra";
-import {Coordinate, rotateCords} from "./CartesianCurrentPosition";
+import {Coordinate, rotateCords} from "./CurrentPosition";
+import {ResolvePosition} from "./ResolvePosition";
 
 interface EdgesProperties {
     edges: Edge[];
@@ -115,6 +116,8 @@ export const Edges = (props:EdgesProperties) => {
 
     useEffect(() => {
 
+        console.log('edges.useEffect')
+
         if(!path){
             return;
         }
@@ -143,8 +146,28 @@ export const Edges = (props:EdgesProperties) => {
 
 
         })
+        .attr('class', 'edge')
+        .attr('opacity',(edge)=>{
+
+            if(undefined === props.route){
+                return 0;
+            }
+
+            if(
+                true === props.route.nodes.includes(edge.startNode.id + '') &&
+                true === props.route.nodes.includes(edge.endNode.id + '')
+            ){
+                return 1;
+            }
+
+
+            return 0 ;
+
+
+        })
         .style('stroke-width', '2px')
         .attr('d', (d, i)=>{
+
                 return d.d;
 
         })
@@ -351,7 +374,7 @@ export const Edges = (props:EdgesProperties) => {
         ;
 
 
-        if(1 === matches.length){
+        //if(1 === matches.length){
 
             const bbox = (circles.nodes()[0] as any).getClientRects()[0];
 
@@ -366,7 +389,6 @@ export const Edges = (props:EdgesProperties) => {
             const isWithin = true;
             const isGPS = true;
             const text = 'refactor interface';
-            const fuzziness = 0;
 
             const position:PositionInterface = {
                 lat: lat,
@@ -374,7 +396,6 @@ export const Edges = (props:EdgesProperties) => {
                 isWithin,
                 isGPS,
                 text,
-                fuzziness,
                 x: matches[0].samplePos.x,
                 y: matches[0].samplePos.y
             };
@@ -384,7 +405,7 @@ export const Edges = (props:EdgesProperties) => {
                 position
             });
 
-        }
+        //}
 
     },[position_raw, projection, props.cartesianTransform, transform]);
 
@@ -395,6 +416,7 @@ export const Edges = (props:EdgesProperties) => {
             />
             <g ref={refDump} />
             <g ref={refMatch} />
+            <ResolvePosition />
         </React.Fragment>
 
     );

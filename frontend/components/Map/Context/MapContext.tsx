@@ -23,13 +23,18 @@ export interface PositionRawInterface {
     data?:any;
 }
 
+export interface Position{
+    x:number;
+    y:number;
+
+}
 export interface PositionInterface {
     lat: number;
     lng: number;
     isWithin: boolean;
     isGPS: boolean
     text: string;
-    fuzziness?: number;
+    fuzziness?: Position;
     x?:number;
     y?:number;
 }

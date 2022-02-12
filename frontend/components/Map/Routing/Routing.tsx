@@ -55,8 +55,8 @@ export const Routing = (props:RoutingProperties) => {
 
         const dijkstra = new Dijkstra(
             graph,
-            399 + '',
-            232 + '',
+            606 + '',
+            614 + '',
         );
         //return;
         setRoute(dijkstra.getShortestRoute());
@@ -70,10 +70,12 @@ export const Routing = (props:RoutingProperties) => {
                 route={route}
                 cartesianTransform={props.cartesianTransform}
             />
+            {/*
             <Nodes
                 nodes={props.nodes}
                 route={route}
             />
+            */}
         </g>
     );
 

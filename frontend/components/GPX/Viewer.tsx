@@ -10,13 +10,13 @@ export const GPXViewer = () => {
         dispatch
     } = useMap()
 
-    const [index, setIndex] = useState<number>(0);
+    const [index, setIndex] = useState<number>(100);
 
     const gpxRef = useRef(null);
 
-    const speed =
-
     useEffect(() => {
+
+        return;
 
         const trackPoint:TrackPoint = gpxTrack[index];
 
@@ -27,23 +27,21 @@ export const GPXViewer = () => {
             data: trackPoint
         };
 
-        /*
+
         dispatch({
             type: 'SET_POSITION_RAW',
             position_raw
         });
-        */
-        const nextIndex = index + 1;
+
+        let nextIndex = index + 1;
 
         if(gpxTrack.length === nextIndex){
-            return;
+            nextIndex = 0;
         }
-        return;
-        const timeDiff = (gpxTrack[(index + 1)].time -  trackPoint.time)/2;
 
         setTimeout(()=>{
             setIndex( index + 1);
-        }, timeDiff);
+        }, 100);
 
     },[index]);
 

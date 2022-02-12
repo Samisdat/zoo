@@ -10,8 +10,8 @@ interface EdgesProperties {
 const useStyles = makeStyles({
     path:{
         fill: 'none',
-        opacity: 1,
-            stroke: 'red',
+        opacity: 0,
+        stroke: 'red',
         strokeWidth: '2px',
     }
 });

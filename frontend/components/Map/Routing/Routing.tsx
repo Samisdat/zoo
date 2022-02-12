@@ -5,6 +5,7 @@ import {Node} from "../../../strapi-api/entity/node/node";
 import {Edge} from "../../../strapi-api/entity/edge/edge";
 import {Dijkstra, Route, RoutingGraph} from "./Dijkstra";
 import {MapTransformInterface} from "../Context/MapContext";
+import {ResolvePosition} from "./ResolvePosition";
 
 interface RoutingProperties {
     nodes: Node[];
@@ -68,6 +69,7 @@ export const Routing = (props:RoutingProperties) => {
             <Edges
                 edges={props.edges}
             />
+            <ResolvePosition />
             {/*
             <Nodes
                 nodes={props.nodes}

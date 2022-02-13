@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {Edge} from "../../../strapi-api/entity/edge/edge";
 import {makeStyles} from "@material-ui/core/styles";
 import {edgeIdPrefix} from "../../../constants";
+import * as d3 from "d3";
+import {Route} from "./Dijkstra";
 
 interface EdgesProperties {
     edges: Edge[];
@@ -9,10 +11,8 @@ interface EdgesProperties {
 
 const useStyles = makeStyles({
     path:{
-        fill: 'none',
         opacity: 0,
-        stroke: 'red',
-        strokeWidth: '2px',
+        strokeWidth: '1px',
     }
 });
 

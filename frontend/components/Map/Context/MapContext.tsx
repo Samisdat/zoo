@@ -35,8 +35,10 @@ export interface PositionInterface {
     isGPS: boolean
     text: string;
     fuzziness?: number;
-    x?:number;
-    y?:number;
+    edgeId?: number;
+    x?: number;
+    y?: number;
+    raw?: PositionRawInterface;
 }
 
 export interface MapTransformInterface {

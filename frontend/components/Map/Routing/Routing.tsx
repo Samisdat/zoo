@@ -6,6 +6,8 @@ import {Edge} from "../../../strapi-api/entity/edge/edge";
 import {Dijkstra, Route, RoutingGraph} from "./Dijkstra";
 import {MapTransformInterface} from "../Context/MapContext";
 import {ResolvePosition} from "./ResolvePosition";
+import {Track} from "./Track";
+import {CurrentRoute} from "./CurrentRoute";
 
 interface RoutingProperties {
     nodes: Node[];
@@ -57,7 +59,7 @@ export const Routing = (props:RoutingProperties) => {
         const dijkstra = new Dijkstra(
             graph,
             606 + '',
-            614 + '',
+            612 + '',
         );
         //return;
         setRoute(dijkstra.getShortestRoute());
@@ -72,12 +74,18 @@ export const Routing = (props:RoutingProperties) => {
             <ResolvePosition
                 cartesianTransform={props.cartesianTransform}
             />
+            <CurrentRoute
+                edges={props.edges}
+                route={route}
+            />
+            <Track />
             {/*
             <Nodes
                 nodes={props.nodes}
                 route={route}
             />
             */}
+
         </g>
     );
 

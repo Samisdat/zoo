@@ -106,12 +106,12 @@ export const Cartesian = (props:CartesianProps) => {
             <g ref={boundingRef}></g>
             <g ref={cartesianRef}>
                 <Sketched />
-                <CurrentPosition />
                 <Routing
                     cartesianTransform={cartesianTransform}
                     nodes={props.nodes}
                     edges={props.edges}
                 />
+                <CurrentPosition />
 
             </g>
         </React.Fragment>

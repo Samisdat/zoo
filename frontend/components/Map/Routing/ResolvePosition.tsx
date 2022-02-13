@@ -271,8 +271,6 @@ export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
 
         const currentPos = projection([position_raw.lng, position_raw.lat]);
 
-        console.log('currentPos', currentPos);
-
         const transposedCoord = transposeCoords(
             {
                 x:currentPos[0],
@@ -280,8 +278,6 @@ export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
             },
             cartesianTransform
         );
-
-        console.log('transposedCoord', transposedCoord);
 
         const edges = d3.selectAll('.edge').nodes();
 
@@ -297,8 +293,6 @@ export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
             );
 
         }
-
-        console.log('distances', distances);
 
         for(let i = 0, x = edges.length; i < x; i += 1){
 
@@ -370,10 +364,11 @@ export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
             isWithin,
             isGPS,
             text,
+            edgeId: matches[0].edgeId,
             x: matches[0].samplePos.x,
-            y: matches[0].samplePos.y
+            y: matches[0].samplePos.y,
+            raw: position_raw
         };
-
 
         if(1 < matches.length){
 

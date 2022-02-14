@@ -843,6 +843,51 @@
               }
             }
           },
+          "graph_nodes": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "x",
+                "y"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "IdFromEdges": {
+                  "type": "string"
+                },
+                "graph_edge_starts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "graph_edge_ends": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "x": {
+                  "type": "integer"
+                },
+                "y": {
+                  "type": "integer"
+                },
+                "facility": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -898,6 +943,12 @@
             }
           },
           "qr_codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "graph_nodes": {
             "type": "array",
             "items": {
               "type": "string"

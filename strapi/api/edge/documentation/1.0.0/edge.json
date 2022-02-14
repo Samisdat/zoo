@@ -564,6 +564,9 @@
               "y": {
                 "type": "integer"
               },
+              "facility": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -602,6 +605,9 @@
               },
               "y": {
                 "type": "integer"
+              },
+              "facility": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"

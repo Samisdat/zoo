@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "01/24/2022 11:04:13 PM"
+    "x-generation-date": "02/14/2022 10:11:13 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7096,6 +7096,12 @@
                     "type": "string"
                   }
                 },
+                "graph_nodes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -7508,6 +7514,9 @@
               "y": {
                 "type": "integer"
               },
+              "facility": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -7546,6 +7555,9 @@
               },
               "y": {
                 "type": "integer"
+              },
+              "facility": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -7915,6 +7927,51 @@
               }
             }
           },
+          "graph_nodes": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "x",
+                "y"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "IdFromEdges": {
+                  "type": "string"
+                },
+                "graph_edge_starts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "graph_edge_ends": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "x": {
+                  "type": "integer"
+                },
+                "y": {
+                  "type": "integer"
+                },
+                "facility": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -7970,6 +8027,12 @@
             }
           },
           "qr_codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "graph_nodes": {
             "type": "array",
             "items": {
               "type": "string"
@@ -8077,6 +8140,83 @@
           },
           "y": {
             "type": "integer"
+          },
+          "facility": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "body": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "enclosure",
+                  "food",
+                  "playground",
+                  "toilet",
+                  "poi"
+                ]
+              },
+              "raw_published": {
+                "type": "boolean"
+              },
+              "animals": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "map_elements": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "photos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "posts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "qr_codes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "graph_nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -8106,6 +8246,9 @@
           },
           "y": {
             "type": "integer"
+          },
+          "facility": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
@@ -8463,6 +8606,12 @@
                   "type": "string"
                 }
               },
+              "graph_nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "published_at": {
                 "type": "string"
               },
@@ -8776,6 +8925,12 @@
                 }
               },
               "qr_codes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "graph_nodes": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -9176,6 +9331,12 @@
                     "type": "string"
                   }
                 },
+                "graph_nodes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -9360,6 +9521,12 @@
                 }
               },
               "qr_codes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "graph_nodes": {
                 "type": "array",
                 "items": {
                   "type": "string"

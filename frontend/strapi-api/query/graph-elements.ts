@@ -29,8 +29,6 @@ export const getNodes = async ():Promise<Node[]> =>{
 
     const nodes = json.map(Node.fromApi);
 
-    console.log(nodes);
-
     for(const mapElement of nodes){
 
         //await loadRelations(mapElement);

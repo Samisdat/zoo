@@ -9,4 +9,5 @@ export interface FacilitySpore{
     animals: number[];
     photos: number[];
     map_elements: number[];
+    nodes: number[];
 }

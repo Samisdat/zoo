@@ -6,6 +6,7 @@ import {MapElement} from "../../../strapi-api/entity/map-element/map-element";
 
 import throttle from 'lodash.throttle';
 import {Feature} from "geojson";
+import {Route} from "../Routing/Dijkstra";
 
 // @refresh reset
 
@@ -26,8 +27,8 @@ export interface PositionRawInterface {
 export interface Position{
     x:number;
     y:number;
-
 }
+
 export interface PositionInterface {
     lat: number;
     lng: number;
@@ -40,6 +41,16 @@ export interface PositionInterface {
     y?: number;
     raw?: PositionRawInterface;
 }
+
+export type RoutingType = 'request' | 'response';
+
+export interface RoutingInterface {
+    type: RoutingType;
+    destination: number[];
+    start?: PositionInterface;
+    route?:Route;
+}
+
 
 export interface MapTransformInterface {
     x: number;
@@ -72,6 +83,10 @@ type Action =
         position: PositionInterface,
     } |
     {
+        type: 'REQUEST_ROUTING',
+        routing: RoutingInterface,
+    } |
+    {
         type: 'SET_FOCUS',
         focus: MapElement,
     } |
@@ -100,6 +115,7 @@ type State = {
     teaser?:MapElement
     position_raw?: PositionRawInterface,
     position?: PositionInterface,
+    routing?: RoutingInterface,
 }
 type MapProviderProps = {
     children: React.ReactNode
@@ -164,6 +180,16 @@ function mapReducer(state: State, action: Action):State {
             return {
                 ...state,
                 position,
+            };
+
+        }
+        case 'REQUEST_ROUTING': {
+
+            const {routing} = action;
+
+            return {
+                ...state,
+                routing,
             };
 
         }

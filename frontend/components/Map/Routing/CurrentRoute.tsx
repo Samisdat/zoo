@@ -9,7 +9,6 @@ import {useMap} from "../Context/MapContext";
 
 interface CurrentRouteProps {
     edges: Edge[];
-    route: Route;
 }
 
 const useStyles = makeStyles({
@@ -25,12 +24,12 @@ const useStyles = makeStyles({
     }
 });
 
-export const CurrentRoute = ({edges, route}:CurrentRouteProps) => {
+export const CurrentRoute = ({edges}:CurrentRouteProps) => {
 
     const classes = useStyles();
 
     const {
-        state: {position},
+        state: {position, routing},
     } = useMap();
 
     const outerRef = useRef(null);
@@ -38,14 +37,20 @@ export const CurrentRoute = ({edges, route}:CurrentRouteProps) => {
 
     useEffect(() => {
 
-        if(!route){
+        if(!routing){
             return;
         }
+
+        if('response' !== routing.type){
+            return;
+        }
+
+        const route = routing.route;
 
         const current = edges.filter((edge)=>{
 
             if(edge.id === position.edgeId){
-                return false;
+                return true;
             }
 
             return(
@@ -79,7 +84,7 @@ export const CurrentRoute = ({edges, route}:CurrentRouteProps) => {
                 return `${classes.inner}`;
             })
 
-    },[route]);
+    },[routing]);
 
 
     return (

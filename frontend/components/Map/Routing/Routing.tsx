@@ -4,7 +4,7 @@ import {Edges} from "./Edges";
 import {Node} from "../../../strapi-api/entity/node/node";
 import {Edge} from "../../../strapi-api/entity/edge/edge";
 import {Dijkstra, Route, RoutingGraph} from "./Dijkstra";
-import {MapTransformInterface} from "../Context/MapContext";
+import {MapTransformInterface, RoutingInterface, useMap} from "../Context/MapContext";
 import {ResolvePosition} from "./ResolvePosition";
 import {Track} from "./Track";
 import {CurrentRoute} from "./CurrentRoute";
@@ -48,11 +48,94 @@ const createGraph = (edges:Edge[]):RoutingGraph => {
 
 export const Routing = (props:RoutingProperties) => {
 
+    const {
+        state: {position, routing},
+        dispatch
+    } = useMap();
+
     const refRouting = useRef(null);
 
     const graph = createGraph(props.edges);
 
     const [route, setRoute] = React.useState<Route>(undefined);
+
+    useEffect(() =>{
+
+        if(!routing){
+            return;
+        }
+
+        if('request' !== routing.type){
+            return;
+        }
+
+        // if position is empty, use entrance
+
+        const currentEdge = props.edges.find((edge)=>{
+            return (position.edgeId === edge.id)
+        });
+
+        const start = [
+            currentEdge.startNode.id,
+            currentEdge.endNode.id
+        ]
+
+        const routes:Route[] = []
+
+        for(let i = 0, x = routing.destination.length; i < x; i += 1){
+
+            for(let j = 0, y = start.length; j < y; j += 1){
+
+                const dijkstra = new Dijkstra(
+                    graph,
+                    start[j] + '',
+                    routing.destination[i] + '',
+                );
+
+                routes.push(dijkstra.getShortestRoute());
+
+            }
+
+        }
+
+        routes.sort((a:Route, b:Route) => {
+            if (a.length < b.length){
+                return -1;
+            }
+            if (a.length > b.length) {
+                return 1;
+            }
+
+            return 0;
+
+        });
+
+        const route = routes[0];
+
+        let addOtherSideOfCurrentEdge = currentEdge.startNode.id + '';
+
+        if(currentEdge.startNode.id + '' === route.nodes[0]){
+            addOtherSideOfCurrentEdge = currentEdge.endNode.id + '';
+        }
+
+        route.nodes.unshift(addOtherSideOfCurrentEdge)
+
+        dispatch({
+            type: 'REQUEST_ROUTING',
+            routing:{
+                ...routing,
+                type: 'response',
+                start: {
+                    ...position
+                },
+                route
+            }
+        });
+
+
+
+
+    },[routing])
 
     useEffect(() => {
 
@@ -76,16 +159,13 @@ export const Routing = (props:RoutingProperties) => {
             />
             <CurrentRoute
                 edges={props.edges}
-                route={route}
             />
             <Track />
-            {/*
+
             <Nodes
                 nodes={props.nodes}
                 route={route}
             />
-            */}
-
         </g>
     );
 

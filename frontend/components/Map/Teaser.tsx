@@ -9,7 +9,7 @@ import MobileStepper from '@material-ui/core/MobileStepper';
 import SwipeableViews from 'react-swipeable-views';
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {Animal} from "../../strapi-api/entity/animal/animal";
-import {useMap} from "./Context/MapContext";
+import {RoutingInterface, useMap} from "./Context/MapContext";
 import {useViewport} from "../viewport/useViewport";
 import {set} from "timm";
 import {getImagePath} from "../../helper/getImagePath";
@@ -111,6 +111,24 @@ export const Teaser = () => {
         dispatch({
             type: 'SET_TEASER',
             teaser: undefined
+        });
+
+    };
+
+    const handleRoute = () => {
+
+        const destination:number[] = teaser.facility.nodes.map((node)=>{
+            return (node.id as number);
+        });
+
+        const routing: RoutingInterface = {
+            type: 'request',
+            destination,
+        }
+
+        dispatch({
+            type: 'REQUEST_ROUTING',
+            routing
         });
 
     };
@@ -263,6 +281,7 @@ export const Teaser = () => {
                         icon={'directions'}
                         size={'lg'}
                     />}
+                    onClick={handleRoute}
                 >
                     Hierhin
                 </Button>

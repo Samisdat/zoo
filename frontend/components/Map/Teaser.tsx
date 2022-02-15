@@ -131,6 +131,8 @@ export const Teaser = () => {
             routing
         });
 
+        handleClose();
+
     };
 
     useEffect(() => {

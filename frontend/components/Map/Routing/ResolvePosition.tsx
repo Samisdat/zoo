@@ -344,8 +344,8 @@ export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
             .attr('opacity', 0)
         ;
 
-        const bbox = (circles.nodes()[0] as any).getClientRects()[0];
-
+        const bbox = (circles.nodes()[0] as any).getBoundingClientRect();
+        
         const clickX = bbox.x - bbox.width / 2;
         const clickY = bbox.y - bbox.height / 2;
 

@@ -32,13 +32,6 @@ export const CurrentPosition = () => {
             return;
         }
 
-        let radius = 10;
-
-        /*
-        if(position.fuzziness && 10 < position.fuzziness){
-            radius = position.fuzziness;
-        }
-         */
 
         d3.select(refPos.current)
             .attr('cx', function(d) {
@@ -63,13 +56,11 @@ export const CurrentPosition = () => {
 
     return (
         <React.Fragment>
-            fuzziness
             <circle
                 ref={refFuzziness}
                 className={classes.fuzziness}
                 r={30}
             />
-
             <circle
                 ref={refPos}
                 className={classes.inner}

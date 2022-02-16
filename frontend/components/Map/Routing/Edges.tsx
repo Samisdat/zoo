@@ -12,7 +12,7 @@ interface EdgesProperties {
 const useStyles = makeStyles({
     path:{
         fill: 'none',
-        opacity: 1,
+        opacity: 0,
         stroke: 'blue',
         strokeWidth: '1px',
     }

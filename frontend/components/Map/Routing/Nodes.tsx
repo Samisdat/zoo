@@ -68,7 +68,7 @@ export const Nodes = (props:RoutingProperties) => {
 
         })
         .attr('r', 5)
-        .attr('opacity', 1)
+        .attr('opacity', 0)
         .attr('d', path as any)
         ;
 

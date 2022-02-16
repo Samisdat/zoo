@@ -31,11 +31,16 @@ export const GPXViewer = () => {
             position_raw
         });
 
+        console.log(index)
+
+
         let nextIndex = index + 1;
 
         if((gpxTrack.length - 2) === nextIndex){
             nextIndex = 0;
         }
+
+        return;
 
         setTimeout(()=>{
             setIndex( index + 1);

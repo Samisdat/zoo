@@ -11,7 +11,7 @@ export class Node extends Entity<NodeSpore>{
         return this.json.id;
     }
 
-    get IdFromEdges(): string{
+    get idFromEdges(): string{
         return this.json.IdFromEdges;
     }
 

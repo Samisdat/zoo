@@ -2,6 +2,9 @@ import React, {useEffect, useRef} from 'react';
 import * as d3 from "d3";
 import {MapTransformInterface, PositionInterface, useMap} from "../Context/MapContext";
 import {edgeIdPrefix, svg} from "../../../constants";
+import {doc} from "prettier";
+import {Warehouse} from "../../../strapi-api/warehouse/warehouse";
+import {Point} from "geojson";
 
 export interface Coordinate{
     x:number;
@@ -219,6 +222,26 @@ const sampleMatches = (samples:EdgeSample[], transposedCoord):EdgeSample[] => {
 
 }
 
+const checkIsWithin = (path, coordinate:Coordinate):boolean => {
+
+    const svg = document.getElementsByTagName('svg')[0];
+
+    const point = svg.createSVGPoint();
+    point.x = coordinate.x;
+    point.y = coordinate.y;
+
+    const isPointInFill = path.isPointInFill(point);
+
+    if(true === isPointInFill){
+        return true;
+    }
+
+    // if point is not within fill, I use the stroke as buffer
+    const isPointInStroke = path.isPointInStroke(point);
+
+    return isPointInStroke;
+
+}
 
 /**
  * For obvious reasons not all areas of the zoo can be entered.
@@ -227,6 +250,7 @@ const sampleMatches = (samples:EdgeSample[], transposedCoord):EdgeSample[] => {
  * So if I get a new (potentially inaccurate) GeoPosition,
  * I can use it to determine where the visitor might be:
  *
+ * 0) Check if the current position is within the zoo
  * 1) Transform an gps position into cartesian coordinates in the SVG reference system
  * 2) Sample all edges to find closest  points on every edge
  * 3) Take 40 closest points, calculate their variance
@@ -248,6 +272,8 @@ export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
     } = useMap();
 
     const refMatch = useRef(null);
+
+    const entrance = Warehouse.get().getMapElement(464);
 
     useEffect(() => {
 
@@ -278,6 +304,40 @@ export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
             },
             cartesianTransform
         );
+
+        const isWithin = checkIsWithin(
+
+            d3.select('#Außengrenze').node(),
+            transposedCoord
+        );
+
+        if(false === isWithin){
+
+            const isGPS = false;
+            const text = 'außerhalb';
+
+            const position:PositionInterface = {
+                lat: (entrance.geometry as Point).coordinates[1],
+                lng: (entrance.geometry as Point).coordinates[0],
+                isWithin,
+                isGPS,
+                text,
+                edgeId: 1428,
+                x: 867,
+                y: 325,
+                raw: position_raw
+            };
+
+            console.log(position)
+
+            dispatch({
+                type: 'SET_POSITION',
+                position
+            });
+
+            return;
+
+        }
 
         const edges = d3.selectAll('.edge').nodes();
 
@@ -354,7 +414,6 @@ export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
 
         const [lng, lat] = projection.invert([x, y]);
 
-        const isWithin = true;
         const isGPS = true;
         const text = 'refactor interface';
 
@@ -380,6 +439,9 @@ export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
             );
 
         }
+
+
+        console.log(position)
 
         dispatch({
             type: 'SET_POSITION',

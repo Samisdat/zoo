@@ -42,6 +42,16 @@ export const Group = (props:MapGroupProperties) => {
         zooming:undefined,
     });
 
+    const points = props.mapElements.filter((mapElement:MapElement) => {
+
+        if('point' === mapElement.properties.type){
+            return true;
+        }
+
+        return false;
+
+    });
+
     const createD3Map = ()=> {
 
         var mapSvg = d3.select(ref.current)

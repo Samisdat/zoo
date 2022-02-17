@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import {useMap} from "./Context/MapContext";
 import * as d3 from "d3";
-import {getPosition} from "./CartesianPoint";
+import {getPosition} from "./Cartesian/CartesianPoint";
 
 export const GeoPoint = () => {
 
@@ -26,7 +26,6 @@ export const GeoPoint = () => {
         const geo = d3.select('#geo').node() as SVGGraphicsElement;
 
         let localPos:any = getPosition(geo, position)
-        console.log(localPos, ref.current);
 
         d3.select(ref.current)
             .attr('cx', function(d) {

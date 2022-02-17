@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 import React, {useEffect, useRef, useState} from "react";
 
-import {Sketched} from "./Sketched";
+import {Sketched} from "./Cartesian/Sketched";
 import {Markers} from "./Markers/Markers";
 import {centerToFeatureCollection} from "../Distribution/Detail";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
@@ -9,7 +9,7 @@ import {MapTransformInterface, PositionInterface, PositionRawInterface, useMap} 
 import {Edge} from "../../strapi-api/entity/edge/edge";
 import {Node} from "../../strapi-api/entity/node/node";
 import {Routing} from "./Routing/Routing";
-import {Cartesian} from "./Cartesian";
+import {Cartesian} from "./Cartesian/Cartesian";
 import {GeoBorder} from "./GeoBorder";
 import {GPXViewer} from "../GPX/Viewer";
 import {GeoPoint} from "./GeoPoint";

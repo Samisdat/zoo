@@ -1,17 +1,18 @@
 import * as d3 from 'd3';
 
 import React, {FunctionComponent, useEffect, useRef, useState} from 'react';
-import {MapElement} from "../../strapi-api/entity/map-element/map-element";
-import {MapTransformInterface, useMap} from "./Context/MapContext";
-import {svg} from "../../constants";
-import {angle} from "../../constants";
+import {MapElement} from "../../../strapi-api/entity/map-element/map-element";
+import {MapTransformInterface, useMap} from "../Context/MapContext";
+import {svg} from "../../../constants";
+import {angle} from "../../../constants";
 
-import {CurrentPosition} from "./Routing/CurrentPosition";
+import {CurrentPosition} from "../Routing/CurrentPosition";
 import {Sketched} from "./Sketched";
-import {Routing} from "./Routing/Routing";
-import {Edge} from "../../strapi-api/entity/edge/edge";
-import {Node} from "../../strapi-api/entity/node/node";
+import {Routing} from "../Routing/Routing";
+import {Edge} from "../../../strapi-api/entity/edge/edge";
+import {Node} from "../../../strapi-api/entity/node/node";
 import {CartesianPoint} from "./CartesianPoint";
+import {FacilityBoxes} from "./FacilityBoxes";
 
 interface CartesianProps{
     boundingBox:MapElement;
@@ -110,6 +111,7 @@ export const Cartesian = (props:CartesianProps) => {
                 ref={cartesianRef}
             >
                 <Sketched />
+                <FacilityBoxes />
                 <Routing
                     cartesianTransform={cartesianTransform}
                     nodes={props.nodes}

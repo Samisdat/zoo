@@ -178,9 +178,18 @@ export const Group = (props:MapGroupProperties) => {
         //zoomDependencies.mapSvg.on('.zoom', null);
         const centerOfEnclosure = centerToFeatureCollection([(  focus as MapElement)]);
 
-        const [[x0, y0], [x1, y1]] = path.bounds(centerOfEnclosure as any);
+        //const [[x0, y0], [x1, y1]] = path.bounds(centerOfEnclosure as any);
 
-        console.log(path.bounds(centerOfEnclosure as any));
+        const rect = d3.select('#box-affenhaus').node();
+
+        const bbox = (rect as Element).getBoundingClientRect();
+
+        console.log(bbox)
+
+        const x0 = (bbox.left - transform.x) / transform.k;
+        const y0 = (bbox.top - transform.y) / transform.k;
+        const x1 = x0 + bbox.width / transform.k;
+        const y1 = y0 + bbox.height / transform.k;
 
         zoomDependencies.mapSvg.transition().delay(300).duration(750).call(
             zoomDependencies.zooming.transform as any,
@@ -253,10 +262,12 @@ export const Group = (props:MapGroupProperties) => {
             <GeoPoint />
 
             {/*
+            *
             <Markers
                 zoom={zoom}
                 mapElements={points}
             />
+            {
             */}
 
             <GPXViewer/>

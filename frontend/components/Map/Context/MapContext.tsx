@@ -51,7 +51,6 @@ export interface RoutingInterface {
     route?:Route;
 }
 
-
 export interface MapTransformInterface {
     x: number;
     y: number;
@@ -62,6 +61,10 @@ export const mapTransformDefault: MapTransformInterface = {
     k:1,
     x:0,
     y:0
+}
+
+export interface PointExchangeInterface {
+    position?: Position;
 }
 
 type Action =
@@ -101,6 +104,10 @@ type Action =
     {
         type: 'SET_ZOOM_AND_PAN',
         center: MapElement[]
+    } |
+    {
+        type: 'SET_POINT_EXCHANGE',
+        exchange: PointExchangeInterface
     }
 ;
 type Dispatch = (action: Action) => void;
@@ -116,6 +123,7 @@ type State = {
     position_raw?: PositionRawInterface,
     position?: PositionInterface,
     routing?: RoutingInterface,
+    exchange?: PointExchangeInterface,
 }
 type MapProviderProps = {
     children: React.ReactNode
@@ -234,6 +242,18 @@ function mapReducer(state: State, action: Action):State {
             };
 
         }
+        case 'SET_POINT_EXCHANGE': {
+
+            const {exchange} = action;
+
+            return {
+                ...state,
+                exchange,
+            };
+
+        }
+
+
         default: {
             throw new Error(`Unhandled action type: ${(action as any).type}`)
         }

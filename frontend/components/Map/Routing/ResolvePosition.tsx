@@ -94,7 +94,7 @@ export const rotateCords = (coordinate: Coordinate, degree:number):Coordinate =>
 
 }
 
-const transposeCoords = (coordinate:Coordinate, transform:MapTransformInterface):Coordinate => {
+export const transposeCoords = (coordinate:Coordinate, transform:MapTransformInterface):Coordinate => {
 
     // console.log('transposeCoords')
     // console.log('')
@@ -327,8 +327,6 @@ export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
                 y: 325,
                 raw: position_raw
             };
-
-            console.log(position)
 
             dispatch({
                 type: 'SET_POSITION',

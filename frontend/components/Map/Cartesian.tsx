@@ -11,6 +11,7 @@ import {Sketched} from "./Sketched";
 import {Routing} from "./Routing/Routing";
 import {Edge} from "../../strapi-api/entity/edge/edge";
 import {Node} from "../../strapi-api/entity/node/node";
+import {CartesianPoint} from "./CartesianPoint";
 
 interface CartesianProps{
     boundingBox:MapElement;
@@ -104,7 +105,10 @@ export const Cartesian = (props:CartesianProps) => {
     return (
         <React.Fragment>
             <g ref={boundingRef}></g>
-            <g ref={cartesianRef}>
+            <g
+                id='cartesian'
+                ref={cartesianRef}
+            >
                 <Sketched />
                 <Routing
                     cartesianTransform={cartesianTransform}
@@ -112,6 +116,7 @@ export const Cartesian = (props:CartesianProps) => {
                     edges={props.edges}
                 />
                 <CurrentPosition />
+                <CartesianPoint />
 
             </g>
         </React.Fragment>

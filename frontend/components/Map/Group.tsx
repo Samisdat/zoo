@@ -12,6 +12,7 @@ import {Routing} from "./Routing/Routing";
 import {Cartesian} from "./Cartesian";
 import {GeoBorder} from "./GeoBorder";
 import {GPXViewer} from "../GPX/Viewer";
+import {GeoPoint} from "./GeoPoint";
 
 interface ZoomDependencies {
     mapSvg:any,
@@ -119,9 +120,22 @@ export const Group = (props:MapGroupProperties) => {
 
             const [clickX, clickY] = d3.pointer(event);
 
-            const x = (clickX - transform.x) / transform.k;
-            const y = (clickY - transform.y) / transform.k
+            const x = clickX;
+            const y = clickY;
 
+            dispatch({
+                type: 'SET_POINT_EXCHANGE',
+                exchange: {
+                    position:{
+                        x,
+                        y
+                    },
+                },
+
+            });
+
+
+            /*
             const [lng, lat] = projection.invert([x, y]);
 
             const position_raw: PositionRawInterface = {
@@ -135,11 +149,6 @@ export const Group = (props:MapGroupProperties) => {
                 position_raw
             });
 
-            /*
-            dispatch({
-                type: 'SET_POSITION',
-                position: newPosition
-            });
             */
         });
 
@@ -170,6 +179,8 @@ export const Group = (props:MapGroupProperties) => {
         const centerOfEnclosure = centerToFeatureCollection([(  focus as MapElement)]);
 
         const [[x0, y0], [x1, y1]] = path.bounds(centerOfEnclosure as any);
+
+        console.log(path.bounds(centerOfEnclosure as any));
 
         zoomDependencies.mapSvg.transition().delay(300).duration(750).call(
             zoomDependencies.zooming.transform as any,
@@ -226,7 +237,10 @@ export const Group = (props:MapGroupProperties) => {
     }, [center, path])
 
     return (
-        <g ref={map}>
+        <g
+            id={'geo'}
+            ref={map}
+        >
 
             <GeoBorder />
 
@@ -236,6 +250,7 @@ export const Group = (props:MapGroupProperties) => {
                 edges={props.edges}
 
             />
+            <GeoPoint />
 
             {/*
             <Markers

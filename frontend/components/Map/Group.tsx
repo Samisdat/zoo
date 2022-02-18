@@ -175,16 +175,9 @@ export const Group = (props:MapGroupProperties) => {
             return;
         }
 
-        //zoomDependencies.mapSvg.on('.zoom', null);
-        const centerOfEnclosure = centerToFeatureCollection([(  focus as MapElement)]);
-
-        //const [[x0, y0], [x1, y1]] = path.bounds(centerOfEnclosure as any);
-
-        const rect = d3.select('#box-affenhaus').node();
+        const rect = d3.select(`#box-${(focus as MapElement).facility.slug}`).node();
 
         const bbox = (rect as Element).getBoundingClientRect();
-
-        console.log(bbox)
 
         const x0 = (bbox.left - transform.x) / transform.k;
         const y0 = (bbox.top - transform.y) / transform.k;

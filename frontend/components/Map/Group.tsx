@@ -13,6 +13,7 @@ import {Cartesian} from "./Cartesian/Cartesian";
 import {GeoBorder} from "./GeoBorder";
 import {GPXViewer} from "../GPX/Viewer";
 import {GeoPoint} from "./GeoPoint";
+import {Facility} from "../../strapi-api/entity/facility/facility";
 
 interface ZoomDependencies {
     mapSvg:any,
@@ -21,7 +22,7 @@ interface ZoomDependencies {
 
 interface MapGroupProperties {
     fullsize: boolean;
-    mapElements: MapElement[];
+    facilities: Facility[];
     nodes: Node[];
     edges:Edge[];
     boundingBox:MapElement;
@@ -41,16 +42,6 @@ export const Group = (props:MapGroupProperties) => {
     const [zoomDependencies, setZoomDependencies] = useState<ZoomDependencies>({
         mapSvg:undefined,
         zooming:undefined,
-    });
-
-    const points = props.mapElements.filter((mapElement:MapElement) => {
-
-        if('point' === mapElement.properties.type){
-            return true;
-        }
-
-        return false;
-
     });
 
     const createD3Map = ()=> {
@@ -175,7 +166,7 @@ export const Group = (props:MapGroupProperties) => {
             return;
         }
 
-        const rect = d3.select(`#box-${(focus as MapElement).facility.slug}`).node();
+        const rect = d3.select(`#box-${focus.slug}`).node();
 
         const bbox = (rect as Element).getBoundingClientRect();
 

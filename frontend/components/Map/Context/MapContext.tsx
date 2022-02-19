@@ -7,6 +7,7 @@ import {MapElement} from "../../../strapi-api/entity/map-element/map-element";
 import throttle from 'lodash.throttle';
 import {Feature} from "geojson";
 import {Route} from "../Routing/Dijkstra";
+import {Facility} from "../../../strapi-api/entity/facility/facility";
 
 // @refresh reset
 
@@ -91,11 +92,11 @@ type Action =
     } |
     {
         type: 'SET_FOCUS',
-        focus: MapElement,
+        focus: Facility,
     } |
     {
         type: 'SET_TEASER',
-        teaser: MapElement,
+        teaser: Facility,
     } |
     {
         type: 'SET_DIMENSION',
@@ -117,9 +118,9 @@ type State = {
     path:GeoPath,
     projection:GeoProjection,
     transform:MapTransformInterface,
-    focus?:MapElement
+    focus?:Facility
     center?:MapElement[]
-    teaser?:MapElement
+    teaser?:Facility
     position_raw?: PositionRawInterface,
     position?: PositionInterface,
     routing?: RoutingInterface,

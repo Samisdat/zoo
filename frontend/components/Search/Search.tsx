@@ -15,6 +15,7 @@ import {NavigationListItemInterface} from "../NavigationList/NavigationListInter
 import {useMap} from "../Map/Context/MapContext";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 import {Icon} from "../Icon/Icon";
+import {Facility} from "../../strapi-api/entity/facility/facility";
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -78,56 +79,26 @@ const Transition = React.forwardRef(function Transition(
 });
 
 export interface SearchDialogProperties{
-    mapElements:MapElement[];
+    facilities:Facility[];
 };
 
-export default function SearchDialog(props:SearchDialogProperties) {
+export default function SearchDialog({facilities}:SearchDialogProperties) {
 
     const { dispatch } = useMap()
 
     const classes = useStyles();
 
-    const mapElements = props.mapElements.filter((mapElement:MapElement) => {
-
-        if('box' !== mapElement.properties.type){
-            return false;
-        }
-
-        if(!mapElement.properties.facility){
-            return false;
-        }
-
-        if('playground' === mapElement.properties.facility.type){
-            return true;
-        }
-
-        if('food' === mapElement.properties.facility.type){
-            return true;
-        }
-
-        if('poi' === mapElement.properties.facility.type){
-            return true;
-        }
-
-        if('enclosure' === mapElement.properties.facility.type){
-            return true;
-        }
-
-        return false;
-
-    });
-
-    const listItems:NavigationListItemInterface[] = mapElements.map((mapElement):NavigationListItemInterface=>{
+    const listItems:NavigationListItemInterface[] = facilities.map((facility):NavigationListItemInterface=>{
 
         const listItem: NavigationListItemInterface = {
-            key: mapElement.properties.facility.slug,
-            text: mapElement.properties.facility.title,
+            key: facility.slug,
+            text: facility.title,
         };
 
         let image:string = undefined;
 
-        if(0 !== mapElement.photos.length && undefined !== mapElement.photos[0] && mapElement.photos[0].thumbnail){
-            image = `http://127.0.0.1:1337${mapElement.photos[0].thumbnail.src}`
+        if(0 !== facility.photos.length && undefined !== facility.photos[0] && facility.photos[0].thumbnail){
+            image = `http://127.0.0.1:1337${facility.photos[0].thumbnail.src}`
         }
 
         if(undefined !== image){
@@ -154,8 +125,8 @@ export default function SearchDialog(props:SearchDialogProperties) {
 
         setOpen(false);
 
-        const focus = mapElements.find((mapElement)=>{
-            return (itemKey === mapElement.properties.facility.slug);
+        const focus = facilities.find((facility)=>{
+            return (itemKey === facility.slug);
         });
 
         dispatch({

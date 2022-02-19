@@ -117,7 +117,7 @@ export const Teaser = () => {
 
     const handleRoute = () => {
 
-        const destination:number[] = teaser.facility.nodes.map((node)=>{
+        const destination:number[] = teaser.nodes.map((node)=>{
             return (node.id as number);
         });
 
@@ -145,7 +145,7 @@ export const Teaser = () => {
 
         }
 
-        console.log(teaser?.facility?.title)
+        console.log(teaser?.title)
 
         const nextVisible = (undefined !== teaser);
 
@@ -163,9 +163,9 @@ export const Teaser = () => {
 
     let teaserItems:TeaserItem[] = [];
 
-    if('enclosure' === teaser.facility.type){
+    if('enclosure' === teaser.type){
 
-        teaserItems = teaser.facility.animals.map((animal:Animal)=>{
+        teaserItems = teaser.animals.map((animal:Animal)=>{
 
             const slug = `animal-${animal.slug}`;
             const title = animal.title;
@@ -184,10 +184,10 @@ export const Teaser = () => {
     }
     else{
 
-        const slug = `facility-${teaser.facility.slug}`;
-        const title = teaser.facility.title;
-        const photo = getImagePath(teaser.facility.photos[0].medium.src);
-        const href = `/anlagen/${teaser.facility.slug}`;
+        const slug = `facility-${teaser.slug}`;
+        const title = teaser.title;
+        const photo = getImagePath(teaser.photos[0].medium.src);
+        const href = `/anlagen/${teaser.slug}`;
 
         teaserItems.push({
             slug,

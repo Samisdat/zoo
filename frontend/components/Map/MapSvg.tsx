@@ -12,7 +12,8 @@ import {getMarkerFromStorage} from "./getMarkerFromStorage";
 import {MarkerImages} from "./Markers/MarkerImages";
 import {Edge} from "../../strapi-api/entity/edge/edge";
 import {Node} from "../../strapi-api/entity/node/node";
-import {angle} from "../../constants";
+import {angle, borderGeoJson} from "../../constants";
+import {Facility} from "../../strapi-api/entity/facility/facility";
 
 const useStyles = makeStyles({
     svgWrap:{
@@ -32,7 +33,8 @@ const useStyles = makeStyles({
 
 interface MapRootInterface{
     fullsize: boolean;
-    mapElements: MapElement[];
+    mapElements:MapElement[];
+    facilities: Facility[];
     boundingBox:MapElement;
     nodes: Node[],
     edges: Edge[]
@@ -45,15 +47,7 @@ export const MapSvg = (props:MapRootInterface) => {
 
     const classes = useStyles();
 
-    const border = props.mapElements.find((mapElement:MapElement) => {
-
-        if('border' === mapElement.properties?.type){
-            return true;
-        }
-
-        return false;
-
-    });
+    const border = borderGeoJson;
 
     const createMap = (width, height) => {
 
@@ -143,7 +137,7 @@ export const MapSvg = (props:MapRootInterface) => {
             />
             <Group
                 fullsize={props.fullsize}
-                mapElements={props.mapElements}
+                facilities={props.facilities}
                 boundingBox={props.boundingBox}
                 nodes={props.nodes}
                 edges={props.edges}

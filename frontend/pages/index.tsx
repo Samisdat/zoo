@@ -13,6 +13,7 @@ import {MapProvider} from "../components/Map/Context/MapContext";
 import {makeStyles} from "@material-ui/core/styles";
 import {HashNavigation} from "../components/Map/HashNavication";
 import {getGraphElements} from "../strapi-api/query/graph-elements";
+import {getFacilities} from "../strapi-api/query/facilities";
 
 export interface IndexProps{
     warehouse: WarehouseSpore;
@@ -38,6 +39,7 @@ export default function Index(props:IndexProps) {
     console.log('@TODO', boundingBox, 'as default focus');
 
     const mapElements = Warehouse.get().getMapElements();
+    const facilities = Warehouse.get().getFacilities();
 
     const [teaser, setTeaser] = useState<MapElement>(undefined);
 
@@ -51,20 +53,23 @@ export default function Index(props:IndexProps) {
         <MapProvider>
             <div className={classes.root}>
                 <HashNavigation
-                    mapElements={mapElements}
+                    facilities={facilities}
                 />
                 <MapSvg
                     fullsize={true}
                     mapElements={mapElements}
+                    facilities={facilities}
                     boundingBox={boundingBox}
                     nodes={nodes}
                     edges={edges}
                 />
                 {/*
+                */}
                 <SearchDialog
-                    mapElements={mapElements}
+                    facilities={facilities}
                 />
                 <Teaser/>
+                {/*
                 */}
             </div>
         </MapProvider>
@@ -75,6 +80,7 @@ export default function Index(props:IndexProps) {
 export async function getStaticProps(context) {
 
     await getMapElements();
+    await getFacilities();
     await getGraphElements();
 
     const indexProps:any = {

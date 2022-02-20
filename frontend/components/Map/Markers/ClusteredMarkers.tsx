@@ -75,7 +75,7 @@ export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
             })
             .attr('fill', (d, i)=>{
 
-                return ("url(#"+d.contains[0].id + "-icon)");
+                return (`url(#icon-${d.contains[0].facility?.slug})`);
 
             })
             .attr('r', props.radius)

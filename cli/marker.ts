@@ -26,6 +26,23 @@ const checkMarker = async (slug:string): Promise<number | undefined> =>{
 
 };
 
+const getFacilityIdBySlug = async (slug:string): Promise<number | undefined> =>{
+
+    const response = await axios.get(
+        getUrl(`/facilities/?slug=${slug}`)
+    );
+
+    const data = response.data;
+
+    if(0 === data.length){
+        return undefined;
+    }
+
+    return (response.data[0].id as number)
+
+};
+
+
 const saveMarker = async (marker:MarkerAttributes) =>{
 
     const slug = marker.slug;
@@ -36,7 +53,7 @@ const saveMarker = async (marker:MarkerAttributes) =>{
 
     const strapiId = await checkMarker(slug);
 
-    console.log(strapiId);
+    const facilityId = await getFacilityIdBySlug(slug);
 
     marker.id = strapiId;
 
@@ -46,6 +63,7 @@ const saveMarker = async (marker:MarkerAttributes) =>{
             slug,
             x: marker.x,
             y: marker.y,
+            facility:facilityId
         };
 
         const strapiNode = await axios.post(
@@ -61,6 +79,7 @@ const saveMarker = async (marker:MarkerAttributes) =>{
         const data:any = {
             x: marker.x,
             y: marker.y,
+            facility:facilityId
         };
 
         await axios.put(
@@ -85,6 +104,9 @@ const saveMarkers = async (markers:MarkerAttributes[]) =>{
 const save = async (markers:MarkerAttributes[]) => {
 
     await saveMarkers(markers);
+
+    console.log('done');
+    process.exit(0);
 
 }
 

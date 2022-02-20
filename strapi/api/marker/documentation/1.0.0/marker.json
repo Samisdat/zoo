@@ -533,6 +533,89 @@
           },
           "y": {
             "type": "number"
+          },
+          "facility": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "body": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "enclosure",
+                  "food",
+                  "playground",
+                  "toilet",
+                  "poi"
+                ]
+              },
+              "raw_published": {
+                "type": "boolean"
+              },
+              "animals": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "map_elements": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "photos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "posts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "qr_codes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "graph_nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "markers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -551,6 +634,9 @@
           },
           "y": {
             "type": "number"
+          },
+          "facility": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

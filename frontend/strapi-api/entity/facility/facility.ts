@@ -35,9 +35,33 @@ export class Facility extends Entity<FacilitySpore>{
     }
 
     get photos(): Photo[]{
-        return this.json.photos.map((photoId)=>{
-            return Warehouse.get().getPhoto(photoId);
-        });
+
+        if(this.json.photos && 0 !== this.json.photos.length){
+
+            return this.json.photos.map((photoId)=>{
+                return Warehouse.get().getPhoto(photoId);
+            });
+
+        }
+
+        if(this.animals){
+
+            const photos = [];
+
+            for(const animal of this.animals){
+
+                for(const photo of animal.photos){
+
+                    photos.push(photo);
+
+                }
+
+            }
+
+            return photos;
+
+        }
+
     }
 
     get animalsRaw(): number[]{

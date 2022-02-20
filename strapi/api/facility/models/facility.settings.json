@@ -56,6 +56,10 @@
     "graph_nodes": {
       "via": "facility",
       "collection": "graph-node"
+    },
+    "markers": {
+      "via": "facility",
+      "collection": "marker"
     }
   }
 }

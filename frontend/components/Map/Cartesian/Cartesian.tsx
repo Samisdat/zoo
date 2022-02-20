@@ -13,9 +13,11 @@ import {Edge} from "../../../strapi-api/entity/edge/edge";
 import {Node} from "../../../strapi-api/entity/node/node";
 import {CartesianPoint} from "./CartesianPoint";
 import {FacilityBoxes} from "./FacilityBoxes";
+import {Marker} from "../../../strapi-api/entity/marker/marker";
 
 interface CartesianProps{
     boundingBox:MapElement;
+    markers:Marker[];
     edges: Edge[];
     nodes: Node[];
 }

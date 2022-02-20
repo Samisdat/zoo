@@ -16,11 +16,14 @@ import {Edge} from "../entity/edge/edge";
 import {Node} from "../entity/node/node";
 import {NodeSpore} from "../entity/node/node-spore";
 import {EdgeSpore} from "../entity/edge/edge-spore";
+import {Marker} from "../entity/marker/marker";
+import {MarkerSpore} from "../entity/marker/marker-spore";
 
 export interface WarehouseSpore{
     facilities:FacilitySpore[];
     photos:PhotoSpore[];
     mapElements:MapElementSpore[];
+    markers:Marker[];
     animals: AnimalSpore[]
     individualAnimals: IndividualAnimalSpore[]
     posts: PostSpore[]
@@ -41,6 +44,9 @@ export class Warehouse{
 
     private mapElementIds: number[] = [];
     private mapElements:MapElement[] = [];
+
+    private markerIds: number[] = [];
+    private markers:Marker[] = [];
 
     private animalsIds: number[] = [];
     private animals:Animal[] = [];
@@ -87,6 +93,10 @@ export class Warehouse{
             return mapElement.dehydrate();
         });
 
+        const markers = this.markers.map((marker:Marker)=>{
+            return marker.dehydrate();
+        });
+
         const animals = this.animals.map((animal:Animal)=>{
             return animal.dehydrate();
         });
@@ -115,6 +125,7 @@ export class Warehouse{
             facilities,
             photos,
             mapElements,
+            markers,
             animals,
             individualAnimals,
             posts,
@@ -167,6 +178,15 @@ export class Warehouse{
             this.mapElements = spore.mapElements.map((mapElementSpore:MapElementSpore)=>{
                 this.mapElementIds.push(mapElementSpore.id);
                 return MapElement.hydrate(mapElementSpore);
+            });
+
+        }
+
+        if(spore.markers){
+
+            this.markers = spore.markers.map((markerSpore:MarkerSpore)=>{
+                this.markerIds.push(markerSpore.id);
+                return Marker.hydrate(markerSpore);
             });
 
         }
@@ -308,6 +328,40 @@ export class Warehouse{
         return this.mapElements;
 
     }
+
+    public addMarker(marker: Marker){
+
+        if(false === this.hasMarker(marker.id)){
+            this.markerIds.push(marker.id)
+            this.markers.push(marker);
+        }
+
+    }
+
+    public hasMarker(markerId: number):boolean{
+
+        return this.markerIds.includes(markerId);
+
+    }
+
+    public getMarker(markerId: number):Marker{
+
+        if(false === this.hasMarker(markerId)){
+            return undefined;
+        }
+
+        return this.markers.find((marker:Marker)=>{
+            return (markerId === marker.id);
+        });
+
+    }
+
+    public getMarkers():Marker[]{
+
+        return this.markers;
+
+    }
+
 
     public addAnimal(animal: Animal){
 

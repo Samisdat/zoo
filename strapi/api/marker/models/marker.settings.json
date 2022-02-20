@@ -28,6 +28,9 @@
     "facility": {
       "model": "facility",
       "via": "markers"
+    },
+    "priority": {
+      "type": "integer"
     }
   }
 }

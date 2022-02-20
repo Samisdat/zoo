@@ -14,6 +14,7 @@ import {GeoBorder} from "./GeoBorder";
 import {GPXViewer} from "../GPX/Viewer";
 import {GeoPoint} from "./GeoPoint";
 import {Facility} from "../../strapi-api/entity/facility/facility";
+import {Marker} from "../../strapi-api/entity/marker/marker";
 
 interface ZoomDependencies {
     mapSvg:any,
@@ -23,6 +24,7 @@ interface ZoomDependencies {
 interface MapGroupProperties {
     fullsize: boolean;
     facilities: Facility[];
+    markers:Marker[];
     nodes: Node[];
     edges:Edge[];
     boundingBox:MapElement;
@@ -241,7 +243,7 @@ export const Group = (props:MapGroupProperties) => {
                 boundingBox={props.boundingBox}
                 nodes={props.nodes}
                 edges={props.edges}
-
+                markers={props.markers}
             />
             <GeoPoint />
 

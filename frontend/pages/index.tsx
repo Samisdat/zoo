@@ -14,6 +14,8 @@ import {makeStyles} from "@material-ui/core/styles";
 import {HashNavigation} from "../components/Map/HashNavication";
 import {getGraphElements} from "../strapi-api/query/graph-elements";
 import {getFacilities} from "../strapi-api/query/facilities";
+import {MarkerStrapi} from "../strapi-api/entity/marker/marker-strapi";
+import {getMarkers} from "../strapi-api/query/marker";
 
 export interface IndexProps{
     warehouse: WarehouseSpore;
@@ -39,6 +41,7 @@ export default function Index(props:IndexProps) {
     console.log('@TODO', boundingBox, 'as default focus');
 
     const mapElements = Warehouse.get().getMapElements();
+    const markers = Warehouse.get().getMarkers();
     const facilities = Warehouse.get().getFacilities();
 
     const [teaser, setTeaser] = useState<MapElement>(undefined);
@@ -58,6 +61,7 @@ export default function Index(props:IndexProps) {
                 <MapSvg
                     fullsize={true}
                     mapElements={mapElements}
+                    markers={markers}
                     facilities={facilities}
                     boundingBox={boundingBox}
                     nodes={nodes}
@@ -82,6 +86,7 @@ export async function getStaticProps(context) {
     await getMapElements();
     await getFacilities();
     await getGraphElements();
+    await getMarkers();
 
     const indexProps:any = {
         warehouse: Warehouse.get().dehydrate()

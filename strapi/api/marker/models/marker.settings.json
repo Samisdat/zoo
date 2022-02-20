@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "markers",
+  "info": {
+    "name": "Marker"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "x": {
+      "type": "float",
+      "required": true
+    },
+    "y": {
+      "type": "float",
+      "required": true
+    }
+  }
+}

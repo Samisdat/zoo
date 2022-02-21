@@ -5,7 +5,7 @@ import {Facility} from "../entity/facility/facility";
 import {FacilityStrapi} from "../entity/facility/facility-strapi";
 import {Warehouse} from "../warehouse/warehouse";
 import {getPhotoById} from "./photos";
-import {getMapElementById} from "./map-elements";
+import {getMarkerById} from "./marker";
 
 export const loadRelations = async (facility:Facility) => {
 
@@ -25,16 +25,13 @@ export const loadRelations = async (facility:Facility) => {
 
     }
 
-    /*
-    for (const mapElementId of facility.mapElementsRaw) {
+    for (const markerId of facility.markersRaw) {
 
-        if (false === Warehouse.get().hasMapElement(mapElementId)) {
-            await getMapElementById(mapElementId);
+        if (false === Warehouse.get().hasMarker(markerId)) {
+            await getMarkerById(markerId);
         }
 
     }
-
-     */
 
 }
 

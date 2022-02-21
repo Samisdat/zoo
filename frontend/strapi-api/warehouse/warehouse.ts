@@ -2,8 +2,6 @@ import {Facility} from "../entity/facility/facility";
 import {Photo} from "../entity/photo/photo";
 import {FacilitySpore} from "../entity/facility/facility-spore";
 import {PhotoSpore} from "../entity/photo/photo-spore";
-import {MapElement} from "../entity/map-element/map-element";
-import {MapElementSpore} from "../entity/map-element/map-element-spore";
 import {Animal} from "../entity/animal/animal";
 import {AnimalSpore} from "../entity/animal/animal-spore";
 import {IndividualAnimal} from "../entity/individual-animal/individual-animal";
@@ -22,8 +20,7 @@ import {MarkerSpore} from "../entity/marker/marker-spore";
 export interface WarehouseSpore{
     facilities:FacilitySpore[];
     photos:PhotoSpore[];
-    mapElements:MapElementSpore[];
-    markers:Marker[];
+    markers:MarkerSpore[];
     animals: AnimalSpore[]
     individualAnimals: IndividualAnimalSpore[]
     posts: PostSpore[]
@@ -41,9 +38,6 @@ export class Warehouse{
 
     private photoIds: number[] = [];
     private photos: Photo[] = [];
-
-    private mapElementIds: number[] = [];
-    private mapElements:MapElement[] = [];
 
     private markerIds: number[] = [];
     private markers:Marker[] = [];
@@ -89,10 +83,6 @@ export class Warehouse{
             return photo.dehydrate();
         });
 
-        const mapElements = this.mapElements.map((mapElement:MapElement)=>{
-            return mapElement.dehydrate();
-        });
-
         const markers = this.markers.map((marker:Marker)=>{
             return marker.dehydrate();
         });
@@ -124,7 +114,6 @@ export class Warehouse{
         return {
             facilities,
             photos,
-            mapElements,
             markers,
             animals,
             individualAnimals,
@@ -169,15 +158,6 @@ export class Warehouse{
             this.individualAnimals = spore.individualAnimals.map((individualAnimalsSpore:IndividualAnimalSpore)=>{
                 this.individualAnimalsIds.push(individualAnimalsSpore.id);
                 return IndividualAnimal.hydrate(individualAnimalsSpore);
-            });
-
-        }
-
-        if(spore.mapElements){
-
-            this.mapElements = spore.mapElements.map((mapElementSpore:MapElementSpore)=>{
-                this.mapElementIds.push(mapElementSpore.id);
-                return MapElement.hydrate(mapElementSpore);
             });
 
         }
@@ -293,39 +273,6 @@ export class Warehouse{
     public getPhotos():Photo[]{
 
         return this.photos;
-
-    }
-
-    public addMapElement(mapElement: MapElement){
-
-        if(false === this.hasMapElement(mapElement.id)){
-            this.mapElementIds.push(mapElement.id)
-            this.mapElements.push(mapElement);
-        }
-
-    }
-
-    public hasMapElement(mapElementId: number):boolean{
-
-        return this.mapElementIds.includes(mapElementId);
-
-    }
-
-    public getMapElement(mapElementId: number):MapElement{
-
-        if(false === this.hasMapElement(mapElementId)){
-            return undefined;
-        }
-
-        return this.mapElements.find((mapElement:MapElement)=>{
-            return (mapElementId === mapElement.id);
-        });
-
-    }
-
-    public getMapElements():MapElement[]{
-
-        return this.mapElements;
 
     }
 

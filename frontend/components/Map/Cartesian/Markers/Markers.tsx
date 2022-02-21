@@ -48,11 +48,19 @@ export const Markers = (props:MarkersProps) => {
 
     const initialClusters:ClusterInterface[] = [];
 
-    for(const point of props.markers){
+    for(const marker of props.markers){
+
+        if(!marker.facility){
+            continue;
+        }
+
+        if(0 === marker.facility.photos.length){
+            continue;
+        }
 
         const initialCluster = {
-            ids:[point.id],
-            contains:[point],
+            ids:[marker.id],
+            contains:[marker],
             remove:false
         };
 

@@ -616,6 +616,9 @@
                 "type": "string"
               }
             }
+          },
+          "priority": {
+            "type": "integer"
           }
         }
       },
@@ -637,6 +640,9 @@
           },
           "facility": {
             "type": "string"
+          },
+          "priority": {
+            "type": "integer"
           },
           "created_by": {
             "type": "string"

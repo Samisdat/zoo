@@ -29,9 +29,9 @@ export class Marker extends Entity<MarkerSpore>{
 
     static hydrate(dehydrated:MarkerSpore):Marker{
 
-        const mapElement = new Marker(dehydrated);
+        const marker = new Marker(dehydrated);
 
-        return mapElement;
+        return marker;
 
     }
 

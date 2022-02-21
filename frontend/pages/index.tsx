@@ -5,17 +5,13 @@ import {Teaser} from "components/Map/Teaser";
 
 import SearchDialog from "components/Search/Search";
 import {Warehouse, WarehouseSpore} from "../strapi-api/warehouse/warehouse";
-import {
-    getMapElements
-} from "../strapi-api/query/map-elements";
-import {MapElement} from "../strapi-api/entity/map-element/map-element";
 import {MapProvider} from "../components/Map/Context/MapContext";
 import {makeStyles} from "@material-ui/core/styles";
 import {HashNavigation} from "../components/Map/HashNavication";
 import {getGraphElements} from "../strapi-api/query/graph-elements";
 import {getFacilities} from "../strapi-api/query/facilities";
-import {MarkerStrapi} from "../strapi-api/entity/marker/marker-strapi";
 import {getMarkers} from "../strapi-api/query/marker";
+import {Facility} from "../strapi-api/entity/facility/facility";
 
 export interface IndexProps{
     warehouse: WarehouseSpore;
@@ -42,7 +38,7 @@ export default function Index(props:IndexProps) {
     const markers = Warehouse.get().getMarkers();
     const facilities = Warehouse.get().getFacilities();
 
-    const [teaser, setTeaser] = useState<MapElement>(undefined);
+    const [teaser, setTeaser] = useState<Facility>(undefined);
 
     useEffect(() => {
 

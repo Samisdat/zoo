@@ -4,14 +4,10 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 
-import {useTheme } from '@material-ui/core/styles';
 import MobileStepper from '@material-ui/core/MobileStepper';
 import SwipeableViews from 'react-swipeable-views';
-import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {Animal} from "../../strapi-api/entity/animal/animal";
 import {RoutingInterface, useMap} from "./Context/MapContext";
-import {useViewport} from "../viewport/useViewport";
-import {set} from "timm";
 import {getImagePath} from "../../helper/getImagePath";
 import {Icon} from "../Icon/Icon";
 

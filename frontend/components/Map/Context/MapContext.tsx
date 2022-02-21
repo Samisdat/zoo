@@ -2,13 +2,10 @@ import * as React from 'react'
 import {GeoPath} from "d3";
 import {GeoProjection} from "d3-geo";
 import {MutableRefObject, useEffect, useRef} from "react";
-import {MapElement} from "../../../strapi-api/entity/map-element/map-element";
 
 import throttle from 'lodash.throttle';
-import {Feature} from "geojson";
 import {Route} from "../Routing/Dijkstra";
 import {Facility} from "../../../strapi-api/entity/facility/facility";
-import {Marker} from "../../../strapi-api/entity/marker/marker";
 
 // @refresh reset
 
@@ -105,7 +102,7 @@ type Action =
     } |
     {
         type: 'SET_ZOOM_AND_PAN',
-        center: MapElement[]
+        center: any[]
     } |
     {
         type: 'SET_POINT_EXCHANGE',
@@ -120,7 +117,7 @@ type State = {
     projection:GeoProjection,
     transform:MapTransformInterface,
     focus?:Facility
-    center?:MapElement[]
+    center?:any[]
     teaser?:Facility
     position_raw?: PositionRawInterface,
     position?: PositionInterface,

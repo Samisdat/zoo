@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 
-import React, {FunctionComponent, useEffect, useRef, useState} from 'react';
-import {MapElement} from "../../../strapi-api/entity/map-element/map-element";
+import React, {useEffect, useRef, useState} from 'react';
+
 import {MapTransformInterface, useMap} from "../Context/MapContext";
 import {boundingBoxGeoJson, svg} from "../../../constants";
 import {angle} from "../../../constants";
@@ -118,9 +118,9 @@ export const Cartesian = (props:CartesianProps) => {
                 />
 
                 <CurrentPosition />
-                {/*
+
                 <CartesianPoint />
-                */}
+
             </g>
         </React.Fragment>
     );

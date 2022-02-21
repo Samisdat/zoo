@@ -1,8 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import * as d3 from 'd3';
-import {MapElement} from "../../../../strapi-api/entity/map-element/map-element";
 import {useMap} from "../../Context/MapContext";
-import {Feature} from "geojson";
 import {Marker} from "../../../../strapi-api/entity/marker/marker";
 import {angle} from "../../../../constants";
 

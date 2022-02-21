@@ -1,11 +1,7 @@
-import {getFacilityById} from "./facilities";
 import {Node} from "../entity/node/node";
 import {getStrapiUrl} from "../utils/get-strapi-url";
 import {getJsonFromApi} from "../utils/get-json-from-api";
-import {MapElementStrapi} from "../entity/map-element/map-element-strapi";
-import {Warehouse} from "../warehouse/warehouse";
 import {NodeStrapi} from "../entity/node/node-strapi-interface";
-import {node} from "prop-types";
 import {Edge} from "../entity/edge/edge";
 import {EdgeStrapi} from "../entity/edge/edge-strapi-interface";
 

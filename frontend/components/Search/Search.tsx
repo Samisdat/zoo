@@ -8,12 +8,10 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import Slide from '@material-ui/core/Slide';
 import { TransitionProps } from '@material-ui/core/transitions';
-import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {NavigationList} from "../NavigationList/NavigationList";
 import {groupByFirstLetter} from "../NavigationList/groupByFirstLetter";
 import {NavigationListItemInterface} from "../NavigationList/NavigationListInterfaces";
 import {useMap} from "../Map/Context/MapContext";
-import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 import {Icon} from "../Icon/Icon";
 import {Facility} from "../../strapi-api/entity/facility/facility";
 

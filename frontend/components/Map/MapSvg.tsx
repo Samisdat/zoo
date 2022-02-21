@@ -4,7 +4,6 @@ import * as d3 from 'd3';
 
 import {Group} from "./Group";
 import {ZoomLevel} from "./ZoomLevel";
-import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {useMap} from "./Context/MapContext";
 import {Feature} from "geojson";
 import {getTransformFromStorage} from "./getTransformFromStorage";

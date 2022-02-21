@@ -9,7 +9,7 @@ export const markerReduceApiData = (apiData: MarkerStrapi):MarkerSpore =>{
     const y = apiData.y;
     const priority = apiData.priority;
 
-    const mapElementSpore: MarkerSpore = {
+    const markerSpore: MarkerSpore = {
         id,
         slug,
         x,
@@ -26,7 +26,7 @@ export const markerReduceApiData = (apiData: MarkerStrapi):MarkerSpore =>{
 
     }
 
-    mapElementSpore.facility = facility;
+    markerSpore.facility = facility;
 
-    return mapElementSpore;
+    return markerSpore;
 }

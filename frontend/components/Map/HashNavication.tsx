@@ -1,5 +1,4 @@
 import React, {useEffect} from "react";
-import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {useMap} from "./Context/MapContext";
 import {Facility} from "../../strapi-api/entity/facility/facility";
 

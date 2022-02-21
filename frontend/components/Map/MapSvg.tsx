@@ -34,10 +34,8 @@ const useStyles = makeStyles({
 
 interface MapRootInterface{
     fullsize: boolean;
-    mapElements:MapElement[];
     markers:Marker[];
     facilities: Facility[];
-    boundingBox:MapElement;
     nodes: Node[],
     edges: Edge[]
 }
@@ -140,9 +138,7 @@ export const MapSvg = (props:MapRootInterface) => {
             <Group
                 fullsize={props.fullsize}
                 facilities={props.facilities}
-                mapElements={props.mapElements}
                 markers={props.markers}
-                boundingBox={props.boundingBox}
                 nodes={props.nodes}
                 edges={props.edges}
             />

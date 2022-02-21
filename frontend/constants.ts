@@ -1,4 +1,4 @@
-import {GeoJsonObject} from "geojson";
+import {GeoJsonObject, LineString} from "geojson";
 
 export const protocol = 'http://'
 
@@ -338,37 +338,7 @@ export const borderGeoJson:any = {
     }
 }
 
-export const boundingBoxGeoJson:any = {
-    "type": "Feature",
-    "properties": {
-        "name": "bounding-box",
-        "slug": "bounding-box"
-    },
-    "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-            [
-                [
-                    7.105631546336763,
-                    51.24175769601948
-                ],
-                [
-                    7.105631546336763,
-                    51.236787035952574
-                ],
-                [
-                    7.1157893937833165,
-                    51.236787035952574
-                ],
-                [
-                    7.1157893937833165,
-                    51.24175769601948
-                ],
-                [
-                    7.105631546336763,
-                    51.24175769601948
-                ]
-            ]
-        ]
-    }
-}
+export const boundingBoxGeoJson:LineString = {
+    "type":"LineString",
+    "coordinates":[[7.105631546336763,51.24175769601948],[7.105631546336763,51.236787035952574],[7.1157893937833165,51.236787035952574],[7.1157893937833165,51.24175769601948],[7.105631546336763,51.24175769601948]]
+};

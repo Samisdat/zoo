@@ -24,11 +24,9 @@ interface ZoomDependencies {
 interface MapGroupProperties {
     fullsize: boolean;
     facilities: Facility[];
-    mapElements: MapElement[];
     markers:Marker[];
     nodes: Node[];
     edges:Edge[];
-    boundingBox:MapElement;
 }
 
 export const Group = (props:MapGroupProperties) => {
@@ -47,15 +45,6 @@ export const Group = (props:MapGroupProperties) => {
         zooming:undefined,
     });
 
-    const points = props.mapElements.filter((mapElement:MapElement) => {
-
-        if('point' === mapElement.properties.type){
-            return true;
-        }
-
-        return false;
-
-    });
     const createD3Map = ()=> {
 
         var mapSvg = d3.select(ref.current)
@@ -178,6 +167,10 @@ export const Group = (props:MapGroupProperties) => {
             return;
         }
 
+        if(!focus){
+            return;
+        }
+
         const rect = d3.select(`#box-${focus.slug}`).node();
 
         const bbox = (rect as Element).getBoundingClientRect();
@@ -250,14 +243,13 @@ export const Group = (props:MapGroupProperties) => {
             <GeoBorder />
 
             <Cartesian
-                boundingBox={props.boundingBox}
                 nodes={props.nodes}
                 edges={props.edges}
                 markers={props.markers}
             />
-            <GeoPoint />
 
             {/*
+            <GeoPoint />
             */}
             {/*
             */}

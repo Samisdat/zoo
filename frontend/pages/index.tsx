@@ -37,10 +37,8 @@ export default function Index(props:IndexProps) {
     const nodes = Warehouse.get().getNodes();
     const edges = Warehouse.get().getEdges();
 
-    const boundingBox = Warehouse.get().getMapElement(80);
-    console.log('@TODO', boundingBox, 'as default focus');
+    console.log('@TODO', 'boundingBox', 'as default focus');
 
-    const mapElements = Warehouse.get().getMapElements();
     const markers = Warehouse.get().getMarkers();
     const facilities = Warehouse.get().getFacilities();
 
@@ -60,10 +58,8 @@ export default function Index(props:IndexProps) {
                 />
                 <MapSvg
                     fullsize={true}
-                    mapElements={mapElements}
                     markers={markers}
                     facilities={facilities}
-                    boundingBox={boundingBox}
                     nodes={nodes}
                     edges={edges}
                 />
@@ -83,7 +79,6 @@ export default function Index(props:IndexProps) {
 
 export async function getStaticProps(context) {
 
-    await getMapElements();
     await getFacilities();
     await getGraphElements();
     await getMarkers();

@@ -25,6 +25,7 @@ export const loadRelations = async (facility:Facility) => {
 
     }
 
+    /*
     for (const mapElementId of facility.mapElementsRaw) {
 
         if (false === Warehouse.get().hasMapElement(mapElementId)) {
@@ -32,6 +33,8 @@ export const loadRelations = async (facility:Facility) => {
         }
 
     }
+
+     */
 
 }
 

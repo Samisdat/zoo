@@ -3,7 +3,6 @@ import * as d3 from 'd3';
 import React, {FunctionComponent, useEffect, useRef, useState} from 'react';
 import {MapElement} from "../../../strapi-api/entity/map-element/map-element";
 import {MapTransformInterface, useMap} from "../Context/MapContext";
-import {svg} from "../../../constants";
 import {boundingBoxGeoJson, svg} from "../../../constants";
 import {angle} from "../../../constants";
 
@@ -18,7 +17,6 @@ import {Marker} from "../../../strapi-api/entity/marker/marker";
 import {Markers} from "./Markers/Markers";
 
 interface CartesianProps{
-    boundingBox:MapElement;
     markers:Marker[];
     edges: Edge[];
     nodes: Node[];
@@ -114,13 +112,15 @@ export const Cartesian = (props:CartesianProps) => {
                     nodes={props.nodes}
                     edges={props.edges}
                 />
+
                 <Markers
                     markers={props.markers}
                 />
 
                 <CurrentPosition />
+                {/*
                 <CartesianPoint />
-
+                */}
             </g>
         </React.Fragment>
     );

@@ -60,17 +60,10 @@ export const Cartesian = (props:CartesianProps) => {
             .data([boundingBoxGeoJson])
             .enter()
             .append("path")
-            .attr("fill", (d:MapElement)=>{
-                return "yellow";
-            })
-            .attr("opacity", (d:MapElement)=>{
-                return 0;
-            })
-            .attr("id", (d:MapElement)=>{
-                return 'bounding_box';
-            })
+            .attr("fill", "yellow")
+            .attr("id", 'bounding_box')
             .attr("d", path as any)
-            .attr('opacity', '0')
+            .attr('opacity', '1')
         ;
 
         const boundElement = boundingGroup.select(`#bounding_box`);

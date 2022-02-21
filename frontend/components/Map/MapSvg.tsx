@@ -110,11 +110,11 @@ export const MapSvg = (props:MapRootInterface) => {
         }
 
         if(!transform.x){
-            transform.x = 1;
+            transform.x = 0;
         }
 
         if(!transform.y){
-            transform.y = 1;
+            transform.y = 0;
         }
 
         dispatch({

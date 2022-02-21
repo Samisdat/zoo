@@ -4,6 +4,7 @@ import React, {FunctionComponent, useEffect, useRef, useState} from 'react';
 import {MapElement} from "../../../strapi-api/entity/map-element/map-element";
 import {MapTransformInterface, useMap} from "../Context/MapContext";
 import {svg} from "../../../constants";
+import {boundingBoxGeoJson, svg} from "../../../constants";
 import {angle} from "../../../constants";
 
 import {CurrentPosition} from "../Routing/CurrentPosition";
@@ -56,7 +57,7 @@ export const Cartesian = (props:CartesianProps) => {
         const boundingGroup = d3.select(boundingRef.current);
 
         boundingGroup.selectAll("path")
-            .data([props.boundingBox])
+            .data([boundingBoxGeoJson])
             .enter()
             .append("path")
             .attr("fill", (d:MapElement)=>{

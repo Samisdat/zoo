@@ -14,6 +14,7 @@ import {Node} from "../../../strapi-api/entity/node/node";
 import {CartesianPoint} from "./CartesianPoint";
 import {FacilityBoxes} from "./FacilityBoxes";
 import {Marker} from "../../../strapi-api/entity/marker/marker";
+import {Markers} from "./Markers/Markers";
 
 interface CartesianProps{
     boundingBox:MapElement;
@@ -119,6 +120,10 @@ export const Cartesian = (props:CartesianProps) => {
                     nodes={props.nodes}
                     edges={props.edges}
                 />
+                <Markers
+                    markers={props.markers}
+                />
+
                 <CurrentPosition />
                 <CartesianPoint />
 

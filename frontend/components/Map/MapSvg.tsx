@@ -9,7 +9,7 @@ import {useMap} from "./Context/MapContext";
 import {Feature} from "geojson";
 import {getTransformFromStorage} from "./getTransformFromStorage";
 import {getMarkerFromStorage} from "./getMarkerFromStorage";
-import {MarkerImages} from "./Markers/MarkerImages";
+import {MarkerImages} from "./Cartesian/Markers/MarkerImages";
 import {Edge} from "../../strapi-api/entity/edge/edge";
 import {Node} from "../../strapi-api/entity/node/node";
 import {angle, borderGeoJson} from "../../constants";
@@ -135,11 +135,12 @@ export const MapSvg = (props:MapRootInterface) => {
             height={state.dimension.height}
         >
             <MarkerImages
-                mapElements={props.mapElements}
+                facilities={props.facilities}
             />
             <Group
                 fullsize={props.fullsize}
                 facilities={props.facilities}
+                mapElements={props.mapElements}
                 markers={props.markers}
                 boundingBox={props.boundingBox}
                 nodes={props.nodes}

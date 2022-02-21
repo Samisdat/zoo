@@ -2,7 +2,7 @@ import * as d3 from 'd3';
 import React, {useEffect, useRef, useState} from "react";
 
 import {Sketched} from "./Cartesian/Sketched";
-import {Markers} from "./Markers/Markers";
+import {Markers} from "./Cartesian/Markers/Markers";
 import {centerToFeatureCollection} from "../Distribution/Detail";
 import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {MapTransformInterface, PositionInterface, PositionRawInterface, useMap} from "./Context/MapContext";
@@ -24,6 +24,7 @@ interface ZoomDependencies {
 interface MapGroupProperties {
     fullsize: boolean;
     facilities: Facility[];
+    mapElements: MapElement[];
     markers:Marker[];
     nodes: Node[];
     edges:Edge[];
@@ -46,6 +47,15 @@ export const Group = (props:MapGroupProperties) => {
         zooming:undefined,
     });
 
+    const points = props.mapElements.filter((mapElement:MapElement) => {
+
+        if('point' === mapElement.properties.type){
+            return true;
+        }
+
+        return false;
+
+    });
     const createD3Map = ()=> {
 
         var mapSvg = d3.select(ref.current)
@@ -248,12 +258,8 @@ export const Group = (props:MapGroupProperties) => {
             <GeoPoint />
 
             {/*
-            *
-            <Markers
-                zoom={zoom}
-                mapElements={points}
-            />
-            {
+            */}
+            {/*
             */}
 
             <GPXViewer/>

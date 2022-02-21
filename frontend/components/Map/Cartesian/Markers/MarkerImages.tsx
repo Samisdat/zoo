@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
-import {getImagePath} from "../../../helper/getImagePath";
-import {Facility} from "../../../strapi-api/entity/facility/facility";
+import {getImagePath} from "../../../../helper/getImagePath";
+import {Facility} from "../../../../strapi-api/entity/facility/facility";
 
 export interface MarkerImagesProperties{
     facilities: Facility[];

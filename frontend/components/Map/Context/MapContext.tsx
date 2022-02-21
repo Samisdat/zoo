@@ -8,6 +8,7 @@ import throttle from 'lodash.throttle';
 import {Feature} from "geojson";
 import {Route} from "../Routing/Dijkstra";
 import {Facility} from "../../../strapi-api/entity/facility/facility";
+import {Marker} from "../../../strapi-api/entity/marker/marker";
 
 // @refresh reset
 

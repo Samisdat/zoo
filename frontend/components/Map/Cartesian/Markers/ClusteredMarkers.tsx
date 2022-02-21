@@ -1,8 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react';
 import * as d3 from 'd3';
-import {MapElement} from "../../../strapi-api/entity/map-element/map-element";
-import {useMap} from "../Context/MapContext";
+import {MapElement} from "../../../../strapi-api/entity/map-element/map-element";
+import {useMap} from "../../Context/MapContext";
 import {Feature} from "geojson";
+import {Marker} from "../../../../strapi-api/entity/marker/marker";
+import {angle} from "../../../../constants";
 
 export interface ClusteredMarkersProperties{
     clusters:ClusterInterface[];
@@ -11,7 +13,7 @@ export interface ClusteredMarkersProperties{
 
 interface ClusterInterface{
     ids: number[],
-    contains: MapElement[];
+    contains: Marker[];
     remove: boolean;
 }
 
@@ -24,24 +26,27 @@ export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
 
     const clusteredGroup = useRef(null);
 
-    const handleClick = (event, d) => {
+    const handleClick = (event, d:ClusterInterface) => {
 
         if(1 === d.contains.length){
 
-            const clickedMapElement = d.contains[0];
-            
+            const clicked = d.contains[0];
+
             dispatch({
                 type: 'SET_TEASER',
-                teaser: clickedMapElement
+                teaser: clicked.facility
             });
 
             return;
         }
 
+        console.log('zoom and center to d.contains')
+        /*
         dispatch({
             type: 'SET_ZOOM_AND_PAN',
             center: d.contains,
         });
+         */
 
     }
 
@@ -52,15 +57,20 @@ export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
         }
 
         const groupSelection = d3.select(clusteredGroup.current);
-        
+
         groupSelection.selectAll('circle')
             .data(props.clusters)
             .join('circle')
             .attr('cx', function(d) {
-                return path.centroid( (d.contains[0] as Feature))[0];
+                return d.contains[0].x;
             })
             .attr('cy', function(d) {
-                return path.centroid( (d.contains[0] as Feature))[1];
+                return d.contains[0].y;
+            })
+            .attr("transform", (d)=>{
+
+                return `rotate(${angle} ${d.contains[0].x} ${d.contains[0].y})`;
+
             })
             .attr('stroke', (d, i)=>{
 
@@ -79,7 +89,7 @@ export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
 
             })
             .attr('r', props.radius)
-            .on("click", handleClick);
+            .on("click", handleClick)
         ;
 
         groupSelection.selectAll('path')
@@ -100,9 +110,9 @@ export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
             .attr("transform", (d) => {
 
                 const scale = props.radius / 512;
-                const x = path.centroid( (d.contains[0] as Feature))[0] + props.radius / 4;
-                const y = path.centroid( (d.contains[0] as Feature))[1] + props.radius / 4;
 
+                const x = d.contains[0].x + props.radius / 4;
+                const y = d.contains[0].y + props.radius / 4;
 
                 const transform = "translate(" + x + "," + y + ") scale(" + scale +  ")";
 

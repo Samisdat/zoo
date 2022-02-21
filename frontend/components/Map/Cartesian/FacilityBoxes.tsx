@@ -6,7 +6,7 @@ const useStyles = makeStyles({
         fill:'#a9d3df',
         stroke:'#000',
         strokeWidth:'1.67px',
-        opacity: 0.5
+        opacity: 0
     }
     
 });

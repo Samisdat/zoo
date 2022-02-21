@@ -574,12 +574,6 @@
                   "type": "string"
                 }
               },
-              "map_elements": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "photos": {
                 "type": "array",
                 "items": {
@@ -599,6 +593,12 @@
                 }
               },
               "graph_nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "markers": {
                 "type": "array",
                 "items": {
                   "type": "string"

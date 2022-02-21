@@ -5,8 +5,8 @@ import {FacilityStrapi} from "./facility-strapi";
 import {Warehouse} from "../../warehouse/warehouse";
 import {Photo} from "../photo/photo";
 import {Animal} from "../animal/animal";
-import {MapElement} from "../map-element/map-element";
 import {Node} from "../node/node";
+import {Marker} from "../marker/marker";
 
 export class Facility extends Entity<FacilitySpore>{
 
@@ -35,9 +35,33 @@ export class Facility extends Entity<FacilitySpore>{
     }
 
     get photos(): Photo[]{
-        return this.json.photos.map((photoId)=>{
-            return Warehouse.get().getPhoto(photoId);
-        });
+
+        if(this.json.photos && 0 !== this.json.photos.length){
+
+            return this.json.photos.map((photoId)=>{
+                return Warehouse.get().getPhoto(photoId);
+            });
+
+        }
+
+        if(this.animals){
+
+            const photos = [];
+
+            for(const animal of this.animals){
+
+                for(const photo of animal.photos){
+
+                    photos.push(photo);
+
+                }
+
+            }
+
+            return photos;
+
+        }
+
     }
 
     get animalsRaw(): number[]{
@@ -51,14 +75,14 @@ export class Facility extends Entity<FacilitySpore>{
         });
     }
 
-    get mapElementsRaw(): number[]{
-        return this.json.map_elements;
+    get markersRaw(): number[]{
+        return this.json.markers;
     }
 
-    get mapElements(): MapElement[]{
+    get markers(): Marker[]{
 
-        return this.json.map_elements.map((id)=>{
-            return Warehouse.get().getMapElement(id);
+        return this.json.markers.map((id)=>{
+            return Warehouse.get().getMarker(id);
         });
     }
 

@@ -1,19 +1,23 @@
 import * as d3 from 'd3';
 
-import React, {FunctionComponent, useEffect, useRef, useState} from 'react';
-import {MapElement} from "../../strapi-api/entity/map-element/map-element";
-import {MapTransformInterface, useMap} from "./Context/MapContext";
-import {svg} from "../../constants";
-import {angle} from "../../constants";
+import React, {useEffect, useRef, useState} from 'react';
 
-import {CurrentPosition} from "./Routing/CurrentPosition";
+import {MapTransformInterface, useMap} from "../Context/MapContext";
+import {boundingBoxGeoJson, svg} from "../../../constants";
+import {angle} from "../../../constants";
+
+import {CurrentPosition} from "../Routing/CurrentPosition";
 import {Sketched} from "./Sketched";
-import {Routing} from "./Routing/Routing";
-import {Edge} from "../../strapi-api/entity/edge/edge";
-import {Node} from "../../strapi-api/entity/node/node";
+import {Routing} from "../Routing/Routing";
+import {Edge} from "../../../strapi-api/entity/edge/edge";
+import {Node} from "../../../strapi-api/entity/node/node";
+import {CartesianPoint} from "./CartesianPoint";
+import {FacilityBoxes} from "./FacilityBoxes";
+import {Marker} from "../../../strapi-api/entity/marker/marker";
+import {Markers} from "./Markers/Markers";
 
 interface CartesianProps{
-    boundingBox:MapElement;
+    markers:Marker[];
     edges: Edge[];
     nodes: Node[];
 }
@@ -51,20 +55,13 @@ export const Cartesian = (props:CartesianProps) => {
         const boundingGroup = d3.select(boundingRef.current);
 
         boundingGroup.selectAll("path")
-            .data([props.boundingBox])
+            .data([boundingBoxGeoJson])
             .enter()
             .append("path")
-            .attr("fill", (d:MapElement)=>{
-                return "yellow";
-            })
-            .attr("opacity", (d:MapElement)=>{
-                return 0;
-            })
-            .attr("id", (d:MapElement)=>{
-                return 'bounding_box';
-            })
+            .attr("fill", "yellow")
+            .attr("id", 'bounding_box')
             .attr("d", path as any)
-            .attr('opacity', '0')
+            .attr('opacity', '1')
         ;
 
         const boundElement = boundingGroup.select(`#bounding_box`);
@@ -104,14 +101,25 @@ export const Cartesian = (props:CartesianProps) => {
     return (
         <React.Fragment>
             <g ref={boundingRef}></g>
-            <g ref={cartesianRef}>
+            <g
+                id='cartesian'
+                ref={cartesianRef}
+            >
                 <Sketched />
+                <FacilityBoxes />
                 <Routing
                     cartesianTransform={cartesianTransform}
                     nodes={props.nodes}
                     edges={props.edges}
                 />
+
+                <Markers
+                    markers={props.markers}
+                />
+
                 <CurrentPosition />
+
+                <CartesianPoint />
 
             </g>
         </React.Fragment>

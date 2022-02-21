@@ -1,21 +1,16 @@
 import React, {useEffect, useRef, useState} from 'react';
-import * as d3 from 'd3';
-import {MapElement} from "../../../strapi-api/entity/map-element/map-element";
-import {useMap} from "../Context/MapContext";
-import {Feature} from "geojson";
-import {getImagePath} from "../../../helper/getImagePath";
+import {useMap} from "../../Context/MapContext";
 import {GeoPath} from "d3";
-import {MarkerImages} from "./MarkerImages";
 import {ClusteredMarkers} from "./ClusteredMarkers";
+import {Marker} from "../../../../strapi-api/entity/marker/marker";
 
-export interface PointOfInterestProperties{
-    mapElements:MapElement[];
-    zoom:number;
+export interface MarkersProps {
+    markers:Marker[];
 };
 
 export interface ClusterInterface{
     ids: number[],
-    contains: MapElement[];
+    contains: Marker[];
     remove: boolean;
 }
 
@@ -25,20 +20,11 @@ interface DistanceInterface{
     distance:number;
 }
 
-const getDistance = (path:GeoPath, markerA:MapElement, markerB:MapElement) => {
-
-    const centerA = path.centroid( ( markerA as Feature));
-    const xA = centerA[0];
-    const yA = centerA[1];
-
-    const centerB = path.centroid( ( markerB as Feature));
-
-    const xB = centerB[0];
-    const yB = centerB[1];
+const getDistance = (path:GeoPath, markerA:Marker, markerB:Marker) => {
 
     const catheti = [
-        xB - xA,
-        yB - yA
+        markerB.x - markerA.x,
+        markerB.y - markerA.y
     ];
 
     const hypotenuse = Math.sqrt(
@@ -50,7 +36,7 @@ const getDistance = (path:GeoPath, markerA:MapElement, markerB:MapElement) => {
 
 }
 
-export const Markers = (props:PointOfInterestProperties) => {
+export const Markers = (props:MarkersProps) => {
 
     const {
         state: {path, transform},
@@ -60,74 +46,21 @@ export const Markers = (props:PointOfInterestProperties) => {
 
     const markersGroup = useRef(null);
 
-    const points = props.mapElements.filter((poi)=>{
-
-        return true;
-
-        if(428 === poi.id){
-            return true;
-        }
-
-        if(429 === poi.id){
-            return true;
-        }
-
-        if(434 === poi.id){
-            return true;
-        }
-
-        if(438 === poi.id){
-            return true;
-        }
-
-        if(433 === poi.id){
-            return true;
-        }
-
-        if(435 === poi.id){
-            return true;
-        }
-
-        if(439 === poi.id){
-            return true;
-        }
-
-        if(466 === poi.id){
-            return true;
-        }
-        if(445 === poi.id){
-            return true;
-        }
-        if(441 === poi.id){
-            return true;
-        }
-        if(443 === poi.id){
-            return true;
-        }
-        if(440 === poi.id){
-            return true;
-        }
-        if(436 === poi.id){
-            return true;
-        }
-        if(430   === poi.id){
-            return true;
-        }
-        if(429   === poi.id){
-            return true;
-        }
-
-        return false;
-
-    });
-
     const initialClusters:ClusterInterface[] = [];
 
-    for(const point of points){
+    for(const marker of props.markers){
+
+        if(!marker.facility){
+            continue;
+        }
+
+        if(0 === marker.facility.photos.length){
+            continue;
+        }
 
         const initialCluster = {
-            ids:[point.id],
-            contains:[point],
+            ids:[marker.id],
+            contains:[marker],
             remove:false
         };
 
@@ -145,7 +78,7 @@ export const Markers = (props:PointOfInterestProperties) => {
         }
 
         //let radius = maxRadius  / transform.k;
-        let radius = maxRadius  / props.zoom
+        let radius = maxRadius  / 1
 
         if(maxRadius < radius){
             radius = maxRadius;
@@ -356,7 +289,7 @@ export const Markers = (props:PointOfInterestProperties) => {
 
         setClusters(nextClusters);
 
-    },[props.zoom]);
+    },[]);
     
     return (
         <g ref={markersGroup}>

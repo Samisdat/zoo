@@ -1,18 +1,19 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect} from 'react';
 import {makeStyles} from "@material-ui/core/styles";
 import * as d3 from 'd3';
 
 import {Group} from "./Group";
 import {ZoomLevel} from "./ZoomLevel";
-import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {useMap} from "./Context/MapContext";
 import {Feature} from "geojson";
 import {getTransformFromStorage} from "./getTransformFromStorage";
 import {getMarkerFromStorage} from "./getMarkerFromStorage";
-import {MarkerImages} from "./Markers/MarkerImages";
+import {MarkerImages} from "./Cartesian/Markers/MarkerImages";
 import {Edge} from "../../strapi-api/entity/edge/edge";
 import {Node} from "../../strapi-api/entity/node/node";
-import {angle} from "../../constants";
+import {angle, borderGeoJson} from "../../constants";
+import {Facility} from "../../strapi-api/entity/facility/facility";
+import {Marker} from "../../strapi-api/entity/marker/marker";
 
 const useStyles = makeStyles({
     svgWrap:{
@@ -32,8 +33,8 @@ const useStyles = makeStyles({
 
 interface MapRootInterface{
     fullsize: boolean;
-    mapElements: MapElement[];
-    boundingBox:MapElement;
+    markers:Marker[];
+    facilities: Facility[];
     nodes: Node[],
     edges: Edge[]
 }
@@ -45,15 +46,7 @@ export const MapSvg = (props:MapRootInterface) => {
 
     const classes = useStyles();
 
-    const border = props.mapElements.find((mapElement:MapElement) => {
-
-        if('border' === mapElement.properties?.type){
-            return true;
-        }
-
-        return false;
-
-    });
+    const border = borderGeoJson;
 
     const createMap = (width, height) => {
 
@@ -114,11 +107,11 @@ export const MapSvg = (props:MapRootInterface) => {
         }
 
         if(!transform.x){
-            transform.x = 1;
+            transform.x = 0;
         }
 
         if(!transform.y){
-            transform.y = 1;
+            transform.y = 0;
         }
 
         dispatch({
@@ -139,12 +132,12 @@ export const MapSvg = (props:MapRootInterface) => {
             height={state.dimension.height}
         >
             <MarkerImages
-                mapElements={props.mapElements}
+                facilities={props.facilities}
             />
             <Group
                 fullsize={props.fullsize}
-                mapElements={props.mapElements}
-                boundingBox={props.boundingBox}
+                facilities={props.facilities}
+                markers={props.markers}
                 nodes={props.nodes}
                 edges={props.edges}
             />

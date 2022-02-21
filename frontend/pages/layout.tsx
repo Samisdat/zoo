@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
-import {MapElement} from "../strapi-api/entity/map-element/map-element";
 
 import { Grid, Paper} from "@material-ui/core";
 import {Small} from "../components/viewport/Small";
@@ -8,6 +7,7 @@ import {Large} from "../components/viewport/Large";
 import SimpleTabs from "../components/Tabs";
 import DetailedAccordion from "../components/Accordion";
 import BasicTable from "../components/Table";
+import {Facility} from "../strapi-api/entity/facility/facility";
 
 const useStyles = makeStyles((theme: Theme) => {
 
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) => {
 
 export default function Layout (props) {
 
-    const [teaser, setTeaser] = useState<MapElement>(undefined);
+    const [teaser, setTeaser] = useState<Facility>(undefined);
 
     const classes = useStyles();
 

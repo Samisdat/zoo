@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "02/14/2022 10:11:13 PM"
+    "x-generation-date": "02/21/2022 11:58:21 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2626,20 +2626,19 @@
         ]
       }
     },
-    "/map-elements": {
+    "/markers": {
       "get": {
         "deprecated": false,
-        "description": "Find all the map-elements's records",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve map-elements document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Marker"
                   }
                 }
               }
@@ -2678,7 +2677,7 @@
         },
         "summary": "",
         "tags": [
-          "Map-elements"
+          "Marker"
         ],
         "parameters": [
           {
@@ -2821,18 +2820,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new map-elements record",
+        "description": "Create a new record",
         "responses": {
           "200": {
-            "description": "Retrieve map-elements document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Marker"
                 }
               }
             }
@@ -2870,7 +2865,7 @@
         },
         "summary": "",
         "tags": [
-          "Map-elements"
+          "Marker"
         ],
         "requestBody": {
           "description": "",
@@ -2878,26 +2873,26 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewMap-elements"
+                "$ref": "#/components/schemas/NewMarker"
               }
             }
           }
         }
       }
     },
-    "/map-elements/count": {
+    "/markers/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the number of map-elements documents",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve map-elements document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
                   "properties": {
-                    "foo": {
-                      "type": "string"
+                    "count": {
+                      "type": "integer"
                     }
                   }
                 }
@@ -2937,26 +2932,22 @@
         },
         "summary": "",
         "tags": [
-          "Map-elements"
+          "Marker"
         ],
         "parameters": []
       }
     },
-    "/map-elements/{id}": {
+    "/markers/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one map-elements record",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve map-elements document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Marker"
                 }
               }
             }
@@ -2994,7 +2985,7 @@
         },
         "summary": "",
         "tags": [
-          "Map-elements"
+          "Marker"
         ],
         "parameters": [
           {
@@ -3011,18 +3002,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single map-elements record",
+        "description": "Update a record",
         "responses": {
           "200": {
-            "description": "Retrieve map-elements document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Marker"
                 }
               }
             }
@@ -3060,7 +3047,7 @@
         },
         "summary": "",
         "tags": [
-          "Map-elements"
+          "Marker"
         ],
         "requestBody": {
           "description": "",
@@ -3068,7 +3055,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewMap-elements"
+                "$ref": "#/components/schemas/NewMarker"
               }
             }
           }
@@ -3088,10 +3075,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single map-elements record",
+        "description": "Delete a record",
         "responses": {
           "200": {
-            "description": "deletes a single map-elements based on the ID supplied",
+            "description": "deletes a single record based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -3134,7 +3121,7 @@
         },
         "summary": "",
         "tags": [
-          "Map-elements"
+          "Marker"
         ],
         "parameters": [
           {
@@ -7072,12 +7059,6 @@
                     "type": "string"
                   }
                 },
-                "map_elements": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
                 "photos": {
                   "type": "array",
                   "items": {
@@ -7097,6 +7078,12 @@
                   }
                 },
                 "graph_nodes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "markers": {
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -7738,52 +7725,6 @@
               }
             }
           },
-          "map_elements": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "geojson": {
-                  "type": "object"
-                },
-                "facility": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string",
-                  "enum": [
-                    "box",
-                    "point",
-                    "border",
-                    "bounding_box"
-                  ]
-                },
-                "slug": {
-                  "type": "string"
-                },
-                "priority": {
-                  "type": "integer"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "photos": {
             "type": "array",
             "items": {
@@ -7972,6 +7913,43 @@
               }
             }
           },
+          "markers": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "slug",
+                "x",
+                "y"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "slug": {
+                  "type": "string"
+                },
+                "x": {
+                  "type": "number"
+                },
+                "y": {
+                  "type": "number"
+                },
+                "facility": {
+                  "type": "string"
+                },
+                "priority": {
+                  "type": "integer"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -8008,12 +7986,6 @@
               "type": "string"
             }
           },
-          "map_elements": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
           "photos": {
             "type": "array",
             "items": {
@@ -8033,6 +8005,12 @@
             }
           },
           "graph_nodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "markers": {
             "type": "array",
             "items": {
               "type": "string"
@@ -8177,12 +8155,6 @@
                   "type": "string"
                 }
               },
-              "map_elements": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "photos": {
                 "type": "array",
                 "items": {
@@ -8202,6 +8174,12 @@
                 }
               },
               "graph_nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "markers": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -8532,19 +8510,25 @@
           }
         }
       },
-      "Map-elements": {
+      "Marker": {
         "required": [
-          "id"
+          "id",
+          "slug",
+          "x",
+          "y"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "title": {
+          "slug": {
             "type": "string"
           },
-          "geojson": {
-            "type": "object"
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
           },
           "facility": {
             "required": [
@@ -8582,12 +8566,6 @@
                   "type": "string"
                 }
               },
-              "map_elements": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "photos": {
                 "type": "array",
                 "items": {
@@ -8612,6 +8590,12 @@
                   "type": "string"
                 }
               },
+              "markers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "published_at": {
                 "type": "string"
               },
@@ -8623,56 +8607,32 @@
               }
             }
           },
-          "type": {
-            "type": "string",
-            "enum": [
-              "box",
-              "point",
-              "border",
-              "bounding_box"
-            ]
-          },
-          "slug": {
-            "type": "string"
-          },
           "priority": {
             "type": "integer"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           }
         }
       },
-      "NewMap-elements": {
+      "NewMarker": {
+        "required": [
+          "slug",
+          "x",
+          "y"
+        ],
         "properties": {
-          "title": {
+          "slug": {
             "type": "string"
           },
-          "geojson": {
-            "type": "object"
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
           },
           "facility": {
             "type": "string"
           },
-          "type": {
-            "type": "string",
-            "enum": [
-              "box",
-              "point",
-              "border",
-              "bounding_box"
-            ]
-          },
-          "slug": {
-            "type": "string"
-          },
           "priority": {
             "type": "integer"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           },
           "created_by": {
             "type": "string"
@@ -8906,12 +8866,6 @@
                   "type": "string"
                 }
               },
-              "map_elements": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "photos": {
                 "type": "array",
                 "items": {
@@ -8931,6 +8885,12 @@
                 }
               },
               "graph_nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "markers": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -9307,12 +9267,6 @@
                     "type": "string"
                   }
                 },
-                "map_elements": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
                 "photos": {
                   "type": "array",
                   "items": {
@@ -9332,6 +9286,12 @@
                   }
                 },
                 "graph_nodes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "markers": {
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -9502,12 +9462,6 @@
                   "type": "string"
                 }
               },
-              "map_elements": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "photos": {
                 "type": "array",
                 "items": {
@@ -9527,6 +9481,12 @@
                 }
               },
               "graph_nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "markers": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -9985,6 +9945,9 @@
     },
     {
       "name": "Facility"
+    },
+    {
+      "name": "Marker"
     },
     {
       "name": "Photo"

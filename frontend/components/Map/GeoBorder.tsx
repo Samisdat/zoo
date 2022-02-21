@@ -5,6 +5,7 @@ import {getCurrentPositionGeoJson} from 'helper/getCurrentPosition';
 import {useMap} from "./Context/MapContext";
 import {Feature} from "geojson";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
+import {borderGeoJson} from "../../constants";
 
 export const GeoBorder = (props) => {
 
@@ -12,7 +13,7 @@ export const GeoBorder = (props) => {
         state: {path, position, projection},
     } = useMap();
 
-    const border = Warehouse.get().getMapElement(80);
+    const border = borderGeoJson;
 
     const ref = useRef(null);
 

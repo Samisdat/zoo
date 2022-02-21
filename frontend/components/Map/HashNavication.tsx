@@ -1,50 +1,20 @@
 import React, {useEffect} from "react";
-import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {useMap} from "./Context/MapContext";
+import {Facility} from "../../strapi-api/entity/facility/facility";
 
 interface HashNavigationProps{
-    mapElements: MapElement[];
+    facilities: Facility[];
 }
 
-export const HashNavigation = ({mapElements}:HashNavigationProps) => {
+export const HashNavigation = ({facilities}:HashNavigationProps) => {
 
     const { dispatch } = useMap()
 
-    mapElements = mapElements.filter((mapElement:MapElement) => {
-
-        if('box' !== mapElement.properties.type){
-            return false;
-        }
-
-        if(!mapElement.properties.facility){
-            return false;
-        }
-
-        if('playground' === mapElement.properties.facility.type){
-            return true;
-        }
-
-        if('food' === mapElement.properties.facility.type){
-            return true;
-        }
-
-        if('poi' === mapElement.properties.facility.type){
-            return true;
-        }
-
-        if('enclosure' === mapElement.properties.facility.type){
-            return true;
-        }
-
-        return false;
-
-    });
-
     const resolveSlug = (slug:string) =>{
 
-        const resolved = mapElements.find((mapElement)=>{
+        const resolved = facilities.find((facility)=>{
 
-            return (slug === mapElement.facility.slug)
+            return (slug === facility.slug)
 
         });
 

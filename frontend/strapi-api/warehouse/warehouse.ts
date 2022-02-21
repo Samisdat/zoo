@@ -2,8 +2,6 @@ import {Facility} from "../entity/facility/facility";
 import {Photo} from "../entity/photo/photo";
 import {FacilitySpore} from "../entity/facility/facility-spore";
 import {PhotoSpore} from "../entity/photo/photo-spore";
-import {MapElement} from "../entity/map-element/map-element";
-import {MapElementSpore} from "../entity/map-element/map-element-spore";
 import {Animal} from "../entity/animal/animal";
 import {AnimalSpore} from "../entity/animal/animal-spore";
 import {IndividualAnimal} from "../entity/individual-animal/individual-animal";
@@ -16,11 +14,13 @@ import {Edge} from "../entity/edge/edge";
 import {Node} from "../entity/node/node";
 import {NodeSpore} from "../entity/node/node-spore";
 import {EdgeSpore} from "../entity/edge/edge-spore";
+import {Marker} from "../entity/marker/marker";
+import {MarkerSpore} from "../entity/marker/marker-spore";
 
 export interface WarehouseSpore{
     facilities:FacilitySpore[];
     photos:PhotoSpore[];
-    mapElements:MapElementSpore[];
+    markers:MarkerSpore[];
     animals: AnimalSpore[]
     individualAnimals: IndividualAnimalSpore[]
     posts: PostSpore[]
@@ -39,8 +39,8 @@ export class Warehouse{
     private photoIds: number[] = [];
     private photos: Photo[] = [];
 
-    private mapElementIds: number[] = [];
-    private mapElements:MapElement[] = [];
+    private markerIds: number[] = [];
+    private markers:Marker[] = [];
 
     private animalsIds: number[] = [];
     private animals:Animal[] = [];
@@ -83,8 +83,8 @@ export class Warehouse{
             return photo.dehydrate();
         });
 
-        const mapElements = this.mapElements.map((mapElement:MapElement)=>{
-            return mapElement.dehydrate();
+        const markers = this.markers.map((marker:Marker)=>{
+            return marker.dehydrate();
         });
 
         const animals = this.animals.map((animal:Animal)=>{
@@ -114,7 +114,7 @@ export class Warehouse{
         return {
             facilities,
             photos,
-            mapElements,
+            markers,
             animals,
             individualAnimals,
             posts,
@@ -162,11 +162,11 @@ export class Warehouse{
 
         }
 
-        if(spore.mapElements){
+        if(spore.markers){
 
-            this.mapElements = spore.mapElements.map((mapElementSpore:MapElementSpore)=>{
-                this.mapElementIds.push(mapElementSpore.id);
-                return MapElement.hydrate(mapElementSpore);
+            this.markers = spore.markers.map((markerSpore:MarkerSpore)=>{
+                this.markerIds.push(markerSpore.id);
+                return Marker.hydrate(markerSpore);
             });
 
         }
@@ -276,38 +276,39 @@ export class Warehouse{
 
     }
 
-    public addMapElement(mapElement: MapElement){
+    public addMarker(marker: Marker){
 
-        if(false === this.hasMapElement(mapElement.id)){
-            this.mapElementIds.push(mapElement.id)
-            this.mapElements.push(mapElement);
+        if(false === this.hasMarker(marker.id)){
+            this.markerIds.push(marker.id)
+            this.markers.push(marker);
         }
 
     }
 
-    public hasMapElement(mapElementId: number):boolean{
+    public hasMarker(markerId: number):boolean{
 
-        return this.mapElementIds.includes(mapElementId);
+        return this.markerIds.includes(markerId);
 
     }
 
-    public getMapElement(mapElementId: number):MapElement{
+    public getMarker(markerId: number):Marker{
 
-        if(false === this.hasMapElement(mapElementId)){
+        if(false === this.hasMarker(markerId)){
             return undefined;
         }
 
-        return this.mapElements.find((mapElement:MapElement)=>{
-            return (mapElementId === mapElement.id);
+        return this.markers.find((marker:Marker)=>{
+            return (markerId === marker.id);
         });
 
     }
 
-    public getMapElements():MapElement[]{
+    public getMarkers():Marker[]{
 
-        return this.mapElements;
+        return this.markers;
 
     }
+
 
     public addAnimal(animal: Animal){
 

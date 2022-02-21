@@ -5,6 +5,7 @@ import {edgeIdPrefix, svg} from "../../../constants";
 import {doc} from "prettier";
 import {Warehouse} from "../../../strapi-api/warehouse/warehouse";
 import {Point} from "geojson";
+import {getPosition} from "../Cartesian/CartesianPoint";
 
 export interface Coordinate{
     x:number;
@@ -94,7 +95,7 @@ export const rotateCords = (coordinate: Coordinate, degree:number):Coordinate =>
 
 }
 
-const transposeCoords = (coordinate:Coordinate, transform:MapTransformInterface):Coordinate => {
+export const transposeCoords = (coordinate:Coordinate, transform:MapTransformInterface):Coordinate => {
 
     // console.log('transposeCoords')
     // console.log('')
@@ -267,13 +268,13 @@ interface ResolvePositionProps {
 export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
 
     const {
-        state: {position_raw, projection, transform},
+        state: {position_raw, projection, transform, ref},
         dispatch
     } = useMap();
 
     const refMatch = useRef(null);
 
-    const entrance = Warehouse.get().getMapElement(464);
+    const entrance = Warehouse.get().getMarker(46);
 
     useEffect(() => {
 
@@ -316,19 +317,29 @@ export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
             const isGPS = false;
             const text = 'außerhalb';
 
+            const cartesian = d3.select(ref.current).node() as SVGGraphicsElement;
+
+            const localPos = getPosition(cartesian, entrance);
+
+
+            const entranceGps = projection.invert(
+                [
+                    localPos.y,
+                    localPos.x
+                ]
+            );
+
             const position:PositionInterface = {
-                lat: (entrance.geometry as Point).coordinates[1],
-                lng: (entrance.geometry as Point).coordinates[0],
+                lat: entranceGps[1],
+                lng: entranceGps[0],
                 isWithin,
                 isGPS,
                 text,
                 edgeId: 1428,
-                x: 867,
-                y: 325,
+                x: entrance.x,
+                y: entrance.y,
                 raw: position_raw
             };
-
-            console.log(position)
 
             dispatch({
                 type: 'SET_POSITION',
@@ -440,16 +451,13 @@ export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
 
         }
 
-
-        console.log(position)
-
         dispatch({
             type: 'SET_POSITION',
             position
         });
 
 
-    },[position_raw, projection, cartesianTransform, transform]);
+    },[position_raw, projection, cartesianTransform]);
 
     return (
         <g ref={refMatch} />

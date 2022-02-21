@@ -1,17 +1,17 @@
 import * as d3 from 'd3';
 import React, {useEffect, useRef, useState} from "react";
 
-import {Sketched} from "./Sketched";
-import {Markers} from "./Markers/Markers";
 import {centerToFeatureCollection} from "../Distribution/Detail";
-import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {MapTransformInterface, PositionInterface, PositionRawInterface, useMap} from "./Context/MapContext";
 import {Edge} from "../../strapi-api/entity/edge/edge";
 import {Node} from "../../strapi-api/entity/node/node";
 import {Routing} from "./Routing/Routing";
-import {Cartesian} from "./Cartesian";
+import {Cartesian} from "./Cartesian/Cartesian";
 import {GeoBorder} from "./GeoBorder";
 import {GPXViewer} from "../GPX/Viewer";
+import {GeoPoint} from "./GeoPoint";
+import {Facility} from "../../strapi-api/entity/facility/facility";
+import {Marker} from "../../strapi-api/entity/marker/marker";
 
 interface ZoomDependencies {
     mapSvg:any,
@@ -20,10 +20,10 @@ interface ZoomDependencies {
 
 interface MapGroupProperties {
     fullsize: boolean;
-    mapElements: MapElement[];
+    facilities: Facility[];
+    markers:Marker[];
     nodes: Node[];
     edges:Edge[];
-    boundingBox:MapElement;
 }
 
 export const Group = (props:MapGroupProperties) => {
@@ -40,16 +40,6 @@ export const Group = (props:MapGroupProperties) => {
     const [zoomDependencies, setZoomDependencies] = useState<ZoomDependencies>({
         mapSvg:undefined,
         zooming:undefined,
-    });
-
-    const points = props.mapElements.filter((mapElement:MapElement) => {
-
-        if('point' === mapElement.properties.type){
-            return true;
-        }
-
-        return false;
-
     });
 
     const createD3Map = ()=> {
@@ -119,9 +109,22 @@ export const Group = (props:MapGroupProperties) => {
 
             const [clickX, clickY] = d3.pointer(event);
 
-            const x = (clickX - transform.x) / transform.k;
-            const y = (clickY - transform.y) / transform.k
+            const x = clickX;
+            const y = clickY;
 
+            dispatch({
+                type: 'SET_POINT_EXCHANGE',
+                exchange: {
+                    position:{
+                        x,
+                        y
+                    },
+                },
+
+            });
+
+
+            /*
             const [lng, lat] = projection.invert([x, y]);
 
             const position_raw: PositionRawInterface = {
@@ -135,11 +138,6 @@ export const Group = (props:MapGroupProperties) => {
                 position_raw
             });
 
-            /*
-            dispatch({
-                type: 'SET_POSITION',
-                position: newPosition
-            });
             */
         });
 
@@ -166,10 +164,18 @@ export const Group = (props:MapGroupProperties) => {
             return;
         }
 
-        //zoomDependencies.mapSvg.on('.zoom', null);
-        const centerOfEnclosure = centerToFeatureCollection([(  focus as MapElement)]);
+        if(!focus){
+            return;
+        }
 
-        const [[x0, y0], [x1, y1]] = path.bounds(centerOfEnclosure as any);
+        const rect = d3.select(`#box-${focus.slug}`).node();
+
+        const bbox = (rect as Element).getBoundingClientRect();
+
+        const x0 = (bbox.left - transform.x) / transform.k;
+        const y0 = (bbox.top - transform.y) / transform.k;
+        const x1 = x0 + bbox.width / transform.k;
+        const y1 = y0 + bbox.height / transform.k;
 
         zoomDependencies.mapSvg.transition().delay(300).duration(750).call(
             zoomDependencies.zooming.transform as any,
@@ -226,22 +232,22 @@ export const Group = (props:MapGroupProperties) => {
     }, [center, path])
 
     return (
-        <g ref={map}>
+        <g
+            id={'geo'}
+            ref={map}
+        >
 
             <GeoBorder />
 
             <Cartesian
-                boundingBox={props.boundingBox}
                 nodes={props.nodes}
                 edges={props.edges}
-
+                markers={props.markers}
             />
+
+            <GeoPoint />
 
             {/*
-            <Markers
-                zoom={zoom}
-                mapElements={points}
-            />
             */}
 
             <GPXViewer/>

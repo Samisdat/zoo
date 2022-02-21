@@ -654,52 +654,6 @@
               }
             }
           },
-          "map_elements": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "geojson": {
-                  "type": "object"
-                },
-                "facility": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string",
-                  "enum": [
-                    "box",
-                    "point",
-                    "border",
-                    "bounding_box"
-                  ]
-                },
-                "slug": {
-                  "type": "string"
-                },
-                "priority": {
-                  "type": "integer"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "photos": {
             "type": "array",
             "items": {
@@ -888,6 +842,43 @@
               }
             }
           },
+          "markers": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "slug",
+                "x",
+                "y"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "slug": {
+                  "type": "string"
+                },
+                "x": {
+                  "type": "number"
+                },
+                "y": {
+                  "type": "number"
+                },
+                "facility": {
+                  "type": "string"
+                },
+                "priority": {
+                  "type": "integer"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -924,12 +915,6 @@
               "type": "string"
             }
           },
-          "map_elements": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
           "photos": {
             "type": "array",
             "items": {
@@ -949,6 +934,12 @@
             }
           },
           "graph_nodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "markers": {
             "type": "array",
             "items": {
               "type": "string"

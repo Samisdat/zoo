@@ -7,8 +7,6 @@ import {Animal} from "../../strapi-api/entity/animal/animal";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 import {Breadcrumb, BreadcrumbLink, BreadcrumbProps} from "../../components/Navigation/Breadcrumb";
 import {Distribution} from "../../components/Distribution/Distribution";
-import {getMapElementById} from "../../strapi-api/query/map-elements";
-import {MapElement} from "../../strapi-api/entity/map-element/map-element";
 import {DistributionGlobe} from "../../components/Distribution/DistributionGlobe";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {Grid, Paper} from "@material-ui/core";
@@ -70,10 +68,6 @@ export default function Tiere(props) {
 
     const image = animal.photos[0];
 
-    let focus: MapElement = facility.mapElements.find((mapElement:MapElement)=>{
-        return ('box' === mapElement.properties.type);
-    });
-
     /*
     if(animal.facility){
 
@@ -95,8 +89,6 @@ export default function Tiere(props) {
     const setTeaser = () => {
 
     };
-
-    const mapElements = Warehouse.get().getMapElements();
 
     return (
         <React.Fragment>
@@ -189,9 +181,6 @@ export default function Tiere(props) {
 export async function getStaticProps(context) {
 
     await getAnimalBySlug(context.params.slug);
-
-    await getMapElementById(80);
-    await getMapElementById(79);
 
     let getJson = await getFullGeoJson();
 

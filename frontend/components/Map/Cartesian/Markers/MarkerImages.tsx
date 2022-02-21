@@ -1,29 +1,27 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
-import {MapElement} from "../../../strapi-api/entity/map-element/map-element";
-import {getImagePath} from "../../../helper/getImagePath";
+import {getImagePath} from "../../../../helper/getImagePath";
+import {Facility} from "../../../../strapi-api/entity/facility/facility";
 
 export interface MarkerImagesProperties{
-    mapElements:MapElement[];
+    facilities: Facility[];
 };
 
-const getImage = (mapElement:MapElement) => {
+const getImage = (facility:Facility) => {
 
-    const  facilitiy = mapElement.facility;
-
-    if(!facilitiy){
+    if(!facility){
         return undefined;
     }
 
     let image:string = undefined;
 
-    if(0 !== facilitiy.photos.length && undefined !== facilitiy.photos[0] && facilitiy.photos[0].thumbnail){
-        image = getImagePath(facilitiy.photos[0].thumbnail.src);
+    if(0 !== facility.photos.length && undefined !== facility.photos[0] && facility.photos[0].thumbnail){
+        image = getImagePath(facility.photos[0].thumbnail.src);
     }
 
     if(undefined === image){
 
-        const animalWithImage = facilitiy.animals.find((animal)=>{
+        const animalWithImage = facility.animals.find((animal)=>{
             return (0 < animal.photos.length);
         });
 
@@ -41,18 +39,12 @@ const getImage = (mapElement:MapElement) => {
 
 }
 
-export const MarkerImages = (props:MarkerImagesProperties) => {
+export const MarkerImages = ({facilities}:MarkerImagesProperties) => {
 
     const markerImagesGroup = useRef(null);
 
-    const points = props.mapElements.filter((mapElement:MapElement) => {
-
-        if('point' === mapElement.properties.type){
-            return true;
-        }
-
-        return false;
-
+    const facilitiesWithImages = facilities.filter((facility)=>{
+        return (0 !== facility.photos.length)
     });
 
     useEffect(() => {
@@ -60,16 +52,16 @@ export const MarkerImages = (props:MarkerImagesProperties) => {
         var groupSelection = d3.select(markerImagesGroup.current);
 
         groupSelection.selectAll('defs')
-            .data(points)
+            .data(facilitiesWithImages)
             .join("defs")
             .append('pattern')
-            .attr('id', function(d) { return (d.id + '-icon');}) // just create a unique id (id comes from the json)
+            .attr('id', function(d) { return (`icon-${d.slug}`);}) // just create a unique id (id comes from the json)
             .attr('width', 1)
             .attr('height', 1)
             .attr('patternContentUnits', 'objectBoundingBox')
             .append("image")
-            .attr("xlink:href", (d:MapElement)=>{
-                return getImage(d);
+            .attr("xlink:href", (facility:Facility)=>{
+                return getImage(facility);
             })
             .attr("x", 0)
             .attr("y", 0)

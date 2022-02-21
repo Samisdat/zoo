@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/map-elements",
-      "handler": "map-elements.find",
+      "path": "/markers",
+      "handler": "marker.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/map-elements/count",
-      "handler": "map-elements.count",
+      "path": "/markers/count",
+      "handler": "marker.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/map-elements/:id",
-      "handler": "map-elements.findOne",
+      "path": "/markers/:id",
+      "handler": "marker.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/map-elements",
-      "handler": "map-elements.create",
+      "path": "/markers",
+      "handler": "marker.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/map-elements/:id",
-      "handler": "map-elements.update",
+      "path": "/markers/:id",
+      "handler": "marker.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/map-elements/:id",
-      "handler": "map-elements.delete",
+      "path": "/markers/:id",
+      "handler": "marker.delete",
       "config": {
         "policies": []
       }

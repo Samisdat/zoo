@@ -338,7 +338,7 @@ export const borderGeoJson:any = {
     }
 }
 
-const boundingBoxGeoJson:any = {
+export const boundingBoxGeoJson:any = {
     "type": "Feature",
     "properties": {
         "name": "bounding-box",

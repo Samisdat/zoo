@@ -63,7 +63,8 @@ const saveMarker = async (marker:MarkerAttributes) =>{
             slug,
             x: marker.x,
             y: marker.y,
-            facility:facilityId
+            facility:facilityId,
+            priority:1
         };
 
         const strapiNode = await axios.post(
@@ -79,7 +80,8 @@ const saveMarker = async (marker:MarkerAttributes) =>{
         const data:any = {
             x: marker.x,
             y: marker.y,
-            facility:facilityId
+            facility:facilityId,
+            priority:1
         };
 
         await axios.put(

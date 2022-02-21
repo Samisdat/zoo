@@ -654,52 +654,6 @@
               }
             }
           },
-          "map_elements": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "geojson": {
-                  "type": "object"
-                },
-                "facility": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string",
-                  "enum": [
-                    "box",
-                    "point",
-                    "border",
-                    "bounding_box"
-                  ]
-                },
-                "slug": {
-                  "type": "string"
-                },
-                "priority": {
-                  "type": "integer"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "photos": {
             "type": "array",
             "items": {
@@ -956,12 +910,6 @@
             "type": "boolean"
           },
           "animals": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "map_elements": {
             "type": "array",
             "items": {
               "type": "string"

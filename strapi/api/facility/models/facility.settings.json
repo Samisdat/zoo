@@ -37,10 +37,6 @@
       "via": "facilities",
       "collection": "animal"
     },
-    "map_elements": {
-      "via": "facility",
-      "collection": "map-elements"
-    },
     "photos": {
       "via": "facility",
       "collection": "photo"

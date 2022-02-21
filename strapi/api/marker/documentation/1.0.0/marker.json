@@ -570,12 +570,6 @@
                   "type": "string"
                 }
               },
-              "map_elements": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "photos": {
                 "type": "array",
                 "items": {

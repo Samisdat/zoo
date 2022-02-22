@@ -84,7 +84,6 @@ export default function ZooWuppertal(props) {
             <Head>
                 <title>Der grüne Zoo Wuppertal</title>
                 <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width"/>
-                <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" crossOrigin=""/>
             </Head>
                 {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                 <CssBaseline/>

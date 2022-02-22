@@ -36,26 +36,6 @@ export const navigationCategories:NavigationListGroupInterface[] = [
         ]
     },
     {
-        key: 'dev',
-        text: 'Dev',
-        items:[
-            {
-                key: 'leaflet',
-                href: '/dev/leaflet',
-                icon: 'map',
-                text: 'Leaflet Map',
-                secondary: 'Lorem Ipsum',
-            },
-            {
-                key: 'about',
-                href: '/dev/teaser',
-                icon: 'code',
-                text: 'Teaser',
-                secondary: 'Lorem Ipsum',
-            },
-        ]
-    },
-    {
         key: 'about',
         text: 'Diese Seite',
         items:[

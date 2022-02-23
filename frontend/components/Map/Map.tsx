@@ -51,7 +51,7 @@ export const Map = (props:MapProps) => {
 
     const border = borderGeoJson;
 
-    const createMap = (width, height) => {
+    const createProjectionAndPath = (width, height) => {
 
         const margin = 20;
 
@@ -87,46 +87,12 @@ export const Map = (props:MapProps) => {
             return;
         }
 
-        createMap(dimension.width,dimension.height);
+        createProjectionAndPath(dimension.width,dimension.height);
 
     }, [
         dimension.width,
         dimension.height
     ]);
-
-    useEffect(() => {
-
-        const position = getPositionFromStorage();
-
-        dispatch({
-            type: 'SET_POSITION',
-            position
-        });
-
-    }, []);
-
-    useEffect(()=>{
-
-        const transform = getTransformFromStorage();
-
-        if(!transform.k){
-            transform.k = 1;
-        }
-
-        if(!transform.x){
-            transform.x = 0;
-        }
-
-        if(!transform.y){
-            transform.y = 0;
-        }
-
-        dispatch({
-            type: 'SET_TRANSFORM',
-            transform
-        });
-
-    },[]);
 
     return (
         <div

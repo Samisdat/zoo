@@ -6,6 +6,8 @@ import {MutableRefObject, useEffect, useRef} from "react";
 import throttle from 'lodash.throttle';
 import {Route} from "../Routing/Dijkstra";
 import {Facility} from "strapi-api/entity/facility/facility";
+import {getTransformFromStorage} from "../getTransformFromStorage";
+import {getPositionFromStorage} from "../getPositionFromStorage";
 
 // @refresh reset
 
@@ -275,13 +277,9 @@ function MapProvider({children}: MapProviderProps) {
         dimension:defaultDimension,
         path: undefined,
         projection: undefined,
-        transform:mapTransformDefault,
+        transform: mapTransformDefault,
     });
     const value = {state, dispatch};
-
-    useEffect(() => {
-        localStorage.setItem("transform", JSON.stringify(state.transform));
-    }, [state.transform]);
 
     const getDimension = ():Dimension => {
 
@@ -308,8 +306,6 @@ function MapProvider({children}: MapProviderProps) {
                 dimension:getDimension()
             });
 
-            //setDimension(getDimension());
-
         }, 200);
 
 
@@ -329,6 +325,46 @@ function MapProvider({children}: MapProviderProps) {
         window.addEventListener("resize", handleWindowResize());
 
         return () => window.removeEventListener("resize", handleWindowResize());
+
+    }, []);
+
+    useEffect(()=>{
+
+        const transform = getTransformFromStorage();
+        
+        if(!transform.k){
+            transform.k = 1;
+        }
+
+        if(!transform.x){
+            transform.x = 0;
+        }
+
+        if(!transform.y){
+            transform.y = 0;
+        }
+
+        dispatch({
+            type: 'SET_TRANSFORM',
+            transform
+        });
+
+    },[]);
+
+    useEffect(() => {
+
+        localStorage.setItem("transform", JSON.stringify(state.transform));
+
+    }, [state.transform]);
+
+    useEffect(() => {
+
+        const position = getPositionFromStorage();
+
+        dispatch({
+            type: 'SET_POSITION',
+            position
+        });
 
     }, []);
 

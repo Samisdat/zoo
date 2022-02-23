@@ -7,7 +7,7 @@ import {ZoomLevel} from "./ZoomLevel";
 import {useMap} from "./Context/MapContext";
 import {Feature} from "geojson";
 import {getTransformFromStorage} from "./getTransformFromStorage";
-import {getMarkerFromStorage} from "./getMarkerFromStorage";
+import {getPositionFromStorage} from "./getPositionFromStorage";
 import {MarkerImages} from "./Cartesian/Markers/MarkerImages";
 import {Edge} from "strapi-api/entity/edge/edge";
 import {Node} from "strapi-api/entity/node/node";
@@ -96,7 +96,7 @@ export const Map = (props:MapProps) => {
 
     useEffect(() => {
 
-        const position = getMarkerFromStorage();
+        const position = getPositionFromStorage();
 
         dispatch({
             type: 'SET_POSITION',

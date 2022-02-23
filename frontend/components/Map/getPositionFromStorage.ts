@@ -1,14 +1,27 @@
 import {PositionInterface} from "./Context/MapContext";
 
 const markerDefault: PositionInterface = {
-    lat: 51.238741,
-    lng: 7.107757,
-    isWithin: true,
-    isGPS: false,
-    text: 'Map Marker Text'
+    lat:51.24289490775235,
+    lng:7.111594493243635,
+    isWithin:false,
+    isGPS:false,
+    text:'außerhalb',
+    edgeId:1428,
+    x:861.438,
+    y:309.839,
+    raw:{
+        lat:51.24098022488334,
+        lng:7.107241601137138,
+        type:'gpx',
+        data:{
+            lat:51.24098022488334,
+            lng:7.107241601137138,
+            time:0
+        }
+    }
 };
 
-export const getMarkerFromStorage = (): PositionInterface => {
+export const getPositionFromStorage = (): PositionInterface => {
 
     const markerFromStorage = window.localStorage.getItem('position');
 
@@ -33,6 +46,14 @@ export const getMarkerFromStorage = (): PositionInterface => {
     }
 
     if(!json.lng){
+        return defaultMarker;
+    }
+
+    if(!json.x){
+        return defaultMarker;
+    }
+
+    if(!json.y){
         return defaultMarker;
     }
 

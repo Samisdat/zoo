@@ -132,24 +132,24 @@ export const Map = (props:MapProps) => {
         <div
             className={classes.svgWrap}
         >
-        <svg
-            ref={ref}
-            className={`${props.fullsize ? classes.fullScreenMap : ""}`}
-            width={dimension.width}
-            height={dimension.height}
-        >
-            <MarkerImages
-                facilities={props.facilities}
-            />
-            <Group
-                fullsize={props.fullsize}
-                facilities={props.facilities}
-                markers={props.markers}
-                nodes={props.nodes}
-                edges={props.edges}
-            />
-            <ZoomLevel />
-        </svg>
+            <svg
+                ref={ref}
+                className={`${props.fullsize ? classes.fullScreenMap : ""}`}
+                width={dimension.width}
+                height={dimension.height}
+            >
+                <MarkerImages
+                    facilities={props.facilities}
+                />
+                <Group
+                    fullsize={props.fullsize}
+                    facilities={props.facilities}
+                    markers={props.markers}
+                    nodes={props.nodes}
+                    edges={props.edges}
+                />
+                <ZoomLevel />
+            </svg>
         </div>
     );
 

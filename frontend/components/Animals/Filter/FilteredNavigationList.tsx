@@ -1,5 +1,5 @@
 import React from 'react';
-import {Animal} from "../../../strapi-api/entity/animal/animal";
+import {Animal} from "strapi-api/entity/animal/animal";
 import {NavigationList} from "../../NavigationList/NavigationList";
 import {NavigationListItemInterface} from "../../NavigationList/NavigationListInterfaces";
 import {animalUrlPart} from "../../../constants";

@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {useMap} from "./Context/MapContext";
-import {Facility} from "../../strapi-api/entity/facility/facility";
+import {Facility} from "strapi-api/entity/facility/facility";
 
 interface HashNavigationProps{
     facilities: Facility[];

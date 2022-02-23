@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import {useMap} from "../../Context/MapContext";
 import {GeoPath} from "d3";
 import {ClusteredMarkers} from "./ClusteredMarkers";
-import {Marker} from "../../../../strapi-api/entity/marker/marker";
+import {Marker} from "strapi-api/entity/marker/marker";
 
 export interface MarkersProps {
     markers:Marker[];

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import {DistributionGlobe} from "../../components/Distribution/DistributionGlobe";
+import {DistributionGlobe} from "components/Distribution/DistributionGlobe";
 import withMock from 'storybook-addon-mock';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

@@ -7,9 +7,9 @@ import {makeStyles} from '@material-ui/core/styles';
 import createPersistedState from 'use-persisted-state';
 
 import { createTheme } from '@material-ui/core/styles';
-import {ViewportProvider} from "../components/viewport/ViewportProvider";
-import {Navigation} from "../components/Navigation/Navigation";
-import {navigationCategories} from "../components/Navigation/NavigationCategory";
+import {ViewportProvider} from "components/viewport/ViewportProvider";
+import {Navigation} from "components/Navigation/Navigation";
+import {navigationCategories} from "components/Navigation/NavigationCategory";
 import Container from "@material-ui/core/Container";
 
 const theme = createTheme({

@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import {getAnimals} from "../../strapi-api/query/animals";
-import {Animal} from "../../strapi-api/entity/animal/animal";
-import {getStrapiUrl} from "../../strapi-api/utils/get-strapi-url";
+import {getAnimals} from "strapi-api/query/animals";
+import {Animal} from "strapi-api/entity/animal/animal";
+import {getStrapiUrl} from "strapi-api/utils/get-strapi-url";
 
 const stati = {
     'Q219127': 'CR',

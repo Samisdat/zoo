@@ -9,11 +9,11 @@ import {angle} from "../../../constants";
 import {CurrentPosition} from "../Routing/CurrentPosition";
 import {Sketched} from "./Sketched";
 import {Routing} from "../Routing/Routing";
-import {Edge} from "../../../strapi-api/entity/edge/edge";
-import {Node} from "../../../strapi-api/entity/node/node";
+import {Edge} from "strapi-api/entity/edge/edge";
+import {Node} from "strapi-api/entity/node/node";
 import {CartesianPoint} from "./CartesianPoint";
 import {FacilityBoxes} from "./FacilityBoxes";
-import {Marker} from "../../../strapi-api/entity/marker/marker";
+import {Marker} from "strapi-api/entity/marker/marker";
 import {Markers} from "./Markers/Markers";
 
 interface CartesianProps{

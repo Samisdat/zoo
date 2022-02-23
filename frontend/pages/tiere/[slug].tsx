@@ -2,20 +2,20 @@ import React from 'react';
 import { useRouter } from 'next/router'
 import Typography from "@material-ui/core/Typography";
 import {getFullGeoJson} from "../api/geojson/list";
-import {getAnimalBySlug, getAnimals} from "../../strapi-api/query/animals";
-import {Animal} from "../../strapi-api/entity/animal/animal";
-import {Warehouse} from "../../strapi-api/warehouse/warehouse";
-import {Breadcrumb, BreadcrumbLink, BreadcrumbProps} from "../../components/Navigation/Breadcrumb";
-import {Distribution} from "../../components/Distribution/Distribution";
-import {DistributionGlobe} from "../../components/Distribution/DistributionGlobe";
+import {getAnimalBySlug, getAnimals} from "strapi-api/query/animals";
+import {Animal} from "strapi-api/entity/animal/animal";
+import {Warehouse} from "strapi-api/warehouse/warehouse";
+import {Breadcrumb, BreadcrumbLink, BreadcrumbProps} from "components/Navigation/Breadcrumb";
+import {Distribution} from "components/Distribution/Distribution";
+import {DistributionGlobe} from "components/Distribution/DistributionGlobe";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {Grid, Paper} from "@material-ui/core";
 import {getImagePath} from "../../helper/getImagePath";
-import SimpleTabs from "../../components/Tabs";
-import BasicTable from "../../components/Table";
-import DetailedAccordion from "../../components/Accordion";
-import {Profile} from "../../components/Animal/Profile/Profile";
-import {IucnRedList} from "../../components/Animal/IucnRedList";
+import SimpleTabs from "components/Tabs";
+import BasicTable from "components/Table";
+import DetailedAccordion from "components/Accordion";
+import {Profile} from "components/Animal/Profile/Profile";
+import {IucnRedList} from "components/Animal/IucnRedList";
 
 const useStyles = makeStyles((theme: Theme) => {
 

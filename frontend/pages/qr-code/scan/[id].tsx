@@ -1,15 +1,15 @@
 import React, {useEffect} from "react";
 import {useRouter, Router} from "next/router";
-import {getQrCodeById, getQrCodes} from "../../../strapi-api/query/qr-codes";
-import {Warehouse} from "../../../strapi-api/warehouse/warehouse";
+import {getQrCodeById, getQrCodes} from "strapi-api/query/qr-codes";
+import {Warehouse} from "strapi-api/warehouse/warehouse";
 
-import {QrCode} from "../../../strapi-api/entity/qr-code/qr-code";
+import {QrCode} from "strapi-api/entity/qr-code/qr-code";
 import {CircularProgress} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
-import {useViewport} from "../../../components/viewport/useViewport";
-import {PositionInterface   } from "../../../components/Map/Context/MapContext";
+import {useViewport} from "components/viewport/useViewport";
+import {PositionInterface   } from "components/Map/Context/MapContext";
 
-import {setMarkerToStorage} from "../../../components/Map/setMarkerToStorage";
+import {setMarkerToStorage} from "components/Map/setMarkerToStorage";
 
 const useStyles = makeStyles({
     alignCenter: {

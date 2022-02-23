@@ -1,5 +1,5 @@
 import React from 'react';
-import {ViewportProvider} from "../components/viewport/ViewportProvider";
+import {ViewportProvider} from "components/viewport/ViewportProvider";
 import {createTheme, ThemeProvider} from "@material-ui/core/styles";
 import {background} from "@storybook/theming";
 

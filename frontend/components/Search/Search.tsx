@@ -13,7 +13,7 @@ import {groupByFirstLetter} from "../NavigationList/groupByFirstLetter";
 import {NavigationListItemInterface} from "../NavigationList/NavigationListInterfaces";
 import {useMap} from "../Map/Context/MapContext";
 import {Icon} from "../Icon/Icon";
-import {Facility} from "../../strapi-api/entity/facility/facility";
+import {Facility} from "strapi-api/entity/facility/facility";
 
 
 const useStyles = makeStyles((theme: Theme) =>

@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import * as d3 from 'd3';
 import {useMap} from "../../Context/MapContext";
-import {Marker} from "../../../../strapi-api/entity/marker/marker";
+import {Marker} from "strapi-api/entity/marker/marker";
 import {angle} from "../../../../constants";
 
 export interface ClusteredMarkersProperties{

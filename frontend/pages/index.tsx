@@ -1,17 +1,17 @@
 import React, {useEffect, useState} from 'react';
 
-import {MapSvg} from "../components/Map/MapSvg";
+import {Map} from "components/Map/Map";
 import {Teaser} from "components/Map/Teaser";
 
 import SearchDialog from "components/Search/Search";
-import {Warehouse, WarehouseSpore} from "../strapi-api/warehouse/warehouse";
-import {MapProvider} from "../components/Map/Context/MapContext";
+import {Warehouse, WarehouseSpore} from "strapi-api/warehouse/warehouse";
+import {MapProvider} from "components/Map/Context/MapContext";
 import {makeStyles} from "@material-ui/core/styles";
-import {HashNavigation} from "../components/Map/HashNavication";
-import {getGraphElements} from "../strapi-api/query/graph-elements";
-import {getFacilities} from "../strapi-api/query/facilities";
-import {getMarkers} from "../strapi-api/query/marker";
-import {Facility} from "../strapi-api/entity/facility/facility";
+import {HashNavigation} from "components/Map/HashNavication";
+import {getGraphElements} from "strapi-api/query/graph-elements";
+import {getFacilities} from "strapi-api/query/facilities";
+import {getMarkers} from "strapi-api/query/marker";
+import {Facility} from "strapi-api/entity/facility/facility";
 
 export interface IndexProps{
     warehouse: WarehouseSpore;
@@ -52,7 +52,7 @@ export default function Index(props:IndexProps) {
                 <HashNavigation
                     facilities={facilities}
                 />
-                <MapSvg
+                <Map
                     fullsize={true}
                     markers={markers}
                     facilities={facilities}

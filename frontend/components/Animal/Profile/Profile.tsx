@@ -1,6 +1,6 @@
 import React from 'react';
 import {Grid, Paper} from "@material-ui/core";
-import {AnimalProfileStrapi} from "../../../strapi-api/entity/animal/animal-strapi-interface";
+import {AnimalProfileStrapi} from "strapi-api/entity/animal/animal-strapi-interface";
 import {Feature} from "./Feature";
 
 export interface ProfileProps{

@@ -9,11 +9,11 @@ import {Feature} from "geojson";
 import {getTransformFromStorage} from "./getTransformFromStorage";
 import {getMarkerFromStorage} from "./getMarkerFromStorage";
 import {MarkerImages} from "./Cartesian/Markers/MarkerImages";
-import {Edge} from "../../strapi-api/entity/edge/edge";
-import {Node} from "../../strapi-api/entity/node/node";
+import {Edge} from "strapi-api/entity/edge/edge";
+import {Node} from "strapi-api/entity/node/node";
 import {angle, borderGeoJson} from "../../constants";
-import {Facility} from "../../strapi-api/entity/facility/facility";
-import {Marker} from "../../strapi-api/entity/marker/marker";
+import {Facility} from "strapi-api/entity/facility/facility";
+import {Marker} from "strapi-api/entity/marker/marker";
 
 const useStyles = makeStyles({
     svgWrap:{
@@ -31,7 +31,7 @@ const useStyles = makeStyles({
     }
 });
 
-interface MapRootInterface{
+interface MapProps{
     fullsize: boolean;
     markers:Marker[];
     facilities: Facility[];
@@ -40,9 +40,12 @@ interface MapRootInterface{
 }
 
 // @refresh reset
-export const MapSvg = (props:MapRootInterface) => {
+export const Map = (props:MapProps) => {
 
-    const { state, dispatch } = useMap();
+    const {
+        state: {dimension, ref},
+        dispatch
+    } = useMap();
 
     const classes = useStyles();
 
@@ -76,15 +79,19 @@ export const MapSvg = (props:MapRootInterface) => {
 
         // @todo one to create and one to resize
 
-        if(!state.dimension.width || !state.dimension.height){
+        if(!dimension){
             return;
         }
 
-        createMap(state.dimension.width,state.dimension.height);
+        if(!dimension.width || !dimension.height){
+            return;
+        }
+
+        createMap(dimension.width,dimension.height);
 
     }, [
-        state.dimension.width,
-        state.dimension.height
+        dimension.width,
+        dimension.height
     ]);
 
     useEffect(() => {
@@ -126,10 +133,10 @@ export const MapSvg = (props:MapRootInterface) => {
             className={classes.svgWrap}
         >
         <svg
-            ref={state.ref}
+            ref={ref}
             className={`${props.fullsize ? classes.fullScreenMap : ""}`}
-            width={state.dimension.width}
-            height={state.dimension.height}
+            width={dimension.width}
+            height={dimension.height}
         >
             <MarkerImages
                 facilities={props.facilities}

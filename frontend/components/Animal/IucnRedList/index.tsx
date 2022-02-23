@@ -10,7 +10,7 @@ import {
     ENDANGERED, IucnStatus, LEAST_CONCERN,
     NEAR_THREATENED,
     VULNERABLE
-} from "../../../strapi-api/entity/animal/iucnStatus";
+} from "strapi-api/entity/animal/iucnStatus";
 import {IucnRedListIndicator} from "./Indicator";
 
 const possibleStati = [

@@ -1,8 +1,8 @@
 import React, {useEffect, useRef} from 'react';
 import {Nodes} from "./Nodes";
 import {Edges} from "./Edges";
-import {Node} from "../../../strapi-api/entity/node/node";
-import {Edge} from "../../../strapi-api/entity/edge/edge";
+import {Node} from "strapi-api/entity/node/node";
+import {Edge} from "strapi-api/entity/edge/edge";
 import {Dijkstra, Route, RoutingGraph} from "./Dijkstra";
 import {MapTransformInterface, RoutingInterface, useMap} from "../Context/MapContext";
 import {ResolvePosition} from "./ResolvePosition";

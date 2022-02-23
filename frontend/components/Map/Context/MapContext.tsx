@@ -5,7 +5,7 @@ import {MutableRefObject, useEffect, useRef} from "react";
 
 import throttle from 'lodash.throttle';
 import {Route} from "../Routing/Dijkstra";
-import {Facility} from "../../../strapi-api/entity/facility/facility";
+import {Facility} from "strapi-api/entity/facility/facility";
 
 // @refresh reset
 

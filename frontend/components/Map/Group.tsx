@@ -1,15 +1,15 @@
 import * as d3 from 'd3';
 import React, {useEffect, useRef, useState} from "react";
-import {Facility} from "../../strapi-api/entity/facility/facility";
-import {Marker} from "../../strapi-api/entity/marker/marker";
-import {Edge} from "../../strapi-api/entity/edge/edge";
+import {Facility} from "strapi-api/entity/facility/facility";
+import {Marker} from "strapi-api/entity/marker/marker";
+import {Edge} from "strapi-api/entity/edge/edge";
 import {MapTransformInterface, useMap} from "./Context/MapContext";
 import {centerToFeatureCollection} from "../Distribution/Detail";
 import {GeoBorder} from "./GeoBorder";
 import {Cartesian} from "./Cartesian/Cartesian";
 import {GeoPoint} from "./GeoPoint";
 import {GPXViewer} from "../GPX/Viewer";
-import {Node} from "../../strapi-api/entity/node/node";
+import {Node} from "strapi-api/entity/node/node";
 
 interface ZoomDependencies {
     mapSvg:any,

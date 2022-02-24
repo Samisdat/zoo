@@ -24,7 +24,7 @@ export const getTransformFromStorage = ():MapTransformInterface => {
         return mapTransformDefault;
     }
 
-    if(undefined === json.y){
+    if(undefined === json.k){
         return mapTransformDefault;
     }
 

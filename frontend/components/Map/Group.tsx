@@ -43,8 +43,6 @@ export const Group = (props:MapGroupProperties) => {
 
         var mapSvg = d3.select(ref.current)
 
-        mapSvg.attr('width', dimension.width);
-        mapSvg.attr('height', dimension.height);
 
         const mapGroup = d3.select(map.current);
 

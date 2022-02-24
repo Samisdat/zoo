@@ -1,30 +1,16 @@
 import * as d3 from 'd3';
-import React, {useEffect, useRef, useState} from "react";
-import {Facility} from "strapi-api/entity/facility/facility";
-import {Marker} from "strapi-api/entity/marker/marker";
-import {Edge} from "strapi-api/entity/edge/edge";
+import React, {useEffect, useRef, useState, FunctionComponent} from "react";
 import {MapTransformInterface, useMap} from "./Context/MapContext";
 import {centerToFeatureCollection} from "../Distribution/Detail";
-import {GeoBorder} from "./GeoBorder";
-import {Cartesian} from "./Cartesian/Cartesian";
-import {GeoPoint} from "./GeoPoint";
-import {GPXViewer} from "../GPX/Viewer";
-import {Node} from "strapi-api/entity/node/node";
 
 interface ZoomDependencies {
     mapSvg:any,
     zooming:any,
 }
 
-interface MapGroupProperties {
-    fullsize: boolean;
-    facilities: Facility[];
-    markers:Marker[];
-    nodes: Node[];
-    edges:Edge[];
-}
+interface ZoomAndPanProps {}
 
-export const Group = (props:MapGroupProperties) => {
+export const ZoomAndPan: FunctionComponent<ZoomAndPanProps> = ({children}) => {
 
     const {
         state: {path, focus, transform, ref, dimension, center, projection, position},
@@ -48,8 +34,6 @@ export const Group = (props:MapGroupProperties) => {
 
         const zooming = d3.zoom()
             .scaleExtent([1, 25])
-            //.translateExtent([[-100,0], [props.mapDimension.width, props.mapDimension.height]])
-            //.extent([[-100, 0], [props.mapDimension.width, props.mapDimension.height]])
             .on('zoom', (event) => {
 
                 mapGroup.attr(
@@ -72,7 +56,6 @@ export const Group = (props:MapGroupProperties) => {
                     type: 'SET_TRANSFORM',
                     transform
                 });
-                //props.setTransform(transform);
 
             });
 
@@ -231,22 +214,7 @@ export const Group = (props:MapGroupProperties) => {
             id={'geo'}
             ref={map}
         >
-
-            <GeoBorder />
-
-            <Cartesian
-                nodes={props.nodes}
-                edges={props.edges}
-                markers={props.markers}
-            />
-
-            <GeoPoint />
-
-            {/*
-            */}
-
-            <GPXViewer/>
-
+            {children}
         </g>
     );
 

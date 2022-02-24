@@ -2,18 +2,20 @@ import React, {useEffect} from 'react';
 import {makeStyles} from "@material-ui/core/styles";
 import * as d3 from 'd3';
 
-import {Group} from "./Group";
+import {ZoomAndPan} from "./ZoomAndPan";
 import {ZoomLevel} from "./ZoomLevel";
 import {useMap} from "./Context/MapContext";
 import {Feature} from "geojson";
-import {getTransformFromStorage} from "./getTransformFromStorage";
-import {getPositionFromStorage} from "./getPositionFromStorage";
 import {MarkerImages} from "./Cartesian/Markers/MarkerImages";
 import {Edge} from "strapi-api/entity/edge/edge";
 import {Node} from "strapi-api/entity/node/node";
 import {angle, borderGeoJson} from "../../constants";
 import {Facility} from "strapi-api/entity/facility/facility";
 import {Marker} from "strapi-api/entity/marker/marker";
+import {GeoBorder} from "./GeoBorder";
+import {Cartesian} from "./Cartesian/Cartesian";
+import {GeoPoint} from "./GeoPoint";
+import {GPXViewer} from "../GPX/Viewer";
 
 const useStyles = makeStyles({
     svgWrap:{
@@ -40,7 +42,7 @@ interface MapProps{
 }
 
 // @refresh reset
-export const Map = (props:MapProps) => {
+export const Map = ({fullsize, markers, facilities, nodes, edges}:MapProps) => {
 
     const {
         state: {dimension, ref},
@@ -100,20 +102,27 @@ export const Map = (props:MapProps) => {
         >
             <svg
                 ref={ref}
-                className={`${props.fullsize ? classes.fullScreenMap : ""}`}
+                className={`${fullsize ? classes.fullScreenMap : ""}`}
                 width={dimension.width}
                 height={dimension.height}
             >
                 <MarkerImages
-                    facilities={props.facilities}
+                    facilities={facilities}
                 />
-                <Group
-                    fullsize={props.fullsize}
-                    facilities={props.facilities}
-                    markers={props.markers}
-                    nodes={props.nodes}
-                    edges={props.edges}
-                />
+                <ZoomAndPan>
+                    <GeoBorder />
+
+                    <Cartesian
+                        nodes={nodes}
+                        edges={edges}
+                        markers={markers}
+                    />
+
+                    <GeoPoint />
+
+                    <GPXViewer/>
+
+                </ZoomAndPan>
                 <ZoomLevel />
             </svg>
         </div>

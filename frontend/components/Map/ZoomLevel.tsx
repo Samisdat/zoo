@@ -7,10 +7,8 @@ export const ZoomLevel = () => {
         state: {transform},
     } = useMap()
 
-    const zoomLevelId = 'zoom-level';
-
-    return <g id={zoomLevelId}>
+    return (
         <text y={100}>Zoom {transform.k}</text>
-    </g>;
+    );
 
 };

@@ -2,11 +2,11 @@ import React, {useEffect} from "react";
 import {useMap} from "../Context/MapContext";
 import {Facility} from "strapi-api/entity/facility/facility";
 
-interface OpenTeaserByFragmentProps{
+interface OpenTeaserByHashProps{
     facilities: Facility[];
 }
 
-export const OpenTeaserByFragment = ({facilities}:OpenTeaserByFragmentProps) => {
+export const OpenTeaserByHash = ({facilities}:OpenTeaserByHashProps) => {
 
     const { dispatch } = useMap()
 

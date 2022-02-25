@@ -29,7 +29,6 @@ export const ZoomAndPan: FunctionComponent<ZoomAndPanProps> = ({children}) => {
 
         var mapSvg = d3.select(ref.current)
 
-
         const mapGroup = d3.select(map.current);
 
         const zooming = d3.zoom()

@@ -7,10 +7,9 @@ import Button from '@material-ui/core/Button';
 import MobileStepper from '@material-ui/core/MobileStepper';
 import SwipeableViews from 'react-swipeable-views';
 import {Animal} from "strapi-api/entity/animal/animal";
-import {RoutingInterface, useMap} from "./Context/MapContext";
-import {getImagePath} from "../../helper/getImagePath";
-import {Icon} from "../Icon/Icon";
-
+import {RoutingInterface, useMap} from "../Context/MapContext";
+import {getImagePath} from "../../../helper/getImagePath";
+import {Icon} from "../../Icon/Icon";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

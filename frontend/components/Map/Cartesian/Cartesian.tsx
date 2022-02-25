@@ -61,7 +61,7 @@ export const Cartesian = (props:CartesianProps) => {
             .attr("fill", "yellow")
             .attr("id", 'bounding_box')
             .attr("d", path as any)
-            .attr('opacity', '1')
+            .attr('opacity', '0')
         ;
 
         const boundElement = boundingGroup.select(`#bounding_box`);

@@ -11,7 +11,7 @@ import {Sketched} from "./Sketched";
 import {Routing} from "../Routing/Routing";
 import {Edge} from "strapi-api/entity/edge/edge";
 import {Node} from "strapi-api/entity/node/node";
-import {CartesianPoint} from "./CartesianPoint";
+import {CartesianPoint} from "../DevArtifacts/CartesianPoint";
 import {FacilityBoxes} from "./FacilityBoxes";
 import {Marker} from "strapi-api/entity/marker/marker";
 import {Markers} from "./Markers/Markers";

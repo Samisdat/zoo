@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
-import {useMap} from "./Context/MapContext";
+import {useMap} from "../Context/MapContext";
 import * as d3 from "d3";
-import {getPosition} from "./Cartesian/CartesianPoint";
+import {getPosition} from "./CartesianPoint";
 
 export const GeoPoint = () => {
 

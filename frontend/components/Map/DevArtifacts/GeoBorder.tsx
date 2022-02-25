@@ -2,10 +2,10 @@ import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
 import {getCurrentPositionGeoJson} from 'helper/getCurrentPosition';
-import {useMap} from "./Context/MapContext";
+import {useMap} from "../Context/MapContext";
 import {Feature} from "geojson";
 import {Warehouse} from "strapi-api/warehouse/warehouse";
-import {borderGeoJson} from "../../constants";
+import {borderGeoJson} from "../../../constants";
 
 export const GeoBorder = (props) => {
 

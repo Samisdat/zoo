@@ -5,7 +5,7 @@ import {edgeIdPrefix, svg} from "../../../constants";
 import {doc} from "prettier";
 import {Warehouse} from "strapi-api/warehouse/warehouse";
 import {Point} from "geojson";
-import {getPosition} from "../Cartesian/CartesianPoint";
+import {getPosition} from "../DevArtifacts/CartesianPoint";
 
 export interface Coordinate{
     x:number;
@@ -271,6 +271,10 @@ export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
         state: {position_raw, projection, transform, ref},
         dispatch
     } = useMap();
+
+    /*return (
+        <React.Fragment/>
+    );*/
 
     const refMatch = useRef(null);
 

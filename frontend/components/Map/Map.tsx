@@ -12,9 +12,9 @@ import {Node} from "strapi-api/entity/node/node";
 import {angle, borderGeoJson} from "../../constants";
 import {Facility} from "strapi-api/entity/facility/facility";
 import {Marker} from "strapi-api/entity/marker/marker";
-import {GeoBorder} from "./GeoBorder";
+import {GeoBorder} from "./DevArtifacts/GeoBorder";
 import {Cartesian} from "./Cartesian/Cartesian";
-import {GeoPoint} from "./GeoPoint";
+import {GeoPoint} from "./DevArtifacts/GeoPoint";
 import {GPXViewer} from "../GPX/Viewer";
 
 const useStyles = makeStyles({

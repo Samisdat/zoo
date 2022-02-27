@@ -4,7 +4,7 @@ import {GeoProjection} from "d3-geo";
 import {MutableRefObject, useEffect, useRef} from "react";
 
 import throttle from 'lodash.throttle';
-import {Route} from "../Routing/Dijkstra";
+import {Route} from "../Navigation/Routing/Graph/Dijkstra";
 import {Facility} from "strapi-api/entity/facility/facility";
 import {getTransformFromStorage} from "../getTransformFromStorage";
 import {getPositionFromStorage} from "../getPositionFromStorage";

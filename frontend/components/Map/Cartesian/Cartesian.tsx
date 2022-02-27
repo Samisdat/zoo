@@ -6,9 +6,9 @@ import {MapTransformInterface, useMap} from "../Context/MapContext";
 import {boundingBoxGeoJson, svg} from "../../../constants";
 import {angle} from "../../../constants";
 
-import {CurrentPosition} from "../Routing/CurrentPosition";
+import {CurrentPosition} from "../Navigation/Position/CurrentPosition";
 import {Sketched} from "./Sketched";
-import {Routing} from "../Routing/Routing";
+import {Navigation} from "../Navigation/Navigation";
 import {Edge} from "strapi-api/entity/edge/edge";
 import {Node} from "strapi-api/entity/node/node";
 import {CartesianPoint} from "../DevArtifacts/CartesianPoint";
@@ -107,7 +107,7 @@ export const Cartesian = (props:CartesianProps) => {
             >
                 <Sketched />
                 <FacilityBoxes />
-                <Routing
+                <Navigation
                     cartesianTransform={cartesianTransform}
                     nodes={props.nodes}
                     edges={props.edges}

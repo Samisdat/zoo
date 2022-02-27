@@ -1,11 +1,11 @@
 import React, {useEffect, useRef} from 'react';
 import {Edge} from "strapi-api/entity/edge/edge";
 import {makeStyles} from "@material-ui/core/styles";
-import {edgeIdPrefix} from "../../../constants";
+import {edgeIdPrefix} from "../../../../constants";
 import * as d3 from "d3";
-import {Route} from "./Dijkstra";
+import {Route} from "./Graph/Dijkstra";
 import {position} from "polished";
-import {useMap} from "../Context/MapContext";
+import {useMap} from "../../Context/MapContext";
 
 interface CurrentRouteProps {
     edges: Edge[];
@@ -24,7 +24,7 @@ const useStyles = makeStyles({
     }
 });
 
-export const CurrentRoute = ({edges}:CurrentRouteProps) => {
+export const Routing = ({edges}:CurrentRouteProps) => {
 
     const classes = useStyles();
 

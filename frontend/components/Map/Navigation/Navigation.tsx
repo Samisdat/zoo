@@ -1,13 +1,13 @@
 import React, {useEffect, useRef} from 'react';
-import {Nodes} from "./Nodes";
-import {Edges} from "./Edges";
+import {Nodes} from "./Routing/Graph/Nodes";
+import {Edges} from "./Routing/Graph/Edges";
 import {Node} from "strapi-api/entity/node/node";
 import {Edge} from "strapi-api/entity/edge/edge";
-import {Dijkstra, Route, RoutingGraph} from "./Dijkstra";
-import {MapTransformInterface, RoutingInterface, useMap} from "../Context/MapContext";
-import {ResolvePosition} from "./ResolvePosition";
-import {Track} from "./Track";
-import {CurrentRoute} from "./CurrentRoute";
+import {Dijkstra, Route, RoutingGraph} from "./Routing/Graph/Dijkstra";
+import {MapTransformInterface, useMap} from "../Context/MapContext";
+import {ResolvePosition} from "./Position/ResolvePosition";
+import {Track} from "./Position/Track";
+import {Routing} from "./Routing/Routing";
 
 interface RoutingProperties {
     nodes: Node[];
@@ -46,7 +46,7 @@ const createGraph = (edges:Edge[]):RoutingGraph => {
 
 };
 
-export const Routing = (props:RoutingProperties) => {
+export const Navigation = (props:RoutingProperties) => {
 
     const {
         state: {position, routing},
@@ -157,7 +157,7 @@ export const Routing = (props:RoutingProperties) => {
             <ResolvePosition
                 cartesianTransform={props.cartesianTransform}
             />
-            <CurrentRoute
+            <Routing
                 edges={props.edges}
             />
             <Track />

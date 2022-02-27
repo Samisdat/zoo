@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
-import {useMap} from "../Context/MapContext";
+import {useMap} from "../../../Context/MapContext";
 import {Node} from "strapi-api/entity/node/node";
 import {Route} from "./Dijkstra";
 

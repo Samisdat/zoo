@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
-import {PositionInterface, useMap} from "../Context/MapContext";
-import {Route} from "./Dijkstra";
+import {PositionInterface, useMap} from "../../Context/MapContext";
+import {Route} from "../Routing/Graph/Dijkstra";
 
 export const Track = () => {
 

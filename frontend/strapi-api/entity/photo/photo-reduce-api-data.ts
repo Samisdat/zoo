@@ -28,7 +28,7 @@ export const reducePhotoApiData = (apiData: PhotoStrapi):PhotoSpore =>{
 
     const id = apiData.id;
     const title = apiData.title;
-    const copyright = apiData.copyright;
+    const copyright = apiData.copyright || null;
 
     //const animal = apiData.animal?.id) as number || null;
     //const facility = apiData.facility?.id as number|| null;

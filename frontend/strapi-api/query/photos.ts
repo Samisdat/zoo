@@ -19,7 +19,7 @@ export const getPhotoById = async (id: number):Promise<Photo> =>{
 
 export const getPhotos = async ():Promise<Photo[]> =>{
 
-    const requestUrl = getStrapiUrl('/animals')
+    const requestUrl = getStrapiUrl('/photos')
 
     const json = await getJsonFromApi<PhotoStrapi[]>(requestUrl);
 

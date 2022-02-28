@@ -12,6 +12,7 @@ import {getImagePath} from "../../helper/getImagePath";
 import {FocalPointPicker} from "../../components/FocalPoint/Picker";
 import {FocalPointImage} from "../../components/FocalPoint/Image";
 import {Position} from "../../components/Map/Context/MapContext";
+import {getStrapiUrl} from "../../strapi-api/utils/get-strapi-url";
 
 const ReactMarkdown = require('react-markdown')
 const gfm = require('remark-gfm')
@@ -30,8 +31,8 @@ export default function BlogPost(props) {
     );
 
     const [focal, setFocal] = useState<Position>({
-        x:undefined,
-        y:undefined
+        x: photo.focalPoint.x,
+        y: photo.focalPoint.y
     });
 
     const breadcrumbProps:BreadcrumbLink[] = [
@@ -46,9 +47,34 @@ export default function BlogPost(props) {
         },
     ];
 
-    useEffect(()=>{
+    const saveFocal = async (focal:Position) => {
 
-        //console.log(focal)
+        if(
+            photo.focalPoint.x === focal.x &&
+            photo.focalPoint.y === focal.y
+        ){
+            return;
+        }
+
+        const url = getStrapiUrl(`/photos/${photo.id}`);
+
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            redirect: 'follow',
+            body: JSON.stringify(focal) // body data type must match "Content-Type" header
+        });
+
+        return response.json();
+
+    }
+
+
+    useEffect(() =>{
+
+        const response = saveFocal(focal);
 
     },[focal])
 
@@ -60,12 +86,13 @@ export default function BlogPost(props) {
             <h1>{photo.title}</h1>
             <FocalPointPicker
                 photo={photo}
+                point={photo.focalPoint}
                 change={setFocal}
             />
             <FocalPointImage
                 photo={photo}
                 width={400}
-                height={150}
+                height={175}
                 point={focal}
             />
             <FocalPointImage

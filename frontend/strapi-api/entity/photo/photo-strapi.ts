@@ -48,4 +48,6 @@ export interface PhotoStrapi {
     animal?: AnimalStrapi;
     facility?: FacilityStrapi;
     image: ImageStrapi;
+    x: number;
+    y: number;
 }

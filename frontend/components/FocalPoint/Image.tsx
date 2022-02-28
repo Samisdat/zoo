@@ -30,16 +30,7 @@ export const FocalPointImage = ({photo, width, height, point}:FocalPointImagePro
         }
     }
 
-    if(!point.x){
-        point.x = photo.large.width / 2;
-    }
-
-    if(!point.y){
-        point.y = photo.large.height / 2;
-    }
-
-    const left = point.x / photo.large.width * 100;
-    const top = point.y / photo.large.height * 100;
+    const image = photo.large || photo.medium || photo.small;
 
     return (
         <div
@@ -47,8 +38,8 @@ export const FocalPointImage = ({photo, width, height, point}:FocalPointImagePro
             style={{
                 width: `${width}px`,
                 height: `${height}px`,
-                backgroundImage: `url(${getImagePath(photo.large.src)})`,
-                backgroundPosition: `${left}% ${top}%`
+                backgroundImage: `url(${getImagePath(image.src)})`,
+                backgroundPosition: `${point.x}% ${point.y}%`
             }}
         />
 

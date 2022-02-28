@@ -1,14 +1,12 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Photo} from "../../strapi-api/entity/photo/photo";
 import {getImagePath} from "../../helper/getImagePath";
-import Container from "@material-ui/core/Container";
 import {makeStyles} from "@material-ui/core/styles";
 import {Position} from "../Map/Context/MapContext";
 
 interface FocalPointPickerProps{
     photo:Photo,
-    x?:number,
-    y?:number,
+    point:Position,
     change:Function
 }
 
@@ -41,15 +39,17 @@ export const FocalPointPicker = (props:FocalPointPickerProps) => {
 
     const classes = useStyles();
 
-    const scale = 600 / props.photo.large.width;
+    const image = props.photo.large || props.photo.medium || props.photo.small;;
 
-    const height = scale * props.photo.large.height;
+    const scale = 600 / image.width;
 
-    let initialX = props.x | props.photo.large.width / 2;
-    let initialY = props.y | props.photo.large.height / 2;
+    const height = scale * image.height;
 
-    initialX = initialX * scale;
-    initialY = initialY * scale;
+    let initialX = props.point.x;
+    let initialY = props.point.y;
+
+    initialX = initialX * 600 / 100;
+    initialY = initialY * height / 100;
 
     const [dragging, setDragging] = useState<boolean>(false);
 
@@ -99,8 +99,8 @@ export const FocalPointPicker = (props:FocalPointPickerProps) => {
     useEffect(()=>{
 
         props.change({
-            x: point.x / scale,
-            y: point.y / scale
+            x: point.x / 600 * 100,
+            y: point.y / height * 100
         });
 
     },[point]);
@@ -117,7 +117,7 @@ export const FocalPointPicker = (props:FocalPointPickerProps) => {
         >
             <img
                 className={classes.img}
-                src={getImagePath(props.photo.large.src)}
+                src={getImagePath(image.src)}
                 draggable={false}
             />
             <img

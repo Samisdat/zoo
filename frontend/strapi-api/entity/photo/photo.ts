@@ -7,6 +7,7 @@ import {AnimalSpore} from "../animal/animal-spore";
 import {Facility} from "../facility/facility";
 import {FacilitySpore} from "../facility/facility-spore";
 import {Warehouse} from "../../warehouse/warehouse";
+import {Position} from "../../../components/Map/Context/MapContext";
 
 export class Photo extends Entity<PhotoSpore>{
 
@@ -32,6 +33,10 @@ export class Photo extends Entity<PhotoSpore>{
     }
     get small():PhotoSize | null{
         return this.json.small;
+    }
+
+    get focalPoint(): Position | null{
+        return this.json.focalPoint;
     }
 
     get animal(): Animal | number | null{

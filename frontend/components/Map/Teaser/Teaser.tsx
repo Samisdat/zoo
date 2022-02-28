@@ -10,6 +10,9 @@ import {Animal} from "strapi-api/entity/animal/animal";
 import {RoutingInterface, useMap} from "../Context/MapContext";
 import {getImagePath} from "../../../helper/getImagePath";
 import {Icon} from "../../Icon/Icon";
+import {Photo} from "../../../strapi-api/entity/photo/photo";
+import {FocalPointImage} from "../../FocalPoint/Image";
+import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -82,7 +85,7 @@ const useStyles = makeStyles((theme: Theme) =>
 export interface TeaserItem{
     slug: string;
     title: string;
-    photo: string;
+    photo: Photo;
     href: string;
 }
 
@@ -164,7 +167,7 @@ export const Teaser = () => {
 
             const slug = `animal-${animal.slug}`;
             const title = animal.title;
-            const photo = getImagePath(animal.photos[0].medium.src);
+            const photo = animal.photos[0];
             const href = `/tiere/${animal.slug}`;
 
             return {
@@ -181,14 +184,14 @@ export const Teaser = () => {
 
         const slug = `facility-${teaser.slug}`;
         const title = teaser.title;
-        const photo = getImagePath(teaser.photos[0].medium.src);
+        const photo = teaser.photos[0];
         const href = `/anlagen/${teaser.slug}`;
 
         teaserItems.push({
             slug,
             title,
             photo,
-            href
+            href,
         });
     }
 
@@ -224,11 +227,11 @@ export const Teaser = () => {
                                 Math.abs(activeStep - index) <= 2 ? (
                                     <React.Fragment>
                                         <h1 className={classes.title}>{teaserItem.title}</h1>
-                                        <div
-                                            className={classes.img}
-                                            style={{
-                                                backgroundImage: 'url("' + teaserItem.photo + '")'
-                                            }}
+                                        <FocalPointImage
+                                            photo={teaserItem.photo}
+                                            width={400}
+                                            height={175}
+                                            point={teaserItem.photo.focalPoint}
                                         />
                                     </React.Fragment>
                             ) : null}

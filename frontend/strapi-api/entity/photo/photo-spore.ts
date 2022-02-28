@@ -1,3 +1,5 @@
+import {Position} from "../../../components/Map/Context/MapContext";
+
 export interface PhotoSize{
     width: number;
     height: number;
@@ -14,4 +16,5 @@ export interface PhotoSpore{
     small: PhotoSize | null;
     medium: PhotoSize | null;
     large: PhotoSize | null;
+    focalPoint: Position | null;
 }

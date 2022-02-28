@@ -5,6 +5,7 @@ import {AnimalSpore} from "../animal/animal-spore";
 import {AnimalStrapi} from "../animal/animal-strapi-interface";
 import {FacilityStrapi} from "../facility/facility-strapi";
 import {facilityReduceApiData} from "../facility/facility-reduce-api-data";
+import {Position} from "../../../components/Map/Context/MapContext";
 
 const sizeNames = [
     'thumbnail',
@@ -64,6 +65,20 @@ export const reducePhotoApiData = (apiData: PhotoStrapi):PhotoSpore =>{
 
     }
 
+    if(!apiData.x){
+        apiData.x = 50;
+    }
+
+    if(!apiData.y){
+        apiData.y = 50;
+    }
+
+    let focalPoint: Position = {
+        x: apiData.x,
+        y: apiData.y,
+    };
+
+
     const photoSpore: PhotoSpore = {
         id,
         title,
@@ -74,6 +89,7 @@ export const reducePhotoApiData = (apiData: PhotoStrapi):PhotoSpore =>{
         small:sizes.small,
         medium:sizes.medium,
         large:sizes.large,
+        focalPoint
     };
 
     let animal = undefined;

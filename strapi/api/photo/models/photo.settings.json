@@ -26,7 +26,8 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": false
+      "required": false,
+      "pluginOptions": {}
     },
     "animal": {
       "via": "photos",
@@ -50,6 +51,12 @@
     "post": {
       "via": "photos",
       "model": "post"
+    },
+    "x": {
+      "type": "float"
+    },
+    "y": {
+      "type": "float"
     }
   }
 }

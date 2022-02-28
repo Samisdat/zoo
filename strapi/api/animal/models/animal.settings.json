@@ -78,8 +78,8 @@
       "dominant": true
     },
     "photos": {
-      "collection": "photo",
-      "via": "animal"
+      "via": "animal",
+      "collection": "photo"
     },
     "posts": {
       "collection": "post",

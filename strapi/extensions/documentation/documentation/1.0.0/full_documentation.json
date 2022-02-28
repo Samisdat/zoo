@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "02/21/2022 11:58:21 PM"
+    "x-generation-date": "02/28/2022 10:21:37 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7139,6 +7139,12 @@
                 "post": {
                   "type": "string"
                 },
+                "x": {
+                  "type": "number"
+                },
+                "y": {
+                  "type": "number"
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -7762,6 +7768,12 @@
                 },
                 "post": {
                   "type": "string"
+                },
+                "x": {
+                  "type": "number"
+                },
+                "y": {
+                  "type": "number"
                 },
                 "published_at": {
                   "type": "string"
@@ -8395,6 +8407,12 @@
                 "post": {
                   "type": "string"
                 },
+                "x": {
+                  "type": "number"
+                },
+                "y": {
+                  "type": "number"
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -9010,6 +9028,12 @@
               }
             }
           },
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -9042,6 +9066,12 @@
           },
           "post": {
             "type": "string"
+          },
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
           },
           "published_at": {
             "type": "string",
@@ -9346,6 +9376,12 @@
                 },
                 "post": {
                   "type": "string"
+                },
+                "x": {
+                  "type": "number"
+                },
+                "y": {
+                  "type": "number"
                 },
                 "published_at": {
                   "type": "string"

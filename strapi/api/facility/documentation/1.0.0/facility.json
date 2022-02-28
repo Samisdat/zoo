@@ -692,6 +692,12 @@
                 "post": {
                   "type": "string"
                 },
+                "x": {
+                  "type": "number"
+                },
+                "y": {
+                  "type": "number"
+                },
                 "published_at": {
                   "type": "string"
                 },

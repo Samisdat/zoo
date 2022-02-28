@@ -38,8 +38,8 @@
       "dominant": true
     },
     "photos": {
-      "collection": "photo",
-      "via": "post"
+      "via": "post",
+      "collection": "photo"
     }
   }
 }

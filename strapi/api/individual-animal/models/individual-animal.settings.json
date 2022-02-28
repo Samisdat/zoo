@@ -23,8 +23,8 @@
       "targetField": "name"
     },
     "photos": {
-      "collection": "photo",
-      "via": "individual_animal"
+      "via": "individual_animal",
+      "collection": "photo"
     },
     "body": {
       "type": "richtext"

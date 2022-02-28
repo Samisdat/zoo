@@ -24,7 +24,7 @@ const useStyles = makeStyles({
         position: 'absolute',
         width:'20px',
         height:'20px',
-        background: 'rgba(0,0,0,0.3)',
+        background: 'rgba(200,0,0,0.3)',
         border: '1px solid black',
         borderRadius: '100px',
         cursor: 'move'

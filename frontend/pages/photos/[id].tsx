@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Moment from "react-moment";
 import {getPostBySlug, getPosts} from "strapi-api/query/posts";
 import {Post} from "strapi-api/entity/post/post";
@@ -10,9 +10,12 @@ import {getPhotoById, getPhotos} from "../../strapi-api/query/photos";
 import {Photo} from "../../strapi-api/entity/photo/photo";
 import {getImagePath} from "../../helper/getImagePath";
 import {FocalPointPicker} from "../../components/FocalPoint/Picker";
+import {FocalPointImage} from "../../components/FocalPoint/Image";
+import {Position} from "../../components/Map/Context/MapContext";
 
 const ReactMarkdown = require('react-markdown')
 const gfm = require('remark-gfm')
+
 
 export default function BlogPost(props) {
 
@@ -26,7 +29,10 @@ export default function BlogPost(props) {
         parseInt(id as string, 10)
     );
 
-    console.log(photo)
+    const [focal, setFocal] = useState<Position>({
+        x:undefined,
+        y:undefined
+    });
 
     const breadcrumbProps:BreadcrumbLink[] = [
         {
@@ -40,6 +46,12 @@ export default function BlogPost(props) {
         },
     ];
 
+    useEffect(()=>{
+
+        //console.log(focal)
+
+    },[focal])
+
     return (
         <Container>
             <Breadcrumb
@@ -48,7 +60,40 @@ export default function BlogPost(props) {
             <h1>{photo.title}</h1>
             <FocalPointPicker
                 photo={photo}
+                change={setFocal}
             />
+            <FocalPointImage
+                photo={photo}
+                width={400}
+                height={150}
+                point={focal}
+            />
+            <FocalPointImage
+                photo={photo}
+                width={200}
+                height={200}
+                point={focal}
+            />
+            <FocalPointImage
+                photo={photo}
+                width={200}
+                height={400}
+                point={focal}
+            />
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+            <p>Lorem Ipsum</p>
+
         </Container>
     );
 }

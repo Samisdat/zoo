@@ -3,11 +3,13 @@ import {Photo} from "../../strapi-api/entity/photo/photo";
 import {getImagePath} from "../../helper/getImagePath";
 import Container from "@material-ui/core/Container";
 import {makeStyles} from "@material-ui/core/styles";
+import {Position} from "../Map/Context/MapContext";
 
 interface FocalPointPickerProps{
     photo:Photo,
     x?:number,
-    y?:number
+    y?:number,
+    change:Function
 }
 
 const useStyles = makeStyles({
@@ -27,7 +29,9 @@ const useStyles = makeStyles({
         background: 'rgba(200,0,0,0.3)',
         border: '1px solid black',
         borderRadius: '100px',
-        cursor: 'move'
+        cursor: 'move',
+        marginLeft: '-10px',
+        marginTop: '-10px',
     }
 });
 
@@ -49,12 +53,12 @@ export const FocalPointPicker = (props:FocalPointPickerProps) => {
 
     const [dragging, setDragging] = useState<boolean>(false);
 
-    const [x, setX] = useState<number>(initialX);
-    const [y, setY] = useState<number>(initialY);
+    const [point, setPoint] = useState<Position>({
+        x: initialX,
+        y: initialY
+    });
 
     const handleMove = (evt:React.MouseEvent<HTMLImageElement>) => {
-
-        //console.log(dragging, offsetX, offsetY)
 
         if(!dragging){
             return;
@@ -62,16 +66,46 @@ export const FocalPointPicker = (props:FocalPointPickerProps) => {
 
         const rect = (ref.current as HTMLElement).getBoundingClientRect();
 
-        setX(evt.clientX - rect.left);
-        setY(evt.clientY - rect.top);
+        let x = evt.clientX - rect.left;
+
+        if(0 > x ){
+            x = 0
+        }
+        else if(600 < x ){
+            x = 600
+        }
+
+        let y = evt.clientY - rect.top;
+
+        if(0 > y ){
+            y = 0
+        }
+        else if(height < y ){
+            y = height
+        }
+
+
+        setPoint({
+            x,
+            y
+        });
+
     };
 
     useEffect(()=>{
-        console.log(dragging)
+        //console.log(dragging)
     },[dragging]);
 
+    useEffect(()=>{
+
+        props.change({
+            x: point.x / scale,
+            y: point.y / scale
+        });
+
+    },[point]);
+
     return (
-        <React.Fragment>
         <div
             ref={ref}
             className={classes.wrap}
@@ -89,8 +123,8 @@ export const FocalPointPicker = (props:FocalPointPickerProps) => {
             <img
                 className={classes.picker}
                 style={{
-                    top: `${y}px`,
-                    left: `${x}px`
+                    top: `${point.y}px`,
+                    left: `${point.x}px`
                 }}
                 src={'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='}
                 draggable={false}
@@ -99,19 +133,5 @@ export const FocalPointPicker = (props:FocalPointPickerProps) => {
             />
 
         </div>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-        </React.Fragment>
     );
 }

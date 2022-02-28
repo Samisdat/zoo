@@ -93,10 +93,6 @@ export const FocalPointPicker = (props:FocalPointPickerProps) => {
     };
 
     useEffect(()=>{
-        //console.log(dragging)
-    },[dragging]);
-
-    useEffect(()=>{
 
         props.change({
             x: point.x / 600 * 100,

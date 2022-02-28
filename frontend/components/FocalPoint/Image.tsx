@@ -1,7 +1,6 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React from 'react';
 import {Photo} from "../../strapi-api/entity/photo/photo";
 import {getImagePath} from "../../helper/getImagePath";
-import Container from "@material-ui/core/Container";
 import {makeStyles} from "@material-ui/core/styles";
 import {Position} from "../Map/Context/MapContext";
 

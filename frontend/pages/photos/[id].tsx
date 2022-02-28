@@ -1,22 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import Moment from "react-moment";
-import {getPostBySlug, getPosts} from "strapi-api/query/posts";
-import {Post} from "strapi-api/entity/post/post";
 import {Warehouse} from "strapi-api/warehouse/warehouse";
 import {useRouter} from "next/router";
 import {Breadcrumb, BreadcrumbLink, BreadcrumbProps} from "components/Navigation/Breadcrumb";
 import Container from "@material-ui/core/Container";
 import {getPhotoById, getPhotos} from "../../strapi-api/query/photos";
 import {Photo} from "../../strapi-api/entity/photo/photo";
-import {getImagePath} from "../../helper/getImagePath";
 import {FocalPointPicker} from "../../components/FocalPoint/Picker";
 import {FocalPointImage} from "../../components/FocalPoint/Image";
 import {Position} from "../../components/Map/Context/MapContext";
 import {getStrapiUrl} from "../../strapi-api/utils/get-strapi-url";
-
-const ReactMarkdown = require('react-markdown')
-const gfm = require('remark-gfm')
-
 
 export default function BlogPost(props) {
 
@@ -71,7 +63,6 @@ export default function BlogPost(props) {
 
     }
 
-
     useEffect(() =>{
 
         const response = saveFocal(focal);
@@ -107,20 +98,6 @@ export default function BlogPost(props) {
                 height={400}
                 point={focal}
             />
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-
         </Container>
     );
 }

@@ -48,8 +48,7 @@ export const FocalPointPicker = (props:FocalPointPickerProps) => {
     initialY = initialY * scale;
 
     const [dragging, setDragging] = useState<boolean>(false);
-    const [offsetX, setOffsetX] = useState<number>(undefined);
-    const [offsetY, setOffsetY] = useState<number>(undefined);
+
     const [x, setX] = useState<number>(initialX);
     const [y, setY] = useState<number>(initialY);
 
@@ -57,26 +56,19 @@ export const FocalPointPicker = (props:FocalPointPickerProps) => {
 
         //console.log(dragging, offsetX, offsetY)
 
-        if(!dragging || !offsetX || !offsetY){
+        if(!dragging){
             return;
         }
 
-        setX(evt.clientX - offsetX);
-        setY(evt.clientY - offsetY);
+        const rect = (ref.current as HTMLElement).getBoundingClientRect();
+
+        setX(evt.clientX - rect.left);
+        setY(evt.clientY - rect.top);
     };
 
     useEffect(()=>{
         console.log(dragging)
     },[dragging]);
-
-    useEffect(()=>{
-
-        const rect = (ref.current as HTMLElement).getBoundingClientRect();
-
-        setOffsetX(rect.left)
-        setOffsetY(rect.top)
-
-    },[])
 
     return (
         <React.Fragment>

@@ -5,6 +5,7 @@ import {ClusteredMarkers} from "./ClusteredMarkers";
 import {Marker} from "strapi-api/entity/marker/marker";
 
 export interface MarkersProps {
+    cartesianScale: number;
     markers:Marker[];
 };
 
@@ -39,10 +40,11 @@ const getDistance = (path:GeoPath, markerA:Marker, markerB:Marker) => {
 export const Markers = (props:MarkersProps) => {
 
     const {
-        state: {path, transform},
+        state: {path, transform, zoom},
     } = useMap();
 
-    const maxRadius = 25;
+    const maxRadiusRaw = 30;
+    const minRadiusRaw = 2;
 
     const markersGroup = useRef(null);
 
@@ -69,23 +71,28 @@ export const Markers = (props:MarkersProps) => {
     }
 
     const [clusters, setClusters] = useState<ClusterInterface[]>(initialClusters);
-    const [radius, setRadius] = useState<number>(maxRadius);
+    const [radius, setRadius] = useState<number>(maxRadiusRaw);
 
     useEffect(() => {
 
+        if(! props.cartesianScale){
+            return;
+        }
         if(! path){
             return;
         }
 
-        //let radius = maxRadius  / transform.k;
-        let radius = maxRadius  / 1
+        const maxRadius = Math.round(maxRadiusRaw / props.cartesianScale);
+        const minRadius = Math.round(minRadiusRaw / props.cartesianScale);
+
+        let radius = maxRadius / zoom;
 
         if(maxRadius < radius){
             radius = maxRadius;
         }
 
-        if(2 > radius){
-            radius = 2;
+        if(minRadius > radius){
+            radius = minRadius;
         }
 
         setRadius(radius);
@@ -262,10 +269,10 @@ export const Markers = (props:MarkersProps) => {
 
             cluster.contains = cluster.contains.sort((a, b)=>{
 
-                if (a.priority > b.priority) {
+                if (a.priority < b.priority) {
                     return 1;
                 }
-                if (a.priority < b.priority) {
+                if (a.priority > b.priority) {
                     return -1;
                 }
 
@@ -289,7 +296,7 @@ export const Markers = (props:MarkersProps) => {
 
         setClusters(nextClusters);
 
-    },[]);
+    },[zoom]);
     
     return (
         <g ref={markersGroup}>

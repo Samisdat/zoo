@@ -13,7 +13,7 @@ interface ZoomAndPanProps {}
 export const ZoomAndPan: FunctionComponent<ZoomAndPanProps> = ({children}) => {
 
     const {
-        state: {path, focus, transform, ref, dimension, center, projection, position},
+        state: {path, focus, transform, ref, dimension, center},
         dispatch
     } = useMap();
 
@@ -41,6 +41,12 @@ export const ZoomAndPan: FunctionComponent<ZoomAndPanProps> = ({children}) => {
                 );
 
                 setZoom(event.transform.k);
+
+                dispatch({
+                    type: 'SET_ZOOM',
+                    zoom: event.transform.k
+                });
+
 
             })
             .on('end', (event) => {

@@ -86,8 +86,10 @@ export const Cartesian = (props:CartesianProps) => {
 
         const rotate = `rotate(${angle} ${center.x} ${center.y})`;
 
+        const transform = `translate(${x}, ${y}) scale(${k}) ${rotate}`;
+
         d3.select(cartesianRef.current)
-            .attr("transform", "translate(" + x + "," + y + ") scale(" + k +  ") " + rotate)
+            .attr("transform", transform)
             .attr('visibility', 'visible')
             .attr('opacity', '1')
         ;
@@ -97,7 +99,7 @@ export const Cartesian = (props:CartesianProps) => {
     useEffect(() => {
         scaleToBound();
     },[path]);
-
+    
     return (
         <React.Fragment>
             <g ref={boundingRef}></g>
@@ -112,8 +114,8 @@ export const Cartesian = (props:CartesianProps) => {
                     nodes={props.nodes}
                     edges={props.edges}
                 />
-
                 <Markers
+                    cartesianScale={cartesianTransform?.k}
                     markers={props.markers}
                 />
 

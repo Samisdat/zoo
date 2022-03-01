@@ -109,6 +109,10 @@ type Action =
     {
         type: 'SET_POINT_EXCHANGE',
         exchange: PointExchangeInterface
+    } |
+    {
+        type: 'SET_ZOOM',
+        zoom: number
     }
 ;
 type Dispatch = (action: Action) => void;
@@ -118,9 +122,10 @@ type State = {
     path:GeoPath,
     projection:GeoProjection,
     transform:MapTransformInterface,
+    zoom:number;
     focus?:Facility
     center?:any[]
-    teaser?:Facility
+    teaser?:Facility;
     position_raw?: PositionRawInterface,
     position?: PositionInterface,
     routing?: RoutingInterface,
@@ -243,6 +248,7 @@ function mapReducer(state: State, action: Action):State {
             };
 
         }
+
         case 'SET_POINT_EXCHANGE': {
 
             const {exchange} = action;
@@ -254,6 +260,16 @@ function mapReducer(state: State, action: Action):State {
 
         }
 
+        case 'SET_ZOOM': {
+
+            const {zoom} = action;
+
+            return {
+                ...state,
+                zoom,
+            };
+
+        }
 
         default: {
             throw new Error(`Unhandled action type: ${(action as any).type}`)
@@ -278,6 +294,7 @@ function MapProvider({children}: MapProviderProps) {
         path: undefined,
         projection: undefined,
         transform: mapTransformDefault,
+        zoom: mapTransformDefault.k
     });
     const value = {state, dispatch};
 

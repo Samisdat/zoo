@@ -117,9 +117,9 @@ export const Map = ({fullsize, markers, facilities, nodes, edges}:MapProps) => {
                         edges={edges}
                         markers={markers}
                     />
-
+                    {/*
                     <GeoPoint />
-
+                    */}
                     <GPXViewer/>
 
                 </ZoomAndPan>

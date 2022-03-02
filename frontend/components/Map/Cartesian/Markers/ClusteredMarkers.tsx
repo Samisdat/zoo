@@ -38,15 +38,13 @@ export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
             return;
         }
 
-        console.log('zoom and center to d.contains')
-
-        const slugs = d.contains.map((marker)=>{
+        const focus = d.contains.map((marker)=>{
             return marker.slug;
         })
 
         dispatch({
-            type: 'SET_ZOOM_AND_PAN',
-            center: slugs,
+            type: 'SET_FOCUS',
+            focus,
         });
 
     }
@@ -112,8 +110,8 @@ export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
 
                 const scale = props.radius / 512;
 
-                const x = d.contains[0].x + props.radius / 4;
-                const y = d.contains[0].y + props.radius / 4;
+                const x = d.contains[0].x - props.radius / 4 - props.radius;
+                const y = d.contains[0].y - props.radius / 4 - props.radius;
 
                 const transform = "translate(" + x + "," + y + ") scale(" + scale +  ")";
 

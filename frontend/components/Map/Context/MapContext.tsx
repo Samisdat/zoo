@@ -92,7 +92,7 @@ type Action =
     } |
     {
         type: 'SET_FOCUS',
-        focus: Facility,
+        focus: string[],
     } |
     {
         type: 'SET_TEASER',
@@ -123,7 +123,7 @@ type State = {
     projection:GeoProjection,
     transform:MapTransformInterface,
     zoom:number;
-    focus?:Facility
+    focus?:string[]
     center?:any[]
     teaser?:Facility;
     position_raw?: PositionRawInterface,

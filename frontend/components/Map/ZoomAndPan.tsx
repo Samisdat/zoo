@@ -1,7 +1,6 @@
 import * as d3 from 'd3';
 import React, {useEffect, useRef, useState, FunctionComponent} from "react";
 import {MapTransformInterface, useMap} from "./Context/MapContext";
-import {centerToFeatureCollection} from "../Distribution/Detail";
 
 interface ZoomDependencies {
     mapSvg:any,
@@ -144,11 +143,11 @@ export const ZoomAndPan: FunctionComponent<ZoomAndPanProps> = ({children}) => {
             return;
         }
 
-        if(undefined === center){
+        if(undefined === focus){
             return;
         }
 
-        const rects = center.map((slug)=>{
+        const rects = focus.map((slug)=>{
 
             const rect = d3.select(`#box-${slug}`).node();
 
@@ -158,15 +157,11 @@ export const ZoomAndPan: FunctionComponent<ZoomAndPanProps> = ({children}) => {
 
         });
 
-        console.log(rects);
-
         const left = Math.min(...rects.map((rect)=>{
 
             return rect.x;
 
         }));
-
-        console.log(left)
 
         const right = Math.max(...rects.map((rect)=>{
 
@@ -174,15 +169,11 @@ export const ZoomAndPan: FunctionComponent<ZoomAndPanProps> = ({children}) => {
 
         }));
 
-        console.log(right)
-
         const top = Math.min(...rects.map((rect)=>{
 
             return rect.y;
 
         }));
-
-        console.log(top)
 
         const bottom = Math.max(...rects.map((rect)=>{
 
@@ -190,19 +181,17 @@ export const ZoomAndPan: FunctionComponent<ZoomAndPanProps> = ({children}) => {
 
         }));
 
-        console.log(bottom)
-
-        const _x0 = (left - transform.x) / transform.k;
-        const _y0 = (top - transform.y) / transform.k;
-        const _x1 = (right - transform.x) / transform.k;
-        const _y1 = (bottom - transform.y) / transform.k;
+        const x0 = (left - transform.x) / transform.k;
+        const y0 = (top - transform.y) / transform.k;
+        const x1 = (right - transform.x) / transform.k;
+        const y1 = (bottom - transform.y) / transform.k;
 
         zoomDependencies.mapSvg.transition().delay(300).duration(750).call(
             zoomDependencies.zooming.transform as any,
             d3.zoomIdentity
                 .translate(dimension.width / 2, (dimension.height - 200) / 2)
-                .scale(Math.min(8, 0.9 / Math.max((_x1 - _x0) / dimension.width, (_y1 - _y0) / dimension.height)))
-                .translate(-(_x0 + _x1) / 2, -(_y0 + _y1) / 2)
+                .scale(Math.min(8, 0.9 / Math.max((x1 - x0) / dimension.width, (y1 - y0) / dimension.height)))
+                .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
         )
             .on("end", ()=>{
 
@@ -212,7 +201,7 @@ export const ZoomAndPan: FunctionComponent<ZoomAndPanProps> = ({children}) => {
 
 
 
-
+        /*
         return;
 
         const centerOfEnclosure = centerToFeatureCollection(center);
@@ -237,8 +226,8 @@ export const ZoomAndPan: FunctionComponent<ZoomAndPanProps> = ({children}) => {
 
 
             });
-
-    }, [center, path])
+            */
+    }, [focus, path])
 
     return (
         <g

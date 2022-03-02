@@ -39,12 +39,15 @@ export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
         }
 
         console.log('zoom and center to d.contains')
-        /*
+
+        const slugs = d.contains.map((marker)=>{
+            return marker.slug;
+        })
+
         dispatch({
             type: 'SET_ZOOM_AND_PAN',
-            center: d.contains,
+            center: slugs,
         });
-         */
 
     }
 

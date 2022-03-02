@@ -128,9 +128,10 @@ export default function SearchDialog({facilities}:SearchDialogProperties) {
         });
 
         dispatch({
-            type: 'SET_FOCUS',
-            focus
+            type: 'SET_ZOOM_AND_PAN',
+            center: [itemKey]
         });
+
 
         dispatch({
             type: 'SET_TEASER',

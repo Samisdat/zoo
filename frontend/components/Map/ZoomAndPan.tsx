@@ -18,7 +18,6 @@ export const ZoomAndPan: FunctionComponent<ZoomAndPanProps> = ({children}) => {
     } = useMap();
 
     const map = useRef(null);
-    const debug = useRef(null);
 
     const [zoomDependencies, setZoomDependencies] = useState<ZoomDependencies>({
         mapSvg:undefined,
@@ -135,50 +134,6 @@ export const ZoomAndPan: FunctionComponent<ZoomAndPanProps> = ({children}) => {
 
     }, [path]);
 
-    useEffect(() => {
-
-        //console.log(transform.k)
-
-    }, [transform.k]);
-
-    useEffect(()=>{
-
-        if (!path) {
-            return;
-        }
-
-        if(undefined === zoomDependencies.mapSvg || undefined === zoomDependencies.zooming){
-            return;
-        }
-
-        if(!focus){
-            return;
-        }
-
-        const rect = d3.select(`#box-${focus.slug}`).node();
-
-        const bbox = (rect as Element).getBoundingClientRect();
-
-        const x0 = (bbox.left - transform.x) / transform.k;
-        const y0 = (bbox.top - transform.y) / transform.k;
-        const x1 = x0 + bbox.width / transform.k;
-        const y1 = y0 + bbox.height / transform.k;
-
-        zoomDependencies.mapSvg.transition().delay(300).duration(750).call(
-            zoomDependencies.zooming.transform as any,
-            d3.zoomIdentity
-                .translate(dimension.width / 2, (dimension.height - 200) / 2)
-                .scale(Math.min(8, 0.9 / Math.max((x1 - x0) / dimension.width, (y1 - y0) / dimension.height)))
-                .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
-        )
-        .on("end", ()=>{
-
-            console.log('zoomend')
-
-        });
-
-    }, [focus, path])
-
     useEffect(()=>{
 
         if (!path) {
@@ -242,22 +197,6 @@ export const ZoomAndPan: FunctionComponent<ZoomAndPanProps> = ({children}) => {
         const _x1 = (right - transform.x) / transform.k;
         const _y1 = (bottom - transform.y) / transform.k;
 
-        /* */
-        const rect = d3.select(debug.current).append('rect');
-
-        rect.attr('x', _x0)
-        rect.attr('y', _y0)
-        rect.attr('width', (right - left) / transform.k)
-        rect.attr('height', (bottom - top) / transform.k)
-
-        rect.attr('fill', '#a9d3df')
-        rect.attr('stroke', '#000')
-        rect.attr('strokeWidth', '1.67px')
-        rect.attr('opacity', 0.5)
-
-        console.log(rect)
-        /* */
-
         zoomDependencies.mapSvg.transition().delay(300).duration(750).call(
             zoomDependencies.zooming.transform as any,
             d3.zoomIdentity
@@ -307,11 +246,6 @@ export const ZoomAndPan: FunctionComponent<ZoomAndPanProps> = ({children}) => {
             ref={map}
         >
             {children}
-            {/* */}
-            <g
-                ref={debug}
-            />
-            {/* */}
         </g>
     );
 

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {MouseEventHandler} from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Fab from '@mui/material/Fab';
 
-import {Logo} from "./Logo";
+import {Logo} from "../Logo";
 
 import Dialog from '@mui/material/Dialog';
 import AppBar from '@mui/material/AppBar';
@@ -14,10 +14,11 @@ import { TransitionProps } from '@mui/material/transitions';
 
 import {
     NavigationList,
-} from "../NavigationList/NavigationList";
+} from "../../NavigationList/NavigationList";
 
-import {NavigationListGroupInterface} from "../NavigationList/NavigationListInterfaces";
-import {Icon} from "../Icon/Icon";
+import {NavigationListGroupInterface} from "../../NavigationList/NavigationListInterfaces";
+import {Icon} from "../../Icon/Icon";
+import {NavigationMobileClosed} from "./Closed";
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
@@ -63,38 +64,21 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const NavigationMobile = (props) =>{
+interface NavigationMobileOpenedProps{
+    categories: NavigationListGroupInterface[];
+    open: boolean;
+    handleClose: MouseEventHandler;
+}
 
-    const navigationCategories = props.categories as NavigationListGroupInterface[];
+export const NavigationMobileOpened = ({categories, open, handleClose}:NavigationMobileOpenedProps) =>{
 
     const classes = useStyles();
 
-    const [open, setOpen] = React.useState(false);
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
-
     return (
         <React.Fragment>
-
-                <Fab
-                    color="primary"
-                    className={classes.fab}
-                    onClick={handleClickOpen}
-                >
-                    <Icon
-                        icon={'menu'}
-                        size={'lg'}
-                    />
-                </Fab>
         <Dialog
             fullScreen
-            open={/*true*/open}
+            open={open}
             onClose={handleClose}
             TransitionComponent={Transition}
         >
@@ -115,7 +99,7 @@ export const NavigationMobile = (props) =>{
                 </AppBar>
 
             <NavigationList
-                groups={navigationCategories}
+                groups={categories}
             />
 
             <Fab
@@ -134,7 +118,7 @@ export const NavigationMobile = (props) =>{
             </Fab>
 
         </Dialog>
-        <Logo />
+
         </React.Fragment>
     );
 }

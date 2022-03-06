@@ -1,8 +1,7 @@
 import React from 'react';
-import {useRouter} from "next/router";
 
 import {useViewport} from "../viewport/useViewport";
-import {NavigationMobile} from "./NavigationMobile";
+import {NavigationMobile} from "./Mobile/index";
 import {NavigationLarge} from "./NavigationLarge";
 import {NavigationListGroupInterface} from "../NavigationList/NavigationListInterfaces";
 
@@ -10,22 +9,18 @@ interface NavigationProps{
     categories:NavigationListGroupInterface[]
 }
 
-export const Navigation = (props:NavigationProps) => {
+export const Navigation = ({categories}:NavigationProps) => {
 
     const {breakpoint } = useViewport();
 
-    const router = useRouter();
-
     if('small' === breakpoint){
         return <NavigationMobile
-            router={router}
-            {...props}
+            categories={categories}
         />
     }
 
     return <NavigationLarge
-        router={router}
-        {...props}
+        categories={categories}
     />
 
 }

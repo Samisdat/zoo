@@ -1,25 +1,32 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import {Logo} from "./Logo";
-import {Fab, Link} from "@material-ui/core";
-import Dialog from '@material-ui/core/Dialog';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
+import Fab from '@mui/material/Fab';
 
-import Slide from '@material-ui/core/Slide';
-import { TransitionProps } from '@material-ui/core/transitions';
+import {Logo} from "./Logo";
+
+import Dialog from '@mui/material/Dialog';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Slide from '@mui/material/Slide';
+import { TransitionProps } from '@mui/material/transitions';
+
 import {
     NavigationList,
 } from "../NavigationList/NavigationList";
 
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBars} from "@fortawesome/free-solid-svg-icons/faBars";
-import {faTimes} from "@fortawesome/free-solid-svg-icons/faTimes";
-
 import {NavigationListGroupInterface} from "../NavigationList/NavigationListInterfaces";
 import {Icon} from "../Icon/Icon";
+
+const Transition = React.forwardRef(function Transition(
+    props: TransitionProps & {
+        children: React.ReactElement<any, any>;
+    },
+    ref: React.Ref<unknown>,
+) {
+    return <Slide direction="up" ref={ref} {...props} />;
+});
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -56,14 +63,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-const Transition = React.forwardRef(function Transition(
-    props: TransitionProps & { children?: React.ReactElement },
-    ref: React.Ref<unknown>,
-) {
-    return <Slide direction="up" ref={ref} {...props} />;
-});
-
-export default function NavigationMobile(props) {
+export const NavigationMobile = (props) =>{
 
     const navigationCategories = props.categories as NavigationListGroupInterface[];
 
@@ -133,7 +133,7 @@ export default function NavigationMobile(props) {
 
             </Fab>
 
-            </Dialog>
+        </Dialog>
         <Logo />
         </React.Fragment>
     );

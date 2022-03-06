@@ -1,26 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import {ThemeProvider} from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import {makeStyles} from '@material-ui/core/styles';
-import createPersistedState from 'use-persisted-state';
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import Container from '@mui/material/Container';
 
-import { createTheme } from '@material-ui/core/styles';
 import {ViewportProvider} from "components/viewport/ViewportProvider";
 import {Navigation} from "components/Navigation/Navigation";
 import {navigationCategories} from "components/Navigation/NavigationCategory";
-import Container from "@material-ui/core/Container";
 
 const theme = createTheme({
     palette: {
         primary: {
-            // Purple and green play nicely together.
             main: '#00a800',
             light: '#f00'
         },
         secondary: {
-            // This is green.A700 as hex.
             main: '#11cb5f',
         },
         background:{
@@ -29,27 +24,21 @@ const theme = createTheme({
     },
 });
 
-
-
-const useNavigationState = createPersistedState('navigation');
-const useStyles = makeStyles((theme) => {
-
-    return ({
-        offset: theme.mixins.toolbar,
-        content: {
-            position: 'relative',
-            width: '100%',
-        }
-    });
-
-});
+const Content = styled('div')({
+    position: 'relative',
+    width: '100%',
+    background:'green'
+})
 
 const LayoutContainer = (props) => {
 
     const {router, children} = props;
 
     if('/' === router.pathname){
-        return (<React.Fragment>{children}</React.Fragment>);
+        return (
+            <React.Fragment>
+                {children}
+            </React.Fragment>);
     }
 
     return (
@@ -67,6 +56,7 @@ export default function ZooWuppertal(props) {
 
     const {Component, pageProps, router} = props;
 
+
     React.useEffect(() => {
 
         // Remove the server-side injected CSS.
@@ -77,7 +67,6 @@ export default function ZooWuppertal(props) {
 
     }, []);
 
-    const classes = useStyles();
     return (
         <ViewportProvider>
         <ThemeProvider theme={theme}>
@@ -94,11 +83,12 @@ export default function ZooWuppertal(props) {
                     router={router}
                     {...props}
                 >
-                    <div className={classes.content}>
+                    <Content>
                         <Component
                             {...pageProps}
                         />
-                    </div>
+
+                    </Content>
                 </LayoutContainer>
         </ThemeProvider>
         </ViewportProvider>

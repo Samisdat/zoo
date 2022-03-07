@@ -1,6 +1,7 @@
 import React from 'react';
-import { useRouter } from 'next/router'
-import Typography from "@material-ui/core/Typography";
+import { useRouter } from 'next/router';
+import Typography from '@mui/material/Typography';
+
 import {IndividualAnimal} from "strapi-api/entity/individual-animal/individual-animal";
 import {Warehouse} from "strapi-api/warehouse/warehouse";
 import {

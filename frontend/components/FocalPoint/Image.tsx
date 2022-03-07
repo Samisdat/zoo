@@ -1,8 +1,8 @@
 import React from 'react';
 import {Photo} from "../../strapi-api/entity/photo/photo";
 import {getImagePath} from "../../helper/getImagePath";
-import {makeStyles} from "@material-ui/core/styles";
 import {Position} from "../Map/Context/MapContext";
+import {styled} from "@mui/material/styles";
 
 interface FocalPointImageProps{
     photo:Photo;
@@ -11,16 +11,12 @@ interface FocalPointImageProps{
     point?:Position;
 }
 
-const useStyles = makeStyles({
-    img:{
-        overflow: 'hidden',
-        backgroundSize: 'cover'
-    },
+const Img = styled('div')({
+    overflow: 'hidden',
+    backgroundSize: 'cover'
 });
 
 export const FocalPointImage = ({photo, width, height, point}:FocalPointImageProps) => {
-
-    const classes = useStyles();
 
     if(!point){
         point = {
@@ -32,8 +28,7 @@ export const FocalPointImage = ({photo, width, height, point}:FocalPointImagePro
     const image = photo.large || photo.medium || photo.small;
 
     return (
-        <div
-            className={classes.img}
+        <Img
             style={{
                 width: `${width}px`,
                 height: `${height}px`,

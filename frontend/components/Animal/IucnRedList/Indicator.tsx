@@ -1,32 +1,23 @@
 import React, {useEffect, useState} from 'react';
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import {Tooltip} from "@material-ui/core";
+import Tooltip from '@mui/material/Tooltip';
 import {catText} from "./index";
-const useStyles = makeStyles((theme: Theme) => {
+import styled from "@mui/system/styled";
 
-    return createStyles({
-        iucnIndicator:{
-            position: 'absolute',
-            top:'0px',
-            left:'-66px',
-            width:'60px',
-            height:'60px',
-            background: 'red',
-            border:'3px solid #fff',
-            borderRadius: '100px',
-            borderTopRightRadius: '0',
-            lineHeight: '60px',
-            textAlign: 'center',
-            fontWeight: 'bold',
-            color:'#fff',
-            fontSize:'16px',
-
-        },
-        iucnIndicatorAnimated:{
-            transitionProperty: 'left'
-        }
-    });
-
+const IucnIndicator = styled('div')({
+    position: 'absolute',
+    top:'0px',
+    left:'-66px',
+    width:'60px',
+    height:'60px',
+    background: 'red',
+    border:'3px solid #fff',
+    borderRadius: '100px',
+    borderTopRightRadius: '0',
+    lineHeight: '60px',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    color:'#fff',
+    fontSize:'16px',
 });
 
 export const IucnRedListIndicator = ({firstTimeInView, pos, iucnStatus, width}) => {
@@ -34,8 +25,6 @@ export const IucnRedListIndicator = ({firstTimeInView, pos, iucnStatus, width}) 
     const ref = React.createRef<HTMLDivElement>();
 
     const [hasBeenAnimated, setHasBeenAnimated] = useState(false);
-
-    const classes = useStyles();
 
     useEffect(()=>{
 
@@ -68,25 +57,14 @@ export const IucnRedListIndicator = ({firstTimeInView, pos, iucnStatus, width}) 
         return style;
     };
 
-    const getClassName = () => {
-
-        const animated = (hasBeenAnimated)?'':classes.iucnIndicatorAnimated;
-
-        const className = `${classes.iucnIndicator} ${animated}`;
-
-        return className;
-
-    };
-
     return (
         <Tooltip title={catText[iucnStatus]}>
-        <div
+        <IucnIndicator
             ref={ref}
-            className={getClassName()}
             style={getStyle()}
         >
             {iucnStatus}
-        </div>
+        </IucnIndicator>
         </Tooltip>
     );
 }

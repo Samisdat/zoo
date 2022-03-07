@@ -1,13 +1,32 @@
 import React from "react";
-import ListItem from "@material-ui/core/ListItem";
-import {NavigationListImage} from "./NavigationListImage";
-import ListItemText from "@material-ui/core/ListItemText";
-import {NavigationListItemInterface} from "./NavigationListInterfaces";
+import Link from 'next/link'
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
 
+import {NavigationListImage} from "./NavigationListImage";
+import {NavigationListItemInterface} from "./NavigationListInterfaces";
 
 export interface NavigationListItemProps {
     item: NavigationListItemInterface,
     handleClickItem?: Function
+}
+
+const LinkIfPossible = (props) => {
+
+    if(!props.href){
+
+        console.log(props.href)
+
+        return (props.children);
+    }
+
+    return (
+        <Link
+            href={props.href}
+        >
+            {props.children}
+        </Link>
+    )
 }
 
 export const NavigationListItem = (props: NavigationListItemProps) => {
@@ -27,10 +46,11 @@ export const NavigationListItem = (props: NavigationListItemProps) => {
     const inset = (undefined === item.icon && item.icon === item.image) ? true : false;
 
     return (
-        <React.Fragment>
+        <LinkIfPossible
+            href={item.href}
+        >
             <ListItem
                 button={true}
-                component="a"
                 onClick={() => {
                     onListItemClick(item)
                 }}
@@ -43,7 +63,7 @@ export const NavigationListItem = (props: NavigationListItemProps) => {
                     secondary={item.secondary}
                 />
             </ListItem>
-        </React.Fragment>
+        </LinkIfPossible>
     );
 
 }

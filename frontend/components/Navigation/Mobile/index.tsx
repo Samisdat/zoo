@@ -22,13 +22,13 @@ export const NavigationMobile = ({categories}:NavigationMobileProps) =>{
 
     return (
         <React.Fragment>
-            <NavigationMobileClosed
-                handleClickOpen={handleClickOpen}
-            />
             <NavigationMobileOpened
                 categories={categories}
                 open={open}
                 handleClose={handleClose}
+            />
+            <NavigationMobileClosed
+                handleClickOpen={handleClickOpen}
             />
         </React.Fragment>
     );

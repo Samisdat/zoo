@@ -1,76 +1,52 @@
-import React, {useEffect} from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import {Paper, Fab, Link} from "@material-ui/core";
-import Dialog from '@material-ui/core/Dialog';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import Slide from '@material-ui/core/Slide';
-import { TransitionProps } from '@material-ui/core/transitions';
+import React from 'react';
+import { default as MuiPaper } from '@mui/material/Paper';
+import { default as MuiFab} from '@mui/material/Fab';
+import Dialog from '@mui/material/Dialog';
+import { default as MuiAppBar} from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Slide from '@mui/material/Slide';
+import { TransitionProps } from '@mui/material/transitions';
+
 import {NavigationList} from "../NavigationList/NavigationList";
 import {groupByFirstLetter} from "../NavigationList/groupByFirstLetter";
 import {NavigationListItemInterface} from "../NavigationList/NavigationListInterfaces";
 import {useMap} from "../Map/Context/MapContext";
 import {Icon} from "../Icon/Icon";
 import {Facility} from "strapi-api/entity/facility/facility";
+import {styled} from "@mui/material/styles";
 
+const ExpandHandle = styled(MuiPaper)(({ theme }) => ({
+    position: 'absolute',
+    top:0,
+    left:0,
+    width:'100%',
+    height:32,
+    background: 'rgba(255,255,255,0.7)',
+    textAlign:'center'
+}));
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            flexGrow: 1,
-        },
-        listRoot: {
-            width: '100%',
-            maxWidth: 360,
-            backgroundColor: theme.palette.background.paper,
-            position: 'relative',
-            overflow: 'auto',
-            maxHeight: 300,
-        },
-        menuButton: {
-            marginLeft: theme.spacing(2),
-        },
-        fab:{
-            position: 'fixed',
-            bottom: theme.spacing(2),
-            left: theme.spacing(2),
-            color: '#fff'
-        },
-        appBar: {
-            position: 'relative',
-        },
-        title: {
-            marginLeft: theme.spacing(2),
-            flex: 1,
-        },
-        list: {
-            width: 250,
-        },
-        fullList: {
-            width: 'auto',
-        },
-        subheader: {
-            backgroundColor: theme.palette.background.paper,
-        },
-        expandHandle:{
-            position: 'absolute',
-            top:0,
-            left:0,
-            width:'100%',
-            height:32,
-            background: 'rgba(255,255,255,0.7)',
-            textAlign:'center'
-        },
-        strechedIcon:{
-            transform: 'scale(3,1)'
-        }
-    }),
-);
+const AppBar = styled(MuiAppBar)(({ theme }) => ({
+    position: 'relative',
+}));
+
+const Fab = styled(MuiFab)(({ theme }) => ({
+    position: 'fixed',
+    bottom: theme.spacing(2),
+    left: theme.spacing(2),
+    color: '#fff'
+}));
+
+const Title = styled(Typography)(({ theme }) => ({
+    marginLeft: theme.spacing(2),
+    flex: 1,
+}));
 
 const Transition = React.forwardRef(function Transition(
-    props: TransitionProps & { children?: React.ReactElement },
+    props: TransitionProps & {
+        children: React.ReactElement<any, any>;
+    },
     ref: React.Ref<unknown>,
 ) {
     return <Slide direction="down" ref={ref} {...props} />;
@@ -83,8 +59,6 @@ export interface SearchDialogProperties{
 export default function SearchDialog({facilities}:SearchDialogProperties) {
 
     const { dispatch } = useMap()
-
-    const classes = useStyles();
 
     const listItems:NavigationListItemInterface[] = facilities.map((facility):NavigationListItemInterface=>{
 
@@ -142,9 +116,8 @@ export default function SearchDialog({facilities}:SearchDialogProperties) {
 
     return (
         <React.Fragment>
-            <Paper
+            <ExpandHandle
                 elevation={3}
-                className={classes.expandHandle}
                 onClick={handleClickOpen}
                 square={true}
             >
@@ -152,7 +125,7 @@ export default function SearchDialog({facilities}:SearchDialogProperties) {
                     icon={'chevron_down'}
                     size={'lg'}
                 />
-            </Paper>
+            </ExpandHandle>
             <Dialog
                 fullScreen
                 /*open={true}*/
@@ -161,15 +134,13 @@ export default function SearchDialog({facilities}:SearchDialogProperties) {
                 TransitionComponent={Transition}
             >
 
-                <AppBar
-                    className={classes.appBar}
-                >
+                <AppBar>
                     <Toolbar
                         color="primary"
                     >
-                        <Typography variant="h6" className={classes.title}>
+                        <Title variant="h6">
                             Auf der Karte zeigen
-                        </Typography>
+                        </Title>
                         <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
                             <Icon
                                 icon={'close'}
@@ -194,7 +165,6 @@ export default function SearchDialog({facilities}:SearchDialogProperties) {
                 />
                 <Fab
                     color="primary"
-                    className={classes.fab}
                     onClick={handleClose}
                     style={{
                         zIndex:5

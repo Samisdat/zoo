@@ -1,32 +1,9 @@
-import React, {useEffect, useState} from 'react';
-
-import {Map} from "components/Map/Map";
-import {Teaser} from "components/Map/Teaser/Teaser";
-
-import SearchDialog from "components/Search/Search";
-import {Warehouse, WarehouseSpore} from "strapi-api/warehouse/warehouse";
-import {MapProvider} from "components/Map/Context/MapContext";
-import {makeStyles} from "@material-ui/core/styles";
-import {getGraphElements} from "strapi-api/query/graph-elements";
-import {getFacilities} from "strapi-api/query/facilities";
-import {getMarkers} from "strapi-api/query/marker";
-import {Facility} from "strapi-api/entity/facility/facility";
-import {OpenTeaserByHash} from "../components/Map/Teaser/OpenTeaserByHash";
+import React from 'react';
 
 export interface IndexProps{
 }
 
-const useStyles = makeStyles({
-    root: {
-        position: 'fixed',
-        width:'100%',
-        height:'100%',
-    }
-});
-
 export default function Index(props:IndexProps) {
-
-    const classes = useStyles();
 
     return (
         <React.Fragment>

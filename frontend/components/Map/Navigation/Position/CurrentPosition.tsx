@@ -1,23 +1,20 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 import {useMap} from "../../Context/MapContext";
-import {makeStyles} from "@material-ui/core/styles";
+import styled from "@mui/system/styled";
 
-const useStyles = makeStyles({
-    fuzziness:{
-        fill: '00a800',
-        opacity: 0.2
-    },
-    inner:{
-        fill: '#00a800',
-        stroke: '#0A6001',
-        strokeWidth: '3px',
-    }
+const Fuzziness = styled('circle')({
+    fill: '00a800',
+    opacity: 0.2
+});
+
+const Position = styled('circle')({
+    fill: '#00a800',
+    stroke: '#0A6001',
+    strokeWidth: '3px',
 });
 
 export const CurrentPosition = () => {
-
-    const classes = useStyles();
 
     const {
         state: {position},
@@ -56,14 +53,12 @@ export const CurrentPosition = () => {
 
     return (
         <React.Fragment>
-            <circle
+            <Fuzziness
                 ref={refFuzziness}
-                className={classes.fuzziness}
                 r={30}
             />
-            <circle
+            <Position
                 ref={refPos}
-                className={classes.inner}
                 r={10}
             />
         </React.Fragment>

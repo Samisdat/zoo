@@ -4,8 +4,8 @@ import {getPostBySlug, getPosts} from "strapi-api/query/posts";
 import {Post} from "strapi-api/entity/post/post";
 import {Warehouse} from "strapi-api/warehouse/warehouse";
 import {useRouter} from "next/router";
-import {Breadcrumb, BreadcrumbLink, BreadcrumbProps} from "components/Navigation/Breadcrumb";
-import Container from "@material-ui/core/Container";
+import {Breadcrumb, BreadcrumbLink} from "components/Navigation/Breadcrumb";
+import Container from '@mui/material/Container';
 
 const ReactMarkdown = require('react-markdown')
 const gfm = require('remark-gfm')

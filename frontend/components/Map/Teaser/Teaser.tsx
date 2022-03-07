@@ -1,86 +1,53 @@
 import React, {useEffect} from 'react';
-import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import Button from '@material-ui/core/Button';
 
-import MobileStepper from '@material-ui/core/MobileStepper';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import Button from '@mui/material/Button';
+import MobileStepper from '@mui/material/MobileStepper';
+
 import SwipeableViews from 'react-swipeable-views';
 import {Animal} from "strapi-api/entity/animal/animal";
 import {RoutingInterface, useMap} from "../Context/MapContext";
-import {getImagePath} from "../../../helper/getImagePath";
 import {Icon} from "../../Icon/Icon";
 import {Photo} from "../../../strapi-api/entity/photo/photo";
 import {FocalPointImage} from "../../FocalPoint/Image";
-import Container from "@material-ui/core/Container";
+import {styled} from "@mui/material/styles";
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        mapTeaser: {
-            display: 'flex',
-            position: 'absolute',
-            bottom:90,
-            left: theme.spacing(2),
-            right: theme.spacing(2  ),
-            flexDirection: 'row',
-        },
-        progress:{
+const MapTeaser = styled(Card)(({ theme }) => ({
+    display: 'flex',
+    position: 'absolute',
+    bottom:90,
+    left: theme.spacing(2),
+    right: theme.spacing(2  ),
+    flexDirection: 'row',
+}));
 
-        },
-        text: {
-            flex: 1
-        },
-        image: {
-            width: 150,
-            height: 150,
-        },
-        modal: {
-            paddingLeft: 50,
-        },
-        stepperRoot: {
-            width: '100%',
-        },
-        header: {
-            display: 'flex',
-            alignItems: 'center',
-            height: 50,
-            paddingLeft: theme.spacing(2),
-            backgroundColor: theme.palette.background.default,
-        },
-        img: {
-            height: 150,
-            display: 'block',
-            maxWidth: 400,
-            overflow: 'hidden',
-            width: '100%',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center center',
-        },
-        step:{
-            position: 'relative',
-            height: 150,
-            display: 'block',
-            maxWidth: 400,
-            overflow: 'hidden',
-            width: '100%',
-        },
-        title:{
-            position:'absolute',
-            bottom: theme.spacing(1),
-            left: theme.spacing(1),
-            color: 'rgba(0, 0, 0, 0.7)',
-            background: 'rgba(255, 255, 255, 0.5)',
-            margin: 0,
-            paddingLeft: theme.spacing(1),
-            paddingRight: theme.spacing(1),
-            paddingTop: theme.spacing(0.5),
-            paddingBottom: theme.spacing(0.5),
-            fontSize:'16px',
+const StepperRoot = styled('div')(({ theme }) => ({
+    width: '100%',
+}));
 
-        }
-    }),
-);
+const Step = styled('div')(({ theme }) => ({
+    position: 'relative',
+    height: 150,
+    display: 'block',
+    maxWidth: 400,
+    overflow: 'hidden',
+    width: '100%',
+}));
+
+const Title = styled('h1')(({ theme }) => ({
+    position:'absolute',
+    bottom: theme.spacing(1),
+    left: theme.spacing(1),
+    color: 'rgba(0, 0, 0, 0.7)',
+    background: 'rgba(255, 255, 255, 0.5)',
+    margin: 0,
+    paddingLeft: theme.spacing(1),
+    paddingRight: theme.spacing(1),
+    paddingTop: theme.spacing(0.5),
+    paddingBottom: theme.spacing(0.5),
+    fontSize:'16px',
+}));
 
 export interface TeaserItem{
     slug: string;
@@ -95,8 +62,6 @@ export const Teaser = () => {
         state: {teaser},
         dispatch
     } = useMap()
-
-    const classes = useStyles();
 
     const [visible, setVisible] = React.useState<boolean>(false);
 
@@ -210,23 +175,22 @@ export const Teaser = () => {
     };
 
     return (
-        <Card
+        <MapTeaser
             id='map-teaser'
-            className={classes.mapTeaser}
             elevation={2}
         >
-            <div className={classes.stepperRoot}>
+            <StepperRoot>
                 <SwipeableViews
                     index={activeStep}
                     onChangeIndex={handleStepChange}
                     enableMouseEvents
                 >
                     {teaserItems.map((teaserItem:TeaserItem, index) => (
-                        <div className={classes.step} key={teaserItem.slug}>
+                        <Step key={teaserItem.slug}>
                             {
                                 Math.abs(activeStep - index) <= 2 ? (
                                     <React.Fragment>
-                                        <h1 className={classes.title}>{teaserItem.title}</h1>
+                                        <Title>{teaserItem.title}</Title>
                                         <FocalPointImage
                                             photo={teaserItem.photo}
                                             width={400}
@@ -235,7 +199,7 @@ export const Teaser = () => {
                                         />
                                     </React.Fragment>
                             ) : null}
-                        </div>
+                        </Step>
                     ))}
                 </SwipeableViews>
 
@@ -297,8 +261,8 @@ export const Teaser = () => {
                     Schließen
                 </Button>
             </CardActions>
-            </div>
-        </Card>
+            </StepperRoot>
+        </MapTeaser>
 
         );
 }

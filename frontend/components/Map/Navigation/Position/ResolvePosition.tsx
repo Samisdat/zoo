@@ -2,9 +2,7 @@ import React, {useEffect, useRef} from 'react';
 import * as d3 from "d3";
 import {MapTransformInterface, PositionInterface, useMap} from "../../Context/MapContext";
 import {edgeIdPrefix, svg} from "../../../../constants";
-import {doc} from "prettier";
 import {Warehouse} from "strapi-api/warehouse/warehouse";
-import {Point} from "geojson";
 import {getPosition} from "../../DevArtifacts/CartesianPoint";
 
 export interface Coordinate{

@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {Warehouse} from "strapi-api/warehouse/warehouse";
 import {useRouter} from "next/router";
-import {Breadcrumb, BreadcrumbLink, BreadcrumbProps} from "components/Navigation/Breadcrumb";
-import Container from "@material-ui/core/Container";
+import {Breadcrumb, BreadcrumbLink} from "components/Navigation/Breadcrumb";
+import Container from '@mui/material/Container';
 import {getPhotoById, getPhotos} from "../../strapi-api/query/photos";
 import {Photo} from "../../strapi-api/entity/photo/photo";
 import {FocalPointPicker} from "../../components/FocalPoint/Picker";
@@ -10,7 +10,7 @@ import {FocalPointImage} from "../../components/FocalPoint/Image";
 import {Position} from "../../components/Map/Context/MapContext";
 import {getStrapiUrl} from "../../strapi-api/utils/get-strapi-url";
 
-export default function BlogPost(props) {
+export default function PhotoPage(props) {
 
     Warehouse.get().hydrate(props.warehouse);
 

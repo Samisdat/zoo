@@ -1,5 +1,4 @@
-import React, {useEffect, useRef} from 'react';
-import * as d3 from 'd3';
+import React from 'react';
 import {getImagePath} from "../../../../helper/getImagePath";
 import {Facility} from "strapi-api/entity/facility/facility";
 

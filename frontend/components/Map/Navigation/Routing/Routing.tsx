@@ -1,32 +1,14 @@
 import React, {useEffect, useRef} from 'react';
 import {Edge} from "strapi-api/entity/edge/edge";
-import {makeStyles} from "@material-ui/core/styles";
-import {edgeIdPrefix} from "../../../../constants";
 import * as d3 from "d3";
-import {Route} from "./Graph/Dijkstra";
-import {position} from "polished";
 import {useMap} from "../../Context/MapContext";
+
 
 interface CurrentRouteProps {
     edges: Edge[];
 }
 
-const useStyles = makeStyles({
-    outer:{
-        fill: 'none',
-        stroke: '#0A6001',
-        strokeWidth: '4px',
-    },
-    inner:{
-        fill: 'none',
-        stroke: '#00a800',
-        strokeWidth: '2px',
-    }
-});
-
 export const Routing = ({edges}:CurrentRouteProps) => {
-
-    const classes = useStyles();
 
     const {
         state: {position, routing},
@@ -68,9 +50,10 @@ export const Routing = ({edges}:CurrentRouteProps) => {
             .attr('d', (d)=>{
                 return d.d;
             })
-            .attr('class', (d)=>{
-                return `${classes.outer}`;
-            })
+            .attr('fill', 'none')
+            .attr('stroke', '#0A6001')
+            .attr('stroke-width', '4px')
+        ;
 
         const innerGroup = d3.select(innerRef.current);
 
@@ -80,9 +63,9 @@ export const Routing = ({edges}:CurrentRouteProps) => {
             .attr('d', (d)=>{
                 return d.d;
             })
-            .attr('class', (d)=>{
-                return `${classes.inner}`;
-            })
+            .attr('fill', 'none')
+            .attr('stroke', '#00a800')
+            .attr('stroke-width', '2px')
 
     },[routing]);
 

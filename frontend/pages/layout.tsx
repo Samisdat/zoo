@@ -1,38 +1,27 @@
-import React, {useState} from 'react';
-import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
+import React from 'react';
 
-import { Grid, Paper} from "@material-ui/core";
+import Grid from '@mui/material/Grid';
+import {default as MuiPaper} from '@mui/material/Paper';
+import {styled} from "@mui/material/styles";
+
 import {Small} from "components/viewport/Small";
 import {Large} from "components/viewport/Large";
 import SimpleTabs from "components/Tabs";
 import DetailedAccordion from "components/Accordion";
 import BasicTable from "components/Table";
-import {Facility} from "strapi-api/entity/facility/facility";
-
-const useStyles = makeStyles((theme: Theme) => {
-
-    return createStyles({
-        root: {
-            flexGrow: 1,
-        },
-        paper: {
-            padding: theme.spacing(2),
-            textAlign: 'center',
-            color: theme.palette.text.secondary,
-        },
-        toolbarPadding:{
-            ...theme.mixins.toolbar,
-        }
-    })
-});
 
 
+export const Root = styled('div')(({ theme }) => ({
+    flexGrow: 1,
+}));
+
+export const Paper = styled(MuiPaper)(({ theme }) => ({
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+}));
 
 export default function Layout (props) {
-
-    const [teaser, setTeaser] = useState<Facility>(undefined);
-
-    const classes = useStyles();
 
     return (
         <React.Fragment><div style={{background:''}}>
@@ -43,7 +32,7 @@ export default function Layout (props) {
             <Large>
                 <h1>Large</h1>
             </Large>
-                    <div className={classes.root}>
+                    <Root>
                         <Grid container spacing={3}>
                             <Grid item xs={12}>
                                 <SimpleTabs />
@@ -57,33 +46,33 @@ export default function Layout (props) {
                                 <DetailedAccordion/>
                             </Grid>
                             <Grid item xs={12} md={5}>
-                                <Paper className={classes.paper}>xs=6</Paper>
+                                <Paper>xs=6</Paper>
                             </Grid>
 
                             <Grid item xs={12} sm={6}>
-                                <Paper className={classes.paper}>xs=12</Paper>
+                                <Paper>xs=12</Paper>
                             </Grid>
 
                             <Grid item xs={6}>
-                                <Paper className={classes.paper}>xs=6</Paper>
+                                <Paper>xs=6</Paper>
                             </Grid>
                             <Grid item xs={6}>
-                                <Paper className={classes.paper}>xs=6</Paper>
+                                <Paper>xs=6</Paper>
                             </Grid>
                             <Grid item xs={3}>
-                                <Paper className={classes.paper}>xs=3</Paper>
+                                <Paper>xs=3</Paper>
                             </Grid>
                             <Grid item xs={3}>
-                                <Paper className={classes.paper}>xs=3</Paper>
+                                <Paper>xs=3</Paper>
                             </Grid>
                             <Grid item xs={3}>
-                                <Paper className={classes.paper}>xs=3</Paper>
+                                <Paper>xs=3</Paper>
                             </Grid>
                             <Grid item xs={3}>
-                                <Paper className={classes.paper}>xs=3</Paper>
+                                <Paper>xs=3</Paper>
                             </Grid>
                         </Grid>
-                    </div>
+                    </Root>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>

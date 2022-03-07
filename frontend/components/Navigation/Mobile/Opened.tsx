@@ -1,8 +1,4 @@
 import React, {MouseEventHandler} from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import Fab from '@mui/material/Fab';
-
-import {Logo} from "../Logo";
 
 import Dialog from '@mui/material/Dialog';
 import AppBar from '@mui/material/AppBar';
@@ -18,7 +14,8 @@ import {
 
 import {NavigationListGroupInterface} from "../../NavigationList/NavigationListInterfaces";
 import {Icon} from "../../Icon/Icon";
-import {NavigationMobileClosed} from "./Closed";
+import {styled} from "@mui/material/styles";
+import {NavigationFab} from "./Closed";
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
@@ -29,40 +26,14 @@ const Transition = React.forwardRef(function Transition(
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            flexGrow: 1,
-        },
-        menuButton: {
-            marginLeft: theme.spacing(2),
-        },
-        fab:{
-            position: 'fixed',
-            bottom: theme.spacing(2),
-            left: theme.spacing(2),
-            /*backgroundColor: '#00a800',*/
-            color: '#fff',
-            zIndex:10,
-        },
-        appBar: {
-            position: 'relative',
-        },
-        title: {
-            marginLeft: theme.spacing(2),
-            flex: 1,
-        },
-        list: {
-            width: 250,
-        },
-        fullList: {
-            width: 'auto',
-        },
-        subheader: {
-            backgroundColor: theme.palette.background.paper,
-        },
-    })
-);
+const DialogTitle = styled(AppBar)({
+    position: 'relative'
+});
+
+const DialogTitleText = styled('div')(({ theme }) => ({
+    marginLeft: theme.spacing(2),
+    flex: 1,
+}));
 
 interface NavigationMobileOpenedProps{
     categories: NavigationListGroupInterface[];
@@ -72,53 +43,52 @@ interface NavigationMobileOpenedProps{
 
 export const NavigationMobileOpened = ({categories, open, handleClose}:NavigationMobileOpenedProps) =>{
 
-    const classes = useStyles();
-
     return (
-        <React.Fragment>
         <Dialog
             fullScreen
             open={open}
             onClose={handleClose}
             TransitionComponent={Transition}
         >
-                <AppBar className={classes.appBar}>
-                    <Toolbar
-                        color="primary"
+            <DialogTitle>
+                <Toolbar
+                    color="primary"
+                >
+                    <IconButton
+                        edge="start"
+                        color="inherit"
+                        onClick={handleClose}
+                        aria-label="close"
                     >
-                        <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
-                            <Icon
-                                icon={'close'}
-                                size={'lg'}
-                            />
-                        </IconButton>
-                        <Typography variant="h6" className={classes.title}>
+                        <Icon
+                            icon={'close'}
+                            size={'lg'}
+                        />
+                    </IconButton>
+                    <DialogTitleText>
+                        <Typography
+                            variant="h6"
+                        >
                             Der grüne Zoo
                         </Typography>
-                    </Toolbar>
-                </AppBar>
+                    </DialogTitleText>
+                </Toolbar>
+            </DialogTitle>
 
             <NavigationList
                 groups={categories}
             />
 
-            <Fab
-                color="primary"
-                className={classes.fab}
+            <NavigationFab
                 onClick={handleClose}
-                style={{
-                    zIndex:5
-                }}
             >
                 <Icon
                     icon={'close'}
                     size={'lg'}
                 />
 
-            </Fab>
+            </NavigationFab>
 
         </Dialog>
-
-        </React.Fragment>
     );
 }

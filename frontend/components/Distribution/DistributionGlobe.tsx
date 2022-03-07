@@ -1,24 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
 import {Globe} from "./Globe";
 
 import * as topojson from 'topojson-client';
 const simplify = require('simplify-geojson');
-
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            position: 'relative',
-            width: '100%',
-            height: '700px',
-            background: 'red',
-            [theme.breakpoints.down('sm')]: {
-                background: 'blue',
-            },
-        },
-    }),
-);
 
 const distributionService = async (apiUrl):Promise<any> => {
 
@@ -47,8 +32,6 @@ const distributionService = async (apiUrl):Promise<any> => {
 export const DistributionGlobe = (props) => {
 
     const globeContainer = useRef(null);
-
-    const classes = useStyles();
 
     const [distributionShape, setDistributionShape] = useState<any>(undefined);
     const [world, setWorld] = useState<any>(undefined);
@@ -95,7 +78,6 @@ export const DistributionGlobe = (props) => {
             <React.Fragment>
                 <div
                     ref={globeContainer}
-                    className={classes.root}
                 >
 
                 </div>

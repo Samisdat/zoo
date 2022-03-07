@@ -1,93 +1,89 @@
 import React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import {Paper} from "@material-ui/core";
+import Paper from '@mui/material/Paper';
+import {styled} from "@mui/material/styles";
 
 const logoSmallWidth = 100 - 16;
 const logoSmallHeight = Math.ceil(logoSmallWidth / 1709 * 1395)
 
-const useStyles = makeStyles((theme: Theme) => {
+export const BackCut = styled('div')(({ theme }) => ({
+    position: 'absolute',
+    top: 0,
+    left: -8,
+    width: 100 + 2 * 8,
+    height: 100 - 36,
+    overflow:'hidden',
+}));
 
-    return createStyles({
-        logo: {
-            position: 'absolute',
-            left: theme.spacing(1),
-            top: theme.spacing(1),
-            width: logoSmallWidth,
-            height: logoSmallHeight,
-            display: 'block',
-        },
-        logoImg: {
-            position: 'absolute',
-            bottom: 0,
-            right: 0,
-        },
-        root: {
-            position: 'absolute',
-            right:0,
-            width: 100,
-            ...theme.mixins.toolbar
-        },
-        square: {
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: 100,
-            height: 86,
-            background: 'white',
+export const BackPaper = styled(Paper)(({ theme }) => ({
+    position: 'absolute',
+    bottom: 0,
+    left: 8,
+    width: 100,
+    height: 70,
+}));
 
-        },
-        backCut: {
-            position: 'absolute',
-            top: 0,
-            left: -8,
-            width: 100 + 2 * 8,
-            height: 100 - 36,
-            overflow:'hidden',
+export const FrontCut = styled('div')(({ theme }) => ({
+    position: 'absolute',
+    top: 100 - 36,
+    left: -8,
+    width: 100 + 2 * 8,
+    height: 36,
+    overflow:'hidden',
+}));
 
-        },
-        backPaper: {
-            position: 'absolute',
-            bottom: 0,
-            left: 8,
-            width: 100,
-            height: 70,
-        },
-        frontCut: {
-            position: 'absolute',
-            top: 100 - 36,
-            left: -8,
-            width: 100 + 2 * 8,
-            height: 36,
-            overflow:'hidden',
+export const FrontPaper = styled(Paper)(({ theme }) => ({
+    position: 'absolute',
+    top: -26,
+    left: 8,
+    width: 100,
+    height: 50,
+}));
 
-        },
-        frontPaper: {
-            position: 'absolute',
-            top: -26,
-            left: 8,
-            width: 100,
-            height: 50,
-        }
-    });
-});
+export const Root = styled('div')(({ theme }) => ({
+    position: 'absolute',
+    right:0,
+    width: 100,
+    /*...theme.mixins.toolbar*/
+}));
+
+export const Square = styled('div')(({ theme }) => ({
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: 100,
+    height: 86,
+    background: 'white',
+}));
+
+export const Logo = styled('a')(({ theme }) => ({
+    position: 'absolute',
+    left: theme.spacing(1),
+    top: theme.spacing(1),
+    width: logoSmallWidth,
+    height: logoSmallHeight,
+    display: 'block',
+}));
+
+export const LogoImg = styled('svg')(({ theme }) => ({
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+}));
 
 export function StaticLogo() {
 
-    const classes = useStyles();
-
     return (
-        <div className={classes.root}>
-            <div className={classes.square}>
-                <div className={classes.backCut}>
-                    <Paper className={classes.backPaper} square elevation={3} />
-                </div>
-                <div className={classes.frontCut}>
-                    <Paper className={classes.frontPaper} square elevation={3} />
-                </div>
-                    <a href="/" className={classes.logo}>
-                    <svg
+        <Root>
+            <Square>
+                <BackCut>
+                    <BackPaper square elevation={3} />
+                </BackCut>
+                <FrontCut>
+                    <FrontPaper square elevation={3} />
+                </FrontCut>
+                    <Logo href="/">
+                    <LogoImg
                         id="largeLogo"
-                        className={classes.logoImg}
                         width="100%"
                         height="100%"
                         version="1.1"
@@ -137,9 +133,9 @@ export function StaticLogo() {
                                 />
                             </g>
                         </g>
-                    </svg>
-                </a>
-            </div>
-        </div>
+                    </LogoImg>
+                </Logo>
+            </Square>
+        </Root>
     );
 }

@@ -1,10 +1,11 @@
 import React from 'react';
-import { makeStyles, Theme } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+
+import AppBar from '@mui/material/AppBar';
+import Tabs from '@mui/material/Tabs';
+import {default as MuiTab} from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import {styled} from "@mui/material/styles";
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -39,24 +40,22 @@ function a11yProps(index: any) {
     };
 }
 
-const useStyles = makeStyles((theme: Theme) => ({
-    root: {
-        flexGrow: 1,
-        backgroundColor: '#fff',
-    },
-    tab:{
-        color:'#000',
-        background:'#C8C8C8',
-    },
-    selected:{
+export const Root = styled('div')(({ theme }) => ({
+    flexGrow: 1,
+    backgroundColor: '#fff',
+}));
+
+export const Tab = styled(MuiTab)(({ theme }) => ({
+    color:'#000',
+    background:'#C8C8C8',
+    '&.Mui-selected': {
         background:'#fff',
         border:'0px solid #000',
-
-    }
+    },
 }));
 
 export default function SimpleTabs() {
-    const classes = useStyles();
+
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
@@ -64,7 +63,7 @@ export default function SimpleTabs() {
     };
 
     return (
-        <div className={classes.root}>
+        <Root>
             <AppBar
                 position="static"
                 elevation={0}
@@ -83,29 +82,14 @@ export default function SimpleTabs() {
                     }}
                 >
                     <Tab
-                        classes={{
-                            root:classes.tab,
-                            selected:classes.selected,
-
-                        }}
                         label="Item One"
                         {...a11yProps(0)}
                     />
                     <Tab
-                        classes={{
-                            root:classes.tab,
-                            selected:classes.selected,
-
-                        }}
                         label="Item Two"
                         {...a11yProps(1)}
                     />
                     <Tab
-                        classes={{
-                            root:classes.tab,
-                            selected:classes.selected,
-
-                        }}
                         label="Item Three"
                         {...a11yProps(2)}
                     />
@@ -123,6 +107,6 @@ export default function SimpleTabs() {
             <TabPanel value={value} index={2}>
                 Item Three
             </TabPanel>
-        </div>
+        </Root>
     );
 }

@@ -1,19 +1,16 @@
 import React from 'react';
-import {Grid, Paper} from "@material-ui/core";
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import {default as MuiPaper} from '@mui/material/Paper';
+import {styled} from "@mui/material/styles";
+
 import {Icon} from "../../Icon/Icon";
-import Typography from "@material-ui/core/Typography";
 import {IconName} from "../../Icon/IconNames";
 
-const useStyles = makeStyles((theme: Theme) => {
-
-    return createStyles({
-        paper: {
-            padding: theme.spacing(2),
-            color: theme.palette.text.secondary,
-        }
-    })
-});
+export const Paper = styled(MuiPaper)(({ theme }) => ({
+    padding: theme.spacing(2),
+    color: theme.palette.text.secondary,
+}));
 
 export interface FeatureProps {
     icon:IconName;
@@ -27,8 +24,6 @@ export const Feature = ({
     value
 }:FeatureProps) => {
 
-    const classes = useStyles();
-
     return (
 
         <Grid
@@ -37,7 +32,6 @@ export const Feature = ({
             md={6}
         >
             <Paper
-                className={classes.paper}
                 elevation={0}
                 square
             >

@@ -1,51 +1,49 @@
 import React, {useState} from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from "@material-ui/core/List";
-import {Drawer, Link, ListItem, ListItemText} from "@material-ui/core";
-import Container from "@material-ui/core/Container";
+
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import {default as MuiList} from '@mui/material/List';
+import Drawer from '@mui/material/Drawer';
+import {default as MuiLink} from '@mui/material/Link';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import Container from '@mui/material/Container';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+import Slide from '@mui/material/Slide';
+
 import {NavigationListGroupInterface} from "../NavigationList/NavigationListInterfaces";
 import {StaticLogo} from "./StaticLogo";
 import {NavigationList} from "../NavigationList/NavigationList";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import Slide from "@material-ui/core/Slide";
 import {Icon} from "../Icon/Icon";
+import {styled} from "@mui/material/styles";
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root:{
-            position: 'relative',
+export const Root = styled('div')(({ theme }) => ({
+    position: 'relative',
+    flexGrow: 1,
+    display: 'flex',
+}));
 
-            flexGrow: 1,
-            display: 'flex',
-            ...theme.mixins.toolbar,
-        },
-        menu:{
-            ...theme.mixins.toolbar,
-            display:'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-        },
-        navDisplayFlex: {
-            display: `flex`,
+export const Link = styled(MuiLink)(({ theme }) => ({
+    display:'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+}));
 
-        },
-        linkText: {
-            textDecoration: `none`,
-            color: `white`
-        },
-        list: {
-            width: 400,
-        },
-        toolbarPadding:{
-            ...theme.mixins.toolbar,
-        },
-        logoBar:{
-            position: 'relative'
-        }
-    }),
-);
+export const List = styled(MuiList)(({ theme }) => ({
+    display: `flex`,
+}));
+
+export const Foo = styled('div')(({ theme }) => ({
+    width: 400,
+}));
+
+export const ToolbarPadding = styled('div')(({ theme }) => ({
+    /*...theme.mixins.toolbar.,*/
+}));
+
+export const LogoBar = styled('div')(({ theme }) => ({
+    position: 'relative'
+}));
 
 interface Props {
     /**
@@ -78,8 +76,6 @@ export const NavigationLarge = (props) => {
         return ('main' === navigationCategory.key);
     });
 
-    const classes = useStyles();
-
     const [open, setOpen] = useState<boolean>(false);
 
     const toggleDrawer = (nextOpen: boolean) => (
@@ -100,27 +96,28 @@ export const NavigationLarge = (props) => {
     return(
         <React.Fragment>
             <Drawer open={open} onClose={toggleDrawer(false)}>
-                <div className={classes.list}>
+                <Foo>
                     <NavigationList
                         groups={navigationCategories}
                     />
-                </div>
+                </Foo>
             </Drawer>
-            <div className={classes.toolbarPadding}></div>
+            <ToolbarPadding />
 
             <HideOnScroll {...props}>
 
-            <AppBar>
+            <AppBar
+                position="sticky"
+            >
                 <Toolbar
                     disableGutters={true}
                 >
                     <Container
                         maxWidth="md"
                     >
-                        <div className={classes.root}>
+                        <Root>
                             <Link
-                                className={classes.menu}
-                                onClick={toggleDrawer(true)}
+                                    onClick={toggleDrawer(true)}
                                 color="inherit">
                                 <Icon
                                     icon={'menu'}
@@ -128,12 +125,10 @@ export const NavigationLarge = (props) => {
                                 />
                             </Link>
                             <List
-                                component="nav"
-                                className={classes.navDisplayFlex}
                                 disablePadding
                             >
                                 {mainItems.items.map((item) => (
-                                        <Link className={classes.menu} href={item.href}  color="inherit">
+                                        <Link href={item.href}  color="inherit">
                                             <ListItem button>
                                                 <ListItemText
                                                     primaryTypographyProps={{variant:'h6'}}
@@ -143,7 +138,7 @@ export const NavigationLarge = (props) => {
                                         </Link>
                                 ))}
                             </List>
-                        </div>
+                        </Root>
                     </Container>
                 </Toolbar>
             </AppBar>
@@ -155,11 +150,9 @@ export const NavigationLarge = (props) => {
                 <Container
                     maxWidth="md"
                 >
-                    <div
-                        className={classes.logoBar}
-                    >
+                    <LogoBar>
                         <StaticLogo/>
-                    </div>
+                    </LogoBar>
 
                 </Container>
             </AppBar>

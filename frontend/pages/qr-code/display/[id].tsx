@@ -18,7 +18,7 @@ export default function Index(props) {
         id
     );
 
-    const url = `${protocol}${domain}/${qrCodeUrlPart}/${id}`
+    const url = `${protocol}${domain}/${qrCodeUrlPart}/scan/${id}`
 
     return (
         <div>

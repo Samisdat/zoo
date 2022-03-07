@@ -1,33 +1,25 @@
 import React, {useEffect} from "react";
-import {useRouter, Router} from "next/router";
+import {useRouter} from "next/router";
 import {getQrCodeById, getQrCodes} from "strapi-api/query/qr-codes";
 import {Warehouse} from "strapi-api/warehouse/warehouse";
-
 import {QrCode} from "strapi-api/entity/qr-code/qr-code";
-import {CircularProgress} from "@material-ui/core";
-import {makeStyles} from "@material-ui/core/styles";
+import CircularProgress from '@mui/material/CircularProgress';
 import {useViewport} from "components/viewport/useViewport";
 import {PositionInterface   } from "components/Map/Context/MapContext";
-
 import {setMarkerToStorage} from "components/Map/setMarkerToStorage";
+import {styled} from "@mui/material/styles";
 
-const useStyles = makeStyles({
-    alignCenter: {
-        position: 'absolute',
-        top:0,
-        left:0,
-        width:'100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-
-    }
+const Centered = styled('div')({
+    position: 'absolute',
+    top:0,
+    left:0,
+    width:'100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
 });
 
-
 export default function Index(props) {
-
-    const classes = useStyles();
 
     Warehouse.get().hydrate(props.warehouse);
 
@@ -58,10 +50,10 @@ export default function Index(props) {
         setMarkerToStorage(position);
 
         if(qrCode.facility){
-            router.push(`/anlagen/${qrCode.facility.slug}`);
+            //router.push(`/anlagen/${qrCode.facility.slug}`);
         }
         else if (qrCode.animal){
-            router.push(`/tiere/${qrCode.animal.slug}`);
+            //router.push(`/tiere/${qrCode.animal.slug}`);
         }
 
     });
@@ -72,14 +64,13 @@ export default function Index(props) {
             <p>{qrCode.title}</p>
             <p>{lat}</p>
             <p>{lng}</p>
-            <div
-                className={classes.alignCenter}
+            <Centered
                 style={{
                     height:height + 'px'
                 }}
             >
                 <CircularProgress />
-            </div>
+            </Centered>
 
         </React.Fragment>
 

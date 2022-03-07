@@ -1,21 +1,22 @@
 import React from "react";
-import {Avatar, ListItemAvatar, ListItemIcon} from "@material-ui/core";
-import {NavigationListItemInterface} from "./NavigationListInterfaces";
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import {Icon} from "../Icon/Icon";
+import Avatar from '@mui/material/Avatar';
+import ListItemAvatar from '@mui/material/ListItemAvatar'
+import ListItemIcon from '@mui/material/ListItemIcon';
 
-export const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        large: {
-            height: theme.spacing(7),
-            minWidth: theme.spacing(9),
-        },
-        largeAvatar: {
-            width: theme.spacing(7),
-            height: theme.spacing(7),
-        },
-    })
-);
+import {NavigationListItemInterface} from "./NavigationListInterfaces";
+import {Icon} from "../Icon/Icon";
+import {styled} from "@mui/material/styles";
+
+export const LargeListItemAvatar = styled(ListItemAvatar)(({ theme }) => ({
+    height: theme.spacing(7),
+    minWidth: theme.spacing(9),
+}));
+
+export const LargeAvatar = styled(Avatar)(({ theme }) => ({
+    width: theme.spacing(7),
+    height: theme.spacing(7),
+}));
+
 
 export const NavigationListImage = (props: NavigationListItemInterface) => {
 
@@ -36,19 +37,16 @@ export const NavigationListImage = (props: NavigationListItemInterface) => {
 
     }
 
-    const classes = useStyles();
-
     if (undefined !== props.image) {
 
-        return (<ListItemAvatar
-            className={classes.large}
-        >
-            <Avatar
-                className={classes.largeAvatar}
-                alt={props.text}
-                src={props.image}
-            />
-        </ListItemAvatar>);
+        return (
+            <LargeListItemAvatar>
+                <LargeAvatar
+                    alt={props.text}
+                    src={props.image}
+                />
+            </LargeListItemAvatar>
+        );
 
     }
 }

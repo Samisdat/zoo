@@ -1,21 +1,19 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 
-const useStyles = makeStyles({
-    tableContainer:{
-        background: '#fff',
-    },
-    table: {
-        minWidth: 650,
-    },
-});
+import {default as MuiTable} from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import {default as MuiTableContainer} from '@mui/material/TableContainer';
+import TableRow from '@mui/material/TableRow';
+import {styled} from "@mui/material/styles";
+
+export const Table = styled(MuiTable)(({ theme }) => ({
+    minWidth: 650,
+}));
+
+export const TableContainer = styled(MuiTableContainer)(({ theme }) => ({
+    background: '#fff',
+}));
 
 function createData(key: string, value: string) {
     return { key, value };
@@ -36,14 +34,10 @@ const rows = [
 
 
 export default function BasicTable() {
-    const classes = useStyles();
 
     return (
-        <TableContainer
-            className={classes.tableContainer}
-        >
+        <TableContainer>
             <Table
-                className={classes.table}
                 aria-label="simple table"
             >
                 <TableBody>

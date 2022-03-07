@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React from 'react';
 import {Facility} from "strapi-api/entity/facility/facility";
 import {MarkerImage} from "./MarkerImage";
 

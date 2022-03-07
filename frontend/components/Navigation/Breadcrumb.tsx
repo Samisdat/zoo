@@ -1,26 +1,14 @@
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-import Link from '@material-ui/core/Link';
+import Link from 'next/link'
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import {default as MuiLink} from '@mui/material/Link';
 import {Icon} from "../Icon/Icon";
+import {styled} from "@mui/material/styles";
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        link: {
-            display: 'flex',
-        },
-        icon: {
-            marginRight: theme.spacing(0.5),
-            width: 20,
-            height: 20,
-        },
-    }),
-);
-
-function handleClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-    event.preventDefault();
-    console.info('You clicked a breadcrumb.');
-}
+// @TODO try sx or styled with Icon instead div
+const IconWithSpacing = styled('div')(({ theme }) => ({
+    marginRight: theme.spacing(0.5),
+}));
 
 export type BreadcumbCategoryIcon = 'home' | 'pet' | 'building' | 'blog';
 
@@ -46,31 +34,38 @@ export const Breadcrumb = (props:BreadcrumbProps)    => {
         links.push(link);
     }
 
-    const classes = useStyles();
-
     const getIcon = (categoryIcon:BreadcumbCategoryIcon) => {
 
         if('home' === categoryIcon){
             return (
-                <Icon
-                    icon={'home'}
-                />
+                <IconWithSpacing>
+                    <Icon
+                        icon={'home'}
+                        size={'1x'}
+                    />
+                </IconWithSpacing>
             );
         }
 
         if('pet' === categoryIcon){
             return (
-                <Icon
-                    icon={'paw'}
-                />
+                <IconWithSpacing>
+                    <Icon
+                        icon={'paw'}
+                        size={'1x'}
+                    />
+                </IconWithSpacing>
             );
         }
 
         if('blog' === categoryIcon){
             return (
-                <Icon
-                    icon={'book'}
-                />
+                <IconWithSpacing>
+                    <Icon
+                        icon={'book'}
+                        size={'1x'}
+                    />
+                </IconWithSpacing>
             );
         }
 
@@ -83,12 +78,17 @@ export const Breadcrumb = (props:BreadcrumbProps)    => {
                     return (
                         <Link
                             key={link.href}
-                            color="inherit"
                             href={link.href}
-                            className={classes.link}
+                            passHref
                         >
-                            {getIcon(link.icon)}
-                            {link.title}
+                            <MuiLink
+                                underline="hover"
+                                sx={{ display: 'flex', alignItems: 'center' }}
+                                color="inherit"
+                            >
+                                {getIcon(link.icon)}
+                                {link.title}
+                            </MuiLink>
                         </Link>
 
                     );
@@ -97,31 +97,4 @@ export const Breadcrumb = (props:BreadcrumbProps)    => {
         </Breadcrumbs>
     );
 
-    /*
-    return (
-        <Breadcrumbs aria-label="breadcrumb">
-            <Link color="inherit" href="/" className={classes.link}>
-                <HomeIcon className={classes.icon} />
-                Startseite
-            </Link>
-            <Link
-                color="inherit"
-                href={props.category.href}
-                className={classes.link}
-            >
-
-                {props.category.title}
-            </Link>
-            <Link
-                color="inherit"
-                href={props.href}
-                className={classes.link}
-            >
-                {props.title}
-            </Link>)
-
-        </Breadcrumbs>
-
-    );
-     */
 }

@@ -22,7 +22,7 @@ export const OpenTeaserByHash = ({facilities}:OpenTeaserByHashProps) => {
 
             dispatch({
                 type: 'SET_FOCUS',
-                focus: resolved
+                focus: [slug]
             });
 
             dispatch({

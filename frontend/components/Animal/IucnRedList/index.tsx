@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import Typography from "@material-ui/core/Typography";
-import {Grid, Paper, Tooltip} from "@material-ui/core";
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import {default as MuiPaper} from '@mui/material/Paper';
+import Tooltip from '@mui/material/Tooltip';
 import {useViewport} from "../../viewport/useViewport";
 import { useInView } from 'react-intersection-observer';
 
@@ -12,6 +13,7 @@ import {
     VULNERABLE
 } from "strapi-api/entity/animal/iucnStatus";
 import {IucnRedListIndicator} from "./Indicator";
+import {styled} from "@mui/material/styles";
 
 const possibleStati = [
     LEAST_CONCERN,
@@ -29,42 +31,39 @@ export const catText = {
     'CR': 'Vom Aussterben bedroht',
 };
 
-const useStyles = makeStyles((theme: Theme) => {
+export const Paper = styled(MuiPaper)(({ theme }) => ({
+    padding: theme.spacing(2),
+    color: theme.palette.text.secondary,
+}));
 
-    return createStyles({
-        paper: {
-            padding: theme.spacing(2),
-            color: theme.palette.text.secondary,
-        },
-        iucn:{
-            position:'relative',
-            height: '66px',
-            overflow:'hidden'
-        },
-        iucnRange:{
-            position:'relative',
-            top:`${( (66 - 30) / 2)}px`,
-            width: '100%',
-            height: '30px',
-            display: 'flex',
-            background: 'linear-gradient(90deg, rgba(0,135,84,1) 0%, rgba(240,202,1,1) 50%, rgba(193,18,28,1) 100%)',
-            borderRadius:'100px',
-        },
-        iucnCat:{
-            width: (100/possibleStati.length ) + '%',
-            height: '30px',
-            lineHeight: '30px',
-            textAlign:'center',
-            color:'#fff',
-            borderRight:'1px solid #fff',
-            fontWeight: 'bold',
-            "&:last-child": {
-                borderRight:'0px solid #fff',
-            }
-        },
-    });
+export const Iucn = styled('div')(({ theme }) => ({
+    position:'relative',
+    height: '66px',
+    overflow:'hidden'
+}));
 
-});
+export const IucnRange = styled('div')(({ theme }) => ({
+    position:'relative',
+    top:`${( (66 - 30) / 2)}px`,
+    width: '100%',
+    height: '30px',
+    display: 'flex',
+    background: 'linear-gradient(90deg, rgba(0,135,84,1) 0%, rgba(240,202,1,1) 50%, rgba(193,18,28,1) 100%)',
+    borderRadius:'100px',
+}));
+
+export const IucnCat = styled('div')(({ theme }) => ({
+    width: (100/possibleStati.length ) + '%',
+    height: '30px',
+    lineHeight: '30px',
+    textAlign:'center',
+    color:'#fff',
+    borderRight:'1px solid #fff',
+    fontWeight: 'bold',
+    "&:last-child": {
+        borderRight:'0px solid #fff',
+    }
+}));
 
 export interface IucnRedListProps{
     iucnStatus:IucnStatus
@@ -99,18 +98,14 @@ export const IucnRedList = ({iucnStatus}:IucnRedListProps) => {
 
     },[inView]);
 
-    const classes = useStyles();
-
     return (
         <Grid
             component={'section'}
             id={'endanger'}
             item
             xs={12}
-
         >
             <Paper
-                className={classes.paper}
                 square={true}
                 elevation={0}
             >
@@ -118,43 +113,39 @@ export const IucnRedList = ({iucnStatus}:IucnRedListProps) => {
                     Bedrohung
                 </Typography>
 
-                <div
-                    className={classes.iucn}
+                <Iucn
                     ref={ref}
                 >
-                    <div
-                        className={classes.iucnRange}
+                    <IucnRange
                         ref={rangeRef}
                     >
                         {
                             possibleStati.map((possibleStatus, i)=>{
 
-                                const statusClass = classes[`iucnCat${possibleStatus}`];
+                                //const statusClass = classes[`iucnCat${possibleStatus}`];
 
-                                const className = `${classes.iucnCat} ${statusClass}`;
+                                //const className = `${classes.iucnCat} ${statusClass}`;
 
                                 return (
                                     <Tooltip
                                         key={i}
                                         title={catText[possibleStatus]}
                                     >
-                                        <div
-                                            className={className}
-                                        >
+                                        <IucnCat>
                                             {possibleStatus}
-                                        </div>
+                                        </IucnCat>
                                     </Tooltip>
                                 )
                             })
                         }
-                    </div>
+                    </IucnRange>
                     <IucnRedListIndicator
                         firstTimeInView={firstTimeInView}
                         width={width}
                         pos={possibleStati.indexOf(iucnStatus)}
                         iucnStatus={iucnStatus}
                     />
-                </div>
+                </Iucn>
             </Paper>
         </Grid>
 

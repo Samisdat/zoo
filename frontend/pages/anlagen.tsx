@@ -1,5 +1,5 @@
 import React from 'react';
-import ListItem from '@material-ui/core/ListItem';
+import ListItem from '@mui/material/ListItem';
 import {facilityUrlPart} from "../constants";
 import {getFacilities} from "strapi-api/query/facilities";
 import {Warehouse} from "strapi-api/warehouse/warehouse";

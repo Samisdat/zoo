@@ -10,7 +10,6 @@ export const Chips = styled('div')(({ theme }) => ({
     flexWrap: 'wrap',
 }));
 
-
 const iucnStatusDe = {
     'NE': 'nicht beurteilt',
     'DD': 'ungenügende Datengrundlage',

@@ -1,37 +1,27 @@
 import React from 'react';
 import { useRouter } from 'next/router'
-import Typography from "@material-ui/core/Typography";
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import {default as MuiPaper} from '@mui/material/Paper';
+import {styled} from "@mui/material/styles";
+
 import {getFullGeoJson} from "../api/geojson/list";
 import {getAnimalBySlug, getAnimals} from "strapi-api/query/animals";
 import {Animal} from "strapi-api/entity/animal/animal";
 import {Warehouse} from "strapi-api/warehouse/warehouse";
-import {Breadcrumb, BreadcrumbLink, BreadcrumbProps} from "components/Navigation/Breadcrumb";
-import {Distribution} from "components/Distribution/Distribution";
+import {Breadcrumb, BreadcrumbLink} from "components/Navigation/Breadcrumb";
 import {DistributionGlobe} from "components/Distribution/DistributionGlobe";
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import {Grid, Paper} from "@material-ui/core";
-import {getImagePath} from "../../helper/getImagePath";
-import SimpleTabs from "components/Tabs";
-import BasicTable from "components/Table";
-import DetailedAccordion from "components/Accordion";
 import {Profile} from "components/Animal/Profile/Profile";
 import {IucnRedList} from "components/Animal/IucnRedList";
 
-const useStyles = makeStyles((theme: Theme) => {
+export const Root = styled('div')(({ theme }) => ({
+    flexGrow: 1,
+}));
 
-    return createStyles({
-        root: {
-            flexGrow: 1,
-        },
-        paper: {
-            padding: theme.spacing(2),
-            color: theme.palette.text.secondary,
-        },
-        toolbarPadding:{
-            ...theme.mixins.toolbar,
-        }
-    })
-});
+export const Paper = styled(MuiPaper)(({ theme }) => ({
+    padding: theme.spacing(2),
+    color: theme.palette.text.secondary,
+}));
 
 export default function Tiere(props) {
 
@@ -39,7 +29,6 @@ export default function Tiere(props) {
     const { slug } = router.query
 
     const { asPath } = router;
-    const classes = useStyles();
 
     Warehouse.get().hydrate(props.warehouse);
 
@@ -95,7 +84,7 @@ export default function Tiere(props) {
             <Breadcrumb
                 links={breadcrumbProps}
             />
-            <div className={classes.root}>
+            <Root>
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={7}>
                         <Typography variant="h1" component="h1">
@@ -114,7 +103,6 @@ export default function Tiere(props) {
                         xs={12}
                         md={5}>
                         <Paper
-                            className={classes.paper}
                             square={true}
                             elevation={0}
                         >
@@ -128,7 +116,7 @@ export default function Tiere(props) {
                     </Grid>
 
                 </Grid>
-            </div>
+            </Root>
 
             <Typography component="h2">
                 Tiere oder Bilder

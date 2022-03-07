@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import {makeStyles} from "@material-ui/core/styles";
 import * as d3 from 'd3';
 
 import {ZoomAndPan} from "./ZoomAndPan";
@@ -16,22 +15,22 @@ import {GeoBorder} from "./DevArtifacts/GeoBorder";
 import {Cartesian} from "./Cartesian/Cartesian";
 import {GeoPoint} from "./DevArtifacts/GeoPoint";
 import {GPXViewer} from "../GPX/Viewer";
+import styled from "@mui/system/styled";
 
-const useStyles = makeStyles({
-    svgWrap:{
-        position: 'absolute',
-        top: '0px',
-        bottom: '0px',
-        left: '0px',
-        right: '0px',
-    },
-    fullScreenMap: {
-        display: 'block',
-        width:'100%',
-        height:'100%',
-        background:'green'
-    }
+const SvgWrap = styled('div')({
+    position: 'absolute',
+    top: '0px',
+    bottom: '0px',
+    left: '0px',
+    right: '0px',
 });
+
+const FullScreenMap = styled('svg')((props) => ({
+    display: 'block',
+    width:'100%',
+    height:'100%',
+    background:'green'
+}));
 
 interface MapProps{
     fullsize: boolean;
@@ -48,8 +47,6 @@ export const Map = ({fullsize, markers, facilities, nodes, edges}:MapProps) => {
         state: {dimension, ref},
         dispatch
     } = useMap();
-
-    const classes = useStyles();
 
     const border = borderGeoJson;
 
@@ -97,12 +94,10 @@ export const Map = ({fullsize, markers, facilities, nodes, edges}:MapProps) => {
     ]);
 
     return (
-        <div
-            className={classes.svgWrap}
-        >
-            <svg
+        <SvgWrap>
+            {/* @TODO How to handle not fullsize */}
+            <FullScreenMap
                 ref={ref}
-                className={`${fullsize ? classes.fullScreenMap : ""}`}
                 width={dimension.width}
                 height={dimension.height}
             >
@@ -124,8 +119,8 @@ export const Map = ({fullsize, markers, facilities, nodes, edges}:MapProps) => {
 
                 </ZoomAndPan>
                 <ZoomLevel />
-            </svg>
-        </div>
+            </FullScreenMap>
+        </SvgWrap>
     );
 
 }

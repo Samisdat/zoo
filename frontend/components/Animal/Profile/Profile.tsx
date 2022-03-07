@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid, Paper} from "@material-ui/core";
+import Grid from '@mui/material/Grid';
 import {AnimalProfileStrapi} from "strapi-api/entity/animal/animal-strapi-interface";
 import {Feature} from "./Feature";
 

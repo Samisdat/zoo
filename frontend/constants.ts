@@ -2,7 +2,7 @@ import {LineString} from "geojson";
 
 export const protocol = 'http://'
 
-export const domain = '127.0.0.1:8080'
+export const domain = '192.168.178.21:8080'
 
 export const strapi = '192.168.178.21:1337'
 

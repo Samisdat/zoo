@@ -1,7 +1,6 @@
 import React from 'react';
-import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
 import Moment from 'react-moment';
 
 import {ListItemLink} from "./anlagen";
@@ -10,26 +9,14 @@ import {getPosts} from "strapi-api/query/posts";
 import {Warehouse} from "strapi-api/warehouse/warehouse";
 import {Post} from "strapi-api/entity/post/post";
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            width: '100%',
-            maxWidth: 360,
-            backgroundColor: theme.palette.background.paper,
-        },
-    }),
-);
-
 export default function Blog(props) {
 
     Warehouse.get().hydrate(props.warehouse);
 
     const posts = Warehouse.get().getPosts();
 
-  const classes = useStyles();
-
     return (
-        <List className={classes.root}>
+        <List >
             {
                 posts.map( (post:Post) => {
                     const href =  `/${blogUrlPart}/${post.slug}`

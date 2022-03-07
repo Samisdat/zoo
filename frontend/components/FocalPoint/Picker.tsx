@@ -1,8 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Photo} from "../../strapi-api/entity/photo/photo";
 import {getImagePath} from "../../helper/getImagePath";
-import {makeStyles} from "@material-ui/core/styles";
 import {Position} from "../Map/Context/MapContext";
+import {styled} from "@mui/material/styles";
 
 interface FocalPointPickerProps{
     photo:Photo,
@@ -10,34 +10,32 @@ interface FocalPointPickerProps{
     change:Function
 }
 
-const useStyles = makeStyles({
-    wrap:{
-        position: 'relative',
-    },
-    img:{
-        position: 'absolute',
-        top:'0px',
-        left:'0px',
-        width:'600px',
-    },
-    picker:{
-        position: 'absolute',
-        width:'20px',
-        height:'20px',
-        background: 'rgba(200,0,0,0.3)',
-        border: '1px solid black',
-        borderRadius: '100px',
-        cursor: 'move',
-        marginLeft: '-10px',
-        marginTop: '-10px',
-    }
+const Wrap = styled('div')({
+    position: 'relative',
+});
+
+const Img = styled('img')({
+    position: 'absolute',
+    top:'0px',
+    left:'0px',
+    width:'600px',
+});
+
+const Picker = styled('img')({
+    position: 'absolute',
+    width:'20px',
+    height:'20px',
+    background: 'rgba(200,0,0,0.3)',
+    border: '1px solid black',
+    borderRadius: '100px',
+    cursor: 'move',
+    marginLeft: '-10px',
+    marginTop: '-10px',
 });
 
 export const FocalPointPicker = (props:FocalPointPickerProps) => {
 
     const ref = useRef();
-
-    const classes = useStyles();
 
     const image = props.photo.large || props.photo.medium || props.photo.small;;
 
@@ -102,22 +100,19 @@ export const FocalPointPicker = (props:FocalPointPickerProps) => {
     },[point]);
 
     return (
-        <div
+        <Wrap
             ref={ref}
-            className={classes.wrap}
             style={{
                 height: `${height}px`
             }}
             onMouseMove={handleMove}
             onMouseUp={()=>{setDragging(false)}}
         >
-            <img
-                className={classes.img}
+            <Img
                 src={getImagePath(image.src)}
                 draggable={false}
             />
-            <img
-                className={classes.picker}
+            <Picker
                 style={{
                     top: `${point.y}px`,
                     left: `${point.x}px`
@@ -128,6 +123,6 @@ export const FocalPointPicker = (props:FocalPointPickerProps) => {
                 onMouseUp={()=>{setDragging(false)}}
             />
 
-        </div>
+        </Wrap>
     );
 }

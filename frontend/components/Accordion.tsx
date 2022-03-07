@@ -1,58 +1,57 @@
 import React from 'react';
-import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionActions from '@material-ui/core/AccordionActions';
-import Typography from '@material-ui/core/Typography';
-import Chip from '@material-ui/core/Chip';
-import Button from '@material-ui/core/Button';
-import Divider from '@material-ui/core/Divider';
-import {Icon} from "./Icon/Icon";
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            width: '100%',
-        },
-        heading: {
-            fontSize: theme.typography.pxToRem(15),
-        },
-        secondaryHeading: {
-            fontSize: theme.typography.pxToRem(15),
-            color: theme.palette.text.secondary,
-        },
-        icon: {
-            verticalAlign: 'bottom',
-            height: 20,
-            width: 20,
-        },
-        details: {
-            alignItems: 'center',
-        },
-        column: {
-            flexBasis: '33.33%',
-        },
-        helper: {
-            borderLeft: `2px solid ${theme.palette.divider}`,
-            padding: theme.spacing(1, 2),
-        },
-        link: {
-            color: theme.palette.primary.main,
-            textDecoration: 'none',
-            '&:hover': {
-                textDecoration: 'underline',
-            },
-        },
-    }),
-);
+import Accordion from '@mui/material/Accordion';
+import {default as MuiAccordionDetails} from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionActions from '@mui/material/AccordionActions';
+import {default as MuiTypography} from '@mui/material/Typography';
+import Chip from '@mui/material/Chip';
+import Button from '@mui/material/Button';
+import Divider from '@mui/material/Divider';
+
+import {Icon} from "./Icon/Icon";
+import {styled} from "@mui/material/styles";
+
+export const Root = styled('div')(({ theme }) => ({
+    width: '100%',
+}));
+
+export const Heading = styled(MuiTypography)(({ theme }) => ({
+    fontSize: theme.typography.pxToRem(15),
+}));
+
+export const SecondaryHeading = styled(MuiTypography)(({ theme }) => ({
+    fontSize: theme.typography.pxToRem(15),
+    color: theme.palette.text.secondary,
+}));
+
+export const Column = styled('div')(({ theme }) => ({
+    flexBasis: '33.33%',
+}));
+
+export const Helper = styled(Column)(({ theme }) => ({
+    borderLeft: `2px solid ${theme.palette.divider}`,
+    padding: theme.spacing(1, 2),
+}));
+
+export const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+    alignItems: 'center',
+}));
+
+export const Link = styled('a')(({ theme }) => ({
+    color: theme.palette.primary.main,
+    textDecoration: 'none',
+    '&:hover': {
+        textDecoration: 'underline',
+    },
+
+}));
 
 export default function DetailedAccordion() {
-    const classes = useStyles();
+
 
     return (
-        <div className={classes.root}>
+        <Root>
             <Accordion
                 elevation={0}
                 square={true}
@@ -62,27 +61,27 @@ export default function DetailedAccordion() {
                     aria-controls="panel1c-content"
                     id="panel1c-header"
                 >
-                    <div className={classes.column}>
-                        <Typography className={classes.heading}>Location</Typography>
-                    </div>
-                    <div className={classes.column}>
-                        <Typography className={classes.secondaryHeading}>Select trip destination</Typography>
-                    </div>
+                    <Column>
+                        <Heading>Location</Heading>
+                    </Column>
+                    <Column>
+                        <SecondaryHeading>Select trip destination</SecondaryHeading>
+                    </Column>
                 </AccordionSummary>
-                <AccordionDetails className={classes.details}>
-                    <div className={classes.column} />
-                    <div className={classes.column}>
-                        <Chip label="Barbados" onDelete={() => {}} />
-                    </div>
-                    <div className={clsx(classes.column, classes.helper)}>
-                        <Typography variant="caption">
+                <AccordionDetails>
+                    <Column />
+                    <Column>
+                        heading           <Chip label="Barbados" onDelete={() => {}} />
+                    </Column>
+                    <Helper>
+                        <MuiTypography variant="caption">
                             Select your destination of choice
                             <br />
-                            <a href="#secondary-heading-and-columns" className={classes.link}>
+                            <Link href="#secondary-heading-and-columns" >
                                 Learn more
-                            </a>
-                        </Typography>
-                    </div>
+                            </Link>
+                        </MuiTypography>
+                    </Helper>
                 </AccordionDetails>
                 <Divider />
                 <AccordionActions>
@@ -92,6 +91,6 @@ export default function DetailedAccordion() {
                     </Button>
                 </AccordionActions>
             </Accordion>
-        </div>
+        </Root>
     );
 }

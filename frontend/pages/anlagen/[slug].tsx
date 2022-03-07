@@ -4,7 +4,7 @@ import {getFacilities, getFacilityBySlug} from "strapi-api/query/facilities";
 import {Facility} from "strapi-api/entity/facility/facility";
 import {Warehouse} from "strapi-api/warehouse/warehouse";
 import {useRouter} from "next/router";
-import {Breadcrumb, BreadcrumbLink, BreadcrumbProps} from "components/Navigation/Breadcrumb";
+import {Breadcrumb, BreadcrumbLink} from "components/Navigation/Breadcrumb";
 
 const ReactMarkdown = require('react-markdown')
 

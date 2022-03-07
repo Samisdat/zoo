@@ -1,7 +1,7 @@
 import React from 'react';
 import {AnimalsClassnameFilter} from "./ClassnameFilter";
 import {AnimalsOrderFilter} from "./OrderFilter";
-import {Typography} from "@material-ui/core";
+import Typography from '@mui/material/Typography';
 
 export const AnimalsTaxonomyFilter = (props) => {
 
@@ -24,7 +24,7 @@ export const AnimalsTaxonomyFilter = (props) => {
 
     return (
         <React.Fragment>
-            <Typography variant="h4" gutterBottom>
+            <Typography variant="h5" gutterBottom>
                 Systematik
             </Typography>
             <ul>
@@ -32,7 +32,7 @@ export const AnimalsTaxonomyFilter = (props) => {
                     props.filters.map((filter:any)=>{
 
                         return (
-                            <li>{filter.key} {filter.value}</li>
+                            <li key={filter.key}>{filter.key} {filter.value}</li>
                         );
                     })
                 }

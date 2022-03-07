@@ -9,7 +9,6 @@ import {getTaxonomyCounted} from "./Taxonomy/getTaxonomyCounted";
 import {getImagePath} from "../../../helper/getImagePath";
 import {FilterAccordion} from "./FilterAccordion";
 
-
 export interface AnimalFilter{
     key:string,
     value:string;
@@ -73,15 +72,14 @@ export const FilteredNavigationList = (props:FilteredNavigationListProps) => {
 
     return (
         <React.Fragment>
-            {/*
-            <AnimalFilters/>
-            */}
+
             <FilterAccordion
                 iucnCounted={iucnCounted}
                 taxonomyCounted={taxonomyCounted}
                 filters={filters}
                 setFilters={setFilters}
             />
+
             <NavigationList
                 groups={listGroups}
             />

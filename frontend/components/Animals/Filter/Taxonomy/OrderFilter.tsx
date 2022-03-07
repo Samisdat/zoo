@@ -1,20 +1,10 @@
 import React from 'react';
-import {Avatar, Chip, Divider, Typography} from "@material-ui/core";
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import {AnimalFilter} from "../FilteredNavigationList";
+import Chip from '@mui/material/Chip';
+import Avatar from '@mui/material/Avatar';
+import Divider from '@mui/material/Divider';
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            display:'flex',
-            flexWrap: 'wrap',
-        },
-        avatar: {
-            marginRight: theme.spacing(1),
-            marginBottom: theme.spacing(1),
-        },
-    })
-);
+import {AnimalFilter} from "../FilteredNavigationList";
+import {Chips} from "../Iucn/IucnFilter";
 
 export const AnimalsOrderFilter = (props) => {
 
@@ -23,8 +13,6 @@ export const AnimalsOrderFilter = (props) => {
     }
 
     const filterKey = 'order';
-
-    const classes = useStyles();
 
     const active = props.filters.find((filter)=>{
         return (filterKey === filter.key);
@@ -59,7 +47,7 @@ export const AnimalsOrderFilter = (props) => {
     return (
         <React.Fragment>
             <Divider />
-            <div className={classes.root}>
+            <Chips>
                 {
                     props.orderCounted.members.map((filter:any)=>{
 
@@ -67,7 +55,10 @@ export const AnimalsOrderFilter = (props) => {
                         return (
                             <Chip
                                 key={`${filter.key}`}
-                                className={classes.avatar}
+                                sx={{
+                                    mr:1,
+                                    mb:1
+                                }}
                                 avatar={<Avatar>{filter.count}</Avatar>}
                                 label={filter.key}
                                 onClick={() => { changeActive(filter.key);}}
@@ -76,7 +67,7 @@ export const AnimalsOrderFilter = (props) => {
                         );
                     })
                 }
-            </div>
+            </Chips>
         </React.Fragment>
     );
 }

@@ -1,20 +1,15 @@
 import React from 'react';
-import {Avatar, Chip, Typography} from "@material-ui/core";
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import Chip from '@mui/material/Chip';
+import Avatar from '@mui/material/Avatar';
+import Typography from '@mui/material/Typography';
 import {AnimalFilter} from "../FilteredNavigationList";
+import {styled} from "@mui/material/styles";
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            display:'flex',
-            flexWrap: 'wrap',
-        },
-        avatar: {
-            marginRight: theme.spacing(1),
-            marginBottom: theme.spacing(1),
-        },
-    })
-);
+export const Chips = styled('div')(({ theme }) => ({
+    display:'flex',
+    flexWrap: 'wrap',
+}));
+
 
 const iucnStatusDe = {
     'NE': 'nicht beurteilt',
@@ -31,8 +26,6 @@ const iucnStatusDe = {
 export const AnimalsIucnFilter = (props) => {
 
     const filterKey = 'iucnStatus';
-
-    const classes = useStyles();
 
     const active = props.filters.find((filter)=>{
         return (filterKey === filter.key);
@@ -72,10 +65,10 @@ export const AnimalsIucnFilter = (props) => {
 
     return (
         <React.Fragment>
-            <Typography variant="h4" gutterBottom>
+            <Typography variant="h5" gutterBottom>
                 Rote Liste der gefährdeten Arten
             </Typography>
-            <div className={classes.root}>
+            <Chips>
                 {
                     props.iucnCounted.map((filter:any)=>{
 
@@ -84,7 +77,10 @@ export const AnimalsIucnFilter = (props) => {
                         return (
                             <Chip
                                 key={`${filter.key}`}
-                                className={classes.avatar}
+                                sx={{
+                                    mr:1,
+                                    mb:1
+                                }}
                                 avatar={<Avatar>{filter.count}</Avatar>}
                                 label={`${iucnText} ${filter.key}`}
                                 onClick={() => { changeActive(filter.key);}}
@@ -93,7 +89,7 @@ export const AnimalsIucnFilter = (props) => {
                         );
                     })
                 }
-            </div>
+            </Chips>
         </React.Fragment>
 
     );

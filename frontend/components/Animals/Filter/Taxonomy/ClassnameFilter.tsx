@@ -1,26 +1,13 @@
 import React from 'react';
-import {Avatar, Chip, Typography} from "@material-ui/core";
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import {AnimalFilter} from "../FilteredNavigationList";
+import Chip from '@mui/material/Chip';
+import Avatar from '@mui/material/Avatar';
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            display:'flex',
-            flexWrap: 'wrap',
-        },
-        avatar: {
-            marginRight: theme.spacing(1),
-            marginBottom: theme.spacing(1),
-        },
-    })
-);
+import {AnimalFilter} from "../FilteredNavigationList";
+import {Chips} from "../Iucn/IucnFilter";
 
 export const AnimalsClassnameFilter = (props) => {
 
     const filterKey = 'className';
-
-    const classes = useStyles();
 
     const active = props.filters.find((filter)=>{
         return (filterKey === filter.key);
@@ -49,7 +36,7 @@ export const AnimalsClassnameFilter = (props) => {
 
     return (
         <React.Fragment>
-            <div className={classes.root}>
+            <Chips>
                 {
                     props.taxonomyCounted.map((filter:any)=>{
 
@@ -57,7 +44,10 @@ export const AnimalsClassnameFilter = (props) => {
                         return (
                             <Chip
                                 key={`${filter.key}`}
-                                className={classes.avatar}
+                                sx={{
+                                    mr:1,
+                                    mb:1
+                                }}
                                 avatar={<Avatar>{filter.count}</Avatar>}
                                 label={filter.key}
                                 onClick={() => { changeActive(filter.key);}}
@@ -66,7 +56,7 @@ export const AnimalsClassnameFilter = (props) => {
                         );
                     })
                 }
-            </div>
+            </Chips>
         </React.Fragment>
     );
 }

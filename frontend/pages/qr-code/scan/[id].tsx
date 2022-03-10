@@ -1,13 +1,13 @@
-import React, {useEffect} from "react";
-import {useRouter} from "next/router";
-import {getQrCodeById, getQrCodes} from "strapi-api/query/qr-codes";
-import {Warehouse} from "strapi-api/warehouse/warehouse";
-import {QrCode} from "strapi-api/entity/qr-code/qr-code";
+import React, {useEffect} from 'react';
+import {useRouter} from 'next/router';
+import {getQrCodeById, getQrCodes} from 'strapi-api/query/qr-codes';
+import {Warehouse} from 'strapi-api/warehouse/warehouse';
+import {QrCode} from 'strapi-api/entity/qr-code/qr-code';
 import CircularProgress from '@mui/material/CircularProgress';
-import {useViewport} from "components/viewport/useViewport";
-import {PositionInterface   } from "components/Map/Context/MapContext";
-import {setMarkerToStorage} from "components/Map/setMarkerToStorage";
-import {styled} from "@mui/material/styles";
+import {useViewport} from 'components/viewport/useViewport';
+import {PositionInterface   } from 'components/Map/Context/MapContext';
+import {setMarkerToStorage} from 'components/Map/setMarkerToStorage';
+import {styled} from '@mui/material/styles';
 
 const Centered = styled('div')({
     position: 'absolute',
@@ -95,7 +95,7 @@ export async function getStaticPaths() {
 
     const qrCodes = await getQrCodes();
 
-    let idPaths = qrCodes.map((qrCode:QrCode)=>{
+    const idPaths = qrCodes.map((qrCode:QrCode)=>{
         return {
             params:{
                 id: qrCode.id + ''

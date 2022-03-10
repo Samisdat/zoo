@@ -5,9 +5,9 @@ import {
     getSvg,
     getSvgPath,
     matchGroup, writeGeojsonContainingType, writeXmlContainingType
-} from "../geojson-from-svg";
-import {getDataDir} from "../data-helper";
-import {forOfStatement} from "@babel/types";
+} from '../geojson-from-svg';
+import {getDataDir} from '../data-helper';
+import {forOfStatement} from '@babel/types';
 
 describe('geojson from svg', () => {
 

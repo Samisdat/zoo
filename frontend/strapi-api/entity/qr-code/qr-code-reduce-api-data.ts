@@ -1,5 +1,5 @@
-import {QrCodeStrapi} from "./qr-code-strapi-interface";
-import {QrCodeSpore} from "./qr-code-spore";
+import {QrCodeStrapi} from './qr-code-strapi-interface';
+import {QrCodeSpore} from './qr-code-spore';
 
 export const qrCodeReduceApiData = (apiData: QrCodeStrapi):QrCodeSpore =>{
 

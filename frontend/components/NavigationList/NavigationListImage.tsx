@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 import Avatar from '@mui/material/Avatar';
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 import ListItemIcon from '@mui/material/ListItemIcon';
 
-import {NavigationListItemInterface} from "./NavigationListInterfaces";
-import {Icon} from "../Icon/Icon";
-import {styled} from "@mui/material/styles";
+import {NavigationListItemInterface} from './NavigationListInterfaces';
+import {Icon} from '../Icon/Icon';
+import {styled} from '@mui/material/styles';
 
 export const LargeListItemAvatar = styled(ListItemAvatar)(({ theme }) => ({
     height: theme.spacing(7),

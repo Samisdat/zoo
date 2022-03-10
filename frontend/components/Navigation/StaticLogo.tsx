@@ -1,6 +1,6 @@
 import React from 'react';
 import Paper from '@mui/material/Paper';
-import {styled} from "@mui/material/styles";
+import {styled} from '@mui/material/styles';
 
 const logoSmallWidth = 100 - 16;
 const logoSmallHeight = Math.ceil(logoSmallWidth / 1709 * 1395)

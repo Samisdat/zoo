@@ -1,11 +1,11 @@
-import React from "react";
-import {useRouter} from "next/router";
-import {getQrCodeById, getQrCodes} from "strapi-api/query/qr-codes";
-import {Warehouse} from "strapi-api/warehouse/warehouse";
+import React from 'react';
+import {useRouter} from 'next/router';
+import {getQrCodeById, getQrCodes} from 'strapi-api/query/qr-codes';
+import {Warehouse} from 'strapi-api/warehouse/warehouse';
 
-import QRCode from "react-qr-code";
-import {QrCode} from "strapi-api/entity/qr-code/qr-code";
-import {domain, protocol, qrCodeUrlPart} from "../../../constants";
+import QRCode from 'react-qr-code';
+import {QrCode} from 'strapi-api/entity/qr-code/qr-code';
+import {domain, protocol, qrCodeUrlPart} from '../../../constants';
 
 export default function Index(props) {
 
@@ -53,7 +53,7 @@ export async function getStaticPaths() {
 
     const qrCodes = await getQrCodes();
 
-    let idPaths = qrCodes.map((qrCode:QrCode)=>{
+    const idPaths = qrCodes.map((qrCode:QrCode)=>{
         return {
             params:{
                 id: qrCode.id + ''

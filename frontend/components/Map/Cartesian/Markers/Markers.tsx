@@ -1,13 +1,13 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {useMap} from "../../Context/MapContext";
-import {GeoPath} from "d3";
-import {ClusteredMarkers} from "./ClusteredMarkers";
-import {Marker} from "strapi-api/entity/marker/marker";
+import {useMap} from '../../Context/MapContext';
+import {GeoPath} from 'd3';
+import {ClusteredMarkers} from './ClusteredMarkers';
+import {Marker} from 'strapi-api/entity/marker/marker';
 
 export interface MarkersProps {
     cartesianScale: number;
     markers:Marker[];
-};
+}
 
 export interface ClusterInterface{
     ids: number[],
@@ -199,9 +199,9 @@ export const Markers = (props:MarkersProps) => {
 
                 distances.push(distance);
 
-            };
+            }
 
-        };
+        }
 
         distances = distances.sort((a, b)=>{
 

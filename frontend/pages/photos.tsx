@@ -3,10 +3,10 @@ import React from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 
-import {ListItemLink} from "./anlagen";
-import {Warehouse} from "strapi-api/warehouse/warehouse";
-import {getPhotos} from "../strapi-api/query/photos";
-import {Photo} from "../strapi-api/entity/photo/photo";
+import {ListItemLink} from './anlagen';
+import {Warehouse} from 'strapi-api/warehouse/warehouse';
+import {getPhotos} from '../strapi-api/query/photos';
+import {Photo} from '../strapi-api/entity/photo/photo';
 
 export default function Photos(props) {
 

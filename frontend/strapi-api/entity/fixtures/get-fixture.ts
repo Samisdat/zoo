@@ -1,6 +1,7 @@
-import path from "path";
+import path from 'path';
 
-const fs = require('fs');
+import * as fs from 'fs/promises';
+
 const FIXTURES_BASE_DIR = `${__dirname}/`;
 
 const FIXTURES_ROOT_BASE_DIR = path.resolve(
@@ -16,7 +17,7 @@ export const getFixture = async (dir:string, fixture:string):Promise<any> => {
         fixture
     );
 
-    const fixtureContent = await fs.readFileSync(fixturePath, {encoding: 'utf8'});
+    const fixtureContent = await fs.readFile(fixturePath, {encoding: 'utf8'});
 
     return JSON.parse(fixtureContent);
 
@@ -29,7 +30,7 @@ export const getRootFixture = async (fixture:string):Promise<any> => {
         fixture
     );
 
-    const fixtureContent = await fs.readFileSync(fixturePath, {encoding: 'utf8'});
+    const fixtureContent = await fs.readFile(fixturePath, {encoding: 'utf8'});
 
     return JSON.parse(fixtureContent);
 

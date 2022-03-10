@@ -1,8 +1,8 @@
 import React from 'react';
-import {Warehouse} from "strapi-api/warehouse/warehouse";
-import {getAnimals} from "strapi-api/query/animals";
-import {FilteredNavigationList} from "components/Animals/Filter/FilteredNavigationList";
-import {Breadcrumb, BreadcrumbLink} from "components/Navigation/Breadcrumb";
+import {Warehouse} from 'strapi-api/warehouse/warehouse';
+import {getAnimals} from 'strapi-api/query/animals';
+import {FilteredNavigationList} from 'components/Animals/Filter/FilteredNavigationList';
+import {Breadcrumb, BreadcrumbLink} from 'components/Navigation/Breadcrumb';
 
 export default function Index(props) {
 

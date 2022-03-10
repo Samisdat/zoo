@@ -1,6 +1,6 @@
-import {getFixture} from "../../fixtures/get-fixture";
-import {facilityReduceApiData} from "../facility-reduce-api-data";
-import {FacilitySpore} from "../facility-spore";
+import {getFixture} from '../../fixtures/get-fixture';
+import {facilityReduceApiData} from '../facility-reduce-api-data';
+import {FacilitySpore} from '../facility-spore';
 
 describe('facility reduce api data', ()=>{
 

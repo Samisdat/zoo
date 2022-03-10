@@ -1,4 +1,4 @@
-import {getDataDir, getFileNames} from "../data-helper";
+import {getDataDir, getFileNames} from '../data-helper';
 
 describe('data-helper', () => {
 

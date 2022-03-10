@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
-import {useMap} from "../../Context/MapContext";
-import styled from "@mui/system/styled";
+import {useMap} from '../../Context/MapContext';
+import styled from '@mui/system/styled';
 
 const Fuzziness = styled('circle')({
     fill: '00a800',

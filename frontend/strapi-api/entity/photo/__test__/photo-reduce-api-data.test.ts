@@ -1,7 +1,7 @@
-import {Photo} from "../photo";
-import {getFixture} from "../../fixtures/get-fixture";
-import {PhotoSpore} from "../photo-spore";
-import {reducePhotoApiData} from "../photo-reduce-api-data";
+import {Photo} from '../photo';
+import {getFixture} from '../../fixtures/get-fixture';
+import {PhotoSpore} from '../photo-spore';
+import {reducePhotoApiData} from '../photo-reduce-api-data';
 
 describe('photo reduce api data', ()=>{
 

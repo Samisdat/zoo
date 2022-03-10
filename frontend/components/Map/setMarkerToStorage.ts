@@ -1,4 +1,4 @@
-import {PositionInterface} from "./Context/MapContext";
+import {PositionInterface} from './Context/MapContext';
 
 export const setMarkerToStorage = (position: PositionInterface)  => {
 

@@ -1,4 +1,4 @@
-import {IconName} from "../Icon/IconNames";
+import {IconName} from '../Icon/IconNames';
 
 export interface NavigationListItemInterface {
     key: string;

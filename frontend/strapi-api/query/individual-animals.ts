@@ -1,10 +1,10 @@
-import {getStrapiUrl} from "../utils/get-strapi-url";
-import {getJsonFromApi} from "../utils/get-json-from-api";
-import {Warehouse} from "../warehouse/warehouse";
-import {getPhotoById} from "./photos";
-import {IndividualAnimalStrapi} from "../entity/individual-animal/individual-animal-strapi-interface";
-import {IndividualAnimal} from "../entity/individual-animal/individual-animal";
-import {getAnimalById} from "./animals";
+import {getStrapiUrl} from '../utils/get-strapi-url';
+import {getJsonFromApi} from '../utils/get-json-from-api';
+import {Warehouse} from '../warehouse/warehouse';
+import {getPhotoById} from './photos';
+import {IndividualAnimalStrapi} from '../entity/individual-animal/individual-animal-strapi-interface';
+import {IndividualAnimal} from '../entity/individual-animal/individual-animal';
+import {getAnimalById} from './animals';
 
 export const loadRelations = async (individualAnimal:IndividualAnimal) => {
 

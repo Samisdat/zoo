@@ -1,5 +1,5 @@
-import {IndividualAnimalSpore} from "./individual-animal-spore";
-import {IndividualAnimalStrapi} from "./individual-animal-strapi-interface";
+import {IndividualAnimalSpore} from './individual-animal-spore';
+import {IndividualAnimalStrapi} from './individual-animal-strapi-interface';
 
 export const individualAnimalReduceApiData = (apiData: IndividualAnimalStrapi):IndividualAnimalSpore =>{
 

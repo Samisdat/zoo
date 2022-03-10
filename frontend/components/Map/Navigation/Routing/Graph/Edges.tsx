@@ -1,7 +1,7 @@
 import React from 'react';
-import {Edge} from "strapi-api/entity/edge/edge";
-import {edgeIdPrefix} from "../../../../../constants";
-import styled from "@mui/system/styled";
+import {Edge} from 'strapi-api/entity/edge/edge';
+import {edgeIdPrefix} from '../../../../../constants';
+import styled from '@mui/system/styled';
 
 interface EdgesProperties {
     edges: Edge[];
@@ -23,7 +23,7 @@ export const Edges = ({edges}:EdgesProperties) => {
                     <EdgePath
                         key={i}
                         id={`${edgeIdPrefix}${edge.id}`}
-                        className={`edge`}
+                        className={'edge'}
                         d={edge.d}
                     />
                 );

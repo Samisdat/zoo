@@ -9,13 +9,13 @@ import Typography from '@mui/material/Typography';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
 
-import {NavigationList} from "../NavigationList/NavigationList";
-import {groupByFirstLetter} from "../NavigationList/groupByFirstLetter";
-import {NavigationListItemInterface} from "../NavigationList/NavigationListInterfaces";
-import {useMap} from "../Map/Context/MapContext";
-import {Icon} from "../Icon/Icon";
-import {Facility} from "strapi-api/entity/facility/facility";
-import {styled} from "@mui/material/styles";
+import {NavigationList} from '../NavigationList/NavigationList';
+import {groupByFirstLetter} from '../NavigationList/groupByFirstLetter';
+import {NavigationListItemInterface} from '../NavigationList/NavigationListInterfaces';
+import {useMap} from '../Map/Context/MapContext';
+import {Icon} from '../Icon/Icon';
+import {Facility} from 'strapi-api/entity/facility/facility';
+import {styled} from '@mui/material/styles';
 
 const ExpandHandle = styled(MuiPaper)(({ theme }) => ({
     position: 'absolute',
@@ -54,7 +54,7 @@ const Transition = React.forwardRef(function Transition(
 
 export interface SearchDialogProperties{
     facilities:Facility[];
-};
+}
 
 export default function SearchDialog({facilities}:SearchDialogProperties) {
 

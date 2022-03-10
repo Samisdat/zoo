@@ -3,11 +3,11 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Moment from 'react-moment';
 
-import {ListItemLink} from "./anlagen";
-import {blogUrlPart} from "../constants";
-import {getPosts} from "strapi-api/query/posts";
-import {Warehouse} from "strapi-api/warehouse/warehouse";
-import {Post} from "strapi-api/entity/post/post";
+import {ListItemLink} from './anlagen';
+import {blogUrlPart} from '../constants';
+import {getPosts} from 'strapi-api/query/posts';
+import {Warehouse} from 'strapi-api/warehouse/warehouse';
+import {Post} from 'strapi-api/entity/post/post';
 
 export default function Blog(props) {
 

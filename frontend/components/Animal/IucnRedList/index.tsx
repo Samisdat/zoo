@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import {default as MuiPaper} from '@mui/material/Paper';
 import Tooltip from '@mui/material/Tooltip';
-import {useViewport} from "../../viewport/useViewport";
+import {useViewport} from '../../viewport/useViewport';
 import { useInView } from 'react-intersection-observer';
 
 import {
@@ -11,9 +11,9 @@ import {
     ENDANGERED, IucnStatus, LEAST_CONCERN,
     NEAR_THREATENED,
     VULNERABLE
-} from "strapi-api/entity/animal/iucnStatus";
-import {IucnRedListIndicator} from "./Indicator";
-import {styled} from "@mui/material/styles";
+} from 'strapi-api/entity/animal/iucnStatus';
+import {IucnRedListIndicator} from './Indicator';
+import {styled} from '@mui/material/styles';
 
 const possibleStati = [
     LEAST_CONCERN,
@@ -60,7 +60,7 @@ export const IucnCat = styled('div')(({ theme }) => ({
     color:'#fff',
     borderRight:'1px solid #fff',
     fontWeight: 'bold',
-    "&:last-child": {
+    '&:last-child': {
         borderRight:'0px solid #fff',
     }
 }));

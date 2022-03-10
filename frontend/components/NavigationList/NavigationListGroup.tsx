@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 import ListSubheader from '@mui/material/ListSubheader';
-import {NavigationListItem} from "./NavigationListItem";
-import {NavigationListGroupInterface} from "./NavigationListInterfaces";
+import {NavigationListItem} from './NavigationListItem';
+import {NavigationListGroupInterface} from './NavigationListInterfaces';
 
 export interface NavigationListGroupProps {
-    group: NavigationListGroupInterface,
-    handleClickItem?: Function
+    group: NavigationListGroupInterface;
+    handleClickItem?: (key:string) => void;
 }
 
 export const NavigationListGroup = (props: NavigationListGroupProps) => {

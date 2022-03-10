@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  ignorePatterns: ['**/src/stories/*'],
   parser: '@typescript-eslint/parser',
   plugins: [
     '@typescript-eslint',

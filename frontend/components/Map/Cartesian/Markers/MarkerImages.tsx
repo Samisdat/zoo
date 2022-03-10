@@ -1,10 +1,10 @@
 import React from 'react';
-import {Facility} from "strapi-api/entity/facility/facility";
-import {MarkerImage} from "./MarkerImage";
+import {Facility} from 'strapi-api/entity/facility/facility';
+import {MarkerImage} from './MarkerImage';
 
 export interface MarkerImagesProps {
     facilities: Facility[];
-};
+}
 
 export const MarkerImages = ({facilities}:MarkerImagesProps) => {
 

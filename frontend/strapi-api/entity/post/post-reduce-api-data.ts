@@ -1,6 +1,6 @@
-import {PostStrapi} from "./post-strapi-interface";
-import {PostSpore} from "./post-spore";
-import {FacilityStrapi} from "../facility/facility-strapi";
+import {PostStrapi} from './post-strapi-interface';
+import {PostSpore} from './post-spore';
+import {FacilityStrapi} from '../facility/facility-strapi';
 
 export const postReduceApiData = (apiData: PostStrapi):PostSpore =>{
 

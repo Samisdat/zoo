@@ -1,12 +1,12 @@
-import {FacilitySpore, FacilityType} from "./facility-spore";
-import {Entity} from "../entity";
-import {facilityReduceApiData} from "./facility-reduce-api-data";
-import {FacilityStrapi} from "./facility-strapi";
-import {Warehouse} from "../../warehouse/warehouse";
-import {Photo} from "../photo/photo";
-import {Animal} from "../animal/animal";
-import {Node} from "../node/node";
-import {Marker} from "../marker/marker";
+import {FacilitySpore, FacilityType} from './facility-spore';
+import {Entity} from '../entity';
+import {facilityReduceApiData} from './facility-reduce-api-data';
+import {FacilityStrapi} from './facility-strapi';
+import {Warehouse} from '../../warehouse/warehouse';
+import {Photo} from '../photo/photo';
+import {Animal} from '../animal/animal';
+import {Node} from '../node/node';
+import {Marker} from '../marker/marker';
 
 export class Facility extends Entity<FacilitySpore>{
 

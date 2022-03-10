@@ -17,7 +17,7 @@ export const Legend = (props) => {
     return (
         <p>
             {citation} {year}. The IUCN Red List of Threatened Species. Version {version}. <br/>
-            <a href='https://www.iucnredlist.org' target="_blank">https://www.iucnredlist.org</a>. Downloaded on {downloadDate}
+            <a href='https://www.iucnredlist.org' target="_blank" rel="noreferrer">https://www.iucnredlist.org</a>. Downloaded on {downloadDate}
         </p>
     );
 

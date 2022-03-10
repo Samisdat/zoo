@@ -1,12 +1,13 @@
 import * as d3 from 'd3';
-import React, {useEffect, useRef, useState, FunctionComponent} from "react";
-import {MapTransformInterface, useMap} from "./Context/MapContext";
+import React, {useEffect, useRef, useState, FunctionComponent} from 'react';
+import {MapTransformInterface, useMap} from './Context/MapContext';
 
 interface ZoomDependencies {
     mapSvg:any,
     zooming:any,
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface ZoomAndPanProps {}
 
 export const ZoomAndPan: FunctionComponent<ZoomAndPanProps> = ({children}) => {
@@ -25,7 +26,7 @@ export const ZoomAndPan: FunctionComponent<ZoomAndPanProps> = ({children}) => {
 
     const createD3Map = ()=> {
 
-        var mapSvg = d3.select(ref.current)
+        const mapSvg = d3.select(ref.current)
 
         const mapGroup = d3.select(map.current);
 
@@ -84,7 +85,7 @@ export const ZoomAndPan: FunctionComponent<ZoomAndPanProps> = ({children}) => {
 
     useEffect(() => {
 
-        d3.select(ref.current).on("click", (event, d)=>{
+        d3.select(ref.current).on('click', (event, d)=>{
 
             const [clickX, clickY] = d3.pointer(event);
 
@@ -193,7 +194,7 @@ export const ZoomAndPan: FunctionComponent<ZoomAndPanProps> = ({children}) => {
                 .scale(Math.min(8, 0.9 / Math.max((x1 - x0) / dimension.width, (y1 - y0) / dimension.height)))
                 .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
         )
-            .on("end", ()=>{
+            .on('end', ()=>{
 
                 console.log('zoomend')
 

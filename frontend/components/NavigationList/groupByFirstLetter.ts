@@ -1,4 +1,4 @@
-import {NavigationListGroupInterface, NavigationListItemInterface} from "./NavigationListInterfaces";
+import {NavigationListGroupInterface, NavigationListItemInterface} from './NavigationListInterfaces';
 
 interface GroupListItem{
     [index:string]:NavigationListItemInterface[];
@@ -8,7 +8,7 @@ export const groupByFirstLetter = (listKey:string, items:NavigationListItemInter
 
     const seedGroup:GroupListItem = {};
 
-    let group = items.reduce((r:GroupListItem, e) => {
+    const group = items.reduce((r:GroupListItem, e) => {
 
         let firstLetter = e.text[0].toUpperCase();
 

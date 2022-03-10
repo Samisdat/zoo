@@ -1,7 +1,7 @@
-import {getStrapiUrl} from "../utils/get-strapi-url";
-import {Photo} from "../entity/photo/photo";
-import {PhotoStrapi} from "../entity/photo/photo-strapi";
-import {getJsonFromApi} from "../utils/get-json-from-api";
+import {getStrapiUrl} from '../utils/get-strapi-url';
+import {Photo} from '../entity/photo/photo';
+import {PhotoStrapi} from '../entity/photo/photo-strapi';
+import {getJsonFromApi} from '../utils/get-json-from-api';
 
 export type PhotoType = 'animal' | 'facility' ;
 

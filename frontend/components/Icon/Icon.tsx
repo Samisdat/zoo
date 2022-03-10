@@ -1,7 +1,7 @@
 import React from 'react';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {SizeProp} from "@fortawesome/fontawesome-svg-core";
-import {IconName, validIcons} from "./IconNames";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {SizeProp} from '@fortawesome/fontawesome-svg-core';
+import {IconName, validIcons} from './IconNames';
 
 export interface IconProps{
     size?: SizeProp,

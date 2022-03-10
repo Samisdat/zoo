@@ -1,7 +1,7 @@
-import {Photo} from "../photo";
-import {getFixture} from "../../fixtures/get-fixture";
-import {Animal} from "../../animal/animal";
-import {Facility} from "../../facility/facility";
+import {Photo} from '../photo';
+import {getFixture} from '../../fixtures/get-fixture';
+import {Animal} from '../../animal/animal';
+import {Facility} from '../../facility/facility';
 
 describe('photo value object', ()=>{
 

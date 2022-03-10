@@ -1,5 +1,5 @@
-import React from "react";
-import {useMap} from "./Context/MapContext";
+import React from 'react';
+import {useMap} from './Context/MapContext';
 
 export const ZoomLevel = () => {
 

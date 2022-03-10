@@ -1,10 +1,10 @@
 import React from 'react';
-import {getImagePath} from "../../../../helper/getImagePath";
-import {Facility} from "strapi-api/entity/facility/facility";
+import {getImagePath} from '../../../../helper/getImagePath';
+import {Facility} from 'strapi-api/entity/facility/facility';
 
 export interface MarkerImageProps {
     facility: Facility;
-};
+}
 
 const getImage = (facility:Facility) => {
 

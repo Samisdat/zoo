@@ -1,11 +1,11 @@
-import {PhotoSize, PhotoSpore} from "./photo-spore";
-import {PhotoStrapi} from "./photo-strapi";
-import {animalReduceApiData} from "../animal/animal-reduce-api-data";
-import {AnimalSpore} from "../animal/animal-spore";
-import {AnimalStrapi} from "../animal/animal-strapi-interface";
-import {FacilityStrapi} from "../facility/facility-strapi";
-import {facilityReduceApiData} from "../facility/facility-reduce-api-data";
-import {Position} from "../../../components/Map/Context/MapContext";
+import {PhotoSize, PhotoSpore} from './photo-spore';
+import {PhotoStrapi} from './photo-strapi';
+import {animalReduceApiData} from '../animal/animal-reduce-api-data';
+import {AnimalSpore} from '../animal/animal-spore';
+import {AnimalStrapi} from '../animal/animal-strapi-interface';
+import {FacilityStrapi} from '../facility/facility-strapi';
+import {facilityReduceApiData} from '../facility/facility-reduce-api-data';
+import {Position} from '../../../components/Map/Context/MapContext';
 
 const sizeNames = [
     'thumbnail',
@@ -73,7 +73,7 @@ export const reducePhotoApiData = (apiData: PhotoStrapi):PhotoSpore =>{
         apiData.y = 50;
     }
 
-    let focalPoint: Position = {
+    const focalPoint: Position = {
         x: apiData.x,
         y: apiData.y,
     };
@@ -104,7 +104,7 @@ export const reducePhotoApiData = (apiData: PhotoStrapi):PhotoSpore =>{
         photoSpore.animal = animal;
     }
 
-    let facility = undefined;
+    const facility = undefined;
 
     if(apiData.facility){
 

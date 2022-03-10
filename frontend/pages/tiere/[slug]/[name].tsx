@@ -2,12 +2,12 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Typography from '@mui/material/Typography';
 
-import {IndividualAnimal} from "strapi-api/entity/individual-animal/individual-animal";
-import {Warehouse} from "strapi-api/warehouse/warehouse";
+import {IndividualAnimal} from 'strapi-api/entity/individual-animal/individual-animal';
+import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import {
     getIndividualAnimalBySlug,
     getIndividualAnimals
-} from "strapi-api/query/individual-animals";
+} from 'strapi-api/query/individual-animals';
 
 export default function Individuum(props) {
 
@@ -44,7 +44,7 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
 
-    let individualAnimals = await getIndividualAnimals()
+    const individualAnimals = await getIndividualAnimals()
 
     const animalPaths = individualAnimals.map((individualAnimals:IndividualAnimal)=>{
 

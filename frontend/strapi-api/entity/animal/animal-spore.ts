@@ -1,5 +1,5 @@
-import {IucnStatus} from "./iucnStatus";
-import {AnimalProfileStrapi} from "./animal-strapi-interface";
+import {IucnStatus} from './iucnStatus';
+import {AnimalProfileStrapi} from './animal-strapi-interface';
 
 export interface AnimalSpore {
     id: number;

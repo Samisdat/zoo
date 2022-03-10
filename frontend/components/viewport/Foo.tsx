@@ -1,5 +1,5 @@
 import React from 'react';
-import {useViewport} from "./useViewport";
+import {useViewport} from './useViewport';
 
 export default function Foo() {
 

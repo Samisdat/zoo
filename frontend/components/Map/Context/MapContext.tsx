@@ -1,13 +1,13 @@
 import * as React from 'react'
-import {GeoPath} from "d3";
-import {GeoProjection} from "d3-geo";
-import {MutableRefObject, useEffect, useRef} from "react";
+import {GeoPath} from 'd3';
+import {GeoProjection} from 'd3-geo';
+import {MutableRefObject, useEffect, useRef} from 'react';
 
 import throttle from 'lodash.throttle';
-import {Route} from "../Navigation/Routing/Graph/Dijkstra";
-import {Facility} from "strapi-api/entity/facility/facility";
-import {getTransformFromStorage} from "../getTransformFromStorage";
-import {getPositionFromStorage} from "../getPositionFromStorage";
+import {Route} from '../Navigation/Routing/Graph/Dijkstra';
+import {Facility} from 'strapi-api/entity/facility/facility';
+import {getTransformFromStorage} from '../getTransformFromStorage';
+import {getPositionFromStorage} from '../getPositionFromStorage';
 
 // @refresh reset
 
@@ -140,7 +140,7 @@ const MapStateContext = React.createContext<
     >(undefined);
 
 
-MapStateContext.displayName = "Context Display Name";
+MapStateContext.displayName = 'Context Display Name';
 function mapReducer(state: State, action: Action):State {
 
     switch (action.type) {
@@ -339,9 +339,9 @@ function MapProvider({children}: MapProviderProps) {
 
     useEffect(() => {
 
-        window.addEventListener("resize", handleWindowResize());
+        window.addEventListener('resize', handleWindowResize());
 
-        return () => window.removeEventListener("resize", handleWindowResize());
+        return () => window.removeEventListener('resize', handleWindowResize());
 
     }, []);
 
@@ -370,7 +370,7 @@ function MapProvider({children}: MapProviderProps) {
 
     useEffect(() => {
 
-        localStorage.setItem("transform", JSON.stringify(state.transform));
+        localStorage.setItem('transform', JSON.stringify(state.transform));
 
     }, [state.transform]);
 

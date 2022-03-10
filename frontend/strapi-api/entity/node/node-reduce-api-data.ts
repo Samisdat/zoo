@@ -1,5 +1,5 @@
-import {NodeSpore} from "./node-spore";
-import {NodeStrapi} from "./node-strapi-interface";
+import {NodeSpore} from './node-spore';
+import {NodeStrapi} from './node-strapi-interface';
 
 export const nodeReduceApiData = (apiData: NodeStrapi):NodeSpore =>{
 

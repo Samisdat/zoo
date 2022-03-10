@@ -1,5 +1,5 @@
-import {getFixture} from "../../fixtures/get-fixture";
-import {Facility} from "../facility";
+import {getFixture} from '../../fixtures/get-fixture';
+import {Facility} from '../facility';
 
 describe('facility value object', ()=>{
 

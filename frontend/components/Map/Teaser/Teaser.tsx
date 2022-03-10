@@ -6,12 +6,12 @@ import Button from '@mui/material/Button';
 import MobileStepper from '@mui/material/MobileStepper';
 
 import SwipeableViews from 'react-swipeable-views';
-import {Animal} from "strapi-api/entity/animal/animal";
-import {RoutingInterface, useMap} from "../Context/MapContext";
-import {Icon} from "../../Icon/Icon";
-import {Photo} from "../../../strapi-api/entity/photo/photo";
-import {FocalPointImage} from "../../FocalPoint/Image";
-import {styled} from "@mui/material/styles";
+import {Animal} from 'strapi-api/entity/animal/animal';
+import {RoutingInterface, useMap} from '../Context/MapContext';
+import {Icon} from '../../Icon/Icon';
+import {Photo} from '../../../strapi-api/entity/photo/photo';
+import {FocalPointImage} from '../../FocalPoint/Image';
+import {styled} from '@mui/material/styles';
 
 const MapTeaser = styled(Card)(({ theme }) => ({
     display: 'flex',
@@ -160,7 +160,7 @@ export const Teaser = () => {
         });
     }
 
-    let maxSteps = teaserItems.length;
+    const maxSteps = teaserItems.length;
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);

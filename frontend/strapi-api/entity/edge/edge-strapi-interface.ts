@@ -1,4 +1,4 @@
-import {NodeStrapi} from "../node/node-strapi-interface";
+import {NodeStrapi} from '../node/node-strapi-interface';
 
 export interface EdgeStrapi {
     id:number;

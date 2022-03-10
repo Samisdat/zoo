@@ -1,4 +1,4 @@
-import {NavigationListGroupInterface} from "../NavigationList/NavigationListInterfaces";
+import {NavigationListGroupInterface} from '../NavigationList/NavigationListInterfaces';
 
 export const navigationCategories:NavigationListGroupInterface[] = [
     {

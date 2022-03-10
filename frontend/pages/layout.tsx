@@ -2,13 +2,13 @@ import React from 'react';
 
 import Grid from '@mui/material/Grid';
 import {default as MuiPaper} from '@mui/material/Paper';
-import {styled} from "@mui/material/styles";
+import {styled} from '@mui/material/styles';
 
-import {Small} from "components/viewport/Small";
-import {Large} from "components/viewport/Large";
-import SimpleTabs from "components/Tabs";
-import DetailedAccordion from "components/Accordion";
-import BasicTable from "components/Table";
+import {Small} from 'components/viewport/Small';
+import {Large} from 'components/viewport/Large';
+import SimpleTabs from 'components/Tabs';
+import DetailedAccordion from 'components/Accordion';
+import BasicTable from 'components/Table';
 
 
 export const Root = styled('div')(({ theme }) => ({

@@ -1,11 +1,11 @@
-import {Facility} from "../entity/facility/facility";
-import {Warehouse} from "../warehouse/warehouse";
-import {getPhotoById} from "./photos";
-import {getAnimalById} from "./animals";
-import {getMarkerById} from "./marker";
-import {getStrapiUrl} from "../utils/get-strapi-url";
-import {getJsonFromApi} from "../utils/get-json-from-api";
-import {FacilityStrapi} from "../entity/facility/facility-strapi";
+import {Facility} from '../entity/facility/facility';
+import {Warehouse} from '../warehouse/warehouse';
+import {getPhotoById} from './photos';
+import {getAnimalById} from './animals';
+import {getMarkerById} from './marker';
+import {getStrapiUrl} from '../utils/get-strapi-url';
+import {getJsonFromApi} from '../utils/get-json-from-api';
+import {FacilityStrapi} from '../entity/facility/facility-strapi';
 
 export const loadRelations = async (facility:Facility) => {
 

@@ -1,4 +1,4 @@
-import {LineString} from "geojson";
+import {LineString} from 'geojson';
 
 export const protocol = 'http://'
 
@@ -24,14 +24,14 @@ export const angle = 180;
 export const edgeIdPrefix = 'edge-';
 
 export const borderGeoJson:any = {
-    "type": "Feature",
-    "properties": {
-        "name": "Außengrenze",
-        "slug": "aussengrenze"
+    'type': 'Feature',
+    'properties': {
+        'name': 'Außengrenze',
+        'slug': 'aussengrenze'
     },
-    "geometry": {
-        "type": "LineString",
-        "coordinates": [
+    'geometry': {
+        'type': 'LineString',
+        'coordinates': [
             [
                 7.110154484257978,
                 51.24166260896365
@@ -341,6 +341,6 @@ export const borderGeoJson:any = {
 }
 
 export const boundingBoxGeoJson:LineString = {
-    "type":"LineString",
-    "coordinates":[[7.105631546336763,51.24175769601948],[7.105631546336763,51.236787035952574],[7.1157893937833165,51.236787035952574],[7.1157893937833165,51.24175769601948],[7.105631546336763,51.24175769601948]]
+    'type':'LineString',
+    'coordinates':[[7.105631546336763,51.24175769601948],[7.105631546336763,51.236787035952574],[7.1157893937833165,51.236787035952574],[7.1157893937833165,51.24175769601948],[7.105631546336763,51.24175769601948]]
 };

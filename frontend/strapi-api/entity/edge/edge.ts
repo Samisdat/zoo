@@ -1,9 +1,9 @@
-import {Entity} from "../entity";
-import {EdgeSpore} from "./edge-spore";
-import {Warehouse} from "../../warehouse/warehouse";
-import {EdgeStrapi} from "./edge-strapi-interface";
-import {edgeReduceApiData} from "./edge-reduce-api-data";
-import {Node} from "../node/node";
+import {Entity} from '../entity';
+import {EdgeSpore} from './edge-spore';
+import {Warehouse} from '../../warehouse/warehouse';
+import {EdgeStrapi} from './edge-strapi-interface';
+import {edgeReduceApiData} from './edge-reduce-api-data';
+import {Node} from '../node/node';
 
 export class Edge extends Entity<EdgeSpore>{
 

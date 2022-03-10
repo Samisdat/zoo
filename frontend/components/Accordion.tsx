@@ -9,8 +9,8 @@ import Chip from '@mui/material/Chip';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 
-import {Icon} from "./Icon/Icon";
-import {styled} from "@mui/material/styles";
+import {Icon} from './Icon/Icon';
+import {styled} from '@mui/material/styles';
 
 export const Root = styled('div')(({ theme }) => ({
     width: '100%',
@@ -71,7 +71,7 @@ export default function DetailedAccordion() {
                 <AccordionDetails>
                     <Column />
                     <Column>
-                        heading           <Chip label="Barbados" onDelete={() => {}} />
+                        heading           <Chip label="Barbados" onDelete={() => {console.log('Barbados');}} />
                     </Column>
                     <Helper>
                         <MuiTypography variant="caption">

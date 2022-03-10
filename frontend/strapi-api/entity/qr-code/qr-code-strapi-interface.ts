@@ -1,5 +1,5 @@
-import {FacilityStrapi} from "../facility/facility-strapi";
-import {AnimalStrapi} from "../animal/animal-strapi-interface";
+import {FacilityStrapi} from '../facility/facility-strapi';
+import {AnimalStrapi} from '../animal/animal-strapi-interface';
 
 export interface QrCodeStrapi {
     id: number;

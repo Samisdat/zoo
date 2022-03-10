@@ -1,9 +1,9 @@
-import {NodeSpore} from "./node-spore";
-import {Entity} from "../entity";
-import {Edge} from "../edge/edge";
-import {Warehouse} from "../../warehouse/warehouse";
-import {NodeStrapi} from "./node-strapi-interface";
-import {nodeReduceApiData} from "./node-reduce-api-data";
+import {NodeSpore} from './node-spore';
+import {Entity} from '../entity';
+import {Edge} from '../edge/edge';
+import {Warehouse} from '../../warehouse/warehouse';
+import {NodeStrapi} from './node-strapi-interface';
+import {nodeReduceApiData} from './node-reduce-api-data';
 
 export class Node extends Entity<NodeSpore>{
 

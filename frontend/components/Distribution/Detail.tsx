@@ -2,9 +2,9 @@ import React, {useEffect, useState} from 'react';
 
 import * as d3 from 'd3';
 
-import {GeoPath} from "d3";
-import {GeoProjection} from "d3-geo";
-import {MapTransformInterface} from "../Map/Context/MapContext";
+import {GeoPath} from 'd3';
+import {GeoProjection} from 'd3-geo';
+import {MapTransformInterface} from '../Map/Context/MapContext';
 
 const mapTransformDefault = {
     k:1,
@@ -20,7 +20,7 @@ export interface DistributionDetailStateInterface {
     pathGenerator: GeoPath,
     projection: GeoProjection;
     transform: MapTransformInterface;
-};
+}
 
 const MapStateDefault: DistributionDetailStateInterface = {
     width: 100,
@@ -98,21 +98,21 @@ export const centerToFeatureCollection = (mapElements:any[]) => {
 
     }
 
-    let north = Math.max(...latitudes);
+    const north = Math.max(...latitudes);
 
-    let south = Math.min(...latitudes);
+    const south = Math.min(...latitudes);
 
-    let west = Math.max(...longitudes);
-    let east = Math.min(...longitudes);
+    const west = Math.max(...longitudes);
+    const east = Math.min(...longitudes);
 
     return {
-        "type": "Feature",
-        "properties": {
-            "name": "Centered"
+        'type': 'Feature',
+        'properties': {
+            'name': 'Centered'
         },
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [
+        'geometry': {
+            'type': 'Polygon',
+            'coordinates': [
                 [
                     [east, north],
                     [west, north],
@@ -133,8 +133,8 @@ export const Detail = (props) => {
     const distributionId = 'geographic-range-distribution'
 
     const worldId = 'geographic-range-world';
-    const whereId = "geographic-range-where";
-    const rectId = "geographic-range-react";
+    const whereId = 'geographic-range-where';
+    const rectId = 'geographic-range-react';
 
     const [mapState, setMapState] = useState<DistributionDetailStateInterface>(MapStateDefault);
 
@@ -148,10 +148,10 @@ export const Detail = (props) => {
 
         const zoom = d3.zoom()
             .scaleExtent([1, 8])
-            .on("zoom", zoomed);
+            .on('zoom', zoomed);
 
         const svg = d3.select(`#${svgId}`)
-            .attr("viewBox", [0, 0, width, height] as any)
+            .attr('viewBox', [0, 0, width, height] as any)
         ;
 
 
@@ -161,46 +161,46 @@ export const Detail = (props) => {
         const rect = d3.select(`#${rectId}`);
 
         world
-            .attr("fill", "#444")
-            .attr("stroke", "black")
-            .attr("cursor", "pointer")
-            .selectAll("path")
+            .attr('fill', '#444')
+            .attr('stroke', 'black')
+            .attr('cursor', 'pointer')
+            .selectAll('path')
             .data(props.worldCountriesJson.features)
-            .join("path")
-            .attr("d", path);
+            .join('path')
+            .attr('d', path);
 
         where
-            .selectAll("path")
+            .selectAll('path')
             .data(props.distributionGeoJson.features)
             .enter()
-            .append("path")
-            .attr("fill", (d) => {
-                return "yellow";
+            .append('path')
+            .attr('fill', (d) => {
+                return 'yellow';
             })
-            .attr("stroke", (d) => {
-                return "yellow";
+            .attr('stroke', (d) => {
+                return 'yellow';
             })
-            .attr("opacity", (d) => {
+            .attr('opacity', (d) => {
                 return 1;
             })
-            .attr("d", path)
+            .attr('d', path)
 
         const center = centerToFeatureCollection(props.distributionGeoJson.features);
 
         rect
-            .selectAll("path")
+            .selectAll('path')
             .exit()
             .data([center])
             .enter()
-            .append("path")
-            .attr("fill", (d)=>{
+            .append('path')
+            .attr('fill', (d)=>{
                 return '#0f0';
             })
-            .attr("stroke", (d)=>{
+            .attr('stroke', (d)=>{
                 return '#0f0';
             })
-            .attr("opacity", 0.7)
-            .attr("d", path as any)
+            .attr('opacity', 0.7)
+            .attr('d', path as any)
 
         const [[x0, y0], [x1, y1]] = path.bounds(center as any);
 
@@ -216,8 +216,8 @@ export const Detail = (props) => {
 
 
             const {transform} = event;
-            distribution.attr("transform", transform);
-            distribution.attr("stroke-width", 1 / transform.k);
+            distribution.attr('transform', transform);
+            distribution.attr('stroke-width', 1 / transform.k);
         }
 
         const nextMapState = {
@@ -249,7 +249,7 @@ export const Detail = (props) => {
             top: 0,
             left: 0,
             width: '100%',
-            height: `400px` ,
+            height: '400px' ,
             backgroundColor: mapState.color,
             display: 'block',
         }}

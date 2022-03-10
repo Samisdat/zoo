@@ -1,4 +1,4 @@
-import {Position} from "../../../components/Map/Context/MapContext";
+import {Position} from '../../../components/Map/Context/MapContext';
 
 export interface PhotoSize{
     width: number;

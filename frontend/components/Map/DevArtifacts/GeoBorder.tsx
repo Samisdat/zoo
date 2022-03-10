@@ -1,8 +1,8 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
-import {useMap} from "../Context/MapContext";
-import {borderGeoJson} from "../../../constants";
+import {useMap} from '../Context/MapContext';
+import {borderGeoJson} from '../../../constants';
 
 export const GeoBorder = (props) => {
 
@@ -20,7 +20,7 @@ export const GeoBorder = (props) => {
             return;
         }
 
-        var borderGroup = d3.select(ref.current);
+        const borderGroup = d3.select(ref.current);
         borderGroup.selectAll('path')
             .data([border])
             .join('path')
@@ -32,7 +32,7 @@ export const GeoBorder = (props) => {
             })
             .attr('d', path as any);
 
-        ;
+        
 
 
     },[path]);

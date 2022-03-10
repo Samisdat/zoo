@@ -1,5 +1,5 @@
-import path from "path";
-import * as fs from "fs";
+import path from 'path';
+import * as fs from 'fs';
 
 const rootDataDir = path.resolve(process.env.PWD as string, 'data-repos');
 

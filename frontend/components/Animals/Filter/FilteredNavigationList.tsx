@@ -1,13 +1,13 @@
 import React from 'react';
-import {Animal} from "strapi-api/entity/animal/animal";
-import {NavigationList} from "../../NavigationList/NavigationList";
-import {NavigationListItemInterface} from "../../NavigationList/NavigationListInterfaces";
-import {animalUrlPart} from "../../../constants";
-import {groupByFirstLetter} from "../../NavigationList/groupByFirstLetter";
-import {getIucnCounted} from "./Iucn/getIucnCounted";
-import {getTaxonomyCounted} from "./Taxonomy/getTaxonomyCounted";
-import {getImagePath} from "../../../helper/getImagePath";
-import {FilterAccordion} from "./FilterAccordion";
+import {Animal} from 'strapi-api/entity/animal/animal';
+import {NavigationList} from '../../NavigationList/NavigationList';
+import {NavigationListItemInterface} from '../../NavigationList/NavigationListInterfaces';
+import {animalUrlPart} from '../../../constants';
+import {groupByFirstLetter} from '../../NavigationList/groupByFirstLetter';
+import {getIucnCounted} from './Iucn/getIucnCounted';
+import {getTaxonomyCounted} from './Taxonomy/getTaxonomyCounted';
+import {getImagePath} from '../../../helper/getImagePath';
+import {FilterAccordion} from './FilterAccordion';
 
 export interface AnimalFilter{
     key:string,
@@ -30,7 +30,7 @@ export const FilteredNavigationList = (props:FilteredNavigationListProps) => {
             return true;
         }
 
-        let hit:boolean[] = filters.map((filterCriteria)=>{
+        const hit:boolean[] = filters.map((filterCriteria)=>{
 
             return (filterCriteria.value === animal[filterCriteria.key]);
 

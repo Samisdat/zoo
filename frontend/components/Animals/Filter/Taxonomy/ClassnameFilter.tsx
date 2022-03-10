@@ -2,8 +2,8 @@ import React from 'react';
 import Chip from '@mui/material/Chip';
 import Avatar from '@mui/material/Avatar';
 
-import {AnimalFilter} from "../FilteredNavigationList";
-import {Chips} from "../Iucn/IucnFilter";
+import {AnimalFilter} from '../FilteredNavigationList';
+import {Chips} from '../Iucn/IucnFilter';
 
 export const AnimalsClassnameFilter = (props) => {
 

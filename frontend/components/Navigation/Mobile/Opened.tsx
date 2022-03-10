@@ -10,12 +10,12 @@ import { TransitionProps } from '@mui/material/transitions';
 
 import {
     NavigationList,
-} from "../../NavigationList/NavigationList";
+} from '../../NavigationList/NavigationList';
 
-import {NavigationListGroupInterface} from "../../NavigationList/NavigationListInterfaces";
-import {Icon} from "../../Icon/Icon";
-import {styled} from "@mui/material/styles";
-import {NavigationFab} from "./Closed";
+import {NavigationListGroupInterface} from '../../NavigationList/NavigationListInterfaces';
+import {Icon} from '../../Icon/Icon';
+import {styled} from '@mui/material/styles';
+import {NavigationFab} from './Closed';
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {

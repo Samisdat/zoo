@@ -1,4 +1,4 @@
-import {get, getSupportedTypes, isSupportedType} from "../geojson";
+import {get, getSupportedTypes, isSupportedType} from '../geojson';
 
 describe('geojson', () => {
 

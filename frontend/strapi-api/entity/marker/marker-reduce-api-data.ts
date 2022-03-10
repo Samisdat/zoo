@@ -1,5 +1,5 @@
-import {MarkerStrapi} from "./marker-strapi";
-import {MarkerSpore} from "./marker-spore";
+import {MarkerStrapi} from './marker-strapi';
+import {MarkerSpore} from './marker-spore';
 
 export const markerReduceApiData = (apiData: MarkerStrapi):MarkerSpore =>{
 

@@ -154,10 +154,12 @@ export class Dijkstra{
             return undefined;
         }
 
-        let distance = current.distance;
-        let route = [current.id];
+        const distance = current.distance;
+        const route = [current.id];
 
-        while(true){
+        const loop = true;
+
+        while(loop){
 
             if(undefined === current.previous){
                 break;

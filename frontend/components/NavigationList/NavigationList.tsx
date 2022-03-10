@@ -2,13 +2,13 @@ import React from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 
-import {NavigationListGroup} from "./NavigationListGroup";
-import {NavigationListGroupInterface} from "./NavigationListInterfaces";
-import {styled} from "@mui/material/styles";
+import {NavigationListGroup} from './NavigationListGroup';
+import {NavigationListGroupInterface} from './NavigationListInterfaces';
+import {styled} from '@mui/material/styles';
 
 export interface NavigationListProps {
-    groups:NavigationListGroupInterface[],
-    handleClickItem?: Function
+    groups:NavigationListGroupInterface[];
+    handleClickItem?: (key:string) => void;
 }
 
 export const StyledNavigationList = styled(List)(({ theme }) => ({

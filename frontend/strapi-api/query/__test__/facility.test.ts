@@ -1,12 +1,12 @@
-import {getRootFixture} from "../../entity/fixtures/get-fixture";
+import {getRootFixture} from '../../entity/fixtures/get-fixture';
 
 jest.mock('node-fetch');
 import fetch from 'node-fetch';
 const { Response } = jest.requireActual('node-fetch');
 
-import {FacilityStrapi} from "../../entity/facility/facility-strapi";
-import {getFacilities, getFacilityById, getFacilityBySlug} from "../facilities";
-import {Facility} from "../../entity/facility/facility";
+import {FacilityStrapi} from '../../entity/facility/facility-strapi';
+import {getFacilities, getFacilityById, getFacilityBySlug} from '../facilities';
+import {Facility} from '../../entity/facility/facility';
 
 describe('query facility endpoint', ()=>{
 

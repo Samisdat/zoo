@@ -1,4 +1,4 @@
-import {mapTransformDefault, MapTransformInterface} from "./Context/MapContext";
+import {mapTransformDefault, MapTransformInterface} from './Context/MapContext';
 
 export const getTransformFromStorage = ():MapTransformInterface => {
 

@@ -1,4 +1,4 @@
-import {PositionInterface} from "./Context/MapContext";
+import {PositionInterface} from './Context/MapContext';
 
 const markerDefault: PositionInterface = {
     lat:51.24289490775235,

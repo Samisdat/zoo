@@ -3,8 +3,8 @@ import Chip from '@mui/material/Chip';
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 
-import {AnimalFilter} from "../FilteredNavigationList";
-import {Chips} from "../Iucn/IucnFilter";
+import {AnimalFilter} from '../FilteredNavigationList';
+import {Chips} from '../Iucn/IucnFilter';
 
 export const AnimalsOrderFilter = (props) => {
 

@@ -1,7 +1,7 @@
 
 import { NextApiRequest, NextApiResponse } from 'next'
-import * as fs from "fs";
-import path from "path";
+import * as fs from 'fs';
+import path from 'path';
 
 const names = [
 {id:-1, name:'Northern Cyprus'},

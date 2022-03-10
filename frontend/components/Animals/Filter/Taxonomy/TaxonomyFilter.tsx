@@ -1,6 +1,6 @@
 import React from 'react';
-import {AnimalsClassnameFilter} from "./ClassnameFilter";
-import {AnimalsOrderFilter} from "./OrderFilter";
+import {AnimalsClassnameFilter} from './ClassnameFilter';
+import {AnimalsOrderFilter} from './OrderFilter';
 import Typography from '@mui/material/Typography';
 
 export const AnimalsTaxonomyFilter = (props) => {

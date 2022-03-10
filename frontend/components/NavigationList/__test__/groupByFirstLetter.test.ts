@@ -1,5 +1,5 @@
-import {groupByFirstLetter} from "../groupByFirstLetter";
-import {PinnedSubheaderListGroupProps, PinnedSubheaderListItemProps} from "../PinnedSubheaderList";
+import {groupByFirstLetter} from '../groupByFirstLetter';
+import {PinnedSubheaderListGroupProps, PinnedSubheaderListItemProps} from '../PinnedSubheaderList';
 
 describe('groupByFirstLetter', () => {
 

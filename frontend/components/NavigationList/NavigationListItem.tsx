@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 import Link from 'next/link'
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
-import {NavigationListImage} from "./NavigationListImage";
-import {NavigationListItemInterface} from "./NavigationListInterfaces";
+import {NavigationListImage} from './NavigationListImage';
+import {NavigationListItemInterface} from './NavigationListInterfaces';
 
 export interface NavigationListItemProps {
     item: NavigationListItemInterface,
-    handleClickItem?: Function
+    handleClickItem?: (key:string) => void
 }
 
 const LinkIfPossible = (props) => {

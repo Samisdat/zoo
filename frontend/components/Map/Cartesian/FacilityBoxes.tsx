@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from "@mui/system/styled";
+import styled from '@mui/system/styled';
 
 const Box = styled('rect')({
         fill:'#a9d3df',

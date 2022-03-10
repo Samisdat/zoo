@@ -1,13 +1,13 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
-import {useMap} from "../../Context/MapContext";
-import {Marker} from "strapi-api/entity/marker/marker";
-import {angle} from "../../../../constants";
+import {useMap} from '../../Context/MapContext';
+import {Marker} from 'strapi-api/entity/marker/marker';
+import {angle} from '../../../../constants';
 
 export interface ClusteredMarkersProperties{
     clusters:ClusterInterface[];
     radius:number;
-};
+}
 
 interface ClusterInterface{
     ids: number[],
@@ -66,7 +66,7 @@ export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
             .attr('cy', function(d) {
                 return d.contains[0].y;
             })
-            .attr("transform", (d)=>{
+            .attr('transform', (d)=>{
 
                 return `rotate(${angle} ${d.contains[0].x} ${d.contains[0].y})`;
 
@@ -88,7 +88,7 @@ export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
 
             })
             .attr('r', props.radius)
-            .on("click", handleClick)
+            .on('click', handleClick)
         ;
 
         groupSelection.selectAll('path')
@@ -106,14 +106,14 @@ export const ClusteredMarkers = (props:ClusteredMarkersProperties) => {
             .attr('height', function(d) {
                 return props.radius + 'px';
             })
-            .attr("transform", (d) => {
+            .attr('transform', (d) => {
 
                 const scale = props.radius / 512;
 
                 const x = d.contains[0].x - props.radius / 4 - props.radius;
                 const y = d.contains[0].y - props.radius / 4 - props.radius;
 
-                const transform = "translate(" + x + "," + y + ") scale(" + scale +  ")";
+                const transform = 'translate(' + x + ',' + y + ') scale(' + scale +  ')';
 
                 return transform;
 

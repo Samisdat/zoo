@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {Warehouse} from "strapi-api/warehouse/warehouse";
-import {useRouter} from "next/router";
-import {Breadcrumb, BreadcrumbLink} from "components/Navigation/Breadcrumb";
+import {Warehouse} from 'strapi-api/warehouse/warehouse';
+import {useRouter} from 'next/router';
+import {Breadcrumb, BreadcrumbLink} from 'components/Navigation/Breadcrumb';
 import Container from '@mui/material/Container';
-import {getPhotoById, getPhotos} from "../../strapi-api/query/photos";
-import {Photo} from "../../strapi-api/entity/photo/photo";
-import {FocalPointPicker} from "../../components/FocalPoint/Picker";
-import {FocalPointImage} from "../../components/FocalPoint/Image";
-import {Position} from "../../components/Map/Context/MapContext";
-import {getStrapiUrl} from "../../strapi-api/utils/get-strapi-url";
+import {getPhotoById, getPhotos} from '../../strapi-api/query/photos';
+import {Photo} from '../../strapi-api/entity/photo/photo';
+import {FocalPointPicker} from '../../components/FocalPoint/Picker';
+import {FocalPointImage} from '../../components/FocalPoint/Image';
+import {Position} from '../../components/Map/Context/MapContext';
+import {getStrapiUrl} from '../../strapi-api/utils/get-strapi-url';
 
 export default function PhotoPage(props) {
 
@@ -120,7 +120,7 @@ export async function getStaticPaths() {
 
     const photos = await getPhotos();
 
-    let ids = photos.map((photo:Photo)=>{
+    const ids = photos.map((photo:Photo)=>{
         return {
             params:{
                 id: photo.id + ''

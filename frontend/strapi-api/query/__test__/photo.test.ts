@@ -1,15 +1,15 @@
-import {getRootFixture} from "../../entity/fixtures/get-fixture";
+import {getRootFixture} from '../../entity/fixtures/get-fixture';
 
 jest.mock('node-fetch');
 import fetch from 'node-fetch';
 const { Response } = jest.requireActual('node-fetch');
 
-import {getAnimalById, getAnimalBySlug, getAnimals} from "../animals";
-import {AnimalStrapi} from "../../entity/animal/animal-strapi-interface";
-import {Animal} from "../../entity/animal/animal";
-import {getPhotoById, getPhotos, PhotoType} from "../photos";
-import {PhotoStrapi} from "../../entity/photo/photo-strapi";
-import {Photo} from "../../entity/photo/photo";
+import {getAnimalById, getAnimalBySlug, getAnimals} from '../animals';
+import {AnimalStrapi} from '../../entity/animal/animal-strapi-interface';
+import {Animal} from '../../entity/animal/animal';
+import {getPhotoById, getPhotos, PhotoType} from '../photos';
+import {PhotoStrapi} from '../../entity/photo/photo-strapi';
+import {Photo} from '../../entity/photo/photo';
 
 describe('query photo endpoint', ()=>{
 

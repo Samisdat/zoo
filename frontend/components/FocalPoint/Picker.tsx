@@ -1,13 +1,13 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Photo} from "../../strapi-api/entity/photo/photo";
-import {getImagePath} from "../../helper/getImagePath";
-import {Position} from "../Map/Context/MapContext";
-import {styled} from "@mui/material/styles";
+import {Photo} from '../../strapi-api/entity/photo/photo';
+import {getImagePath} from '../../helper/getImagePath';
+import {Position} from '../Map/Context/MapContext';
+import {styled} from '@mui/material/styles';
 
 interface FocalPointPickerProps{
-    photo:Photo,
-    point:Position,
-    change:Function
+    photo:Photo;
+    point:Position;
+    change:(pos:Position) => void;
 }
 
 const Wrap = styled('div')({
@@ -37,7 +37,7 @@ export const FocalPointPicker = (props:FocalPointPickerProps) => {
 
     const ref = useRef();
 
-    const image = props.photo.large || props.photo.medium || props.photo.small;;
+    const image = props.photo.large || props.photo.medium || props.photo.small;
 
     const scale = 600 / image.width;
 

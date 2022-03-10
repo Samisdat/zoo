@@ -1,9 +1,9 @@
-import {getFacilityById} from "./facilities";
-import {getStrapiUrl} from "../utils/get-strapi-url";
-import {getJsonFromApi} from "../utils/get-json-from-api";
-import {Warehouse} from "../warehouse/warehouse";
-import {Marker} from "../entity/marker/marker";
-import {MarkerStrapi} from "../entity/marker/marker-strapi";
+import {getFacilityById} from './facilities';
+import {getStrapiUrl} from '../utils/get-strapi-url';
+import {getJsonFromApi} from '../utils/get-json-from-api';
+import {Warehouse} from '../warehouse/warehouse';
+import {Marker} from '../entity/marker/marker';
+import {MarkerStrapi} from '../entity/marker/marker-strapi';
 
 export const loadRelations = async (marker:Marker) => {
 
@@ -33,7 +33,7 @@ export const getMarkerById = async (markerId:number):Promise<Marker> =>{
 
 export const getMarkers = async ():Promise<Marker[]> =>{
 
-    const requestUrl = getStrapiUrl(`/markers`);
+    const requestUrl = getStrapiUrl('/markers');
 
     const json = await getJsonFromApi<MarkerStrapi[]>(requestUrl);
 

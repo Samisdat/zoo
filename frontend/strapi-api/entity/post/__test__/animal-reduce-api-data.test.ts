@@ -1,6 +1,6 @@
-import {PostSpore} from "../animal-spore";
-import {postReduceApiData} from "../animal-reduce-api-data";
-import {getFixture} from "../../fixtures/get-fixture";
+import {PostSpore} from '../animal-spore';
+import {postReduceApiData} from '../animal-reduce-api-data';
+import {getFixture} from '../../fixtures/get-fixture';
 
 describe('reduce api data', ()=>{
 

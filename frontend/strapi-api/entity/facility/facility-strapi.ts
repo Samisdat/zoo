@@ -1,8 +1,8 @@
-import {FacilityType} from "./facility-spore";
-import {PhotoStrapi} from "../photo/photo-strapi";
-import {AnimalStrapi} from "../animal/animal-strapi-interface";
-import {NodeStrapi} from "../node/node-strapi-interface";
-import {MarkerStrapi} from "../marker/marker-strapi";
+import {FacilityType} from './facility-spore';
+import {PhotoStrapi} from '../photo/photo-strapi';
+import {AnimalStrapi} from '../animal/animal-strapi-interface';
+import {NodeStrapi} from '../node/node-strapi-interface';
+import {MarkerStrapi} from '../marker/marker-strapi';
 
 export interface FacilityStrapi{
     id: number;

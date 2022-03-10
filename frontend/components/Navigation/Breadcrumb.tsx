@@ -2,8 +2,8 @@ import React from 'react';
 import Link from 'next/link'
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import {default as MuiLink} from '@mui/material/Link';
-import {Icon} from "../Icon/Icon";
-import {styled} from "@mui/material/styles";
+import {Icon} from '../Icon/Icon';
+import {styled} from '@mui/material/styles';
 
 // @TODO try sx or styled with Icon instead div
 const IconWithSpacing = styled('div')(({ theme }) => ({

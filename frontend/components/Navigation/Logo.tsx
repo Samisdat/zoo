@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
-import * as d3 from "d3";
+import * as d3 from 'd3';
 
 const logoSmallWidth = 100;
 const logoSmallHeight = Math.ceil(logoSmallWidth / 1709 * 1395)
 
 import createPersistedState from 'use-persisted-state';
-import {styled} from "@mui/system";
+import {styled} from '@mui/system';
 const useAnimationPlayedState = createPersistedState('animation');
 
 const LogoLink = styled('a')(({ theme }) => ({
@@ -90,11 +90,11 @@ export function Logo() {
         const scale = largeWidth/ 1709;
         const smallScale = smallWidth/ 1709;
 
-        let largeX = (svgWidth - largeWidth) / 2
-        let largeY = (svgHeight - largeHeight) / 2
+        const largeX = (svgWidth - largeWidth) / 2
+        const largeY = (svgHeight - largeHeight) / 2
 
-        let smallX = (svgWidth - smallWidth) - 16
-        let smallY = (svgHeight - smallHeight)
+        const smallX = (svgWidth - smallWidth) - 16
+        const smallY = (svgHeight - smallHeight)
 
         all
             .attr('transform', 'translate(' + largeX + ' ' + largeY + ') scale(' + scale + ' )')
@@ -195,7 +195,7 @@ export function Logo() {
             .delay(steps[3])
             .duration(durations[3])
             .style('opacity', 0)
-            .on("end", ()=>{
+            .on('end', ()=>{
 
                 svg.attr('viewBox', '0 0 1709 1395');
                 svg.style('width', smallWidth);

@@ -1,5 +1,5 @@
-import {getFixture} from "../../fixtures/get-fixture";
-import {Post} from "../animal";
+import {getFixture} from '../../fixtures/get-fixture';
+import {Post} from '../animal';
 
 describe('animal value object', ()=>{
 

@@ -9,15 +9,15 @@ import { AppProps } from 'next/app';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider, EmotionCache } from '@emotion/react';
-import {theme} from './theme';
-import createEmotionCache from './createEmotionCache';
+import {theme} from '../src/theme';
+import createEmotionCache from '../src/createEmotionCache';
 
-import {ViewportProvider} from "components/viewport/ViewportProvider";
-import {Navigation} from "components/Navigation/Navigation";
-import {navigationCategories} from "components/Navigation/NavigationCategory";
+import {ViewportProvider} from 'components/viewport/ViewportProvider';
+import {Navigation} from 'components/Navigation/Navigation';
+import {navigationCategories} from 'components/Navigation/NavigationCategory';
 import Container from '@mui/material/Container';
-import {styled} from "@mui/system";
-import {useRouter} from "next/router";
+import {styled} from '@mui/system';
+import {useRouter} from 'next/router';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();

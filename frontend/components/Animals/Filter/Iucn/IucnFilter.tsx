@@ -2,8 +2,8 @@ import React from 'react';
 import Chip from '@mui/material/Chip';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
-import {AnimalFilter} from "../FilteredNavigationList";
-import {styled} from "@mui/material/styles";
+import {AnimalFilter} from '../FilteredNavigationList';
+import {styled} from '@mui/material/styles';
 
 export const Chips = styled('div')(({ theme }) => ({
     display:'flex',

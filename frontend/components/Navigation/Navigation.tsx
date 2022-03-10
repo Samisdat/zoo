@@ -1,9 +1,9 @@
 import React from 'react';
 
-import {useViewport} from "../viewport/useViewport";
-import {NavigationMobile} from "./Mobile/index";
-import {NavigationLarge} from "./NavigationLarge";
-import {NavigationListGroupInterface} from "../NavigationList/NavigationListInterfaces";
+import {useViewport} from '../viewport/useViewport';
+import {NavigationMobile} from './Mobile/index';
+import {NavigationLarge} from './NavigationLarge';
+import {NavigationListGroupInterface} from '../NavigationList/NavigationListInterfaces';
 
 interface NavigationProps{
     categories:NavigationListGroupInterface[]

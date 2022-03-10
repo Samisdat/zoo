@@ -1,5 +1,5 @@
 import {useContext} from 'react';
-import {Viewport, viewportContext} from "./ViewportProvider";
+import {Viewport, viewportContext} from './ViewportProvider';
 
 export const useViewport = ():Viewport => {
 

@@ -1,13 +1,15 @@
 import React from 'react';
-import Moment from "react-moment";
-import {getPostBySlug, getPosts} from "strapi-api/query/posts";
-import {Post} from "strapi-api/entity/post/post";
-import {Warehouse} from "strapi-api/warehouse/warehouse";
-import {useRouter} from "next/router";
-import {Breadcrumb, BreadcrumbLink} from "components/Navigation/Breadcrumb";
+import Moment from 'react-moment';
+import {getPostBySlug, getPosts} from 'strapi-api/query/posts';
+import {Post} from 'strapi-api/entity/post/post';
+import {Warehouse} from 'strapi-api/warehouse/warehouse';
+import {useRouter} from 'next/router';
+import {Breadcrumb, BreadcrumbLink} from 'components/Navigation/Breadcrumb';
 import Container from '@mui/material/Container';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactMarkdown = require('react-markdown')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const gfm = require('remark-gfm')
 
 export default function BlogPost(props) {
@@ -41,7 +43,9 @@ export default function BlogPost(props) {
             />
             <h1>{post.title}</h1>
             <h2><Moment format="DD.MM.YYYY" date={post.date} /></h2>
-            <ReactMarkdown plugins={[gfm]} children={post.body} />
+            <ReactMarkdown plugins={[gfm]}>
+                {post.body}
+            </ReactMarkdown>
         </Container>
     );
 }
@@ -64,7 +68,7 @@ export async function getStaticPaths() {
 
     const posts = await getPosts();
 
-    let newsSlugs = posts.map((post:Post)=>{
+    const newsSlugs = posts.map((post:Post)=>{
         return {
             params:{
                 slug: post.slug + ''

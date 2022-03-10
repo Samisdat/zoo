@@ -1,9 +1,9 @@
-import {Entity} from "../entity";
-import {MarkerSpore} from "./marker-spore";
-import {MarkerStrapi} from "./marker-strapi";
-import {markerReduceApiData} from "./marker-reduce-api-data";
-import {Warehouse} from "../../warehouse/warehouse";
-import {Facility} from "../facility/facility";
+import {Entity} from '../entity';
+import {MarkerSpore} from './marker-spore';
+import {MarkerStrapi} from './marker-strapi';
+import {markerReduceApiData} from './marker-reduce-api-data';
+import {Warehouse} from '../../warehouse/warehouse';
+import {Facility} from '../facility/facility';
 
 export class Marker extends Entity<MarkerSpore>{
 

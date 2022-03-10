@@ -1,8 +1,8 @@
-import fs from "fs";
-import {Feature, LineString, Polygon} from "geojson";
-import {getDataDir} from "./data-helper";
+import fs from 'fs';
+import {Feature, LineString, Polygon} from 'geojson';
+import {getDataDir} from './data-helper';
 
-let supportedTypes = [
+const supportedTypes = [
     'bounding-box',
     'border',
     'way',

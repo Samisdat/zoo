@@ -1,4 +1,4 @@
-import {FacilityStrapi} from "../facility/facility-strapi";
+import {FacilityStrapi} from '../facility/facility-strapi';
 
 export interface MarkerStrapi {
     id: number;

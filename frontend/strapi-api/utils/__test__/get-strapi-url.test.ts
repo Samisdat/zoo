@@ -1,4 +1,4 @@
-import {getStrapiUrl} from "../get-strapi-url";
+import {getStrapiUrl} from '../get-strapi-url';
 
 describe('get-strapi-url', ()=>{
 

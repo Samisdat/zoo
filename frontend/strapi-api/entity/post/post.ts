@@ -1,12 +1,12 @@
-import {Entity} from "../entity";
-import {PostSpore} from "./post-spore";
-import {Photo} from "../photo/photo";
-import {IndividualAnimal} from "../individual-animal/individual-animal";
-import {Warehouse} from "../../warehouse/warehouse";
-import {Animal} from "../animal/animal";
-import {Facility} from "../facility/facility";
-import {postReduceApiData} from "./post-reduce-api-data";
-import {PostStrapi} from "./post-strapi-interface";
+import {Entity} from '../entity';
+import {PostSpore} from './post-spore';
+import {Photo} from '../photo/photo';
+import {IndividualAnimal} from '../individual-animal/individual-animal';
+import {Warehouse} from '../../warehouse/warehouse';
+import {Animal} from '../animal/animal';
+import {Facility} from '../facility/facility';
+import {postReduceApiData} from './post-reduce-api-data';
+import {PostStrapi} from './post-strapi-interface';
 
 export class Post extends Entity<PostSpore>{
 

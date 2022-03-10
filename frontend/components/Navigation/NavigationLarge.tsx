@@ -11,11 +11,11 @@ import Container from '@mui/material/Container';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Slide from '@mui/material/Slide';
 
-import {NavigationListGroupInterface} from "../NavigationList/NavigationListInterfaces";
-import {StaticLogo} from "./StaticLogo";
-import {NavigationList} from "../NavigationList/NavigationList";
-import {Icon} from "../Icon/Icon";
-import {styled} from "@mui/material/styles";
+import {NavigationListGroupInterface} from '../NavigationList/NavigationListInterfaces';
+import {StaticLogo} from './StaticLogo';
+import {NavigationList} from '../NavigationList/NavigationList';
+import {Icon} from '../Icon/Icon';
+import {styled} from '@mui/material/styles';
 
 export const Root = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -30,7 +30,7 @@ export const Link = styled(MuiLink)(({ theme }) => ({
 }));
 
 export const List = styled(MuiList)(({ theme }) => ({
-    display: `flex`,
+    display: 'flex',
 }));
 
 export const Foo = styled('div')(({ theme }) => ({
@@ -127,8 +127,12 @@ export const NavigationLarge = (props) => {
                             <List
                                 disablePadding
                             >
-                                {mainItems.items.map((item) => (
-                                        <Link href={item.href}  color="inherit">
+                                {mainItems.items.map((item, index) => (
+                                        <Link
+                                            key={index}
+                                            href={item.href}
+                                            color="inherit"
+                                        >
                                             <ListItem button>
                                                 <ListItemText
                                                     primaryTypographyProps={{variant:'h6'}}

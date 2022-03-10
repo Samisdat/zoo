@@ -1,13 +1,13 @@
-import {PhotoSize, PhotoSpore} from "./photo-spore";
-import {PhotoStrapi} from "./photo-strapi";
-import {Entity} from "../entity";
-import {reducePhotoApiData} from "./photo-reduce-api-data";
-import {Animal} from "../animal/animal";
-import {AnimalSpore} from "../animal/animal-spore";
-import {Facility} from "../facility/facility";
-import {FacilitySpore} from "../facility/facility-spore";
-import {Warehouse} from "../../warehouse/warehouse";
-import {Position} from "../../../components/Map/Context/MapContext";
+import {PhotoSize, PhotoSpore} from './photo-spore';
+import {PhotoStrapi} from './photo-strapi';
+import {Entity} from '../entity';
+import {reducePhotoApiData} from './photo-reduce-api-data';
+import {Animal} from '../animal/animal';
+import {AnimalSpore} from '../animal/animal-spore';
+import {Facility} from '../facility/facility';
+import {FacilitySpore} from '../facility/facility-spore';
+import {Warehouse} from '../../warehouse/warehouse';
+import {Position} from '../../../components/Map/Context/MapContext';
 
 export class Photo extends Entity<PhotoSpore>{
 

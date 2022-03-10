@@ -1,8 +1,8 @@
-import {AnimalStrapi} from "./animal-strapi-interface";
-import {AnimalSpore} from "./animal-spore";
-import {Facility} from "../facility/facility";
-import {FacilityStrapi} from "../facility/facility-strapi";
-import {IUCN_STATI, IucnStatus} from "./iucnStatus";
+import {AnimalStrapi} from './animal-strapi-interface';
+import {AnimalSpore} from './animal-spore';
+import {Facility} from '../facility/facility';
+import {FacilityStrapi} from '../facility/facility-strapi';
+import {IUCN_STATI, IucnStatus} from './iucnStatus';
 
 export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
 

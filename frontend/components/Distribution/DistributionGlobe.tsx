@@ -1,8 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react';
 
-import {Globe} from "./Globe";
+import {Globe} from './Globe';
 
 import * as topojson from 'topojson-client';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const simplify = require('simplify-geojson');
 
 const distributionService = async (apiUrl):Promise<any> => {

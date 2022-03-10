@@ -1,9 +1,9 @@
 import React, {useEffect, useRef} from 'react';
-import * as d3 from "d3";
-import {MapTransformInterface, PositionInterface, useMap} from "../../Context/MapContext";
-import {edgeIdPrefix, svg} from "../../../../constants";
-import {Warehouse} from "strapi-api/warehouse/warehouse";
-import {getPosition} from "../../DevArtifacts/CartesianPoint";
+import * as d3 from 'd3';
+import {MapTransformInterface, PositionInterface, useMap} from '../../Context/MapContext';
+import {edgeIdPrefix, svg} from '../../../../constants';
+import {Warehouse} from 'strapi-api/warehouse/warehouse';
+import {getPosition} from '../../DevArtifacts/CartesianPoint';
 
 export interface Coordinate{
     x:number;

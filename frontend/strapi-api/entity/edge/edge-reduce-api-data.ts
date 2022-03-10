@@ -1,5 +1,5 @@
-import {EdgeStrapi} from "./edge-strapi-interface";
-import {EdgeSpore} from "./edge-spore";
+import {EdgeStrapi} from './edge-strapi-interface';
+import {EdgeSpore} from './edge-spore';
 
 export const edgeReduceApiData = (apiData: EdgeStrapi):EdgeSpore =>{
 

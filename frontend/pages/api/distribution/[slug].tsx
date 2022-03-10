@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import path from "path";
-import {FeatureCollection} from "geojson";
-import fs from "fs";
+import path from 'path';
+import {FeatureCollection} from 'geojson';
+import fs from 'fs';
 
 const distributionDataDir = path.resolve(process.env.PWD, 'data-repos/iucnredlist/topojson');
 

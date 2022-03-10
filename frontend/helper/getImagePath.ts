@@ -1,4 +1,4 @@
-import {protocol, strapi} from "../constants";
+import {protocol, strapi} from '../constants';
 
 export const getImagePath = (imagePath) =>{
 

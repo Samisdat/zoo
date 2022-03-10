@@ -5,7 +5,7 @@ import Tabs from '@mui/material/Tabs';
 import {default as MuiTab} from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import {styled} from "@mui/material/styles";
+import {styled} from '@mui/material/styles';
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -58,7 +58,7 @@ export default function SimpleTabs() {
 
     const [value, setValue] = React.useState(0);
 
-    const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
+    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
     };
 
@@ -77,7 +77,7 @@ export default function SimpleTabs() {
                     aria-label="simple tabs example"
                     TabIndicatorProps={{
                         style: {
-                            display: "none",
+                            display: 'none',
                         },
                     }}
                 >

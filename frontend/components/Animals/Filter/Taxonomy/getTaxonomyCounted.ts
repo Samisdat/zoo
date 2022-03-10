@@ -1,4 +1,4 @@
-import {Animal} from "strapi-api/entity/animal/animal";
+import {Animal} from 'strapi-api/entity/animal/animal';
 
 export const getTaxonomyCounted = (animals: Animal[]) => {
 

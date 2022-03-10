@@ -3,9 +3,9 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
-import {AnimalsIucnFilter} from "./Iucn/IucnFilter";
-import {AnimalsTaxonomyFilter} from "./Taxonomy/TaxonomyFilter";
-import {Icon} from "../../Icon/Icon";
+import {AnimalsIucnFilter} from './Iucn/IucnFilter';
+import {AnimalsTaxonomyFilter} from './Taxonomy/TaxonomyFilter';
+import {Icon} from '../../Icon/Icon';
 
 export const FilterAccordion = (props) => {
 

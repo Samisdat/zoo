@@ -1,5 +1,5 @@
-import {FacilityStrapi} from "./facility-strapi";
-import {FacilitySpore} from "./facility-spore";
+import {FacilityStrapi} from './facility-strapi';
+import {FacilitySpore} from './facility-spore';
 
 export const facilityReduceApiData = (apiData: FacilityStrapi):FacilitySpore => {
 

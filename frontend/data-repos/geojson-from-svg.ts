@@ -1,11 +1,13 @@
-import path from "path";
-import fs from "fs";
+import path from 'path';
+import fs from 'fs';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { geoFromSVGXML } = require('svg2geojson');
 
-import {getDataDir, getRootDataDir} from "./data-helper";
-import {getSupportedTypes} from "./geojson";
-import {xmlTemplate} from "./xml-template";
-import {getSlug} from "../helper/getSlug";
+import {getDataDir, getRootDataDir} from './data-helper';
+import {getSupportedTypes} from './geojson';
+import {xmlTemplate} from './xml-template';
+import {getSlug} from '../helper/getSlug';
 
 export const getSvgPath = () => {
 
@@ -29,7 +31,7 @@ export const getSvg = () => {
 
 export const ensureGroupPresent = (svg:string, type:string) => {
 
-    const groupRegEx = new RegExp(`<g id="${type}"(.*?)>(.*?)<\/g>`, 'm');
+    const groupRegEx = new RegExp(`<g id="${type}"(.*?)>(.*?)</g>`, 'm');
 
     return groupRegEx.test(svg);
 
@@ -37,7 +39,7 @@ export const ensureGroupPresent = (svg:string, type:string) => {
 
 export const matchGroup = (svg:string, type:string) => {
 
-    const groupRegEx = new RegExp(`<g id="${type}"(.*?)>(.*?)<\/g>`, 'm');
+    const groupRegEx = new RegExp(`<g id="${type}"(.*?)>(.*?)</g>`, 'm');
 
     return groupRegEx.exec(svg);
 
@@ -97,7 +99,7 @@ export const getElementIds = (svg:string):string[] => {
 
     const pathIds:string[] = [];
 
-    let pathRegEx = /<(rect|path|circle) id="(.*?)"(?: serif:id="(.*?)")*/gm;
+    const pathRegEx = /<(rect|path|circle) id="(.*?)"(?: serif:id="(.*?)")*/gm;
 
     let index = 0;
 
@@ -164,8 +166,8 @@ export const getGeojsonFromSvg = (dataSvg:string, type:string):Promise<any> => {
                     }).reduce((a, b) => {return a + b }, 0);
 
                     geoJson.features[i].geometry = {
-                        "type": "Point",
-                        "coordinates": [
+                        'type': 'Point',
+                        'coordinates': [
                             longidues/coordinates.length,
                             latitudes/coordinates.length
                         ]

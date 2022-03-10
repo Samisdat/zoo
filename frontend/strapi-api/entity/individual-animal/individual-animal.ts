@@ -1,10 +1,10 @@
-import {IndividualAnimalSpore} from "./individual-animal-spore";
-import {Entity} from "../entity";
-import {Photo} from "../photo/photo";
-import {Warehouse} from "../../warehouse/warehouse";
-import {IndividualAnimalStrapi} from "./individual-animal-strapi-interface";
-import {individualAnimalReduceApiData} from "./individual-animal-reduce-api-data";
-import {Animal} from "../animal/animal";
+import {IndividualAnimalSpore} from './individual-animal-spore';
+import {Entity} from '../entity';
+import {Photo} from '../photo/photo';
+import {Warehouse} from '../../warehouse/warehouse';
+import {IndividualAnimalStrapi} from './individual-animal-strapi-interface';
+import {individualAnimalReduceApiData} from './individual-animal-reduce-api-data';
+import {Animal} from '../animal/animal';
 
 export class IndividualAnimal extends Entity<IndividualAnimalSpore>{
 

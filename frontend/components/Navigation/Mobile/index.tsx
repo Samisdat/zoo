@@ -1,8 +1,8 @@
 import React from 'react';
 
-import {NavigationListGroupInterface} from "../../NavigationList/NavigationListInterfaces";
-import {NavigationMobileClosed} from "./Closed";
-import {NavigationMobileOpened} from "./Opened";
+import {NavigationListGroupInterface} from '../../NavigationList/NavigationListInterfaces';
+import {NavigationMobileClosed} from './Closed';
+import {NavigationMobileOpened} from './Opened';
 
 interface NavigationMobileProps{
     categories: NavigationListGroupInterface[];

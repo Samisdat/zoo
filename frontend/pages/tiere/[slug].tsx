@@ -3,16 +3,16 @@ import { useRouter } from 'next/router'
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import {default as MuiPaper} from '@mui/material/Paper';
-import {styled} from "@mui/material/styles";
+import {styled} from '@mui/material/styles';
 
-import {getFullGeoJson} from "../api/geojson/list";
-import {getAnimalBySlug, getAnimals} from "strapi-api/query/animals";
-import {Animal} from "strapi-api/entity/animal/animal";
-import {Warehouse} from "strapi-api/warehouse/warehouse";
-import {Breadcrumb, BreadcrumbLink} from "components/Navigation/Breadcrumb";
-import {DistributionGlobe} from "components/Distribution/DistributionGlobe";
-import {Profile} from "components/Animal/Profile/Profile";
-import {IucnRedList} from "components/Animal/IucnRedList";
+import {getFullGeoJson} from '../api/geojson/list';
+import {getAnimalBySlug, getAnimals} from 'strapi-api/query/animals';
+import {Animal} from 'strapi-api/entity/animal/animal';
+import {Warehouse} from 'strapi-api/warehouse/warehouse';
+import {Breadcrumb, BreadcrumbLink} from 'components/Navigation/Breadcrumb';
+import {DistributionGlobe} from 'components/Distribution/DistributionGlobe';
+import {Profile} from 'components/Animal/Profile/Profile';
+import {IucnRedList} from 'components/Animal/IucnRedList';
 
 export const Root = styled('div')(({ theme }) => ({
     flexGrow: 1,
@@ -75,9 +75,6 @@ export default function Tiere(props) {
 
     }
     */
-    const setTeaser = () => {
-
-    };
 
     return (
         <React.Fragment>
@@ -170,7 +167,7 @@ export async function getStaticProps(context) {
 
     await getAnimalBySlug(context.params.slug);
 
-    let getJson = await getFullGeoJson();
+    const getJson = await getFullGeoJson();
 
     return {
         props: {
@@ -182,7 +179,7 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
 
-    let animals = await getAnimals();
+    const animals = await getAnimals();
 
     const animalPaths = animals.map((animal:Animal)=>{
         return {

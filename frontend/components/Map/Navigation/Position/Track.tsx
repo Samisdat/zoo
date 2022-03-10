@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from 'react';
-import {PositionInterface, useMap} from "../../Context/MapContext";
+import {PositionInterface, useMap} from '../../Context/MapContext';
 
 export const Track = () => {
 

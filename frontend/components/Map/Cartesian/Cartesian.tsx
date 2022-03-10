@@ -2,19 +2,19 @@ import * as d3 from 'd3';
 
 import React, {useEffect, useRef, useState} from 'react';
 
-import {MapTransformInterface, useMap} from "../Context/MapContext";
-import {boundingBoxGeoJson, svg} from "../../../constants";
-import {angle} from "../../../constants";
+import {MapTransformInterface, useMap} from '../Context/MapContext';
+import {boundingBoxGeoJson, svg} from '../../../constants';
+import {angle} from '../../../constants';
 
-import {CurrentPosition} from "../Navigation/Position/CurrentPosition";
-import {Sketched} from "./Sketched";
-import {Navigation} from "../Navigation/Navigation";
-import {Edge} from "strapi-api/entity/edge/edge";
-import {Node} from "strapi-api/entity/node/node";
-import {CartesianPoint} from "../DevArtifacts/CartesianPoint";
-import {FacilityBoxes} from "./FacilityBoxes";
-import {Marker} from "strapi-api/entity/marker/marker";
-import {Markers} from "./Markers/Markers";
+import {CurrentPosition} from '../Navigation/Position/CurrentPosition';
+import {Sketched} from './Sketched';
+import {Navigation} from '../Navigation/Navigation';
+import {Edge} from 'strapi-api/entity/edge/edge';
+import {Node} from 'strapi-api/entity/node/node';
+import {CartesianPoint} from '../DevArtifacts/CartesianPoint';
+import {FacilityBoxes} from './FacilityBoxes';
+import {Marker} from 'strapi-api/entity/marker/marker';
+import {Markers} from './Markers/Markers';
 
 interface CartesianProps{
     markers:Marker[];
@@ -54,17 +54,17 @@ export const Cartesian = (props:CartesianProps) => {
 
         const boundingGroup = d3.select(boundingRef.current);
 
-        boundingGroup.selectAll("path")
+        boundingGroup.selectAll('path')
             .data([boundingBoxGeoJson])
             .enter()
-            .append("path")
-            .attr("fill", "yellow")
-            .attr("id", 'bounding_box')
-            .attr("d", path as any)
+            .append('path')
+            .attr('fill', 'yellow')
+            .attr('id', 'bounding_box')
+            .attr('d', path as any)
             .attr('opacity', '0')
         ;
 
-        const boundElement = boundingGroup.select(`#bounding_box`);
+        const boundElement = boundingGroup.select('#bounding_box');
 
         const bBox = (boundElement.node() as SVGGraphicsElement).getBBox();
 
@@ -89,7 +89,7 @@ export const Cartesian = (props:CartesianProps) => {
         const transform = `translate(${x}, ${y}) scale(${k}) ${rotate}`;
 
         d3.select(cartesianRef.current)
-            .attr("transform", transform)
+            .attr('transform', transform)
             .attr('visibility', 'visible')
             .attr('opacity', '1')
         ;

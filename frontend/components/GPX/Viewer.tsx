@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {PositionInterface, PositionRawInterface, useMap} from "../Map/Context/MapContext";
-import {getData, TrackPoint} from "./getData";
+import {PositionInterface, PositionRawInterface, useMap} from '../Map/Context/MapContext';
+import {getData, TrackPoint} from './getData';
 
 const gpxTrack = getData();
 

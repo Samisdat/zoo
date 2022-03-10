@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import {FeatureCollection, Point, Polygon} from "geojson";
-import {get} from "../../../data-repos/geojson";
+import {FeatureCollection, Point, Polygon} from 'geojson';
+import {get} from '../../../data-repos/geojson';
 
 const emptyGeoJson:FeatureCollection = {
-    "type": "FeatureCollection",
-    "features": []
+    'type': 'FeatureCollection',
+    'features': []
 };
 
 export const getFullGeoJson = async (): Promise<FeatureCollection> => {
@@ -14,7 +14,7 @@ export const getFullGeoJson = async (): Promise<FeatureCollection> => {
         ...emptyGeoJson
     };
 
-    let facilityBoxes = await get('facility-box') as FeatureCollection<Polygon>;
+    const facilityBoxes = await get('facility-box') as FeatureCollection<Polygon>;
 
     facilityBoxes.features = facilityBoxes.features.filter((feature)=>{
 

@@ -5,7 +5,7 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import {default as MuiTableContainer} from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
-import {styled} from "@mui/material/styles";
+import {styled} from '@mui/material/styles';
 
 export const Table = styled(MuiTable)(({ theme }) => ({
     minWidth: 650,

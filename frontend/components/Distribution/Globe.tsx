@@ -11,7 +11,7 @@ const d3_geo_greatArcInterpolator = function() {
         k;
 
     function interpolate(t) {
-        let B = Math.sin(t *= d) * k,
+        const B = Math.sin(t *= d) * k,
             A = Math.sin(d - t) * k,
             x = A * kx0 + B * kx1,
             y = A * ky0 + B * ky1,
@@ -28,7 +28,7 @@ const d3_geo_greatArcInterpolator = function() {
     };
 
     interpolate.source = function(_) {
-        let cx0 = Math.cos(x0 = _[0] * d3_radians),
+        const cx0 = Math.cos(x0 = _[0] * d3_radians),
             sx0 = Math.sin(x0);
         cy0 = Math.cos(y0 = _[1] * d3_radians);
         sy0 = Math.sin(y0);
@@ -39,7 +39,7 @@ const d3_geo_greatArcInterpolator = function() {
     };
 
     interpolate.target = function(_) {
-        let cx1 = Math.cos(x1 = _[0] * d3_radians),
+        const cx1 = Math.cos(x1 = _[0] * d3_radians),
             sx1 = Math.sin(x1);
         cy1 = Math.cos(y1 = _[1] * d3_radians);
         sy1 = Math.sin(y1);
@@ -209,7 +209,7 @@ export const Globe = (props) => {
     const canvasContext = useRef(null);
     const plane = useRef(null);
 
-    const globe = {type: "Sphere"};
+    const globe = {type: 'Sphere'};
     const distributionCenter = d3.geoCentroid(props.distributionShape);
 
 
@@ -241,7 +241,7 @@ export const Globe = (props) => {
                 const dx = event.dx;
                 const dy = event.dy;
 
-                let rotation = projection.rotate();
+                const rotation = projection.rotate();
                 const radius = projection.scale();
                 const scale = d3.scaleLinear()
                     .domain([-1 * radius, radius])
@@ -292,18 +292,18 @@ export const Globe = (props) => {
         };
 
         const flightPath:any = {}
-        flightPath.type = "LineString";
+        flightPath.type = 'LineString';
         flightPath.coordinates = [wuppertal, distributionCenter];
 
         projection.rotate([-wuppertal[0], -wuppertal[1], 0]);
         drawGlobe();
 
-        const zoomOut = (callback:Function) => {
+        const zoomOut = (callback:() => void) => {
 
             d3.transition()
                 .delay(0)
                 .duration(1000)
-                .tween("rotate", () => {
+                .tween('rotate', () => {
 
                     return (t) => {
 
@@ -326,7 +326,7 @@ export const Globe = (props) => {
             d3.transition()
                 .delay(0)
                 .duration(4000)
-                .tween("rotate", function() {
+                .tween('rotate', function() {
 
                     rotateFunc.source(projection.rotate()).target([-distributionCenter[0], -distributionCenter[1]]).distance();
 
@@ -384,7 +384,7 @@ export const Globe = (props) => {
 
                 // start dragging
                 d3.select(d3Canvas.current)
-                    .style("cursor", "move")
+                    .style('cursor', 'move')
                     .call(dragBehaviour);
             })
 
@@ -397,7 +397,7 @@ export const Globe = (props) => {
     useEffect(() => {
 
         const canvas = d3.select(d3Canvas.current)
-        canvasContext.current = (canvas.node() as HTMLCanvasElement).getContext("2d");
+        canvasContext.current = (canvas.node() as HTMLCanvasElement).getContext('2d');
 
         createGlobe();
 

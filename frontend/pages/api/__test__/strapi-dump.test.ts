@@ -1,6 +1,6 @@
-import {getStrapiUrl} from "strapi-api/utils/get-strapi-url";
+import {getStrapiUrl} from 'strapi-api/utils/get-strapi-url';
 
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
 describe('dump current database', () => {
 

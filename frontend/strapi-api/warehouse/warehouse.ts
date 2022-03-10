@@ -1,21 +1,21 @@
-import {Facility} from "../entity/facility/facility";
-import {Photo} from "../entity/photo/photo";
-import {FacilitySpore} from "../entity/facility/facility-spore";
-import {PhotoSpore} from "../entity/photo/photo-spore";
-import {Animal} from "../entity/animal/animal";
-import {AnimalSpore} from "../entity/animal/animal-spore";
-import {IndividualAnimal} from "../entity/individual-animal/individual-animal";
-import {IndividualAnimalSpore} from "../entity/individual-animal/individual-animal-spore";
-import {Post} from "../entity/post/post";
-import {PostSpore} from "../entity/post/post-spore";
-import {QrCodeSpore} from "../entity/qr-code/qr-code-spore";
-import {QrCode} from "../entity/qr-code/qr-code";
-import {Edge} from "../entity/edge/edge";
-import {Node} from "../entity/node/node";
-import {NodeSpore} from "../entity/node/node-spore";
-import {EdgeSpore} from "../entity/edge/edge-spore";
-import {Marker} from "../entity/marker/marker";
-import {MarkerSpore} from "../entity/marker/marker-spore";
+import {Facility} from '../entity/facility/facility';
+import {Photo} from '../entity/photo/photo';
+import {FacilitySpore} from '../entity/facility/facility-spore';
+import {PhotoSpore} from '../entity/photo/photo-spore';
+import {Animal} from '../entity/animal/animal';
+import {AnimalSpore} from '../entity/animal/animal-spore';
+import {IndividualAnimal} from '../entity/individual-animal/individual-animal';
+import {IndividualAnimalSpore} from '../entity/individual-animal/individual-animal-spore';
+import {Post} from '../entity/post/post';
+import {PostSpore} from '../entity/post/post-spore';
+import {QrCodeSpore} from '../entity/qr-code/qr-code-spore';
+import {QrCode} from '../entity/qr-code/qr-code';
+import {Edge} from '../entity/edge/edge';
+import {Node} from '../entity/node/node';
+import {NodeSpore} from '../entity/node/node-spore';
+import {EdgeSpore} from '../entity/edge/edge-spore';
+import {Marker} from '../entity/marker/marker';
+import {MarkerSpore} from '../entity/marker/marker-spore';
 
 export interface WarehouseSpore{
     facilities:FacilitySpore[];
@@ -60,6 +60,7 @@ export class Warehouse{
     private edgesIds: number[] = [];
     private edges:Edge[] = [];
 
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     private constructor() {
     }
 

@@ -1,13 +1,14 @@
 import React from 'react';
-import {getFullGeoJson} from "../api/geojson/list";
-import {getFacilities, getFacilityBySlug} from "strapi-api/query/facilities";
-import {Facility} from "strapi-api/entity/facility/facility";
-import {Warehouse} from "strapi-api/warehouse/warehouse";
-import {useRouter} from "next/router";
-import {Breadcrumb, BreadcrumbLink} from "components/Navigation/Breadcrumb";
+import {getFullGeoJson} from '../api/geojson/list';
+import {getFacilities, getFacilityBySlug} from 'strapi-api/query/facilities';
+import {Facility} from 'strapi-api/entity/facility/facility';
+import {Warehouse} from 'strapi-api/warehouse/warehouse';
+import {useRouter} from 'next/router';
+import {Breadcrumb, BreadcrumbLink} from 'components/Navigation/Breadcrumb';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactMarkdown = require('react-markdown')
-
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const gfm = require('remark-gfm')
 
 export default function Gehege(props) {
@@ -41,7 +42,9 @@ export default function Gehege(props) {
                 links={breadcrumbProps}
             />
             <h1>{facility.title}</h1>
-            <ReactMarkdown plugins={[gfm]} children={facility.body} />
+            <ReactMarkdown plugins={[gfm]}>
+                {facility.body}
+            </ReactMarkdown>
         </React.Fragment>
     );
 }
@@ -52,7 +55,7 @@ export async function getStaticProps(context) {
 
     await getFacilityBySlug(slug);
 
-    let getJson = await getFullGeoJson();
+    const getJson = await getFullGeoJson();
 
     const props: any = {
         geoJson: getJson,

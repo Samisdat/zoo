@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Tooltip from '@mui/material/Tooltip';
-import {catText} from "./index";
-import styled from "@mui/system/styled";
+import {catText} from './index';
+import styled from '@mui/system/styled';
 
 const IucnIndicator = styled('div')({
     position: 'absolute',

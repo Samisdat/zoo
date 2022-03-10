@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+import fetch from 'node-fetch';
 
 export const getJsonFromApi = async <Type>(requestUrl:string):Promise<Type> => {
 

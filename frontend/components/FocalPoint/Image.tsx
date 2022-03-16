@@ -9,6 +9,7 @@ interface FocalPointImageProps{
     width:number;
     height:number;
     point?:Position;
+    style?:React.CSSProperties;
 }
 
 const Img = styled('div')({
@@ -16,7 +17,7 @@ const Img = styled('div')({
     backgroundSize: 'cover'
 });
 
-export const FocalPointImage = ({photo, width, height, point}:FocalPointImageProps) => {
+export const FocalPointImage = ({photo, width, height, point, style}:FocalPointImageProps) => {
 
     if(!point){
         point = {
@@ -30,6 +31,7 @@ export const FocalPointImage = ({photo, width, height, point}:FocalPointImagePro
     return (
         <Img
             style={{
+                ...style,
                 width: `${width}px`,
                 height: `${height}px`,
                 backgroundImage: `url(${getImagePath(image.src)})`,

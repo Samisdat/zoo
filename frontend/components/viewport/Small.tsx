@@ -1,14 +1,16 @@
 import React from 'react';
-import {useViewport} from './useViewport';
+import {useMediaQuery} from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 export const Small = ({children}) => {
 
-    const { breakpoint } = useViewport();
+    const theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.down('md'));
 
-    if('small' === breakpoint){
+    if(matches){
         return (<React.Fragment>{children}</React.Fragment>);
     }
 
-    return (<React.Fragment></React.Fragment>);
+    return (null);
 
 }

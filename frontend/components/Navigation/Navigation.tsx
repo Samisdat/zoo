@@ -1,9 +1,10 @@
 import React from 'react';
 
-import {useViewport} from '../viewport/useViewport';
 import {NavigationMobile} from './Mobile/index';
 import {NavigationLarge} from './NavigationLarge';
 import {NavigationListGroupInterface} from '../NavigationList/NavigationListInterfaces';
+import {useTheme} from '@mui/material/styles';
+import {useMediaQuery} from '@mui/material';
 
 interface NavigationProps{
     categories:NavigationListGroupInterface[]
@@ -11,9 +12,10 @@ interface NavigationProps{
 
 export const Navigation = ({categories}:NavigationProps) => {
 
-    const {breakpoint } = useViewport();
+    const theme = useTheme();
+    const small = useMediaQuery(theme.breakpoints.down('md'));
 
-    if('small' === breakpoint){
+    if(small){
         return <NavigationMobile
             categories={categories}
         />

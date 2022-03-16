@@ -5,7 +5,12 @@ import {Post} from 'strapi-api/entity/post/post';
 import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import {useRouter} from 'next/router';
 import {Breadcrumb, BreadcrumbLink} from 'components/Navigation/Breadcrumb';
-import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import {FocalPointImage} from '../../components/FocalPoint/Image';
+import {Large} from '../../components/viewport/Large';
+import {Small} from '../../components/viewport/Small';
+import {useViewport} from "../../components/viewport/useViewport";
+import {Header} from "../../components/Header/Header";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactMarkdown = require('react-markdown')
@@ -13,6 +18,8 @@ const ReactMarkdown = require('react-markdown')
 const gfm = require('remark-gfm')
 
 export default function BlogPost(props) {
+
+    const {width} = useViewport();
 
     Warehouse.get().hydrate(props.warehouse);
 
@@ -23,6 +30,9 @@ export default function BlogPost(props) {
     const post = Warehouse.get().getPosts().find((post:Post)=>{
         return (slug === post.slug);
     });
+
+    const headerImg = post.photos[0];
+    const headerImg2 = post.photos[1];
 
     const breadcrumbProps:BreadcrumbLink[] = [
         {
@@ -37,16 +47,40 @@ export default function BlogPost(props) {
     ];
 
     return (
-        <Container>
+        <React.Fragment>
+            <Header
+                photo={headerImg}
+                largeWidth={1000}
+                largeHeight={300}
+                smallWidth={width}
+                smallHeight={200}
+            />
             <Breadcrumb
                 links={breadcrumbProps}
             />
-            <h1>{post.title}</h1>
-            <h2><Moment format="DD.MM.YYYY" date={post.date} /></h2>
+            <Large>
+                Large
+            </Large>
+            <Small>
+                Small
+            </Small>
+
+            <Typography variant="h1" component="h1" gutterBottom>
+                h1. Heading
+            </Typography>
+
+            <Typography variant="subtitle1" gutterBottom component="div">
+                <Moment format="DD.MM.YYYY" date={post.date} />
+            </Typography>
+            <Typography variant="h1" component="h1" gutterBottom>
+                {post.title}
+            </Typography>
+
             <ReactMarkdown plugins={[gfm]}>
                 {post.body}
             </ReactMarkdown>
-        </Container>
+
+        </React.Fragment>
     );
 }
 

@@ -22,10 +22,36 @@ import {useRouter} from 'next/router';
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
-const Content = styled('div')({
-    position: 'relative',
-    width: '100%',
-});
+import { grey } from '@mui/material/colors';
+import {Footer} from '../components/Navigation/Footer';
+
+const Bg = styled('div')(({ theme }) => ({
+    backgroundColor: grey[300],
+}));
+
+const Content = styled(Container)(({ theme }) => ({
+    /*
+    [theme.breakpoints.up('xs')]: {
+        backgroundColor: 'Salmon',
+        minWidth: 300
+    },
+    [theme.breakpoints.up('sm')]: {
+        backgroundColor: 'FireBrick',
+    },
+    [theme.breakpoints.up('md')]: {
+        backgroundColor: 'DeepPink',
+    },
+    [theme.breakpoints.up('lg')]: {
+        backgroundColor: 'DarkOrange',
+    },
+    [theme.breakpoints.up('xl')]: {
+        backgroundColor: 'DarkKhaki',
+    },
+    */
+    minWidth: 300,
+    backgroundColor: 'white',
+}));
+
 
 const LayoutContainer = (props) => {
 
@@ -40,11 +66,14 @@ const LayoutContainer = (props) => {
     }
 
     return (
-        <Container
-            maxWidth="md"
-        >
-            {children}
-        </Container>
+        <Bg>
+            <Content
+                maxWidth="md"
+            >
+                {children}
+            </Content>
+            <Footer />
+        </Bg>
     );
 
 }
@@ -70,21 +99,21 @@ export default function ZooWuppertal(props:ZooWuppertalProps) {
             </Head>
                 {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                 <CssBaseline/>
+                {/* */}
                 <Navigation
                     categories={navigationCategories}
                 />
+                {/* */}
                 <LayoutContainer
                     router={router}
                     {...props}
                 >
-                    <Content>
-                        <Component
-                            {...pageProps}
-                        />
 
-                    </Content>
+                    <Component
+                        {...pageProps}
+                    />
                 </LayoutContainer>
-        </ThemeProvider>
+            </ThemeProvider>
 
         </ViewportProvider>
         </CacheProvider>

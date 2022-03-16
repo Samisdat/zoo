@@ -25,6 +25,9 @@ import {faChevronUp} from '@fortawesome/free-solid-svg-icons/faChevronUp';
 import {faDirections} from '@fortawesome/free-solid-svg-icons/faDirections';
 import {faTimes} from '@fortawesome/free-solid-svg-icons/faTimes';
 import {faBars} from '@fortawesome/free-solid-svg-icons/faBars';
+import {faTwitterSquare} from '@fortawesome/free-brands-svg-icons/faTwitterSquare';
+import {faFacebookSquare} from '@fortawesome/free-brands-svg-icons/faFacebookSquare';
+import {faInstagramSquare} from '@fortawesome/free-brands-svg-icons/faInstagramSquare';
 
 const utensils = faUtensils;
 const europe = faGlobeEurope;
@@ -53,6 +56,9 @@ const chevron_right = faChevronRight;
 const directions = faDirections;
 const close = faTimes;
 const menu = faBars;
+const twitter = faTwitterSquare;
+const facebook = faFacebookSquare;
+const instagram = faInstagramSquare;
 
 export const strapiIcons = {
     utensils,
@@ -85,6 +91,9 @@ export const internalIcons = {
     chevron_right,
     directions,
     close,
+    twitter,
+    facebook,
+    instagram
 };
 
 export const validIcons = Object.assign(strapiIcons, internalIcons);
@@ -116,6 +125,8 @@ export type IconName =
     'chevron_right' |
     'directions' |
     'close' |
-    'menu'
+    'menu' |
+    'twitter' |
+    'facebook' |
+    'instagram'
 ;
-

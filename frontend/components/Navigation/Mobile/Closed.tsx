@@ -7,9 +7,14 @@ import {Icon} from '../../Icon/Icon';
 
 export const NavigationFab = styled(Fab)(({ theme }) => ({
     position: 'fixed',
+    zIndex:theme.zIndex.appBar,
     bottom: theme.spacing(2),
     left: theme.spacing(2),
-    zIndex:theme.zIndex.appBar
+
+    [theme.breakpoints.up('sm')]: {
+        left: theme.spacing(3),
+    },
+
 }));
 
 interface NavigationMobileClosed{

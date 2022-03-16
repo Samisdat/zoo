@@ -10,17 +10,21 @@ const useAnimationPlayedState = createPersistedState('animation');
 
 const LogoLink = styled('a')(({ theme }) => ({
     position: 'fixed',
-    right: theme.spacing(2),
-    bottom: 0,
     width: logoSmallWidth,
     height: logoSmallHeight,
     display: 'block',
     zIndex:1500,
+    right: theme.spacing(2),
+    bottom: theme.spacing(2),
+    [theme.breakpoints.up('sm')]: {
+        right: theme.spacing(3),
+    },
+
 }));
 
 const LogoSvg = styled('svg')(({ theme }) => ({
     position: 'absolute',
-    bottom: 0,
+    bottom: -15,
     right: 0,
     fillRule:'evenodd',
     clipRule:'evenodd',

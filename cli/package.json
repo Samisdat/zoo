@@ -7,13 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "routing": "ts-node routing.ts",
     "marker": "ts-node marker.ts",
-    "gpx-convert": "ts-node gpx-convert.ts"
+    "gpx-convert": "ts-node gpx-convert.ts",
+    "strapi": "ts-node strapi.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.4",
     "jsdom": "^19.0.0",
+    "qs": "^6.10.3",
     "slugify": "^1.4.6",
     "svg-path-properties": "^1.0.11",
     "svg2geojson": "^0.7.1",

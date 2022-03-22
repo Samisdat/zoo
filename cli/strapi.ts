@@ -3,6 +3,7 @@ import {readSvg} from "./routing/readSvg";
 import {getSegments} from "./routing/getSegments";
 import {Node} from "./routing/Node";
 import {Edge} from "./routing/Edge";
+import {getEdges_3, getNodes_3} from "./strapi-migration/strapi3/graph";
 
 const axios = require('axios').default;
 
@@ -234,6 +235,13 @@ const saveEdges = async (edges:Edge[]) =>{
 
 const migrate = async () => {
 
+    const nodes_3 = await getNodes_3();
+    const edges_3 = await getEdges_3(nodes_3);
+
+    console.log(edges_3)
+
+    return;
+
     const strapi3GraphNodes = await getGraphNodesFromStrapi3();
 
 
@@ -373,7 +381,7 @@ const migrate = async () => {
         }
 
         await saveGraphNode(graphNode);
-        
+
     }
 
 }

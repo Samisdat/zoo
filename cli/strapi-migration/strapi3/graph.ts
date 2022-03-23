@@ -1,17 +1,6 @@
 import axios from "axios";
 import {getUrl_3} from "./get-url";
-
-export interface Facility_3{
-    id: number;
-    slug: string;
-    title: string;
-    body: string;
-    type: string;
-    raw_published: string;
-    published_at: string;
-    created_at: string;
-    updated_at: string;
-}
+import {Facility_3} from "./facility";
 
 export interface Edge_3{
     id: number;
@@ -84,7 +73,7 @@ export const getEdges_3 =  (nodes:Node_3[]):Edge_3[] => {
         return accumulator;
 
     },[]);
-    
+
     return edges;
 
 }

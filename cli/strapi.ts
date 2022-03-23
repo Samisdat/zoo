@@ -4,6 +4,12 @@ import {getSegments} from "./routing/getSegments";
 import {Node} from "./routing/Node";
 import {Edge} from "./routing/Edge";
 import {getEdges_3, getNodes_3} from "./strapi-migration/strapi3/graph";
+import {getFacilities_3} from "./strapi-migration/strapi3/facility";
+import {getFacilities_4, getFacilityBySlug, updateFacility} from "./strapi-migration/strapi4/facility";
+import {getEdges_4, getNodes_4} from "./strapi-migration/strapi4/graph";
+import {getAnimals_3} from "./strapi-migration/strapi3/animal";
+import {getMarkers_3, Marker_3} from "./strapi-migration/strapi3/marker";
+import {createMarker, Marker_4, MarkerAttributes} from "./strapi-migration/strapi4/marker";
 
 const axios = require('axios').default;
 
@@ -233,13 +239,21 @@ const saveEdges = async (edges:Edge[]) =>{
 };
 */
 
-const migrate = async () => {
+const migrate__stuff = async () => {
 
     const nodes_3 = await getNodes_3();
-    const edges_3 = await getEdges_3(nodes_3);
+    const edges_3 = getEdges_3(nodes_3);
+    const facilities_3 = await getFacilities_3();
 
-    console.log(edges_3)
+    const facilities_4 = await getFacilities_4();
 
+    const edges_4 = await getEdges_4();
+    const nodes_4 = await getNodes_4();
+
+    //console.log(facilities_3)
+    //console.log(facilities_4)
+    console.log(edges_4.at(0))
+    console.log(nodes_4.at(0))
     return;
 
     const strapi3GraphNodes = await getGraphNodesFromStrapi3();
@@ -385,6 +399,52 @@ const migrate = async () => {
     }
 
 }
+
+const migrate = async () => {
+
+    const markers_3 = await getMarkers_3();
+
+    const facilities_4 = await getFacilities_4();
+
+    for(const marker_3 of markers_3){
+
+        const slug = marker_3?.facility?.slug || '';
+        
+        const facility = getFacilityBySlug(slug, facilities_4);
+
+        if(!facility){
+
+            continue
+        }
+
+        const marker_4:MarkerAttributes = {
+            slug: marker_3.slug,
+            x: marker_3.x,
+            y: marker_3.y,
+            priority: marker_3.priority,
+            facility:facility.id
+        }
+
+        console.log(marker_4);
+
+        if('kiosk-tigertal' === marker_4.slug){
+            continue;
+        }
+
+        await createMarker(marker_4);
+
+    }
+
+    /*
+    console.log(markers_3.at(0)?.facility);
+
+    const slug = markers_3.at(0)?.slug || '';
+
+    const facility = getFacilityBySlug(slug, facilities_4);
+
+    console.log(facility);
+    */
+};
 
 migrate();
 

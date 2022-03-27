@@ -10,6 +10,7 @@ import {getEdges_4, getNodes_4} from "./strapi-migration/strapi4/graph";
 import {getAnimals_3} from "./strapi-migration/strapi3/animal";
 import {getMarkers_3, Marker_3} from "./strapi-migration/strapi3/marker";
 import {createMarker, Marker_4, MarkerAttributes} from "./strapi-migration/strapi4/marker";
+import {getAnimalBySlug, getAnimals_4, updateAnimal} from "./strapi-migration/strapi4/animal";
 
 const axios = require('axios').default;
 
@@ -402,48 +403,47 @@ const migrate__stuff = async () => {
 
 const migrate = async () => {
 
-    const markers_3 = await getMarkers_3();
+    const animals_3 = await getAnimals_3();
+    const animals_4 = await getAnimals_4();
 
     const facilities_4 = await getFacilities_4();
 
-    for(const marker_3 of markers_3){
+    for(let i = 0, x = animals_3.length; i < x; i += 1) {
 
-        const slug = marker_3?.facility?.slug || '';
-        
-        const facility = getFacilityBySlug(slug, facilities_4);
-
-        if(!facility){
-
-            continue
-        }
-
-        const marker_4:MarkerAttributes = {
-            slug: marker_3.slug,
-            x: marker_3.x,
-            y: marker_3.y,
-            priority: marker_3.priority,
-            facility:facility.id
-        }
-
-        console.log(marker_4);
-
-        if('kiosk-tigertal' === marker_4.slug){
+        if(0 === animals_3[i].facilities.length){
             continue;
         }
 
-        await createMarker(marker_4);
+        const facilities = [];
+
+        for(const facility_3 of animals_3[i].facilities){
+
+            const slug = facility_3?.slug || '';
+
+            const facility = getFacilityBySlug(slug, facilities_4);
+
+            if(!facility){
+                continue;
+            }
+
+            facilities.push(facility);
+
+        }
+
+        const animal_4 = getAnimalBySlug(animals_3[i].slug, animals_4);
+
+        if(undefined === animal_4){
+            continue;
+        }
+
+        animal_4.attributes.facilities = facilities;
+
+        updateAnimal(animal_4)
+
 
     }
 
-    /*
-    console.log(markers_3.at(0)?.facility);
 
-    const slug = markers_3.at(0)?.slug || '';
-
-    const facility = getFacilityBySlug(slug, facilities_4);
-
-    console.log(facility);
-    */
 };
 
 migrate();

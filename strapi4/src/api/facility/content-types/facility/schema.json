@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "facilities",
+  "info": {
+    "singularName": "facility",
+    "pluralName": "facilities",
+    "displayName": "Facility"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "enclosure",
+        "food",
+        "playground",
+        "toilet",
+        "poi"
+      ]
+    },
+    "graph_nodes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::graph-node.graph-node",
+      "mappedBy": "facility"
+    },
+    "markers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::marker.marker",
+      "mappedBy": "facility"
+    },
+    "qr_codes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::qr-code.qr-code",
+      "mappedBy": "facility"
+    },
+    "animals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::animal.animal",
+      "inversedBy": "facilities"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::post.post",
+      "inversedBy": "facilities"
+    }
+  }
+}

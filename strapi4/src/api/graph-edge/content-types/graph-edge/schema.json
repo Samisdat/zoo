@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "graph_edges",
+  "info": {
+    "singularName": "graph-edge",
+    "pluralName": "graph-edges",
+    "displayName": "GraphEdge",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "IdFromSvg": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "d": {
+      "type": "text",
+      "required": true
+    },
+    "edgeLength": {
+      "type": "integer",
+      "required": true
+    },
+    "graph_node_start": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::graph-node.graph-node",
+      "inversedBy": "graph_edges_starts"
+    },
+    "graph_node_end": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::graph-node.graph-node",
+      "inversedBy": "graph_edges_ends"
+    }
+  }
+}

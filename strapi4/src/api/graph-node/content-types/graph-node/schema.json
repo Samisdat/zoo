@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "graph_nodes",
+  "info": {
+    "singularName": "graph-node",
+    "pluralName": "graph-nodes",
+    "displayName": "GraphNode"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "IdFromEdges": {
+      "type": "string",
+      "required": true
+    },
+    "x": {
+      "type": "integer",
+      "required": true
+    },
+    "y": {
+      "type": "integer",
+      "required": true
+    },
+    "facility": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::facility.facility",
+      "inversedBy": "graph_nodes"
+    },
+    "graph_edges_starts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::graph-edge.graph-edge",
+      "mappedBy": "graph_node_start"
+    },
+    "graph_edges_ends": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::graph-edge.graph-edge",
+      "mappedBy": "graph_node_end"
+    }
+  }
+}

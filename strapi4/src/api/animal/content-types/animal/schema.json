@@ -1,0 +1,85 @@
+{
+  "kind": "collectionType",
+  "collectionName": "animals",
+  "info": {
+    "singularName": "animal",
+    "pluralName": "animals",
+    "displayName": "Animal",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "wikidata": {
+      "type": "string"
+    },
+    "wikipediaLink": {
+      "type": "string"
+    },
+    "scientificName": {
+      "type": "string"
+    },
+    "iucnID": {
+      "type": "string"
+    },
+    "iucnLink": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "profile": {
+      "type": "component",
+      "repeatable": true,
+      "component": "profile.feature"
+    },
+    "className": {
+      "type": "string"
+    },
+    "order": {
+      "type": "string"
+    },
+    "species": {
+      "type": "string"
+    },
+    "family": {
+      "type": "string"
+    },
+    "iucnStatus": {
+      "type": "enumeration",
+      "enum": [
+        "LC",
+        "NT",
+        "VU",
+        "EN",
+        "CR"
+      ]
+    },
+    "qr_codes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::qr-code.qr-code",
+      "mappedBy": "animal"
+    },
+    "facilities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::facility.facility",
+      "inversedBy": "animals"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::post.post",
+      "inversedBy": "animals"
+    }
+  }
+}

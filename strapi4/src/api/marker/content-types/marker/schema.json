@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "markers",
+  "info": {
+    "singularName": "marker",
+    "pluralName": "markers",
+    "displayName": "Marker"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "x": {
+      "type": "float",
+      "required": true
+    },
+    "y": {
+      "type": "float"
+    },
+    "priority": {
+      "type": "integer"
+    },
+    "facility": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::facility.facility",
+      "inversedBy": "markers"
+    }
+  }
+}

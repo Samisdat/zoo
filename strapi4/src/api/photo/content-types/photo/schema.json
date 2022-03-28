@@ -46,6 +46,12 @@
       "relation": "manyToOne",
       "target": "api::post.post",
       "inversedBy": "photos"
+    },
+    "individual_animal": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::individual-animal.individual-animal",
+      "inversedBy": "photos"
     }
   }
 }

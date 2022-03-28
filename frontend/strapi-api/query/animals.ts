@@ -1,4 +1,4 @@
-import {getStrapiUrl} from '../utils/get-strapi-url';
+import {getStrapi3Url} from '../utils/get-strapi-url';
 import {Animal} from '../entity/animal/animal';
 import {AnimalStrapi} from '../entity/animal/animal-strapi-interface';
 import {getJsonFromApi} from '../utils/get-json-from-api';
@@ -49,7 +49,7 @@ export const loadRelations = async (animal:Animal) => {
 
 export const getAnimalById = async (id: number):Promise<Animal> =>{
 
-    const requestUrl = getStrapiUrl(`/animals/${id}`);
+    const requestUrl = getStrapi3Url(`/animals/${id}`);
 
     const json = await getJsonFromApi<AnimalStrapi>(requestUrl);
 
@@ -64,7 +64,7 @@ export const getAnimalById = async (id: number):Promise<Animal> =>{
 
 export const getAnimalBySlug = async (slug: string):Promise<Animal> =>{
 
-    const requestUrl = getStrapiUrl(`/animals?slug=${slug}`);
+    const requestUrl = getStrapi3Url(`/animals?slug=${slug}`);
 
     const json = await getJsonFromApi<AnimalStrapi>(requestUrl);
 
@@ -78,7 +78,7 @@ export const getAnimalBySlug = async (slug: string):Promise<Animal> =>{
 
 export const getAnimals = async ():Promise<Animal[]> =>{
 
-    const requestUrl = getStrapiUrl('/animals' /*'/animals?_publicationState=preview&_limit=-1'*/)
+    const requestUrl = getStrapi3Url('/animals' /*'/animals?_publicationState=preview&_limit=-1'*/)
 
     const json = await getJsonFromApi<AnimalStrapi[]>(requestUrl);
 

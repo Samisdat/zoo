@@ -1,4 +1,4 @@
-import {getStrapiUrl} from '../utils/get-strapi-url';
+import {getStrapi3Url} from '../utils/get-strapi-url';
 import {getJsonFromApi} from '../utils/get-json-from-api';
 import {Post} from '../entity/post/post';
 import {PostStrapi} from '../entity/post/post-strapi-interface';
@@ -32,7 +32,7 @@ export const loadRelations = async (qrCode:QrCode) => {
 
 export const getQrCodeById = async (id: number):Promise<QrCode> =>{
 
-    const requestUrl = getStrapiUrl(`/qr-codes/${id}`);
+    const requestUrl = getStrapi3Url(`/qr-codes/${id}`);
 
     const json = await getJsonFromApi<QrCodeStrapi>(requestUrl);
 
@@ -46,7 +46,7 @@ export const getQrCodeById = async (id: number):Promise<QrCode> =>{
 
 export const getQrCodes = async ():Promise<QrCode[]> =>{
 
-    const requestUrl = getStrapiUrl('/qr-codes')
+    const requestUrl = getStrapi3Url('/qr-codes')
 
     const json = await getJsonFromApi<QrCodeStrapi[]>(requestUrl);
 

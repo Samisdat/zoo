@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "individual_animals",
+  "info": {
+    "singularName": "individual-animal",
+    "pluralName": "individual-animals",
+    "displayName": "Individual Animal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "animal": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::animal.animal",
+      "inversedBy": "individual_animals"
+    },
+    "photos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::photo.photo",
+      "mappedBy": "individual_animal"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::post.post",
+      "mappedBy": "individual_animals"
+    }
+  }
+}

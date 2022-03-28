@@ -14,8 +14,6 @@ export interface HeaderProps{
 
 export const Header = ({photo, largeWidth, largeHeight, smallWidth, smallHeight}:HeaderProps)    => {
 
-    console.log(photo);
-
     return (
         <React.Fragment>
             <Large>

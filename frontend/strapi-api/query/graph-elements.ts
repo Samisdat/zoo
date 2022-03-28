@@ -1,5 +1,5 @@
 import {Node} from '../entity/node/node';
-import {getStrapiUrl} from '../utils/get-strapi-url';
+import {getStrapi3Url} from '../utils/get-strapi-url';
 import {getJsonFromApi} from '../utils/get-json-from-api';
 import {NodeStrapi} from '../entity/node/node-strapi-interface';
 import {Edge} from '../entity/edge/edge';
@@ -19,7 +19,7 @@ export const loadRelations = async (node:Node) => {
 
 export const getNodes = async ():Promise<Node[]> =>{
 
-    const requestUrl = getStrapiUrl('/graph-nodes/?_limit=-1');
+    const requestUrl = getStrapi3Url('/graph-nodes/?_limit=-1');
 
     const json = await getJsonFromApi<NodeStrapi[]>(requestUrl);
 
@@ -37,7 +37,7 @@ export const getNodes = async ():Promise<Node[]> =>{
 
 export const getEdges = async ():Promise<Edge[]> =>{
 
-    const requestUrl = getStrapiUrl('/edges/?_limit=-1  ');
+    const requestUrl = getStrapi3Url('/edges/?_limit=-1  ');
 
     const json = await getJsonFromApi<EdgeStrapi[]>(requestUrl);
 

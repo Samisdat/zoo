@@ -5,12 +5,19 @@ import {FacilityStrapi} from '../facility/facility-strapi';
 
 export interface PostStrapi {
     id: number;
-    slug: string;
-    title: string;
-    body: string;
-    individual_animals: IndividualAnimalStrapi[];
-    animals: AnimalStrapi[];
-    facilities: FacilityStrapi[];
-    photos: PhotoStrapi[];
-    published_at: string;
+    attributes:{
+        slug: string;
+        title: string;
+        body: string;
+        date: string;
+        animals?: {
+            data:AnimalStrapi[]
+        };
+        facilities?: {
+            data: FacilityStrapi[]
+        };
+        photos?: {
+            data:PhotoStrapi[]
+        };
+    }
 }

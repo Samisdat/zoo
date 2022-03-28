@@ -4,13 +4,14 @@ import {FacilitySpore} from './facility-spore';
 export const facilityReduceApiData = (apiData: FacilityStrapi):FacilitySpore => {
 
     const id = apiData.id;
-    const slug = apiData.slug;
-    const title = apiData.title;
-    const body = apiData.body;
-    const type = apiData.type;
+    const slug = apiData.attributes.slug;
+    const title = apiData.attributes.title;
+    const body = apiData.attributes.body;
+    const type = apiData.attributes.type;
 
     let photos:number[] = [];
 
+    /*
     if (undefined !== apiData.photos) {
 
         photos = apiData.photos.map((photo) => {
@@ -18,9 +19,11 @@ export const facilityReduceApiData = (apiData: FacilityStrapi):FacilitySpore => 
         });
 
     }
+     */
 
     let markers:number[] = [];
 
+    /*
     if (undefined !== apiData.markers) {
 
         markers = apiData.markers.map((marker) => {
@@ -28,9 +31,11 @@ export const facilityReduceApiData = (apiData: FacilityStrapi):FacilitySpore => 
         });
 
     }
+     */
 
     let animals:number[] = [];
 
+    /*
     if (undefined !== apiData.animals) {
 
         animals = apiData.animals.map((animals) => {
@@ -38,9 +43,11 @@ export const facilityReduceApiData = (apiData: FacilityStrapi):FacilitySpore => 
         });
 
     }
+     */
 
     let nodes:number[] = [];
 
+    /*
     if (undefined !== apiData.graph_nodes) {
 
         nodes = apiData.graph_nodes.map((node) => {
@@ -48,6 +55,7 @@ export const facilityReduceApiData = (apiData: FacilityStrapi):FacilitySpore => 
         });
 
     }
+     */
     
     return{
         id,

@@ -79,7 +79,13 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::post.post",
-      "inversedBy": "animals"
+      "mappedBy": "animals"
+    },
+    "individual_animals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::individual-animal.individual-animal",
+      "mappedBy": "animal"
     }
   }
 }

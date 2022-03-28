@@ -23,31 +23,41 @@ export interface ImageFormatsStrapi{
 
 export interface ImageStrapi {
     id: number,
-    name: string,
-    alternativeText:string,
-    caption: string,
-    width: number,
-    height: number,
-    formats: ImageFormatsStrapi;
-    hash: string;
-    ext: string;
-    mime: string,
-    size: number;
-    url: string;
-    previewUrl: string | null;
-    provider: string;
-    provider_metadata: string | null;
-    created_at: string;
-    updated_at: string;
+    attributes: {
+        name: string,
+        alternativeText:string,
+        caption: string,
+        width: number,
+        height: number,
+        formats: ImageFormatsStrapi;
+        hash: string;
+        ext: string;
+        mime: string,
+        size: number;
+        url: string;
+        previewUrl: string | null;
+        provider: string;
+        provider_metadata: string | null;
+        created_at: string;
+        updated_at: string;
+    }
 }
 
 export interface PhotoStrapi {
     id: number;
-    title: string;
-    copyright: string;
-    animal?: AnimalStrapi;
-    facility?: FacilityStrapi;
-    image: ImageStrapi;
-    x: number;
-    y: number;
+    attributes:{
+        title: string;
+        copyright: string;
+        x: number;
+        y: number;
+        animal?: {
+            data:AnimalStrapi;
+        };
+        facility?: {
+            data:FacilityStrapi;
+        };
+        image?: {
+            data:ImageStrapi;
+        };
+    }
 }

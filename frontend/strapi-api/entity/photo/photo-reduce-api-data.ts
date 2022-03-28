@@ -28,8 +28,8 @@ interface PhoteSizes{
 export const reducePhotoApiData = (apiData: PhotoStrapi):PhotoSpore =>{
 
     const id = apiData.id;
-    const title = apiData.title;
-    const copyright = apiData.copyright || null;
+    const title = apiData.attributes.title;
+    const copyright = apiData.attributes.copyright || null;
 
     //const animal = apiData.animal?.id) as number || null;
     //const facility = apiData.facility?.id as number|| null;
@@ -46,7 +46,7 @@ export const reducePhotoApiData = (apiData: PhotoStrapi):PhotoSpore =>{
         large
     };
 
-    const formats = apiData.image?.formats;
+    const formats = apiData.attributes.image?.data.attributes.formats;
 
     if(formats){
 
@@ -65,17 +65,19 @@ export const reducePhotoApiData = (apiData: PhotoStrapi):PhotoSpore =>{
 
     }
 
-    if(!apiData.x){
-        apiData.x = 50;
+    console.log(sizes)
+
+    if(!apiData.attributes.x){
+        apiData.attributes.x = 50;
     }
 
-    if(!apiData.y){
-        apiData.y = 50;
+    if(!apiData.attributes.y){
+        apiData.attributes.y = 50;
     }
 
     const focalPoint: Position = {
-        x: apiData.x,
-        y: apiData.y,
+        x: apiData.attributes.x,
+        y: apiData.attributes.y,
     };
 
 
@@ -85,32 +87,35 @@ export const reducePhotoApiData = (apiData: PhotoStrapi):PhotoSpore =>{
         copyright,
         //animal,
         //facility,
-        thumbnail:sizes.thumbnail,
-        small:sizes.small,
-        medium:sizes.medium,
-        large:sizes.large,
+        thumbnail: sizes.thumbnail,
+        small: sizes.small,
+        medium: sizes.medium,
+        large: sizes.large,
         focalPoint
     };
 
     let animal = undefined;
 
+    /*
     if(apiData.animal){
 
         animal = apiData.animal.id;
 
     }
-
+    */
     if(undefined !== animal){
         photoSpore.animal = animal;
     }
 
     const facility = undefined;
 
+    /*
     if(apiData.facility){
 
         //facility = facilityReduceApiData(apiData.facility as FacilityStrapi)
 
     }
+     */
 
     if(undefined !== facility){
         photoSpore.facility = facility;

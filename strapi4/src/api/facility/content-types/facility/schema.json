@@ -58,7 +58,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::post.post",
-      "inversedBy": "facilities"
+      "mappedBy": "facilities"
     }
   }
 }

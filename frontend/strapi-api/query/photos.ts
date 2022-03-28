@@ -1,13 +1,21 @@
-import {getStrapiUrl} from '../utils/get-strapi-url';
+import {getStrapi3Url, getStrapiUrl} from '../utils/get-strapi-url';
 import {Photo} from '../entity/photo/photo';
 import {PhotoStrapi} from '../entity/photo/photo-strapi';
 import {getJsonFromApi} from '../utils/get-json-from-api';
+
+const qs = require('qs');
 
 export type PhotoType = 'animal' | 'facility' ;
 
 export const getPhotoById = async (id: number):Promise<Photo> =>{
 
-    const requestUrl = getStrapiUrl(`/photos/${id}`);
+    const query = qs.stringify({
+        populate: '*'
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/photos/${id}?${query}`);
 
     const json = await getJsonFromApi<PhotoStrapi>(requestUrl);
 
@@ -19,7 +27,7 @@ export const getPhotoById = async (id: number):Promise<Photo> =>{
 
 export const getPhotos = async ():Promise<Photo[]> =>{
 
-    const requestUrl = getStrapiUrl('/photos')
+    const requestUrl = getStrapi3Url('/photos')
 
     const json = await getJsonFromApi<PhotoStrapi[]>(requestUrl);
 
@@ -31,7 +39,7 @@ export const getPhotos = async ():Promise<Photo[]> =>{
 
 export const getPhotoByFacility = async (facilityId:number):Promise<Photo> =>{
 
-    const requestUrl = getStrapiUrl(`/photos?facility=${facilityId}`);
+    const requestUrl = getStrapi3Url(`/photos?facility=${facilityId}`);
 
     const json = await getJsonFromApi<PhotoStrapi>(requestUrl);
 
@@ -43,7 +51,7 @@ export const getPhotoByFacility = async (facilityId:number):Promise<Photo> =>{
 
 export const getPhotoByAnimal = async (animalId:number):Promise<Photo> =>{
 
-    const requestUrl = getStrapiUrl(`/photos?animal=${animalId}`)
+    const requestUrl = getStrapi3Url(`/photos?animal=${animalId}`)
 
     const json = await getJsonFromApi<PhotoStrapi>(requestUrl);
 

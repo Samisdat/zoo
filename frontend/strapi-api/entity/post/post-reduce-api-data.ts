@@ -5,16 +5,16 @@ import {FacilityStrapi} from '../facility/facility-strapi';
 export const postReduceApiData = (apiData: PostStrapi):PostSpore =>{
 
     const id = apiData.id;
-    const slug = apiData.slug;
-    const title = apiData.title;
-    const date = apiData.published_at;
-    const body = apiData.body;
+    const slug = apiData.attributes.slug;
+    const title = apiData.attributes.title;
+    const date = apiData.attributes.date;
+    const body = apiData.attributes.body;
 
     let photos:number[] = [];
 
-    if (undefined !== apiData.photos) {
+    if (undefined !== apiData.attributes.photos) {
 
-        photos = apiData.photos.map((photo) => {
+        photos = apiData.attributes.photos.data.map((photo) => {
             return photo.id;
         });
 
@@ -22,6 +22,7 @@ export const postReduceApiData = (apiData: PostStrapi):PostSpore =>{
 
     let individual_animals:number[] = [];
 
+    /*
     if (undefined !== apiData.individual_animals) {
 
         individual_animals = apiData.individual_animals.map((individual_animal) => {
@@ -29,9 +30,10 @@ export const postReduceApiData = (apiData: PostStrapi):PostSpore =>{
         });
 
     }
-
+    */
     let animals:number[] = [];
 
+    /*
     if (undefined !== apiData.animals) {
 
         animals = apiData.animals.map((animals) => {
@@ -39,12 +41,13 @@ export const postReduceApiData = (apiData: PostStrapi):PostSpore =>{
         });
 
     }
+    */
 
     let facilities:number[] = [];
 
-    if (undefined !== apiData.facilities) {
+    if (undefined !== apiData.attributes.facilities) {
 
-        facilities = apiData.facilities.map((facility:FacilityStrapi) => {
+        facilities = apiData.attributes.facilities.data.map((facility:FacilityStrapi) => {
             return facility.id;
         });
 

@@ -5,7 +5,7 @@ import Moment from 'react-moment';
 
 import {ListItemLink} from './anlagen';
 import {blogUrlPart} from '../constants';
-import {getPosts} from 'strapi-api/query/posts';
+import {getPosts3} from 'strapi-api/query/posts';
 import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import {Post} from 'strapi-api/entity/post/post';
 
@@ -60,7 +60,8 @@ export async function getStaticProps({ params, preview = false, previewData }) {
 
         });
     */
-    await getPosts();
+
+    await getPosts3();
 
     return {
         props: {

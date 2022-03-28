@@ -4,7 +4,8 @@
   "info": {
     "singularName": "post",
     "pluralName": "posts",
-    "displayName": "Post"
+    "displayName": "Post",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -39,6 +40,15 @@
       "relation": "oneToMany",
       "target": "api::photo.photo",
       "mappedBy": "post"
+    },
+    "individual_animals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::individual-animal.individual-animal",
+      "inversedBy": "posts"
+    },
+    "date": {
+      "type": "date"
     }
   }
 }

@@ -3,7 +3,7 @@ import {Warehouse} from '../warehouse/warehouse';
 import {getPhotoById} from './photos';
 import {getAnimalById} from './animals';
 import {getMarkerById} from './marker';
-import {getStrapiUrl} from '../utils/get-strapi-url';
+import {getStrapi3Url} from '../utils/get-strapi-url';
 import {getJsonFromApi} from '../utils/get-json-from-api';
 import {FacilityStrapi} from '../entity/facility/facility-strapi';
 
@@ -37,7 +37,7 @@ export const loadRelations = async (facility:Facility) => {
 
 export const getFacilityById = async (id: number):Promise<Facility> =>{
 
-    const requestUrl = getStrapiUrl(`/facilities/${id}`);
+    const requestUrl = getStrapi3Url(`/facilities/${id}`);
 
     const json = await getJsonFromApi<FacilityStrapi>(requestUrl);
 
@@ -51,7 +51,7 @@ export const getFacilityById = async (id: number):Promise<Facility> =>{
 
 export const getFacilityBySlug = async (slug: string):Promise<Facility> =>{
 
-    const requestUrl = getStrapiUrl(`/facilities?slug=${slug}`);
+    const requestUrl = getStrapi3Url(`/facilities?slug=${slug}`);
 
     const json = await getJsonFromApi<FacilityStrapi[]>(requestUrl);
 
@@ -65,7 +65,7 @@ export const getFacilityBySlug = async (slug: string):Promise<Facility> =>{
 
 export const getFacilities = async ():Promise<Facility[]> =>{
 
-    const requestUrl = getStrapiUrl('/facilities');
+    const requestUrl = getStrapi3Url('/facilities');
 
     const json = await getJsonFromApi<FacilityStrapi[]>(requestUrl);
 

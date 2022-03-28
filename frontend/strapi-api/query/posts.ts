@@ -1,4 +1,4 @@
-import {getStrapiUrl} from '../utils/get-strapi-url';
+import {getStrapi3Url, getStrapiUrl} from '../utils/get-strapi-url';
 import {getJsonFromApi} from '../utils/get-json-from-api';
 import {Post} from '../entity/post/post';
 import {PostStrapi} from '../entity/post/post-strapi-interface';
@@ -7,33 +7,40 @@ import {getPhotoById} from './photos';
 import {getIndividualAnimalById} from './individual-animals';
 import {getAnimalById} from './animals';
 import {getFacilityById} from './facilities';
+import {Facility} from "../entity/facility/facility";
+import {Photo} from "../entity/photo/photo";
 
-export const loadRelations = async (post:Post) => {
+const qs = require('qs');
 
-    if(null !== post.facilitiesRaw){
+export const loadRelations = async (post:PostStrapi) => {
 
-        for (const facilityId of post.facilitiesRaw) {
+    if(undefined !== post.attributes.facilities){
 
-            if (false === Warehouse.get().hasFacility(facilityId)) {
-                await getFacilityById(facilityId);
+        for (const facility of post.attributes.facilities.data) {
+
+            if (false === Warehouse.get().hasFacility(facility.id)) {
+
+                Facility.fromApi(facility);
+
             }
 
         }
 
     }
 
-    if(null !== post.photosRaw){
 
-        for (const photoId of post.photosRaw) {
+    if(null !== post.attributes.photos){
 
-            if (false === Warehouse.get().hasPhoto(photoId)) {
-                await getPhotoById(photoId);
+        for (const photo of post.attributes.photos.data) {
+
+            if (false === Warehouse.get().hasPhoto(photo.id)) {
+                await getPhotoById(photo.id);
             }
 
         }
 
     }
-
+    /*
     if(null !== post.animalsRaw){
 
         for (const animalId of post.animalsRaw) {
@@ -58,17 +65,19 @@ export const loadRelations = async (post:Post) => {
 
     }
 
+     */
+
 }
 
 export const getPostById = async (id: number):Promise<Post> =>{
 
-    const requestUrl = getStrapiUrl(`/posts/${id}`);
+    const requestUrl = getStrapi3Url(`/posts/${id}`);
 
     const json = await getJsonFromApi<PostStrapi>(requestUrl);
 
     const post = Post.fromApi(json);
 
-    await loadRelations(post);
+    await loadRelations(json);
 
     return post;
 
@@ -76,30 +85,55 @@ export const getPostById = async (id: number):Promise<Post> =>{
 
 export const getPostBySlug = async (slug: string):Promise<Post> =>{
 
-    const requestUrl = getStrapiUrl(`/posts?slug=${slug}`);
+    const query = qs.stringify({
+        filters: {
+            slug: {
+                $eq: slug,
+            },
+        },
+        populate: {
+            'facilities':'*',
+            'animals':'*',
+            'photos':'*',
+        }
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/posts?${query}`);
 
     const json = await getJsonFromApi<PostStrapi>(requestUrl);
 
     const post = Post.fromApi(json[0]);
 
-    await loadRelations(post);
+    await loadRelations(json[0]);
 
     return post;
 
 }
 
 
+
 export const getPosts = async ():Promise<Post[]> =>{
 
-    const requestUrl = getStrapiUrl('/posts?_sort=published_at:DESC')
+    const query = qs.stringify({
+        pagination: {
+            pageSize: 1000,
+        },
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
 
-    const json = await getJsonFromApi<PostStrapi[]>(requestUrl);
+    const requestUrl = getStrapiUrl(`/api/posts?${query}`);
 
+    const json = await getJsonFromApi<PostStrapi[]>(
+        requestUrl,
+    );
     const posts = json.map(Post.fromApi);
 
     for(const post of posts){
-
-        await loadRelations(post);
+        continue
+        //await loadRelations(post);
 
     }
 

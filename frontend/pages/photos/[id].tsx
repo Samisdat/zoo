@@ -8,7 +8,7 @@ import {Photo} from '../../strapi-api/entity/photo/photo';
 import {FocalPointPicker} from '../../components/FocalPoint/Picker';
 import {FocalPointImage} from '../../components/FocalPoint/Image';
 import {Position} from '../../components/Map/Context/MapContext';
-import {getStrapiUrl} from '../../strapi-api/utils/get-strapi-url';
+import {getStrapi3Url} from '../../strapi-api/utils/get-strapi-url';
 
 export default function PhotoPage(props) {
 
@@ -48,7 +48,7 @@ export default function PhotoPage(props) {
             return;
         }
 
-        const url = getStrapiUrl(`/photos/${photo.id}`);
+        const url = getStrapi3Url(`/photos/${photo.id}`);
 
         const response = await fetch(url, {
             method: 'PUT',

@@ -6,16 +6,26 @@ import {MarkerStrapi} from '../marker/marker-strapi';
 
 export interface FacilityStrapi{
     id: number;
-    slug: string;
-    title: string;
-    body: string;
-    type: FacilityType;
-    animals: AnimalStrapi[];
-    photos: PhotoStrapi[];
-    markers: MarkerStrapi[];
-    graph_nodes: NodeStrapi[];
-    raw_published: boolean;
-    published_at: string;
-    created_at: string;
-    updated_at: string;
+    attributes:{
+        slug: string;
+        title: string;
+        body: string;
+        type: FacilityType;
+        animals?: {
+            data:AnimalStrapi[]
+        };
+        photos?: {
+            data:PhotoStrapi[]
+        };
+        markers?: {
+            data:MarkerStrapi[]
+        };
+        graph_nodes?: {
+            data:NodeStrapi[]
+        };
+        raw_published: boolean;
+        published_at: string;
+        created_at: string;
+        updated_at: string;
+    }
 }

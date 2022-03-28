@@ -1,10 +1,10 @@
-import {getStrapiUrl} from '../get-strapi-url';
+import {getStrapi3Url} from '../get-strapi-url';
 
 describe('get-strapi-url', ()=>{
 
     test('get starpi url without path', ()=>{
 
-        const strapiUrl = getStrapiUrl();
+        const strapiUrl = getStrapi3Url();
 
         expect(strapiUrl).toBe('http://localhost:1337');
 
@@ -14,7 +14,7 @@ describe('get-strapi-url', ()=>{
 
         process.env.STRAPI_DOMAIN = 'https://strapi.zoo-wuppertal.app';
 
-        const strapiUrl = getStrapiUrl();
+        const strapiUrl = getStrapi3Url();
 
         expect(strapiUrl).toBe('https://strapi.zoo-wuppertal.app');
 
@@ -24,7 +24,7 @@ describe('get-strapi-url', ()=>{
 
     test('get starpi url with path', ()=>{
 
-        const strapiUrl = getStrapiUrl('/facilities');
+        const strapiUrl = getStrapi3Url('/facilities');
 
         expect(strapiUrl).toBe('http://localhost:1337/facilities');
 

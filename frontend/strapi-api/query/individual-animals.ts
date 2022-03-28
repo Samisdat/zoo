@@ -1,4 +1,4 @@
-import {getStrapiUrl} from '../utils/get-strapi-url';
+import {getStrapi3Url} from '../utils/get-strapi-url';
 import {getJsonFromApi} from '../utils/get-json-from-api';
 import {Warehouse} from '../warehouse/warehouse';
 import {getPhotoById} from './photos';
@@ -28,7 +28,7 @@ export const loadRelations = async (individualAnimal:IndividualAnimal) => {
 
 export const getIndividualAnimalById = async (id: number):Promise<IndividualAnimal> =>{
 
-    const requestUrl = getStrapiUrl(`/individual-animals/${id}`);
+    const requestUrl = getStrapi3Url(`/individual-animals/${id}`);
 
     const json = await getJsonFromApi<IndividualAnimalStrapi>(requestUrl);
 
@@ -42,7 +42,7 @@ export const getIndividualAnimalById = async (id: number):Promise<IndividualAnim
 
 export const getIndividualAnimalBySlug = async (slug: string):Promise<IndividualAnimal> =>{
 
-    const requestUrl = getStrapiUrl(`/individual-animals?slug=${slug}`);
+    const requestUrl = getStrapi3Url(`/individual-animals?slug=${slug}`);
 
     const json = await getJsonFromApi<IndividualAnimalStrapi>(requestUrl);
 
@@ -56,7 +56,7 @@ export const getIndividualAnimalBySlug = async (slug: string):Promise<Individual
 
 export const getIndividualAnimals = async ():Promise<IndividualAnimal[]> =>{
 
-    const requestUrl = getStrapiUrl('/individual-animals')
+    const requestUrl = getStrapi3Url('/individual-animals')
 
     const json = await getJsonFromApi<IndividualAnimalStrapi[]>(requestUrl);
 

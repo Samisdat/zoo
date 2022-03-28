@@ -1418,6 +1418,23 @@
                                                                                                     }
                                                                                                   }
                                                                                                 },
+                                                                                                "animal": {
+                                                                                                  "type": "object",
+                                                                                                  "properties": {
+                                                                                                    "data": {
+                                                                                                      "type": "object",
+                                                                                                      "properties": {
+                                                                                                        "id": {
+                                                                                                          "type": "string"
+                                                                                                        },
+                                                                                                        "attributes": {
+                                                                                                          "type": "object",
+                                                                                                          "properties": {}
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                },
                                                                                                 "createdAt": {
                                                                                                   "type": "string",
                                                                                                   "format": "date-time"
@@ -1545,6 +1562,26 @@
                                                                       }
                                                                     },
                                                                     "individual_animals": {
+                                                                      "type": "object",
+                                                                      "properties": {
+                                                                        "data": {
+                                                                          "type": "array",
+                                                                          "items": {
+                                                                            "type": "object",
+                                                                            "properties": {
+                                                                              "id": {
+                                                                                "type": "string"
+                                                                              },
+                                                                              "attributes": {
+                                                                                "type": "object",
+                                                                                "properties": {}
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "photos": {
                                                                       "type": "object",
                                                                       "properties": {
                                                                         "data": {
@@ -3505,6 +3542,23 @@
                                                                                                   }
                                                                                                 }
                                                                                               },
+                                                                                              "animal": {
+                                                                                                "type": "object",
+                                                                                                "properties": {
+                                                                                                  "data": {
+                                                                                                    "type": "object",
+                                                                                                    "properties": {
+                                                                                                      "id": {
+                                                                                                        "type": "string"
+                                                                                                      },
+                                                                                                      "attributes": {
+                                                                                                        "type": "object",
+                                                                                                        "properties": {}
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              },
                                                                                               "createdAt": {
                                                                                                 "type": "string",
                                                                                                 "format": "date-time"
@@ -3632,6 +3686,26 @@
                                                                     }
                                                                   },
                                                                   "individual_animals": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "data": {
+                                                                        "type": "array",
+                                                                        "items": {
+                                                                          "type": "object",
+                                                                          "properties": {
+                                                                            "id": {
+                                                                              "type": "string"
+                                                                            },
+                                                                            "attributes": {
+                                                                              "type": "object",
+                                                                              "properties": {}
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "photos": {
                                                                     "type": "object",
                                                                     "properties": {
                                                                       "data": {
@@ -5573,6 +5647,23 @@
                                                                                                   }
                                                                                                 }
                                                                                               },
+                                                                                              "animal": {
+                                                                                                "type": "object",
+                                                                                                "properties": {
+                                                                                                  "data": {
+                                                                                                    "type": "object",
+                                                                                                    "properties": {
+                                                                                                      "id": {
+                                                                                                        "type": "string"
+                                                                                                      },
+                                                                                                      "attributes": {
+                                                                                                        "type": "object",
+                                                                                                        "properties": {}
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              },
                                                                                               "createdAt": {
                                                                                                 "type": "string",
                                                                                                 "format": "date-time"
@@ -5700,6 +5791,26 @@
                                                                     }
                                                                   },
                                                                   "individual_animals": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "data": {
+                                                                        "type": "array",
+                                                                        "items": {
+                                                                          "type": "object",
+                                                                          "properties": {
+                                                                            "id": {
+                                                                              "type": "string"
+                                                                            },
+                                                                            "attributes": {
+                                                                              "type": "object",
+                                                                              "properties": {}
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "photos": {
                                                                     "type": "object",
                                                                     "properties": {
                                                                       "data": {
@@ -7569,6 +7680,23 @@
                                                                                                   }
                                                                                                 }
                                                                                               },
+                                                                                              "animal": {
+                                                                                                "type": "object",
+                                                                                                "properties": {
+                                                                                                  "data": {
+                                                                                                    "type": "object",
+                                                                                                    "properties": {
+                                                                                                      "id": {
+                                                                                                        "type": "string"
+                                                                                                      },
+                                                                                                      "attributes": {
+                                                                                                        "type": "object",
+                                                                                                        "properties": {}
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              },
                                                                                               "createdAt": {
                                                                                                 "type": "string",
                                                                                                 "format": "date-time"
@@ -7696,6 +7824,26 @@
                                                                     }
                                                                   },
                                                                   "individual_animals": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "data": {
+                                                                        "type": "array",
+                                                                        "items": {
+                                                                          "type": "object",
+                                                                          "properties": {
+                                                                            "id": {
+                                                                              "type": "string"
+                                                                            },
+                                                                            "attributes": {
+                                                                              "type": "object",
+                                                                              "properties": {}
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "photos": {
                                                                     "type": "object",
                                                                     "properties": {
                                                                       "data": {

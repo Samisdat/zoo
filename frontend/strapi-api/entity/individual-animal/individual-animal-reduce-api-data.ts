@@ -4,17 +4,17 @@ import {IndividualAnimalStrapi} from './individual-animal-strapi-interface';
 export const individualAnimalReduceApiData = (apiData: IndividualAnimalStrapi):IndividualAnimalSpore =>{
 
     const id = apiData.id;
-    const slug = apiData.slug;
-    const name = apiData.name;
-    const body = apiData.body;
+    const slug = apiData.attributes.slug;
+    const name = apiData.attributes.name;
+    const body = apiData.attributes.body;
 
-    const animal = apiData.animal.id;
+    const animal = apiData.attributes.animal.data.id;
 
     let photos:number[] = [];
 
-    if (undefined !== apiData.photos) {
+    if (undefined !== apiData.attributes.photos) {
 
-        photos = apiData.photos.map((photo) => {
+        photos = apiData.attributes.photos.data.map((photo) => {
             return photo.id;
         });
 

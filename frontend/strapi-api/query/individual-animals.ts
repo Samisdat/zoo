@@ -1,4 +1,4 @@
-import {getStrapi3Url} from '../utils/get-strapi-url';
+import {getStrapi3Url, getStrapiUrl} from '../utils/get-strapi-url';
 import {getJsonFromApi} from '../utils/get-json-from-api';
 import {Warehouse} from '../warehouse/warehouse';
 import {getPhotoById} from './photos';
@@ -6,12 +6,17 @@ import {IndividualAnimalStrapi} from '../entity/individual-animal/individual-ani
 import {IndividualAnimal} from '../entity/individual-animal/individual-animal';
 import {getAnimalById} from './animals';
 
+const qs = require('qs');
+
 export const loadRelations = async (individualAnimal:IndividualAnimal) => {
 
+    console.log(Warehouse.get().hasAnimal(individualAnimal.animalRaw))
     if (false === Warehouse.get().hasAnimal(individualAnimal.animalRaw)) {
         await getAnimalById(individualAnimal.animalRaw);
     }
 
+    console.log(Warehouse.get().hasAnimal(individualAnimal.animalRaw))
+    /*
     if(null !== individualAnimal.photosRaw){
 
         for (const photoId of individualAnimal.photosRaw) {
@@ -24,11 +29,19 @@ export const loadRelations = async (individualAnimal:IndividualAnimal) => {
 
     }
 
+     */
+
 }
 
 export const getIndividualAnimalById = async (id: number):Promise<IndividualAnimal> =>{
 
-    const requestUrl = getStrapi3Url(`/individual-animals/${id}`);
+    const query = qs.stringify({
+        populate: '*'
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/individual-animals/${id}?${query}`);
 
     const json = await getJsonFromApi<IndividualAnimalStrapi>(requestUrl);
 

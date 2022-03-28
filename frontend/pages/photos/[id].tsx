@@ -8,7 +8,7 @@ import {Photo} from '../../strapi-api/entity/photo/photo';
 import {FocalPointPicker} from '../../components/FocalPoint/Picker';
 import {FocalPointImage} from '../../components/FocalPoint/Image';
 import {Position} from '../../components/Map/Context/MapContext';
-import {getStrapi3Url} from '../../strapi-api/utils/get-strapi-url';
+import {getStrapi3Url, getStrapiUrl} from '../../strapi-api/utils/get-strapi-url';
 
 export default function PhotoPage(props) {
 
@@ -48,15 +48,19 @@ export default function PhotoPage(props) {
             return;
         }
 
-        const url = getStrapi3Url(`/photos/${photo.id}`);
+        focal.x = Math.round(focal.x);
+        focal.y = Math.round(focal.y);
+
+        const url = getStrapiUrl(`/api/photos/${photo.id}`);
 
         const response = await fetch(url, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                Authorization: `Bearer d099dddcf1d9f7c05d45f48dbcb2576f41cea1a85de91d1607dec0bca4a80b90dd7e3a6799beefd654df34ba04832ec7eca2d0b8453badccff6bffd24a89a147572c61e419322e3a979b2ca3318484c247015c2ea66131be5ad676dfedfca287a6b8935aba1d7df74a895cfb3c7abe6208dce62fdbd32f8bdbf38ed18ad8f657`,
             },
             redirect: 'follow',
-            body: JSON.stringify(focal) // body data type must match "Content-Type" header
+            body: JSON.stringify({data:focal}) // body data type must match "Content-Type" header
         });
 
         return response.json();

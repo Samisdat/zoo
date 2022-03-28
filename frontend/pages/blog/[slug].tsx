@@ -31,6 +31,8 @@ export default function BlogPost(props) {
         return (slug === post.slug);
     });
 
+    console.log(post.individualAnimals)
+
     const headerImg = post.photos[0];
     const headerImg2 = post.photos[1];
 

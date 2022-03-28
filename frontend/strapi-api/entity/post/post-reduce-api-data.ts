@@ -21,16 +21,16 @@ export const postReduceApiData = (apiData: PostStrapi):PostSpore =>{
     }
 
     let individual_animals:number[] = [];
+    console.log(apiData.attributes.individual_animals);
+    if (undefined !== apiData.attributes.individual_animals) {
 
-    /*
-    if (undefined !== apiData.individual_animals) {
-
-        individual_animals = apiData.individual_animals.map((individual_animal) => {
+        individual_animals = apiData.attributes.individual_animals.data.map((individual_animal) => {
             return individual_animal.id;
         });
 
     }
-    */
+    console.log('individual_animals',individual_animals)
+
     let animals:number[] = [];
 
     /*

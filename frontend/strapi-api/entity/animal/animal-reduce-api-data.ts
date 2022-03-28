@@ -7,58 +7,60 @@ import {IUCN_STATI, IucnStatus} from './iucnStatus';
 export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
 
     const id = apiData.id;
-    const slug = apiData.slug;
-    const title = apiData.title;
+    const slug = apiData.attributes.slug;
+    const title = apiData.attributes.title;
 
-    const wikidata = apiData.wikidata;
-    const wikipediaLink = apiData.wikipediaLink;
-    const scientificName = apiData.scientificName;
-    const iucnID = apiData.iucnID;
-    const iucnLink = apiData.iucnLink;
+    const wikidata = apiData.attributes.wikidata;
+    const wikipediaLink = apiData.attributes.wikipediaLink;
+    const scientificName = apiData.attributes.scientificName;
+    const iucnID = apiData.attributes.iucnID;
+    const iucnLink = apiData.attributes.iucnLink;
     let iucnStatus:IucnStatus = null;
 
-    if(true === IUCN_STATI.includes(apiData.iucnStatus as IucnStatus)){
-        iucnStatus = apiData.iucnStatus as IucnStatus;
+    if(true === IUCN_STATI.includes(apiData.attributes.iucnStatus as IucnStatus)){
+        iucnStatus = apiData.attributes.iucnStatus as IucnStatus;
     }
 
-    const body = apiData.body;
-    const className = apiData.className;
-    const order = apiData.order;
-    const species = apiData.species;
-    const family = apiData.family;
+    const body = apiData.attributes.body;
+    const className = apiData.attributes.className;
+    const order = apiData.attributes.order;
+    const species = apiData.attributes.species;
+    const family = apiData.attributes.family;
 
     let profile:any[] = [];
 
-    if (0 !== apiData.profile.length) {
+    if (0 !== apiData.attributes.profile.length) {
 
-        profile = apiData.profile;
+        profile = apiData.attributes.profile;
     }
 
 
     let photos:number[] = [];
 
-    if (undefined !== apiData.photos) {
+    if (undefined !== apiData.attributes.photos) {
 
-        photos = apiData.photos.map((photo) => {
+        photos = apiData.attributes.photos.data.map((photo) => {
             return photo.id;
         });
 
     }
 
+    console.log('photos',photos)
+
     let facilities:number[] = [];
 
-    if (undefined !== apiData.facilities) {
+    if (undefined !== apiData.attributes.facilities) {
 
-        facilities = apiData.facilities.map((facilitiy:FacilityStrapi) => {
+        facilities = apiData.attributes.facilities.data.map((facilitiy:FacilityStrapi) => {
             return facilitiy.id;
         });
 
     }
 
     let individual_animals:number[] = [];
-    if (undefined !== apiData.individual_animals) {
+    if (undefined !== apiData.attributes.individual_animals) {
 
-        individual_animals = apiData.individual_animals.map((individual_animal) => {
+        individual_animals = apiData.attributes.individual_animals.data.map((individual_animal) => {
             return individual_animal.id;
         });
 

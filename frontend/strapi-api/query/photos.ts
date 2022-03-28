@@ -27,7 +27,16 @@ export const getPhotoById = async (id: number):Promise<Photo> =>{
 
 export const getPhotos = async ():Promise<Photo[]> =>{
 
-    const requestUrl = getStrapi3Url('/photos')
+    const query = qs.stringify({
+        pagination: {
+            pageSize: 1000,
+        },
+        populate: '*'
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/photos?${query}`);
 
     const json = await getJsonFromApi<PhotoStrapi[]>(requestUrl);
 

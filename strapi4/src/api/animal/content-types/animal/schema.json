@@ -86,6 +86,12 @@
       "relation": "oneToMany",
       "target": "api::individual-animal.individual-animal",
       "mappedBy": "animal"
+    },
+    "photos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::photo.photo",
+      "mappedBy": "animal"
     }
   }
 }

@@ -11,13 +11,17 @@ export interface PostStrapi {
         body: string;
         date: string;
         animals?: {
-            data:AnimalStrapi[]
+            data:AnimalStrapi[];
         };
+        individual_animals?:{
+            data: IndividualAnimalStrapi[];
+        }
         facilities?: {
-            data: FacilityStrapi[]
+            data: FacilityStrapi[];
         };
         photos?: {
-            data:PhotoStrapi[]
+            data:PhotoStrapi[];
         };
+
     }
 }

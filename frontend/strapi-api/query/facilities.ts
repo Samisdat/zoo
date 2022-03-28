@@ -3,9 +3,11 @@ import {Warehouse} from '../warehouse/warehouse';
 import {getPhotoById} from './photos';
 import {getAnimalById} from './animals';
 import {getMarkerById} from './marker';
-import {getStrapi3Url} from '../utils/get-strapi-url';
+import {getStrapi3Url, getStrapiUrl} from '../utils/get-strapi-url';
 import {getJsonFromApi} from '../utils/get-json-from-api';
 import {FacilityStrapi} from '../entity/facility/facility-strapi';
+
+const qs = require('qs');
 
 export const loadRelations = async (facility:Facility) => {
 
@@ -37,7 +39,13 @@ export const loadRelations = async (facility:Facility) => {
 
 export const getFacilityById = async (id: number):Promise<Facility> =>{
 
-    const requestUrl = getStrapi3Url(`/facilities/${id}`);
+    const query = qs.stringify({
+        populate: '*'
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/facilities/${id}?${query}`);
 
     const json = await getJsonFromApi<FacilityStrapi>(requestUrl);
 

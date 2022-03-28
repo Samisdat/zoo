@@ -52,20 +52,18 @@ export const loadRelations = async (post:PostStrapi) => {
         }
 
     }
+    */
+    if(null !== post.attributes.individual_animals){
 
-    if(null !== post.individualAnimals){
+        for (const individualAnimal of post.attributes.individual_animals.data) {
 
-        for (const individualAnimal of post.individualAnimalsRaw) {
-
-            if (false === Warehouse.get().hasIndividualAnimal(individualAnimal)) {
-                await getIndividualAnimalById(individualAnimal);
+            if (false === Warehouse.get().hasIndividualAnimal(individualAnimal.id)) {
+                await getIndividualAnimalById(individualAnimal.id);
             }
 
         }
 
     }
-
-     */
 
 }
 
@@ -95,6 +93,7 @@ export const getPostBySlug = async (slug: string):Promise<Post> =>{
             'facilities':'*',
             'animals':'*',
             'photos':'*',
+            'individual_animals': '*'
         }
     }, {
         encodeValuesOnly: true, // prettify url
@@ -117,6 +116,7 @@ export const getPostBySlug = async (slug: string):Promise<Post> =>{
 export const getPosts = async ():Promise<Post[]> =>{
 
     const query = qs.stringify({
+        ort: ['date:desc'],
         pagination: {
             pageSize: 1000,
         },
@@ -131,11 +131,13 @@ export const getPosts = async ():Promise<Post[]> =>{
     );
     const posts = json.map(Post.fromApi);
 
+    /*
     for(const post of posts){
-        continue
-        //await loadRelations(post);
+
+        await loadRelations(post);
 
     }
+     */
 
     return posts;
 

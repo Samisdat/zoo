@@ -52,7 +52,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::animal.animal",
-      "inversedBy": "facilities"
+      "mappedBy": "facilities"
     },
     "posts": {
       "type": "relation",

@@ -1,4 +1,4 @@
-import {getStrapi3Url} from '../utils/get-strapi-url';
+import {getStrapi3Url, getStrapiUrl} from '../utils/get-strapi-url';
 import {Animal} from '../entity/animal/animal';
 import {AnimalStrapi} from '../entity/animal/animal-strapi-interface';
 import {getJsonFromApi} from '../utils/get-json-from-api';
@@ -6,6 +6,8 @@ import {Warehouse} from '../warehouse/warehouse';
 import {getPhotoById} from './photos';
 import {getIndividualAnimalById} from './individual-animals';
 import {getFacilityById} from './facilities';
+
+const qs = require('qs');
 
 export const loadRelations = async (animal:Animal) => {
 
@@ -49,7 +51,13 @@ export const loadRelations = async (animal:Animal) => {
 
 export const getAnimalById = async (id: number):Promise<Animal> =>{
 
-    const requestUrl = getStrapi3Url(`/animals/${id}`);
+    const query = qs.stringify({
+        populate: '*'
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/animals/${id}?${query}`);
 
     const json = await getJsonFromApi<AnimalStrapi>(requestUrl);
 
@@ -64,7 +72,18 @@ export const getAnimalById = async (id: number):Promise<Animal> =>{
 
 export const getAnimalBySlug = async (slug: string):Promise<Animal> =>{
 
-    const requestUrl = getStrapi3Url(`/animals?slug=${slug}`);
+    const query = qs.stringify({
+        filters: {
+            slug: {
+                $eq: slug,
+            },
+        },
+        populate: '*',
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/animals?${query}`);
 
     const json = await getJsonFromApi<AnimalStrapi>(requestUrl);
 
@@ -78,9 +97,20 @@ export const getAnimalBySlug = async (slug: string):Promise<Animal> =>{
 
 export const getAnimals = async ():Promise<Animal[]> =>{
 
-    const requestUrl = getStrapi3Url('/animals' /*'/animals?_publicationState=preview&_limit=-1'*/)
+    const query = qs.stringify({
+        pagination: {
+            pageSize: 1000,
+        },
+        populate: '*'
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/animals?${query}`);
 
     const json = await getJsonFromApi<AnimalStrapi[]>(requestUrl);
+
+    console.log(json)
 
     const animals = json.map(Animal.fromApi);
 

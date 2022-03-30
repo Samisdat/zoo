@@ -10,8 +10,6 @@ export default function Index(props) {
 
     const animals = Warehouse.get().getAnimals();
 
-    console.log(animals[0].photos);
-
     const breadcrumbLinks:BreadcrumbLink[] = [
         {
             href: '/tiere',

@@ -16,6 +16,7 @@ import {useMap} from '../Map/Context/MapContext';
 import {Icon} from '../Icon/Icon';
 import {Facility} from 'strapi-api/entity/facility/facility';
 import {styled} from '@mui/material/styles';
+import {getImagePath} from "../../helper/getImagePath";
 
 const ExpandHandle = styled(MuiPaper)(({ theme }) => ({
     position: 'absolute',
@@ -70,7 +71,7 @@ export default function SearchDialog({facilities}:SearchDialogProperties) {
         let image:string = undefined;
 
         if(0 !== facility.photos.length && undefined !== facility.photos[0] && facility.photos[0].thumbnail){
-            image = `http://127.0.0.1:1337${facility.photos[0].thumbnail.src}`
+            image = getImagePath(facility.photos[0].thumbnail.src);
         }
 
         if(undefined !== image){

@@ -51,9 +51,11 @@ export default function Index(props) {
 
         if(qrCode.facility){
             //router.push(`/anlagen/${qrCode.facility.slug}`);
+            router.push(`/anlagen/${qrCode.facility.slug}`);
         }
         else if (qrCode.animal){
             //router.push(`/tiere/${qrCode.animal.slug}`);
+            router.push(`/tiere/${qrCode.animal.slug}`);
         }
 
     });

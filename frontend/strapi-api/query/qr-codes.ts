@@ -1,4 +1,4 @@
-import {getStrapi3Url} from '../utils/get-strapi-url';
+import {getStrapi3Url, getStrapiUrl} from '../utils/get-strapi-url';
 import {getJsonFromApi} from '../utils/get-json-from-api';
 import {Post} from '../entity/post/post';
 import {PostStrapi} from '../entity/post/post-strapi-interface';
@@ -9,6 +9,8 @@ import {getAnimalById} from './animals';
 import {QrCode} from '../entity/qr-code/qr-code';
 import {QrCodeStrapi} from '../entity/qr-code/qr-code-strapi-interface';
 import {getFacilityById} from './facilities';
+
+const qs = require('qs');
 
 export const loadRelations = async (qrCode:QrCode) => {
 
@@ -32,7 +34,13 @@ export const loadRelations = async (qrCode:QrCode) => {
 
 export const getQrCodeById = async (id: number):Promise<QrCode> =>{
 
-    const requestUrl = getStrapi3Url(`/qr-codes/${id}`);
+    const query = qs.stringify({
+        populate: '*'
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/qr-codes/${id}?${query}`);
 
     const json = await getJsonFromApi<QrCodeStrapi>(requestUrl);
 
@@ -46,7 +54,16 @@ export const getQrCodeById = async (id: number):Promise<QrCode> =>{
 
 export const getQrCodes = async ():Promise<QrCode[]> =>{
 
-    const requestUrl = getStrapi3Url('/qr-codes')
+    const query = qs.stringify({
+        pagination: {
+            pageSize: 1000,
+        },
+        populate: '*'
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/qr-codes?${query}`);
 
     const json = await getJsonFromApi<QrCodeStrapi[]>(requestUrl);
 

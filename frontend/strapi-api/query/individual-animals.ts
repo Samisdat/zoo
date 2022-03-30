@@ -10,12 +10,10 @@ const qs = require('qs');
 
 export const loadRelations = async (individualAnimal:IndividualAnimal) => {
 
-    console.log(Warehouse.get().hasAnimal(individualAnimal.animalRaw))
     if (false === Warehouse.get().hasAnimal(individualAnimal.animalRaw)) {
         await getAnimalById(individualAnimal.animalRaw);
     }
 
-    console.log(Warehouse.get().hasAnimal(individualAnimal.animalRaw))
     /*
     if(null !== individualAnimal.photosRaw){
 
@@ -55,7 +53,18 @@ export const getIndividualAnimalById = async (id: number):Promise<IndividualAnim
 
 export const getIndividualAnimalBySlug = async (slug: string):Promise<IndividualAnimal> =>{
 
-    const requestUrl = getStrapi3Url(`/individual-animals?slug=${slug}`);
+    const query = qs.stringify({
+        filters: {
+            slug: {
+                $eq: slug,
+            },
+        },
+        populate: '*',
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/individual-animals?${query}`);
 
     const json = await getJsonFromApi<IndividualAnimalStrapi>(requestUrl);
 
@@ -69,7 +78,16 @@ export const getIndividualAnimalBySlug = async (slug: string):Promise<Individual
 
 export const getIndividualAnimals = async ():Promise<IndividualAnimal[]> =>{
 
-    const requestUrl = getStrapi3Url('/individual-animals')
+    const query = qs.stringify({
+        pagination: {
+            pageSize: 1000,
+        },
+        populate: '*'
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/individual-animals?${query}`);
 
     const json = await getJsonFromApi<IndividualAnimalStrapi[]>(requestUrl);
 

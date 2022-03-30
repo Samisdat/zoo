@@ -58,6 +58,12 @@
       "relation": "manyToOne",
       "target": "api::animal.animal",
       "inversedBy": "photos"
+    },
+    "facility": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::facility.facility",
+      "inversedBy": "photos"
     }
   }
 }

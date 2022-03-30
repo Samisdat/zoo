@@ -4,7 +4,8 @@
   "info": {
     "singularName": "facility",
     "pluralName": "facilities",
-    "displayName": "Facility"
+    "displayName": "Facility",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -59,6 +60,12 @@
       "relation": "manyToMany",
       "target": "api::post.post",
       "mappedBy": "facilities"
+    },
+    "photos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::photo.photo",
+      "mappedBy": "facility"
     }
   }
 }

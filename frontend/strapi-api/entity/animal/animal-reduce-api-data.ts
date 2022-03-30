@@ -45,8 +45,6 @@ export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
 
     }
 
-    console.log('photos',photos)
-
     let facilities:number[] = [];
 
     if (undefined !== apiData.attributes.facilities) {

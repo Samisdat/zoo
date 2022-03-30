@@ -1273,6 +1273,23 @@
                                                                                                                   }
                                                                                                                 }
                                                                                                               },
+                                                                                                              "facility": {
+                                                                                                                "type": "object",
+                                                                                                                "properties": {
+                                                                                                                  "data": {
+                                                                                                                    "type": "object",
+                                                                                                                    "properties": {
+                                                                                                                      "id": {
+                                                                                                                        "type": "string"
+                                                                                                                      },
+                                                                                                                      "attributes": {
+                                                                                                                        "type": "object",
+                                                                                                                        "properties": {}
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              },
                                                                                                               "createdAt": {
                                                                                                                 "type": "string",
                                                                                                                 "format": "date-time"
@@ -1584,6 +1601,26 @@
                                                             }
                                                           }
                                                         },
+                                                        "photos": {
+                                                          "type": "object",
+                                                          "properties": {
+                                                            "data": {
+                                                              "type": "array",
+                                                              "items": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                  "id": {
+                                                                    "type": "string"
+                                                                  },
+                                                                  "attributes": {
+                                                                    "type": "object",
+                                                                    "properties": {}
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
                                                         "createdAt": {
                                                           "type": "string",
                                                           "format": "date-time"
@@ -1872,6 +1909,26 @@
                                 }
                               },
                               "posts": {
+                                "type": "object",
+                                "properties": {
+                                  "data": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "id": {
+                                          "type": "string"
+                                        },
+                                        "attributes": {
+                                          "type": "object",
+                                          "properties": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "photos": {
                                 "type": "object",
                                 "properties": {
                                   "data": {
@@ -3473,6 +3530,23 @@
                                                                                                                 }
                                                                                                               }
                                                                                                             },
+                                                                                                            "facility": {
+                                                                                                              "type": "object",
+                                                                                                              "properties": {
+                                                                                                                "data": {
+                                                                                                                  "type": "object",
+                                                                                                                  "properties": {
+                                                                                                                    "id": {
+                                                                                                                      "type": "string"
+                                                                                                                    },
+                                                                                                                    "attributes": {
+                                                                                                                      "type": "object",
+                                                                                                                      "properties": {}
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            },
                                                                                                             "createdAt": {
                                                                                                               "type": "string",
                                                                                                               "format": "date-time"
@@ -3765,6 +3839,26 @@
                                                         }
                                                       },
                                                       "posts": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "data": {
+                                                            "type": "array",
+                                                            "items": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "id": {
+                                                                  "type": "string"
+                                                                },
+                                                                "attributes": {
+                                                                  "type": "object",
+                                                                  "properties": {}
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "photos": {
                                                         "type": "object",
                                                         "properties": {
                                                           "data": {
@@ -4091,6 +4185,26 @@
                                 }
                               }
                             },
+                            "photos": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "id": {
+                                        "type": "string"
+                                      },
+                                      "attributes": {
+                                        "type": "object",
+                                        "properties": {}
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -4385,6 +4499,20 @@
                         }
                       },
                       "posts": {
+                        "type": "array",
+                        "items": {
+                          "oneOf": [
+                            {
+                              "type": "integer"
+                            },
+                            {
+                              "type": "string"
+                            }
+                          ],
+                          "example": "string or id"
+                        }
+                      },
+                      "photos": {
                         "type": "array",
                         "items": {
                           "oneOf": [
@@ -5712,6 +5840,23 @@
                                                                                                                 }
                                                                                                               }
                                                                                                             },
+                                                                                                            "facility": {
+                                                                                                              "type": "object",
+                                                                                                              "properties": {
+                                                                                                                "data": {
+                                                                                                                  "type": "object",
+                                                                                                                  "properties": {
+                                                                                                                    "id": {
+                                                                                                                      "type": "string"
+                                                                                                                    },
+                                                                                                                    "attributes": {
+                                                                                                                      "type": "object",
+                                                                                                                      "properties": {}
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            },
                                                                                                             "createdAt": {
                                                                                                               "type": "string",
                                                                                                               "format": "date-time"
@@ -6023,6 +6168,26 @@
                                                           }
                                                         }
                                                       },
+                                                      "photos": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "data": {
+                                                            "type": "array",
+                                                            "items": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "id": {
+                                                                  "type": "string"
+                                                                },
+                                                                "attributes": {
+                                                                  "type": "object",
+                                                                  "properties": {}
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -6311,6 +6476,26 @@
                               }
                             },
                             "posts": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "id": {
+                                        "type": "string"
+                                      },
+                                      "attributes": {
+                                        "type": "object",
+                                        "properties": {}
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "photos": {
                               "type": "object",
                               "properties": {
                                 "data": {
@@ -7821,6 +8006,23 @@
                                                                                                                 }
                                                                                                               }
                                                                                                             },
+                                                                                                            "facility": {
+                                                                                                              "type": "object",
+                                                                                                              "properties": {
+                                                                                                                "data": {
+                                                                                                                  "type": "object",
+                                                                                                                  "properties": {
+                                                                                                                    "id": {
+                                                                                                                      "type": "string"
+                                                                                                                    },
+                                                                                                                    "attributes": {
+                                                                                                                      "type": "object",
+                                                                                                                      "properties": {}
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            },
                                                                                                             "createdAt": {
                                                                                                               "type": "string",
                                                                                                               "format": "date-time"
@@ -8113,6 +8315,26 @@
                                                         }
                                                       },
                                                       "posts": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "data": {
+                                                            "type": "array",
+                                                            "items": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "id": {
+                                                                  "type": "string"
+                                                                },
+                                                                "attributes": {
+                                                                  "type": "object",
+                                                                  "properties": {}
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "photos": {
                                                         "type": "object",
                                                         "properties": {
                                                           "data": {
@@ -8439,6 +8661,26 @@
                                 }
                               }
                             },
+                            "photos": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "id": {
+                                        "type": "string"
+                                      },
+                                      "attributes": {
+                                        "type": "object",
+                                        "properties": {}
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -8744,6 +8986,20 @@
                         }
                       },
                       "posts": {
+                        "type": "array",
+                        "items": {
+                          "oneOf": [
+                            {
+                              "type": "integer"
+                            },
+                            {
+                              "type": "string"
+                            }
+                          ],
+                          "example": "string or id"
+                        }
+                      },
+                      "photos": {
                         "type": "array",
                         "items": {
                           "oneOf": [

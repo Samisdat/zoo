@@ -4,10 +4,10 @@ import {MarkerSpore} from './marker-spore';
 export const markerReduceApiData = (apiData: MarkerStrapi):MarkerSpore =>{
 
     const id = apiData.id;
-    const slug = apiData.slug;
-    const x = apiData.x;
-    const y = apiData.y;
-    const priority = apiData.priority;
+    const slug = apiData.attributes.slug;
+    const x = apiData.attributes.x;
+    const y = apiData.attributes.y;
+    const priority = apiData.attributes.priority;
 
     const markerSpore: MarkerSpore = {
         id,
@@ -20,9 +20,9 @@ export const markerReduceApiData = (apiData: MarkerStrapi):MarkerSpore =>{
 
     let facility = null;
 
-    if(undefined !== apiData.facility?.id){
+    if(undefined !== apiData.attributes.facility?.data.id){
 
-        facility = apiData.facility.id;
+        facility = apiData.attributes.facility.data.id;
 
     }
 

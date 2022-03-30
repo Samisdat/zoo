@@ -1,16 +1,21 @@
 import {Node} from '../entity/node/node';
-import {getStrapi3Url} from '../utils/get-strapi-url';
+import {getStrapi3Url, getStrapiUrl} from '../utils/get-strapi-url';
 import {getJsonFromApi} from '../utils/get-json-from-api';
 import {NodeStrapi} from '../entity/node/node-strapi-interface';
 import {Edge} from '../entity/edge/edge';
 import {EdgeStrapi} from '../entity/edge/edge-strapi-interface';
+import {Warehouse} from "../warehouse/warehouse";
+import {getFacilityById} from "./facilities";
+
+const qs = require('qs');
 
 export const loadRelations = async (node:Node) => {
-/*
-    if(null !== mapElement.facilityRaw){
 
-        if (false === Warehouse.get().hasFacility(mapElement.facilityRaw)) {
-            await getFacilityById(mapElement.facilityRaw);
+    /*
+    if(null !== node.facilityRaw){
+
+        if (false === Warehouse.get().hasFacility(node.facilityRaw)) {
+            await getFacilityById(node.facilityRaw);
         }
 
     }
@@ -19,15 +24,24 @@ export const loadRelations = async (node:Node) => {
 
 export const getNodes = async ():Promise<Node[]> =>{
 
-    const requestUrl = getStrapi3Url('/graph-nodes/?_limit=-1');
+    const query = qs.stringify({
+        pagination: {
+            pageSize: 1000,
+        },
+        populate: '*'
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/graph-nodes?${query}`);
 
     const json = await getJsonFromApi<NodeStrapi[]>(requestUrl);
 
     const nodes = json.map(Node.fromApi);
 
-    for(const mapElement of nodes){
+    for(const node of nodes){
 
-        //await loadRelations(mapElement);
+        await loadRelations(node);
 
     }
 
@@ -37,15 +51,24 @@ export const getNodes = async ():Promise<Node[]> =>{
 
 export const getEdges = async ():Promise<Edge[]> =>{
 
-    const requestUrl = getStrapi3Url('/edges/?_limit=-1  ');
+    const query = qs.stringify({
+        pagination: {
+            pageSize: 1000,
+        },
+        populate: '*'
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/graph-edges?${query}`);
 
     const json = await getJsonFromApi<EdgeStrapi[]>(requestUrl);
 
     const edges = json.map(Edge.fromApi);
 
-    for(const mapElement of edges){
+    for(const edge of edges){
 
-        //await loadRelations(mapElement);
+        //await loadRelations(edge);
 
     }
 

@@ -12,15 +12,15 @@ import {Photo} from "../entity/photo/photo";
 
 const qs = require('qs');
 
-export const loadRelations = async (post:PostStrapi) => {
+export const loadRelations = async (post:Post) => {
 
-    if(undefined !== post.attributes.facilities){
+    if(undefined !== post.facilitiesRaw) {
 
-        for (const facility of post.attributes.facilities.data) {
+        for (const facilityId of post.facilitiesRaw) {
 
-            if (false === Warehouse.get().hasFacility(facility.id)) {
+            if (false === Warehouse.get().hasFacility(facilityId)) {
 
-                Facility.fromApi(facility);
+                await getFacilityById(facilityId);
 
             }
 
@@ -29,36 +29,36 @@ export const loadRelations = async (post:PostStrapi) => {
     }
 
 
-    if(null !== post.attributes.photos){
+    if(null !== post.photosRaw){
 
-        for (const photo of post.attributes.photos.data) {
+        for (const photoId of post.photosRaw) {
 
-            if (false === Warehouse.get().hasPhoto(photo.id)) {
-                await getPhotoById(photo.id);
+            if (false === Warehouse.get().hasPhoto(photoId)) {
+                await getPhotoById(photoId);
             }
 
         }
 
     }
-    /*
-    if(null !== post.animalsRaw){
+
+    if(null !== post.animalsRaw) {
 
         for (const animalId of post.animalsRaw) {
 
             if (false === Warehouse.get().hasAnimal(animalId)) {
                 await getAnimalById(animalId);
+
             }
 
         }
-
     }
-    */
-    if(null !== post.attributes.individual_animals){
 
-        for (const individualAnimal of post.attributes.individual_animals.data) {
+    if(null !== post.individualAnimalsRaw){
 
-            if (false === Warehouse.get().hasIndividualAnimal(individualAnimal.id)) {
-                await getIndividualAnimalById(individualAnimal.id);
+        for (const individualAnimalId of post.individualAnimalsRaw) {
+
+            if (false === Warehouse.get().hasIndividualAnimal(individualAnimalId)) {
+                await getIndividualAnimalById(individualAnimalId);
             }
 
         }
@@ -75,7 +75,7 @@ export const getPostById = async (id: number):Promise<Post> =>{
 
     const post = Post.fromApi(json);
 
-    await loadRelations(json);
+    await loadRelations(post);
 
     return post;
 
@@ -105,7 +105,7 @@ export const getPostBySlug = async (slug: string):Promise<Post> =>{
 
     const post = Post.fromApi(json[0]);
 
-    await loadRelations(json[0]);
+    await loadRelations(post);
 
     return post;
 
@@ -113,7 +113,7 @@ export const getPostBySlug = async (slug: string):Promise<Post> =>{
 
 
 
-export const getPosts = async ():Promise<Post[]> =>{
+export const getPosts = async ():Promise<Post[]> => {
 
     const query = qs.stringify({
         ort: ['date:desc'],
@@ -131,13 +131,11 @@ export const getPosts = async ():Promise<Post[]> =>{
     );
     const posts = json.map(Post.fromApi);
 
-    /*
     for(const post of posts){
 
         await loadRelations(post);
 
     }
-     */
 
     return posts;
 

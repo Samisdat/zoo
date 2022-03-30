@@ -1,9 +1,11 @@
 import {getFacilityById} from './facilities';
-import {getStrapi3Url} from '../utils/get-strapi-url';
+import {getStrapi3Url, getStrapiUrl} from '../utils/get-strapi-url';
 import {getJsonFromApi} from '../utils/get-json-from-api';
 import {Warehouse} from '../warehouse/warehouse';
 import {Marker} from '../entity/marker/marker';
 import {MarkerStrapi} from '../entity/marker/marker-strapi';
+
+const qs = require('qs');
 
 export const loadRelations = async (marker:Marker) => {
 
@@ -33,7 +35,16 @@ export const getMarkerById = async (markerId:number):Promise<Marker> =>{
 
 export const getMarkers = async ():Promise<Marker[]> =>{
 
-    const requestUrl = getStrapi3Url('/markers');
+    const query = qs.stringify({
+        pagination: {
+            pageSize: 1000,
+        },
+        populate: '*'
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/markers?${query}`);
 
     const json = await getJsonFromApi<MarkerStrapi[]>(requestUrl);
 

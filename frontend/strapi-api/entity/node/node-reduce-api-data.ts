@@ -5,15 +5,15 @@ export const nodeReduceApiData = (apiData: NodeStrapi):NodeSpore =>{
 
     const id = apiData.id;
 
-    const IdFromEdges = apiData.IdFromEdges;
-    const x = apiData.x;
-    const y = apiData.y;
+    const IdFromEdges = apiData.attributes.IdFromEdges;
+    const x = apiData.attributes.x;
+    const y = apiData.attributes.y;
 
     let edgeStart:number[] = [];
 
-    if (undefined !== apiData.graph_edge_starts) {
+    if (undefined !== apiData.attributes.graph_edge_starts) {
 
-        edgeStart = apiData.graph_edge_starts.map((edge) => {
+        edgeStart = apiData.attributes.graph_edge_starts.data.map((edge) => {
             return edge.id;
         });
 
@@ -21,9 +21,9 @@ export const nodeReduceApiData = (apiData: NodeStrapi):NodeSpore =>{
 
     let edgeEnd:number[] = [];
 
-    if (undefined !== apiData.graph_edge_starts) {
+    if (undefined !== apiData.attributes.graph_edge_starts) {
 
-        edgeEnd = apiData.graph_edge_ends.map((edge) => {
+        edgeEnd = apiData.attributes.graph_edge_ends.data.map((edge) => {
             return edge.id;
         });
 

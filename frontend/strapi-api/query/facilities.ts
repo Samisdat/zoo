@@ -59,7 +59,18 @@ export const getFacilityById = async (id: number):Promise<Facility> =>{
 
 export const getFacilityBySlug = async (slug: string):Promise<Facility> =>{
 
-    const requestUrl = getStrapi3Url(`/facilities?slug=${slug}`);
+    const query = qs.stringify({
+        filters: {
+            slug: {
+                $eq: slug,
+            },
+        },
+        populate: '*',
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/facilities?${query}`);
 
     const json = await getJsonFromApi<FacilityStrapi[]>(requestUrl);
 
@@ -73,7 +84,16 @@ export const getFacilityBySlug = async (slug: string):Promise<Facility> =>{
 
 export const getFacilities = async ():Promise<Facility[]> =>{
 
-    const requestUrl = getStrapi3Url('/facilities');
+    const query = qs.stringify({
+        pagination: {
+            pageSize: 1000,
+        },
+        populate: '*'
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/facilities?${query}`);
 
     const json = await getJsonFromApi<FacilityStrapi[]>(requestUrl);
 

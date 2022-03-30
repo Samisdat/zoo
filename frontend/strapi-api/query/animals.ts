@@ -110,8 +110,6 @@ export const getAnimals = async ():Promise<Animal[]> =>{
 
     const json = await getJsonFromApi<AnimalStrapi[]>(requestUrl);
 
-    console.log(json)
-
     const animals = json.map(Animal.fromApi);
 
     for(const animal of animals){

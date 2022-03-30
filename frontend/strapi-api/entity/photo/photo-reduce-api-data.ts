@@ -65,8 +65,6 @@ export const reducePhotoApiData = (apiData: PhotoStrapi):PhotoSpore =>{
 
     }
 
-    console.log(sizes)
-
     if(!apiData.attributes.x){
         apiData.attributes.x = 50;
     }

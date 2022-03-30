@@ -21,7 +21,7 @@ export const postReduceApiData = (apiData: PostStrapi):PostSpore =>{
     }
 
     let individual_animals:number[] = [];
-    console.log(apiData.attributes.individual_animals);
+
     if (undefined !== apiData.attributes.individual_animals) {
 
         individual_animals = apiData.attributes.individual_animals.data.map((individual_animal) => {
@@ -29,7 +29,6 @@ export const postReduceApiData = (apiData: PostStrapi):PostSpore =>{
         });
 
     }
-    console.log('individual_animals',individual_animals)
 
     let animals:number[] = [];
 

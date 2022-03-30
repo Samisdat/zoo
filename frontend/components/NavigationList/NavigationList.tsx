@@ -33,18 +33,6 @@ export const NavigationList = (props:NavigationListProps) => {
                     )
                 })
             }
-            {
-                Object.entries(groups).map(([key, group], i)=>{
-                    return (
-                        <NavigationListGroup
-                            key={group.key}
-                            group={group}
-                            handleClickItem={handleClickItem}
-                        />
-                    )
-                })
-            }
-
             <ListItem style={{height:56}}></ListItem>
         </StyledNavigationList>
     );

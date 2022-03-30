@@ -6,12 +6,14 @@ import {Edge} from '../entity/edge/edge';
 import {EdgeStrapi} from '../entity/edge/edge-strapi-interface';
 import {Warehouse} from "../warehouse/warehouse";
 import {getFacilityById} from "./facilities";
+import {getPhotoById} from "./photos";
+import {Animal} from "../entity/animal/animal";
+import {AnimalStrapi} from "../entity/animal/animal-strapi-interface";
 
 const qs = require('qs');
 
 export const loadRelations = async (node:Node) => {
 
-    /*
     if(null !== node.facilityRaw){
 
         if (false === Warehouse.get().hasFacility(node.facilityRaw)) {
@@ -19,7 +21,51 @@ export const loadRelations = async (node:Node) => {
         }
 
     }
-*/
+
+    if(null !== node.edgeStartRaw){
+
+        for (const edgeId of node.edgeStartRaw) {
+
+            if (false === Warehouse.get().hasEdge(edgeId)) {
+                await getEdgeById(edgeId);
+            }
+
+        }
+
+    }
+
+    if(null !== node.edgeEndRaw){
+
+        for (const edgeId of node.edgeEndRaw) {
+
+            if (false === Warehouse.get().hasFacility(edgeId)) {
+                await getEdgeById(edgeId);
+            }
+
+        }
+
+    }
+
+}
+
+export const getNodeById = async (id: number):Promise<Node> =>{
+
+    const query = qs.stringify({
+        populate: '*'
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/graph-nodes/${id}?${query}`);
+
+    const json = await getJsonFromApi<NodeStrapi>(requestUrl);
+
+    const node = Node.fromApi(json);
+
+    await loadRelations(node);
+
+    return node;
+
 }
 
 export const getNodes = async ():Promise<Node[]> =>{
@@ -39,6 +85,8 @@ export const getNodes = async ():Promise<Node[]> =>{
 
     const nodes = json.map(Node.fromApi);
 
+    console.log('nodes[0]', nodes[0]);
+
     for(const node of nodes){
 
         await loadRelations(node);
@@ -46,6 +94,25 @@ export const getNodes = async ():Promise<Node[]> =>{
     }
 
     return nodes;
+
+}
+
+export const getEdgeById = async (id: number):Promise<Edge> =>{
+
+    const query = qs.stringify({
+        populate: '*'
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/graph-edges/${id}?${query}`);
+
+    const json = await getJsonFromApi<EdgeStrapi>(requestUrl);
+
+    const edge = Edge.fromApi(json);
+
+
+    return edge;
 
 }
 

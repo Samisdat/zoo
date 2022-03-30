@@ -6,6 +6,7 @@ import {getMarkerById} from './marker';
 import {getStrapi3Url, getStrapiUrl} from '../utils/get-strapi-url';
 import {getJsonFromApi} from '../utils/get-json-from-api';
 import {FacilityStrapi} from '../entity/facility/facility-strapi';
+import {getNodeById} from "./graph-elements";
 
 const qs = require('qs');
 
@@ -31,6 +32,14 @@ export const loadRelations = async (facility:Facility) => {
 
         if (false === Warehouse.get().hasMarker(markerId)) {
             await getMarkerById(markerId);
+        }
+
+    }
+
+    for (const nodeId of facility.nodesRaw) {
+
+        if (false === Warehouse.get().hasNode(nodeId)) {
+            await getNodeById(nodeId);
         }
 
     }

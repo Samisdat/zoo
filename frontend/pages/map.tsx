@@ -30,6 +30,11 @@ export default function Index(props:IndexProps) {
     const nodes = Warehouse.get().getNodes();
     const edges = Warehouse.get().getEdges();
 
+    const eingang = nodes.find((node)=>{
+        return '0001_end' === node.idFromEdges;
+    });
+
+    console.log(eingang);
     console.log('@TODO', 'boundingBox', 'as default focus');
 
     const markers = Warehouse.get().getMarkers();

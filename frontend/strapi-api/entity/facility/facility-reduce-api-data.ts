@@ -21,15 +21,13 @@ export const facilityReduceApiData = (apiData: FacilityStrapi):FacilitySpore => 
 
     let markers:number[] = [];
 
-    /*
-    if (undefined !== apiData.markers) {
+    if (undefined !== apiData.attributes.markers) {
 
-        markers = apiData.markers.map((marker) => {
+        markers = apiData.attributes.markers.data.map((marker) => {
             return marker.id;
         });
 
     }
-     */
 
     let animals:number[] = [];
 
@@ -43,15 +41,13 @@ export const facilityReduceApiData = (apiData: FacilityStrapi):FacilitySpore => 
 
     let nodes:number[] = [];
 
-    /*
-    if (undefined !== apiData.graph_nodes) {
+    if (undefined !== apiData.attributes.graph_nodes) {
 
-        nodes = apiData.graph_nodes.map((node) => {
+        nodes = apiData.attributes.graph_nodes.data.map((node) => {
             return node.id;
         });
 
     }
-     */
     
     return{
         id,

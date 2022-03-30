@@ -1,4 +1,5 @@
 import {EdgeStrapi} from '../edge/edge-strapi-interface';
+import {FacilityStrapi} from "../facility/facility-strapi";
 
 export interface NodeStrapi {
     id: number;
@@ -6,11 +7,14 @@ export interface NodeStrapi {
         IdFromEdges: string;
         x: number;
         y: number;
-        graph_edge_starts?: {
-            data: EdgeStrapi[]
+        graph_edges_starts?: {
+            data: EdgeStrapi[];
         };
-        graph_edge_ends?: {
-            data: EdgeStrapi[]
+        graph_edges_ends?: {
+            data: EdgeStrapi[];
+        };
+        facility?: {
+            data: FacilityStrapi;
         };
     }
 }

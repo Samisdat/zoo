@@ -21,7 +21,13 @@ export const loadRelations = async (marker:Marker) => {
 
 export const getMarkerById = async (markerId:number):Promise<Marker> =>{
 
-    const requestUrl = getStrapi3Url(`/markers/${markerId}`);
+    const query = qs.stringify({
+        populate: '*'
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/markers/${markerId}?${query}`);
 
     const json = await getJsonFromApi<MarkerStrapi>(requestUrl);
 

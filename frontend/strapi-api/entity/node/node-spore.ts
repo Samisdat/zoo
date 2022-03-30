@@ -5,4 +5,5 @@ export interface NodeSpore {
     y:number;
     edgeStart: number[];
     edgeEnd: number[];
+    facility: number;
 }

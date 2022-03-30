@@ -11,9 +11,9 @@ export const nodeReduceApiData = (apiData: NodeStrapi):NodeSpore =>{
 
     let edgeStart:number[] = [];
 
-    if (undefined !== apiData.attributes.graph_edge_starts) {
+    if (undefined !== apiData.attributes.graph_edges_starts) {
 
-        edgeStart = apiData.attributes.graph_edge_starts.data.map((edge) => {
+        edgeStart = apiData.attributes.graph_edges_starts.data.map((edge) => {
             return edge.id;
         });
 
@@ -21,12 +21,24 @@ export const nodeReduceApiData = (apiData: NodeStrapi):NodeSpore =>{
 
     let edgeEnd:number[] = [];
 
-    if (undefined !== apiData.attributes.graph_edge_starts) {
+    if (undefined !== apiData.attributes.graph_edges_ends) {
 
-        edgeEnd = apiData.attributes.graph_edge_ends.data.map((edge) => {
+        edgeEnd = apiData.attributes.graph_edges_ends.data.map((edge) => {
             return edge.id;
         });
 
+    }
+
+    let facility: number = null;
+
+    if (undefined !== apiData.attributes.facility) {
+
+        facility = apiData.attributes.facility.data?.id;
+
+    }
+
+    if(!facility){
+        facility = null;
     }
 
     const spore = {
@@ -36,6 +48,7 @@ export const nodeReduceApiData = (apiData: NodeStrapi):NodeSpore =>{
         y,
         edgeStart,
         edgeEnd,
+        facility,
     };
 
     return spore;

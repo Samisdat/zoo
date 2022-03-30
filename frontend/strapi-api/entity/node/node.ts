@@ -4,6 +4,7 @@ import {Edge} from '../edge/edge';
 import {Warehouse} from '../../warehouse/warehouse';
 import {NodeStrapi} from './node-strapi-interface';
 import {nodeReduceApiData} from './node-reduce-api-data';
+import {Facility} from "../facility/facility";
 
 export class Node extends Entity<NodeSpore>{
 
@@ -44,6 +45,16 @@ export class Node extends Entity<NodeSpore>{
         return this.json.edgeEnd.map((edgeId)=>{
             return Warehouse.get().getEdge(edgeId);
         });
+    }
+
+    get facilityRaw(): number{
+        return this.json.facility;
+    }
+
+    get facilities(): Facility{
+
+        return Warehouse.get().getFacility(this.facilityRaw);
+
     }
 
     static hydrate(dehydrated: NodeSpore):Node{

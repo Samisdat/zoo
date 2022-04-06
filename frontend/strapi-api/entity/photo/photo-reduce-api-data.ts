@@ -28,6 +28,8 @@ interface PhoteSizes{
 export const reducePhotoApiData = (apiData: PhotoStrapi):PhotoSpore =>{
 
     const id = apiData.id;
+    const imageId = apiData.attributes.image?.data?.id || null;
+
     const title = apiData.attributes.title;
     const copyright = apiData.attributes.copyright || null;
 
@@ -81,6 +83,7 @@ export const reducePhotoApiData = (apiData: PhotoStrapi):PhotoSpore =>{
 
     const photoSpore: PhotoSpore = {
         id,
+        imageId,
         title,
         copyright,
         //animal,

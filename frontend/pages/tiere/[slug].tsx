@@ -13,6 +13,8 @@ import {Breadcrumb, BreadcrumbLink} from 'components/Navigation/Breadcrumb';
 import {DistributionGlobe} from 'components/Distribution/DistributionGlobe';
 import {Profile} from 'components/Animal/Profile/Profile';
 import {IucnRedList} from 'components/Animal/IucnRedList';
+import {Header} from "../../components/Header/Header";
+import {useViewport} from "../../components/viewport/useViewport";
 
 export const Root = styled('div')(({ theme }) => ({
     flexGrow: 1,
@@ -29,6 +31,8 @@ export default function Tiere(props) {
     const { slug } = router.query
 
     const { asPath } = router;
+
+    const {width} = useViewport();
 
     Warehouse.get().hydrate(props.warehouse);
 
@@ -78,6 +82,14 @@ export default function Tiere(props) {
 
     return (
         <React.Fragment>
+            <Header
+                photo={animal.headerImage}
+                largeWidth={1000}
+                largeHeight={300}
+                smallWidth={width}
+                smallHeight={200}
+            />
+
             <Breadcrumb
                 links={breadcrumbProps}
             />
@@ -165,7 +177,9 @@ export default function Tiere(props) {
 
 export async function getStaticProps(context) {
 
-    await getAnimalBySlug(context.params.slug);
+    const animal = await getAnimalBySlug(context.params.slug);
+
+    console.log(animal);
 
     const getJson = await getFullGeoJson();
 

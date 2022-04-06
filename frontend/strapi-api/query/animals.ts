@@ -1,11 +1,14 @@
 import {getStrapi3Url, getStrapiUrl} from '../utils/get-strapi-url';
 import {Animal} from '../entity/animal/animal';
-import {AnimalStrapi} from '../entity/animal/animal-strapi-interface';
+import {AnimalProfileStrapi, AnimalStrapi} from '../entity/animal/animal-strapi-interface';
 import {getJsonFromApi} from '../utils/get-json-from-api';
 import {Warehouse} from '../warehouse/warehouse';
-import {getPhotoById} from './photos';
+import {getPhotoById, getPhotoByImageId} from './photos';
 import {getIndividualAnimalById} from './individual-animals';
 import {getFacilityById} from './facilities';
+import {IndividualAnimalStrapi} from "../entity/individual-animal/individual-animal-strapi-interface";
+import {FacilityStrapi} from "../entity/facility/facility-strapi";
+import {PhotoStrapi} from "../entity/photo/photo-strapi";
 
 const qs = require('qs');
 
@@ -47,12 +50,44 @@ export const loadRelations = async (animal:Animal) => {
 
     }
 
+    if(animal.headerImageRaw){
+
+        /**
+         * Strapi does not support
+         * Deep filtering isn't available for polymorphic relations
+         *
+         * So there is no query by image id ...
+         *
+         */
+
+        const fetchedPhoto = Warehouse.get().getPhotos().find((photo)=>{
+            return (animal.headerImageRaw === photo.imageId)
+        });
+
+        if(fetchedPhoto){
+            animal.headerImageRaw = fetchedPhoto.id;
+        }
+        else{
+            console.log('@WORKAROUND');
+            const photo = await getPhotoByImageId(animal.headerImageRaw);
+            animal.headerImageRaw = photo.id;
+        }
+
+    }
+
 }
 
 export const getAnimalById = async (id: number):Promise<Animal> =>{
 
     const query = qs.stringify({
-        populate: '*'
+        populate: [
+            'profile.*',
+            'individual_animals.*',
+            'facilities.*',
+            'photos.*',
+            'headerImg.image'
+        ],
+
     }, {
         encodeValuesOnly: true, // prettify url
     });
@@ -78,7 +113,13 @@ export const getAnimalBySlug = async (slug: string):Promise<Animal> =>{
                 $eq: slug,
             },
         },
-        populate: '*',
+        populate: [
+            'profile.*',
+            'individual_animals.*',
+            'facilities.*',
+            'photos.*',
+            'headerImg.image'
+        ],
     }, {
         encodeValuesOnly: true, // prettify url
     });
@@ -86,6 +127,8 @@ export const getAnimalBySlug = async (slug: string):Promise<Animal> =>{
     const requestUrl = getStrapiUrl(`/api/animals?${query}`);
 
     const json = await getJsonFromApi<AnimalStrapi>(requestUrl);
+
+    //console.log('headerImg', json[0].attributes.headerImg.image);
 
     const animal = Animal.fromApi(json[0]);
 

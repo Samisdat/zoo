@@ -8,6 +8,7 @@ export interface PhotoSize{
 
 export interface PhotoSpore{
     id: number;
+    imageId: number;
     title: string;
     copyright: string;
     facility?: number | null,

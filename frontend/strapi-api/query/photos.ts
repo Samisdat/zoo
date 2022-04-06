@@ -25,6 +25,41 @@ export const getPhotoById = async (id: number):Promise<Photo> =>{
 
 }
 
+
+export const getPhotoByImageId = async (id: number):Promise<Photo> =>{
+
+    const query = qs.stringify({
+        pagination: {
+            page: 1,
+            pageSize: 10000,
+            /* ;/ Deep filtering isn't available for polymorphic relations*/
+        },
+        fields:['id'],
+        populate: ['image'],
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+
+    const requestUrl = getStrapiUrl(`/api/photos?${query}`);
+
+    const json = await getJsonFromApi<PhotoStrapi[]>(requestUrl);
+
+    let photo = undefined;
+
+    for(const photoStrapi of json){
+
+        if(id === photoStrapi.attributes.image?.data?.id){
+
+            photo = await getPhotoById(photoStrapi.id);
+
+        }
+
+    }
+
+    return photo;
+
+}
+
 export const getPhotos = async ():Promise<Photo[]> =>{
 
     const query = qs.stringify({

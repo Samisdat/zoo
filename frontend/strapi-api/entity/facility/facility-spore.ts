@@ -10,4 +10,5 @@ export interface FacilitySpore{
     photos: number[];
     markers: number[];
     nodes: number[];
+    headerImage: number;
 }

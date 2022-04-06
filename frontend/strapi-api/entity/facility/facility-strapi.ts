@@ -1,5 +1,5 @@
 import {FacilityType} from './facility-spore';
-import {PhotoStrapi} from '../photo/photo-strapi';
+import {ImageStrapi, PhotoStrapi} from '../photo/photo-strapi';
 import {AnimalStrapi} from '../animal/animal-strapi-interface';
 import {NodeStrapi} from '../node/node-strapi-interface';
 import {MarkerStrapi} from '../marker/marker-strapi';
@@ -23,6 +23,11 @@ export interface FacilityStrapi{
         graph_nodes?: {
             data:NodeStrapi[]
         };
+        headerImg?: {
+            image?: {
+                data: ImageStrapi;
+            };
+        }
         raw_published: boolean;
         published_at: string;
         created_at: string;

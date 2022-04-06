@@ -30,6 +30,23 @@ export class Post extends Entity<PostSpore>{
         return this.json.body;
     }
 
+    get headerImageRaw(): number{
+
+        return this.json.headerImage;
+
+    }
+
+    set headerImageRaw(id:number){
+
+        this.json.headerImage = id;
+
+    }
+
+    get headerImage(): Photo{
+
+        return Warehouse.get().getPhoto(this.json.headerImage);
+
+    }
     get photosRaw(): number[]{
         return this.json.photos;
     }

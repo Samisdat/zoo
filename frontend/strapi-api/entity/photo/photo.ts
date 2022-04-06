@@ -15,6 +15,10 @@ export class Photo extends Entity<PhotoSpore>{
         return this.json.id;
     }
 
+    get imageId(): number {
+        return this.json.imageId;
+    }
+
     get title(): string{
         return this.json.title;
     }

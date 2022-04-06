@@ -66,6 +66,11 @@
       "relation": "oneToMany",
       "target": "api::photo.photo",
       "mappedBy": "facility"
+    },
+    "headerImg": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.headerimg"
     }
   }
 }

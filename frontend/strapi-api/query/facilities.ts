@@ -1,9 +1,9 @@
 import {Facility} from '../entity/facility/facility';
 import {Warehouse} from '../warehouse/warehouse';
-import {getPhotoById} from './photos';
+import {getPhotoById, getPhotoByImageId} from './photos';
 import {getAnimalById} from './animals';
 import {getMarkerById} from './marker';
-import {getStrapi3Url, getStrapiUrl} from '../utils/get-strapi-url';
+import {getStrapiUrl} from '../utils/get-strapi-url';
 import {getJsonFromApi} from '../utils/get-json-from-api';
 import {FacilityStrapi} from '../entity/facility/facility-strapi';
 import {getNodeById} from "./graph-elements";
@@ -44,6 +44,31 @@ export const loadRelations = async (facility:Facility) => {
 
     }
 
+    if(facility.headerImageRaw){
+
+        /**
+         * Strapi does not support
+         * Deep filtering isn't available for polymorphic relations
+         *
+         * So there is no query by image id ...
+         *
+         */
+
+        const fetchedPhoto = Warehouse.get().getPhotos().find((photo)=>{
+            return (facility.headerImageRaw === photo.imageId)
+        });
+
+        if(fetchedPhoto){
+            facility.headerImageRaw = fetchedPhoto.id;
+        }
+        else{
+            console.log('@WORKAROUND');
+            const photo = await getPhotoByImageId(facility.headerImageRaw);
+            facility.headerImageRaw = photo.id;
+        }
+
+    }
+
 }
 
 export const getFacilityById = async (id: number):Promise<Facility> =>{
@@ -74,7 +99,11 @@ export const getFacilityBySlug = async (slug: string):Promise<Facility> =>{
                 $eq: slug,
             },
         },
-        populate: '*',
+        populate: [
+            '*',
+            'photos.*',
+            'headerImg.image'
+        ],
     }, {
         encodeValuesOnly: true, // prettify url
     });

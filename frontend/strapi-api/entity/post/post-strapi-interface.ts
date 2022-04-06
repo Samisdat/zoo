@@ -1,4 +1,4 @@
-import {PhotoStrapi} from '../photo/photo-strapi';
+import {ImageStrapi, PhotoStrapi} from '../photo/photo-strapi';
 import {IndividualAnimalStrapi} from '../individual-animal/individual-animal-strapi-interface';
 import {AnimalStrapi} from '../animal/animal-strapi-interface';
 import {FacilityStrapi} from '../facility/facility-strapi';
@@ -22,6 +22,11 @@ export interface PostStrapi {
         photos?: {
             data:PhotoStrapi[];
         };
+        headerImg?: {
+            image?: {
+                data: ImageStrapi;
+            };
+        }
 
     }
 }

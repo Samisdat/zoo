@@ -92,6 +92,12 @@
       "relation": "oneToMany",
       "target": "api::photo.photo",
       "mappedBy": "animal"
+    },
+    "headerImg": {
+      "displayName": "headerimg",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.headerimg"
     }
   }
 }

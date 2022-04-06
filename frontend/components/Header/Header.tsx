@@ -14,6 +14,10 @@ export interface HeaderProps{
 
 export const Header = ({photo, largeWidth, largeHeight, smallWidth, smallHeight}:HeaderProps)    => {
 
+    if(!photo || !photo.focalPoint){
+        return null;
+    }
+
     return (
         <React.Fragment>
             <Large>

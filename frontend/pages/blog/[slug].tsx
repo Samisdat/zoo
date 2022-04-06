@@ -31,9 +31,6 @@ export default function BlogPost(props) {
         return (slug === post.slug);
     });
 
-    const headerImg = post.photos[0];
-    const headerImg2 = post.photos[1];
-
     const breadcrumbProps:BreadcrumbLink[] = [
         {
             href: '/blog',
@@ -49,9 +46,9 @@ export default function BlogPost(props) {
     return (
         <React.Fragment>
             <Header
-                photo={headerImg}
+                photo={post.headerImage}
                 largeWidth={1000}
-                largeHeight={300}
+                largeHeight={350}
                 smallWidth={width}
                 smallHeight={200}
             />

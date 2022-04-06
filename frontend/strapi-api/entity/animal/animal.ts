@@ -74,6 +74,24 @@ export class Animal extends Entity<AnimalSpore>{
         });
     }
 
+    get headerImageRaw(): number{
+
+        return this.json.headerImage;
+
+    }
+
+    set headerImageRaw(id:number){
+
+        this.json.headerImage = id;
+
+    }
+
+    get headerImage(): Photo{
+
+        return Warehouse.get().getPhoto(this.json.headerImage);
+
+    }
+
     get individualAnimalsRaw(): number[]{
         return this.json.individual_animals;
     }

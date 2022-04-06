@@ -5,6 +5,8 @@ import {Facility} from 'strapi-api/entity/facility/facility';
 import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import {useRouter} from 'next/router';
 import {Breadcrumb, BreadcrumbLink} from 'components/Navigation/Breadcrumb';
+import {Header} from "../../components/Header/Header";
+import {useViewport} from "../../components/viewport/useViewport";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactMarkdown = require('react-markdown')
@@ -17,11 +19,15 @@ export default function Gehege(props) {
     const { slug } = router.query
     const { asPath } = router;
 
+    const {width} = useViewport();
+
     Warehouse.get().hydrate(props.warehouse);
 
     const facility: Facility = Warehouse.get().getFacilities().find((facility:Facility)=>{
         return (slug === facility.slug);
     });
+
+    console.log(facility.headerImage)
 
     const breadcrumbProps:BreadcrumbLink[] = [
         {
@@ -38,6 +44,13 @@ export default function Gehege(props) {
 
     return (
         <React.Fragment>
+            <Header
+                photo={facility.headerImage}
+                largeWidth={1000}
+                largeHeight={300}
+                smallWidth={width}
+                smallHeight={200}
+            />
             <Breadcrumb
                 links={breadcrumbProps}
             />

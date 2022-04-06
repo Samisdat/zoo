@@ -21,4 +21,5 @@ export interface AnimalSpore {
     individual_animals: number[];
     facilities: number[];
     photos: number[];
+    headerImage: number;
 }

@@ -3,12 +3,10 @@ import {getJsonFromApi} from '../utils/get-json-from-api';
 import {Post} from '../entity/post/post';
 import {PostStrapi} from '../entity/post/post-strapi-interface';
 import {Warehouse} from '../warehouse/warehouse';
-import {getPhotoById} from './photos';
+import {getPhotoById, getPhotoByImageId} from './photos';
 import {getIndividualAnimalById} from './individual-animals';
 import {getAnimalById} from './animals';
 import {getFacilityById} from './facilities';
-import {Facility} from "../entity/facility/facility";
-import {Photo} from "../entity/photo/photo";
 
 const qs = require('qs');
 
@@ -37,6 +35,32 @@ export const loadRelations = async (post:Post) => {
                 await getPhotoById(photoId);
             }
 
+        }
+
+    }
+
+    if(post.headerImageRaw){
+
+        /**
+         * Strapi does not support
+         * Deep filtering isn't available for polymorphic relations
+         *
+         * So there is no query by image id ...
+         *
+         */
+
+        const fetchedPhoto = Warehouse.get().getPhotos().find((photo)=>{
+            return (post.headerImageRaw === photo.imageId)
+        });
+
+        if(fetchedPhoto){
+            post.headerImageRaw = fetchedPhoto.id;
+        }
+        else{
+            console.log('@WORKAROUND');
+            const photo = await getPhotoByImageId(post.headerImageRaw);
+            console.log(photo);
+            post.headerImageRaw = photo.id;
         }
 
     }
@@ -89,12 +113,13 @@ export const getPostBySlug = async (slug: string):Promise<Post> =>{
                 $eq: slug,
             },
         },
-        populate: {
-            'facilities':'*',
-            'animals':'*',
-            'photos':'*',
-            'individual_animals': '*'
-        }
+        populate: [
+            'facilities.*',
+            'animals.*',
+            'photos.*',
+            'individual_animals.*',
+            'headerImg.image'
+]
     }, {
         encodeValuesOnly: true, // prettify url
     });

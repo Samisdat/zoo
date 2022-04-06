@@ -49,6 +49,11 @@
     },
     "date": {
       "type": "date"
+    },
+    "headerImg": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.headerimg"
     }
   }
 }

@@ -20,6 +20,12 @@ export const postReduceApiData = (apiData: PostStrapi):PostSpore =>{
 
     }
 
+    let headerImage:number = null;
+
+    if (apiData.attributes.headerImg?.image?.data) {
+        headerImage = apiData.attributes.headerImg.image.data.id;
+    }
+
     let individual_animals:number[] = [];
 
     if (undefined !== apiData.attributes.individual_animals) {
@@ -62,5 +68,6 @@ export const postReduceApiData = (apiData: PostStrapi):PostSpore =>{
         individual_animals,
         facilities,
         photos,
+        headerImage,
     };
 }

@@ -19,6 +19,12 @@ export const facilityReduceApiData = (apiData: FacilityStrapi):FacilitySpore => 
 
     }
 
+    let headerImage:number = null;
+
+    if (apiData.attributes.headerImg?.image?.data) {
+        headerImage = apiData.attributes.headerImg.image.data.id;
+    }
+
     let markers:number[] = [];
 
     if (undefined !== apiData.attributes.markers) {
@@ -58,6 +64,7 @@ export const facilityReduceApiData = (apiData: FacilityStrapi):FacilitySpore => 
         animals,
         photos,
         markers,
-        nodes
+        nodes,
+        headerImage
     };
 }

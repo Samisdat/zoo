@@ -30,6 +30,24 @@ export class Facility extends Entity<FacilitySpore>{
         return this.json.type;
     }
 
+    get headerImageRaw(): number{
+
+        return this.json.headerImage;
+
+    }
+
+    set headerImageRaw(id:number){
+
+        this.json.headerImage = id;
+
+    }
+
+    get headerImage(): Photo{
+
+        return Warehouse.get().getPhoto(this.json.headerImage);
+
+    }
+
     get photosRaw(): number[]{
         return this.json.photos;
     }

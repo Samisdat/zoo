@@ -64,6 +64,13 @@ export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
 
     }
 
+    let headerImage:number = null;
+    if (apiData.attributes.headerImg?.image?.data) {
+
+        headerImage = apiData.attributes.headerImg.image.data.id;
+
+    }
+
     return{
         id,
         title,
@@ -83,5 +90,6 @@ export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
         individual_animals,
         facilities,
         photos,
+        headerImage,
     };
 }

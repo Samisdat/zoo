@@ -31,6 +31,8 @@ export default function BlogPost(props) {
         return (slug === post.slug);
     });
 
+    console.log(post.headerImage);
+
     const breadcrumbProps:BreadcrumbLink[] = [
         {
             href: '/blog',

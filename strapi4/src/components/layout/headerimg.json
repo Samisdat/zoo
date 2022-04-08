@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_layout_headerimgs",
+  "info": {
+    "displayName": "headerimg",
+    "icon": "images"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -14,6 +14,8 @@ export interface HeaderProps{
 
 export const Header = ({photo, largeWidth, largeHeight, smallWidth, smallHeight}:HeaderProps)    => {
 
+    console.log('Header', photo)
+
     if(!photo || !photo.focalPoint){
         return null;
     }
@@ -28,7 +30,6 @@ export const Header = ({photo, largeWidth, largeHeight, smallWidth, smallHeight}
                     point={photo.focalPoint}
                     style={{
                         marginLeft:'-24px',
-                        marginBottom:'24px'
                     }}
                 />
             </Large>

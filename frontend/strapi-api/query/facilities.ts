@@ -111,7 +111,7 @@ export const getFacilityBySlug = async (slug: string):Promise<Facility> =>{
     const requestUrl = getStrapiUrl(`/api/facilities?${query}`);
 
     const json = await getJsonFromApi<FacilityStrapi[]>(requestUrl);
-
+    console.log(json);
     const facility = Facility.fromApi(json[0]);
 
     await loadRelations(facility);

@@ -22,6 +22,17 @@ export interface BreadcrumbProps{
     links:BreadcrumbLink[];
 }
 
+const ZooBreadcrumbs = styled(Breadcrumbs)(({ theme }) => ({
+    background: '#f0f0f0',
+    marginLeft: -24,
+    marginRight: -24,
+    paddingTop: 12,
+    paddingBottom: 12,
+    paddingLeft: 24,
+    marginBottom:'24px'
+}));
+
+
 export const Breadcrumb = (props:BreadcrumbProps)    => {
 
     const links:BreadcrumbLink[] = [{
@@ -72,7 +83,7 @@ export const Breadcrumb = (props:BreadcrumbProps)    => {
     };
 
     return (
-        <Breadcrumbs aria-label="breadcrumb">
+        <ZooBreadcrumbs  aria-label="breadcrumb">
             {
                 links.map((link:BreadcrumbLink)=> {
                     return (
@@ -94,7 +105,7 @@ export const Breadcrumb = (props:BreadcrumbProps)    => {
                     );
                 })
             }
-        </Breadcrumbs>
+        </ZooBreadcrumbs>
     );
 
 }

@@ -70,6 +70,7 @@ const LayoutContainer = (props) => {
             <Content
                 maxWidth="md"
             >
+
                 {children}
             </Content>
             <Footer />

@@ -13,45 +13,58 @@
   "pluginOptions": {},
   "attributes": {
     "slug": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {}
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {}
     },
     "wikidata": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {}
     },
     "wikipediaLink": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {}
     },
     "scientificName": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {}
     },
     "iucnID": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {}
     },
     "iucnLink": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {}
     },
     "body": {
-      "type": "richtext"
+      "type": "richtext",
+      "pluginOptions": {}
     },
     "profile": {
       "type": "component",
       "repeatable": true,
-      "component": "profile.feature"
+      "component": "profile.feature",
+      "pluginOptions": {}
     },
     "className": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {}
     },
     "order": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {}
     },
     "species": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {}
     },
     "family": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {}
     },
     "iucnStatus": {
       "type": "enumeration",
@@ -61,7 +74,8 @@
         "VU",
         "EN",
         "CR"
-      ]
+      ],
+      "pluginOptions": {}
     },
     "qr_codes": {
       "type": "relation",
@@ -97,7 +111,8 @@
       "displayName": "headerimg",
       "type": "component",
       "repeatable": false,
-      "component": "layout.headerimg"
+      "component": "layout.headerimg",
+      "pluginOptions": {}
     }
   }
 }

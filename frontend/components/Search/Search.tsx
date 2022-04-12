@@ -16,7 +16,7 @@ import {useMap} from '../Map/Context/MapContext';
 import {Icon} from '../Icon/Icon';
 import {Facility} from 'strapi-api/entity/facility/facility';
 import {styled} from '@mui/material/styles';
-import {getImagePath} from "../../helper/getImagePath";
+import {getImagePath} from '../../helper/getImagePath';
 
 const ExpandHandle = styled(MuiPaper)(({ theme }) => ({
     position: 'absolute',

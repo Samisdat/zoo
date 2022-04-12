@@ -4,8 +4,8 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import {default as MuiLink} from '@mui/material/Link';
 import {Icon} from '../Icon/Icon';
 import {styled} from '@mui/material/styles';
-import Container from "@mui/material/Container";
-import {grey} from "@mui/material/colors";
+import Container from '@mui/material/Container';
+import {grey} from '@mui/material/colors';
 
 // @TODO try sx or styled with Icon instead div
 const IconWithSpacing = styled('div')(({ theme }) => ({

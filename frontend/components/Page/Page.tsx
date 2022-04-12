@@ -1,12 +1,12 @@
 import React from 'react';
-import {Photo} from "../../strapi-api/entity/photo/photo";
-import {useViewport} from "../viewport/useViewport";
-import {Header} from "../Header/Header";
-import {Breadcrumb, BreadcrumbLink} from "../Navigation/Breadcrumb";
-import {Footer} from "../Navigation/Footer";
-import {styled} from "@mui/system";
-import {grey} from "@mui/material/colors";
-import Container from "@mui/material/Container";
+import {Photo} from '../../strapi-api/entity/photo/photo';
+import {useViewport} from '../viewport/useViewport';
+import {Header} from '../Header/Header';
+import {Breadcrumb, BreadcrumbLink} from '../Navigation/Breadcrumb';
+import {Footer} from '../Navigation/Footer';
+import {styled} from '@mui/system';
+import {grey} from '@mui/material/colors';
+import Container from '@mui/material/Container';
 
 
 export interface PageProperties{

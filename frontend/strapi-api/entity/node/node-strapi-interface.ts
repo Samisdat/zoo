@@ -1,5 +1,5 @@
 import {EdgeStrapi} from '../edge/edge-strapi-interface';
-import {FacilityStrapi} from "../facility/facility-strapi";
+import {FacilityStrapi} from '../facility/facility-strapi';
 
 export interface NodeStrapi {
     id: number;

@@ -5,7 +5,7 @@ import Container from '@mui/material/Container';
 import {Icon} from '../Icon/Icon';
 import List from '@mui/material/List';
 import {Link, ListItem, ListItemButton, ListItemIcon, ListItemText} from '@mui/material';
-import {Small} from "../viewport/Small";
+import {Small} from '../viewport/Small';
 
 const FooterStyled = styled(Container)(({ theme }) => ({
     backgroundColor: grey[200]

@@ -6,9 +6,9 @@ import {Warehouse} from '../warehouse/warehouse';
 import {getPhotoById, getPhotoByImageId} from './photos';
 import {getIndividualAnimalById} from './individual-animals';
 import {getFacilityById} from './facilities';
-import {IndividualAnimalStrapi} from "../entity/individual-animal/individual-animal-strapi-interface";
-import {FacilityStrapi} from "../entity/facility/facility-strapi";
-import {PhotoStrapi} from "../entity/photo/photo-strapi";
+import {IndividualAnimalStrapi} from '../entity/individual-animal/individual-animal-strapi-interface';
+import {FacilityStrapi} from '../entity/facility/facility-strapi';
+import {PhotoStrapi} from '../entity/photo/photo-strapi';
 
 const qs = require('qs');
 

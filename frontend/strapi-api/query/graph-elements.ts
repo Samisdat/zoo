@@ -4,11 +4,11 @@ import {getJsonFromApi} from '../utils/get-json-from-api';
 import {NodeStrapi} from '../entity/node/node-strapi-interface';
 import {Edge} from '../entity/edge/edge';
 import {EdgeStrapi} from '../entity/edge/edge-strapi-interface';
-import {Warehouse} from "../warehouse/warehouse";
-import {getFacilityById} from "./facilities";
-import {getPhotoById} from "./photos";
-import {Animal} from "../entity/animal/animal";
-import {AnimalStrapi} from "../entity/animal/animal-strapi-interface";
+import {Warehouse} from '../warehouse/warehouse';
+import {getFacilityById} from './facilities';
+import {getPhotoById} from './photos';
+import {Animal} from '../entity/animal/animal';
+import {AnimalStrapi} from '../entity/animal/animal-strapi-interface';
 
 const qs = require('qs');
 

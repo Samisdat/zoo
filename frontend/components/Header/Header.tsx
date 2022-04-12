@@ -1,9 +1,9 @@
 import React from 'react';
-import {Photo} from "../../strapi-api/entity/photo/photo";
-import {Large} from "../viewport/Large";
-import {FocalPointImage} from "../FocalPoint/Image";
-import {Small} from "../viewport/Small";
-import Container from "@mui/material/Container";
+import {Photo} from '../../strapi-api/entity/photo/photo';
+import {Large} from '../viewport/Large';
+import {FocalPointImage} from '../FocalPoint/Image';
+import {Small} from '../viewport/Small';
+import Container from '@mui/material/Container';
 
 export interface HeaderProps{
     photo:Photo;

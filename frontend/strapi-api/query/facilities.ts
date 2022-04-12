@@ -6,7 +6,7 @@ import {getMarkerById} from './marker';
 import {getStrapiUrl} from '../utils/get-strapi-url';
 import {getJsonFromApi} from '../utils/get-json-from-api';
 import {FacilityStrapi} from '../entity/facility/facility-strapi';
-import {getNodeById} from "./graph-elements";
+import {getNodeById} from './graph-elements';
 
 const qs = require('qs');
 

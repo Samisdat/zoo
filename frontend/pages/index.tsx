@@ -1,12 +1,12 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import {Warehouse} from "../strapi-api/warehouse/warehouse";
-import {getPhotoById} from "../strapi-api/query/photos";
-import {Header} from "../components/Header/Header";
-import {useViewport} from "../components/viewport/useViewport";
-import Page from "../components/Page/Page";
-import {BreadcrumbLink} from "../components/Navigation/Breadcrumb";
+import {Warehouse} from '../strapi-api/warehouse/warehouse';
+import {getPhotoById} from '../strapi-api/query/photos';
+import {Header} from '../components/Header/Header';
+import {useViewport} from '../components/viewport/useViewport';
+import Page from '../components/Page/Page';
+import {BreadcrumbLink} from '../components/Navigation/Breadcrumb';
 
 export default function Index(props) {
 

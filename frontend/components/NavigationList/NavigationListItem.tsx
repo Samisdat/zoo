@@ -15,8 +15,6 @@ const LinkIfPossible = (props) => {
 
     if(!props.href){
 
-        console.log(props.href)
-
         return (props.children);
     }
 

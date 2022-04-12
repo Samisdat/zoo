@@ -59,6 +59,17 @@ export const Breadcrumb = (props:BreadcrumbProps)    => {
             );
         }
 
+        if('building' === categoryIcon){
+            return (
+                <IconWithSpacing>
+                    <Icon
+                        icon={'landmark'}
+                        size={'1x'}
+                    />
+                </IconWithSpacing>
+            );
+        }
+
         if('pet' === categoryIcon){
             return (
                 <IconWithSpacing>

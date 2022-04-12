@@ -28,6 +28,7 @@ import {faBars} from '@fortawesome/free-solid-svg-icons/faBars';
 import {faTwitterSquare} from '@fortawesome/free-brands-svg-icons/faTwitterSquare';
 import {faFacebookSquare} from '@fortawesome/free-brands-svg-icons/faFacebookSquare';
 import {faInstagramSquare} from '@fortawesome/free-brands-svg-icons/faInstagramSquare';
+import {faLandmark} from "@fortawesome/free-solid-svg-icons/faLandmark";
 
 const utensils = faUtensils;
 const europe = faGlobeEurope;
@@ -59,6 +60,7 @@ const menu = faBars;
 const twitter = faTwitterSquare;
 const facebook = faFacebookSquare;
 const instagram = faInstagramSquare;
+const landmark = faLandmark;
 
 export const strapiIcons = {
     utensils,
@@ -83,6 +85,7 @@ export const internalIcons = {
     paw,
     book,
     map,
+    landmark,
     newspaper,
     code,
     chevron_down,
@@ -128,5 +131,6 @@ export type IconName =
     'menu' |
     'twitter' |
     'facebook' |
-    'instagram'
+    'instagram' |
+    'landmark'
 ;

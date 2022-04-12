@@ -2,7 +2,8 @@ import React from 'react';
 import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import {getAnimals} from 'strapi-api/query/animals';
 import {FilteredNavigationList} from 'components/Animals/Filter/FilteredNavigationList';
-import {Breadcrumb, BreadcrumbLink} from 'components/Navigation/Breadcrumb';
+import {BreadcrumbLink} from 'components/Navigation/Breadcrumb';
+import Page from '../components/Page/Page';
 
 export default function Index(props) {
 
@@ -20,15 +21,16 @@ export default function Index(props) {
 
 
     return (
-        <React.Fragment>
-            <Breadcrumb
-                links={breadcrumbLinks}
-            />
+        <Page
+            headerImage={undefined}
+            breadcrumb={breadcrumbLinks}
+        >
+
             <h1>Tiere</h1>
             <FilteredNavigationList
                 animals={animals}
             />
-        </React.Fragment>
+        </Page>
     );
 
 }

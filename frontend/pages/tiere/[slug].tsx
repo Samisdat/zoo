@@ -9,12 +9,11 @@ import {getFullGeoJson} from '../api/geojson/list';
 import {getAnimalBySlug, getAnimals} from 'strapi-api/query/animals';
 import {Animal} from 'strapi-api/entity/animal/animal';
 import {Warehouse} from 'strapi-api/warehouse/warehouse';
-import {Breadcrumb, BreadcrumbLink} from 'components/Navigation/Breadcrumb';
+import {BreadcrumbLink} from 'components/Navigation/Breadcrumb';
 import {DistributionGlobe} from 'components/Distribution/DistributionGlobe';
 import {Profile} from 'components/Animal/Profile/Profile';
 import {IucnRedList} from 'components/Animal/IucnRedList';
-import {Header} from "../../components/Header/Header";
-import {useViewport} from "../../components/viewport/useViewport";
+import Page from '../../components/Page/Page';
 
 export const Root = styled('div')(({ theme }) => ({
     flexGrow: 1,
@@ -32,15 +31,13 @@ export default function Tiere(props) {
 
     const { asPath } = router;
 
-    const {width} = useViewport();
-
     Warehouse.get().hydrate(props.warehouse);
 
     const animal: Animal = Warehouse.get().getAnimals().find((animal:Animal)=>{
         return (slug === animal.slug);
     });
 
-    const breadcrumbProps:BreadcrumbLink[] = [
+    const breadcrumbLinks:BreadcrumbLink[] = [
         {
             href: '/tiere',
             title: 'Tiere',
@@ -81,18 +78,10 @@ export default function Tiere(props) {
     */
 
     return (
-        <React.Fragment>
-            <Header
-                photo={animal.headerImage}
-                largeWidth={1000}
-                largeHeight={300}
-                smallWidth={width}
-                smallHeight={200}
-            />
-
-            <Breadcrumb
-                links={breadcrumbProps}
-            />
+        <Page
+            headerImage={animal.headerImage}
+            breadcrumb={breadcrumbLinks}
+        >
             <Root>
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={7}>
@@ -170,7 +159,7 @@ export default function Tiere(props) {
                     {animal.iucnLink}
                 </a>
             </div>
-        </React.Fragment>
+        </Page>
 
     );
 }
@@ -178,8 +167,6 @@ export default function Tiere(props) {
 export async function getStaticProps(context) {
 
     const animal = await getAnimalBySlug(context.params.slug);
-
-    console.log(animal);
 
     const getJson = await getFullGeoJson();
 

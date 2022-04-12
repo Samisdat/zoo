@@ -7,6 +7,8 @@ import {NavigationList} from 'components/NavigationList/NavigationList';
 import {groupByFirstLetter} from 'components/NavigationList/groupByFirstLetter';
 import {getImagePath} from '../helper/getImagePath';
 import {NavigationListItemInterface} from 'components/NavigationList/NavigationListInterfaces';
+import {BreadcrumbLink} from '../components/Navigation/Breadcrumb';
+import Page from '../components/Page/Page';
 
 export const ListItemLink = (props)  => {
     return <ListItem button component="a" {...props} />;
@@ -15,6 +17,14 @@ export const ListItemLink = (props)  => {
 export default function Index(props) {
 
     Warehouse.get().hydrate(props.warehouse);
+
+    const breadcrumbLinks:BreadcrumbLink[] = [
+        {
+            href: '/anlagen',
+            title: 'Anlagen',
+            icon: 'building',
+        }
+    ];
 
     const facilities = Warehouse.get().getFacilities();
 
@@ -59,9 +69,14 @@ export default function Index(props) {
     const listGroups = groupByFirstLetter('facilities', listItems);
 
     return (
-        <NavigationList
-            groups={listGroups}
-        />
+        <Page
+            headerImage={undefined}
+            breadcrumb={breadcrumbLinks}
+        >
+            <NavigationList
+                groups={listGroups}
+            />
+        </Page>
   );
 
 }

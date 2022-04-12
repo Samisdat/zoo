@@ -4,13 +4,11 @@ import {getPostBySlug, getPosts} from 'strapi-api/query/posts';
 import {Post} from 'strapi-api/entity/post/post';
 import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import {useRouter} from 'next/router';
-import {Breadcrumb, BreadcrumbLink} from 'components/Navigation/Breadcrumb';
+import {BreadcrumbLink} from 'components/Navigation/Breadcrumb';
 import Typography from '@mui/material/Typography';
-import {FocalPointImage} from '../../components/FocalPoint/Image';
 import {Large} from '../../components/viewport/Large';
 import {Small} from '../../components/viewport/Small';
-import {useViewport} from "../../components/viewport/useViewport";
-import {Header} from "../../components/Header/Header";
+import Page from '../../components/Page/Page';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactMarkdown = require('react-markdown')
@@ -18,8 +16,6 @@ const ReactMarkdown = require('react-markdown')
 const gfm = require('remark-gfm')
 
 export default function BlogPost(props) {
-
-    const {width} = useViewport();
 
     Warehouse.get().hydrate(props.warehouse);
 
@@ -31,9 +27,7 @@ export default function BlogPost(props) {
         return (slug === post.slug);
     });
 
-    console.log(post.headerImage);
-
-    const breadcrumbProps:BreadcrumbLink[] = [
+    const breadcrumbLinks:BreadcrumbLink[] = [
         {
             href: '/blog',
             title: 'Blog',
@@ -46,17 +40,10 @@ export default function BlogPost(props) {
     ];
 
     return (
-        <React.Fragment>
-            <Header
-                photo={post.headerImage}
-                largeWidth={1000}
-                largeHeight={350}
-                smallWidth={width}
-                smallHeight={200}
-            />
-            <Breadcrumb
-                links={breadcrumbProps}
-            />
+        <Page
+            headerImage={post.headerImage}
+            breadcrumb={breadcrumbLinks}
+        >
             <Large>
                 Large
             </Large>
@@ -79,7 +66,7 @@ export default function BlogPost(props) {
                 {post.body}
             </ReactMarkdown>
 
-        </React.Fragment>
+        </Page>
     );
 }
 

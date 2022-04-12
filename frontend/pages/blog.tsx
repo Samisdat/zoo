@@ -8,10 +8,20 @@ import {blogUrlPart} from '../constants';
 import {getPosts} from 'strapi-api/query/posts';
 import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import {Post} from 'strapi-api/entity/post/post';
+import {BreadcrumbLink} from '../components/Navigation/Breadcrumb';
+import Page from '../components/Page/Page';
 
 export default function Blog(props) {
 
     Warehouse.get().hydrate(props.warehouse);
+
+    const breadcrumbLinks:BreadcrumbLink[] = [
+        {
+            href: '/blog',
+            title: 'Blog',
+            icon: 'blog',
+        }
+    ];
 
     const posts = Warehouse.get().getPosts()
     .sort((a,b) =>{
@@ -29,20 +39,25 @@ export default function Blog(props) {
 
 
     return (
-        <List >
-            {
-                posts.map( (post:Post) => {
-                    const href =  `/${blogUrlPart}/${post.slug}`
-                    return (
-                        <ListItem key={post.slug}>
-                            <ListItemLink href={href}>
-                                {post.title} - <Moment format="DD.MM.YYYY" date={post.date} /><br/>
-                            </ListItemLink>
-                        </ListItem>
-                    );
-                })
-            }
-        </List>
+        <Page
+            headerImage={undefined}
+            breadcrumb={breadcrumbLinks}
+        >
+            <List >
+                {
+                    posts.map( (post:Post) => {
+                        const href =  `/${blogUrlPart}/${post.slug}`
+                        return (
+                            <ListItem key={post.slug}>
+                                <ListItemLink href={href}>
+                                    {post.title} - <Moment format="DD.MM.YYYY" date={post.date} /><br/>
+                                </ListItemLink>
+                            </ListItem>
+                        );
+                    })
+                }
+            </List>
+        </Page>
     );
 }
 

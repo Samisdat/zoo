@@ -4,6 +4,8 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import {default as MuiLink} from '@mui/material/Link';
 import {Icon} from '../Icon/Icon';
 import {styled} from '@mui/material/styles';
+import Container from "@mui/material/Container";
+import {grey} from "@mui/material/colors";
 
 // @TODO try sx or styled with Icon instead div
 const IconWithSpacing = styled('div')(({ theme }) => ({
@@ -23,13 +25,12 @@ export interface BreadcrumbProps{
 }
 
 const ZooBreadcrumbs = styled(Breadcrumbs)(({ theme }) => ({
-    background: '#f0f0f0',
+    backgroundColor: grey[100],
     marginLeft: -24,
     marginRight: -24,
     paddingTop: 12,
     paddingBottom: 12,
     paddingLeft: 24,
-    marginBottom:'24px'
 }));
 
 
@@ -83,29 +84,33 @@ export const Breadcrumb = (props:BreadcrumbProps)    => {
     };
 
     return (
-        <ZooBreadcrumbs  aria-label="breadcrumb">
-            {
-                links.map((link:BreadcrumbLink)=> {
-                    return (
-                        <Link
-                            key={link.href}
-                            href={link.href}
-                            passHref
-                        >
-                            <MuiLink
-                                underline="hover"
-                                sx={{ display: 'flex', alignItems: 'center' }}
-                                color="inherit"
+        <Container
+            maxWidth='md'
+        >
+            <ZooBreadcrumbs aria-label="breadcrumb">
+                {
+                    links.map((link:BreadcrumbLink)=> {
+                        return (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                passHref
                             >
-                                {getIcon(link.icon)}
-                                {link.title}
-                            </MuiLink>
-                        </Link>
+                                <MuiLink
+                                    underline="hover"
+                                    sx={{ display: 'flex', alignItems: 'center' }}
+                                    color="inherit"
+                                >
+                                    {getIcon(link.icon)}
+                                    {link.title}
+                                </MuiLink>
+                            </Link>
 
-                    );
-                })
-            }
-        </ZooBreadcrumbs>
+                        );
+                    })
+                }
+            </ZooBreadcrumbs>
+        </Container>
     );
 
 }

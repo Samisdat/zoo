@@ -5,18 +5,17 @@ import Container from '@mui/material/Container';
 import {Icon} from '../Icon/Icon';
 import List from '@mui/material/List';
 import {Link, ListItem, ListItemButton, ListItemIcon, ListItemText} from '@mui/material';
+import {Small} from "../viewport/Small";
 
 const FooterStyled = styled(Container)(({ theme }) => ({
-    backgroundColor: grey[300]
+    backgroundColor: grey[200]
 }));
 
 const BlockFab = styled('div')(({ theme }) => ({
     height: 56 + parseInt(theme.spacing(2)),
-    background:'red'
 }));
 
 export const Footer = () => {
-
 
     return (
         <FooterStyled
@@ -73,7 +72,9 @@ export const Footer = () => {
                 </ListItem>
 
             </List>
-            <BlockFab />
+            <Small>
+                <BlockFab />
+            </Small>
         </FooterStyled>
     );
 

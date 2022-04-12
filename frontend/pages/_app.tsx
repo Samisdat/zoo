@@ -25,32 +25,6 @@ const clientSideEmotionCache = createEmotionCache();
 import { grey } from '@mui/material/colors';
 import {Footer} from '../components/Navigation/Footer';
 
-const Bg = styled('div')(({ theme }) => ({
-    backgroundColor: grey[300],
-}));
-
-const Content = styled(Container)(({ theme }) => ({
-    /*
-    [theme.breakpoints.up('xs')]: {
-        backgroundColor: 'Salmon',
-        minWidth: 300
-    },
-    [theme.breakpoints.up('sm')]: {
-        backgroundColor: 'FireBrick',
-    },
-    [theme.breakpoints.up('md')]: {
-        backgroundColor: 'DeepPink',
-    },
-    [theme.breakpoints.up('lg')]: {
-        backgroundColor: 'DarkOrange',
-    },
-    [theme.breakpoints.up('xl')]: {
-        backgroundColor: 'DarkKhaki',
-    },
-    */
-    minWidth: 300,
-    backgroundColor: 'white',
-}));
 
 
 const LayoutContainer = (props) => {
@@ -66,15 +40,9 @@ const LayoutContainer = (props) => {
     }
 
     return (
-        <Bg>
-            <Content
-                maxWidth="md"
-            >
-
                 {children}
-            </Content>
-            <Footer />
-        </Bg>
+
+
     );
 
 }
@@ -104,16 +72,17 @@ export default function ZooWuppertal(props:ZooWuppertalProps) {
                 <Navigation
                     categories={navigationCategories}
                 />
-                {/* */}
+                {/*
                 <LayoutContainer
                     router={router}
                     {...props}
                 >
+                */}
 
                     <Component
                         {...pageProps}
                     />
-                </LayoutContainer>
+                {/* </LayoutContainer>*/}
             </ThemeProvider>
 
         </ViewportProvider>

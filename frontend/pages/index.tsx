@@ -1,10 +1,40 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-export default function Index() {
+import {Warehouse} from "../strapi-api/warehouse/warehouse";
+import {getPhotoById} from "../strapi-api/query/photos";
+import {Header} from "../components/Header/Header";
+import {useViewport} from "../components/viewport/useViewport";
+import Page from "../components/Page/Page";
+import {BreadcrumbLink} from "../components/Navigation/Breadcrumb";
+
+export default function Index(props) {
+
+    const {width} = useViewport();
+
+    Warehouse.get().hydrate(props.warehouse);
+
+    const headerImage = Warehouse.get().getPhoto(32);
+
+    console.log(headerImage);
+
+    const breadcrumbLinks:BreadcrumbLink[] = [
+        {
+            href: '/tiere',
+            title: 'Tiere',
+            icon: 'pet',
+        },
+        {
+            href: '/foo',
+            title: 'Bar',
+        },
+    ];
 
     return (
-        <React.Fragment>
+        <Page
+            headerImage={headerImage}
+            breadcrumb={breadcrumbLinks}
+        >
             <Box sx={{ width: '100%'}}>
                 <Typography variant="h1" component="h1" gutterBottom>
                     h1. Heading
@@ -72,7 +102,20 @@ export default function Index() {
                     overline text
                 </Typography>
             </Box>
-        </React.Fragment>
+
+        </Page>
+
     );
 
+}
+
+export async function getStaticProps(context) {
+
+    await getPhotoById(32);
+
+    return {
+        props: {
+            warehouse: Warehouse.get().dehydrate()
+        }
+    }
 }

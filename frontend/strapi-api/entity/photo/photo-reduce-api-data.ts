@@ -95,7 +95,7 @@ export const reducePhotoApiData = (apiData: PhotoStrapi):PhotoSpore =>{
         focalPoint
     };
 
-    let animal = undefined;
+    const animal = undefined;
 
     /*
     if(apiData.animal){

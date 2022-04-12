@@ -36,7 +36,7 @@ export const postReduceApiData = (apiData: PostStrapi):PostSpore =>{
 
     }
 
-    let animals:number[] = [];
+    const animals:number[] = [];
 
     /*
     if (undefined !== apiData.animals) {

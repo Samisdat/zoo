@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Moment from 'react-moment';
 import {getPostBySlug, getPosts} from 'strapi-api/query/posts';
 import {Post} from 'strapi-api/entity/post/post';
@@ -9,6 +9,8 @@ import Typography from '@mui/material/Typography';
 import {Large} from '../../components/viewport/Large';
 import {Small} from '../../components/viewport/Small';
 import Page from '../../components/Page/Page';
+import {apolloClient} from "../../src/apolloClient";
+import {getPostById} from "../../graphql/queries";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactMarkdown = require('react-markdown')
@@ -16,6 +18,13 @@ const ReactMarkdown = require('react-markdown')
 const gfm = require('remark-gfm')
 
 export default function BlogPost(props) {
+
+    useEffect(()=>{
+
+        apolloClient.query({
+            query:getPostById
+        }).then(result => console.log(JSON.stringify(result, null, 4)));
+    })
 
     Warehouse.get().hydrate(props.warehouse);
 

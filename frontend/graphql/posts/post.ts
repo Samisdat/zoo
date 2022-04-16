@@ -89,9 +89,9 @@ export class Post extends Entity<PostSpore>{
 
     static hydrate(dehydrated: PostSpore):Post{
 
-        const animal = new Post(dehydrated);
+        const post = new Post(dehydrated);
 
-        return animal;
+        return post;
 
     }
 

@@ -17,7 +17,7 @@ const sizeNames = [
 /**
  * DRY
  */
-interface PhoteSizes{
+export interface PhoteSizes{
     [index:string]: PhotoSize | null;
     thumbnail: PhotoSize | null;
     large: PhotoSize | null;

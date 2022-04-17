@@ -1,4 +1,4 @@
-export interface PostSpore {
+export interface PostJson {
     id: number;
     slug: string;
     title: string;
@@ -7,6 +7,5 @@ export interface PostSpore {
     animals: number[];
     individual_animals: number[];
     facilities: number[];
-    photos: number[];
     headerImage: number;
 }

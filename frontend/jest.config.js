@@ -5,9 +5,12 @@ module.exports = {
     '<rootDir>/pages',
     '<rootDir>/helper',
     '<rootDir>/data-repos',
-    '<rootDir>/strapi-api'
+    '<rootDir>/graphql'
   ],
-  setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
+  setupFilesAfterEnv: [
+      '<rootDir>/setupTests.ts',
+      '<rootDir>/graphql/posts/__tests__/setupTests.ts'
+  ],
   globals: {
     'ts-jest': {
       tsConfig: 'tsconfig.jest.json'

@@ -1,8 +1,40 @@
-import {PostStrapi} from './post-strapi-interface';
-import {PostSpore} from './post-spore';
-import {FacilityStrapi} from '../facility/facility-strapi';
+import {PostJson} from "./post-json";
 
-export const postReduceApiData = (apiData: PostStrapi):PostSpore =>{
+export const postMapData = (apiData: any):PostJson =>{
+
+    const postJson: PostJson = {
+        id: apiData.id,
+        slug: null,
+        title: null,
+        date: null,
+        body: null,
+        headerImage: null,
+        animals:[],
+        facilities:[],
+        individual_animals:[],
+    };
+
+    if(apiData.attributes?.slug){
+        postJson.slug = apiData.attributes.slug
+    }
+
+    if(apiData.attributes?.title){
+        postJson.title = apiData.attributes.title
+    }
+
+    if(apiData.attributes?.date){
+        postJson.date = apiData.attributes.date
+    }
+
+    if(apiData.attributes?.body){
+        postJson.body = apiData.attributes.body
+    }
+
+    if(apiData.attributes?.headerImg?.image?.data?.id){
+        postJson.id = apiData.attributes?.headerImg?.image?.data?.id
+    }
+
+    return postJson;
 
     const id = apiData.id;
     const slug = apiData.attributes.slug;
@@ -49,7 +81,7 @@ export const postReduceApiData = (apiData: PostStrapi):PostSpore =>{
     */
 
     let facilities:number[] = [];
-
+    /*
     if (undefined !== apiData.attributes.facilities) {
 
         facilities = apiData.attributes.facilities.data.map((facility:FacilityStrapi) => {
@@ -57,6 +89,8 @@ export const postReduceApiData = (apiData: PostStrapi):PostSpore =>{
         });
 
     }
+
+     */
 
     return{
         id,
@@ -67,7 +101,6 @@ export const postReduceApiData = (apiData: PostStrapi):PostSpore =>{
         animals,
         individual_animals,
         facilities,
-        photos,
         headerImage,
     };
 }

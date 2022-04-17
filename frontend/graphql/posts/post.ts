@@ -1,14 +1,13 @@
-import {Entity} from '../entity';
-import {PostSpore} from './post-spore';
-import {Photo} from '../photo/photo';
-import {IndividualAnimal} from '../individual-animal/individual-animal';
-import {Warehouse} from '../../warehouse/warehouse';
-import {Animal} from '../animal/animal';
-import {Facility} from '../facility/facility';
-import {postReduceApiData} from './post-reduce-api-data';
-import {PostStrapi} from './post-strapi-interface';
+import {PostJson} from "./post-json";
+import {Entity} from "../../strapi-api/entity/entity";
+import {Photo} from "../../strapi-api/entity/photo/photo";
+import {Warehouse} from "../../strapi-api/warehouse/warehouse";
+import {Facility} from "../../strapi-api/entity/facility/facility";
+import {Animal} from "../../strapi-api/entity/animal/animal";
+import {IndividualAnimal} from "../../strapi-api/entity/individual-animal/individual-animal";
+import {postMapData} from "./post-map-data";
 
-export class Post extends Entity<PostSpore>{
+export class Post extends Entity<PostJson>{
 
     get id(): number {
         return this.json.id;
@@ -36,25 +35,10 @@ export class Post extends Entity<PostSpore>{
 
     }
 
-    set headerImageRaw(id:number){
-
-        this.json.headerImage = id;
-
-    }
-
     get headerImage(): Photo{
 
         return Warehouse.get().getPhoto(this.json.headerImage);
 
-    }
-    get photosRaw(): number[]{
-        return this.json.photos;
-    }
-
-    get photos(): Photo[]{
-        return this.json.photos.map((photoId)=>{
-            return Warehouse.get().getPhoto(photoId);
-        });
     }
 
     get facilitiesRaw(): number[]{
@@ -87,7 +71,7 @@ export class Post extends Entity<PostSpore>{
         });
     }
 
-    static hydrate(dehydrated: PostSpore):Post{
+    static hydrate(dehydrated: PostJson):Post{
 
         const post = new Post(dehydrated);
 
@@ -95,9 +79,11 @@ export class Post extends Entity<PostSpore>{
 
     }
 
-    static fromApi(json: PostStrapi):Post{
+    static fromApi(json: any):Post{
 
-        const dehydrated: PostSpore = postReduceApiData(json);
+        const dehydrated: PostJson = postMapData(json);
+
+        console.log(dehydrated);
 
         const post = new Post(dehydrated);
 

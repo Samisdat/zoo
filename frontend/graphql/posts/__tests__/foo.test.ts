@@ -1,7 +1,7 @@
 //import {getPostBySlug} from "../../queries";
 //import {apolloClient} from "../../apolloClient";
 
-import {client} from "../../apolloClient";
+import {apolloClient} from "../../apolloClient";
 import {getPostBySlug} from "../../queries";
 
 describe('Graph', () => {
@@ -13,7 +13,7 @@ describe('Graph', () => {
 
         expect(true).toBeTruthy()
 
-        const posts = await client.query({
+        const posts = await apolloClient.query({
             query:getPostBySlug,
         });
 

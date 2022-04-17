@@ -12,7 +12,7 @@ const link = new HttpLink({
 
 // Isolate Apollo client so it could be reused
 // in both application runtime and tests.
-export const client = new ApolloClient({
+export const apolloClient = new ApolloClient({
     cache,
     link,
 })

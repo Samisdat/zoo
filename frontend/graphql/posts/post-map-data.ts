@@ -30,9 +30,13 @@ export const postMapData = (apiData: any):PostJson =>{
         postJson.body = apiData.attributes.body
     }
 
+    /*
     if(apiData.attributes?.headerImg?.image?.data?.id){
         postJson.id = apiData.attributes?.headerImg?.image?.data?.id
     }
+    */
+
+    console.log(postJson)
 
     return postJson;
 

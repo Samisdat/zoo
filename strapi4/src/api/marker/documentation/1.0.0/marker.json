@@ -964,6 +964,15 @@
                                                                                                                 }
                                                                                                               }
                                                                                                             },
+                                                                                                            "x": {
+                                                                                                              "type": "integer"
+                                                                                                            },
+                                                                                                            "y": {
+                                                                                                              "type": "integer"
+                                                                                                            },
+                                                                                                            "Copyright": {
+                                                                                                              "type": "string"
+                                                                                                            },
                                                                                                             "createdAt": {
                                                                                                               "type": "string",
                                                                                                               "format": "date-time"
@@ -1607,6 +1616,15 @@
                                                                                                       }
                                                                                                     }
                                                                                                   },
+                                                                                                  "x": {
+                                                                                                    "type": "integer"
+                                                                                                  },
+                                                                                                  "y": {
+                                                                                                    "type": "integer"
+                                                                                                  },
+                                                                                                  "Copyright": {
+                                                                                                    "type": "string"
+                                                                                                  },
                                                                                                   "createdAt": {
                                                                                                     "type": "string",
                                                                                                     "format": "date-time"
@@ -2100,6 +2118,15 @@
                                                                                           }
                                                                                         }
                                                                                       }
+                                                                                    },
+                                                                                    "x": {
+                                                                                      "type": "integer"
+                                                                                    },
+                                                                                    "y": {
+                                                                                      "type": "integer"
+                                                                                    },
+                                                                                    "Copyright": {
+                                                                                      "type": "string"
                                                                                     },
                                                                                     "createdAt": {
                                                                                       "type": "string",
@@ -2643,6 +2670,15 @@
                                                                 }
                                                               }
                                                             }
+                                                          },
+                                                          "x": {
+                                                            "type": "integer"
+                                                          },
+                                                          "y": {
+                                                            "type": "integer"
+                                                          },
+                                                          "Copyright": {
+                                                            "type": "string"
                                                           },
                                                           "createdAt": {
                                                             "type": "string",
@@ -4266,6 +4302,15 @@
                                                                                                               }
                                                                                                             }
                                                                                                           },
+                                                                                                          "x": {
+                                                                                                            "type": "integer"
+                                                                                                          },
+                                                                                                          "y": {
+                                                                                                            "type": "integer"
+                                                                                                          },
+                                                                                                          "Copyright": {
+                                                                                                            "type": "string"
+                                                                                                          },
                                                                                                           "createdAt": {
                                                                                                             "type": "string",
                                                                                                             "format": "date-time"
@@ -4909,6 +4954,15 @@
                                                                                                     }
                                                                                                   }
                                                                                                 },
+                                                                                                "x": {
+                                                                                                  "type": "integer"
+                                                                                                },
+                                                                                                "y": {
+                                                                                                  "type": "integer"
+                                                                                                },
+                                                                                                "Copyright": {
+                                                                                                  "type": "string"
+                                                                                                },
                                                                                                 "createdAt": {
                                                                                                   "type": "string",
                                                                                                   "format": "date-time"
@@ -5402,6 +5456,15 @@
                                                                                         }
                                                                                       }
                                                                                     }
+                                                                                  },
+                                                                                  "x": {
+                                                                                    "type": "integer"
+                                                                                  },
+                                                                                  "y": {
+                                                                                    "type": "integer"
+                                                                                  },
+                                                                                  "Copyright": {
+                                                                                    "type": "string"
                                                                                   },
                                                                                   "createdAt": {
                                                                                     "type": "string",
@@ -5945,6 +6008,15 @@
                                                               }
                                                             }
                                                           }
+                                                        },
+                                                        "x": {
+                                                          "type": "integer"
+                                                        },
+                                                        "y": {
+                                                          "type": "integer"
+                                                        },
+                                                        "Copyright": {
+                                                          "type": "string"
                                                         },
                                                         "createdAt": {
                                                           "type": "string",
@@ -7491,6 +7563,15 @@
                                                                                                               }
                                                                                                             }
                                                                                                           },
+                                                                                                          "x": {
+                                                                                                            "type": "integer"
+                                                                                                          },
+                                                                                                          "y": {
+                                                                                                            "type": "integer"
+                                                                                                          },
+                                                                                                          "Copyright": {
+                                                                                                            "type": "string"
+                                                                                                          },
                                                                                                           "createdAt": {
                                                                                                             "type": "string",
                                                                                                             "format": "date-time"
@@ -8134,6 +8215,15 @@
                                                                                                     }
                                                                                                   }
                                                                                                 },
+                                                                                                "x": {
+                                                                                                  "type": "integer"
+                                                                                                },
+                                                                                                "y": {
+                                                                                                  "type": "integer"
+                                                                                                },
+                                                                                                "Copyright": {
+                                                                                                  "type": "string"
+                                                                                                },
                                                                                                 "createdAt": {
                                                                                                   "type": "string",
                                                                                                   "format": "date-time"
@@ -8627,6 +8717,15 @@
                                                                                         }
                                                                                       }
                                                                                     }
+                                                                                  },
+                                                                                  "x": {
+                                                                                    "type": "integer"
+                                                                                  },
+                                                                                  "y": {
+                                                                                    "type": "integer"
+                                                                                  },
+                                                                                  "Copyright": {
+                                                                                    "type": "string"
                                                                                   },
                                                                                   "createdAt": {
                                                                                     "type": "string",
@@ -9170,6 +9269,15 @@
                                                               }
                                                             }
                                                           }
+                                                        },
+                                                        "x": {
+                                                          "type": "integer"
+                                                        },
+                                                        "y": {
+                                                          "type": "integer"
+                                                        },
+                                                        "Copyright": {
+                                                          "type": "string"
                                                         },
                                                         "createdAt": {
                                                           "type": "string",
@@ -10702,6 +10810,15 @@
                                                                                                               }
                                                                                                             }
                                                                                                           },
+                                                                                                          "x": {
+                                                                                                            "type": "integer"
+                                                                                                          },
+                                                                                                          "y": {
+                                                                                                            "type": "integer"
+                                                                                                          },
+                                                                                                          "Copyright": {
+                                                                                                            "type": "string"
+                                                                                                          },
                                                                                                           "createdAt": {
                                                                                                             "type": "string",
                                                                                                             "format": "date-time"
@@ -11345,6 +11462,15 @@
                                                                                                     }
                                                                                                   }
                                                                                                 },
+                                                                                                "x": {
+                                                                                                  "type": "integer"
+                                                                                                },
+                                                                                                "y": {
+                                                                                                  "type": "integer"
+                                                                                                },
+                                                                                                "Copyright": {
+                                                                                                  "type": "string"
+                                                                                                },
                                                                                                 "createdAt": {
                                                                                                   "type": "string",
                                                                                                   "format": "date-time"
@@ -11838,6 +11964,15 @@
                                                                                         }
                                                                                       }
                                                                                     }
+                                                                                  },
+                                                                                  "x": {
+                                                                                    "type": "integer"
+                                                                                  },
+                                                                                  "y": {
+                                                                                    "type": "integer"
+                                                                                  },
+                                                                                  "Copyright": {
+                                                                                    "type": "string"
                                                                                   },
                                                                                   "createdAt": {
                                                                                     "type": "string",
@@ -12381,6 +12516,15 @@
                                                               }
                                                             }
                                                           }
+                                                        },
+                                                        "x": {
+                                                          "type": "integer"
+                                                        },
+                                                        "y": {
+                                                          "type": "integer"
+                                                        },
+                                                        "Copyright": {
+                                                          "type": "string"
                                                         },
                                                         "createdAt": {
                                                           "type": "string",

@@ -1,44 +1,74 @@
 import { graphql } from 'msw'
 
 export const handlers = [
-    // Handles a "Login" mutation
-    graphql.mutation('Login', (req, res, ctx) => {
-        const { username } = req.variables
-        sessionStorage.setItem('is-authenticated', username)
 
-        return res(
-            ctx.data({
-                login: {
-                    username,
-                },
-            }),
-        )
+    graphql.query('PostSlugs', (request, response, context) => {
+
+            return response(
+                context.data({
+                    posts: {
+                        data: [{
+                            id:5,
+                            attributes:{
+                                title: 'title',
+                                slug: 'slug',
+                                date: 'date',
+                                body: 'body',
+                                headerImg: {
+                                    image: {
+                                        data: {
+                                            id: 6,
+                                            attributes:{
+                                                name: 'foobar',
+                                                x:11,
+                                                y:12,
+                                                formats:{}
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                        }],
+                    },
+                }),
+            )
+
     }),
 
-    // Handles a "GetUserInfo" query
-    graphql.query('PostsBySlug', (req, res, ctx) => {
-        const authenticatedUser = sessionStorage.getItem('is-authenticated')
+    graphql.query('PostsBySlug', (request, response, context) => {
 
-        if (!authenticatedUser) {
-            // When not authenticated, respond with an error
-            return res(
-                ctx.errors([
-                    {
-                        message: 'Not authenticated, my friend',
-                        errorType: 'AuthenticationError',
+        if(request.variables.slug){
+            return response(
+                context.data({
+                    posts: {
+                        data: [{
+                            id:5,
+                            attributes:{
+                                title: 'title',
+                                slug: 'slug',
+                                date: 'date',
+                                body: 'body',
+                                headerImg: {
+                                    image: {
+                                        data: {
+                                            id: 6,
+                                            attributes:{
+                                                name: 'foobar',
+                                                x:11,
+                                                y:12,
+                                                formats:{}
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                        }],
                     },
-                ]),
+                }),
             )
         }
 
-        // When authenticated, respond with a query payload
-        return res(
-            ctx.data({
-                user: {
-                    username: authenticatedUser,
-                    firstName: 'John',
-                },
-            }),
-        )
     }),
 ]

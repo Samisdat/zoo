@@ -9,7 +9,7 @@ module.exports = {
   ],
   setupFilesAfterEnv: [
       '<rootDir>/setupTests.ts',
-      '<rootDir>/graphql/posts/__tests__/setupTests.ts'
+      '<rootDir>/graphql/post/__tests__/setupTests.ts'
   ],
   globals: {
     'ts-jest': {

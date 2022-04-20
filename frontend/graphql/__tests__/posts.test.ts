@@ -1,24 +1,45 @@
 import {fetchPostBySlug, fetchPosts} from "../posts";
+import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 
 describe('fetchPostBySlug', () => {
 
     test('valid response', async () => {
 
-        const post = await fetchPostBySlug('an-existing-slug');
+        expect(Warehouse.get().hasPost(5)).toBeFalsy();
+        expect(Warehouse.get().hasPhoto(25)).toBeFalsy();
 
-        expect(post.id).toBe(5);
+        await fetchPostBySlug('an-existing-slug');
+
+        expect(Warehouse.get().hasPost(5)).toBeTruthy();
+        expect(Warehouse.get().hasPhoto(25)).toBeTruthy();
+
+
+    });
+
+    test('valid response with no headerimage', async () => {
+
+        expect(Warehouse.get().hasPost(15)).toBeFalsy();
+
+        const post = await fetchPostBySlug('an-existing-slug-no-header-image');
+
+        expect(Warehouse.get().hasPost(15)).toBeTruthy();
+        expect(post.headerImageRaw).toBe(undefined);
 
     });
 
 });
 
-describe('fetchPosts', () => {
+describe.only('fetchPosts', () => {
 
     test('valid response', async () => {
 
-        const posts = await fetchPosts();
+        expect(Warehouse.get().hasPost(5)).toBeFalsy();
 
-        expect(posts[0].id).toBe(5);
+        await fetchPosts();
+
+        expect(Warehouse.get().hasPost(5)).toBeTruthy();
+        expect(Warehouse.get().hasPhoto(25)).toBeTruthy();
+
 
     });
 

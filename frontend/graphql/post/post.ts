@@ -6,6 +6,7 @@ import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 //import {Animal} from "../../strapi-api/entity/animal/animal";
 //import {IndividualAnimal} from "../../strapi-api/entity/individual-animal/individual-animal";
 import {postMapData} from "./post-map-data";
+import {Photo} from "../photo/photo";
 
 export class Post extends Entity<PostJson>{
 
@@ -34,13 +35,13 @@ export class Post extends Entity<PostJson>{
         return this.json.headerImage;
 
     }
-    /*
-    get headerImage(): Photo{
+
+    get headerImage(): Photo | null {
 
         return Warehouse.get().getPhoto(this.json.headerImage);
 
     }
-    */
+
 
     get facilitiesRaw(): number[]{
         return this.json.facilities;
@@ -89,11 +90,7 @@ export class Post extends Entity<PostJson>{
 
         const dehydrated: PostJson = postMapData(json);
 
-        console.log(dehydrated);
-
         const post = new Post(dehydrated);
-
-        Warehouse.get().addPost(post);
 
         return post;
 

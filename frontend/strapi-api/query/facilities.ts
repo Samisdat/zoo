@@ -1,6 +1,5 @@
 import {Facility} from '../entity/facility/facility';
 import {Warehouse} from '../warehouse/warehouse';
-import {getPhotoById, getPhotoByImageId} from './photos';
 import {getAnimalById} from './animals';
 import {getMarkerById} from './marker';
 import {getStrapiUrl} from '../utils/get-strapi-url';
@@ -12,6 +11,7 @@ const qs = require('qs');
 
 export const loadRelations = async (facility:Facility) => {
 
+    /*
     for (const photoId of facility.photosRaw) {
 
         if (false === Warehouse.get().hasPhoto(photoId)) {
@@ -19,6 +19,7 @@ export const loadRelations = async (facility:Facility) => {
         }
 
     }
+    */
 
     for (const animalId of facility.animalsRaw) {
 
@@ -44,6 +45,7 @@ export const loadRelations = async (facility:Facility) => {
 
     }
 
+    /*
     if(facility.headerImageRaw){
 
         /**
@@ -52,7 +54,7 @@ export const loadRelations = async (facility:Facility) => {
          *
          * So there is no query by image id ...
          *
-         */
+
 
         const fetchedPhoto = Warehouse.get().getPhotos().find((photo)=>{
             return (facility.headerImageRaw === photo.imageId)
@@ -68,6 +70,7 @@ export const loadRelations = async (facility:Facility) => {
         }
 
     }
+    */
 
 }
 

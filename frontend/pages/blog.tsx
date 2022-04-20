@@ -5,11 +5,11 @@ import Moment from 'react-moment';
 
 import {ListItemLink} from './anlagen';
 import {blogUrlPart} from '../constants';
-import {getPosts} from 'strapi-api/query/posts';
 import {Warehouse} from 'strapi-api/warehouse/warehouse';
-import {Post} from 'strapi-api/entity/post/post';
 import {BreadcrumbLink} from '../components/Navigation/Breadcrumb';
 import Page from '../components/Page/Page';
+import {fetchPosts} from "../graphql/posts";
+import {Post} from "../graphql/post/post";
 
 export default function Blog(props) {
 
@@ -65,7 +65,7 @@ export default function Blog(props) {
 
 export async function getStaticProps({ params, preview = false, previewData }) {
 
-    await getPosts();
+    await fetchPosts();
 
     return {
         props: {

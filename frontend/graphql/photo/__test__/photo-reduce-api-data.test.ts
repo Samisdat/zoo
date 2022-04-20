@@ -1,6 +1,6 @@
 import {Photo} from '../photo';
 import {getFixture} from '../../fixtures/get-fixture';
-import {PhotoSpore} from '../photo-spore';
+import {PhotoJson} from '../photo-spore';
 import {reducePhotoApiData} from '../photo-reduce-api-data';
 
 describe('photo reduce api data', ()=>{
@@ -11,7 +11,7 @@ describe('photo reduce api data', ()=>{
 
         const dehydrated = reducePhotoApiData(fixture);
 
-        const expectation: PhotoSpore = {
+        const expectation: PhotoJson = {
             copyright: 'Wikipedia',
             id: 33,
             title: 'Elefant',

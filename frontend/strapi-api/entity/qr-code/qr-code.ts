@@ -24,7 +24,7 @@ export class QrCode extends Entity<QrCodeSpore>{
         return this.json.lng;
     }
 
-    get facilityRaw(): number{
+    get facilityRaw(): number|undefined{
         return this.json.facility;
     }
 

@@ -1,13 +1,9 @@
 import {Facility} from '../entity/facility/facility';
-import {Photo} from '../entity/photo/photo';
 import {FacilitySpore} from '../entity/facility/facility-spore';
-import {PhotoSpore} from '../entity/photo/photo-spore';
 import {Animal} from '../entity/animal/animal';
 import {AnimalSpore} from '../entity/animal/animal-spore';
 import {IndividualAnimal} from '../entity/individual-animal/individual-animal';
 import {IndividualAnimalSpore} from '../entity/individual-animal/individual-animal-spore';
-import {Post} from '../entity/post/post';
-import {PostSpore} from '../entity/post/post-spore';
 import {QrCodeSpore} from '../entity/qr-code/qr-code-spore';
 import {QrCode} from '../entity/qr-code/qr-code';
 import {Edge} from '../entity/edge/edge';
@@ -16,14 +12,18 @@ import {NodeSpore} from '../entity/node/node-spore';
 import {EdgeSpore} from '../entity/edge/edge-spore';
 import {Marker} from '../entity/marker/marker';
 import {MarkerSpore} from '../entity/marker/marker-spore';
+import {PostJson} from "../../graphql/post/post-json";
+import {Post} from "../../graphql/post/post";
+import {PhotoJson} from "../../graphql/photo/photo-json";
+import {Photo} from "../../graphql/photo/photo";
 
 export interface WarehouseSpore{
     facilities:FacilitySpore[];
-    photos:PhotoSpore[];
+    photos:PhotoJson[];
     markers:MarkerSpore[];
     animals: AnimalSpore[]
     individualAnimals: IndividualAnimalSpore[]
-    posts: PostSpore[]
+    posts: PostJson[]
     qrCodes: QrCodeSpore[]
     nodes: NodeSpore[]
     edges: EdgeSpore[]
@@ -138,7 +138,7 @@ export class Warehouse{
 
         if(spore.photos){
 
-            this.photos = spore.photos.map((photo:PhotoSpore)=>{
+            this.photos = spore.photos.map((photo:PhotoJson)=>{
                 this.photoIds.push(photo.id);
                 return Photo.hydrate(photo);
             });
@@ -174,7 +174,7 @@ export class Warehouse{
 
         if(spore.posts){
 
-            this.posts = spore.posts.map((postSpore:PostSpore)=>{
+            this.posts = spore.posts.map((postSpore:PostJson)=>{
                 this.postsIds.push(postSpore.id);
                 return Post.hydrate(postSpore);
             });

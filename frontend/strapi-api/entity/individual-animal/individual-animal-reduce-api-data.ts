@@ -10,6 +10,7 @@ export const individualAnimalReduceApiData = (apiData: IndividualAnimalStrapi):I
 
     const animal = apiData.attributes.animal.data.id;
 
+    /*
     let photos:number[] = [];
 
     if (undefined !== apiData.attributes.photos) {
@@ -19,6 +20,7 @@ export const individualAnimalReduceApiData = (apiData: IndividualAnimalStrapi):I
         });
 
     }
+     */
 
     return{
         id,
@@ -26,6 +28,6 @@ export const individualAnimalReduceApiData = (apiData: IndividualAnimalStrapi):I
         slug,
         body,
         animal,
-        photos,
+        photos:[],
     };
 }

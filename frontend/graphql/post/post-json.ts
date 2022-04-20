@@ -1,11 +1,11 @@
 export interface PostJson {
-    id: number | null;
-    slug: string | null;
-    title: string | null;
-    date: string | null;
-    body: string | null;
+    id: number;
+    slug: string;
+    title: string;
+    date: string;
+    body: string;
     animals: number[];
     individual_animals: number[];
     facilities: number[];
-    headerImage: number | null;
+    headerImage?: number;
 }

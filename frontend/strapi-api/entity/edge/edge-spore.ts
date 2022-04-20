@@ -3,6 +3,6 @@ export interface EdgeSpore {
     IdFromSvg: string;
     d: string;
     edgeLength: number;
-    startNode: number;
-    endNode: number;
+    startNode: number | undefined | null;
+    endNode: number | undefined | null;
 }

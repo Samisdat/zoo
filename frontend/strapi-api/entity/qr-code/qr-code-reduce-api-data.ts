@@ -11,11 +11,11 @@ export const qrCodeReduceApiData = (apiData: QrCodeStrapi):QrCodeSpore =>{
     let animal = apiData.attributes.animal?.data?.id;
 
     if(!facility){
-        facility = null;
+        facility = undefined;
     }
 
     if(!animal){
-        animal = null;
+        animal = undefined;
     }
 
     const spore = {

@@ -3,10 +3,11 @@ import {Entity} from '../entity';
 import {facilityReduceApiData} from './facility-reduce-api-data';
 import {FacilityStrapi} from './facility-strapi';
 import {Warehouse} from '../../warehouse/warehouse';
-import {Photo} from '../photo/photo';
+
 import {Animal} from '../animal/animal';
 import {Node} from '../node/node';
 import {Marker} from '../marker/marker';
+import {Photo} from "../../../graphql/photo/photo";
 
 export class Facility extends Entity<FacilitySpore>{
 

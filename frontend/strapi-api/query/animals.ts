@@ -3,17 +3,16 @@ import {Animal} from '../entity/animal/animal';
 import {AnimalProfileStrapi, AnimalStrapi} from '../entity/animal/animal-strapi-interface';
 import {getJsonFromApi} from '../utils/get-json-from-api';
 import {Warehouse} from '../warehouse/warehouse';
-import {getPhotoById, getPhotoByImageId} from './photos';
 import {getIndividualAnimalById} from './individual-animals';
 import {getFacilityById} from './facilities';
 import {IndividualAnimalStrapi} from '../entity/individual-animal/individual-animal-strapi-interface';
 import {FacilityStrapi} from '../entity/facility/facility-strapi';
-import {PhotoStrapi} from '../entity/photo/photo-strapi';
 
 const qs = require('qs');
 
 export const loadRelations = async (animal:Animal) => {
 
+    /*
     if(null !== animal.photosRaw){
 
         for (const photoId of animal.photosRaw) {
@@ -25,7 +24,7 @@ export const loadRelations = async (animal:Animal) => {
         }
 
     }
-
+    */
     if(null !== animal.facilitiesRaw){
 
         for (const facilityId of animal.facilitiesRaw) {
@@ -50,6 +49,7 @@ export const loadRelations = async (animal:Animal) => {
 
     }
 
+    /*
     if(animal.headerImageRaw){
 
         /**
@@ -58,7 +58,7 @@ export const loadRelations = async (animal:Animal) => {
          *
          * So there is no query by image id ...
          *
-         */
+
 
         const fetchedPhoto = Warehouse.get().getPhotos().find((photo)=>{
             return (animal.headerImageRaw === photo.imageId)
@@ -74,6 +74,7 @@ export const loadRelations = async (animal:Animal) => {
         }
 
     }
+     */
 
 }
 

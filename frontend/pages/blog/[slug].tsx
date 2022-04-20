@@ -1,7 +1,5 @@
 import React, {useEffect} from 'react';
 import Moment from 'react-moment';
-import {getPostBySlug, getPosts} from 'strapi-api/query/posts';
-import {Post} from 'strapi-api/entity/post/post';
 import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import {useRouter} from 'next/router';
 import {BreadcrumbLink} from 'components/Navigation/Breadcrumb';
@@ -9,8 +7,10 @@ import Typography from '@mui/material/Typography';
 import {Large} from '../../components/viewport/Large';
 import {Small} from '../../components/viewport/Small';
 import Page from '../../components/Page/Page';
-import {apolloClient} from "../../src/apolloClient";
-import {getPostById} from "../../graphql/queries";
+import {apolloClient} from "../../graphql/apolloClient";
+import {Post} from "../../graphql/post/post";
+import {fetchPostBySlug} from "../../graphql/posts";
+import {getPostSlugs} from "../../graphql/post/queries";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactMarkdown = require('react-markdown')
@@ -18,13 +18,6 @@ const ReactMarkdown = require('react-markdown')
 const gfm = require('remark-gfm')
 
 export default function BlogPost(props) {
-
-    useEffect(()=>{
-
-        apolloClient.query({
-            query:getPostById
-        }).then(result => console.log(JSON.stringify(result, null, 4)));
-    })
 
     Warehouse.get().hydrate(props.warehouse);
 
@@ -35,6 +28,9 @@ export default function BlogPost(props) {
     const post = Warehouse.get().getPosts().find((post:Post)=>{
         return (slug === post.slug);
     });
+
+    console.log(props.warehouse);
+    console.log(post);
 
     const breadcrumbLinks:BreadcrumbLink[] = [
         {
@@ -81,9 +77,10 @@ export default function BlogPost(props) {
 
 export async function getStaticProps(context) {
 
-    const slugParam = context.params.slug
+    const slug = context.params.slug
 
-    await getPostBySlug(slugParam);
+
+    await fetchPostBySlug(slug);
 
     return {
         props: {
@@ -95,18 +92,21 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
 
-    const posts = await getPosts();
+    const graphqlSlugs = await apolloClient.query({
+        query:getPostSlugs
+    });
 
-    const newsSlugs = posts.map((post:Post)=>{
+    const paths = graphqlSlugs.data.posts.data.map((graphql:any)=>{
+
         return {
             params:{
-                slug: post.slug + ''
+                slug: graphql.attributes.slug + ''
             }
         }
     });
 
     return {
-        paths: newsSlugs,
+        paths,
         fallback: false,
     };
 }

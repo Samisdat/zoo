@@ -15,7 +15,7 @@ export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
     const scientificName = apiData.attributes.scientificName;
     const iucnID = apiData.attributes.iucnID;
     const iucnLink = apiData.attributes.iucnLink;
-    let iucnStatus:IucnStatus = null;
+    let iucnStatus:IucnStatus = undefined;
 
     if(true === IUCN_STATI.includes(apiData.attributes.iucnStatus as IucnStatus)){
         iucnStatus = apiData.attributes.iucnStatus as IucnStatus;

@@ -3,10 +3,10 @@ import {AnimalSpore} from './animal-spore';
 import {Entity} from '../entity';
 import {animalReduceApiData} from './animal-reduce-api-data';
 import {Warehouse} from '../../warehouse/warehouse';
-import {Photo} from '../photo/photo';
 import {IndividualAnimal} from '../individual-animal/individual-animal';
 import {Facility} from '../facility/facility';
 import {IucnStatus} from './iucnStatus';
+import {Photo} from "../../../graphql/photo/photo";
 
 export class Animal extends Entity<AnimalSpore>{
 

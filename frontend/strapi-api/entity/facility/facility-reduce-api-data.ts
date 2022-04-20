@@ -19,7 +19,7 @@ export const facilityReduceApiData = (apiData: FacilityStrapi):FacilitySpore => 
 
     }
 
-    let headerImage:number = null;
+    let headerImage:number = undefined;
 
     if (apiData.attributes.headerImg?.image?.data) {
         headerImage = apiData.attributes.headerImg.image.data.id;

@@ -1,4 +1,4 @@
-import {Position} from '../../../components/Map/Context/MapContext';
+import {Position} from "../../components/Map/Context/MapContext";
 
 export interface PhotoSize{
     width: number;
@@ -6,9 +6,8 @@ export interface PhotoSize{
     src: string;
 }
 
-export interface PhotoSpore{
+export interface PhotoJson {
     id: number;
-    imageId: number;
     title: string;
     copyright: string;
     facility?: number | null,

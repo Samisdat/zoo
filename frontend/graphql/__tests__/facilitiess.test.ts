@@ -1,0 +1,63 @@
+import {Warehouse} from "../../strapi-api/warehouse/warehouse";
+import {fetchFacilities, fetchFacilityBySlug} from "../facilities";
+
+describe('fetchFacilityBySlug', () => {
+
+    beforeEach(()=>{
+
+        Warehouse.get().hydrate({
+            facilities: [],
+            photos: [],
+            markers: [],
+            animals: [],
+            individualAnimals: [],
+            posts: [],
+            qrCodes: [],
+            nodes: [],
+            edges: [],
+        });
+
+    })
+
+    test('valid response', async () => {
+
+        expect(Warehouse.get().hasFacility(5)).toBeFalsy();
+        expect(Warehouse.get().hasPhoto(79)).toBeFalsy();
+
+        await fetchFacilityBySlug('an-existing-slug');
+
+        expect(Warehouse.get().hasFacility(5)).toBeTruthy();
+        expect(Warehouse.get().hasPhoto(79)).toBeTruthy();
+
+
+    });
+
+    test('valid response with no headerimage', async () => {
+
+        expect(Warehouse.get().hasFacility(5)).toBeFalsy();
+
+        const facility = await fetchFacilityBySlug('an-existing-slug-no-header-image');
+
+        expect(Warehouse.get().hasFacility(5)).toBeTruthy();
+        expect(facility?.headerImageRaw).toBe(undefined);
+
+    });
+
+});
+
+describe.only('fetchPosts', () => {
+
+    test('valid response', async () => {
+
+        expect(Warehouse.get().hasFacility(5)).toBeFalsy();
+
+        await fetchFacilities();
+
+        expect(Warehouse.get().hasFacility(5)).toBeTruthy();
+        expect(Warehouse.get().getFacilities().length).toBe(4);
+        expect(Warehouse.get().hasPhoto(79)).toBeTruthy();
+
+
+    });
+
+});

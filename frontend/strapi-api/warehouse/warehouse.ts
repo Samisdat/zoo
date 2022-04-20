@@ -1,5 +1,3 @@
-import {Facility} from '../entity/facility/facility';
-import {FacilitySpore} from '../entity/facility/facility-spore';
 import {Animal} from '../entity/animal/animal';
 import {AnimalSpore} from '../entity/animal/animal-spore';
 import {IndividualAnimal} from '../entity/individual-animal/individual-animal';
@@ -16,9 +14,11 @@ import {PostJson} from "../../graphql/post/post-json";
 import {Post} from "../../graphql/post/post";
 import {PhotoJson} from "../../graphql/photo/photo-json";
 import {Photo} from "../../graphql/photo/photo";
+import {FacilityJson} from "../../graphql/facility/facility-json";
+import {Facility} from "../../graphql/facility/facility";
 
 export interface WarehouseSpore{
-    facilities:FacilitySpore[];
+    facilities:FacilityJson[];
     photos:PhotoJson[];
     markers:MarkerSpore[];
     animals: AnimalSpore[]
@@ -125,11 +125,44 @@ export class Warehouse{
         };
     }
 
+    private reset():void{
+
+        this.facilityIds = [];
+        this.facilities = [];
+
+        this.photoIds = [];
+        this.photos = [];
+
+        this.markerIds = [];
+        this.markers = [];
+
+        this.animalsIds = [];
+        this.animals = [];
+
+        this.individualAnimalsIds  = [];
+        this.individualAnimals = [];
+
+        this.postsIds = [];
+        this.posts = [];
+
+        this.qrCodesIds = [];
+        this.qrCodes = [];
+
+        this.nodesIds = [];
+        this.nodes = [];
+
+        this.edgesIds = [];
+        this.edges = [];
+
+    }
+
     public hydrate(spore: WarehouseSpore):void{
+
+        this.reset();
 
         if(spore.facilities){
 
-            this.facilities = spore.facilities.map((facility:FacilitySpore)=>{
+            this.facilities = spore.facilities.map((facility:FacilityJson)=>{
                 this.facilityIds.push(facility.id);
                 return Facility.hydrate(facility);
             });
@@ -226,7 +259,7 @@ export class Warehouse{
 
     }
 
-    public getFacility(facilityId: number):Facility{
+    public getFacility(facilityId: number):Facility | undefined{
 
         if(false === this.hasFacility(facilityId)){
             return undefined;
@@ -292,7 +325,7 @@ export class Warehouse{
 
     }
 
-    public getMarker(markerId: number):Marker{
+    public getMarker(markerId: number):Marker|undefined{
 
         if(false === this.hasMarker(markerId)){
             return undefined;
@@ -327,7 +360,7 @@ export class Warehouse{
 
     }
 
-    public getAnimal(animalId: number):Animal{
+    public getAnimal(animalId: number):Animal|undefined{
 
 
         if(false === this.hasAnimal(animalId)){
@@ -362,7 +395,7 @@ export class Warehouse{
 
     }
 
-    public getIndividualAnimal(id: number):IndividualAnimal{
+    public getIndividualAnimal(id: number):IndividualAnimal|undefined{
 
 
         if(false === this.hasIndividualAnimal(id)){
@@ -397,7 +430,7 @@ export class Warehouse{
 
     }
 
-    public getPost(id: number):Post{
+    public getPost(id: number):Post|undefined{
 
 
         if(false === this.hasPost(id)){
@@ -432,7 +465,7 @@ export class Warehouse{
 
     }
 
-    public getQrCode(id: number):QrCode{
+    public getQrCode(id: number):QrCode|undefined{
 
 
         if(false === this.hasQrCode(id)){
@@ -467,7 +500,7 @@ export class Warehouse{
 
     }
 
-    public getNode(id: number):Node{
+    public getNode(id: number):Node|undefined{
 
 
         if(false === this.hasNode(id)){
@@ -502,7 +535,7 @@ export class Warehouse{
         }
     }
 
-    public getEdge(id: number):Edge{
+    public getEdge(id: number):Edge|undefined{
 
 
         if(false === this.hasEdge(id)){

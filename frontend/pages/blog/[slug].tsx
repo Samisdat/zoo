@@ -29,9 +29,6 @@ export default function BlogPost(props) {
         return (slug === post.slug);
     });
 
-    console.log(props.warehouse);
-    console.log(post);
-
     const breadcrumbLinks:BreadcrumbLink[] = [
         {
             href: '/blog',

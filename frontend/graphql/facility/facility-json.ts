@@ -1,6 +1,6 @@
 export type FacilityType = 'enclosure' | 'food' | 'playground' | 'toilet' | 'poi';
 
-export interface FacilitySpore{
+export interface FacilityJson {
     id: number;
     slug: string;
     title: string;
@@ -10,5 +10,5 @@ export interface FacilitySpore{
     photos: number[];
     markers: number[];
     nodes: number[];
-    headerImage: number;
+    headerImage?: number;
 }

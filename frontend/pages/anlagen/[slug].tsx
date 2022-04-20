@@ -1,11 +1,15 @@
 import React from 'react';
 import {getFullGeoJson} from '../api/geojson/list';
-import {getFacilities, getFacilityBySlug} from 'strapi-api/query/facilities';
-import {Facility} from 'strapi-api/entity/facility/facility';
 import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import {useRouter} from 'next/router';
 import {BreadcrumbLink} from 'components/Navigation/Breadcrumb';
 import Page from '../../components/Page/Page';
+import {apolloClient} from "../../graphql/apolloClient";
+
+import {getFacilityBySlug, getFacilitySlugs} from "../../graphql/facility/queries";
+import {Facility} from "../../graphql/facility/facility";
+import {fetchPostBySlug} from "../../graphql/posts";
+import {fetchFacilityBySlug} from "../../graphql/facilities";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactMarkdown = require('react-markdown')
@@ -53,7 +57,7 @@ export async function getStaticProps(context) {
 
     const slug = context.params.slug
 
-    await getFacilityBySlug(slug);
+    await fetchFacilityBySlug(slug);
 
     const getJson = await getFullGeoJson();
 
@@ -67,23 +71,23 @@ export async function getStaticProps(context) {
     }
 }
 
-
 export async function getStaticPaths() {
 
-    const facilities = await getFacilities();
+    const graphqlSlugs = await apolloClient.query({
+        query: getFacilitySlugs
+    });
 
-    const facilityPaths = facilities.map((facility:Facility)=>{
+    const paths = graphqlSlugs.data.facilities.data.map((graphql:any)=>{
+
         return {
             params:{
-                slug: facility.slug
+                slug: graphql.attributes.slug + ''
             }
         }
     });
 
-
     return {
-
-        paths: facilityPaths,
+        paths,
         fallback: false,
     }
 }

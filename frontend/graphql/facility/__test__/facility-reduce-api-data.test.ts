@@ -1,6 +1,6 @@
 import {getFixture} from '../../fixtures/get-fixture';
-import {facilityReduceApiData} from '../facility-reduce-api-data';
-import {FacilitySpore} from '../facility-spore';
+import {facilityMapData} from '../facility-reduce-api-data';
+import {FacilityJson} from '../facility-json';
 
 describe('facility reduce api data', ()=>{
 
@@ -8,9 +8,9 @@ describe('facility reduce api data', ()=>{
 
         const fixture = await getFixture('facility', 'affenhaus.json');
 
-        const dehydrated = facilityReduceApiData(fixture);
+        const dehydrated = facilityMapData(fixture);
 
-        const expectation: FacilitySpore = {
+        const expectation: FacilityJson = {
             id: 2,
             slug: 'affenhaus',
             title: 'Affenhaus',

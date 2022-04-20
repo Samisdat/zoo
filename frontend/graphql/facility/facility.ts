@@ -1,15 +1,14 @@
-import {FacilitySpore, FacilityType} from './facility-spore';
-import {Entity} from '../entity';
-import {facilityReduceApiData} from './facility-reduce-api-data';
-import {FacilityStrapi} from './facility-strapi';
-import {Warehouse} from '../../warehouse/warehouse';
+import {FacilityJson, FacilityType} from './facility-json';
 
-import {Animal} from '../animal/animal';
-import {Node} from '../node/node';
-import {Marker} from '../marker/marker';
-import {Photo} from "../../../graphql/photo/photo";
+import {Entity} from "../../strapi-api/entity/entity";
+import {Photo} from "../photo/photo";
+import {Warehouse} from "../../strapi-api/warehouse/warehouse";
+import {Animal} from "../../strapi-api/entity/animal/animal";
+import {Marker} from "../../strapi-api/entity/marker/marker";
+import {Node} from "../../strapi-api/entity/node/node";
+import {facilityMapData} from "./facility-map-data";
 
-export class Facility extends Entity<FacilitySpore>{
+export class Facility extends Entity<FacilityJson>{
 
     get id(): number {
         return this.json.id;
@@ -116,7 +115,7 @@ export class Facility extends Entity<FacilitySpore>{
         });
     }
 
-    static hydrate(dehydrated:FacilitySpore):Facility{
+    static hydrate(dehydrated:FacilityJson):Facility{
 
         const facility = new Facility(dehydrated);
 
@@ -124,13 +123,11 @@ export class Facility extends Entity<FacilitySpore>{
 
     }
 
-    static fromApi(json:FacilityStrapi):Facility{
+    static fromApi(json:any):Facility{
 
-        const dehydrated:FacilitySpore = facilityReduceApiData(json);
+        const dehydrated:FacilityJson = facilityMapData(json);
 
         const facility = new Facility(dehydrated);
-
-        Warehouse.get().addFacility(facility);
 
         return facility;
 

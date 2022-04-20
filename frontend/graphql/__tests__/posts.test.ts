@@ -3,6 +3,22 @@ import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 
 describe('fetchPostBySlug', () => {
 
+    beforeEach(()=>{
+
+        Warehouse.get().hydrate({
+            facilities: [],
+            photos: [],
+            markers: [],
+            animals: [],
+            individualAnimals: [],
+            posts: [],
+            qrCodes: [],
+            nodes: [],
+            edges: [],
+        });
+
+    });
+
     test('valid response', async () => {
 
         expect(Warehouse.get().hasPost(5)).toBeFalsy();
@@ -29,7 +45,7 @@ describe('fetchPostBySlug', () => {
 
 });
 
-describe.only('fetchPosts', () => {
+describe('fetchPosts', () => {
 
     test('valid response', async () => {
 

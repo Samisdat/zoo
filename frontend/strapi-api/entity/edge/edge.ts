@@ -23,7 +23,7 @@ export class Edge extends Entity<EdgeSpore>{
         return this.json.edgeLength;
     }
 
-    get startNodeRaw(): number{
+    get startNodeRaw(): number | null{
         return this.json.startNode;
     }
 

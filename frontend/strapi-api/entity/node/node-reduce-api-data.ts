@@ -29,13 +29,15 @@ export const nodeReduceApiData = (apiData: NodeStrapi):NodeSpore =>{
 
     }
 
-    let facility: number = null;
+    let facility: number|null = null;
 
+    /*
     if (undefined !== apiData.attributes.facility) {
 
         facility = apiData.attributes.facility.data?.id;
 
     }
+     */
 
     if(!facility){
         facility = null;

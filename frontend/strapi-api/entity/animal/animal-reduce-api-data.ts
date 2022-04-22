@@ -1,7 +1,5 @@
 import {AnimalStrapi} from './animal-strapi-interface';
 import {AnimalSpore} from './animal-spore';
-import {Facility} from '../facility/facility';
-import {FacilityStrapi} from '../facility/facility-strapi';
 import {IUCN_STATI, IucnStatus} from './iucnStatus';
 
 export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
@@ -47,6 +45,7 @@ export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
 
     let facilities:number[] = [];
 
+    /*
     if (undefined !== apiData.attributes.facilities) {
 
         facilities = apiData.attributes.facilities.data.map((facilitiy:FacilityStrapi) => {
@@ -54,6 +53,7 @@ export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
         });
 
     }
+     */
 
     let individual_animals:number[] = [];
     if (undefined !== apiData.attributes.individual_animals) {

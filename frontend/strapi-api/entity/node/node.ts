@@ -4,7 +4,7 @@ import {Edge} from '../edge/edge';
 import {Warehouse} from '../../warehouse/warehouse';
 import {NodeStrapi} from './node-strapi-interface';
 import {nodeReduceApiData} from './node-reduce-api-data';
-import {Facility} from '../facility/facility';
+import {Facility} from "../../../graphql/facility/facility";
 
 export class Node extends Entity<NodeSpore>{
 

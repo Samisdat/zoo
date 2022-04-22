@@ -1,10 +1,10 @@
 import {QrCodeSpore} from './qr-code-spore';
 import {Entity} from '../entity';
-import {Facility} from '../facility/facility';
 import {Warehouse} from '../../warehouse/warehouse';
 import {QrCodeStrapi} from './qr-code-strapi-interface';
 import {qrCodeReduceApiData} from './qr-code-reduce-api-data';
 import {Animal} from '../animal/animal';
+import {Facility} from "../../../graphql/facility/facility";
 
 export class QrCode extends Entity<QrCodeSpore>{
 

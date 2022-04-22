@@ -30,15 +30,16 @@ export class Post extends Entity<PostJson>{
         return this.json.body;
     }
 
-    get headerImageRaw(): number{
+    get headerImageRaw(): number | undefined{
 
         return this.json.headerImage;
 
     }
 
-    get headerImage(): Photo | null {
+    get headerImage(): Photo | undefined {
 
         return Warehouse.get().getPhoto(this.json.headerImage);
+
 
     }
 

@@ -4,9 +4,10 @@ import {Entity} from '../entity';
 import {animalReduceApiData} from './animal-reduce-api-data';
 import {Warehouse} from '../../warehouse/warehouse';
 import {IndividualAnimal} from '../individual-animal/individual-animal';
-import {Facility} from '../facility/facility';
+
 import {IucnStatus} from './iucnStatus';
 import {Photo} from "../../../graphql/photo/photo";
+import {Facility} from "../../../graphql/facility/facility";
 
 export class Animal extends Entity<AnimalSpore>{
 
@@ -36,14 +37,14 @@ export class Animal extends Entity<AnimalSpore>{
     get iucnLink(): string{
         return this.json.iucnLink;
     }
-    get iucnStatus(): IucnStatus{
+    get iucnStatus(): IucnStatus | null{
         return this.json.iucnStatus;
     }
     get body(): string{
         return this.json.body;
     }
 
-    get className(): string {
+    get className(): string | null{
         return this.json.className
     }
 
@@ -97,9 +98,14 @@ export class Animal extends Entity<AnimalSpore>{
     }
 
     get individualAnimals(): IndividualAnimal[]{
+
+        return [];
+
+        /*
         return this.json.individual_animals.map((individualAnimalId)=>{
             return Warehouse.get().getIndividualAnimal(individualAnimalId);
         });
+         */
     }
 
     get facilitiesRaw(): number[]{
@@ -107,10 +113,15 @@ export class Animal extends Entity<AnimalSpore>{
     }
 
     get facilities(): Facility[]{
+
+        return [];
+        /*
         return this.json.facilities.map((facilityId)=>{
             return Warehouse.get().getFacility(facilityId);
         });
+         */
     }
+
 
     static hydrate(dehydrated: AnimalSpore):Animal{
 

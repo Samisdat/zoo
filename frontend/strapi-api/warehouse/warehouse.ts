@@ -292,7 +292,11 @@ export class Warehouse{
 
     }
 
-    public getPhoto(photoId: number):Photo | undefined{
+    public getPhoto(photoId: number | undefined):Photo | undefined{
+
+        if(!photoId){
+            return undefined;
+        }
 
         if(false === this.hasPhoto(photoId)){
             return undefined;

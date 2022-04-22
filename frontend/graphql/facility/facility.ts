@@ -30,7 +30,7 @@ export class Facility extends Entity<FacilityJson>{
         return this.json.type;
     }
 
-    get headerImageRaw(): number{
+    get headerImageRaw(): number | null{
 
         return this.json.headerImage;
 

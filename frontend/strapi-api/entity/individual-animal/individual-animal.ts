@@ -29,7 +29,7 @@ export class IndividualAnimal extends Entity<IndividualAnimalSpore>{
         return this.json.animal;
     }
 
-    get animal(): Animal{
+    get animal(): Animal | undefined{
         return Warehouse.get().getAnimal(this.json.animal);
     }
 

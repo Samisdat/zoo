@@ -8,7 +8,7 @@ export const individualAnimalReduceApiData = (apiData: IndividualAnimalStrapi):I
     const name = apiData.attributes.name;
     const body = apiData.attributes.body;
 
-    const animal = apiData.attributes.animal.data.id;
+    const animal = apiData.attributes?.animal?.data?.id;
 
     /*
     let photos:number[] = [];

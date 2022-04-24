@@ -1,5 +1,5 @@
-import {AnimalSpore} from '../animal-spore';
-import {animalReduceApiData} from '../animal-reduce-api-data';
+import {AnimalJson} from '../animal-spore';
+import {animalMapData} from '../animal-reduce-api-data';
 import {getFixture} from '../../fixtures/get-fixture';
 
 describe('reduce api data', ()=>{
@@ -8,9 +8,9 @@ describe('reduce api data', ()=>{
 
         const fixture = await getFixture('animal', 'elefant.json');
 
-        const dehydrated = animalReduceApiData(fixture);
+        const dehydrated = animalMapData(fixture);
 
-        const expectation: AnimalSpore = {
+        const expectation: AnimalJson = {
             id: 47,
             slug: 'afrikanischer-elefant',
             title: 'Afrikanischer Elefant',

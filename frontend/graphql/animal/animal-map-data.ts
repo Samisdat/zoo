@@ -1,10 +1,12 @@
-import {AnimalStrapi} from './animal-strapi-interface';
-import {AnimalSpore} from './animal-spore';
 import {IUCN_STATI, IucnStatus} from './iucnStatus';
+import {AnimalJson} from "./animal-json";
 
-export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
+export const animalMapData = (apiData: any):AnimalJson =>{
 
-    const id = apiData.id;
+    const id = parseInt(
+        apiData.id,
+        10
+    );
     const slug = apiData.attributes.slug;
     const title = apiData.attributes.title;
 
@@ -13,8 +15,8 @@ export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
     const scientificName = apiData.attributes.scientificName;
     const iucnID = apiData.attributes.iucnID;
     const iucnLink = apiData.attributes.iucnLink;
-    let iucnStatus:IucnStatus = undefined;
 
+    let iucnStatus:IucnStatus | null = null;
     if(true === IUCN_STATI.includes(apiData.attributes.iucnStatus as IucnStatus)){
         iucnStatus = apiData.attributes.iucnStatus as IucnStatus;
     }
@@ -27,14 +29,17 @@ export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
 
     let profile:any[] = [];
 
+    /*
     if (0 !== apiData.attributes.profile.length) {
 
         profile = apiData.attributes.profile;
     }
+     */
 
 
     let photos:number[] = [];
 
+    /*
     if (undefined !== apiData.attributes.photos) {
 
         photos = apiData.attributes.photos.data.map((photo) => {
@@ -42,6 +47,7 @@ export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
         });
 
     }
+     */
 
     let facilities:number[] = [];
 
@@ -56,6 +62,7 @@ export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
      */
 
     let individual_animals:number[] = [];
+    /*
     if (undefined !== apiData.attributes.individual_animals) {
 
         individual_animals = apiData.attributes.individual_animals.data.map((individual_animal) => {
@@ -63,12 +70,15 @@ export const animalReduceApiData = (apiData: AnimalStrapi):AnimalSpore =>{
         });
 
     }
+     */
 
-    let headerImage:number = null;
+    let headerImage:number | null = null;
     if (apiData.attributes.headerImg?.image?.data) {
 
-        headerImage = apiData.attributes.headerImg.image.data.id;
-
+        headerImage = parseInt(
+            apiData.attributes.headerImg.image.data.id,
+            10
+        );
     }
 
     return{

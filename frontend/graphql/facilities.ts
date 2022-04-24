@@ -3,7 +3,7 @@ import {apolloClient} from "./apolloClient";
 import {Warehouse} from "../strapi-api/warehouse/warehouse";
 import {Photo} from "./photo/photo";
 import {Facility} from "./facility/facility";
-import {getFacilities, getFacilityBySlug} from "./facility/queries";
+import {getFacilities, getFacilityBySlug} from "./facility/grahpql";
 
 const addFacilityToWarehouse = (facility:Facility, graphFacility:any) => {
 

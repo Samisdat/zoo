@@ -1,4 +1,5 @@
 import {gql} from "@apollo/client";
+import {headerImageFragment} from "../photo/grahpql";
 
 /**
  * I can not find the resolver, to that with a singular query ;(
@@ -13,19 +14,7 @@ query PostsBySlug ($slug: String){
                 slug
                 date
                 body
-                headerImg {
-                    image {
-                        data {
-                            id
-                            attributes{
-                                name
-                                x
-                                y
-                                formats
-                            }
-                        }
-                    }
-                }
+                ${headerImageFragment}
             }
         }
     }
@@ -53,19 +42,7 @@ query PostSlugs {
                 slug
                 date
                 body
-                headerImg {
-                    image {
-                        data {
-                            id
-                            attributes{
-                                name
-                                x
-                                y
-                                formats
-                            }
-                        }
-                    }
-                }
+                ${headerImageFragment}
             }
         }
     }

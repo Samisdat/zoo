@@ -1,6 +1,4 @@
-
 import {FacilityJson} from './facility-json';
-import {PostJson} from "../post/post-json";
 
 export const facilityMapData = (apiData: any):FacilityJson => {
 

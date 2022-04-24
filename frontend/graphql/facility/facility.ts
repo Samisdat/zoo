@@ -3,10 +3,10 @@ import {FacilityJson, FacilityType} from './facility-json';
 import {Entity} from "../../strapi-api/entity/entity";
 import {Photo} from "../photo/photo";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
-import {Animal} from "../../strapi-api/entity/animal/animal";
 import {Marker} from "../../strapi-api/entity/marker/marker";
 import {Node} from "../../strapi-api/entity/node/node";
 import {facilityMapData} from "./facility-map-data";
+import {Animal} from "../animal/animal";
 
 export class Facility extends Entity<FacilityJson>{
 
@@ -36,13 +36,13 @@ export class Facility extends Entity<FacilityJson>{
 
     }
 
-    set headerImageRaw(id:number){
+    get headerImage(): Photo | null{
 
-        this.json.headerImage = id;
-
-    }
-
-    get headerImage(): Photo{
+        console.log(
+            this.json.headerImage,
+            Warehouse.get().getPhotos(),
+            Warehouse.get().getPhoto(this.json.headerImage)
+        )
 
         return Warehouse.get().getPhoto(this.json.headerImage);
 
@@ -54,6 +54,8 @@ export class Facility extends Entity<FacilityJson>{
 
     get photos(): Photo[]{
 
+        return [];
+        /*
         if(this.json.photos && 0 !== this.json.photos.length){
 
             return this.json.photos.map((photoId)=>{
@@ -79,7 +81,7 @@ export class Facility extends Entity<FacilityJson>{
             return photos;
 
         }
-
+        */
     }
 
     get animalsRaw(): number[]{
@@ -88,9 +90,13 @@ export class Facility extends Entity<FacilityJson>{
 
     get animals(): Animal[]{
 
+        return [];
+
+        /*
         return this.json.animals.map((animalId)=>{
             return Warehouse.get().getAnimal(animalId);
         });
+         */
     }
 
     get markersRaw(): number[]{
@@ -99,9 +105,13 @@ export class Facility extends Entity<FacilityJson>{
 
     get markers(): Marker[]{
 
+        return [];
+
+        /*
         return this.json.markers.map((id)=>{
             return Warehouse.get().getMarker(id);
         });
+         */
     }
 
     get nodesRaw(): number[]{
@@ -110,9 +120,12 @@ export class Facility extends Entity<FacilityJson>{
 
     get nodes(): Node[]{
 
+        return [];
+        /*
         return this.json.nodes.map((id)=>{
             return Warehouse.get().getNode(id);
         });
+         */
     }
 
     static hydrate(dehydrated:FacilityJson):Facility{

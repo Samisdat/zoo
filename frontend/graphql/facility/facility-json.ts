@@ -10,5 +10,5 @@ export interface FacilityJson {
     photos: number[];
     markers: number[];
     nodes: number[];
-    headerImage?: number;
+    headerImage: number | null;
 }

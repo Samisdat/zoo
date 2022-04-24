@@ -6,7 +6,7 @@ import {BreadcrumbLink} from 'components/Navigation/Breadcrumb';
 import Page from '../../components/Page/Page';
 import {apolloClient} from "../../graphql/apolloClient";
 
-import {getFacilityBySlug, getFacilitySlugs} from "../../graphql/facility/queries";
+import {getFacilityBySlug, getFacilitySlugs} from "../../graphql/facility/grahpql";
 import {Facility} from "../../graphql/facility/facility";
 import {fetchPostBySlug} from "../../graphql/posts";
 import {fetchFacilityBySlug} from "../../graphql/facilities";
@@ -27,6 +27,9 @@ export default function Gehege(props) {
     const facility: Facility = Warehouse.get().getFacilities().find((facility:Facility)=>{
         return (slug === facility.slug);
     });
+
+    console.log(facility);
+    console.log(Warehouse.get().getPhotos());
 
     const breadcrumbLinks:BreadcrumbLink[] = [
         {

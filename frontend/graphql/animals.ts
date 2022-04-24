@@ -1,19 +1,23 @@
 import {apolloClient} from "./apolloClient";
 
 import {PostJson} from "./post/post-json";
+import {postMapData} from "./post/post-map-data";
 import {getPosts, getPostsBySlug} from "./post/grahpql";
 import {Post} from "./post/post";
 import {Warehouse} from "../strapi-api/warehouse/warehouse";
 import {Photo} from "./photo/photo";
+import {Animal} from "./animal/animal";
+import {getAnimalBySlug} from "./animal/grahpql";
 
-const addPostToWarehouse = (post:Post, graphPost:any) => {
+const addAnimalToWarehouse = (animal:Animal, graphAnimal:any) => {
 
-    if(post.id){
+    if(animal.id){
 
-        Warehouse.get().addPost(post);
+        Warehouse.get().addAnimal(animal);
 
-        if(post.headerImageRaw){
-            const photo = Photo.fromApi(graphPost.attributes?.headerImg?.image?.data);
+        if(animal.headerImageRaw){
+
+            const photo = Photo.fromApi(graphAnimal.attributes?.headerImg?.image?.data);
 
             if(false === Warehouse.get().hasPhoto(photo.id)){
                 Warehouse.get().addPhoto(photo);
@@ -25,20 +29,20 @@ const addPostToWarehouse = (post:Post, graphPost:any) => {
 
 }
 
-export const fetchPostBySlug = async (slug: string):Promise<Post> => {
+export const fetchAnimalBySlug = async (slug: string):Promise<Animal> => {
 
     const graphResult = await apolloClient.query({
-        query: getPostsBySlug,
+        query: getAnimalBySlug,
         variables:{slug}
     });
 
-    const graphPost = graphResult.data.posts.data[0];
+    const graphAnimal = graphResult.data.animals.data[0];
 
-    const post = Post.fromApi(graphPost);
+    const animal = Animal.fromApi(graphAnimal);
 
-    addPostToWarehouse(post, graphPost);
+    addAnimalToWarehouse(animal, graphAnimal);
 
-    return post;
+    return animal;
 
 };
 
@@ -54,7 +58,7 @@ export const fetchPosts = async ():Promise<PostJson[]> => {
 
         const post = Post.fromApi(graphPost);
 
-        addPostToWarehouse(post, graphPost);
+        //addAnimalToWarehouse(post, graphPost);
 
         return post;
 

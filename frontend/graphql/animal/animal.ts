@@ -1,15 +1,15 @@
-import {AnimalProfileStrapi, AnimalStrapi} from './animal-strapi-interface';
-import {AnimalSpore} from './animal-spore';
-import {Entity} from '../entity';
-import {animalReduceApiData} from './animal-reduce-api-data';
-import {Warehouse} from '../../warehouse/warehouse';
-import {IndividualAnimal} from '../individual-animal/individual-animal';
+
+import {AnimalJson} from './animal-json';
 
 import {IucnStatus} from './iucnStatus';
-import {Photo} from "../../../graphql/photo/photo";
-import {Facility} from "../../../graphql/facility/facility";
+import {Entity} from "../../strapi-api/entity/entity";
+import {Photo} from "../photo/photo";
+import {Warehouse} from "../../strapi-api/warehouse/warehouse";
+import {IndividualAnimal} from "../../strapi-api/entity/individual-animal/individual-animal";
+import {Facility} from "../facility/facility";
+import {animalMapData} from "./animal-map-data";
 
-export class Animal extends Entity<AnimalSpore>{
+export class Animal extends Entity<AnimalJson>{
 
     get id(): number {
         return this.json.id;
@@ -55,11 +55,11 @@ export class Animal extends Entity<AnimalSpore>{
     get family(): string {
         return this.json.family
     }
-
+    /*
     get profile(): AnimalProfileStrapi[] {
         return this.json.profile;
     }
-
+    */
     get species(): string {
         return this.json.species
     }
@@ -68,7 +68,7 @@ export class Animal extends Entity<AnimalSpore>{
         return this.json.photos;
     }
 
-    get photos(): Photo[]{
+    get photos(): (Photo|undefined)[]{
 
         return this.json.photos.map((photoId)=>{
             return Warehouse.get().getPhoto(photoId);
@@ -87,7 +87,7 @@ export class Animal extends Entity<AnimalSpore>{
 
     }
 
-    get headerImage(): Photo{
+    get headerImage(): Photo | null{
 
         return Warehouse.get().getPhoto(this.json.headerImage);
 
@@ -123,7 +123,7 @@ export class Animal extends Entity<AnimalSpore>{
     }
 
 
-    static hydrate(dehydrated: AnimalSpore):Animal{
+    static hydrate(dehydrated: AnimalJson):Animal{
 
         const animal = new Animal(dehydrated);
 
@@ -131,13 +131,11 @@ export class Animal extends Entity<AnimalSpore>{
 
     }
 
-    static fromApi(json: AnimalStrapi):Animal{
+    static fromApi(json: any):Animal{
 
-        const dehydrated: AnimalSpore = animalReduceApiData(json);
+        const dehydrated: AnimalJson = animalMapData(json);
 
         const animal = new Animal(dehydrated);
-
-        Warehouse.get().addAnimal(animal);
 
         return animal;
 

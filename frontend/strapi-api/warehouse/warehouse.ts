@@ -1,5 +1,3 @@
-import {Animal} from '../entity/animal/animal';
-import {AnimalSpore} from '../entity/animal/animal-spore';
 import {IndividualAnimal} from '../entity/individual-animal/individual-animal';
 import {IndividualAnimalSpore} from '../entity/individual-animal/individual-animal-spore';
 import {QrCodeSpore} from '../entity/qr-code/qr-code-spore';
@@ -16,12 +14,14 @@ import {PhotoJson} from "../../graphql/photo/photo-json";
 import {Photo} from "../../graphql/photo/photo";
 import {FacilityJson} from "../../graphql/facility/facility-json";
 import {Facility} from "../../graphql/facility/facility";
+import {Animal} from "../../graphql/animal/animal";
+import {AnimalJson} from "../../graphql/animal/animal-json";
 
 export interface WarehouseSpore{
     facilities:FacilityJson[];
     photos:PhotoJson[];
     markers:MarkerSpore[];
-    animals: AnimalSpore[]
+    animals: AnimalJson[]
     individualAnimals: IndividualAnimalSpore[]
     posts: PostJson[]
     qrCodes: QrCodeSpore[]
@@ -180,7 +180,7 @@ export class Warehouse{
 
         if(spore.animals){
 
-            this.animals = spore.animals.map((animal:AnimalSpore)=>{
+            this.animals = spore.animals.map((animal:AnimalJson)=>{
                 this.animalsIds.push(animal.id);
                 return Animal.hydrate(animal);
             });
@@ -292,19 +292,21 @@ export class Warehouse{
 
     }
 
-    public getPhoto(photoId: number | undefined):Photo | undefined{
+    public getPhoto(photoId: number | null):Photo | null{
 
         if(!photoId){
-            return undefined;
+            return null;
         }
 
         if(false === this.hasPhoto(photoId)){
-            return undefined;
+            return null;
         }
 
-        return this.photos.find((photo:Photo)=>{
+        const photo = this.photos.find((photo:Photo)=>{
             return (photoId === photo.id);
         });
+
+        return photo || null;
 
     }
 

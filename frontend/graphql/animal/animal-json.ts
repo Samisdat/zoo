@@ -1,7 +1,13 @@
 import {IucnStatus} from './iucnStatus';
-import {AnimalProfileStrapi} from './animal-strapi-interface';
+import {IconName} from "../../components/Icon/IconNames";
 
-export interface AnimalSpore {
+export interface AnimalProfileStrapi{
+    icon: IconName;
+    label: string;
+    value: string;
+
+}
+export interface AnimalJson {
     id: number;
     title: string;
     slug: string;
@@ -21,5 +27,5 @@ export interface AnimalSpore {
     individual_animals: number[];
     facilities: number[];
     photos: number[];
-    headerImage: number;
+    headerImage: number | null;
 }

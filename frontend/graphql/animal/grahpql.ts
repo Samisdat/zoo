@@ -13,6 +13,17 @@ query AnimalsBySlug ($slug: String){
                 title
                 slug
                 body
+                wikidata
+                wikipediaLink
+                scientificName
+                iucnID
+                iucnLink
+                iucnStatus
+                body
+                className
+                order
+                species
+                family                
                 ${headerImageFragment}
             }
         }
@@ -21,27 +32,35 @@ query AnimalsBySlug ($slug: String){
 `;
 
 export const getAnimalsSlugs = gql`      
-query FacilitySlugs {
-    facilities {
+query AnimalsSlugs {
+    animals {
         data {
             attributes {
                 slug
             }
         }
     }
-}
-`;
+}`;
 
 export const getAnimals = gql`      
-query Facilities {
-    facilities(pagination: { page: 1, pageSize: 2000 }) {
+query Animals {
+    animals(pagination: { page: 1, pageSize: 2000 }) {
         data {
             id
             attributes {
                 title
                 slug
                 body
-                type
+                wikidata
+                wikipediaLink
+                scientificName
+                iucnID
+                iucnLink      
+                body
+                className
+                order
+                species
+                family
                 ${headerImageFragment}
             }
         }

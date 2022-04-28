@@ -391,25 +391,100 @@ export const handlers = [
 
         return response(
             context.data({
-                "facilities": {
+                "animals": {
                     "data": [
                         {
-                            "id": "4",
+                            "id": "1",
                             "attributes": {
-                                "title": "Brillenpinguine",
-                                "slug": "brillenpinguine",
-                                "body": "Some Content\n",
-                                "type": "enclosure",
-                                "headerImg": null
+                                "title": "Afrikanischer Elefant",
+                                "slug": "afrikanischer-elefant",
+                                "body": "\nI am content.\n",
+                                "wikidata": "Q36557",
+                                "wikipediaLink": "https://de.wikipedia.org/wiki/Afrikanischer_Elefant",
+                                "scientificName": "Loxodonta africana",
+                                "iucnID": "181008073",
+                                "iucnLink": "https://apiv3.iucnredlist.org/api/v3/taxonredirect/181008073",
+                                "iucnStatus": "VU",
+                                "className": "Säugetiere",
+                                "order": "Rüsseltiere",
+                                "species": "Afrikanischer Elefant",
+                                "family": "Elefanten",
+                                "headerImg": {
+                                    "image": {
+                                        "data": {
+                                            "id": "16",
+                                            "attributes": {
+                                                "name": "African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef.jpeg",
+                                                "x": null,
+                                                "y": null,
+                                                "formats": {
+                                                    "thumbnail": {
+                                                        "name": "thumbnail_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef.jpeg",
+                                                        "hash": "thumbnail_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef_4caad212c6",
+                                                        "ext": ".jpeg",
+                                                        "mime": "image/jpeg",
+                                                        "path": null,
+                                                        "width": 234,
+                                                        "height": 156,
+                                                        "size": 8.27,
+                                                        "url": "/uploads/thumbnail_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef_4caad212c6.jpeg"
+                                                    },
+                                                    "large": {
+                                                        "name": "large_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef.jpeg",
+                                                        "hash": "large_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef_4caad212c6",
+                                                        "ext": ".jpeg",
+                                                        "mime": "image/jpeg",
+                                                        "path": null,
+                                                        "width": 1000,
+                                                        "height": 667,
+                                                        "size": 110.04,
+                                                        "url": "/uploads/large_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef_4caad212c6.jpeg"
+                                                    },
+                                                    "medium": {
+                                                        "name": "medium_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef.jpeg",
+                                                        "hash": "medium_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef_4caad212c6",
+                                                        "ext": ".jpeg",
+                                                        "mime": "image/jpeg",
+                                                        "path": null,
+                                                        "width": 750,
+                                                        "height": 500,
+                                                        "size": 65.62,
+                                                        "url": "/uploads/medium_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef_4caad212c6.jpeg"
+                                                    },
+                                                    "small": {
+                                                        "name": "small_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef.jpeg",
+                                                        "hash": "small_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef_4caad212c6",
+                                                        "ext": ".jpeg",
+                                                        "mime": "image/jpeg",
+                                                        "path": null,
+                                                        "width": 500,
+                                                        "height": 333,
+                                                        "size": 31.11,
+                                                        "url": "/uploads/small_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef_4caad212c6.jpeg"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         },
                         {
-                            "id": "5",
+                            "id": "2",
                             "attributes": {
-                                "title": "Eingang",
-                                "slug": "eingang",
-                                "body": "Some Content\n",
-                                "type": "poi",
+                                "title": "Afrikanischer Esel",
+                                "slug": "afrikanischer-esel",
+                                "body": "\nI am content.\n",
+                                "wikidata": "Q208140",
+                                "wikipediaLink": "https://de.wikipedia.org/wiki/Afrikanischer_Esel",
+                                "scientificName": "Equus africanus",
+                                "iucnID": "7949",
+                                "iucnLink": "https://apiv3.iucnredlist.org/api/v3/taxonredirect/7949",
+                                "iucnStatus": "CR",
+                                "className": "Säugetiere",
+                                "order": "Unpaarhufer",
+                                "species": "Afrikanischer Esel",
+                                "family": "Pferde",
                                 "headerImg": {
                                     "image": {
                                         "data": {
@@ -471,27 +546,26 @@ export const handlers = [
                             }
                         },
                         {
-                            "id": "10",
+                            "id": "3",
                             "attributes": {
-                                "title": "JuniorZoo",
-                                "slug": "juniorzoo",
-                                "body": "Some Content\n",
-                                "type": "enclosure",
-                                "headerImg": null
-                            }
-                        },
-                        {
-                            "id": "11",
-                            "attributes": {
-                                "title": "Kangurus",
-                                "slug": "kangurus",
-                                "body": "Some Content\n",
-                                "type": "enclosure",
+                                "title": "Anden-Felsenhahn",
+                                "slug": "anden-felsenhahn",
+                                "body": "\nI am content.\n",
+                                "wikidata": "Q490393",
+                                "wikipediaLink": "https://de.wikipedia.org/wiki/Andenfelsenhahn",
+                                "scientificName": "Rupicola peruvianus",
+                                "iucnID": "22700974",
+                                "iucnLink": "https://apiv3.iucnredlist.org/api/v3/taxonredirect/22700974",
+                                "iucnStatus": "LC",
+                                "className": "Vögel",
+                                "order": "Sperlingsvögel",
+                                "species": "Anden-Felsenhahn",
+                                "family": "Schmuckvögel",
                                 "headerImg": null
                             }
                         }
                     ]
-                },
+                }
             }),
         )
     }),
@@ -508,6 +582,16 @@ export const handlers = [
                                         "title": "Afrikanischer Elefant",
                                         "slug": "afrikanischer-elefant",
                                         "body": "\nI am content.\n",
+                                        "wikidata": "Q36557",
+                                        "wikipediaLink": "https://de.wikipedia.org/wiki/Afrikanischer_Elefant",
+                                        "scientificName": "Loxodonta africana",
+                                        "iucnID": "181008073",
+                                        "iucnLink": "https://apiv3.iucnredlist.org/api/v3/taxonredirect/181008073",
+                                        "iucnStatus": "VU",
+                                        "className": "Säugetiere",
+                                        "order": "Rüsseltiere",
+                                        "species": "Afrikanischer Elefant",
+                                        "family": "Elefanten",
                                         "headerImg": {
                                             "image": {
                                                 "data": {
@@ -567,7 +651,7 @@ export const handlers = [
                                             }
                                         }
                                     }
-                                }
+                                },
                             ]
                         }
                 }),
@@ -577,17 +661,28 @@ export const handlers = [
         if('an-existing-slug-no-header-image' === request.variables.slug){
             return response(
                 context.data({
-                    facilities: {
-                        data: [{
-                            id:5,
-                            attributes:{
-                                title: "Eingang",
-                                slug: "an-existing-slug",
-                                body: "Some Content\n",
-                                type: "poi",
-                                headerImg: null
+                    animals: {
+                        data: [
+                            {
+                                "id": "3",
+                                "attributes": {
+                                    "title": "Anden-Felsenhahn",
+                                    "slug": "anden-felsenhahn",
+                                    "body": "\nI am content.\n",
+                                    "wikidata": "Q490393",
+                                    "wikipediaLink": "https://de.wikipedia.org/wiki/Andenfelsenhahn",
+                                    "scientificName": "Rupicola peruvianus",
+                                    "iucnID": "22700974",
+                                    "iucnLink": "https://apiv3.iucnredlist.org/api/v3/taxonredirect/22700974",
+                                    "iucnStatus": "LC",
+                                    "className": "Vögel",
+                                    "order": "Sperlingsvögel",
+                                    "species": "Anden-Felsenhahn",
+                                    "family": "Schmuckvögel",
+                                    "headerImg": null
+                                }
                             }
-                        }],
+                        ],
                     },
                 }),
             )

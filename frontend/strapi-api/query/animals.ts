@@ -1,12 +1,9 @@
 import {getStrapi3Url, getStrapiUrl} from '../utils/get-strapi-url';
-import {Animal} from '../entity/animal/animal';
 import {AnimalProfileStrapi, AnimalStrapi} from '../entity/animal/animal-strapi-interface';
 import {getJsonFromApi} from '../utils/get-json-from-api';
 import {Warehouse} from '../warehouse/warehouse';
 import {getIndividualAnimalById} from './individual-animals';
-import {getFacilityById} from './facilities';
 import {IndividualAnimalStrapi} from '../entity/individual-animal/individual-animal-strapi-interface';
-import {FacilityStrapi} from '../entity/facility/facility-strapi';
 
 const qs = require('qs');
 

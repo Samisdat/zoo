@@ -2,7 +2,7 @@
 import {AnimalJson} from './animal-json';
 
 import {IucnStatus} from './iucnStatus';
-import {Entity} from "../../strapi-api/entity/entity";
+import {Entity, EntityType} from "../../strapi-api/entity/entity";
 import {Photo} from "../photo/photo";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 import {IndividualAnimal} from "../../strapi-api/entity/individual-animal/individual-animal";
@@ -13,6 +13,10 @@ export class Animal extends Entity<AnimalJson>{
 
     get id(): number {
         return this.json.id;
+    }
+
+    get entityType(): EntityType {
+        return 'Animal';
     }
 
     get slug(): string{
@@ -70,20 +74,18 @@ export class Animal extends Entity<AnimalJson>{
 
     get photos(): (Photo|undefined)[]{
 
+        return [];
+
+        /*
         return this.json.photos.map((photoId)=>{
             return Warehouse.get().getPhoto(photoId);
         });
+         */
     }
 
-    get headerImageRaw(): number{
+    get headerImageRaw(): number | null{
 
         return this.json.headerImage;
-
-    }
-
-    set headerImageRaw(id:number){
-
-        this.json.headerImage = id;
 
     }
 
@@ -131,13 +133,9 @@ export class Animal extends Entity<AnimalJson>{
 
     }
 
-    static fromApi(json: any):Animal{
+    static fromApi(json: any):Entity<any>[]{
 
-        const dehydrated: AnimalJson = animalMapData(json);
-
-        const animal = new Animal(dehydrated);
-
-        return animal;
+        return [];
 
     }
 }

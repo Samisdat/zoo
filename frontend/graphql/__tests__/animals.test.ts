@@ -1,8 +1,7 @@
-import {fetchPostBySlug, fetchPosts} from "../posts";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
-import {fetchAnimalBySlug} from "../animals";
+import {fetchAnimalBySlug, fetchAnimals} from "../animals";
 
-describe('fetchAnimalBySlug', () => {
+describe('fetch Animal', () => {
 
     beforeEach(()=>{
 
@@ -20,48 +19,56 @@ describe('fetchAnimalBySlug', () => {
 
     });
 
-    test('valid response', async () => {
+    describe.only('fetchAnimalBySlug', () => {
 
-        expect(Warehouse.get().hasAnimal(1)).toBeFalsy();
-        expect(Warehouse.get().hasPhoto(16)).toBeFalsy();
+        test.only('valid response', async () => {
 
-        await fetchAnimalBySlug('an-existing-slug');
+            expect(Warehouse.get().hasAnimal(1)).toBeFalsy();
+            expect(Warehouse.get().hasPhoto(16)).toBeFalsy();
 
-        expect(Warehouse.get().hasAnimal(1)).toBeTruthy();
-        expect(Warehouse.get().hasPhoto(16)).toBeTruthy();
+            await fetchAnimalBySlug('an-existing-slug');
+
+            expect(Warehouse.get().hasAnimal(1)).toBeTruthy();
+            expect(Warehouse.get().hasPhoto(16)).toBeTruthy();
+
+            console.log(Warehouse.get().getAnimal(1))
+
+
+        });
+
+        test('valid response with no headerimage', async () => {
+
+            expect(Warehouse.get().hasAnimal(3)).toBeFalsy();
+
+            const animal = await fetchAnimalBySlug('an-existing-slug-no-header-image');
+
+            expect(Warehouse.get().hasAnimal(3)).toBeTruthy();
+            expect(animal.headerImageRaw).toBe(null);
+
+        });
 
 
     });
 
-    /*
-    test('valid response with no headerimage', async () => {
+    describe('fetchAnimals', () => {
 
-        expect(Warehouse.get().hasPost(15)).toBeFalsy();
+        test('valid response', async () => {
 
-        const post = await fetchPostBySlug('an-existing-slug-no-header-image');
+            expect(Warehouse.get().hasAnimal(1)).toBeFalsy();
+            expect(Warehouse.get().hasPhoto(16)).toBeFalsy();
+            expect(Warehouse.get().hasAnimal(2)).toBeFalsy();
+            expect(Warehouse.get().hasPhoto(79)).toBeFalsy();
+            expect(Warehouse.get().hasAnimal(3)).toBeFalsy();
 
-        expect(Warehouse.get().hasPost(15)).toBeTruthy();
-        expect(post.headerImageRaw).toBe(undefined);
+            await fetchAnimals();
+
+            expect(Warehouse.get().hasAnimal(1)).toBeTruthy();
+            expect(Warehouse.get().hasPhoto(16)).toBeTruthy();
+            expect(Warehouse.get().hasAnimal(2)).toBeTruthy();
+            expect(Warehouse.get().hasPhoto(79)).toBeTruthy();
+            expect(Warehouse.get().hasAnimal(3)).toBeTruthy();
+
+        });
 
     });
-     */
-
 });
-
-/*
-describe('fetchPosts', () => {
-
-    test('valid response', async () => {
-
-        expect(Warehouse.get().hasPost(5)).toBeFalsy();
-
-        await fetchPosts();
-
-        expect(Warehouse.get().hasPost(5)).toBeTruthy();
-        expect(Warehouse.get().hasPhoto(25)).toBeTruthy();
-
-
-    });
-
-});
- */

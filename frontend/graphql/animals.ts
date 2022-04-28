@@ -1,33 +1,10 @@
 import {apolloClient} from "./apolloClient";
 
-import {PostJson} from "./post/post-json";
-import {postMapData} from "./post/post-map-data";
-import {getPosts, getPostsBySlug} from "./post/grahpql";
-import {Post} from "./post/post";
+import {getAnimalBySlug, getAnimals} from "./animal/grahpql";
+import {addToWarehouse} from "./add-to-warehouse";
+import {animalMapData} from "./animal/animal-map-data";
 import {Warehouse} from "../strapi-api/warehouse/warehouse";
-import {Photo} from "./photo/photo";
 import {Animal} from "./animal/animal";
-import {getAnimalBySlug} from "./animal/grahpql";
-
-const addAnimalToWarehouse = (animal:Animal, graphAnimal:any) => {
-
-    if(animal.id){
-
-        Warehouse.get().addAnimal(animal);
-
-        if(animal.headerImageRaw){
-
-            const photo = Photo.fromApi(graphAnimal.attributes?.headerImg?.image?.data);
-
-            if(false === Warehouse.get().hasPhoto(photo.id)){
-                Warehouse.get().addPhoto(photo);
-            }
-
-        }
-
-    }
-
-}
 
 export const fetchAnimalBySlug = async (slug: string):Promise<Animal> => {
 
@@ -36,36 +13,38 @@ export const fetchAnimalBySlug = async (slug: string):Promise<Animal> => {
         variables:{slug}
     });
 
-    const graphAnimal = graphResult.data.animals.data[0];
+    const datum = graphResult.data.animals.data[0];
+    console.log(datum)
+    const animal = animalMapData(datum);
 
-    const animal = Animal.fromApi(graphAnimal);
+    addToWarehouse(animal);
 
-    addAnimalToWarehouse(animal, graphAnimal);
-
-    return animal;
+    return Warehouse.get().getAnimal(
+        parseInt(datum.id,10)
+    );
 
 };
 
-export const fetchPosts = async ():Promise<PostJson[]> => {
+export const fetchAnimals = async ():Promise<Animal[]> => {
 
     const graphResult = await apolloClient.query({
-        query: getPosts
+        query: getAnimals
     });
 
-    const graphPosts = graphResult.data.posts.data;
+    const data = graphResult.data.animals.data;
 
-    let posts = graphPosts.map((graphPost:any)=>{
+    let animals = data.map((datum:any)=>{
 
-        const post = Post.fromApi(graphPost);
+        const animal = animalMapData(datum);
 
-        //addAnimalToWarehouse(post, graphPost);
+        addToWarehouse(animal);
 
-        return post;
+        return Warehouse.get().getAnimal(
+            parseInt(datum.id,10)
+        );
 
     });
 
-
-
-    return posts;
+    return animals;
 
 }

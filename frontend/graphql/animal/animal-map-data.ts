@@ -1,7 +1,12 @@
 import {IUCN_STATI, IucnStatus} from './iucnStatus';
 import {AnimalJson} from "./animal-json";
+import {Animal} from "./animal";
+import {Entity} from "../../strapi-api/entity/entity";
+import {photoMapData} from "../photo/photo-map-data";
 
-export const animalMapData = (apiData: any):AnimalJson =>{
+export const animalMapData = (apiData: any):Entity<any>[] =>{
+
+    const entities:Entity<any>[] = [];
 
     const id = parseInt(
         apiData.id,
@@ -75,13 +80,15 @@ export const animalMapData = (apiData: any):AnimalJson =>{
     let headerImage:number | null = null;
     if (apiData.attributes.headerImg?.image?.data) {
 
-        headerImage = parseInt(
-            apiData.attributes.headerImg.image.data.id,
-            10
-        );
+        const photo = photoMapData(apiData.attributes.headerImg?.image?.data);
+
+        entities.push(photo);
+
+        headerImage = photo.id;
+
     }
 
-    return{
+    const json:AnimalJson = {
         id,
         title,
         slug,
@@ -102,4 +109,11 @@ export const animalMapData = (apiData: any):AnimalJson =>{
         photos,
         headerImage,
     };
+
+    const animal = Animal.hydrate(json);
+
+    entities.push(animal)
+
+    return entities;
+
 }

@@ -1,5 +1,6 @@
 import {PhotoJson, PhotoSize} from "./photo-json";
 import {Position} from "../../components/Map/Context/MapContext";
+import {Photo} from "./photo";
 
 const sizeNames = [
     'thumbnail',
@@ -19,7 +20,7 @@ export interface PhoteSizes{
     small: PhotoSize | null;
 }
 
-export const photoMapData = (apiData: any):PhotoJson =>{
+export const photoMapData = (apiData: any):Photo =>{
 
     const id = parseInt(apiData.id, 10);
 
@@ -74,5 +75,7 @@ export const photoMapData = (apiData: any):PhotoJson =>{
         focalPoint
     };
 
-    return photoJson;
+    const photo = Photo.hydrate(photoJson);
+
+    return photo;
 }

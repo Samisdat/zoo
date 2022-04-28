@@ -1,6 +1,6 @@
 import {FacilityJson, FacilityType} from './facility-json';
 
-import {Entity} from "../../strapi-api/entity/entity";
+import {Entity, EntityType} from "../../strapi-api/entity/entity";
 import {Photo} from "../photo/photo";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 import {Marker} from "../../strapi-api/entity/marker/marker";
@@ -12,6 +12,10 @@ export class Facility extends Entity<FacilityJson>{
 
     get id(): number {
         return this.json.id;
+    }
+
+    get entityType(): EntityType {
+        return 'Facility';
     }
 
     get slug(): string{

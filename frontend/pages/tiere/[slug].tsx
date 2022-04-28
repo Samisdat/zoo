@@ -7,13 +7,13 @@ import {styled} from '@mui/material/styles';
 
 import {getFullGeoJson} from '../api/geojson/list';
 import {getAnimalBySlug, getAnimals} from 'strapi-api/query/animals';
-import {Animal} from 'strapi-api/entity/animal/animal';
 import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import {BreadcrumbLink} from 'components/Navigation/Breadcrumb';
 import {DistributionGlobe} from 'components/Distribution/DistributionGlobe';
 import {Profile} from 'components/Animal/Profile/Profile';
 import {IucnRedList} from 'components/Animal/IucnRedList';
 import Page from '../../components/Page/Page';
+import {Animal} from "../../graphql/animal/animal";
 
 export const Root = styled('div')(({ theme }) => ({
     flexGrow: 1,
@@ -90,9 +90,11 @@ export default function Tiere(props) {
                         </Typography>
 
                     </Grid>
+                    {/*
                     <Profile
                         profile={animal.profile}
                     />
+                    */}
                     <IucnRedList
                         iucnStatus={animal.iucnStatus}
                     />

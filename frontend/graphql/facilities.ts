@@ -4,6 +4,9 @@ import {Warehouse} from "../strapi-api/warehouse/warehouse";
 import {Photo} from "./photo/photo";
 import {Facility} from "./facility/facility";
 import {getFacilities, getFacilityBySlug} from "./facility/grahpql";
+import {facilityMapData} from "./facility/facility-map-data";
+import {addToWarehouse} from "./add-to-warehouse";
+import {animalMapData} from "./animal/animal-map-data";
 
 const addFacilityToWarehouse = (facility:Facility, graphFacility:any) => {
 
@@ -31,12 +34,15 @@ export const fetchFacilityBySlug = async (slug: string):Promise<Facility|undefin
         variables:{slug}
     });
 
-    const graphFacility = graphResult.data.facilities.data[0];
-    const facility = Facility.fromApi(graphFacility);
+    const datum = graphResult.data.facilities.data[0];
 
-    addFacilityToWarehouse(facility, graphFacility);
+    const facility = facilityMapData(datum);
 
-    return facility;
+    addToWarehouse(facility);
+
+    return Warehouse.get().getFacility(
+        parseInt(datum.id,10)
+    );
 
 };
 
@@ -46,16 +52,18 @@ export const fetchFacilities = async ():Promise<Facility[]> => {
         query: getFacilities
     });
 
-    const graphFacilities = graphResult.data.facilities.data;
+    const data = graphResult.data.facilities.data;
 
-    let facilities = graphFacilities.map((graphFacility:any)=>{
+    let facilities = data.map((datum:any)=>{
 
-        const facility = Facility.fromApi(graphFacility);
+        const facility = facilityMapData(datum);
 
-        addFacilityToWarehouse(facility, graphFacility);
+        addToWarehouse(facility);
 
-        return facility;
-
+        return Warehouse.get().getFacility(
+            parseInt(datum.id,10)
+        );
+        
     });
 
     return facilities;

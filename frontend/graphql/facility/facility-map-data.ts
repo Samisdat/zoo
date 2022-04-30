@@ -1,8 +1,16 @@
 import {FacilityJson} from './facility-json';
+import {Entity} from "../../strapi-api/entity/entity";
+import {photoMapData} from "../photo/photo-map-data";
+import {Facility} from "./facility";
 
-export const facilityMapData = (apiData: any):FacilityJson => {
+export const facilityMapData = (apiData: any):Entity<any>[] => {
 
-    const id = parseInt(apiData.id);
+    const entities:Entity<any>[] = [];
+
+    const id = parseInt(
+        apiData.id,
+        10
+    );
     const slug = apiData.attributes.slug;
     const title = apiData.attributes.title;
     const body = apiData.attributes.body;
@@ -56,6 +64,17 @@ export const facilityMapData = (apiData: any):FacilityJson => {
     }
      */
 
+    let headerImage:number | null = null;
+    if (apiData.attributes.headerImg?.image?.data) {
+
+        const photo = photoMapData(apiData.attributes.headerImg?.image?.data);
+
+        entities.push(photo);
+
+        headerImage = photo.id;
+
+    }
+
     const facilityJson: FacilityJson = {
         id,
         slug,
@@ -66,15 +85,13 @@ export const facilityMapData = (apiData: any):FacilityJson => {
         photos,
         markers,
         nodes,
+        headerImage,
     };
 
-    if(apiData.attributes?.headerImg?.image?.data?.id){
-        facilityJson.headerImage = parseInt(
-            apiData.attributes?.headerImg?.image?.data?.id, 10
-        );
-    }
+    const facility = Facility.hydrate(facilityJson);
 
+    entities.push(facility)
 
-    return facilityJson;
+    return entities;
 
 }

@@ -31,9 +31,6 @@ describe('fetch Animal', () => {
             expect(Warehouse.get().hasAnimal(1)).toBeTruthy();
             expect(Warehouse.get().hasPhoto(16)).toBeTruthy();
 
-            console.log(Warehouse.get().getAnimal(1))
-
-
         });
 
         test('valid response with no headerimage', async () => {

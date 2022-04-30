@@ -1,5 +1,7 @@
 module.exports = {
-  preset: 'ts-jest',
+  transform: {
+    '^.+\\.tsx?$': ['@swc/jest'],
+  },
   'roots': [
     '<rootDir>/components',
     '<rootDir>/pages',

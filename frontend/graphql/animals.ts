@@ -14,7 +14,7 @@ export const fetchAnimalBySlug = async (slug: string):Promise<Animal> => {
     });
 
     const datum = graphResult.data.animals.data[0];
-    console.log(datum)
+
     const animal = animalMapData(datum);
 
     addToWarehouse(animal);

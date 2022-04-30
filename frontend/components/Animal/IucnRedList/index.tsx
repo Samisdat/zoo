@@ -6,14 +6,16 @@ import Tooltip from '@mui/material/Tooltip';
 import {useViewport} from '../../viewport/useViewport';
 import { useInView } from 'react-intersection-observer';
 
-import {
-    CRITICALLY_ENDANGERED,
-    ENDANGERED, IucnStatus, LEAST_CONCERN,
-    NEAR_THREATENED,
-    VULNERABLE
-} from 'strapi-api/entity/animal/iucnStatus';
+
 import {IucnRedListIndicator} from './Indicator';
 import {styled} from '@mui/material/styles';
+import {
+    CRITICALLY_ENDANGERED,
+    ENDANGERED, IucnStatus,
+    LEAST_CONCERN,
+    NEAR_THREATENED,
+    VULNERABLE
+} from "../../../graphql/animal/iucnStatus";
 
 const possibleStati = [
     LEAST_CONCERN,

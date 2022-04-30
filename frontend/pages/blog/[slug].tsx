@@ -10,7 +10,7 @@ import Page from '../../components/Page/Page';
 import {apolloClient} from "../../graphql/apolloClient";
 import {Post} from "../../graphql/post/post";
 import {fetchPostBySlug} from "../../graphql/posts";
-import {getPostSlugs} from "../../graphql/post/queries";
+import {getPostSlugs} from "../../graphql/post/grahpql";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactMarkdown = require('react-markdown')
@@ -75,7 +75,6 @@ export default function BlogPost(props) {
 export async function getStaticProps(context) {
 
     const slug = context.params.slug
-
 
     await fetchPostBySlug(slug);
 

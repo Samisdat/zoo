@@ -6,7 +6,6 @@ import {default as MuiPaper} from '@mui/material/Paper';
 import {styled} from '@mui/material/styles';
 
 import {getFullGeoJson} from '../api/geojson/list';
-import {getAnimalBySlug, getAnimals} from 'strapi-api/query/animals';
 import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import {BreadcrumbLink} from 'components/Navigation/Breadcrumb';
 import {DistributionGlobe} from 'components/Distribution/DistributionGlobe';
@@ -14,6 +13,9 @@ import {Profile} from 'components/Animal/Profile/Profile';
 import {IucnRedList} from 'components/Animal/IucnRedList';
 import Page from '../../components/Page/Page';
 import {Animal} from "../../graphql/animal/animal";
+import {apolloClient} from "../../graphql/apolloClient";
+import {getAnimalsSlugs} from "../../graphql/animal/grahpql";
+import {fetchAnimalBySlug} from "../../graphql/animals";
 
 export const Root = styled('div')(({ theme }) => ({
     flexGrow: 1,
@@ -168,7 +170,9 @@ export default function Tiere(props) {
 
 export async function getStaticProps(context) {
 
-    const animal = await getAnimalBySlug(context.params.slug);
+    const slug = context.params.slug
+
+    await fetchAnimalBySlug(slug);
 
     const getJson = await getFullGeoJson();
 
@@ -182,19 +186,22 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
 
-    const animals = await getAnimals();
+    const graphqlSlugs = await apolloClient.query({
+        query:getAnimalsSlugs
+    });
 
-    const animalPaths = animals.map((animal:Animal)=>{
+    const paths = graphqlSlugs.data.animals.data.map((graphql:any)=>{
+
         return {
             params:{
-                slug: animal.slug
+                slug: graphql.attributes.slug + ''
             }
         }
     });
 
     return {
 
-        paths: animalPaths,
+        paths,
 
         fallback: false,
     }

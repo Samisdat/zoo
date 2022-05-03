@@ -28,9 +28,6 @@ export default function Gehege(props) {
         return (slug === facility.slug);
     });
 
-    console.log(facility);
-    console.log(Warehouse.get().getPhotos());
-
     const breadcrumbLinks:BreadcrumbLink[] = [
         {
             href: '/anlagen',

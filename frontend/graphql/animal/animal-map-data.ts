@@ -112,7 +112,7 @@ export const animalMapData = (apiData: any):Entity<any>[] =>{
 
     const animal = Animal.hydrate(json);
 
-    entities.push(animal)
+    entities.push(animal);
 
     return entities;
 

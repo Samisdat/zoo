@@ -14,8 +14,6 @@ export default function Index(props) {
 
     const headerImage = Warehouse.get().getPhoto(32);
 
-    console.log(headerImage);
-
     const breadcrumbLinks:BreadcrumbLink[] = [
         {
             href: '/tiere',

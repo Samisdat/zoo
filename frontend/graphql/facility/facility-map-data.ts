@@ -2,6 +2,7 @@ import {FacilityJson} from './facility-json';
 import {Entity} from "../../strapi-api/entity/entity";
 import {photoMapData} from "../photo/photo-map-data";
 import {Facility} from "./facility";
+import {animalMapData} from "../animal/animal-map-data";
 
 export const facilityMapData = (apiData: any):Entity<any>[] => {
 
@@ -42,15 +43,26 @@ export const facilityMapData = (apiData: any):Entity<any>[] => {
 
     let animals:number[] = [];
 
-    /*
-    if (undefined !== apiData.attributes.animals) {
+    if (apiData.attributes.animals) {
 
-        animals = apiData.attributes.animals.data.map((animals) => {
-            return animals.id;
+        animals = apiData.attributes.animals.data.map((animalDatum)=>{
+
+            const animalEntities = animalMapData(animalDatum);
+
+            const animal = animalEntities.find((entity)=>{
+                return ('Animal' === entity.entityType);
+            });
+
+            for(const entity of animalEntities){
+                entities.push(entity);
+            }
+
+            return animal.id;
+
         });
 
     }
-     */
+
 
     let nodes:number[] = [];
 

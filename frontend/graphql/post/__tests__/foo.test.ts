@@ -9,16 +9,11 @@ describe('Graph', () => {
     test('simple structure', async () => {
         //const foo: PostInterface
 
-        console.log('foo');
-
         expect(true).toBeTruthy()
 
         const posts = await apolloClient.query({
             query:getPostBySlug,
         });
-
-        console.log(posts)
-
 
         /*
         const posts = await apolloClient.query({

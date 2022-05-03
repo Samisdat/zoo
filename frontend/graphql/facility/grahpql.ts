@@ -1,5 +1,6 @@
 import {gql} from "@apollo/client";
 import {headerImageFragment} from "../photo/grahpql";
+import {animalFragment} from "../animal/grahpql";
 
 /**
  * I can not find the resolver, to that with a singular query ;(
@@ -15,6 +16,11 @@ query FacilitiesBySlug ($slug: String){
                 body
                 type
                 ${headerImageFragment}
+                animals {
+                
+                    ${animalFragment}
+                
+                }
             }
         }
     }
@@ -44,6 +50,12 @@ query Facilities {
                 body
                 type
                 ${headerImageFragment}
+                animals {
+                
+                    ${animalFragment}
+                
+                }
+                
             }
         }
     }

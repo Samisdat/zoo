@@ -42,12 +42,6 @@ export class Facility extends Entity<FacilityJson>{
 
     get headerImage(): Photo | null{
 
-        console.log(
-            this.json.headerImage,
-            Warehouse.get().getPhotos(),
-            Warehouse.get().getPhoto(this.json.headerImage)
-        )
-
         return Warehouse.get().getPhoto(this.json.headerImage);
 
     }
@@ -94,13 +88,10 @@ export class Facility extends Entity<FacilityJson>{
 
     get animals(): Animal[]{
 
-        return [];
-
-        /*
         return this.json.animals.map((animalId)=>{
             return Warehouse.get().getAnimal(animalId);
         });
-         */
+        
     }
 
     get markersRaw(): number[]{

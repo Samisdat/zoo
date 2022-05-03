@@ -1,5 +1,4 @@
 import React from 'react';
-import {Animal} from 'strapi-api/entity/animal/animal';
 import {NavigationList} from '../../NavigationList/NavigationList';
 import {NavigationListItemInterface} from '../../NavigationList/NavigationListInterfaces';
 import {animalUrlPart} from '../../../constants';
@@ -8,6 +7,7 @@ import {getIucnCounted} from './Iucn/getIucnCounted';
 import {getTaxonomyCounted} from './Taxonomy/getTaxonomyCounted';
 import {getImagePath} from '../../../helper/getImagePath';
 import {FilterAccordion} from './FilterAccordion';
+import {Animal} from "../../../graphql/animal/animal";
 
 export interface AnimalFilter{
     key:string,
@@ -51,8 +51,19 @@ export const FilteredNavigationList = (props:FilteredNavigationListProps) => {
 
             let image:string = undefined;
 
+            // photos will go
             if(0 !== animal.photos.length && undefined !== animal.photos[0] && animal.photos[0].thumbnail){
                 image = getImagePath(animal.photos[0].thumbnail.src);
+            }
+
+            if(undefined === image){
+
+                if(animal.headerImage && animal.headerImage.thumbnail){
+
+                    image = getImagePath(animal.headerImage.thumbnail.src);
+
+                }
+
             }
 
             if(undefined !== image){

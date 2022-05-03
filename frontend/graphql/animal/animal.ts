@@ -7,7 +7,6 @@ import {Photo} from "../photo/photo";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 import {IndividualAnimal} from "../../strapi-api/entity/individual-animal/individual-animal";
 import {Facility} from "../facility/facility";
-import {animalMapData} from "./animal-map-data";
 
 export class Animal extends Entity<AnimalJson>{
 

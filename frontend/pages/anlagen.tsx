@@ -28,6 +28,11 @@ export default function Index(props) {
 
     const facilities = Warehouse.get().getFacilities();
 
+    console.log(Warehouse.get().getFacilities());
+    console.log(Warehouse.get().getAnimals());
+    console.log(Warehouse.get().getPhotos());
+
+
     const listItems:NavigationListItemInterface[] = facilities.map((facilitiy):NavigationListItemInterface=>{
 
         const item:NavigationListItemInterface = {
@@ -44,14 +49,31 @@ export default function Index(props) {
 
         if(undefined === image){
 
+            if(facilitiy.headerImage && facilitiy.headerImage.thumbnail){
+
+                image = getImagePath(facilitiy.headerImage.thumbnail.src);
+
+            }
+
+        }
+
+        console.log(image)
+
+        if(undefined === image){
+
             const animalWithImage = facilitiy.animals.find((animal)=>{
-                return (0 < animal.photos.length);
+                console.log(animal.headerImage);
+
+                return (animal.headerImage);
             });
+            console.log(facilitiy.animals);
 
             if(undefined !== animalWithImage){
 
-                if(0 !== animalWithImage.photos.length && undefined !== animalWithImage.photos[0] && animalWithImage.photos[0].thumbnail){
-                    image = getImagePath(animalWithImage.photos[0].thumbnail.src);
+                if(animalWithImage.headerImage && animalWithImage.headerImage.thumbnail){
+
+                    image = getImagePath(animalWithImage.headerImage.thumbnail.src);
+
                 }
 
             }

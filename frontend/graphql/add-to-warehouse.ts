@@ -35,7 +35,6 @@ const addEntityToWarehouse = (entity:Entity<any>):void =>{
 
 export const addToWarehouse = (entities:Entity<any>[]) => {
 
-
     for(let i = 0, x = entities.length; i < x; i += 1){
 
         addEntityToWarehouse(entities[i]);

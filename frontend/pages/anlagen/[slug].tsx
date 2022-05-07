@@ -10,6 +10,8 @@ import {getFacilityBySlug, getFacilitySlugs} from "../../graphql/facility/grahpq
 import {Facility} from "../../graphql/facility/facility";
 import {fetchPostBySlug} from "../../graphql/posts";
 import {fetchFacilityBySlug} from "../../graphql/facilities";
+import {getImagePath} from "../../helper/getImagePath";
+import {Photo} from "../../graphql/photo/photo";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactMarkdown = require('react-markdown')
@@ -28,6 +30,29 @@ export default function Gehege(props) {
         return (slug === facility.slug);
     });
 
+    let headerImage:Photo = facility.headerImage;
+
+    if(!headerImage){
+
+        const animalWithImage = facility.animals.find((animal)=>{
+            console.log(animal.headerImage);
+
+            return (animal.headerImage);
+        });
+
+
+        if(undefined !== animalWithImage){
+
+            if(animalWithImage.headerImage && animalWithImage.headerImage.thumbnail){
+
+                headerImage = animalWithImage.headerImage;
+
+            }
+
+        }
+
+    }
+
     const breadcrumbLinks:BreadcrumbLink[] = [
         {
             href: '/anlagen',
@@ -42,7 +67,7 @@ export default function Gehege(props) {
 
     return (
         <Page
-            headerImage={facility.headerImage}
+            headerImage={headerImage}
             breadcrumb={breadcrumbLinks}
         >
             <h1>{facility.title}</h1>

@@ -1,0 +1,68 @@
+{
+  "QrCodeById": {
+    "1": {
+      "data": {
+        "qrCode": {
+          "data": {
+            "id": "1",
+            "attributes": {
+              "title": "Tiger",
+              "lat": "51.238435309201684",
+              "lng": "7.114292636123201",
+              "facility": null,
+              "animal": {
+                "data": {
+                  "id": "44",
+                  "attributes": {
+                    "title": "Tiger",
+                    "slug": "tiger",
+                    "body": "I am content.",
+                    "wikidata": "Q19939",
+                    "wikipediaLink": "https://de.wikipedia.org/wiki/Tiger",
+                    "scientificName": "Panthera tigris",
+                    "iucnID": "15955",
+                    "iucnLink": "https://apiv3.iucnredlist.org/api/v3/taxonredirect/15955",
+                    "iucnStatus": "EN",
+                    "className": "Säugetiere",
+                    "order": "Raubtiere",
+                    "species": "Tiger",
+                    "family": "Katzen",
+                    "headerImg": null
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "2": {
+      "data": {
+        "qrCode": {
+          "data": {
+            "id": "2",
+            "attributes": {
+              "title": "Elefanten Bullen Anlage",
+              "lat": "51.23863607752469",
+              "lng": "7.10831524587035",
+              "facility": {
+                "data": {
+                  "id": "6",
+                  "attributes": {
+                    "title": "Elefanten",
+                    "slug": "elefanten",
+                    "body": "Some Content\n",
+                    "type": "enclosure",
+                    "animals": null,
+                    "headerImg": null
+                  }
+                }
+              },
+              "animal": null
+            }
+          }
+        }
+      }
+    }
+  }
+}

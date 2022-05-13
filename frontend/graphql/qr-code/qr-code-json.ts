@@ -1,4 +1,4 @@
-export interface QrCodeSpore {
+export interface QrCodeJson {
     id:number;
     title: string;
     lat: string;

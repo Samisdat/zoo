@@ -2,27 +2,29 @@ import {gql} from "@apollo/client";
 import {headerImageFragment} from "../photo/grahpql";
 import {animalFragment} from "../animal/grahpql";
 
+export const facilityFragment = `
+    data {
+        id
+        attributes {
+            title
+            slug
+            body
+            type
+            ${headerImageFragment}
+            animals {       
+                ${animalFragment}
+            }
+        }
+    }
+`;
+
 /**
  * I can not find the resolver, to that with a singular query ;(
  */
 export const getFacilityBySlug = gql`      
 query FacilitiesBySlug ($slug: String){
     facilities(filters: { slug: { eq: $slug }}) {
-        data {
-            id
-            attributes {
-                title
-                slug
-                body
-                type
-                ${headerImageFragment}
-                animals {
-                
-                    ${animalFragment}
-                
-                }
-            }
-        }
+        ${facilityFragment}
     }
 }
 `;

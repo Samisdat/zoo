@@ -3,6 +3,7 @@ import {Warehouse} from "../strapi-api/warehouse/warehouse";
 import {Animal} from "./animal/animal";
 import {Facility} from "./facility/facility";
 import {Photo} from "./photo/photo";
+import {QrCode} from "./qr-code/qr-code";
 
 const addEntityToWarehouse = (entity:Entity<any>):void =>{
 
@@ -22,6 +23,12 @@ const addEntityToWarehouse = (entity:Entity<any>):void =>{
         case 'Photo': {
 
             Warehouse.get().addPhoto(entity as Photo);
+
+            break;
+        }
+        case 'QrCode': {
+
+            Warehouse.get().addQrCode(entity as QrCode);
 
             break;
         }

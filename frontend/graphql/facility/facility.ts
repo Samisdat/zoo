@@ -5,7 +5,6 @@ import {Photo} from "../photo/photo";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 import {Marker} from "../../strapi-api/entity/marker/marker";
 import {Node} from "../../strapi-api/entity/node/node";
-import {facilityMapData} from "./facility-map-data";
 import {Animal} from "../animal/animal";
 
 export class Facility extends Entity<FacilityJson>{
@@ -133,11 +132,7 @@ export class Facility extends Entity<FacilityJson>{
 
     static fromApi(json:any):Facility{
 
-        const dehydrated:FacilityJson = facilityMapData(json);
-
-        const facility = new Facility(dehydrated);
-
-        return facility;
+        return null;
 
     }
 

@@ -3,6 +3,7 @@ export type EntityType =
     'Facility' |
     'Photo' |
     'Post' |
+    'QrCode' |
     'unkown'
 ;
 

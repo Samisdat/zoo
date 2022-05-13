@@ -1,4 +1,5 @@
 import { graphql } from 'msw'
+import {QrCodeById} from "./handler/qr-code/QrCodeById";
 
 export const handlers = [
 
@@ -689,5 +690,7 @@ export const handlers = [
         }
 
     }),
+
+    graphql.query('QrCodeById', QrCodeById),
 
 ]

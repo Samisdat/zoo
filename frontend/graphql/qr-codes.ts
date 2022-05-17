@@ -1,7 +1,7 @@
 
 
 import {Warehouse} from "../strapi-api/warehouse/warehouse";
-import {getQrcodeBySlug} from "./qr-code/graphql";
+import {getQrcodeBySlug, getQrCodes} from "./qr-code/graphql";
 import {qrCodeMapData} from "./qr-code/qr-code-map-data";
 import {QrCode} from "./qr-code/qr-code";
 import {addToWarehouse} from "./add-to-warehouse";
@@ -29,28 +29,27 @@ export const fetchQrCodeById = async (id: number):Promise<QrCode|undefined> => {
 
 };
 
-/*
-export const fetchFacilities = async ():Promise<Facility[]> => {
+
+export const fetchQrCodes = async ():Promise<QrCode[]> => {
 
     const graphResult = await apolloClient.query({
-        query: getFacilities
+        query: getQrCodes
     });
 
-    const data = graphResult.data.facilities.data;
+    const data = graphResult.data.qrCodes.data;
 
-    let facilities = data.map((datum:any)=>{
+    let qrCodes = data.map((datum:any)=>{
 
-        const facility = facilityMapData(datum);
+        const qrCode = qrCodeMapData(datum);
 
-        addToWarehouse(facility);
+        addToWarehouse(qrCode);
 
-        return Warehouse.get().getFacility(
+        return Warehouse.get().getQrCode(
             parseInt(datum.id,10)
         );
 
     });
 
-    return facilities;
+    return qrCodes;
 
 }
-*/

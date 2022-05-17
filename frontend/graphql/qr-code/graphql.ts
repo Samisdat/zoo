@@ -21,3 +21,26 @@ query QrCodeById ($id: ID){
         }
     }
 }`;
+
+export const getQrCodes = gql`      
+query QrCodes {
+    qrCodes(pagination: { page: 1, pageSize: 2000 }) {
+
+        data {
+            id
+            attributes {
+                title
+                lat
+                lng
+                animal{
+                    ${animalFragment}
+                }
+                facility{
+                    ${facilityFragment}
+                }
+            }
+        }
+
+    }
+}
+`;

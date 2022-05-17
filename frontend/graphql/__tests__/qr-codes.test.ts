@@ -1,5 +1,5 @@
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
-import {fetchQrCodeById} from "../qr-codes";
+import {fetchQrCodeById, fetchQrCodes} from "../qr-codes";
 
 describe('QR Code', () => {
 
@@ -42,6 +42,22 @@ describe('QR Code', () => {
 
             expect(Warehouse.get().hasQrCode(2)).toBeTruthy();
             expect(Warehouse.get().hasFacility(6)).toBeTruthy();
+
+        });
+
+    });
+
+    describe.only('fetchQrCodes', () => {
+
+        test('valid response with all (two ;) ) qr codes', async () => {
+
+            expect(Warehouse.get().getQrCodes().length).toBe(0);
+
+            await fetchQrCodes();
+
+            expect(Warehouse.get().getQrCodes().length).toBe(2);
+
+            console.log(Warehouse.get().dehydrate())
 
         });
 

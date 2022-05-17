@@ -57,8 +57,6 @@ export default function Index(props) {
 
         }
 
-        console.log(image)
-
         if(undefined === image){
 
             const animalWithImage = facilitiy.animals.find((animal)=>{

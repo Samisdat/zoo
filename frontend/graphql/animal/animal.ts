@@ -5,8 +5,8 @@ import {IucnStatus} from './iucnStatus';
 import {Entity, EntityType} from "../../strapi-api/entity/entity";
 import {Photo} from "../photo/photo";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
-import {IndividualAnimal} from "../../strapi-api/entity/individual-animal/individual-animal";
 import {Facility} from "../facility/facility";
+import {IndividualAnimal} from "../individual-animal/individual-animal";
 
 export class Animal extends Entity<AnimalJson>{
 

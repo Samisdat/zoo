@@ -1,5 +1,3 @@
-import {IndividualAnimal} from '../entity/individual-animal/individual-animal';
-import {IndividualAnimalSpore} from '../entity/individual-animal/individual-animal-spore';
 import {Edge} from '../entity/edge/edge';
 import {Node} from '../entity/node/node';
 import {NodeSpore} from '../entity/node/node-spore';
@@ -16,13 +14,15 @@ import {Animal} from "../../graphql/animal/animal";
 import {AnimalJson} from "../../graphql/animal/animal-json";
 import {QrCodeJson} from "../../graphql/qr-code/qr-code-json";
 import {QrCode} from "../../graphql/qr-code/qr-code";
+import {IndividualAnimalJson} from "../../graphql/individual-animal/individual-animal-json";
+import {IndividualAnimal} from "../../graphql/individual-animal/individual-animal";
 
 export interface WarehouseSpore{
     facilities:FacilityJson[];
     photos:PhotoJson[];
     markers:MarkerSpore[];
     animals: AnimalJson[]
-    individualAnimals: IndividualAnimalSpore[]
+    individualAnimals: IndividualAnimalJson[]
     posts: PostJson[]
     qrCodes: QrCodeJson[]
     nodes: NodeSpore[]
@@ -189,9 +189,9 @@ export class Warehouse{
 
         if(spore.individualAnimals){
 
-            this.individualAnimals = spore.individualAnimals.map((individualAnimalsSpore:IndividualAnimalSpore)=>{
-                this.individualAnimalsIds.push(individualAnimalsSpore.id);
-                return IndividualAnimal.hydrate(individualAnimalsSpore);
+            this.individualAnimals = spore.individualAnimals.map((individualAnimalJson:IndividualAnimalJson)=>{
+                this.individualAnimalsIds.push(individualAnimalJson.id);
+                return IndividualAnimal.hydrate(individualAnimalJson);
             });
 
         }
@@ -387,7 +387,9 @@ export class Warehouse{
 
     public addIndividualAnimal(individualAnimal: IndividualAnimal){
 
-        if(false === this.hasAnimal(individualAnimal.id)){
+        console.log('addIndividualAnimal', individualAnimal);
+
+        if(false === this.hasIndividualAnimal(individualAnimal.id)){
 
             this.individualAnimalsIds.push(individualAnimal.id);
             this.individualAnimals.push(individualAnimal);

@@ -1,5 +1,6 @@
 import { graphql } from 'msw'
 import {QrCodeById, QrCodes} from "./handler/qr-code/QrCodeById";
+import {IndividualAnimalsBySlug} from "./handler/individual-animal/IndividualAnimalsBySlug";
 
 export const handlers = [
 
@@ -693,7 +694,10 @@ export const handlers = [
 
     graphql.query('QrCodeById', QrCodeById),
 
-    graphql.query('QrCodes', QrCodes)
+    graphql.query('QrCodes', QrCodes),
+
+    graphql.query('IndividualAnimalsBySlug', IndividualAnimalsBySlug),
+
 
 
 ]

@@ -4,6 +4,7 @@ import {Animal} from "./animal/animal";
 import {Facility} from "./facility/facility";
 import {Photo} from "./photo/photo";
 import {QrCode} from "./qr-code/qr-code";
+import {IndividualAnimal} from "./individual-animal/individual-animal";
 
 const addEntityToWarehouse = (entity:Entity<any>):void =>{
 
@@ -11,6 +12,12 @@ const addEntityToWarehouse = (entity:Entity<any>):void =>{
         case 'Animal': {
 
             Warehouse.get().addAnimal(entity as Animal);
+
+            break;
+        }
+        case 'IndividualAnimal': {
+
+            Warehouse.get().addIndividualAnimal(entity as IndividualAnimal);
 
             break;
         }

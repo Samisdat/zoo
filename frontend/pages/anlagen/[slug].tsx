@@ -35,9 +35,9 @@ export default function Gehege(props) {
     if(!headerImage){
 
         const animalWithImage = facility.animals.find((animal)=>{
-            console.log(animal.headerImage);
 
             return (animal.headerImage);
+
         });
 
 

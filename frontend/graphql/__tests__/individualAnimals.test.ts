@@ -1,5 +1,5 @@
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
-import {fetchIndividualAnimalBySlug} from "../individual-animals";
+import {fetchIndividualAnimalBySlug, fetchIndividualAnimals} from "../individual-animals";
 
 describe('fetch IndividualAAnimal', () => {
 
@@ -19,9 +19,9 @@ describe('fetch IndividualAAnimal', () => {
 
     });
 
-    describe.only('fetchIndividualAnimalBySlug', () => {
+    describe('fetchIndividualAnimalBySlug', () => {
 
-        test.only('valid response', async () => {
+        test('valid response', async () => {
 
             expect(Warehouse.get().hasIndividualAnimal(1)).toBeFalsy();
             expect(Warehouse.get().hasAnimal(1)).toBeFalsy();
@@ -32,6 +32,20 @@ describe('fetch IndividualAAnimal', () => {
             expect(Warehouse.get().getIndividualAnimal(1).name).toBe('Sabie');
             expect(Warehouse.get().hasAnimal(1)).toBeTruthy();
             expect(Warehouse.get().getAnimal(1).title).toBe('Afrikanischer Elefant');
+
+        });
+
+    });
+
+    describe('fetchIndividualAnimals', () => {
+
+        test('valid response', async () => {
+
+            expect(Warehouse.get().getIndividualAnimals().length).toBe(0);
+
+            await fetchIndividualAnimals();
+
+            expect(Warehouse.get().getIndividualAnimals().length).toBe(2);
 
         });
 

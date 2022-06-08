@@ -1,6 +1,8 @@
 import { graphql } from 'msw'
 import {QrCodeById, QrCodes} from "./handler/qr-code/QrCodeById";
 import {IndividualAnimalsBySlug} from "./handler/individual-animal/IndividualAnimalsBySlug";
+import {AnimalsBySlug} from "./handler/animal/AnimalsBySlug";
+import {IndividualAnimals} from "./handler/individual-animal/IndividualAnimals";
 
 export const handlers = [
 
@@ -571,6 +573,7 @@ export const handlers = [
             }),
         )
     }),
+    /*
     graphql.query('AnimalsBySlug', (request, response, context) => {
 
         if('an-existing-slug' === request.variables.slug){
@@ -691,6 +694,9 @@ export const handlers = [
         }
 
     }),
+    */
+
+    graphql.query('AnimalsBySlug', AnimalsBySlug),
 
     graphql.query('QrCodeById', QrCodeById),
 
@@ -698,6 +704,7 @@ export const handlers = [
 
     graphql.query('IndividualAnimalsBySlug', IndividualAnimalsBySlug),
 
+    graphql.query('IndividualAnimals', IndividualAnimals),
 
 
 ]

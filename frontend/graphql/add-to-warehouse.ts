@@ -5,6 +5,7 @@ import {Facility} from "./facility/facility";
 import {Photo} from "./photo/photo";
 import {QrCode} from "./qr-code/qr-code";
 import {IndividualAnimal} from "./individual-animal/individual-animal";
+import {Post} from "./post/post";
 
 const addEntityToWarehouse = (entity:Entity<any>):void =>{
 
@@ -36,6 +37,12 @@ const addEntityToWarehouse = (entity:Entity<any>):void =>{
         case 'QrCode': {
 
             Warehouse.get().addQrCode(entity as QrCode);
+
+            break;
+        }
+        case 'Post': {
+
+            Warehouse.get().addPost(entity as Post);
 
             break;
         }

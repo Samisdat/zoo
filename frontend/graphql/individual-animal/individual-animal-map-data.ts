@@ -20,6 +20,8 @@ export const individualAnimalMapData = (apiData: any):Entity<any>[] =>{
 
     let animal = null;
 
+
+
     if (apiData.attributes.animal?.data?.id) {
 
         const animalEntities = animalMapData(apiData.attributes.animal?.data);

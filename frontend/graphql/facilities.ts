@@ -34,8 +34,6 @@ export const fetchFacilityBySlug = async (slug: string):Promise<Facility|undefin
         variables:{slug}
     });
 
-    console.log(JSON.stringify(graphResult, null, 4));
-
     const datum = graphResult.data.facilities.data[0];
 
     const facility = facilityMapData(datum);

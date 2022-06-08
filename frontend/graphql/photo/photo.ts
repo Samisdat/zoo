@@ -52,8 +52,6 @@ export class Photo extends Entity<PhotoJson>{
 
     static fromApi(json:any):any{
 
-
-
         const dehydrated:PhotoJson = photoMapData(json);
 
         const photo = new Photo(dehydrated);

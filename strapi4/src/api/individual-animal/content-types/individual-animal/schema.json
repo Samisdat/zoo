@@ -4,7 +4,8 @@
   "info": {
     "singularName": "individual-animal",
     "pluralName": "individual-animals",
-    "displayName": "Individual Animal"
+    "displayName": "Individual Animal",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -37,6 +38,11 @@
       "relation": "manyToMany",
       "target": "api::post.post",
       "mappedBy": "individual_animals"
+    },
+    "headerImg": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.headerimg"
     }
   }
 }

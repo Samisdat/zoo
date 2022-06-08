@@ -1,5 +1,5 @@
 import {PostJson} from "./post-json";
-import {Entity} from "../../strapi-api/entity/entity";
+import {Entity, EntityType} from "../../strapi-api/entity/entity";
 //import {Photo} from "../../strapi-api/entity/photo/photo";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 //import {Facility} from "../../strapi-api/entity/facility/facility";
@@ -12,6 +12,10 @@ export class Post extends Entity<PostJson>{
 
     get id(): number {
         return this.json.id;
+    }
+
+    get entityType(): EntityType {
+        return 'Post';
     }
 
     get slug(): string{
@@ -89,11 +93,7 @@ export class Post extends Entity<PostJson>{
 
     static fromApi(json: any):Post{
 
-        const dehydrated: PostJson = postMapData(json);
-
-        const post = new Post(dehydrated);
-
-        return post;
+        return undefined;
 
     }
 }

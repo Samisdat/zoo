@@ -28,11 +28,6 @@ export default function Index(props) {
 
     const facilities = Warehouse.get().getFacilities();
 
-    console.log(Warehouse.get().getFacilities());
-    console.log(Warehouse.get().getAnimals());
-    console.log(Warehouse.get().getPhotos());
-
-
     const listItems:NavigationListItemInterface[] = facilities.map((facilitiy):NavigationListItemInterface=>{
 
         const item:NavigationListItemInterface = {
@@ -60,11 +55,10 @@ export default function Index(props) {
         if(undefined === image){
 
             const animalWithImage = facilitiy.animals.find((animal)=>{
-                console.log(animal.headerImage);
 
                 return (animal.headerImage);
+
             });
-            console.log(facilitiy.animals);
 
             if(undefined !== animalWithImage){
 

@@ -39,7 +39,7 @@ describe('fetchPostBySlug', () => {
         const post = await fetchPostBySlug('an-existing-slug-no-header-image');
 
         expect(Warehouse.get().hasPost(15)).toBeTruthy();
-        expect(post.headerImageRaw).toBe(undefined);
+        expect(post.headerImageRaw).toBe(null);
 
     });
 

@@ -1,5 +1,6 @@
 import {gql} from "@apollo/client";
 import {headerImageFragment} from "../photo/grahpql";
+import {individualAnimalSimpleFragment} from "../individual-animal/grahpql";
 
 export const animalFragment = `
 data {
@@ -18,7 +19,10 @@ data {
         className
         order
         species
-        family                
+        family      
+        individual_animals{          
+                ${individualAnimalSimpleFragment}
+        }
         ${headerImageFragment}
     }
 }

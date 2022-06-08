@@ -5,6 +5,9 @@ import {getPosts, getPostsBySlug} from "./post/grahpql";
 import {Post} from "./post/post";
 import {Warehouse} from "../strapi-api/warehouse/warehouse";
 import {Photo} from "./photo/photo";
+import {postMapData} from "./post/post-map-data";
+import {addToWarehouse} from "./add-to-warehouse";
+import {animalMapData} from "./animal/animal-map-data";
 
 const addPostToWarehouse = (post:Post, graphPost:any) => {
 
@@ -13,6 +16,7 @@ const addPostToWarehouse = (post:Post, graphPost:any) => {
         Warehouse.get().addPost(post);
 
         if(post.headerImageRaw){
+
             const photo = Photo.fromApi(graphPost.attributes?.headerImg?.image?.data);
 
             if(false === Warehouse.get().hasPhoto(photo.id)){
@@ -34,11 +38,13 @@ export const fetchPostBySlug = async (slug: string):Promise<Post> => {
 
     const graphPost = graphResult.data.posts.data[0];
 
-    const post = Post.fromApi(graphPost);
+    const post = postMapData(graphPost);
 
-    addPostToWarehouse(post, graphPost);
+    addToWarehouse(post);
 
-    return post;
+    return Warehouse.get().getPost(
+        parseInt(graphPost.id,10)
+    );
 
 };
 
@@ -50,16 +56,17 @@ export const fetchPosts = async ():Promise<PostJson[]> => {
 
     const graphPosts = graphResult.data.posts.data;
 
-    let posts = graphPosts.map((graphPost:any)=>{
+    let posts = graphPosts.map((datum:any)=>{
 
-        const post = Post.fromApi(graphPost);
+        const post = postMapData(datum);
 
-        addPostToWarehouse(post, graphPost);
+        addToWarehouse(post);
 
-        return post;
+        return Warehouse.get().getPost(
+            parseInt(datum.id,10)
+        );
 
     });
-
 
 
     return posts;

@@ -20,7 +20,7 @@ export interface PhoteSizes{
     small: PhotoSize | null;
 }
 
-export const photoMapData = (apiData: any):Photo =>{
+export const photoMapData = (apiData: any): Photo =>{
 
     const id = parseInt(apiData.id, 10);
 

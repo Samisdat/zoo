@@ -1,6 +1,6 @@
 import {gql} from "@apollo/client";
 import {headerImageFragment} from "../photo/grahpql";
-import {animalFragment} from "../animal/grahpql";
+import {animalSimpelFragment} from "../animal/graphql-animal-simpel-fragment";
 
 export const individualAnimalFragment = `
 data {
@@ -10,12 +10,24 @@ data {
         slug
         body
         animal{
-            ${animalFragment}
+            ${animalSimpelFragment}
         }
         ${headerImageFragment}
     }
 }
 `;
+
+export const individualAnimalSimpleFragment = `
+data {
+    id
+    attributes {
+        name
+        slug
+        body
+    }
+}
+`;
+
 
 /**
  * I can not find the resolver, to that with a singular query ;(

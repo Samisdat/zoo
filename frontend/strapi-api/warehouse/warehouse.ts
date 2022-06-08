@@ -387,8 +387,6 @@ export class Warehouse{
 
     public addIndividualAnimal(individualAnimal: IndividualAnimal){
 
-        console.log('addIndividualAnimal', individualAnimal);
-
         if(false === this.hasIndividualAnimal(individualAnimal.id)){
 
             this.individualAnimalsIds.push(individualAnimal.id);

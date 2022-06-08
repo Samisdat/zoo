@@ -13,19 +13,3 @@ export const IndividualAnimalsBySlug = (request, response, context) => {
     }
 
 }
-
-export const QrCodes = (request, response, context) => {
-
-    const qrCodes = [
-        data.QrCodeById['1'].data.qrCode.data,
-        data.QrCodeById['2'].data.qrCode.data
-    ];
-
-    return response(
-        context.data({
-            "qrCodes": {
-                "data": qrCodes
-            },
-        }),
-    )
-}

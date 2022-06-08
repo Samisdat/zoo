@@ -1,6 +1,12 @@
 import {PostJson} from "./post-json";
+import {Entity} from "../../strapi-api/entity/entity";
+import {Animal} from "../animal/animal";
+import {Post} from "./post";
+import {photoMapData} from "../photo/photo-map-data";
 
-export const postMapData = (apiData: any):PostJson =>{
+export const postMapData = (apiData: any):Entity<any>[] =>{
+
+    const entities:Entity<any>[] = [];
 
     const id = parseInt(apiData.id, 10);
     const animals:number[] = [];
@@ -31,6 +37,17 @@ export const postMapData = (apiData: any):PostJson =>{
 
     const body = apiData.attributes.body
 
+    let headerImage:number | null = null;
+    if (apiData.attributes.headerImg?.image?.data) {
+
+        const photo = photoMapData(apiData.attributes.headerImg?.image?.data);
+
+        entities.push(photo);
+
+        headerImage = photo.id;
+
+    }
+
     const postJson: PostJson = {
         id,
         slug,
@@ -40,14 +57,15 @@ export const postMapData = (apiData: any):PostJson =>{
         animals,
         facilities,
         individual_animals,
+        headerImage
     };
 
-    if(apiData.attributes?.headerImg?.image?.data?.id){
-        postJson.headerImage = parseInt(
-            apiData.attributes?.headerImg?.image?.data?.id, 10
-        );
-    }
 
-    return postJson;
+    const post = Post.hydrate(postJson);
+
+    entities.push(post);
+
+
+    return entities;
 
 }

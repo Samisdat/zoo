@@ -4,7 +4,6 @@ import {Animal} from "../animal/animal";
 import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 import {Photo} from "../photo/photo";
 
-
 export class IndividualAnimal extends Entity<IndividualAnimalJson>{
 
     get id(): number {
@@ -33,11 +32,8 @@ export class IndividualAnimal extends Entity<IndividualAnimalJson>{
 
     get animal(): Animal | undefined{
 
-        return undefined;
-
-        /*
         return Warehouse.get().getAnimal(this.json.animal);
-         */
+
     }
 
     get photosRaw(): number[]{

@@ -1,0 +1,108 @@
+{
+  "AnimalsBySlug": {
+    "afrikanischer-elefant": {
+      "data": {
+        "animals": {
+          "data": [
+            {
+              "id": "1",
+              "attributes": {
+                "title": "Afrikanischer Elefant",
+                "slug": "afrikanischer-elefant",
+                "body": "\nI am content.\n",
+                "wikidata": "Q36557",
+                "wikipediaLink": "https://de.wikipedia.org/wiki/Afrikanischer_Elefant",
+                "scientificName": "Loxodonta africana",
+                "iucnID": "181008073",
+                "iucnLink": "https://apiv3.iucnredlist.org/api/v3/taxonredirect/181008073",
+                "iucnStatus": "VU",
+                "className": "Säugetiere",
+                "order": "Rüsseltiere",
+                "species": "Afrikanischer Elefant",
+                "family": "Elefanten",
+                "individual_animals": {
+                  "data": [
+                    {
+                      "id": "1",
+                      "attributes": {
+                        "name": "Sabie",
+                        "slug": "sabie",
+                        "body": "Sabie ist **die** Leitkuh"
+                      }
+                    },
+                    {
+                      "id": "2",
+                      "attributes": {
+                        "name": "Tuffi",
+                        "slug": "tuffi",
+                        "body": null
+                      }
+                    }
+                  ]
+                },
+                "headerImg": {
+                  "image": {
+                    "data": {
+                      "id": "16",
+                      "attributes": {
+                        "name": "African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef.jpeg",
+                        "x": null,
+                        "y": null,
+                        "formats": {
+                          "thumbnail": {
+                            "name": "thumbnail_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef.jpeg",
+                            "hash": "thumbnail_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef_4caad212c6",
+                            "ext": ".jpeg",
+                            "mime": "image/jpeg",
+                            "path": null,
+                            "width": 234,
+                            "height": 156,
+                            "size": 8.27,
+                            "url": "/uploads/thumbnail_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef_4caad212c6.jpeg"
+                          },
+                          "large": {
+                            "name": "large_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef.jpeg",
+                            "hash": "large_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef_4caad212c6",
+                            "ext": ".jpeg",
+                            "mime": "image/jpeg",
+                            "path": null,
+                            "width": 1000,
+                            "height": 667,
+                            "size": 110.04,
+                            "url": "/uploads/large_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef_4caad212c6.jpeg"
+                          },
+                          "medium": {
+                            "name": "medium_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef.jpeg",
+                            "hash": "medium_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef_4caad212c6",
+                            "ext": ".jpeg",
+                            "mime": "image/jpeg",
+                            "path": null,
+                            "width": 750,
+                            "height": 500,
+                            "size": 65.62,
+                            "url": "/uploads/medium_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef_4caad212c6.jpeg"
+                          },
+                          "small": {
+                            "name": "small_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef.jpeg",
+                            "hash": "small_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef_4caad212c6",
+                            "ext": ".jpeg",
+                            "mime": "image/jpeg",
+                            "path": null,
+                            "width": 500,
+                            "height": 333,
+                            "size": 31.11,
+                            "url": "/uploads/small_African_Elephant_Loxodonta_africana_male_16723147361_285ede05ef_4caad212c6.jpeg"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

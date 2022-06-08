@@ -31,7 +31,7 @@ query FacilitiesBySlug ($slug: String){
 
 export const getFacilitySlugs = gql`      
 query FacilitySlugs {
-    facilities {
+    facilities(pagination: { page: 1, pageSize: 2000 }) {
         data {
             attributes {
                 slug

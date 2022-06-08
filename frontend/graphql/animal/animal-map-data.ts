@@ -3,6 +3,7 @@ import {AnimalJson} from "./animal-json";
 import {Animal} from "./animal";
 import {Entity} from "../../strapi-api/entity/entity";
 import {photoMapData} from "../photo/photo-map-data";
+import {individualAnimalMapData} from "../individual-animal/individual-animal-map-data";
 
 export const animalMapData = (apiData: any):Entity<any>[] =>{
 
@@ -67,15 +68,27 @@ export const animalMapData = (apiData: any):Entity<any>[] =>{
      */
 
     let individual_animals:number[] = [];
-    /*
-    if (undefined !== apiData.attributes.individual_animals) {
 
-        individual_animals = apiData.attributes.individual_animals.data.map((individual_animal) => {
-            return individual_animal.id;
+    if (apiData.attributes.individual_animals) {
+
+        individual_animals = apiData.attributes.individual_animals.data.map((individualAnimalsDatum)=>{
+
+            const individualAnimalsEntities = individualAnimalMapData(individualAnimalsDatum);
+
+            const individualAnimals = individualAnimalsEntities.find((entity)=>{
+                return ('IndividualAnimal' === entity.entityType);
+            });
+
+            for(const entity of individualAnimalsEntities){
+                entities.push(entity);
+            }
+
+            return individualAnimals.id;
+
         });
 
     }
-     */
+
 
     let headerImage:number | null = null;
     if (apiData.attributes.headerImg?.image?.data) {

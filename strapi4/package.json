@@ -10,13 +10,13 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-documentation": "^4.1.7",
-    "@strapi/plugin-graphql": "^4.1.7",
-    "@strapi/plugin-i18n": "4.1.7",
-    "@strapi/plugin-users-permissions": "4.1.7",
-    "@strapi/strapi": "4.1.7",
+    "@strapi/plugin-documentation": "^4.1.12",
+    "@strapi/plugin-graphql": "^4.1.12",
+    "@strapi/plugin-i18n": "4.1.12",
+    "@strapi/plugin-users-permissions": "4.1.12",
+    "@strapi/strapi": "4.1.12",
     "sqlite3": "^4.2.0",
-    "strapi-plugin-deepl": "^0.3.5"
+    "strapi-plugin-deepl": "^0.3.7"
   },
   "author": {
     "name": "A Strapi developer"

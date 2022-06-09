@@ -3,6 +3,7 @@ import {QrCodeById, QrCodes} from "./handler/qr-code/QrCodeById";
 import {IndividualAnimalsBySlug} from "./handler/individual-animal/IndividualAnimalsBySlug";
 import {AnimalsBySlug} from "./handler/animal/AnimalsBySlug";
 import {IndividualAnimals} from "./handler/individual-animal/IndividualAnimals";
+import {Nodes} from "./handler/node/Nodes";
 
 export const handlers = [
 
@@ -706,5 +707,6 @@ export const handlers = [
 
     graphql.query('IndividualAnimals', IndividualAnimals),
 
+    graphql.query('Nodes', Nodes),
 
 ]

@@ -6,12 +6,12 @@ import {Teaser} from 'components/Map/Teaser/Teaser';
 import SearchDialog from 'components/Search/Search';
 import {Warehouse, WarehouseSpore} from 'strapi-api/warehouse/warehouse';
 import {MapProvider} from 'components/Map/Context/MapContext';
-import {getGraphElements} from 'strapi-api/query/graph-elements';
-import {getFacilities} from 'strapi-api/query/facilities';
-import {getMarkers} from 'strapi-api/query/marker';
-import {Facility} from 'strapi-api/entity/facility/facility';
 import {OpenTeaserByHash} from '../components/Map/Teaser/OpenTeaserByHash';
 import styled from '@mui/system/styled';
+import {fetchFacilities} from "../graphql/facilities";
+import {fetchEdges} from "../graphql/edges";
+import {fetchMarkers} from "../graphql/markers";
+import {Facility} from "../graphql/facility/facility";
 
 export interface IndexProps{
     warehouse: WarehouseSpore;
@@ -78,9 +78,9 @@ export default function Index(props:IndexProps) {
 
 export async function getStaticProps(context) {
 
-    await getFacilities();
-    await getGraphElements();
-    await getMarkers();
+    await fetchFacilities()
+    await fetchEdges();
+    await fetchMarkers();
 
     const indexProps:any = {
         warehouse: Warehouse.get().dehydrate()

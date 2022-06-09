@@ -5,6 +5,7 @@ export type EntityType =
     'Photo' |
     'Post' |
     'QrCode' |
+    'Marker' |
     'Node' |
     'Edge' |
     'unkown'

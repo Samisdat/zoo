@@ -1,14 +1,16 @@
-import {Entity} from '../entity';
-import {MarkerSpore} from './marker-spore';
-import {MarkerStrapi} from './marker-strapi';
-import {markerReduceApiData} from './marker-reduce-api-data';
-import {Warehouse} from '../../warehouse/warehouse';
-import {Facility} from "../../../graphql/facility/facility";
+import {Entity, EntityType} from "../../strapi-api/entity/entity";
+import {MarkerJson} from "./marker-json";
+import {Facility} from "../facility/facility";
+import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 
-export class Marker extends Entity<MarkerSpore>{
+export class Marker extends Entity<MarkerJson>{
 
     get id(): number {
         return this.json.id;
+    }
+
+    get entityType(): EntityType {
+        return 'Marker';
     }
 
     get slug(): string {
@@ -23,11 +25,11 @@ export class Marker extends Entity<MarkerSpore>{
         return this.json.y;
     }
 
-    public dehydrate():MarkerSpore {
+    public dehydrate():MarkerJson {
         return this.json;
     }
 
-    static hydrate(dehydrated:MarkerSpore):Marker{
+    static hydrate(dehydrated:MarkerJson):Marker{
 
         const marker = new Marker(dehydrated);
 
@@ -35,15 +37,9 @@ export class Marker extends Entity<MarkerSpore>{
 
     }
 
-    static fromApi(json:MarkerStrapi):Marker{
+    static fromApi(json:any):Marker{
 
-        const dehydrated:MarkerSpore = markerReduceApiData(json);
-
-        const marker = new Marker(dehydrated);
-
-        Warehouse.get().addMarker(marker);
-
-        return marker;
+        return undefined;
 
     }
 

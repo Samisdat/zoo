@@ -8,6 +8,7 @@ import {IndividualAnimal} from "./individual-animal/individual-animal";
 import {Post} from "./post/post";
 import {Node} from "./node/node";
 import {Edge} from "./edge/edge";
+import {Marker} from "./marker/marker";
 
 const addEntityToWarehouse = (entity:Entity<any>):void =>{
 
@@ -45,6 +46,12 @@ const addEntityToWarehouse = (entity:Entity<any>):void =>{
         case 'Post': {
 
             Warehouse.get().addPost(entity as Post);
+
+            break;
+        }
+        case 'Marker': {
+
+            Warehouse.get().addMarker(entity as Marker);
 
             break;
         }

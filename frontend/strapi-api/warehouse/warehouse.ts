@@ -1,5 +1,3 @@
-import {Marker} from '../entity/marker/marker';
-import {MarkerSpore} from '../entity/marker/marker-spore';
 import {PostJson} from "../../graphql/post/post-json";
 import {Post} from "../../graphql/post/post";
 import {PhotoJson} from "../../graphql/photo/photo-json";
@@ -16,11 +14,13 @@ import {Node} from "../../graphql/node/node";
 import {NodeJson} from "../../graphql/node/node-json";
 import {EdgeJson} from "../../graphql/edge/edge-json";
 import {Edge} from "../../graphql/edge/edge";
+import {MarkerJson} from "../../graphql/marker/marker-json";
+import {Marker} from "../../graphql/marker/marker";
 
 export interface WarehouseSpore{
     facilities:FacilityJson[];
     photos:PhotoJson[];
-    markers:MarkerSpore[];
+    markers:MarkerJson[];
     animals: AnimalJson[]
     individualAnimals: IndividualAnimalJson[]
     posts: PostJson[]
@@ -40,7 +40,7 @@ export class Warehouse{
     private photos: Photo[] = [];
 
     private markerIds: number[] = [];
-    private markers:Marker[] = [];
+    private markers: Marker[] = [];
 
     private animalsIds: number[] = [];
     private animals:Animal[] = [];
@@ -198,7 +198,7 @@ export class Warehouse{
 
         if(spore.markers){
 
-            this.markers = spore.markers.map((markerSpore:MarkerSpore)=>{
+            this.markers = spore.markers.map((markerSpore:MarkerJson)=>{
                 this.markerIds.push(markerSpore.id);
                 return Marker.hydrate(markerSpore);
             });

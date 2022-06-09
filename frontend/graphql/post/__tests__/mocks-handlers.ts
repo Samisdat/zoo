@@ -5,6 +5,7 @@ import {AnimalsBySlug} from "./handler/animal/AnimalsBySlug";
 import {IndividualAnimals} from "./handler/individual-animal/IndividualAnimals";
 import {Nodes} from "./handler/node/Nodes";
 import {Edges} from "./handler/edge/Nodes";
+import {Markers} from "./handler/marker/Markers";
 
 export const handlers = [
 
@@ -711,5 +712,7 @@ export const handlers = [
     graphql.query('Nodes', Nodes),
 
     graphql.query('Edges', Edges),
+
+    graphql.query('Markers', Markers),
 
 ]

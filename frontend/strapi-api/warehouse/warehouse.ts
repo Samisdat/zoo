@@ -1,5 +1,3 @@
-import {Edge} from '../entity/edge/edge';
-import {EdgeSpore} from '../entity/edge/edge-spore';
 import {Marker} from '../entity/marker/marker';
 import {MarkerSpore} from '../entity/marker/marker-spore';
 import {PostJson} from "../../graphql/post/post-json";
@@ -16,6 +14,8 @@ import {IndividualAnimalJson} from "../../graphql/individual-animal/individual-a
 import {IndividualAnimal} from "../../graphql/individual-animal/individual-animal";
 import {Node} from "../../graphql/node/node";
 import {NodeJson} from "../../graphql/node/node-json";
+import {EdgeJson} from "../../graphql/edge/edge-json";
+import {Edge} from "../../graphql/edge/edge";
 
 export interface WarehouseSpore{
     facilities:FacilityJson[];
@@ -26,7 +26,7 @@ export interface WarehouseSpore{
     posts: PostJson[]
     qrCodes: QrCodeJson[]
     nodes: NodeJson[]
-    edges: EdgeSpore[]
+    edges: EdgeJson[]
 }
 
 export class Warehouse{
@@ -234,7 +234,7 @@ export class Warehouse{
 
         if(spore.edges){
 
-            this.edges = spore.edges.map((edgesSpore:EdgeSpore)=>{
+            this.edges = spore.edges.map((edgesSpore:EdgeJson)=>{
                 this.edgesIds.push(edgesSpore.id);
                 return Edge.hydrate(edgesSpore);
             });

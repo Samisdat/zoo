@@ -6,6 +6,7 @@ export type EntityType =
     'Post' |
     'QrCode' |
     'Node' |
+    'Edge' |
     'unkown'
 ;
 

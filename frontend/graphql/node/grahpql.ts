@@ -1,7 +1,7 @@
 import {gql} from "@apollo/client";
 import {facilityFragment} from "../facility/grahpql";
 
-const nodeFragment = `
+export const nodeFragment = `
         data {
             id
             attributes {

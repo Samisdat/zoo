@@ -1,14 +1,16 @@
-import {Entity} from '../entity';
-import {EdgeSpore} from './edge-spore';
-import {Warehouse} from '../../warehouse/warehouse';
-import {EdgeStrapi} from './edge-strapi-interface';
-import {edgeReduceApiData} from './edge-reduce-api-data';
-import {Node} from '../node/node';
+import {Entity, EntityType} from "../../strapi-api/entity/entity";
+import {EdgeJson} from "./edge-json";
+import {Warehouse} from "../../strapi-api/warehouse/warehouse";
+import {Node} from "../node/node";
 
-export class Edge extends Entity<EdgeSpore>{
+export class Edge extends Entity<EdgeJson>{
 
     get id(): number {
         return this.json.id;
+    }
+
+    get entityType(): EntityType {
+        return 'Edge';
     }
 
     get IdFromSvg(): string{
@@ -40,23 +42,17 @@ export class Edge extends Entity<EdgeSpore>{
         return Warehouse.get().getNode(this.endNodeRaw);
     }
 
-    static hydrate(dehydrated: EdgeSpore):Edge{
-
-        const qrCode = new Edge(dehydrated);
-
-        return qrCode;
-
-    }
-
-    static fromApi(json: EdgeStrapi):Edge{
-
-        const dehydrated: EdgeSpore = edgeReduceApiData(json);
+    static hydrate(dehydrated: EdgeJson):Edge{
 
         const edge = new Edge(dehydrated);
 
-        Warehouse.get().addEdge(edge);
-
         return edge;
+
+    }
+
+    static fromApi(json: any):Edge{
+
+        return undefined;
 
     }
 }

@@ -7,6 +7,7 @@ import {QrCode} from "./qr-code/qr-code";
 import {IndividualAnimal} from "./individual-animal/individual-animal";
 import {Post} from "./post/post";
 import {Node} from "./node/node";
+import {Edge} from "./edge/edge";
 
 const addEntityToWarehouse = (entity:Entity<any>):void =>{
 
@@ -50,6 +51,12 @@ const addEntityToWarehouse = (entity:Entity<any>):void =>{
         case 'Node': {
 
             Warehouse.get().addNode(entity as Node);
+
+            break;
+        }
+        case 'Edge': {
+
+            Warehouse.get().addEdge(entity as Edge);
 
             break;
         }

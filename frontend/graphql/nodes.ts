@@ -1,12 +1,12 @@
 import {apolloClient} from "./apolloClient";
 
-import {PostJson} from "./post/post-json";
 import {Warehouse} from "../strapi-api/warehouse/warehouse";
 import {addToWarehouse} from "./add-to-warehouse";
 import {getNodes} from "./node/grahpql";
 import {nodeMapData} from "./node/node-map-data";
+import {Node} from "./node/node";
 
-export const fetchNodes = async ():Promise<PostJson[]> => {
+export const fetchNodes = async ():Promise<Node[]> => {
 
     const graphResult = await apolloClient.query({
         query: getNodes

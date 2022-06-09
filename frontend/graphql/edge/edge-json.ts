@@ -1,4 +1,4 @@
-export interface EdgeSpore {
+export interface EdgeJson {
     id:number;
     IdFromSvg: string;
     d: string;

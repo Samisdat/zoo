@@ -1,9 +1,9 @@
 import {IUCN_STATI, IucnStatus} from './iucnStatus';
 import {AnimalJson} from "./animal-json";
 import {Animal} from "./animal";
-import {Entity} from "../../strapi-api/entity/entity";
 import {photoMapData} from "../photo/photo-map-data";
 import {individualAnimalMapData} from "../individual-animal/individual-animal-map-data";
+import {Entity} from "../../entity/entity";
 
 export const animalMapData = (apiData: any):Entity<any>[] =>{
 

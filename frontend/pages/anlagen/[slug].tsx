@@ -1,17 +1,14 @@
 import React from 'react';
 import {getFullGeoJson} from '../api/geojson/list';
-import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import {useRouter} from 'next/router';
 import {BreadcrumbLink} from 'components/Navigation/Breadcrumb';
 import Page from '../../components/Page/Page';
-import {apolloClient} from "../../graphql/apolloClient";
-
-import {getFacilityBySlug, getFacilitySlugs} from "../../graphql/facility/grahpql";
-import {Facility} from "../../graphql/facility/facility";
-import {fetchPostBySlug} from "../../graphql/posts";
-import {fetchFacilityBySlug} from "../../graphql/facilities";
-import {getImagePath} from "../../helper/getImagePath";
-import {Photo} from "../../graphql/photo/photo";
+import {Warehouse} from "../../data/warehouse/warehouse";
+import {Facility} from "../../data/graphql/facility/facility";
+import {Photo} from "../../data/graphql/photo/photo";
+import {fetchFacilityBySlug} from "../../data/graphql/facilities";
+import {apolloClient} from "../../data/graphql/apolloClient";
+import {getFacilitySlugs} from "../../data/graphql/facility/grahpql";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactMarkdown = require('react-markdown')
@@ -39,7 +36,6 @@ export default function Gehege(props) {
             return (animal.headerImage);
 
         });
-
 
         if(undefined !== animalWithImage){
 

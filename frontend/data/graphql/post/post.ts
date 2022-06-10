@@ -1,12 +1,7 @@
+import {Entity, EntityType} from "../../entity/entity";
 import {PostJson} from "./post-json";
-import {Entity, EntityType} from "../../strapi-api/entity/entity";
-//import {Photo} from "../../strapi-api/entity/photo/photo";
-import {Warehouse} from "../../strapi-api/warehouse/warehouse";
-//import {Facility} from "../../strapi-api/entity/facility/facility";
-//import {Animal} from "../../strapi-api/entity/animal/animal";
-//import {IndividualAnimal} from "../../strapi-api/entity/individual-animal/individual-animal";
-import {postMapData} from "./post-map-data";
 import {Photo} from "../photo/photo";
+import {Warehouse} from "../../warehouse/warehouse";
 
 export class Post extends Entity<PostJson>{
 

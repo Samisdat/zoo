@@ -5,11 +5,11 @@ import Moment from 'react-moment';
 
 import {ListItemLink} from './anlagen';
 import {blogUrlPart} from '../constants';
-import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import {BreadcrumbLink} from '../components/Navigation/Breadcrumb';
 import Page from '../components/Page/Page';
-import {fetchPosts} from "../graphql/posts";
-import {Post} from "../graphql/post/post";
+import {Warehouse} from "../data/warehouse/warehouse";
+import {Post} from "../data/graphql/post/post";
+import {fetchPosts} from "../data/graphql/posts";
 
 export default function Blog(props) {
 

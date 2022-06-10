@@ -1,6 +1,5 @@
-import {Warehouse} from "../../strapi-api/warehouse/warehouse";
-import {fetchNodes} from "../nodes";
 import {fetchEdges} from "../edges";
+import {Warehouse} from "../../warehouse/warehouse";
 
 describe('fetchEdges', () => {
 
@@ -12,7 +11,7 @@ describe('fetchEdges', () => {
 
         expect(Warehouse.get().getEdges().length).toBe(340);
 
-        console.log(Warehouse.get().getNodes().length);
+        expect(Warehouse.get().getNodes().length).toBe(230);
 
     });
 

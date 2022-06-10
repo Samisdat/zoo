@@ -1,8 +1,8 @@
-import {Entity, EntityType} from "../../strapi-api/entity/entity";
 import {IndividualAnimalJson} from "./individual-animal-json";
 import {Animal} from "../animal/animal";
-import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 import {Photo} from "../photo/photo";
+import {Entity, EntityType} from "../../entity/entity";
+import {Warehouse} from "../../warehouse/warehouse";
 
 export class IndividualAnimal extends Entity<IndividualAnimalJson>{
 

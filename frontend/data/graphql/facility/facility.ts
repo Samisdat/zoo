@@ -1,10 +1,10 @@
 import {FacilityJson, FacilityType} from './facility-json';
-
-import {Entity, EntityType} from "../../strapi-api/entity/entity";
+import {Entity, EntityType} from "../../entity/entity";
 import {Photo} from "../photo/photo";
-import {Warehouse} from "../../strapi-api/warehouse/warehouse";
-import {Marker} from "../../strapi-api/entity/marker/marker";
+import {Warehouse} from "../../warehouse/warehouse";
 import {Animal} from "../animal/animal";
+import {Marker} from "../marker/marker";
+
 
 export class Facility extends Entity<FacilityJson>{
 

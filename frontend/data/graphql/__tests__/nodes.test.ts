@@ -1,5 +1,5 @@
-import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 import {fetchNodes} from "../nodes";
+import {Warehouse} from "../../warehouse/warehouse";
 
 describe('fetchNodes', () => {
 
@@ -10,8 +10,6 @@ describe('fetchNodes', () => {
         await fetchNodes();
 
         expect(Warehouse.get().getNodes().length).toBe(247);
-
-        console.log(Warehouse.get().getNodes()[0]);
 
     });
 

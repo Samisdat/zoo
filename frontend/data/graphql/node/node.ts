@@ -1,7 +1,7 @@
-import {Entity, EntityType} from "../../strapi-api/entity/entity";
 import {NodeJson} from "./node-json";
 import {Facility} from "../facility/facility";
-import {Warehouse} from "../../strapi-api/warehouse/warehouse";
+import {Entity, EntityType} from "../../entity/entity";
+import {Warehouse} from "../../warehouse/warehouse";
 
 export class Node extends Entity<NodeJson>{
 

@@ -1,7 +1,7 @@
 import {EdgeJson} from "./edge-json";
-import {Entity} from "../../strapi-api/entity/entity";
 import {Edge} from "./edge";
 import {nodeMapData} from "../node/node-map-data";
+import {Entity} from "../../entity/entity";
 
 export const edgeMapData = (apiData: any):Entity<any>[] => {
 

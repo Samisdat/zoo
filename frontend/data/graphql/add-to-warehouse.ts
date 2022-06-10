@@ -1,5 +1,3 @@
-import {Entity} from "../strapi-api/entity/entity";
-import {Warehouse} from "../strapi-api/warehouse/warehouse";
 import {Animal} from "./animal/animal";
 import {Facility} from "./facility/facility";
 import {Photo} from "./photo/photo";
@@ -9,6 +7,8 @@ import {Post} from "./post/post";
 import {Node} from "./node/node";
 import {Edge} from "./edge/edge";
 import {Marker} from "./marker/marker";
+import {Entity} from "data/entity/entity";
+import {Warehouse} from "../warehouse/warehouse";
 
 const addEntityToWarehouse = (entity:Entity<any>):void =>{
 

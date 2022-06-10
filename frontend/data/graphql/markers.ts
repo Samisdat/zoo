@@ -1,11 +1,10 @@
 import {apolloClient} from "./apolloClient";
 
-import {Warehouse} from "../strapi-api/warehouse/warehouse";
 import {addToWarehouse} from "./add-to-warehouse";
-import {nodeMapData} from "./node/node-map-data";
 import {getMarkers} from "./marker/grahpql";
 import {Marker} from "./marker/marker";
 import {markerMapData} from "./marker/marker-map-data";
+import {Warehouse} from "../warehouse/warehouse";
 
 export const fetchMarkers = async ():Promise<Marker[]> => {
 

@@ -6,16 +6,16 @@ import {default as MuiPaper} from '@mui/material/Paper';
 import {styled} from '@mui/material/styles';
 
 import {getFullGeoJson} from '../api/geojson/list';
-import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import {BreadcrumbLink} from 'components/Navigation/Breadcrumb';
 import {DistributionGlobe} from 'components/Distribution/DistributionGlobe';
 import {Profile} from 'components/Animal/Profile/Profile';
 import {IucnRedList} from 'components/Animal/IucnRedList';
 import Page from '../../components/Page/Page';
-import {Animal} from "../../graphql/animal/animal";
-import {apolloClient} from "../../graphql/apolloClient";
-import {getAnimalsSlugs} from "../../graphql/animal/grahpql";
-import {fetchAnimalBySlug} from "../../graphql/animals";
+import {Warehouse} from "../../data/warehouse/warehouse";
+import {Animal} from "../../data/graphql/animal/animal";
+import {fetchAnimalBySlug} from "../../data/graphql/animals";
+import {apolloClient} from "../../data/graphql/apolloClient";
+import {getAnimalsSlugs} from "../../data/graphql/animal/grahpql";
 
 export const Root = styled('div')(({ theme }) => ({
     flexGrow: 1,

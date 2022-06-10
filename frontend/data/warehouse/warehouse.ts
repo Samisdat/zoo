@@ -1,21 +1,22 @@
-import {PostJson} from "../../graphql/post/post-json";
-import {Post} from "../../graphql/post/post";
-import {PhotoJson} from "../../graphql/photo/photo-json";
-import {Photo} from "../../graphql/photo/photo";
-import {FacilityJson} from "../../graphql/facility/facility-json";
-import {Facility} from "../../graphql/facility/facility";
-import {Animal} from "../../graphql/animal/animal";
-import {AnimalJson} from "../../graphql/animal/animal-json";
-import {QrCodeJson} from "../../graphql/qr-code/qr-code-json";
-import {QrCode} from "../../graphql/qr-code/qr-code";
-import {IndividualAnimalJson} from "../../graphql/individual-animal/individual-animal-json";
-import {IndividualAnimal} from "../../graphql/individual-animal/individual-animal";
-import {Node} from "../../graphql/node/node";
-import {NodeJson} from "../../graphql/node/node-json";
-import {EdgeJson} from "../../graphql/edge/edge-json";
-import {Edge} from "../../graphql/edge/edge";
-import {MarkerJson} from "../../graphql/marker/marker-json";
-import {Marker} from "../../graphql/marker/marker";
+import {FacilityJson} from "../graphql/facility/facility-json";
+import {PhotoJson} from "../graphql/photo/photo-json";
+import {MarkerJson} from "../graphql/marker/marker-json";
+import {AnimalJson} from "../graphql/animal/animal-json";
+import {IndividualAnimalJson} from "../graphql/individual-animal/individual-animal-json";
+import {PostJson} from "../graphql/post/post-json";
+import {QrCodeJson} from "../graphql/qr-code/qr-code-json";
+import {NodeJson} from "../graphql/node/node-json";
+import {EdgeJson} from "../graphql/edge/edge-json";
+import {Facility} from "../graphql/facility/facility";
+import {Photo} from "../graphql/photo/photo";
+import {Marker} from "../graphql/marker/marker";
+import {Animal} from "../graphql/animal/animal";
+import {IndividualAnimal} from "../graphql/individual-animal/individual-animal";
+import {Post} from "../graphql/post/post";
+import {QrCode} from "../graphql/qr-code/qr-code";
+import {Node} from "../graphql/node/node";
+import {Edge} from "../graphql/edge/edge";
+
 
 export interface WarehouseSpore{
     facilities:FacilityJson[];

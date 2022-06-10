@@ -1,5 +1,5 @@
-import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 import {fetchMarkers} from "../markers";
+import {Warehouse} from "../../warehouse/warehouse";
 
 describe('fetchMarkers', () => {
 

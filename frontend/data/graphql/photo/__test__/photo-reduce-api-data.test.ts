@@ -1,4 +1,3 @@
-import {Photo} from '../photo';
 import {getFixture} from '../../fixtures/get-fixture';
 import {PhotoJson} from '../photo-spore';
 import {reducePhotoApiData} from '../photo-reduce-api-data';

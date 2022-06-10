@@ -1,11 +1,11 @@
 import React from 'react';
 import {useRouter} from 'next/router';
-import {Warehouse} from 'strapi-api/warehouse/warehouse';
 
 import QRCode from 'react-qr-code';
 import {domain, protocol, qrCodeUrlPart} from '../../../constants';
-import {fetchQrCodeById, fetchQrCodes} from "../../../graphql/qr-codes";
-import {QrCode} from "../../../graphql/qr-code/qr-code";
+import {Warehouse} from "../../../data/warehouse/warehouse";
+import {fetchQrCodeById, fetchQrCodes} from "../../../data/graphql/qr-codes";
+import {QrCode} from "../../../data/graphql/qr-code/qr-code";
 
 export default function Index(props) {
 

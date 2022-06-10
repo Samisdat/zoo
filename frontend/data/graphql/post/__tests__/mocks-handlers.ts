@@ -1,4 +1,4 @@
-import { graphql } from 'msw'
+import {graphql} from 'msw'
 import {QrCodeById, QrCodes} from "./handler/qr-code/QrCodeById";
 import {IndividualAnimalsBySlug} from "./handler/individual-animal/IndividualAnimalsBySlug";
 import {AnimalsBySlug} from "./handler/animal/AnimalsBySlug";

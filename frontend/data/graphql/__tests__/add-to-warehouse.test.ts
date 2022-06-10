@@ -1,11 +1,7 @@
-import {fetchPostBySlug, fetchPosts} from "../posts";
-import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 import {fetchAnimalBySlug} from "../animals";
-import {AnimalJson, AnimalProfileStrapi} from "../animal/animal-json";
-import {IucnStatus} from "../animal/iucnStatus";
 import {Animal} from "../animal/animal";
 import {addToWarehouse} from "../add-to-warehouse";
-import {Entity} from "../../strapi-api/entity/entity";
+import {Warehouse} from "../../warehouse/warehouse";
 
 describe('fetchAnimalBySlug', () => {
 

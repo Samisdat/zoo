@@ -3,31 +3,9 @@ import {apolloClient} from "./apolloClient";
 import {PostJson} from "./post/post-json";
 import {getPosts, getPostsBySlug} from "./post/grahpql";
 import {Post} from "./post/post";
-import {Warehouse} from "../strapi-api/warehouse/warehouse";
-import {Photo} from "./photo/photo";
 import {postMapData} from "./post/post-map-data";
 import {addToWarehouse} from "./add-to-warehouse";
-import {animalMapData} from "./animal/animal-map-data";
-
-const addPostToWarehouse = (post:Post, graphPost:any) => {
-
-    if(post.id){
-
-        Warehouse.get().addPost(post);
-
-        if(post.headerImageRaw){
-
-            const photo = Photo.fromApi(graphPost.attributes?.headerImg?.image?.data);
-
-            if(false === Warehouse.get().hasPhoto(photo.id)){
-                Warehouse.get().addPhoto(photo);
-            }
-
-        }
-
-    }
-
-}
+import {Warehouse} from "../warehouse/warehouse";
 
 export const fetchPostBySlug = async (slug: string):Promise<Post> => {
 

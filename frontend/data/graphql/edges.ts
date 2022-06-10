@@ -1,10 +1,10 @@
 import {apolloClient} from "./apolloClient";
 
-import {Warehouse} from "../strapi-api/warehouse/warehouse";
 import {addToWarehouse} from "./add-to-warehouse";
 import {Edge} from "./edge/edge";
 import {getEdges} from "./edge/grahpql";
 import {edgeMapData} from "./edge/edge-map-data";
+import {Warehouse} from "../warehouse/warehouse";
 
 export const fetchEdges = async ():Promise<Edge[]> => {
 

@@ -1,14 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import {useRouter} from 'next/router';
 import {Breadcrumb, BreadcrumbLink} from 'components/Navigation/Breadcrumb';
 import Container from '@mui/material/Container';
-import {getPhotoById, getPhotos} from '../../strapi-api/query/photos';
-import {Photo} from '../../strapi-api/entity/photo/photo';
 import {FocalPointPicker} from '../../components/FocalPoint/Picker';
 import {FocalPointImage} from '../../components/FocalPoint/Image';
 import {Position} from '../../components/Map/Context/MapContext';
-import {getStrapi3Url, getStrapiUrl} from '../../strapi-api/utils/get-strapi-url';
+import {Warehouse} from "../../data/warehouse/warehouse";
+import {getStrapiUrl} from "../../data/utils/get-strapi-url";
+import {Photo} from "../../data/graphql/photo/photo";
 
 export default function PhotoPage(props) {
 
@@ -110,7 +109,7 @@ export async function getStaticProps(context) {
 
     const slugParam = context.params.id
 
-    await getPhotoById(slugParam);
+    //await getPhotoById(slugParam);
 
     return {
         props: {
@@ -122,7 +121,9 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
 
-    const photos = await getPhotos();
+    //const photos = await getPhotos();
+
+    const photos:Photo[] = [];
 
     const ids = photos.map((photo:Photo)=>{
         return {

@@ -1,9 +1,4 @@
-import {getRootFixture} from '../../entity/fixtures/get-fixture';
-
-jest.mock('node-fetch');
-import fetch from 'node-fetch';
-import {Warehouse} from '../warehouse';
-const { Response } = jest.requireActual('node-fetch');
+import {Warehouse} from "@data/warehouse/warehouse";
 
 describe('warehouse', ()=>{
 

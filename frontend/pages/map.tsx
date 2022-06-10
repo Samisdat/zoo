@@ -4,14 +4,14 @@ import {Map} from 'components/Map/Map';
 import {Teaser} from 'components/Map/Teaser/Teaser';
 
 import SearchDialog from 'components/Search/Search';
-import {Warehouse, WarehouseSpore} from 'strapi-api/warehouse/warehouse';
 import {MapProvider} from 'components/Map/Context/MapContext';
 import {OpenTeaserByHash} from '../components/Map/Teaser/OpenTeaserByHash';
 import styled from '@mui/system/styled';
-import {fetchFacilities} from "../graphql/facilities";
-import {fetchEdges} from "../graphql/edges";
-import {fetchMarkers} from "../graphql/markers";
-import {Facility} from "../graphql/facility/facility";
+import {Warehouse, WarehouseSpore} from "../data/warehouse/warehouse";
+import {Facility} from "../data/graphql/facility/facility";
+import {fetchFacilities} from "../data/graphql/facilities";
+import {fetchEdges} from "../data/graphql/edges";
+import {fetchMarkers} from "../data/graphql/markers";
 
 export interface IndexProps{
     warehouse: WarehouseSpore;

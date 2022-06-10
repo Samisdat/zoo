@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react';
 import {useRouter} from 'next/router';
-import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import CircularProgress from '@mui/material/CircularProgress';
 import {useViewport} from 'components/viewport/useViewport';
 import {PositionInterface   } from 'components/Map/Context/MapContext';
 import {setMarkerToStorage} from 'components/Map/setMarkerToStorage';
 import {styled} from '@mui/material/styles';
-import {fetchQrCodeById, fetchQrCodes} from "../../../graphql/qr-codes";
-import {QrCode} from "../../../graphql/qr-code/qr-code";
+import {Warehouse} from "../../../data/warehouse/warehouse";
+import {fetchQrCodeById, fetchQrCodes} from "../../../data/graphql/qr-codes";
+import {QrCode} from "../../../data/graphql/qr-code/qr-code";
 
 const Centered = styled('div')({
     position: 'absolute',

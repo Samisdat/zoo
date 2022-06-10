@@ -1,8 +1,8 @@
-import {Entity, EntityType} from "../../strapi-api/entity/entity";
 import {QrCodeJson} from "./qr-code-json";
 import {Facility} from "../facility/facility";
-import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 import {Animal} from "../animal/animal";
+import {Entity, EntityType} from "../../entity/entity";
+import {Warehouse} from "../../warehouse/warehouse";
 
 export class QrCode extends Entity<QrCodeJson>{
 

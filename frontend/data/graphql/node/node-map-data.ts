@@ -1,7 +1,7 @@
-import {Entity} from "../../strapi-api/entity/entity";
 import {Node} from "./node";
 import {NodeJson} from "./node-json";
 import {facilityMapData} from "../facility/facility-map-data";
+import {Entity} from "../../entity/entity";
 
 export const nodeMapData = (apiData: any):Entity<any>[] => {
 

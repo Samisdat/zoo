@@ -1,16 +1,16 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Moment from 'react-moment';
-import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import {useRouter} from 'next/router';
 import {BreadcrumbLink} from 'components/Navigation/Breadcrumb';
 import Typography from '@mui/material/Typography';
 import {Large} from '../../components/viewport/Large';
 import {Small} from '../../components/viewport/Small';
 import Page from '../../components/Page/Page';
-import {apolloClient} from "../../graphql/apolloClient";
-import {Post} from "../../graphql/post/post";
-import {fetchPostBySlug} from "../../graphql/posts";
-import {getPostSlugs} from "../../graphql/post/grahpql";
+import {Warehouse} from "../../data/warehouse/warehouse";
+import {Post} from "../../data/graphql/post/post";
+import {fetchPostBySlug} from "../../data/graphql/posts";
+import {apolloClient} from "../../data/graphql/apolloClient";
+import {getPostSlugs} from "../../data/graphql/post/grahpql";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactMarkdown = require('react-markdown')

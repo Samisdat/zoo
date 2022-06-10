@@ -1,10 +1,10 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import {Warehouse} from '../strapi-api/warehouse/warehouse';
 import {useViewport} from '../components/viewport/useViewport';
 import Page from '../components/Page/Page';
 import {BreadcrumbLink} from '../components/Navigation/Breadcrumb';
+import {Warehouse} from "../data/warehouse/warehouse";
 
 export default function Index(props) {
 

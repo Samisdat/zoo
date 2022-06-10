@@ -1,9 +1,9 @@
 import {apolloClient} from "./apolloClient";
 import {addToWarehouse} from "./add-to-warehouse";
-import {Warehouse} from "../strapi-api/warehouse/warehouse";
 import {getIndividualAnimalBySlug, getIndividualAnimals} from "./individual-animal/grahpql";
 import {individualAnimalMapData} from "./individual-animal/individual-animal-map-data";
 import {IndividualAnimal} from "./individual-animal/individual-animal";
+import {Warehouse} from "../warehouse/warehouse";
 
 export const fetchIndividualAnimalBySlug = async (slug: string):Promise<IndividualAnimal> => {
 
@@ -17,8 +17,6 @@ export const fetchIndividualAnimalBySlug = async (slug: string):Promise<Individu
     const individualAnimal = individualAnimalMapData(datum);
 
     addToWarehouse(individualAnimal);
-
-
 
     return Warehouse.get().getIndividualAnimal(
         parseInt(datum.id,10)

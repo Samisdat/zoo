@@ -4,9 +4,8 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 
 import {ListItemLink} from './anlagen';
-import {Warehouse} from 'strapi-api/warehouse/warehouse';
-import {getPhotos} from '../strapi-api/query/photos';
-import {Photo} from '../strapi-api/entity/photo/photo';
+import {Warehouse} from "../data/warehouse/warehouse";
+import {Photo} from "../data/graphql/photo/photo";
 
 export default function Photos(props) {
 
@@ -36,7 +35,7 @@ export default function Photos(props) {
 
 export async function getStaticProps({ params, preview = false, previewData }) {
 
-    await getPhotos();
+    //await getPhotos();
 
     return {
         props: {

@@ -1,9 +1,9 @@
 import React from 'react';
-import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import {FilteredNavigationList} from 'components/Animals/Filter/FilteredNavigationList';
 import {BreadcrumbLink} from 'components/Navigation/Breadcrumb';
 import Page from '../components/Page/Page';
-import {fetchAnimals} from "../graphql/animals";
+import {Warehouse} from "../data/warehouse/warehouse";
+import {fetchAnimals} from "../data/graphql/animals";
 
 export default function Index(props) {
 

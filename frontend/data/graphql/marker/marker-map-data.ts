@@ -1,7 +1,7 @@
-import {Entity} from "../../strapi-api/entity/entity";
 import {MarkerJson} from "./marker-json";
 import {facilityMapData} from "../facility/facility-map-data";
 import {Marker} from "./marker";
+import {Entity} from "../../entity/entity";
 
 export const markerMapData = (apiData: any):Entity<any>[] => {
 

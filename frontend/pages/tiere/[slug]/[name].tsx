@@ -1,10 +1,10 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Typography from '@mui/material/Typography';
+import {Warehouse} from "../../../data/warehouse/warehouse";
+import {IndividualAnimal} from "../../../data/graphql/individual-animal/individual-animal";
+import {fetchIndividualAnimalBySlug, fetchIndividualAnimals} from "../../../data/graphql/individual-animals";
 
-import {Warehouse} from 'strapi-api/warehouse/warehouse';
-import {IndividualAnimal} from "../../../graphql/individual-animal/individual-animal";
-import {fetchIndividualAnimalBySlug, fetchIndividualAnimals} from "../../../graphql/individual-animals";
 
 export default function Individuum(props) {
 

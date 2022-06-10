@@ -7,11 +7,11 @@ module.exports = {
     '<rootDir>/pages',
     '<rootDir>/helper',
     '<rootDir>/data-repos',
-    '<rootDir>/graphql'
+    '<rootDir>/data/graphql'
   ],
   setupFilesAfterEnv: [
       '<rootDir>/setupTests.ts',
-      '<rootDir>/graphql/post/__tests__/setupTests.ts'
+      '<rootDir>/data/graphql/post/__tests__/setupTests.ts'
   ],
   globals: {
     'ts-jest': {

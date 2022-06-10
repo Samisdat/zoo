@@ -1,10 +1,9 @@
 import {apolloClient} from "./apolloClient";
-
-import {getAnimalBySlug, getAnimals} from "./animal/grahpql";
-import {addToWarehouse} from "./add-to-warehouse";
-import {animalMapData} from "./animal/animal-map-data";
-import {Warehouse} from "../strapi-api/warehouse/warehouse";
 import {Animal} from "./animal/animal";
+import {getAnimalBySlug, getAnimals} from "./animal/grahpql";
+import {animalMapData} from "./animal/animal-map-data";
+import {addToWarehouse} from "./add-to-warehouse";
+import {Warehouse} from "../warehouse/warehouse";
 
 export const fetchAnimalBySlug = async (slug: string):Promise<Animal> => {
 

@@ -1,31 +1,10 @@
 import {apolloClient} from "./apolloClient";
 
-import {Warehouse} from "../strapi-api/warehouse/warehouse";
-import {Photo} from "./photo/photo";
 import {Facility} from "./facility/facility";
 import {getFacilities, getFacilityBySlug} from "./facility/grahpql";
 import {facilityMapData} from "./facility/facility-map-data";
 import {addToWarehouse} from "./add-to-warehouse";
-import {animalMapData} from "./animal/animal-map-data";
-
-const addFacilityToWarehouse = (facility:Facility, graphFacility:any) => {
-
-    if(facility.id){
-
-        Warehouse.get().addFacility(facility);
-
-        if(facility.headerImageRaw){
-            const photo = Photo.fromApi(graphFacility.attributes?.headerImg?.image?.data);
-
-            if(false === Warehouse.get().hasPhoto(photo.id)){
-                Warehouse.get().addPhoto(photo);
-            }
-
-        }
-
-    }
-
-}
+import {Warehouse} from "../warehouse/warehouse";
 
 export const fetchFacilityBySlug = async (slug: string):Promise<Facility|undefined> => {
 

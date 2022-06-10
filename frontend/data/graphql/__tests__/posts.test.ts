@@ -1,5 +1,5 @@
 import {fetchPostBySlug, fetchPosts} from "../posts";
-import {Warehouse} from "../../strapi-api/warehouse/warehouse";
+import {Warehouse} from "../../warehouse/warehouse";
 
 describe('fetchPostBySlug', () => {
 

@@ -1,14 +1,14 @@
 import React from 'react';
 import ListItem from '@mui/material/ListItem';
 import {facilityUrlPart} from '../constants';
-import {Warehouse} from 'strapi-api/warehouse/warehouse';
 import {NavigationList} from 'components/NavigationList/NavigationList';
 import {groupByFirstLetter} from 'components/NavigationList/groupByFirstLetter';
 import {getImagePath} from '../helper/getImagePath';
 import {NavigationListItemInterface} from 'components/NavigationList/NavigationListInterfaces';
 import {BreadcrumbLink} from '../components/Navigation/Breadcrumb';
 import Page from '../components/Page/Page';
-import {fetchFacilities} from "../graphql/facilities";
+import {fetchFacilities} from "../data/graphql/facilities";
+import {Warehouse} from "../data/warehouse/warehouse";
 
 export const ListItemLink = (props)  => {
     return <ListItem button component="a" {...props} />;

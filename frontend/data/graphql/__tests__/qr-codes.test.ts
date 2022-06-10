@@ -1,5 +1,5 @@
-import {Warehouse} from "../../strapi-api/warehouse/warehouse";
 import {fetchQrCodeById, fetchQrCodes} from "../qr-codes";
+import {Warehouse} from "../../warehouse/warehouse";
 
 describe('QR Code', () => {
 
@@ -56,8 +56,6 @@ describe('QR Code', () => {
             await fetchQrCodes();
 
             expect(Warehouse.get().getQrCodes().length).toBe(2);
-
-            console.log(Warehouse.get().dehydrate())
 
         });
 

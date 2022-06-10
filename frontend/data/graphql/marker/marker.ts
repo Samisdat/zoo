@@ -1,7 +1,7 @@
-import {Entity, EntityType} from "../../strapi-api/entity/entity";
+import {Entity, EntityType} from "../../entity/entity";
 import {MarkerJson} from "./marker-json";
 import {Facility} from "../facility/facility";
-import {Warehouse} from "../../strapi-api/warehouse/warehouse";
+import {Warehouse} from "../../warehouse/warehouse";
 
 export class Marker extends Entity<MarkerJson>{
 

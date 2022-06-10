@@ -1,11 +1,9 @@
-
-
-import {Warehouse} from "../strapi-api/warehouse/warehouse";
 import {getQrcodeBySlug, getQrCodes} from "./qr-code/graphql";
 import {qrCodeMapData} from "./qr-code/qr-code-map-data";
 import {QrCode} from "./qr-code/qr-code";
 import {addToWarehouse} from "./add-to-warehouse";
 import {apolloClient} from "./apolloClient";
+import {Warehouse} from "../warehouse/warehouse";
 
 export const fetchQrCodeById = async (id: number):Promise<QrCode|undefined> => {
 
@@ -15,8 +13,6 @@ export const fetchQrCodeById = async (id: number):Promise<QrCode|undefined> => {
     });
 
     //console.log(JSON.stringify(graphResult, null, 4));
-
-
     const datum = graphResult.data.qrCode.data;
 
     const qrCode = qrCodeMapData(datum);

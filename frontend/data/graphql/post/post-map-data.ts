@@ -1,8 +1,7 @@
 import {PostJson} from "./post-json";
-import {Entity} from "../../strapi-api/entity/entity";
-import {Animal} from "../animal/animal";
 import {Post} from "./post";
 import {photoMapData} from "../photo/photo-map-data";
+import {Entity} from "../../entity/entity";
 
 export const postMapData = (apiData: any):Entity<any>[] =>{
 

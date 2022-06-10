@@ -1,5 +1,5 @@
-import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
-import {protocol, strapi} from "../constants";
+import {ApolloClient, HttpLink, InMemoryCache} from '@apollo/client'
+import {protocol, strapi} from "../../constants";
 
 import fetch from 'cross-fetch'
 

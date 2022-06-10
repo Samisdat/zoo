@@ -1,8 +1,8 @@
-import {Entity, EntityType} from "../../strapi-api/entity/entity";
+import {Entity, EntityType} from "../../entity/entity";
 import {PhotoJson, PhotoSize} from "./photo-json";
-import {Warehouse} from "../../strapi-api/warehouse/warehouse";
-import {Position} from "../../components/Map/Context/MapContext";
+import {Position} from "../../../components/Map/Context/MapContext";
 import {photoMapData} from "./photo-map-data";
+
 
 export class Photo extends Entity<PhotoJson>{
 

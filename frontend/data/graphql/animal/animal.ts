@@ -1,12 +1,12 @@
-
 import {AnimalJson} from './animal-json';
 
 import {IucnStatus} from './iucnStatus';
-import {Entity, EntityType} from "../../strapi-api/entity/entity";
+import {Entity, EntityType} from "../../entity/entity";
 import {Photo} from "../photo/photo";
-import {Warehouse} from "../../strapi-api/warehouse/warehouse";
-import {Facility} from "../facility/facility";
+import {Warehouse} from "../../warehouse/warehouse";
 import {IndividualAnimal} from "../individual-animal/individual-animal";
+import {Facility} from "../facility/facility";
+
 
 export class Animal extends Entity<AnimalJson>{
 

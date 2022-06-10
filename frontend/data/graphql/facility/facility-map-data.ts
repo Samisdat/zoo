@@ -1,8 +1,8 @@
 import {FacilityJson} from './facility-json';
-import {Entity} from "../../strapi-api/entity/entity";
 import {photoMapData} from "../photo/photo-map-data";
 import {Facility} from "./facility";
 import {animalMapData} from "../animal/animal-map-data";
+import {Entity} from "../../entity/entity";
 
 export const facilityMapData = (apiData: any):Entity<any>[] => {
 

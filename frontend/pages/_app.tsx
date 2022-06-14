@@ -15,16 +15,10 @@ import createEmotionCache from '../src/createEmotionCache';
 import {ViewportProvider} from 'components/viewport/ViewportProvider';
 import {Navigation} from 'components/Navigation/Navigation';
 import {navigationCategories} from 'components/Navigation/NavigationCategory';
-import Container from '@mui/material/Container';
-import {styled} from '@mui/system';
 import {useRouter} from 'next/router';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
-
-import { grey } from '@mui/material/colors';
-import {Footer} from '../components/Navigation/Footer';
-
 
 
 const LayoutContainer = (props) => {

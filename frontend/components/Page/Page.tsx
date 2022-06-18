@@ -20,7 +20,7 @@ const Bg = styled('div')(({ theme }) => ({
     backgroundColor: grey[200],
 }));
 
-const Content = styled(Container)(({ theme }) => ({
+export const Content = styled(Container)(({ theme }) => ({
     /*
     [theme.breakpoints.up('xs')]: {
         backgroundColor: 'Salmon',

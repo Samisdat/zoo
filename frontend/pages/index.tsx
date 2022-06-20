@@ -1,115 +1,93 @@
-import React from 'react';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import {useViewport} from '../components/viewport/useViewport';
-import Page from '../components/Page/Page';
-import {BreadcrumbLink} from '../components/Navigation/Breadcrumb';
-import {Warehouse} from "../data/warehouse/warehouse";
+import React, {useEffect, useState} from 'react';
 
-export default function Index(props) {
+import {Map} from 'components/Map/Map';
+import {Teaser} from 'components/Map/Teaser/Teaser';
 
-    const {width} = useViewport();
+import SearchDialog from 'components/Search/Search';
+import {MapProvider} from 'components/Map/Context/MapContext';
+import {OpenTeaserByHash} from '../components/Map/Teaser/OpenTeaserByHash';
+import styled from '@mui/system/styled';
+import {Warehouse, WarehouseSpore} from "../data/warehouse/warehouse";
+import {Facility} from "../data/graphql/facility/facility";
+import {fetchFacilities} from "../data/graphql/facilities";
+import {fetchEdges} from "../data/graphql/edges";
+import {fetchMarkers} from "../data/graphql/markers";
+
+export interface IndexProps{
+    warehouse: WarehouseSpore;
+}
+
+const FullSize = styled('div')({
+    position: 'fixed',
+    width:'100%',
+    height:'100%',
+});
+
+export default function Index(props:IndexProps) {
 
     Warehouse.get().hydrate(props.warehouse);
 
-    const headerImage = Warehouse.get().getPhoto(32);
+    const nodes = Warehouse.get().getNodes();
+    const edges = Warehouse.get().getEdges();
 
-    const breadcrumbLinks:BreadcrumbLink[] = [
-        {
-            href: '/tiere',
-            title: 'Tiere',
-            icon: 'pet',
-        },
-        {
-            href: '/foo',
-            title: 'Bar',
-        },
-    ];
+    const eingang = nodes.find((node)=>{
+        return '0001_end' === node.idFromEdges;
+    });
+
+    console.log(eingang);
+    console.log('@TODO', 'boundingBox', 'as default focus');
+
+    const markers = Warehouse.get().getMarkers();
+    console.log(markers);
+    const facilities = Warehouse.get().getFacilities();
+    console.log(facilities);
+    const [teaser, setTeaser] = useState<Facility>(undefined);
+
+    useEffect(() => {
+
+        //console.log(teaser)
+
+    },[teaser]);
 
     return (
-        <Page
-            headerImage={headerImage}
-            breadcrumb={breadcrumbLinks}
-        >
-            <Box sx={{ width: '100%'}}>
-                <Typography variant="h1" component="h1" gutterBottom>
-                    h1. Heading
-                </Typography>
-                <Typography variant="h2" gutterBottom component="div">
-                    h2. Heading
-                </Typography>
-                <Typography variant="h3" gutterBottom component="div">
-                    h3. Heading
-                </Typography>
-                <Typography variant="h4" gutterBottom component="div">
-                    h4. Heading
-                </Typography>
-                <Typography variant="h5" gutterBottom component="div">
-                    h5. Heading
-                </Typography>
-                <Typography variant="h6" gutterBottom component="div">
-                    h6. Heading
-                </Typography>
-                <Typography variant="subtitle1" gutterBottom component="div">
-                    subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                    blanditiis tenetur
-                </Typography>
-                <Typography variant="subtitle2" gutterBottom component="div">
-                    subtitle2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                    blanditiis tenetur
-                </Typography>
-                <Typography variant="body1" gutterBottom>
-                    body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                    blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
-                    neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
-                    quasi quidem quibusdam.
-                </Typography>
-                <Typography variant="body1" gutterBottom>
-                    body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                    blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
-                    neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
-                    quasi quidem quibusdam.
-                </Typography>
-                <Typography variant="body1" gutterBottom>
-                    body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                    blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
-                    neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
-                    quasi quidem quibusdam.
-                </Typography>
-                <Typography variant="body1" gutterBottom>
-                    body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                    blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
-                    neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
-                    quasi quidem quibusdam.
-                </Typography>
-                <Typography variant="body2" gutterBottom>
-                    body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                    blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
-                    neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
-                    quasi quidem quibusdam.
-                </Typography>
-                <Typography variant="button" display="block" gutterBottom>
-                    button text
-                </Typography>
-                <Typography variant="caption" display="block" gutterBottom>
-                    caption text
-                </Typography>
-                <Typography variant="overline" display="block" gutterBottom>
-                    overline text
-                </Typography>
-            </Box>
+        <MapProvider>
+            <FullSize>
+                <OpenTeaserByHash
+                    facilities={facilities}
+                />
+                {/* */}
+                <Map
+                    fullsize={true}
+                    markers={markers}
+                    facilities={facilities}
+                    nodes={nodes}
+                    edges={edges}
+                />
 
-        </Page>
-
+                {/* */}
+                <SearchDialog
+                    facilities={facilities}
+                />
+                <Teaser/>
+                {/*
+                */}
+            </FullSize>
+        </MapProvider>
     );
 
 }
 
 export async function getStaticProps(context) {
 
+    await fetchFacilities()
+    await fetchEdges();
+    await fetchMarkers();
+
+    const indexProps:any = {
+        warehouse: Warehouse.get().dehydrate()
+    };
+
     return {
-        props: {
-            warehouse: Warehouse.get().dehydrate()
-        }
+        props: indexProps
     }
 }

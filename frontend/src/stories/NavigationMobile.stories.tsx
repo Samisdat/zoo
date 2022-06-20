@@ -3,19 +3,22 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import {navigationCategories} from "../../components/Navigation/NavigationCategory";
 import {NavigationMobile} from "../../components/Navigation/Mobile";
 
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+
+console.log(INITIAL_VIEWPORTS);
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Component/NavigationMobile',
-  component: NavigationMobile,
+    title: 'Component/Navigation',
+    component: NavigationMobile,
 } as ComponentMeta<typeof NavigationMobile>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof NavigationMobile> = (args) => <NavigationMobile {...args} />;
 
-export const Navigation = Template.bind({});
+export const Mobile = Template.bind({});
 
-Navigation.decorators = [
+Mobile.decorators = [
   (Story) => (
       <div style={{position:'relative'}}>
 
@@ -43,7 +46,7 @@ Navigation.decorators = [
 ];
 
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Navigation.args = {
+Mobile.args = {
   categories:navigationCategories
 };
 

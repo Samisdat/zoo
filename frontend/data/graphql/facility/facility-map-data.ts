@@ -19,29 +19,27 @@ export const facilityMapData = (apiData: any):Entity<any>[] => {
     const body = apiData.attributes.body;
     const type = apiData.attributes.type;
 
-    let photos:number[] = [];
-
-    /*
-    if (undefined !== apiData.attributes.photos) {
-
-        photos = apiData.attributes.photos.data.map((photo) => {
-            return photo.id;
-        });
-
-    }
-     */
-
     let markers:number[] = [];
 
-    /*
-    if (undefined !== apiData.attributes.markers) {
+    if (apiData.attributes.markers) {
 
-        markers = apiData.attributes.markers.data.map((marker) => {
+        markers = apiData.attributes.markers.data.map((markerDatum)=>{
+
+            const markerEntities = markerMapData(markerDatum, id);
+
+            const marker = markerEntities.find((entity)=>{
+                return ('Marker' === entity.entityType);
+            });
+
+            for(const entity of markerEntities){
+                entities.push(entity);
+            }
+
             return marker.id;
+
         });
 
     }
-    */
 
     let animals:number[] = [];
 
@@ -68,17 +66,28 @@ export const facilityMapData = (apiData: any):Entity<any>[] => {
 
     let nodes:number[] = [];
 
-    /*
-    if (undefined !== apiData.attributes.graph_nodes) {
+    if (apiData.attributes.graph_nodes) {
 
-        nodes = apiData.attributes.graph_nodes.data.map((node) => {
+        nodes = apiData.attributes.graph_nodes.data.map((nodeDatum)=>{
+
+            const nodeEntities = nodeMapData(nodeDatum);
+
+            const node = nodeEntities.find((entity)=>{
+                return ('Node' === entity.entityType);
+            });
+
+            for(const entity of nodeEntities){
+                entities.push(entity);
+            }
+
             return node.id;
+
         });
 
     }
-     */
 
     let headerImage:number | null = null;
+
     if (apiData.attributes.headerImg?.image?.data) {
 
         const photo = photoMapData(apiData.attributes.headerImg?.image?.data);
@@ -96,7 +105,6 @@ export const facilityMapData = (apiData: any):Entity<any>[] => {
         body,
         type,
         animals,
-        photos,
         markers,
         nodes,
         headerImage,

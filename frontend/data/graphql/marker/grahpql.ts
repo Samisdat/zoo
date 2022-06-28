@@ -1,7 +1,7 @@
 import {gql} from "@apollo/client";
 import {simpleFacilityFragment} from "../facility/graphql-simple-facility";
 
-export const markerFragment = `
+export const markerWithFacilityFragment = `
         data {
             id
             attributes {
@@ -10,8 +10,21 @@ export const markerFragment = `
                 y
                 priority
                 facility{
-                    ${facilityFragment}
+                    ${simpleFacilityFragment}
                 }
+            }
+        }
+
+`;
+
+export const markerFragment = `
+        data {
+            id
+            attributes {
+                slug
+                x
+                y
+                priority
             }
         }
 

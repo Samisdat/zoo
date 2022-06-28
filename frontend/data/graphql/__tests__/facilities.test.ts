@@ -3,7 +3,7 @@ import {Warehouse} from "../../warehouse/warehouse";
 
 describe('Facility', () => {
 
-    beforeEach(()=>{
+    const resetWarehouse = ()=> {
 
         Warehouse.get().hydrate({
             facilities: [],
@@ -17,20 +17,21 @@ describe('Facility', () => {
             edges: [],
         });
 
-    });
+    };
 
-    describe('fetchFacilityBySlug', () => {
+    describe.only('fetchFacilityBySlug', () => {
 
-        test('valid response', async () => {
+        test.only('valid response', async () => {
 
             expect(Warehouse.get().hasFacility(5)).toBeFalsy();
-            expect(Warehouse.get().hasPhoto(79)).toBeFalsy();
+            expect(Warehouse.get().hasPhoto(81)).toBeFalsy();
+            expect(Warehouse.get().hasNode(1571)).toBeFalsy();
 
-            await fetchFacilityBySlug('an-existing-slug');
+            await fetchFacilityBySlug('eingang');
 
             expect(Warehouse.get().hasFacility(5)).toBeTruthy();
-            expect(Warehouse.get().hasPhoto(79)).toBeTruthy();
-
+            expect(Warehouse.get().hasPhoto(81)).toBeTruthy();
+            expect(Warehouse.get().hasNode(1571)).toBeTruthy();
 
         });
 
@@ -38,16 +39,18 @@ describe('Facility', () => {
 
             expect(Warehouse.get().hasFacility(5)).toBeFalsy();
 
-            const facility = await fetchFacilityBySlug('an-existing-slug-no-header-image');
+            const facility = await fetchFacilityBySlug('bongos');
 
-            expect(Warehouse.get().hasFacility(5)).toBeTruthy();
+            expect(Warehouse.get().hasFacility(3)).toBeTruthy();
             expect(facility?.headerImageRaw).toBe(null);
 
         });
 
     });
 
-    describe('fetchPosts', () => {
+    describe.skip('fetchFacilities', () => {
+
+        beforeEach(resetWarehouse);
 
         test('valid response', async () => {
 
@@ -56,9 +59,7 @@ describe('Facility', () => {
             await fetchFacilities();
 
             expect(Warehouse.get().hasFacility(5)).toBeTruthy();
-            expect(Warehouse.get().getFacilities().length).toBe(4);
-            expect(Warehouse.get().hasPhoto(79)).toBeTruthy();
-
+            expect(Warehouse.get().getFacilities().length).toBe(36);
 
         });
 

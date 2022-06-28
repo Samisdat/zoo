@@ -13,9 +13,22 @@ export const facilityFragment = `
             body
             type
             ${headerImageFragment}
-            animals {       
+            
+            graph_nodes{
+                ${simpleNodeFragment}
+            }                                  
+            animals {
+            
                 ${animalFragment}
+            
             }
+            
+            markers {
+            
+                ${markerFragment}
+            
+            }
+
         }
     }
 `;
@@ -43,7 +56,7 @@ query FacilitySlugs {
 }
 `;
 
-export const getFacilities = gql`      
+const queryFacilities = `      
 query Facilities {
     facilities(pagination: { page: 1, pageSize: 2000 }) {
         data {
@@ -54,9 +67,20 @@ query Facilities {
                 body
                 type
                 ${headerImageFragment}
+                
+                graph_nodes{
+              ${simpleNodeFragment}
+                }                      
+                
                 animals {
                 
                     ${animalFragment}
+                
+                }
+                
+                markers {
+                
+                    ${markerFragment}
                 
                 }
                 
@@ -64,4 +88,8 @@ query Facilities {
         }
     }
 }
+`
+
+export const getFacilities = gql`
+${queryFacilities}
 `;

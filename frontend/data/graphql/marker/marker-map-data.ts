@@ -3,7 +3,7 @@ import {facilityMapData} from "../facility/facility-map-data";
 import {Marker} from "./marker";
 import {Entity} from "../../entity/entity";
 
-export const markerMapData = (apiData: any):Entity<any>[] => {
+export const markerMapData = (apiData: any, facilityId:number):Entity<any>[] => {
 
     const entities:Entity<any>[] = [];
 
@@ -17,23 +17,7 @@ export const markerMapData = (apiData: any):Entity<any>[] => {
     const y = apiData.attributes.y;
     const priority = apiData.attributes.priority;
 
-    let facility: number|null = null;
-
-    if (apiData.attributes.facility?.data) {
-
-        const facilityEntities = facilityMapData(apiData.attributes.facility.data);
-
-        const facilityEntity = facilityEntities.find((entity)=>{
-            return ('Facility' === entity.entityType);
-        });
-
-        for(const entity of facilityEntities){
-            entities.push(entity);
-        }
-
-        facility = facilityEntity.id;
-
-    }
+    let facility = facilityId;
 
     const json: MarkerJson = {
         id,

@@ -44,42 +44,6 @@ export class Facility extends Entity<FacilityJson>{
 
     }
 
-    get photosRaw(): number[]{
-        return this.json.photos;
-    }
-
-    get photos(): Photo[]{
-
-        return [];
-        /*
-        if(this.json.photos && 0 !== this.json.photos.length){
-
-            return this.json.photos.map((photoId)=>{
-                return Warehouse.get().getPhoto(photoId);
-            });
-
-        }
-
-        if(this.animals){
-
-            const photos = [];
-
-            for(const animal of this.animals){
-
-                for(const photo of animal.photos){
-
-                    photos.push(photo);
-
-                }
-
-            }
-
-            return photos;
-
-        }
-        */
-    }
-
     get animalsRaw(): number[]{
         return this.json.animals;
     }
@@ -98,13 +62,10 @@ export class Facility extends Entity<FacilityJson>{
 
     get markers(): Marker[]{
 
-        return [];
-
-        /*
         return this.json.markers.map((id)=>{
             return Warehouse.get().getMarker(id);
         });
-         */
+
     }
 
     get nodesRaw(): number[]{
@@ -113,12 +74,10 @@ export class Facility extends Entity<FacilityJson>{
 
     get nodes(): Node[]{
 
-        return [];
-        /*
         return this.json.nodes.map((id)=>{
             return Warehouse.get().getNode(id);
         });
-         */
+
     }
 
     static hydrate(dehydrated:FacilityJson):Facility{

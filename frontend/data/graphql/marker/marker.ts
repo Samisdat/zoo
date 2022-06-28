@@ -2,6 +2,7 @@ import {Entity, EntityType} from "../../entity/entity";
 import {MarkerJson} from "./marker-json";
 import {Facility} from "../facility/facility";
 import {Warehouse} from "../../warehouse/warehouse";
+import {getImagePath} from "../../../helper/getImagePath";
 
 export class Marker extends Entity<MarkerJson>{
 
@@ -14,7 +15,7 @@ export class Marker extends Entity<MarkerJson>{
     }
 
     get slug(): string {
-        return this.json.slug;
+        return this.facility.slug;
     }
 
     get x(): number {
@@ -60,6 +61,25 @@ export class Marker extends Entity<MarkerJson>{
 
     get priority(): number {
         return this.json.priority;
+    }
+
+    get markerImage():string {
+
+        if(this.facility.headerImage){
+            return getImagePath(this.facility.headerImage.thumbnail.src);
+        }
+
+        if(0 !== this.facility.animals.length){
+
+            const animalsWithImage = this.facility.animals.find((animal)=>{
+                return (animal.headerImage);
+            });
+
+            return getImagePath(animalsWithImage.headerImage.thumbnail.src)
+
+        }
+
+        return null;
     }
 
 }

@@ -7,7 +7,6 @@ export interface FacilityJson {
     body: string;
     type: FacilityType;
     animals: number[];
-    photos: number[];
     markers: number[];
     nodes: number[];
     headerImage: number | null;

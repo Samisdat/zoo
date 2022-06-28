@@ -78,7 +78,7 @@ export const Navigation = (props:RoutingProperties) => {
         const start = [
             currentEdge.startNode.id,
             currentEdge.endNode.id
-        ]
+        ];
 
         const routes:Route[] = []
 

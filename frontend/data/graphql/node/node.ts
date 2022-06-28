@@ -1,7 +1,7 @@
-import {NodeJson} from "./node-json";
-import {Facility} from "../facility/facility";
-import {Entity, EntityType} from "../../entity/entity";
-import {Warehouse} from "../../warehouse/warehouse";
+import {NodeJson} from './node-json';
+import {Facility} from '../facility/facility';
+import {Entity, EntityType} from '../../entity/entity';
+import {Warehouse} from '../../warehouse/warehouse';
 
 export class Node extends Entity<NodeJson>{
 

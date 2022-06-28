@@ -1,7 +1,7 @@
-import {Entity, EntityType} from "../../entity/entity";
-import {PhotoJson, PhotoSize} from "./photo-json";
-import {Position} from "../../../components/Map/Context/MapContext";
-import {photoMapData} from "./photo-map-data";
+import {Entity, EntityType} from '../../entity/entity';
+import {PhotoJson, PhotoSize} from './photo-json';
+import {Position} from '../../../components/Map/Context/MapContext';
+import {photoMapData} from './photo-map-data';
 
 
 export class Photo extends Entity<PhotoJson>{

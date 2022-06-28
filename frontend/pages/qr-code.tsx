@@ -4,9 +4,9 @@ import ListItem from '@mui/material/ListItem';
 
 import {ListItemLink} from './anlagen';
 import {qrCodeUrlPart} from '../constants';
-import {Warehouse} from "../data/warehouse/warehouse";
-import {QrCode} from "../data/graphql/qr-code/qr-code";
-import {fetchQrCodes} from "../data/graphql/qr-codes";
+import {Warehouse} from '../data/warehouse/warehouse';
+import {QrCode} from '../data/graphql/qr-code/qr-code';
+import {fetchQrCodes} from '../data/graphql/qr-codes';
 
 export default function QrCodePage(props) {
 

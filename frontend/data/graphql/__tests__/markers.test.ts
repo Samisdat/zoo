@@ -1,5 +1,5 @@
-import {fetchMarkers} from "../markers";
-import {Warehouse} from "../../warehouse/warehouse";
+import {fetchMarkers} from '../markers';
+import {Warehouse} from '../../warehouse/warehouse';
 
 describe('fetchMarkers', () => {
 

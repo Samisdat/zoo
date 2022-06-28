@@ -1,9 +1,9 @@
-import {getQrcodeBySlug, getQrCodes} from "./qr-code/graphql";
-import {qrCodeMapData} from "./qr-code/qr-code-map-data";
-import {QrCode} from "./qr-code/qr-code";
-import {addToWarehouse} from "./add-to-warehouse";
-import {apolloClient} from "./apolloClient";
-import {Warehouse} from "../warehouse/warehouse";
+import {getQrcodeBySlug, getQrCodes} from './qr-code/graphql';
+import {qrCodeMapData} from './qr-code/qr-code-map-data';
+import {QrCode} from './qr-code/qr-code';
+import {addToWarehouse} from './add-to-warehouse';
+import {apolloClient} from './apolloClient';
+import {Warehouse} from '../warehouse/warehouse';
 
 export const fetchQrCodeById = async (id: number):Promise<QrCode|undefined> => {
 
@@ -34,7 +34,7 @@ export const fetchQrCodes = async ():Promise<QrCode[]> => {
 
     const data = graphResult.data.qrCodes.data;
 
-    let qrCodes = data.map((datum:any)=>{
+    const qrCodes = data.map((datum:any)=>{
 
         const qrCode = qrCodeMapData(datum);
 

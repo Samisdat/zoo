@@ -1,8 +1,8 @@
-import {IndividualAnimalJson} from "./individual-animal-json";
-import {photoMapData} from "../photo/photo-map-data";
-import {IndividualAnimal} from "./individual-animal";
-import {animalMapData} from "../animal/animal-map-data";
-import {Entity} from "../../entity/entity";
+import {IndividualAnimalJson} from './individual-animal-json';
+import {photoMapData} from '../photo/photo-map-data';
+import {IndividualAnimal} from './individual-animal';
+import {animalMapData} from '../animal/animal-map-data';
+import {Entity} from '../../entity/entity';
 
 
 export const individualAnimalMapData = (apiData: any):Entity<any>[] =>{

@@ -7,8 +7,8 @@ import {getImagePath} from '../helper/getImagePath';
 import {NavigationListItemInterface} from 'components/NavigationList/NavigationListInterfaces';
 import {BreadcrumbLink} from '../components/Navigation/Breadcrumb';
 import Page from '../components/Page/Page';
-import {fetchFacilities} from "../data/graphql/facilities";
-import {Warehouse} from "../data/warehouse/warehouse";
+import {fetchFacilities} from '../data/graphql/facilities';
+import {Warehouse} from '../data/warehouse/warehouse';
 
 export const ListItemLink = (props)  => {
     return <ListItem button component="a" {...props} />;

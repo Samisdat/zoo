@@ -1,7 +1,7 @@
-import {Node} from "./node";
-import {NodeJson} from "./node-json";
-import {facilityMapData} from "../facility/facility-map-data";
-import {Entity} from "../../entity/entity";
+import {Node} from './node';
+import {NodeJson} from './node-json';
+import {facilityMapData} from '../facility/facility-map-data';
+import {Entity} from '../../entity/entity';
 
 export const nodeMapData = (apiData: any):Entity<any>[] => {
 
@@ -16,7 +16,7 @@ export const nodeMapData = (apiData: any):Entity<any>[] => {
     const x = apiData.attributes.x;
     const y = apiData.attributes.y;
 
-    let edgeStart:number[] = [];
+    const edgeStart:number[] = [];
 
     /*
     if (undefined !== apiData.attributes.graph_edges_starts) {
@@ -28,7 +28,7 @@ export const nodeMapData = (apiData: any):Entity<any>[] => {
     }
      */
 
-    let edgeEnd:number[] = [];
+    const edgeEnd:number[] = [];
 
     /*
     if (undefined !== apiData.attributes.graph_edges_ends) {

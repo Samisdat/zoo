@@ -1,5 +1,5 @@
 import {IucnStatus} from './iucnStatus';
-import {IconName} from "../../../components/Icon/IconNames";
+import {IconName} from '../../../components/Icon/IconNames';
 
 
 export interface AnimalProfileStrapi{

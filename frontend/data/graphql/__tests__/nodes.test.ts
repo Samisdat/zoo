@@ -1,5 +1,5 @@
-import {fetchNodes} from "../nodes";
-import {Warehouse} from "../../warehouse/warehouse";
+import {fetchNodes} from '../nodes';
+import {Warehouse} from '../../warehouse/warehouse';
 
 describe('fetchNodes', () => {
 

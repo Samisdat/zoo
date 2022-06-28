@@ -1,8 +1,8 @@
-import {QrCodeJson} from "./qr-code-json";
-import {Facility} from "../facility/facility";
-import {Animal} from "../animal/animal";
-import {Entity, EntityType} from "../../entity/entity";
-import {Warehouse} from "../../warehouse/warehouse";
+import {QrCodeJson} from './qr-code-json';
+import {Facility} from '../facility/facility';
+import {Animal} from '../animal/animal';
+import {Entity, EntityType} from '../../entity/entity';
+import {Warehouse} from '../../warehouse/warehouse';
 
 export class QrCode extends Entity<QrCodeJson>{
 

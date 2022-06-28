@@ -1,9 +1,9 @@
-import {apolloClient} from "./apolloClient";
-import {addToWarehouse} from "./add-to-warehouse";
-import {getIndividualAnimalBySlug, getIndividualAnimals} from "./individual-animal/grahpql";
-import {individualAnimalMapData} from "./individual-animal/individual-animal-map-data";
-import {IndividualAnimal} from "./individual-animal/individual-animal";
-import {Warehouse} from "../warehouse/warehouse";
+import {apolloClient} from './apolloClient';
+import {addToWarehouse} from './add-to-warehouse';
+import {getIndividualAnimalBySlug, getIndividualAnimals} from './individual-animal/grahpql';
+import {individualAnimalMapData} from './individual-animal/individual-animal-map-data';
+import {IndividualAnimal} from './individual-animal/individual-animal';
+import {Warehouse} from '../warehouse/warehouse';
 
 export const fetchIndividualAnimalBySlug = async (slug: string):Promise<IndividualAnimal> => {
 
@@ -32,7 +32,7 @@ export const fetchIndividualAnimals = async ():Promise<IndividualAnimal[]> => {
 
     const data = graphResult.data.individualAnimals.data;
 
-    let individualAnimals = data.map((datum:any)=>{
+    const individualAnimals = data.map((datum:any)=>{
 
         const individualAnimal = individualAnimalMapData(datum);
 

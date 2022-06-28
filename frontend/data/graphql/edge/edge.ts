@@ -1,7 +1,7 @@
-import {EdgeJson} from "./edge-json";
-import {Node} from "../node/node";
-import {Warehouse} from "../../warehouse/warehouse";
-import {Entity, EntityType} from "../../entity/entity";
+import {EdgeJson} from './edge-json';
+import {Node} from '../node/node';
+import {Warehouse} from '../../warehouse/warehouse';
+import {Entity, EntityType} from '../../entity/entity';
 
 export class Edge extends Entity<EdgeJson>{
 

@@ -6,7 +6,7 @@ import {Footer} from '../Navigation/Footer';
 import {styled} from '@mui/system';
 import {grey} from '@mui/material/colors';
 import Container from '@mui/material/Container';
-import {Photo} from "../../data/graphql/photo/photo";
+import {Photo} from '../../data/graphql/photo/photo';
 
 
 export interface PageProperties{

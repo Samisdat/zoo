@@ -1,9 +1,9 @@
 import {IUCN_STATI, IucnStatus} from './iucnStatus';
-import {AnimalJson} from "./animal-json";
-import {Animal} from "./animal";
-import {photoMapData} from "../photo/photo-map-data";
-import {individualAnimalMapData} from "../individual-animal/individual-animal-map-data";
-import {Entity} from "../../entity/entity";
+import {AnimalJson} from './animal-json';
+import {Animal} from './animal';
+import {photoMapData} from '../photo/photo-map-data';
+import {individualAnimalMapData} from '../individual-animal/individual-animal-map-data';
+import {Entity} from '../../entity/entity';
 
 export const animalMapData = (apiData: any):Entity<any>[] =>{
 
@@ -33,7 +33,7 @@ export const animalMapData = (apiData: any):Entity<any>[] =>{
     const species = apiData.attributes.species;
     const family = apiData.attributes.family;
 
-    let profile:any[] = [];
+    const profile:any[] = [];
 
     /*
     if (0 !== apiData.attributes.profile.length) {
@@ -43,7 +43,7 @@ export const animalMapData = (apiData: any):Entity<any>[] =>{
      */
 
 
-    let photos:number[] = [];
+    const photos:number[] = [];
 
     /*
     if (undefined !== apiData.attributes.photos) {
@@ -55,7 +55,7 @@ export const animalMapData = (apiData: any):Entity<any>[] =>{
     }
      */
 
-    let facilities:number[] = [];
+    const facilities:number[] = [];
 
     /*
     if (undefined !== apiData.attributes.facilities) {

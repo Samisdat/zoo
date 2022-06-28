@@ -10,10 +10,10 @@ import {RoutingInterface, useMap} from '../Context/MapContext';
 import {Icon} from '../../Icon/Icon';
 import {FocalPointImage} from '../../FocalPoint/Image';
 import {styled} from '@mui/material/styles';
-import {Photo} from "../../../data/graphql/photo/photo";
-import {Animal} from "../../../data/graphql/animal/animal";
-import Container from "@mui/material/Container";
-import {Paper} from "@mui/material";
+import {Photo} from '../../../data/graphql/photo/photo';
+import {Animal} from '../../../data/graphql/animal/animal';
+import Container from '@mui/material/Container';
+import {Paper} from '@mui/material';
 
 const Foo = styled(Container)(({ theme }) => {
 

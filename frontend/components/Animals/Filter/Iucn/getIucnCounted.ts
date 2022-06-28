@@ -1,4 +1,4 @@
-import {Animal} from "../../../../data/graphql/animal/animal";
+import {Animal} from '../../../../data/graphql/animal/animal';
 
 export const getIucnCounted = (animals: Animal[]) => {
 

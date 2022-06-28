@@ -1,10 +1,10 @@
-import {apolloClient} from "./apolloClient";
+import {apolloClient} from './apolloClient';
 
-import {addToWarehouse} from "./add-to-warehouse";
-import {Edge} from "./edge/edge";
-import {getEdges} from "./edge/grahpql";
-import {edgeMapData} from "./edge/edge-map-data";
-import {Warehouse} from "../warehouse/warehouse";
+import {addToWarehouse} from './add-to-warehouse';
+import {Edge} from './edge/edge';
+import {getEdges} from './edge/grahpql';
+import {edgeMapData} from './edge/edge-map-data';
+import {Warehouse} from '../warehouse/warehouse';
 
 export const fetchEdges = async ():Promise<Edge[]> => {
 
@@ -15,7 +15,7 @@ export const fetchEdges = async ():Promise<Edge[]> => {
     const graphEdges = graphResult.data.graphEdges.data;
 
 
-    let edges = graphEdges.map((datum:any)=>{
+    const edges = graphEdges.map((datum:any)=>{
 
         const edge = edgeMapData(datum);
 

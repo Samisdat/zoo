@@ -1,5 +1,5 @@
-import {fetchQrCodeById, fetchQrCodes} from "../qr-codes";
-import {Warehouse} from "../../warehouse/warehouse";
+import {fetchQrCodeById, fetchQrCodes} from '../qr-codes';
+import {Warehouse} from '../../warehouse/warehouse';
 
 describe('QR Code', () => {
 

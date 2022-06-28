@@ -1,5 +1,5 @@
-import {gql} from "@apollo/client";
-import {facilityFragment} from "../facility/grahpql";
+import {gql} from '@apollo/client';
+import {facilityFragment} from '../facility/grahpql';
 
 export const nodeFragment = `
         data {

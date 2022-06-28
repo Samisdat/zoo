@@ -15,7 +15,7 @@ import {
     LEAST_CONCERN,
     NEAR_THREATENED,
     VULNERABLE
-} from "../../../data/graphql/animal/iucnStatus";
+} from '../../../data/graphql/animal/iucnStatus';
 
 const possibleStati = [
     LEAST_CONCERN,

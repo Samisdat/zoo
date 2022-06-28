@@ -16,7 +16,7 @@ import {useMap} from '../Map/Context/MapContext';
 import {Icon} from '../Icon/Icon';
 import {styled} from '@mui/material/styles';
 import {getImagePath} from '../../helper/getImagePath';
-import {Facility} from "../../data/graphql/facility/facility";
+import {Facility} from '../../data/graphql/facility/facility';
 
 const ExpandHandle = styled(MuiPaper)(({ theme }) => ({
     position: 'absolute',

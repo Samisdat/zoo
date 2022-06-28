@@ -1,10 +1,10 @@
-import {apolloClient} from "./apolloClient";
+import {apolloClient} from './apolloClient';
 
-import {addToWarehouse} from "./add-to-warehouse";
-import {getMarkers} from "./marker/grahpql";
-import {Marker} from "./marker/marker";
-import {markerMapData} from "./marker/marker-map-data";
-import {Warehouse} from "../warehouse/warehouse";
+import {addToWarehouse} from './add-to-warehouse';
+import {getMarkers} from './marker/grahpql';
+import {Marker} from './marker/marker';
+import {markerMapData} from './marker/marker-map-data';
+import {Warehouse} from '../warehouse/warehouse';
 
 export const fetchMarkers = async ():Promise<Marker[]> => {
 
@@ -14,7 +14,7 @@ export const fetchMarkers = async ():Promise<Marker[]> => {
 
     const data = graphResult.data.markers.data;
 
-    let markers = data.map((datum:any)=>{
+    const markers = data.map((datum:any)=>{
 
         return undefined;
 

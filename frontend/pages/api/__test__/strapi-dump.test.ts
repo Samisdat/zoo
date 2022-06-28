@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import {getStrapi3Url} from "../../../data/utils/get-strapi-url";
+import {getStrapi3Url} from '../../../data/utils/get-strapi-url';
 
 describe('dump current database', () => {
 

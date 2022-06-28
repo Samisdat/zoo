@@ -6,8 +6,8 @@ import {MapTransformInterface, useMap} from '../Context/MapContext';
 import {ResolvePosition} from './Position/ResolvePosition';
 import {Track} from './Position/Track';
 import {Routing} from './Routing/Routing';
-import {Edge} from "../../../data/graphql/edge/edge";
-import {Node} from "../../../data/graphql/node/node";
+import {Edge} from '../../../data/graphql/edge/edge';
+import {Node} from '../../../data/graphql/node/node';
 
 interface RoutingProperties {
     nodes: Node[];

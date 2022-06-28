@@ -1,7 +1,7 @@
-import {QrCode} from "./qr-code";
-import {animalMapData} from "../animal/animal-map-data";
-import {facilityMapData} from "../facility/facility-map-data";
-import {Entity} from "../../entity/entity";
+import {QrCode} from './qr-code';
+import {animalMapData} from '../animal/animal-map-data';
+import {facilityMapData} from '../facility/facility-map-data';
+import {Entity} from '../../entity/entity';
 
 export const qrCodeMapData = (apiData: any):Entity<any>[] =>{
 

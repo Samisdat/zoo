@@ -1,7 +1,7 @@
-import {MarkerJson} from "./marker-json";
-import {facilityMapData} from "../facility/facility-map-data";
-import {Marker} from "./marker";
-import {Entity} from "../../entity/entity";
+import {MarkerJson} from './marker-json';
+import {facilityMapData} from '../facility/facility-map-data';
+import {Marker} from './marker';
+import {Entity} from '../../entity/entity';
 
 export const markerMapData = (apiData: any, facilityId:number):Entity<any>[] => {
 
@@ -17,7 +17,7 @@ export const markerMapData = (apiData: any, facilityId:number):Entity<any>[] => 
     const y = apiData.attributes.y;
     const priority = apiData.attributes.priority;
 
-    let facility = facilityId;
+    const facility = facilityId;
 
     const json: MarkerJson = {
         id,

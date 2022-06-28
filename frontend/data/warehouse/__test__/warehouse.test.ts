@@ -1,4 +1,4 @@
-import {Warehouse} from "@data/warehouse/warehouse";
+import {Warehouse} from '@data/warehouse/warehouse';
 
 describe('warehouse', ()=>{
 

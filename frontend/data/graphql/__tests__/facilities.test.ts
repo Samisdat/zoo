@@ -1,5 +1,5 @@
-import {fetchFacilities, fetchFacilityBySlug} from "../facilities";
-import {Warehouse} from "../../warehouse/warehouse";
+import {fetchFacilities, fetchFacilityBySlug} from '../facilities';
+import {Warehouse} from '../../warehouse/warehouse';
 
 describe('Facility', () => {
 

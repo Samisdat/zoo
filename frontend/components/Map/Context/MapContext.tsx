@@ -7,7 +7,7 @@ import throttle from 'lodash.throttle';
 import {Route} from '../Navigation/Routing/Graph/Dijkstra';
 import {getTransformFromStorage} from '../getTransformFromStorage';
 import {getPositionFromStorage} from '../getPositionFromStorage';
-import {Facility} from "../../../data/graphql/facility/facility";
+import {Facility} from '../../../data/graphql/facility/facility';
 
 // @refresh reset
 

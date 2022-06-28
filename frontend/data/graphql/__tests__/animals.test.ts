@@ -1,5 +1,5 @@
-import {fetchAnimalBySlug, fetchAnimals} from "../animals";
-import {Warehouse} from "../../warehouse/warehouse";
+import {fetchAnimalBySlug, fetchAnimals} from '../animals';
+import {Warehouse} from '../../warehouse/warehouse';
 
 describe('fetch Animal', () => {
 

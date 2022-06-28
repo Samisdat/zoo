@@ -12,10 +12,10 @@ import {Cartesian} from './Cartesian/Cartesian';
 import {GeoPoint} from './DevArtifacts/GeoPoint';
 import {GPXViewer} from '../GPX/Viewer';
 import styled from '@mui/system/styled';
-import {Edge} from "../../data/graphql/edge/edge";
-import {Node} from "../../data/graphql/node/node";
-import {Marker} from "../../data/graphql/marker/marker";
-import {Facility} from "../../data/graphql/facility/facility";
+import {Edge} from '../../data/graphql/edge/edge';
+import {Node} from '../../data/graphql/node/node';
+import {Marker} from '../../data/graphql/marker/marker';
+import {Facility} from '../../data/graphql/facility/facility';
 
 const SvgWrap = styled('div')({
     position: 'absolute',

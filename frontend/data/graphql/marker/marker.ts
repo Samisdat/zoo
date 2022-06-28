@@ -1,8 +1,8 @@
-import {Entity, EntityType} from "../../entity/entity";
-import {MarkerJson} from "./marker-json";
-import {Facility} from "../facility/facility";
-import {Warehouse} from "../../warehouse/warehouse";
-import {getImagePath} from "../../../helper/getImagePath";
+import {Entity, EntityType} from '../../entity/entity';
+import {MarkerJson} from './marker-json';
+import {Facility} from '../facility/facility';
+import {Warehouse} from '../../warehouse/warehouse';
+import {getImagePath} from '../../../helper/getImagePath';
 
 export class Marker extends Entity<MarkerJson>{
 

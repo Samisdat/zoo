@@ -2,8 +2,8 @@ import React, {useEffect, useRef, useState} from 'react';
 import {useMap} from '../../Context/MapContext';
 import {GeoPath} from 'd3';
 import {ClusteredMarkers} from './ClusteredMarkers';
-import {Marker} from "../../../../data/graphql/marker/marker";
-import {getImagePath} from "../../../../helper/getImagePath";
+import {Marker} from '../../../../data/graphql/marker/marker';
+import {getImagePath} from '../../../../helper/getImagePath';
 
 export interface MarkersProps {
     cartesianScale: number;

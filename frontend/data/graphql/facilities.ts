@@ -1,10 +1,10 @@
-import {apolloClient} from "./apolloClient";
+import {apolloClient} from './apolloClient';
 
-import {Facility} from "./facility/facility";
-import {getFacilities, getFacilityBySlug} from "./facility/grahpql";
-import {facilityMapData} from "./facility/facility-map-data";
-import {addToWarehouse} from "./add-to-warehouse";
-import {Warehouse} from "../warehouse/warehouse";
+import {Facility} from './facility/facility';
+import {getFacilities, getFacilityBySlug} from './facility/grahpql';
+import {facilityMapData} from './facility/facility-map-data';
+import {addToWarehouse} from './add-to-warehouse';
+import {Warehouse} from '../warehouse/warehouse';
 
 export const fetchFacilityBySlug = async (slug: string):Promise<Facility|undefined> => {
 
@@ -33,7 +33,7 @@ export const fetchFacilities = async ():Promise<Facility[]> => {
 
     const data = graphResult.data.facilities.data;
 
-    let facilities = data.map((datum:any)=>{
+    const facilities = data.map((datum:any)=>{
 
         const facility = facilityMapData(datum);
 

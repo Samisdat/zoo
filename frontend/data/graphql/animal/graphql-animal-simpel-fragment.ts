@@ -1,4 +1,4 @@
-import {headerImageFragment} from "../photo/grahpql";
+import {headerImageFragment} from '../photo/grahpql';
 
 export const animalSimpelFragment = `
 data {

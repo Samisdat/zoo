@@ -1,5 +1,5 @@
-import {fetchEdges} from "../edges";
-import {Warehouse} from "../../warehouse/warehouse";
+import {fetchEdges} from '../edges';
+import {Warehouse} from '../../warehouse/warehouse';
 
 describe('fetchEdges', () => {
 

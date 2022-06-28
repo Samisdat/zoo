@@ -4,8 +4,8 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 
 import {ListItemLink} from './anlagen';
-import {Warehouse} from "../data/warehouse/warehouse";
-import {Photo} from "../data/graphql/photo/photo";
+import {Warehouse} from '../data/warehouse/warehouse';
+import {Photo} from '../data/graphql/photo/photo';
 
 export default function Photos(props) {
 

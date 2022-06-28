@@ -3,12 +3,12 @@ import {getFullGeoJson} from '../api/geojson/list';
 import {useRouter} from 'next/router';
 import {BreadcrumbLink} from 'components/Navigation/Breadcrumb';
 import Page from '../../components/Page/Page';
-import {Warehouse} from "../../data/warehouse/warehouse";
-import {Facility} from "../../data/graphql/facility/facility";
-import {Photo} from "../../data/graphql/photo/photo";
-import {fetchFacilityBySlug} from "../../data/graphql/facilities";
-import {apolloClient} from "../../data/graphql/apolloClient";
-import {getFacilitySlugs} from "../../data/graphql/facility/grahpql";
+import {Warehouse} from '../../data/warehouse/warehouse';
+import {Facility} from '../../data/graphql/facility/facility';
+import {Photo} from '../../data/graphql/photo/photo';
+import {fetchFacilityBySlug} from '../../data/graphql/facilities';
+import {apolloClient} from '../../data/graphql/apolloClient';
+import {getFacilitySlugs} from '../../data/graphql/facility/grahpql';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactMarkdown = require('react-markdown')

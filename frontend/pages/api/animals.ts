@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import {Animal} from "../../data/graphql/animal/animal";
-import {fetchAnimals} from "../../data/graphql/animals";
+import {Animal} from '../../data/graphql/animal/animal';
+import {fetchAnimals} from '../../data/graphql/animals';
 
 
 const stati = {

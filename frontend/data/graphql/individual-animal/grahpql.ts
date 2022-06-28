@@ -1,6 +1,6 @@
-import {gql} from "@apollo/client";
-import {headerImageFragment} from "../photo/grahpql";
-import {animalSimpelFragment} from "../animal/graphql-animal-simpel-fragment";
+import {gql} from '@apollo/client';
+import {headerImageFragment} from '../photo/grahpql';
+import {animalSimpelFragment} from '../animal/graphql-animal-simpel-fragment';
 
 export const individualAnimalFragment = `
 data {

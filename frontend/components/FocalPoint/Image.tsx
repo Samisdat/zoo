@@ -2,7 +2,7 @@ import React from 'react';
 import {getImagePath} from '../../helper/getImagePath';
 import {Position} from '../Map/Context/MapContext';
 import {styled} from '@mui/material/styles';
-import {Photo} from "../../data/graphql/photo/photo";
+import {Photo} from '../../data/graphql/photo/photo';
 
 interface FocalPointImageProps{
     photo:Photo;

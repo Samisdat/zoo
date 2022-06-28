@@ -1,5 +1,5 @@
-import {gql} from "@apollo/client";
-import {headerImageFragment} from "../photo/grahpql";
+import {gql} from '@apollo/client';
+import {headerImageFragment} from '../photo/grahpql';
 
 /**
  * I can not find the resolver, to that with a singular query ;(

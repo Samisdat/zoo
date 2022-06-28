@@ -9,8 +9,8 @@ export const IndividualAnimals = (request, response, context) => {
 
     return response(
         context.data({
-            "individualAnimals":{
-                "data": individualAnimals
+            'individualAnimals':{
+                'data': individualAnimals
             }
         })
     );

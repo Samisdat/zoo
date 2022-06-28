@@ -3,9 +3,9 @@ import React, {useEffect} from 'react';
 import Card from '@mui/material/Card';
 import {RoutingInterface, useMap} from '../Context/MapContext';
 import {styled} from '@mui/material/styles';
-import {Photo} from "../../../data/graphql/photo/photo";
-import {Animal} from "../../../data/graphql/animal/animal";
-import {Teaser, TeaserItem} from "./Teaser";
+import {Photo} from '../../../data/graphql/photo/photo';
+import {Animal} from '../../../data/graphql/animal/animal';
+import {Teaser, TeaserItem} from './Teaser';
 
 export const TeaserControl = () => {
 

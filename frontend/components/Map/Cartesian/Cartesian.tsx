@@ -12,9 +12,9 @@ import {Navigation} from '../Navigation/Navigation';
 import {CartesianPoint} from '../DevArtifacts/CartesianPoint';
 import {FacilityBoxes} from './FacilityBoxes';
 import {Markers} from './Markers/Markers';
-import {Edge} from "../../../data/graphql/edge/edge";
-import {Node} from "../../../data/graphql/node/node";
-import {Marker} from "../../../data/graphql/marker/marker";
+import {Edge} from '../../../data/graphql/edge/edge';
+import {Node} from '../../../data/graphql/node/node';
+import {Marker} from '../../../data/graphql/marker/marker';
 
 interface CartesianProps{
     markers:Marker[];

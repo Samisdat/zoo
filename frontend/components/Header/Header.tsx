@@ -3,7 +3,7 @@ import {Large} from '../viewport/Large';
 import {FocalPointImage} from '../FocalPoint/Image';
 import {Small} from '../viewport/Small';
 import Container from '@mui/material/Container';
-import {Photo} from "../../data/graphql/photo/photo";
+import {Photo} from '../../data/graphql/photo/photo';
 
 export interface HeaderProps{
     photo:Photo;

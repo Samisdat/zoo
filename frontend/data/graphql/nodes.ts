@@ -1,10 +1,10 @@
-import {apolloClient} from "./apolloClient";
+import {apolloClient} from './apolloClient';
 
-import {addToWarehouse} from "./add-to-warehouse";
-import {getNodes} from "./node/grahpql";
-import {nodeMapData} from "./node/node-map-data";
-import {Node} from "./node/node";
-import {Warehouse} from "../warehouse/warehouse";
+import {addToWarehouse} from './add-to-warehouse';
+import {getNodes} from './node/grahpql';
+import {nodeMapData} from './node/node-map-data';
+import {Node} from './node/node';
+import {Warehouse} from '../warehouse/warehouse';
 
 export const fetchNodes = async ():Promise<Node[]> => {
 
@@ -14,7 +14,7 @@ export const fetchNodes = async ():Promise<Node[]> => {
 
     const graphPostsNodes = graphResult.data.graphNodes.data;
 
-    let nodes = graphPostsNodes.map((datum:any)=>{
+    const nodes = graphPostsNodes.map((datum:any)=>{
 
         const node = nodeMapData(datum);
 

@@ -1,5 +1,5 @@
-import {fetchPostBySlug, fetchPosts} from "../posts";
-import {Warehouse} from "../../warehouse/warehouse";
+import {fetchPostBySlug, fetchPosts} from '../posts';
+import {Warehouse} from '../../warehouse/warehouse';
 
 describe('fetchPostBySlug', () => {
 

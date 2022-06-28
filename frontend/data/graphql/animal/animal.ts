@@ -1,11 +1,11 @@
 import {AnimalJson} from './animal-json';
 
 import {IucnStatus} from './iucnStatus';
-import {Entity, EntityType} from "../../entity/entity";
-import {Photo} from "../photo/photo";
-import {Warehouse} from "../../warehouse/warehouse";
-import {IndividualAnimal} from "../individual-animal/individual-animal";
-import {Facility} from "../facility/facility";
+import {Entity, EntityType} from '../../entity/entity';
+import {Photo} from '../photo/photo';
+import {Warehouse} from '../../warehouse/warehouse';
+import {IndividualAnimal} from '../individual-animal/individual-animal';
+import {Facility} from '../facility/facility';
 
 
 export class Animal extends Entity<AnimalJson>{

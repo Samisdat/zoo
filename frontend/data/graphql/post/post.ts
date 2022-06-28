@@ -1,7 +1,7 @@
-import {Entity, EntityType} from "../../entity/entity";
-import {PostJson} from "./post-json";
-import {Photo} from "../photo/photo";
-import {Warehouse} from "../../warehouse/warehouse";
+import {Entity, EntityType} from '../../entity/entity';
+import {PostJson} from './post-json';
+import {Photo} from '../photo/photo';
+import {Warehouse} from '../../warehouse/warehouse';
 
 export class Post extends Entity<PostJson>{
 

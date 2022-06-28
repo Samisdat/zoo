@@ -1,10 +1,10 @@
 import {FacilityJson, FacilityType} from './facility-json';
-import {Entity, EntityType} from "../../entity/entity";
-import {Photo} from "../photo/photo";
-import {Warehouse} from "../../warehouse/warehouse";
-import {Animal} from "../animal/animal";
-import {Marker} from "../marker/marker";
-import {Node} from "../node/node";
+import {Entity, EntityType} from '../../entity/entity';
+import {Photo} from '../photo/photo';
+import {Warehouse} from '../../warehouse/warehouse';
+import {Animal} from '../animal/animal';
+import {Marker} from '../marker/marker';
+import {Node} from '../node/node';
 
 export class Facility extends Entity<FacilityJson>{
 

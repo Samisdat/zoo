@@ -11,11 +11,11 @@ import {DistributionGlobe} from 'components/Distribution/DistributionGlobe';
 import {Profile} from 'components/Animal/Profile/Profile';
 import {IucnRedList} from 'components/Animal/IucnRedList';
 import Page from '../../components/Page/Page';
-import {Warehouse} from "../../data/warehouse/warehouse";
-import {Animal} from "../../data/graphql/animal/animal";
-import {fetchAnimalBySlug} from "../../data/graphql/animals";
-import {apolloClient} from "../../data/graphql/apolloClient";
-import {getAnimalsSlugs} from "../../data/graphql/animal/grahpql";
+import {Warehouse} from '../../data/warehouse/warehouse';
+import {Animal} from '../../data/graphql/animal/animal';
+import {fetchAnimalBySlug} from '../../data/graphql/animals';
+import {apolloClient} from '../../data/graphql/apolloClient';
+import {getAnimalsSlugs} from '../../data/graphql/animal/grahpql';
 
 export const Root = styled('div')(({ theme }) => ({
     flexGrow: 1,

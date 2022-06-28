@@ -1,6 +1,6 @@
-import {PhotoJson, PhotoSize} from "./photo-json";
-import {Photo} from "./photo";
-import {Position} from "../../../components/Map/Context/MapContext";
+import {PhotoJson, PhotoSize} from './photo-json';
+import {Photo} from './photo';
+import {Position} from '../../../components/Map/Context/MapContext';
 
 const sizeNames = [
     'thumbnail',

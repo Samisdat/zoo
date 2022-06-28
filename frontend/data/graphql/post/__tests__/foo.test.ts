@@ -1,8 +1,8 @@
 //import {getPostBySlug} from "../../queries";
 //import {apolloClient} from "../../apolloClient";
 
-import {apolloClient} from "../../apolloClient";
-import {getPostBySlug} from "../../queries";
+import {apolloClient} from '../../apolloClient';
+import {getPostBySlug} from '../../queries';
 
 describe('Graph', () => {
 

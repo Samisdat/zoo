@@ -6,12 +6,12 @@ import SearchDialog from 'components/Search/Search';
 import {MapProvider} from 'components/Map/Context/MapContext';
 import {OpenTeaserByHash} from '../components/Map/Teaser/OpenTeaserByHash';
 import styled from '@mui/system/styled';
-import {Warehouse, WarehouseSpore} from "../data/warehouse/warehouse";
-import {Facility} from "../data/graphql/facility/facility";
-import {fetchFacilities} from "../data/graphql/facilities";
-import {fetchEdges} from "../data/graphql/edges";
-import {fetchMarkers} from "../data/graphql/markers";
-import {TeaserControl} from "../components/Map/Teaser/TeaserControl";
+import {Warehouse, WarehouseSpore} from '../data/warehouse/warehouse';
+import {Facility} from '../data/graphql/facility/facility';
+import {fetchFacilities} from '../data/graphql/facilities';
+import {fetchEdges} from '../data/graphql/edges';
+import {fetchMarkers} from '../data/graphql/markers';
+import {TeaserControl} from '../components/Map/Teaser/TeaserControl';
 
 export interface IndexProps{
     warehouse: WarehouseSpore;

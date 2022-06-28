@@ -1,5 +1,5 @@
 import React from 'react';
-import {Marker} from "../../../../data/graphql/marker/marker";
+import {Marker} from '../../../../data/graphql/marker/marker';
 
 export interface MarkerImageProps {
     marker: Marker;

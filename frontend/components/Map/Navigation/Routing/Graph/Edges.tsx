@@ -2,7 +2,7 @@ import React from 'react';
 
 import {edgeIdPrefix} from '../../../../../constants';
 import styled from '@mui/system/styled';
-import {Edge} from "../../../../../data/graphql/edge/edge";
+import {Edge} from '../../../../../data/graphql/edge/edge';
 
 interface EdgesProperties {
     edges: Edge[];

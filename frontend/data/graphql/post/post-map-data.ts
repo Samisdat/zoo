@@ -1,7 +1,7 @@
-import {PostJson} from "./post-json";
-import {Post} from "./post";
-import {photoMapData} from "../photo/photo-map-data";
-import {Entity} from "../../entity/entity";
+import {PostJson} from './post-json';
+import {Post} from './post';
+import {photoMapData} from '../photo/photo-map-data';
+import {Entity} from '../../entity/entity';
 
 export const postMapData = (apiData: any):Entity<any>[] =>{
 

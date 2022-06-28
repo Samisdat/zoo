@@ -1,14 +1,14 @@
-import {Animal} from "./animal/animal";
-import {Facility} from "./facility/facility";
-import {Photo} from "./photo/photo";
-import {QrCode} from "./qr-code/qr-code";
-import {IndividualAnimal} from "./individual-animal/individual-animal";
-import {Post} from "./post/post";
-import {Node} from "./node/node";
-import {Edge} from "./edge/edge";
-import {Marker} from "./marker/marker";
-import {Entity} from "data/entity/entity";
-import {Warehouse} from "../warehouse/warehouse";
+import {Animal} from './animal/animal';
+import {Facility} from './facility/facility';
+import {Photo} from './photo/photo';
+import {QrCode} from './qr-code/qr-code';
+import {IndividualAnimal} from './individual-animal/individual-animal';
+import {Post} from './post/post';
+import {Node} from './node/node';
+import {Edge} from './edge/edge';
+import {Marker} from './marker/marker';
+import {Entity} from 'data/entity/entity';
+import {Warehouse} from '../warehouse/warehouse';
 
 const addEntityToWarehouse = (entity:Entity<any>):void =>{
 

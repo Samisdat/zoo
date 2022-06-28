@@ -33,8 +33,8 @@ export const QrCodes = (request, response, context) => {
 
     return response(
         context.data({
-            "qrCodes": {
-                "data": qrCodes
+            'qrCodes': {
+                'data': qrCodes
             },
         }),
     )

@@ -1,6 +1,6 @@
-import {gql} from "@apollo/client";
-import {animalFragment} from "../animal/grahpql";
-import {facilityFragment} from "../facility/grahpql";
+import {gql} from '@apollo/client';
+import {animalFragment} from '../animal/grahpql';
+import {facilityFragment} from '../facility/grahpql';
 
 export const getQrcodeBySlug = gql` 
 query QrCodeById ($id: ID){

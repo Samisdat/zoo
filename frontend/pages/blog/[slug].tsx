@@ -6,11 +6,11 @@ import Typography from '@mui/material/Typography';
 import {Large} from '../../components/viewport/Large';
 import {Small} from '../../components/viewport/Small';
 import Page from '../../components/Page/Page';
-import {Warehouse} from "../../data/warehouse/warehouse";
-import {Post} from "../../data/graphql/post/post";
-import {fetchPostBySlug} from "../../data/graphql/posts";
-import {apolloClient} from "../../data/graphql/apolloClient";
-import {getPostSlugs} from "../../data/graphql/post/grahpql";
+import {Warehouse} from '../../data/warehouse/warehouse';
+import {Post} from '../../data/graphql/post/post';
+import {fetchPostBySlug} from '../../data/graphql/posts';
+import {apolloClient} from '../../data/graphql/apolloClient';
+import {getPostSlugs} from '../../data/graphql/post/grahpql';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactMarkdown = require('react-markdown')

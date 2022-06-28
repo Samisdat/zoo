@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useMap} from '../Context/MapContext';
-import {Facility} from "../../../data/graphql/facility/facility";
+import {Facility} from '../../../data/graphql/facility/facility';
 
 interface OpenTeaserByHashProps{
     facilities: Facility[];

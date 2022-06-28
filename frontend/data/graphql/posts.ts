@@ -1,11 +1,11 @@
-import {apolloClient} from "./apolloClient";
+import {apolloClient} from './apolloClient';
 
-import {PostJson} from "./post/post-json";
-import {getPosts, getPostsBySlug} from "./post/grahpql";
-import {Post} from "./post/post";
-import {postMapData} from "./post/post-map-data";
-import {addToWarehouse} from "./add-to-warehouse";
-import {Warehouse} from "../warehouse/warehouse";
+import {PostJson} from './post/post-json';
+import {getPosts, getPostsBySlug} from './post/grahpql';
+import {Post} from './post/post';
+import {postMapData} from './post/post-map-data';
+import {addToWarehouse} from './add-to-warehouse';
+import {Warehouse} from '../warehouse/warehouse';
 
 export const fetchPostBySlug = async (slug: string):Promise<Post> => {
 
@@ -34,7 +34,7 @@ export const fetchPosts = async ():Promise<PostJson[]> => {
 
     const graphPosts = graphResult.data.posts.data;
 
-    let posts = graphPosts.map((datum:any)=>{
+    const posts = graphPosts.map((datum:any)=>{
 
         const post = postMapData(datum);
 

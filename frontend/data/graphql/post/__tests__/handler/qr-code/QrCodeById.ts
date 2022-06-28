@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const data = require('../../data/qr-code.json');
 
 export const QrCodeById = (request, response, context) => {

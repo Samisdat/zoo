@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const data = require('../../data/animal.json');
 
 export const AnimalsBySlug = (request, response, context) => {

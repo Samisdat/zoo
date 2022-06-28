@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import {Map} from 'components/Map/Map';
-import {Teaser} from 'components/Map/Teaser/Teaser';
+import {TeaserControll} from 'components/Map/Teaser/Teaser';
 
 import SearchDialog from 'components/Search/Search';
 import {MapProvider} from 'components/Map/Context/MapContext';
@@ -67,7 +67,7 @@ export default function Index(props:IndexProps) {
                 <SearchDialog
                     facilities={facilities}
                 />
-                <Teaser/>
+                <TeaserControll/>
                 {/*
                 */}
             </FullSize>

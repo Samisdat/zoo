@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import {Map} from 'components/Map/Map';
-import {Teaser} from 'components/Map/Teaser/Teaser';
+import {TeaserControl} from 'components/Map/Teaser/TeaserControl';
 
 import SearchDialog from 'components/Search/Search';
 import {MapProvider} from 'components/Map/Context/MapContext';
@@ -38,9 +38,9 @@ export default function Index(props:IndexProps) {
     console.log('@TODO', 'boundingBox', 'as default focus');
 
     const markers = Warehouse.get().getMarkers();
-    console.log(markers);
+
     const facilities = Warehouse.get().getFacilities();
-    console.log(facilities);
+
     const [teaser, setTeaser] = useState<Facility>(undefined);
 
     useEffect(() => {
@@ -68,10 +68,11 @@ export default function Index(props:IndexProps) {
                 <SearchDialog
                     facilities={facilities}
                 />
-                <Teaser/>
                 {/*
                 */}
             </FullSize>
+            <TeaserControl/>
+
         </MapProvider>
     );
 

@@ -337,7 +337,7 @@ export const ResolvePosition = ({cartesianTransform}:ResolvePositionProps) => {
                 isWithin,
                 isGPS,
                 text,
-                edgeId: 1428,
+                edgeId: 479,
                 x: entrance.x,
                 y: entrance.y,
                 raw: position_raw

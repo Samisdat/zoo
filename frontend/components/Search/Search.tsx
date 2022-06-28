@@ -70,8 +70,8 @@ export default function SearchDialog({facilities}:SearchDialogProperties) {
 
         let image:string = undefined;
 
-        if(0 !== facility.photos.length && undefined !== facility.photos[0] && facility.photos[0].thumbnail){
-            image = getImagePath(facility.photos[0].thumbnail.src);
+        if(facility.headerImage){
+            image = getImagePath(facility.headerImage.thumbnail.src);
         }
 
         if(undefined !== image){

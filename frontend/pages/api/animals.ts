@@ -1,8 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
+import {Animal} from "../../data/graphql/animal/animal";
+import {fetchAnimals} from "../../data/graphql/animals";
 
-import {getAnimals} from 'strapi-api/query/animals';
-import {Animal} from 'strapi-api/entity/animal/animal';
-import {getStrapi3Url} from 'strapi-api/utils/get-strapi-url';
 
 const stati = {
     'Q219127': 'CR',
@@ -19,7 +18,7 @@ const stati = {
 
 export default async (req: NextApiRequest, res: NextApiResponse<Animal[]>) => {
 
-    const animals = await getAnimals();
+    const animals = await fetchAnimals();
 
     /*
     for (const animal of animals){

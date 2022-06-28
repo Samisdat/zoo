@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import {AnimalProfileStrapi} from 'strapi-api/entity/animal/animal-strapi-interface';
 import {Feature} from './Feature';
+import {AnimalProfileStrapi} from "../../../data/graphql/animal/animal-json";
 
 export interface ProfileProps{
     profile:AnimalProfileStrapi[];

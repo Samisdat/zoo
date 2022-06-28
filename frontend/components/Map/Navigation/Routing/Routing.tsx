@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
-import {Edge} from 'strapi-api/entity/edge/edge';
 import * as d3 from 'd3';
 import {useMap} from '../../Context/MapContext';
+import {Edge} from "../../../../data/graphql/edge/edge";
 
 
 interface CurrentRouteProps {

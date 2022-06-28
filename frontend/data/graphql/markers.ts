@@ -16,13 +16,15 @@ export const fetchMarkers = async ():Promise<Marker[]> => {
 
     let markers = data.map((datum:any)=>{
 
-        const marker = markerMapData(datum);
+        return undefined;
 
-        addToWarehouse(marker);
+        //const marker = markerMapData(datum);
 
-        return Warehouse.get().getMarker(
-            parseInt(datum.id,10)
-        );
+        //addToWarehouse(marker);
+
+        //return Warehouse.get().getMarker(
+        //    parseInt(datum.id,10)
+        //);
 
     });
 

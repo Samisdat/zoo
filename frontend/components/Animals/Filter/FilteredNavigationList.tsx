@@ -7,7 +7,7 @@ import {getIucnCounted} from './Iucn/getIucnCounted';
 import {getTaxonomyCounted} from './Taxonomy/getTaxonomyCounted';
 import {getImagePath} from '../../../helper/getImagePath';
 import {FilterAccordion} from './FilterAccordion';
-import {Animal} from "../../../graphql/animal/animal";
+import {Animal} from "../../../data/graphql/animal/animal";
 
 export interface AnimalFilter{
     key:string,

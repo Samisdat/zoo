@@ -1,8 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Photo} from '../../strapi-api/entity/photo/photo';
 import {getImagePath} from '../../helper/getImagePath';
 import {Position} from '../Map/Context/MapContext';
 import {styled} from '@mui/material/styles';
+import {Photo} from "../../data/graphql/photo/photo";
 
 interface FocalPointPickerProps{
     photo:Photo;

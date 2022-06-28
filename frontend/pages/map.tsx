@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
 import {Map} from 'components/Map/Map';
-import {TeaserControll} from 'components/Map/Teaser/Teaser';
 
 import SearchDialog from 'components/Search/Search';
 import {MapProvider} from 'components/Map/Context/MapContext';
@@ -12,6 +11,7 @@ import {Facility} from "../data/graphql/facility/facility";
 import {fetchFacilities} from "../data/graphql/facilities";
 import {fetchEdges} from "../data/graphql/edges";
 import {fetchMarkers} from "../data/graphql/markers";
+import {TeaserControl} from "../components/Map/Teaser/TeaserControl";
 
 export interface IndexProps{
     warehouse: WarehouseSpore;
@@ -67,7 +67,7 @@ export default function Index(props:IndexProps) {
                 <SearchDialog
                     facilities={facilities}
                 />
-                <TeaserControll/>
+                <TeaserControl/>
                 {/*
                 */}
             </FullSize>

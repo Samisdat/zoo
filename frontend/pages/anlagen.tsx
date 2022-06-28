@@ -38,9 +38,11 @@ export default function Index(props) {
 
         let image:string = undefined;
 
+        /*
         if(0 !== facilitiy.photos.length && undefined !== facilitiy.photos[0] && facilitiy.photos[0].thumbnail){
             image = getImagePath(facilitiy.photos[0].thumbnail.src);
         }
+         */
 
         if(undefined === image){
 

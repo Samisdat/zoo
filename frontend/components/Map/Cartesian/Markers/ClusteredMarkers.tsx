@@ -1,8 +1,8 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 import {useMap} from '../../Context/MapContext';
-import {Marker} from 'strapi-api/entity/marker/marker';
 import {angle} from '../../../../constants';
+import {Marker} from "../../../../data/graphql/marker/marker";
 
 export interface ClusteredMarkersProperties{
     clusters:ClusterInterface[];

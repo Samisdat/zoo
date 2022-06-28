@@ -1,6 +1,5 @@
 import React from 'react';
-import {getImagePath} from '../../../../helper/getImagePath';
-import {Facility} from 'strapi-api/entity/facility/facility';
+import {Marker} from "../../../../data/graphql/marker/marker";
 
 export interface MarkerImageProps {
     facility: Facility;

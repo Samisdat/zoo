@@ -1,13 +1,13 @@
 import React, {useEffect, useRef} from 'react';
 import {Nodes} from './Routing/Graph/Nodes';
 import {Edges} from './Routing/Graph/Edges';
-import {Node} from 'strapi-api/entity/node/node';
-import {Edge} from 'strapi-api/entity/edge/edge';
 import {Dijkstra, Route, RoutingGraph} from './Routing/Graph/Dijkstra';
 import {MapTransformInterface, useMap} from '../Context/MapContext';
 import {ResolvePosition} from './Position/ResolvePosition';
 import {Track} from './Position/Track';
 import {Routing} from './Routing/Routing';
+import {Edge} from "../../../data/graphql/edge/edge";
+import {Node} from "../../../data/graphql/node/node";
 
 interface RoutingProperties {
     nodes: Node[];

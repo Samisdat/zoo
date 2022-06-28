@@ -9,12 +9,12 @@ import {angle} from '../../../constants';
 import {CurrentPosition} from '../Navigation/Position/CurrentPosition';
 import {Sketched} from './Sketched';
 import {Navigation} from '../Navigation/Navigation';
-import {Edge} from 'strapi-api/entity/edge/edge';
-import {Node} from 'strapi-api/entity/node/node';
 import {CartesianPoint} from '../DevArtifacts/CartesianPoint';
 import {FacilityBoxes} from './FacilityBoxes';
-import {Marker} from 'strapi-api/entity/marker/marker';
 import {Markers} from './Markers/Markers';
+import {Edge} from "../../../data/graphql/edge/edge";
+import {Node} from "../../../data/graphql/node/node";
+import {Marker} from "../../../data/graphql/marker/marker";
 
 interface CartesianProps{
     markers:Marker[];

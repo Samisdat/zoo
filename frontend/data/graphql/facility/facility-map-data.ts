@@ -3,6 +3,8 @@ import {photoMapData} from "../photo/photo-map-data";
 import {Facility} from "./facility";
 import {animalMapData} from "../animal/animal-map-data";
 import {Entity} from "../../entity/entity";
+import {markerMapData} from "../marker/marker-map-data";
+import {nodeMapData} from "../node/node-map-data";
 
 export const facilityMapData = (apiData: any):Entity<any>[] => {
 

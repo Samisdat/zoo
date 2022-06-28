@@ -1,7 +1,8 @@
 import React from 'react';
-import {Edge} from 'strapi-api/entity/edge/edge';
+
 import {edgeIdPrefix} from '../../../../../constants';
 import styled from '@mui/system/styled';
+import {Edge} from "../../../../../data/graphql/edge/edge";
 
 interface EdgesProperties {
     edges: Edge[];

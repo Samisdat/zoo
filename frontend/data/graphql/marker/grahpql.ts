@@ -1,5 +1,5 @@
 import {gql} from "@apollo/client";
-import {facilityFragment} from "../facility/grahpql";
+import {simpleFacilityFragment} from "../facility/graphql-simple-facility";
 
 export const markerFragment = `
         data {

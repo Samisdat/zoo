@@ -1,6 +1,8 @@
 import {gql} from "@apollo/client";
 import {headerImageFragment} from "../photo/grahpql";
 import {animalFragment} from "../animal/grahpql";
+import {markerFragment} from "../marker/grahpql";
+import {simpleNodeFragment} from "../node/simple-fragment";
 
 export const facilityFragment = `
     data {

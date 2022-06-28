@@ -15,13 +15,30 @@ import {Animal} from "../../../data/graphql/animal/animal";
 import Container from "@mui/material/Container";
 import {Paper} from "@mui/material";
 
+const Foo = styled(Container)(({ theme }) => {
+
+    return {
+        position:'absolute',
+        bottom:90,
+        left:'50%',
+        transform: 'translate(-50%, 0%)',
+        [theme.breakpoints.up('sm')]: {
+            bottom:10,
+        }
+    };
+
+});
+
+
 const MapTeaser = styled(Card)(({ theme }) => ({
+    /*
     display: 'flex',
     position: 'absolute',
     bottom:90,
     left: theme.spacing(2),
     right: theme.spacing(2  ),
     flexDirection: 'row',
+     */
 }));
 
 const StepperRoot = styled('div')(({ theme }) => ({
@@ -92,7 +109,9 @@ export const Teaser = ({items, handleRoute, handleClose}:TeaserProps) => {
     }
 
     return (
-        <Container>
+        <Foo
+            maxWidth='xs'
+        >
             <MapTeaser
                 id='map-teaser'
                 elevation={2}
@@ -181,6 +200,6 @@ export const Teaser = ({items, handleRoute, handleClose}:TeaserProps) => {
                     </CardActions>
                 </StepperRoot>
             </MapTeaser>
-        </Container>
+        </Foo>
     );
 }

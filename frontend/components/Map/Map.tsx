@@ -102,7 +102,7 @@ export const Map = ({fullsize, markers, facilities, nodes, edges}:MapProps) => {
                 height={dimension.height}
             >
                 <MarkerImages
-                    facilities={facilities}
+                    markers={markers}
                 />
                 <ZoomAndPan>
                     <GeoBorder />

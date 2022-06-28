@@ -57,8 +57,10 @@ export const Markers = (props:MarkersProps) => {
             continue;
         }
 
-        if(0 === marker.facility.photos.length){
+        if(! marker.markerImage){
+
             continue;
+
         }
 
         const initialCluster = {

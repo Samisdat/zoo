@@ -4,23 +4,28 @@ import {Facility} from "../../../../data/graphql/facility/facility";
 import {Marker} from "../../../../data/graphql/marker/marker";
 
 export interface MarkerImagesProps {
-    facilities: Facility[];
+    markers: Marker[];
 }
 
-export const MarkerImages = ({facilities}:MarkerImagesProps) => {
+export const MarkerImages = ({markers}:MarkerImagesProps) => {
 
-    const facilitiesWithImages = facilities.filter((facility)=>{
-        return (0 !== facility.photos.length)
+    const markersWithImage = markers.filter((marker)=>{
+
+        if(marker.markerImage){
+            return true;
+        }
+
+        return false;
     });
 
     return (
         <g>
             {
-                facilitiesWithImages.map((facility, i) => {
+                markersWithImage.map((marker, i) => {
                     return (
                         <MarkerImage
                             key={i}
-                            facility={facility}
+                            marker={marker}
                         />
                     );
 

@@ -142,6 +142,7 @@ const unifiedDraw = (drawGlobeParameter:DrawGlobeParameter, drawFlightParameter?
     ctx.fillStyle = colors.land.fill;
     ctx.setLineDash([]);
     ctx.lineWidth = 1;
+
     ctx.strokeStyle = colors.land.stroke;
     ctx.beginPath();
     path(land);
@@ -151,7 +152,7 @@ const unifiedDraw = (drawGlobeParameter:DrawGlobeParameter, drawFlightParameter?
     ctx.fillStyle = colors.distribution.fill;
     ctx.setLineDash([]);
     ctx.lineWidth = 1;
-    ctx.strokeStyle = colors.distribution.stroke;
+    ctx.strokeStyle = colors.distribution.fill;
     ctx.beginPath();
     path(distributionShape);
     ctx.fill();

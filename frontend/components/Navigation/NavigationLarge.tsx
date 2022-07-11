@@ -90,7 +90,6 @@ export const NavigationLarge = (props) => {
         }
 
         setOpen(nextOpen);
-        console.log(open)
     };
 
     return(

@@ -5,8 +5,6 @@ import {NavigationMobile} from "../../components/Navigation/Mobile";
 
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
-console.log(INITIAL_VIEWPORTS);
-
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
     title: 'Component/Navigation',

@@ -83,8 +83,6 @@ export interface TeaserProps{
 
 export const Teaser = ({items, handleRoute, handleClose}:TeaserProps) => {
 
-    console.log(JSON.stringify(items, null, 4))
-
     const [activeStep, setActiveStep] = React.useState(0);
 
     const maxSteps = items.length;

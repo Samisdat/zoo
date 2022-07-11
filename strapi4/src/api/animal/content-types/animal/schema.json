@@ -113,6 +113,16 @@
       "repeatable": false,
       "component": "layout.headerimg",
       "pluginOptions": {}
+    },
+    "distributionGlobe": {
+      "type": "boolean",
+      "default": true
+    },
+    "Links": {
+      "displayName": "Links",
+      "type": "component",
+      "repeatable": true,
+      "component": "profile.links"
     }
   }
 }

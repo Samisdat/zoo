@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_profile_links",
+  "info": {
+    "displayName": "Links",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    },
+    "lang": {
+      "type": "enumeration",
+      "enum": [
+        "de",
+        "en"
+      ],
+      "required": true,
+      "default": "de"
+    },
+    "show": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

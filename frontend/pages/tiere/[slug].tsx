@@ -79,6 +79,35 @@ export default function Tiere(props) {
     }
     */
 
+    const getDistributionGlobe = (showDistributionGlobe:boolean, slug:string|string[]) =>{
+
+        if(!showDistributionGlobe){
+            return null;
+        }
+
+        return (
+            <Grid
+                item
+                xs={12}
+                md={5}>
+                <Paper
+                    square={true}
+                    elevation={0}
+                >
+                    <Typography variant="h4" component="h4">
+                        Verbereitung
+                    </Typography>
+
+                    <DistributionGlobe
+                        slug={slug}
+                    />
+                </Paper>
+            </Grid>
+
+        );
+
+    };
+
     return (
         <Page
             headerImage={animal.headerImage}
@@ -92,31 +121,15 @@ export default function Tiere(props) {
                         </Typography>
 
                     </Grid>
-                    {/*
+
                     <Profile
                         profile={animal.profile}
                     />
-                    */}
+                    
                     <IucnRedList
                         iucnStatus={animal.iucnStatus}
                     />
-                    <Grid
-                        item
-                        xs={12}
-                        md={5}>
-                        <Paper
-                            square={true}
-                            elevation={0}
-                        >
-                            <Typography variant="h4" component="h4">
-                                Verbereitung
-                            </Typography>
-                            <DistributionGlobe
-                                slug={slug}
-                            />
-                        </Paper>
-                    </Grid>
-
+                    {getDistributionGlobe(animal.distributionGlobe, slug)}
                 </Grid>
             </Root>
 

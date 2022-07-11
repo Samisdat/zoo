@@ -15,11 +15,17 @@ data {
         iucnID
         iucnLink
         iucnStatus
+        distributionGlobe
         body
         className
         order
         species
         family      
+        profile{
+            icon
+            label
+            value
+        }
         individual_animals{          
                 ${individualAnimalSimpleFragment}
         }
@@ -53,7 +59,7 @@ query AnimalsSlugs {
     }
 }`;
 
-export const getAnimals = gql`      
+const getAnimalsFragment = `      
 query Animals {
     animals(pagination: { page: 1, pageSize: 2000 }) {
         
@@ -62,3 +68,5 @@ query Animals {
     }
 }
 `;
+
+export const getAnimals = gql`${getAnimalsFragment}`

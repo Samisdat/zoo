@@ -16,10 +16,43 @@
                 "iucnID": "181008073",
                 "iucnLink": "https://apiv3.iucnredlist.org/api/v3/taxonredirect/181008073",
                 "iucnStatus": "VU",
+                "distributionGlobe": null,
                 "className": "Säugetiere",
                 "order": "Rüsseltiere",
                 "species": "Afrikanischer Elefant",
                 "family": "Elefanten",
+                "profile": [
+                  {
+                    "id": "20",
+                    "icon": "afrika",
+                    "label": "Lebensraum",
+                    "value": "Savanne, Steppe"
+                  },
+                  {
+                    "id": "18",
+                    "icon": "carrot",
+                    "label": "Nahrung",
+                    "value": "Blätter, Gras, Zweige, Rinde, Früchte"
+                  },
+                  {
+                    "id": "16",
+                    "icon": "weight",
+                    "label": "Gewicht",
+                    "value": "Männchen bis 7 Tonnen, Weibchen 4 - 5 Tonnen"
+                  },
+                  {
+                    "id": "19",
+                    "icon": "baby",
+                    "label": "Tragzeit",
+                    "value": "22 Monate"
+                  },
+                  {
+                    "id": "17",
+                    "icon": "hourglass",
+                    "label": "Lebenserwartung",
+                    "value": "45 - 50 Jahre, im Zoo in Menschenobhut bis 60 Jahre\n\nfoo "
+                  }
+                ],
                 "individual_animals": {
                   "data": [
                     {

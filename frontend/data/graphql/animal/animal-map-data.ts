@@ -27,21 +27,24 @@ export const animalMapData = (apiData: any):Entity<any>[] =>{
         iucnStatus = apiData.attributes.iucnStatus as IucnStatus;
     }
 
+    let distributionGlobe: boolean = true;
+
+    if(false === apiData.attributes.distributionGlobe){
+        distributionGlobe = false
+    }
+
     const body = apiData.attributes.body;
     const className = apiData.attributes.className;
     const order = apiData.attributes.order;
     const species = apiData.attributes.species;
     const family = apiData.attributes.family;
 
-    const profile:any[] = [];
+    let profile:any[] = [];
 
-    /*
     if (0 !== apiData.attributes.profile.length) {
 
         profile = apiData.attributes.profile;
     }
-     */
-
 
     const photos:number[] = [];
 
@@ -111,6 +114,7 @@ export const animalMapData = (apiData: any):Entity<any>[] =>{
         iucnID,
         iucnLink,
         iucnStatus,
+        distributionGlobe,
         body,
         className,
         order,

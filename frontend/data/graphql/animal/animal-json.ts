@@ -18,6 +18,7 @@ export interface AnimalJson {
     iucnID: string;
     iucnLink: string;
     iucnStatus: IucnStatus | null;
+    distributionGlobe:boolean;
     body: string;
     /* classname is empty|null by accident ;)*/
     className: string | null;

@@ -1,4 +1,4 @@
-import {AnimalJson} from './animal-json';
+import {AnimalJson, AnimalProfileStrapi} from './animal-json';
 
 import {IucnStatus} from './iucnStatus';
 import {Entity, EntityType} from '../../entity/entity';
@@ -43,6 +43,11 @@ export class Animal extends Entity<AnimalJson>{
     get iucnStatus(): IucnStatus | null{
         return this.json.iucnStatus;
     }
+
+    get distributionGlobe(): boolean{
+        return this.json.distributionGlobe;
+    }
+
     get body(): string{
         return this.json.body;
     }
@@ -58,11 +63,11 @@ export class Animal extends Entity<AnimalJson>{
     get family(): string {
         return this.json.family
     }
-    /*
+
     get profile(): AnimalProfileStrapi[] {
         return this.json.profile;
     }
-    */
+
     get species(): string {
         return this.json.species
     }

@@ -17,7 +17,7 @@ export const AnimalsBySlug = (request, response, context) => {
 
         const dataWithoutHeaderImg = data.AnimalsBySlug['afrikanischer-elefant'].data;
 
-        dataWithoutHeaderImg.animals.data[0].attributes.headerImg = null;
+        dataWithoutHeaderImg.animals.data[0].attributes.media = null;
 
         return response(
             context.data(

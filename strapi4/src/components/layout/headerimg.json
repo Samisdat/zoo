@@ -2,16 +2,18 @@
   "collectionName": "components_layout_headerimgs",
   "info": {
     "displayName": "headerimg",
-    "icon": "images"
+    "icon": "images",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "image": {
+    "headerImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

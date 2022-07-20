@@ -1,6 +1,6 @@
 export const headerImageFragment = `      
-        headerImg {
-            image {
+        media {
+            headerImage {
                 data {
                     id
                     attributes{

@@ -22,8 +22,8 @@ export const handlers = [
                                 slug: 'slug',
                                 date: 'date',
                                 body: 'body',
-                                headerImg: {
-                                    'image': {
+                                media: {
+                                    'headerImage': {
                                         'data': {
                                             'id': '25',
                                             'attributes': {
@@ -100,8 +100,8 @@ export const handlers = [
                                 slug: 'slug',
                                 date: 'date',
                                 body: 'body',
-                                headerImg: {
-                                    'image': {
+                                media: {
+                                    'headerImage': {
                                         'data': {
                                             'id': '25',
                                             'attributes': {
@@ -176,7 +176,7 @@ export const handlers = [
                                 slug: 'slug',
                                 date: 'date',
                                 body: 'body',
-                                headerImg: null
+                                media: null
                             }
                         }],
                     },
@@ -211,8 +211,8 @@ export const handlers = [
                                 'order': 'Rüsseltiere',
                                 'species': 'Afrikanischer Elefant',
                                 'family': 'Elefanten',
-                                'headerImg': {
-                                    'image': {
+                                'media': {
+                                    'headerImage': {
                                         'data': {
                                             'id': '16',
                                             'attributes': {
@@ -287,8 +287,8 @@ export const handlers = [
                                 'order': 'Unpaarhufer',
                                 'species': 'Afrikanischer Esel',
                                 'family': 'Pferde',
-                                'headerImg': {
-                                    'image': {
+                                'media': {
+                                    'headerImage': {
                                         'data': {
                                             'id': '79',
                                             'attributes': {
@@ -363,7 +363,7 @@ export const handlers = [
                                 'order': 'Sperlingsvögel',
                                 'species': 'Anden-Felsenhahn',
                                 'family': 'Schmuckvögel',
-                                'headerImg': null
+                                'media': null
                             }
                         }
                     ]
@@ -395,8 +395,8 @@ export const handlers = [
                                         "order": "Rüsseltiere",
                                         "species": "Afrikanischer Elefant",
                                         "family": "Elefanten",
-                                        "headerImg": {
-                                            "image": {
+                                        "media": {
+                                            "headerImage": {
                                                 "data": {
                                                     "id": "16",
                                                     "attributes": {
@@ -482,7 +482,7 @@ export const handlers = [
                                     "order": "Sperlingsvögel",
                                     "species": "Anden-Felsenhahn",
                                     "family": "Schmuckvögel",
-                                    "headerImg": null
+                                    "media": null
                                 }
                             }
                         ],

@@ -27,8 +27,8 @@
                       "order": "Rüsseltiere",
                       "species": "Afrikanischer Elefant",
                       "family": "Elefanten",
-                      "headerImg": {
-                        "image": {
+                       "media": {
+                           "headerImage": {
                           "data": {
                             "id": "16",
                             "attributes": {
@@ -88,7 +88,7 @@
                     }
                   }
                 },
-                "headerImg": null
+                "media": null
               }
             }
           ]
@@ -122,8 +122,8 @@
                       "order": "Rüsseltiere",
                       "species": "Afrikanischer Elefant",
                       "family": "Elefanten",
-                      "headerImg": {
-                        "image": {
+                       "media": {
+                           "headerImage": {
                           "data": {
                             "id": "16",
                             "attributes": {
@@ -183,7 +183,7 @@
                     }
                   }
                 },
-                "headerImg": null
+                "media": null
               }
             }
           ]

@@ -20,8 +20,6 @@ export const individualAnimalMapData = (apiData: any):Entity<any>[] =>{
 
     let animal = null;
 
-
-
     if (apiData.attributes.animal?.data?.id) {
 
         const animalEntities = animalMapData(apiData.attributes.animal?.data);
@@ -51,9 +49,9 @@ export const individualAnimalMapData = (apiData: any):Entity<any>[] =>{
      */
 
     let headerImage:number | null = null;
-    if (apiData.attributes.headerImg?.image?.data) {
+    if (apiData.attributes.media?.headerImage?.data) {
 
-        const photo = photoMapData(apiData.attributes.headerImg?.image?.data);
+        const photo = photoMapData(apiData.attributes.media?.headerImage?.data);
 
         entities.push(photo);
 

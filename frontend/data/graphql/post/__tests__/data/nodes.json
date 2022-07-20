@@ -39,7 +39,7 @@
                     "slug": "juniorzoo",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -61,8 +61,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "8",
                                   "attributes": {
@@ -140,8 +140,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "23",
                                   "attributes": {
@@ -441,7 +441,7 @@
                     "slug": "tierwelt-patagoniens",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -463,8 +463,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "49",
                                   "attributes": {
@@ -542,8 +542,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "52",
                                   "attributes": {
@@ -656,7 +656,7 @@
                     "slug": "lachender-hans",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -678,8 +678,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "45",
                                   "attributes": {
@@ -869,7 +869,7 @@
                     "slug": "wasserspielplatz",
                     "body": null,
                     "type": "playground",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": []
                     }
@@ -903,7 +903,7 @@
                     "slug": "tierwelt-patagoniens",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -925,8 +925,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "49",
                                   "attributes": {
@@ -1004,8 +1004,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "52",
                                   "attributes": {
@@ -1316,7 +1316,7 @@
                     "slug": "yaks",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -1338,8 +1338,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "17",
                                   "attributes": {
@@ -1507,7 +1507,7 @@
                     "slug": "tierwelt-patagoniens",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -1529,8 +1529,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "49",
                                   "attributes": {
@@ -1608,8 +1608,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "52",
                                   "attributes": {
@@ -1711,7 +1711,7 @@
                     "slug": "okavango",
                     "body": "Some Content\n",
                     "type": "food",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": []
                     }
@@ -1921,7 +1921,7 @@
                     "slug": "meerschweinchen",
                     "body": null,
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -1943,8 +1943,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "42",
                                   "attributes": {
@@ -2057,7 +2057,7 @@
                     "slug": "emus",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -2079,8 +2079,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "43",
                                   "attributes": {
@@ -2919,7 +2919,7 @@
                     "slug": "seeloewen",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -2941,8 +2941,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "18",
                                   "attributes": {
@@ -3066,7 +3066,7 @@
                     "slug": "kiosk-tigertal",
                     "body": "Some Content\n",
                     "type": "food",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": []
                     }
@@ -3232,7 +3232,7 @@
                     "slug": "musikmuschel",
                     "body": "Some Content\n",
                     "type": "poi",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": []
                     }
@@ -3332,8 +3332,8 @@
                     "slug": "eingang",
                     "body": "Some Content\n",
                     "type": "poi",
-                    "headerImg": {
-                      "image": {
+                    "media": {
+                      "headerImage": {
                         "data": {
                           "id": "8",
                           "attributes": {
@@ -3412,7 +3412,7 @@
                     "slug": "tiger",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -3434,8 +3434,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "13",
                                   "attributes": {
@@ -3515,7 +3515,7 @@
                     "slug": "elefanten",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -3554,8 +3554,8 @@
                                 }
                               ]
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "16",
                                   "attributes": {
@@ -3635,7 +3635,7 @@
                     "slug": "elefanten",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -3674,8 +3674,8 @@
                                 }
                               ]
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "16",
                                   "attributes": {
@@ -3755,7 +3755,7 @@
                     "slug": "gibbons",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -3777,8 +3777,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "40",
                                   "attributes": {
@@ -3869,7 +3869,7 @@
                     "slug": "katzenhaus",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -3891,8 +3891,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "14",
                                   "attributes": {
@@ -3970,8 +3970,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "37",
                                   "attributes": {
@@ -4051,7 +4051,7 @@
                     "slug": "katzenhaus",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -4073,8 +4073,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "14",
                                   "attributes": {
@@ -4152,8 +4152,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "37",
                                   "attributes": {
@@ -4233,7 +4233,7 @@
                     "slug": "loewen",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -4255,8 +4255,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "51",
                                   "attributes": {
@@ -4336,7 +4336,7 @@
                     "slug": "suedamerikahaus",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -4358,8 +4358,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "68",
                                   "attributes": {
@@ -4437,8 +4437,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "69",
                                   "attributes": {
@@ -4516,8 +4516,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "27",
                                   "attributes": {
@@ -4595,8 +4595,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "77",
                                   "attributes": {
@@ -4687,7 +4687,7 @@
                     "slug": "aquarium-terrarium",
                     "body": null,
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -4709,8 +4709,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "32",
                                   "attributes": {
@@ -4790,7 +4790,7 @@
                     "slug": "pinguine",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -4812,8 +4812,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "38",
                                   "attributes": {
@@ -4891,8 +4891,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "50",
                                   "attributes": {
@@ -4983,7 +4983,7 @@
                     "slug": "freiflughalle",
                     "body": null,
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -5005,8 +5005,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "28",
                                   "attributes": {
@@ -5086,7 +5086,7 @@
                     "slug": "affenhaus",
                     "body": "Some **Content**\n\nSome other content",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -5108,8 +5108,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "10",
                                   "attributes": {
@@ -5187,8 +5187,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "56",
                                   "attributes": {
@@ -5266,8 +5266,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "39",
                                   "attributes": {
@@ -5347,7 +5347,7 @@
                     "slug": "affenhaus",
                     "body": "Some **Content**\n\nSome other content",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -5369,8 +5369,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "10",
                                   "attributes": {
@@ -5448,8 +5448,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "56",
                                   "attributes": {
@@ -5527,8 +5527,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "39",
                                   "attributes": {
@@ -5817,7 +5817,7 @@
                     "slug": "brillenpinguine",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -5839,8 +5839,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "6",
                                   "attributes": {
@@ -5909,7 +5909,7 @@
                     "slug": "kangurus",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -5931,8 +5931,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "30",
                                   "attributes": {
@@ -6010,8 +6010,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "30",
                                   "attributes": {
@@ -6091,7 +6091,7 @@
                     "slug": "okapis",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -6113,8 +6113,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "54",
                                   "attributes": {
@@ -6194,7 +6194,7 @@
                     "slug": "steinboecke",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -6216,8 +6216,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "72",
                                   "attributes": {
@@ -6297,7 +6297,7 @@
                     "slug": "bongos",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -6319,8 +6319,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "73",
                                   "attributes": {
@@ -6400,7 +6400,7 @@
                     "slug": "schneeleoparden",
                     "body": null,
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -6422,8 +6422,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "71",
                                   "attributes": {
@@ -6492,7 +6492,7 @@
                     "slug": "hirscheber",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -6514,8 +6514,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "41",
                                   "attributes": {
@@ -6606,7 +6606,7 @@
                     "slug": "zebras",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -6628,8 +6628,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "63",
                                   "attributes": {
@@ -6707,8 +6707,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "23",
                                   "attributes": {
@@ -6788,7 +6788,7 @@
                     "slug": "rothunde",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -6810,8 +6810,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "29",
                                   "attributes": {
@@ -6891,7 +6891,7 @@
                     "slug": "pinselohrschweine",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -6913,8 +6913,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "5",
                                   "attributes": {
@@ -6994,7 +6994,7 @@
                     "slug": "erdmaennchen",
                     "body": null,
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -7016,8 +7016,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "60",
                                   "attributes": {
@@ -7097,7 +7097,7 @@
                     "slug": "baeren",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -7119,8 +7119,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "80",
                                   "attributes": {
@@ -7189,7 +7189,7 @@
                     "slug": "kirk-dik-dik",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -7211,8 +7211,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "55",
                                   "attributes": {
@@ -7292,7 +7292,7 @@
                     "slug": "kleines-affenhaus",
                     "body": "Some Content\n",
                     "type": "enclosure",
-                    "headerImg": null,
+                    "media": null,
                     "animals": {
                       "data": [
                         {
@@ -7314,8 +7314,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "25",
                                   "attributes": {
@@ -7393,8 +7393,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "47",
                                   "attributes": {
@@ -7472,8 +7472,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "76",
                                   "attributes": {
@@ -7551,8 +7551,8 @@
                             "individual_animals": {
                               "data": []
                             },
-                            "headerImg": {
-                              "image": {
+                            "media": {
+                              "headerImage": {
                                 "data": {
                                   "id": "12",
                                   "attributes": {

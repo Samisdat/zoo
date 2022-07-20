@@ -74,13 +74,13 @@
         }
       }
     },
-    "headerImg": {
+    "media": {
       "type": "component",
       "repeatable": false,
       "component": "layout.headerimg",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },

@@ -68,7 +68,7 @@ export const facilityMapData = (apiData: any):Entity<any>[] => {
 
     if (apiData.attributes.graph_nodes) {
 
-        nodes = apiData.attributes.graph_nodes.data.map((nodeDatum)=>{
+        nodes = apiData.attributes.graph_nodes.data.map((nodeDatum:any)=>{
 
             const nodeEntities = nodeMapData(nodeDatum);
 
@@ -88,9 +88,9 @@ export const facilityMapData = (apiData: any):Entity<any>[] => {
 
     let headerImage:number | null = null;
 
-    if (apiData.attributes.headerImg?.image?.data) {
+    if (apiData.attributes.media?.headerImage?.data) {
 
-        const photo = photoMapData(apiData.attributes.headerImg?.image?.data);
+        const photo = photoMapData(apiData.attributes.media?.headerImage?.data);
 
         entities.push(photo);
 

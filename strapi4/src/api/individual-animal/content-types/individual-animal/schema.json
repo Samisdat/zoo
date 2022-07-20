@@ -39,7 +39,7 @@
       "target": "api::post.post",
       "mappedBy": "individual_animals"
     },
-    "headerImg": {
+    "media": {
       "type": "component",
       "repeatable": false,
       "component": "layout.headerimg"

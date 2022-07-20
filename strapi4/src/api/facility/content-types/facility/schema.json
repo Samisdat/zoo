@@ -67,7 +67,7 @@
       "target": "api::photo.photo",
       "mappedBy": "facility"
     },
-    "headerImg": {
+    "media": {
       "type": "component",
       "repeatable": false,
       "component": "layout.headerimg"

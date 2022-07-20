@@ -107,7 +107,7 @@
       "target": "api::photo.photo",
       "mappedBy": "animal"
     },
-    "headerImg": {
+    "media": {
       "displayName": "headerimg",
       "type": "component",
       "repeatable": false,

@@ -16,6 +16,8 @@ import {Animal} from '../../data/graphql/animal/animal';
 import {fetchAnimalBySlug} from '../../data/graphql/animals';
 import {apolloClient} from '../../data/graphql/apolloClient';
 import {getAnimalsSlugs} from '../../data/graphql/animal/grahpql';
+import ReactPlayer from "react-player";
+import {Video} from "../../components/Video/Video";
 
 export const Root = styled('div')(({ theme }) => ({
     flexGrow: 1,
@@ -121,6 +123,10 @@ export default function Tiere(props) {
                         </Typography>
 
                     </Grid>
+
+                    <Video
+                        url='http://127.0.0.1:1338/uploads/Hirscheber_Yala_Kedua_8d0a1a877c.mp4'
+                    />
 
                     <Profile
                         profile={animal.profile}

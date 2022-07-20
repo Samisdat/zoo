@@ -18,7 +18,7 @@
   "attributes": {
     "slug": {
       "type": "string",
-      "required": true,
+      "required": false,
       "unique": true,
       "pluginOptions": {
         "i18n": {
@@ -83,6 +83,14 @@
           "localized": true
         }
       }
+    },
+    "teaser": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext"
     }
   }
 }

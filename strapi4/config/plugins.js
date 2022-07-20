@@ -18,8 +18,18 @@ module.exports = {
       // If relations should be translated (default true)
       translateRelations: true,
       // You can define a custom glossary to be used here (see https://www.deepl.com/docs-api/managing-glossaries/)
-      
+
     },
   },
-  // ...
+  slugify: {
+    enabled: true,
+    config: {
+      contentTypes: {
+        post: {
+          field: 'slug',
+          references: 'title',
+        },
+      },
+    },
+  },
 }

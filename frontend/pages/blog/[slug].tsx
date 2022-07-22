@@ -11,6 +11,7 @@ import {Post} from '../../data/graphql/post/post';
 import {fetchPostBySlug} from '../../data/graphql/posts';
 import {apolloClient} from '../../data/graphql/apolloClient';
 import {getPostSlugs} from '../../data/graphql/post/grahpql';
+import {Content} from "../../components/Content/Content";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactMarkdown = require('react-markdown')
@@ -60,9 +61,14 @@ export default function BlogPost(props) {
             <Typography variant="subtitle1" gutterBottom component="div">
                 <Moment format="DD.MM.YYYY" date={post.date} />
             </Typography>
+
             <Typography variant="h1" component="h1" gutterBottom>
                 {post.title}
             </Typography>
+
+            <Content
+                content={post.content}
+            />
 
             <ReactMarkdown plugins={[gfm]}>
                 {post.body}

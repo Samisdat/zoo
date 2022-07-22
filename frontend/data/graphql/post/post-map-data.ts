@@ -2,6 +2,7 @@ import {PostJson} from './post-json';
 import {Post} from './post';
 import {photoMapData} from '../photo/photo-map-data';
 import {Entity} from '../../entity/entity';
+import {contentMapData} from "./content-map-data";
 
 export const postMapData = (apiData: any):Entity<any>[] =>{
 
@@ -30,16 +31,28 @@ export const postMapData = (apiData: any):Entity<any>[] =>{
 
     const date = apiData.attributes.date
 
-    if(!apiData.attributes?.body){
-        throw new Error('body is mandatory for post');
+    let content = [];
+
+    if(apiData.attributes?.content){
+
+        content = contentMapData(apiData.attributes?.content);
+
     }
 
-    const body = apiData.attributes.body
+
+    let body
+
+    if(!apiData.attributes?.body){
+        body = 'body is mandatory for post';
+        //throw new Error('body is mandatory for post');
+    }
+    else
+        body = apiData.attributes.body
 
     let headerImage:number | null = null;
-    if (apiData.attributes.headerImg?.image?.data) {
+    if (apiData.attributes?.headerImage?.data) {
 
-        const photo = photoMapData(apiData.attributes.headerImg?.image?.data);
+        const photo = photoMapData(apiData.attributes?.headerImage?.data);
 
         entities.push(photo);
 
@@ -53,6 +66,7 @@ export const postMapData = (apiData: any):Entity<any>[] =>{
         title,
         date,
         body,
+        content,
         animals,
         facilities,
         individual_animals,

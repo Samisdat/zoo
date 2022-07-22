@@ -7,6 +7,7 @@ export const headerImageFragment = `
                         name
                         x
                         y
+                        copyright
                         formats
                     }
                 }

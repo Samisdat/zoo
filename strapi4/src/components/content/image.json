@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_copy_text_images",
+  "info": {
+    "displayName": "Image",
+    "icon": "image",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "align": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right",
+        "fullsize"
+      ]
+    }
+  }
+}

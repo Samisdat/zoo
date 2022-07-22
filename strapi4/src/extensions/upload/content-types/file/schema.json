@@ -92,7 +92,7 @@
     "y": {
       "type": "integer"
     },
-    "Copyright": {
+    "copyright": {
       "type": "string"
     }
   }

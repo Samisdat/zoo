@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_copy_text_headlines",
+  "info": {
+    "displayName": "Headline",
+    "icon": "heading",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "string",
+      "required": true
+    },
+    "level": {
+      "type": "enumeration",
+      "enum": [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6"
+      ],
+      "default": "h1",
+      "required": true
+    }
+  }
+}

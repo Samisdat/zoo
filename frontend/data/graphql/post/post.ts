@@ -2,6 +2,7 @@ import {Entity, EntityType} from '../../entity/entity';
 import {PostJson} from './post-json';
 import {Photo} from '../photo/photo';
 import {Warehouse} from '../../warehouse/warehouse';
+import {Content} from "./content-map-data";
 
 export class Post extends Entity<PostJson>{
 
@@ -29,19 +30,21 @@ export class Post extends Entity<PostJson>{
         return this.json.body;
     }
 
-    get headerImageRaw(): number | undefined{
+    get content(): Content[]{
+        return this.json.content;
+    }
+
+    get headerImageRaw(): number | null | undefined{
 
         return this.json.headerImage;
 
     }
 
-    get headerImage(): Photo | undefined {
+    get headerImage(): Photo | null | undefined {
 
         return Warehouse.get().getPhoto(this.json.headerImage);
 
-
     }
-
 
     get facilitiesRaw(): number[]{
         return this.json.facilities;
@@ -86,7 +89,7 @@ export class Post extends Entity<PostJson>{
 
     }
 
-    static fromApi(json: any):Post{
+    static fromApi(json: any):Post | undefined{
 
         return undefined;
 

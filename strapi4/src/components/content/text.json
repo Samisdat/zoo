@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_copy_text_texts",
+  "info": {
+    "displayName": "Text",
+    "icon": "edit",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

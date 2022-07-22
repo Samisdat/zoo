@@ -3,7 +3,7 @@ export interface IndividualAnimalJson {
     name: string;
     slug: string;
     body: string;
-    animal: number;
+    animal: number|null;
     photos: number[];
     headerImage: number | null;
 }

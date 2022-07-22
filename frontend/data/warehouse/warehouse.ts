@@ -293,7 +293,7 @@ export class Warehouse{
 
     }
 
-    public getPhoto(photoId: number | null):Photo | null{
+    public getPhoto(photoId: number | null | undefined):Photo | null | undefined{
 
         if(!photoId){
             return null;

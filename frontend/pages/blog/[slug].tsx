@@ -11,7 +11,7 @@ import {Post} from '../../data/graphql/post/post';
 import {fetchPostBySlug} from '../../data/graphql/posts';
 import {apolloClient} from '../../data/graphql/apolloClient';
 import {getPostSlugs} from '../../data/graphql/post/grahpql';
-import {Content} from "../../components/Content/Content";
+import {Contents} from "../../components/Contents/Contents";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactMarkdown = require('react-markdown')
@@ -29,6 +29,8 @@ export default function BlogPost(props) {
     const post = Warehouse.get().getPosts().find((post:Post)=>{
         return (slug === post.slug);
     });
+
+    console.log(post);
 
     const breadcrumbLinks:BreadcrumbLink[] = [
         {
@@ -66,13 +68,9 @@ export default function BlogPost(props) {
                 {post.title}
             </Typography>
 
-            <Content
-                content={post.content}
+            <Contents
+                parts={post.content}
             />
-
-            <ReactMarkdown plugins={[gfm]}>
-                {post.body}
-            </ReactMarkdown>
 
         </Page>
     );

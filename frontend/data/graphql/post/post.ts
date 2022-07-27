@@ -2,7 +2,7 @@ import {Entity, EntityType} from '../../entity/entity';
 import {PostJson} from './post-json';
 import {Photo} from '../photo/photo';
 import {Warehouse} from '../../warehouse/warehouse';
-import {Content} from "./content-map-data";
+import {ContentPart} from "../../../components/Contents/Contents";
 
 export class Post extends Entity<PostJson>{
 
@@ -30,7 +30,7 @@ export class Post extends Entity<PostJson>{
         return this.json.body;
     }
 
-    get content(): Content[]{
+    get content(): ContentPart[]{
         return this.json.content;
     }
 

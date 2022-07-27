@@ -10,6 +10,8 @@ export interface PhotoJson {
     id: number;
     title: string;
     copyright: string;
+    caption?: string;
+    alternativeText?: string;
     facility?: number | null,
     animal?: number | number,
     thumbnail: PhotoSize | null;

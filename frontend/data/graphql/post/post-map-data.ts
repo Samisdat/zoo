@@ -36,7 +36,6 @@ export const postMapData = (apiData: any):Entity<any>[] =>{
     if(apiData.attributes?.content){
 
         content = contentMapData(apiData.attributes?.content);
-
     }
 
 
@@ -77,7 +76,6 @@ export const postMapData = (apiData: any):Entity<any>[] =>{
     const post = Post.hydrate(postJson);
 
     entities.push(post);
-
 
     return entities;
 

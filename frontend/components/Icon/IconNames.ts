@@ -29,6 +29,7 @@ import {faTwitterSquare} from '@fortawesome/free-brands-svg-icons/faTwitterSquar
 import {faFacebookSquare} from '@fortawesome/free-brands-svg-icons/faFacebookSquare';
 import {faInstagramSquare} from '@fortawesome/free-brands-svg-icons/faInstagramSquare';
 import {faLandmark} from '@fortawesome/free-solid-svg-icons/faLandmark';
+import {faCopyright} from '@fortawesome/free-regular-svg-icons/faCopyright';
 
 const utensils = faUtensils;
 const europe = faGlobeEurope;
@@ -61,6 +62,7 @@ const twitter = faTwitterSquare;
 const facebook = faFacebookSquare;
 const instagram = faInstagramSquare;
 const landmark = faLandmark;
+const copyright = faCopyright;
 
 export const strapiIcons = {
     utensils,
@@ -96,7 +98,8 @@ export const internalIcons = {
     close,
     twitter,
     facebook,
-    instagram
+    instagram,
+    copyright
 };
 
 export const validIcons = Object.assign(strapiIcons, internalIcons);
@@ -132,5 +135,6 @@ export type IconName =
     'twitter' |
     'facebook' |
     'instagram' |
-    'landmark'
+    'landmark' |
+    'copyright'
 ;

@@ -1,28 +1,10 @@
 import {PhotoJson, PhotoSize} from "../photo/photo-json";
 import {Position} from "../../../components/Map/Context/MapContext";
 import {PhoteSizes} from "../photo/photo-map-data";
-
-export interface Content {
-    type: 'text' | 'headline' | 'images';
-}
-
-export interface ContentText extends Content{
-    type: 'text',
-    text: string;
-}
-
-export interface ContentHeadline extends Content{
-    type: 'headline',
-    headline: string;
-    level: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-}
-
-export interface ContentImages extends Content{
-    type: 'images',
-    align: 'left' | 'right' | 'fullsize';
-    images: PhotoJson[];
-}
-
+import {TextProps} from "../../../components/Contents/Text/Text";
+import {HeadlineProps} from "../../../components/Contents/Headline/Headline";
+import {ImageProps} from "../../../components/Contents/Image/Image";
+import {ImagesProps} from "../../../components/Contents/Images/Images";
 
 const sizeNames = [
     'thumbnail',
@@ -37,6 +19,8 @@ export const extractImage = (apiData: any): PhotoJson =>{
 
     const title = apiData.attributes.name;
     const copyright = apiData.attributes.copyright || null;
+    const caption = apiData.attributes.caption;
+    const alternativeText = apiData.attributes.alternativeText || null;
 
     const thumbnail: PhotoSize | null = null;
     const small: PhotoSize | null = null;
@@ -86,6 +70,14 @@ export const extractImage = (apiData: any): PhotoJson =>{
         focalPoint
     };
 
+    if(caption){
+        photoJson.caption = caption;
+    }
+
+    if(alternativeText){
+        photoJson.alternativeText = alternativeText;
+    }
+
     return photoJson;
 }
 
@@ -96,7 +88,7 @@ export const contentMapData = (apiData: any[]):any[] =>{
 
         if('ComponentContentText' === part.__typename){
 
-            const text:ContentText = {
+            const text:TextProps = {
                 type: 'text',
                 text: part.text,
             };
@@ -106,7 +98,7 @@ export const contentMapData = (apiData: any[]):any[] =>{
 
         if('ComponentContentHeadline' === part.__typename){
 
-            const headline:ContentHeadline = {
+            const headline:HeadlineProps = {
                 type: 'headline',
                 headline: part.headline,
                 level: part.level
@@ -119,13 +111,28 @@ export const contentMapData = (apiData: any[]):any[] =>{
 
             const images = part.images.data.map(extractImage);
 
-            const headline:ContentImages = {
+            if(1 === images.length){
+
+                const image = images[0];
+
+                const imageProps:ImageProps = {
+                    type: 'image',
+                    align: part.align,
+                    image
+                };
+
+                return imageProps;
+
+            }
+
+            const imagesProps:ImagesProps = {
                 type: 'images',
                 align: part.align,
                 images
             };
 
-            return headline;
+            return imagesProps;
+
         }
 
         return undefined;

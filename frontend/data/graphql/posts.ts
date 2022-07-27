@@ -7,7 +7,7 @@ import {postMapData} from './post/post-map-data';
 import {addToWarehouse} from './add-to-warehouse';
 import {Warehouse} from '../warehouse/warehouse';
 
-export const fetchPostBySlug = async (slug: string):Promise<Post> => {
+export const fetchPostBySlug = async (slug: string):Promise<Post | undefined> => {
 
     const graphResult = await apolloClient.query({
         query: getPostsBySlug,

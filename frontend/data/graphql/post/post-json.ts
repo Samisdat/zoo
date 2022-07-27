@@ -1,4 +1,4 @@
-import {Content} from "./content-map-data";
+import {ContentPart} from "../../../components/Contents/Contents";
 
 export interface PostJson {
     id: number;
@@ -6,7 +6,7 @@ export interface PostJson {
     title: string;
     date: string;
     body: string;
-    content: Content[];
+    content: ContentPart[];
     animals: number[];
     individual_animals: number[];
     facilities: number[];

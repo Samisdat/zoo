@@ -1,7 +1,8 @@
 import {gql} from '@apollo/client';
 import {headerImageFragment} from '../photo/grahpql';
 
-const queryPostsBySlug = `query PostsBySlug ($slug: String){
+const queryPostsBySlug =`
+query PostsBySlug ($slug: String){
     posts(filters: { slug: { eq: $slug }}) {
         data {
             id
@@ -9,11 +10,12 @@ const queryPostsBySlug = `query PostsBySlug ($slug: String){
                 title
                 slug
                 date
+                content{__typename}
                 content {
-                    __typename
+                  __typename
                     ... on ComponentContentImage {
                         align
-                        images {
+                        image {
                             data {
                                 id
                                 attributes {
@@ -28,13 +30,63 @@ const queryPostsBySlug = `query PostsBySlug ($slug: String){
                             }
                         }
                     }
+                    ... on ComponentContentImages {
+                        images {
+                            data {
+                                id
+                                attributes {
+                                    name
+                                    caption
+                                    alternativeText
+                                    copyright
+                                    x
+                                    y
+                                    formats
+                                }
+                            }
+                        }
+
+                    }
+                    ... on ComponentContentImageSlider {
+                        images {
+                            data {
+                                id
+                                attributes {
+                                    name
+                                    caption
+                                    alternativeText
+                                    copyright
+                                    x
+                                    y
+                                    formats
+                                }
+                            }
+                        }
+                      
+                    }
                     ... on ComponentContentText {
                         text
+                    }
+                    ... on ComponentContentVideo {
+                        video{
+                            data{
+                              attributes{
+                                alternativeText
+                                caption
+                                copyright
+                                url
+                              }
+                            }
+                        }
+                    }
+                    ... on ComponentContentYoutube {
+                        youtubeUrl
+                          caption
                     }
                     ... on ComponentContentHeadline {
                         headline
                         level
-                    }                    
+                    }
                 }
                 headerImage {
                     data {
@@ -51,7 +103,8 @@ const queryPostsBySlug = `query PostsBySlug ($slug: String){
             }
         }
     }
-}`;
+}
+`;
 
 /*
 ... on ComponentCopyTextImage {
@@ -79,7 +132,7 @@ export const getPostsBySlug = gql`${queryPostsBySlug}`;
 
 export const getPostSlugs = gql`      
 query PostSlugs {
-    posts {
+    posts (pagination: { page: 1, pageSize: 2000 }) {
         data {
             attributes {
                 slug
@@ -91,7 +144,7 @@ query PostSlugs {
 
 export const getPosts = gql`      
 query PostSlugs {
-    posts {
+    posts (pagination: { page: 1, pageSize: 2000 }) {
         data {
             id
             attributes {

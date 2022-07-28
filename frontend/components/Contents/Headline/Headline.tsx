@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {ContentPart} from "../Contents";
+import Typography from "@mui/material/Typography";
 
 export interface HeadlineProps extends ContentPart{
     type: 'headline',
@@ -10,12 +11,10 @@ export interface HeadlineProps extends ContentPart{
 
 export const Headline = ({headline, level}:HeadlineProps) => {
 
-    console.log(headline,level);
-
     return (
-        <p>
-            Headline
-        </p>
-
+        <Typography variant={level} component={level} gutterBottom>
+            {headline}
+        </Typography>
     );
+
 }

@@ -21,11 +21,11 @@ describe('fetchPostBySlug', () => {
 
     test('valid response', async () => {
 
-        expect(Warehouse.get().hasPost(7)).toBeFalsy();
+        expect(Warehouse.get().hasPost(78)).toBeFalsy();
 
         await fetchPostBySlug('an-existing-slug');
 
-        expect(Warehouse.get().hasPost(7)).toBeTruthy();
+        expect(Warehouse.get().hasPost(78)).toBeTruthy();
 
 
     });

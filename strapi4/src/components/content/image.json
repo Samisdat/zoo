@@ -7,10 +7,10 @@
   },
   "options": {},
   "attributes": {
-    "images": {
+    "image": {
       "type": "media",
-      "multiple": true,
-      "required": false,
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]

@@ -100,10 +100,13 @@
       },
       "type": "dynamiczone",
       "components": [
-        "content.text",
+        "content.headline",
         "content.image",
+        "content.image-slider",
+        "content.images",
+        "content.text",
         "content.video",
-        "content.headline"
+        "content.youtube"
       ]
     },
     "headerImage": {

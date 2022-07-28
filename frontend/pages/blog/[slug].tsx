@@ -12,6 +12,7 @@ import {fetchPostBySlug} from '../../data/graphql/posts';
 import {apolloClient} from '../../data/graphql/apolloClient';
 import {getPostSlugs} from '../../data/graphql/post/grahpql';
 import {Contents} from "../../components/Contents/Contents";
+import ReactPlayer from "react-player";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactMarkdown = require('react-markdown')
@@ -56,10 +57,16 @@ export default function BlogPost(props) {
                 Small
             </Small>
 
-            <Typography variant="h1" component="h1" gutterBottom>
-                h1. Heading
-            </Typography>
-
+            {/*
+            <ReactPlayer
+                url={'https://www.youtube.com/watch?v=oE3uDdciBoA&t=2s'}
+                config={{
+                    youtube: {
+                        playerVars: { showinfo: 1 }
+                    }
+                }}
+            />
+            */}
             <Typography variant="subtitle1" gutterBottom component="div">
                 <Moment format="DD.MM.YYYY" date={post.date} />
             </Typography>
@@ -79,6 +86,8 @@ export default function BlogPost(props) {
 export async function getStaticProps(context) {
 
     const slug = context.params.slug
+
+    console.log(slug);
 
     await fetchPostBySlug(slug);
 
@@ -104,6 +113,8 @@ export async function getStaticPaths() {
             }
         }
     });
+
+    console.log(paths);
 
     return {
         paths,

@@ -92,209 +92,519 @@ export const handlers = [
         if('an-existing-slug' === request.variables.slug){
             return response(
                 context.data({
-                    posts: {
-                        "data": [
-                            {
-                                "id": "7",
-                                "attributes": {
-                                    "title": "Spendenübergabe der besonderen Art",
-                                    "slug": "spenden-uebergabe-der-besonderen-art",
-                                    "date": "2022-07-05",
-                                    "content": [
-                                        {
-                                            "__typename": "ComponentContentHeadline",
-                                            "headline": "Überschrift",
-                                            "level": "h1"
-                                        },
-                                        {
-                                            "__typename": "ComponentContentText",
-                                            "text": "Vergangenen Donnerstag durften wir die Kindertagesstätte Lindenhof e. V. Solingen im Grünen Zoo Wuppertal begrüßen. Der Ausflug hatte für die Kinder der Roten Gruppe eine ganz besondere Bedeutung denn sie hatten sich im Vorfeld zu ihrem Zoobesuch intensiv mit dem Thema „Pinguine“ und Umweltschutz beschäftigt.\n\nDie Kinder zeigten ein so großes Interesse an den Pinguinen, dass sie zahlreiche Bilder malten und Figuren bastelten. Es kam die Idee auf, eine kleine Vernissage in der KiTa zu veranstalten, bei der die Kinder ihre Kunstwerke zur Schau stellen konnten. Die Kinder haben so auch auf das Thema Artenschutz und Klimaschutz aufmerksam gemacht und bei der Veranstaltung zahlreiche Spenden gesammelt.\n\nBei dem Besuch im Grünen Zoo Wuppertal hat die Gruppe ihre gesammelten Spenden in Höhe von 276,42 € in einer selbstgebastelten Pinguin-Spardose an den Zoo-Verein Wuppertal e.V. überreicht. Der Förderverein des Zoos hat erst kürzlich mit Hilfe von Spenden eine neue klimafreundlichere Beleuchtungsanlage im Haus der Königs- und Eselspinguine finanziert, die sich außerdem positiv auf das Verhalten der Pinguine auswirken soll.\n\nNach der Übergabe der Spenden, für die sich der Zoo-Verein herzlich bedankt, durften die Kinder nun endlich die Pinguine besuchen. Als besonderes Extra haben die Kinder der Roten Gruppe in sicherem Abstand die Fütterung der Pinguine übernommen, was für große Freude im ganzen Team sorgte und sicher lange in Erinnerung bleibt.\n\nDie Rote Gruppe der KiTa Lindenhof ist ein tolles Vorbild, über das wir dankend berichten dürfen.\n\n"
-                                        },
-                                        {
-                                            "__typename": "ComponentContentImage",
-                                            "align": "fullsize",
-                                            "images": {
-                                                "data": [
-                                                    {
-                                                        "id": "92",
-                                                        "attributes": {
-                                                            "name": "20220705_123259.jpeg",
-                                                            "caption": "20220705_123259.jpeg",
-                                                            "alternativeText": "20220705_123259.jpeg",
-                                                            "copyright": "Grüner Zoo Wuppertal",
-                                                            "x": null,
-                                                            "y": null,
-                                                            "formats": {
-                                                                "thumbnail": {
-                                                                    "name": "thumbnail_20220705_123259.jpeg",
-                                                                    "hash": "thumbnail_20220705_123259_d5028d9bd4",
-                                                                    "ext": ".jpeg",
-                                                                    "mime": "image/jpeg",
-                                                                    "path": null,
-                                                                    "width": 117,
-                                                                    "height": 156,
-                                                                    "size": 3.39,
-                                                                    "url": "/uploads/thumbnail_20220705_123259_d5028d9bd4.jpeg"
-                                                                },
-                                                                "large": {
-                                                                    "name": "large_20220705_123259.jpeg",
-                                                                    "hash": "large_20220705_123259_d5028d9bd4",
-                                                                    "ext": ".jpeg",
-                                                                    "mime": "image/jpeg",
-                                                                    "path": null,
-                                                                    "width": 750,
-                                                                    "height": 1000,
-                                                                    "size": 49.25,
-                                                                    "url": "/uploads/large_20220705_123259_d5028d9bd4.jpeg"
-                                                                },
-                                                                "medium": {
-                                                                    "name": "medium_20220705_123259.jpeg",
-                                                                    "hash": "medium_20220705_123259_d5028d9bd4",
-                                                                    "ext": ".jpeg",
-                                                                    "mime": "image/jpeg",
-                                                                    "path": null,
-                                                                    "width": 563,
-                                                                    "height": 750,
-                                                                    "size": 31.07,
-                                                                    "url": "/uploads/medium_20220705_123259_d5028d9bd4.jpeg"
-                                                                },
-                                                                "small": {
-                                                                    "name": "small_20220705_123259.jpeg",
-                                                                    "hash": "small_20220705_123259_d5028d9bd4",
-                                                                    "ext": ".jpeg",
-                                                                    "mime": "image/jpeg",
-                                                                    "path": null,
-                                                                    "width": 375,
-                                                                    "height": 500,
-                                                                    "size": 16.9,
-                                                                    "url": "/uploads/small_20220705_123259_d5028d9bd4.jpeg"
-                                                                }
-                                                            }
-                                                        }
-                                                    },
-                                                    {
-                                                        "id": "93",
-                                                        "attributes": {
-                                                            "name": "20220705_123359.jpeg",
-                                                            "caption": "20220705_123359.jpeg",
-                                                            "alternativeText": "20220705_123359.jpeg",
-                                                            "copyright": "Grüner Zoo Wuppertal",
-                                                            "x": null,
-                                                            "y": null,
-                                                            "formats": {
-                                                                "thumbnail": {
-                                                                    "name": "thumbnail_20220705_123359.jpeg",
-                                                                    "hash": "thumbnail_20220705_123359_8f0e1d35eb",
-                                                                    "ext": ".jpeg",
-                                                                    "mime": "image/jpeg",
-                                                                    "path": null,
-                                                                    "width": 117,
-                                                                    "height": 156,
-                                                                    "size": 4.86,
-                                                                    "url": "/uploads/thumbnail_20220705_123359_8f0e1d35eb.jpeg"
-                                                                },
-                                                                "large": {
-                                                                    "name": "large_20220705_123359.jpeg",
-                                                                    "hash": "large_20220705_123359_8f0e1d35eb",
-                                                                    "ext": ".jpeg",
-                                                                    "mime": "image/jpeg",
-                                                                    "path": null,
-                                                                    "width": 750,
-                                                                    "height": 1000,
-                                                                    "size": 82.47,
-                                                                    "url": "/uploads/large_20220705_123359_8f0e1d35eb.jpeg"
-                                                                },
-                                                                "medium": {
-                                                                    "name": "medium_20220705_123359.jpeg",
-                                                                    "hash": "medium_20220705_123359_8f0e1d35eb",
-                                                                    "ext": ".jpeg",
-                                                                    "mime": "image/jpeg",
-                                                                    "path": null,
-                                                                    "width": 563,
-                                                                    "height": 750,
-                                                                    "size": 52.11,
-                                                                    "url": "/uploads/medium_20220705_123359_8f0e1d35eb.jpeg"
-                                                                },
-                                                                "small": {
-                                                                    "name": "small_20220705_123359.jpeg",
-                                                                    "hash": "small_20220705_123359_8f0e1d35eb",
-                                                                    "ext": ".jpeg",
-                                                                    "mime": "image/jpeg",
-                                                                    "path": null,
-                                                                    "width": 375,
-                                                                    "height": 500,
-                                                                    "size": 27.52,
-                                                                    "url": "/uploads/small_20220705_123359_8f0e1d35eb.jpeg"
+                            "posts": {
+                                "data": [
+                                    {
+                                        "id": "78",
+                                        "attributes": {
+                                            "title": "Junge Schneeleoparden auf Entdeckungstour",
+                                            "slug": "junge-schneeleoparden-auf-entdeckungstour",
+                                            "date": "2022-07-25",
+                                            "content": [
+                                                {
+                                                    "__typename": "ComponentContentText",
+                                                    "text": "**Die jungen Schneeleoparden gedeihen prächtig und werden immer unternehmungslustiger. Wir berichten, welche Namen sie erhalten haben, wie sie Mutter Saida auf Trab halten und wie sie sich mit Vater Shahrukh verstehen.**\n\nUnsere Anfang Mai geborenen Schneeleoparden-Jungtiere entwickeln sich gut. Die erstmalige Mutter Saida kümmert sich prima um ihren Nachwuchs. Inzwischen zeigt sich die Familie auch immer öfters in der grossen Anlage, so dass auch die Besucher*innen einen Blick auf sie erhaschen können."
+                                                },
+                                                {
+                                                    "__typename": "ComponentContentYoutube",
+                                                    "youtubeUrl": "https://www.youtube.com/watch?v=oE3uDdciBoA&t=2s",
+                                                    "caption": "Video: Zoo Zürich, Nicole Schnyder"
+                                                },
+                                                {
+                                                    "__typename": "ComponentContentHeadline",
+                                                    "headline": "Namen via Abstimmung",
+                                                    "level": "h2"
+                                                },
+                                                {
+                                                    "__typename": "ComponentContentText",
+                                                    "text": "Seit der [ersten Tierarztkontrolle](https://www.zoo.ch/de/zoonews/erster-tierarztcheck-der-jungen-schneeleoparden) am 20. Juni wissen wir, dass es sich bei den beiden Jungtieren um ein Weibchen und ein Männchen handelt. Ihre Namen haben wir im Rahmen einer [Online-Abstimmung](https://www.zoo.ch/de/zoonews/mitbestimmen-namen-fuer-die-schneeleoparden) ermittelt. Die meisten Stimmen erhielten Wajra für das Weibchen und Warjun für das Männchen.\n\nAlle Jungtiere des Zoo Zürich erhalten heuer einen Namen, der mit dem Buchstaben W beginnt."
+                                                },
+                                                {
+                                                    "__typename": "ComponentContentImage",
+                                                    "align": "fullsize",
+                                                    "image": {
+                                                        "data": {
+                                                            "id": "103",
+                                                            "attributes": {
+                                                                "name": "1772-24211-0.jpeg",
+                                                                "caption": "Bruder und Schwester: Warjun (l.) und Wajra",
+                                                                "alternativeText": "Bruder und Schwester: Warjun (l.) und Wajra",
+                                                                "copyright": "Zoo Zürich, Albert Schmidmeister",
+                                                                "x": null,
+                                                                "y": null,
+                                                                "formats": {
+                                                                    "thumbnail": {
+                                                                        "name": "thumbnail_1772-24211-0.jpeg",
+                                                                        "hash": "thumbnail_1772_24211_0_f1bcd66851",
+                                                                        "ext": ".jpeg",
+                                                                        "mime": "image/jpeg",
+                                                                        "path": null,
+                                                                        "width": 221,
+                                                                        "height": 156,
+                                                                        "size": 13.72,
+                                                                        "url": "/uploads/thumbnail_1772_24211_0_f1bcd66851.jpeg"
+                                                                    },
+                                                                    "large": {
+                                                                        "name": "large_1772-24211-0.jpeg",
+                                                                        "hash": "large_1772_24211_0_f1bcd66851",
+                                                                        "ext": ".jpeg",
+                                                                        "mime": "image/jpeg",
+                                                                        "path": null,
+                                                                        "width": 1000,
+                                                                        "height": 707,
+                                                                        "size": 173.93,
+                                                                        "url": "/uploads/large_1772_24211_0_f1bcd66851.jpeg"
+                                                                    },
+                                                                    "medium": {
+                                                                        "name": "medium_1772-24211-0.jpeg",
+                                                                        "hash": "medium_1772_24211_0_f1bcd66851",
+                                                                        "ext": ".jpeg",
+                                                                        "mime": "image/jpeg",
+                                                                        "path": null,
+                                                                        "width": 750,
+                                                                        "height": 530,
+                                                                        "size": 109.66,
+                                                                        "url": "/uploads/medium_1772_24211_0_f1bcd66851.jpeg"
+                                                                    },
+                                                                    "small": {
+                                                                        "name": "small_1772-24211-0.jpeg",
+                                                                        "hash": "small_1772_24211_0_f1bcd66851",
+                                                                        "ext": ".jpeg",
+                                                                        "mime": "image/jpeg",
+                                                                        "path": null,
+                                                                        "width": 500,
+                                                                        "height": 353,
+                                                                        "size": 56.01,
+                                                                        "url": "/uploads/small_1772_24211_0_f1bcd66851.jpeg"
+                                                                    }
                                                                 }
                                                             }
                                                         }
                                                     }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "headerImage": {
-                                        "data": {
-                                            "id": "96",
-                                            "attributes": {
-                                                "name": "IMG_2242.jpeg",
-                                                "x": null,
-                                                "y": null,
-                                                "copyright": "Grüner Zoo Wuppertal",
-                                                "formats": {
-                                                    "thumbnail": {
-                                                        "name": "thumbnail_IMG_2242.jpeg",
-                                                        "hash": "thumbnail_IMG_2242_e2c823e99a",
-                                                        "ext": ".jpeg",
-                                                        "mime": "image/jpeg",
-                                                        "path": null,
-                                                        "width": 117,
-                                                        "height": 156,
-                                                        "size": 7.99,
-                                                        "url": "/uploads/thumbnail_IMG_2242_e2c823e99a.jpeg"
-                                                    },
-                                                    "large": {
-                                                        "name": "large_IMG_2242.jpeg",
-                                                        "hash": "large_IMG_2242_e2c823e99a",
-                                                        "ext": ".jpeg",
-                                                        "mime": "image/jpeg",
-                                                        "path": null,
-                                                        "width": 750,
-                                                        "height": 1000,
-                                                        "size": 241.51,
-                                                        "url": "/uploads/large_IMG_2242_e2c823e99a.jpeg"
-                                                    },
-                                                    "medium": {
-                                                        "name": "medium_IMG_2242.jpeg",
-                                                        "hash": "medium_IMG_2242_e2c823e99a",
-                                                        "ext": ".jpeg",
-                                                        "mime": "image/jpeg",
-                                                        "path": null,
-                                                        "width": 563,
-                                                        "height": 750,
-                                                        "size": 138.19,
-                                                        "url": "/uploads/medium_IMG_2242_e2c823e99a.jpeg"
-                                                    },
-                                                    "small": {
-                                                        "name": "small_IMG_2242.jpeg",
-                                                        "hash": "small_IMG_2242_e2c823e99a",
-                                                        "ext": ".jpeg",
-                                                        "mime": "image/jpeg",
-                                                        "path": null,
-                                                        "width": 375,
-                                                        "height": 500,
-                                                        "size": 65.51,
-                                                        "url": "/uploads/small_IMG_2242_e2c823e99a.jpeg"
+                                                },
+                                                {
+                                                    "__typename": "ComponentContentHeadline",
+                                                    "headline": "Je länger je aktiver",
+                                                    "level": "h2"
+                                                },
+                                                {
+                                                    "__typename": "ComponentContentText",
+                                                    "text": "Wajra und Warjun werden immer aktiver. Zunächst erkundeten sie ihre Wurfbox. Als sie erlickten, wie sie [aus der Wurfbox klettern](https://www.zoo.ch/de/zoonews/junge-schneeleoparden-auf-klettertour) können, erforschten sie die nähere Umgebung. Mutter Saida trug die Jungen zunächst aber immer wieder in die Wurfbox zurück."
+                                                },
+                                                {
+                                                    "__typename": "ComponentContentText",
+                                                    "text": "Mittlerweile kann oder will Saida die Kleinen nicht mehr davon abhalten, auch grössere Ausflüge zu unternehmen. Dadurch sind die jungen Schneeleoparden nun auch häufiger auf der grossen Aussenanlage sichtbar.\n\nEtwas Glück und Geduld braucht es für die Besucher*innen aber nach wie vor, um einen Blick auf Wajra und Warjun zu erhaschen."
+                                                },
+                                                {
+                                                    "__typename": "ComponentContentHeadline",
+                                                    "headline": "Allerziehende Schneeleoparden-Mütter",
+                                                    "level": "h2"
+                                                },
+                                                {
+                                                    "__typename": "ComponentContentText",
+                                                    "text": "Schneeleoparden-Weibchen haben im Mittel zwei Jungtiere pro Wurf. Nach zwei bis vier Monaten folgen sie der Mutter vermehrt. Allerdings sind sie der Mutter in diesem Alter bei der Jagd eher ein Hindernis als eine Hilfe."
+                                                },
+                                                {
+                                                    "__typename": "ComponentContentText",
+                                                    "text": "Ganz unabhängig von der Mutter sind die Jungtiere nach etwa achtzehn Monaten. Mit zwei bis drei Jahren werden sie geschlechtsreif und suchen sich ein eigenes Revier.\n\nIn der Wildnis sind sowohl die Mutter als auch der Vater Einzelgänger. Die Schneeleoparden-Männchen interagieren nicht mit den Jungtieren. Im Zoo Zürich lebt Vater Shahrukh aber weiterhin zusammen mit Saida, Wajra und Warjun und sie verstehen sich sehr gut miteinander."
+                                                },
+                                                {
+                                                    "__typename": "ComponentContentHeadline",
+                                                    "headline": "Bedrohte Tierart ",
+                                                    "level": "h2"
+                                                },
+                                                {
+                                                    "__typename": "ComponentContentText",
+                                                    "text": "Schneeleoparden sind in ihrem natürlichen Lebensraum in Zentralasien bedroht. Die Welt-Naturschutzunion IUCN listet die Art als «gefährdet». Sie schätzt, dass es derzeit noch etwa 3000 erwachsene Schneeleoparden in der Natur gibt.\n\nDer Schneeleopard ist vor allem durch den Rückgang seiner Beutetiere bedroht. Hinzu kommt, dass ihn Schafshirten bejagen, weil sie so ihre Herden schützen möchten. Weiter wird der Schneeleopard auch wegen seines Fells getötet. Und die Traditionelle Chinesische Medizin nutzt die Knochen des Tiers."
+                                                },
+                                                {
+                                                    "__typename": "ComponentContentHeadline",
+                                                    "headline": "Seit Zoogründung in Zürich",
+                                                    "level": "h2"
+                                                },
+                                                {
+                                                    "__typename": "ComponentContentText",
+                                                    "text": "Der Zoo Zürich hält Schneeleoparden bereits seit seiner Eröffnung 1929. Seither sind im Zoo Zürich 59 Jungtiere zur Welt gekommen."
+                                                },
+                                                {
+                                                    "__typename": "ComponentContentText",
+                                                    "text": "Der Zoo hält und züchtet die Schneeleoparden im Rahmen des [Europäischen Erhaltungszuchtprogrammes EEP](https://www.eaza.net/conservation/programmes/)."
+                                                },
+                                                {
+                                                    "__typename": "ComponentContentImages",
+                                                    "images": {
+                                                        "data": [
+                                                            {
+                                                                "id": "104",
+                                                                "attributes": {
+                                                                    "name": "Warjun",
+                                                                    "caption": "Warjun",
+                                                                    "alternativeText": "Warjun",
+                                                                    "copyright": " Zoo Zürich, Monika Bader",
+                                                                    "x": null,
+                                                                    "y": null,
+                                                                    "formats": {
+                                                                        "thumbnail": {
+                                                                            "name": "thumbnail_2244-24223.jpeg",
+                                                                            "hash": "thumbnail_2244_24223_95d8e00d39",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 245,
+                                                                            "height": 138,
+                                                                            "size": 10.66,
+                                                                            "url": "/uploads/thumbnail_2244_24223_95d8e00d39.jpeg"
+                                                                        },
+                                                                        "large": {
+                                                                            "name": "large_2244-24223.jpeg",
+                                                                            "hash": "large_2244_24223_95d8e00d39",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 1000,
+                                                                            "height": 563,
+                                                                            "size": 102.23,
+                                                                            "url": "/uploads/large_2244_24223_95d8e00d39.jpeg"
+                                                                        },
+                                                                        "medium": {
+                                                                            "name": "medium_2244-24223.jpeg",
+                                                                            "hash": "medium_2244_24223_95d8e00d39",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 750,
+                                                                            "height": 422,
+                                                                            "size": 64.16,
+                                                                            "url": "/uploads/medium_2244_24223_95d8e00d39.jpeg"
+                                                                        },
+                                                                        "small": {
+                                                                            "name": "small_2244-24223.jpeg",
+                                                                            "hash": "small_2244_24223_95d8e00d39",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 500,
+                                                                            "height": 281,
+                                                                            "size": 33.31,
+                                                                            "url": "/uploads/small_2244_24223_95d8e00d39.jpeg"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "id": "105",
+                                                                "attributes": {
+                                                                    "name": "Wajra",
+                                                                    "caption": "Wajra",
+                                                                    "alternativeText": "Wajra",
+                                                                    "copyright": "Zoo Zürich, Peter Bolliger",
+                                                                    "x": null,
+                                                                    "y": null,
+                                                                    "formats": {
+                                                                        "thumbnail": {
+                                                                            "name": "thumbnail_Wajra",
+                                                                            "hash": "thumbnail_1772_24211_0_f353adc00c",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 245,
+                                                                            "height": 138,
+                                                                            "size": 9.44,
+                                                                            "url": "/uploads/thumbnail_1772_24211_0_f353adc00c.jpeg"
+                                                                        },
+                                                                        "large": {
+                                                                            "name": "large_Wajra",
+                                                                            "hash": "large_1772_24211_0_f353adc00c",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 1000,
+                                                                            "height": 563,
+                                                                            "size": 105.87,
+                                                                            "url": "/uploads/large_1772_24211_0_f353adc00c.jpeg"
+                                                                        },
+                                                                        "medium": {
+                                                                            "name": "medium_Wajra",
+                                                                            "hash": "medium_1772_24211_0_f353adc00c",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 750,
+                                                                            "height": 422,
+                                                                            "size": 61.62,
+                                                                            "url": "/uploads/medium_1772_24211_0_f353adc00c.jpeg"
+                                                                        },
+                                                                        "small": {
+                                                                            "name": "small_Wajra",
+                                                                            "hash": "small_1772_24211_0_f353adc00c",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 500,
+                                                                            "height": 281,
+                                                                            "size": 30.43,
+                                                                            "url": "/uploads/small_1772_24211_0_f353adc00c.jpeg"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "__typename": "ComponentContentImageSlider",
+                                                    "images": {
+                                                        "data": [
+                                                            {
+                                                                "id": "114",
+                                                                "attributes": {
+                                                                    "name": "1772-24242.jpeg",
+                                                                    "caption": "Warjun und Wajra",
+                                                                    "alternativeText": "Warjun und Wajra",
+                                                                    "copyright": null,
+                                                                    "x": null,
+                                                                    "y": null,
+                                                                    "formats": {
+                                                                        "thumbnail": {
+                                                                            "name": "thumbnail_1772-24242.jpeg",
+                                                                            "hash": "thumbnail_1772_24242_b4c3376f20",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 221,
+                                                                            "height": 156,
+                                                                            "size": 12.31,
+                                                                            "url": "/uploads/thumbnail_1772_24242_b4c3376f20.jpeg"
+                                                                        },
+                                                                        "large": {
+                                                                            "name": "large_1772-24242.jpeg",
+                                                                            "hash": "large_1772_24242_b4c3376f20",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 1000,
+                                                                            "height": 707,
+                                                                            "size": 197.36,
+                                                                            "url": "/uploads/large_1772_24242_b4c3376f20.jpeg"
+                                                                        },
+                                                                        "medium": {
+                                                                            "name": "medium_1772-24242.jpeg",
+                                                                            "hash": "medium_1772_24242_b4c3376f20",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 750,
+                                                                            "height": 530,
+                                                                            "size": 114.75,
+                                                                            "url": "/uploads/medium_1772_24242_b4c3376f20.jpeg"
+                                                                        },
+                                                                        "small": {
+                                                                            "name": "small_1772-24242.jpeg",
+                                                                            "hash": "small_1772_24242_b4c3376f20",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 500,
+                                                                            "height": 353,
+                                                                            "size": 54.46,
+                                                                            "url": "/uploads/small_1772_24242_b4c3376f20.jpeg"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "id": "113",
+                                                                "attributes": {
+                                                                    "name": "1772-24180.jpeg",
+                                                                    "caption": "Grumpy Cat? Warjun",
+                                                                    "alternativeText": "Grumpy Cat? Warjun",
+                                                                    "copyright": null,
+                                                                    "x": null,
+                                                                    "y": null,
+                                                                    "formats": {
+                                                                        "thumbnail": {
+                                                                            "name": "thumbnail_1772-24180.jpeg",
+                                                                            "hash": "thumbnail_1772_24180_4be4b4f2fb",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 245,
+                                                                            "height": 138,
+                                                                            "size": 12.87,
+                                                                            "url": "/uploads/thumbnail_1772_24180_4be4b4f2fb.jpeg"
+                                                                        },
+                                                                        "large": {
+                                                                            "name": "large_1772-24180.jpeg",
+                                                                            "hash": "large_1772_24180_4be4b4f2fb",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 1000,
+                                                                            "height": 563,
+                                                                            "size": 140,
+                                                                            "url": "/uploads/large_1772_24180_4be4b4f2fb.jpeg"
+                                                                        },
+                                                                        "medium": {
+                                                                            "name": "medium_1772-24180.jpeg",
+                                                                            "hash": "medium_1772_24180_4be4b4f2fb",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 750,
+                                                                            "height": 422,
+                                                                            "size": 88.14,
+                                                                            "url": "/uploads/medium_1772_24180_4be4b4f2fb.jpeg"
+                                                                        },
+                                                                        "small": {
+                                                                            "name": "small_1772-24180.jpeg",
+                                                                            "hash": "small_1772_24180_4be4b4f2fb",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 500,
+                                                                            "height": 281,
+                                                                            "size": 45.14,
+                                                                            "url": "/uploads/small_1772_24180_4be4b4f2fb.jpeg"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "id": "112",
+                                                                "attributes": {
+                                                                    "name": "1772-24228.jpeg",
+                                                                    "caption": "Gut getarnt im Fels",
+                                                                    "alternativeText": "Gut getarnt im Fels",
+                                                                    "copyright": null,
+                                                                    "x": null,
+                                                                    "y": null,
+                                                                    "formats": {
+                                                                        "thumbnail": {
+                                                                            "name": "thumbnail_1772-24228.jpeg",
+                                                                            "hash": "thumbnail_1772_24228_643386c830",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 245,
+                                                                            "height": 138,
+                                                                            "size": 8.9,
+                                                                            "url": "/uploads/thumbnail_1772_24228_643386c830.jpeg"
+                                                                        },
+                                                                        "large": {
+                                                                            "name": "large_1772-24228.jpeg",
+                                                                            "hash": "large_1772_24228_643386c830",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 1000,
+                                                                            "height": 563,
+                                                                            "size": 114.32,
+                                                                            "url": "/uploads/large_1772_24228_643386c830.jpeg"
+                                                                        },
+                                                                        "medium": {
+                                                                            "name": "medium_1772-24228.jpeg",
+                                                                            "hash": "medium_1772_24228_643386c830",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 750,
+                                                                            "height": 422,
+                                                                            "size": 66.39,
+                                                                            "url": "/uploads/medium_1772_24228_643386c830.jpeg"
+                                                                        },
+                                                                        "small": {
+                                                                            "name": "small_1772-24228.jpeg",
+                                                                            "hash": "small_1772_24228_643386c830",
+                                                                            "ext": ".jpeg",
+                                                                            "mime": "image/jpeg",
+                                                                            "path": null,
+                                                                            "width": 500,
+                                                                            "height": 281,
+                                                                            "size": 31.5,
+                                                                            "url": "/uploads/small_1772_24228_643386c830.jpeg"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "__typename": "ComponentContentVideo",
+                                                    "video": {
+                                                        "data": {
+                                                            "attributes": {
+                                                                "alternativeText": "Hirscheber-Yala-Kedua.mp4",
+                                                                "caption": "Hirscheber-Yala-Kedua.mp4",
+                                                                "copyright": null,
+                                                                "url": "/uploads/Hirscheber_Yala_Kedua_8d0a1a877c.mp4"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "headerImage": {
+                                                "data": {
+                                                    "id": "101",
+                                                    "attributes": {
+                                                        "name": "https://zoo-live.rokka.io/header_half_md_2x/1d3aa3faba2faf3fba1030fc08381c3648e2f488/2244-24230-3.jpg",
+                                                        "x": null,
+                                                        "y": null,
+                                                        "copyright": null,
+                                                        "formats": {
+                                                            "thumbnail": {
+                                                                "name": "thumbnail_https://zoo-live.rokka.io/header_half_md_2x/1d3aa3faba2faf3fba1030fc08381c3648e2f488/2244-24230-3.jpg",
+                                                                "hash": "thumbnail_2244_24230_3_ec28ebff51",
+                                                                "ext": ".jpg",
+                                                                "mime": "image/jpeg",
+                                                                "path": null,
+                                                                "width": 245,
+                                                                "height": 88,
+                                                                "size": 6.44,
+                                                                "url": "/uploads/thumbnail_2244_24230_3_ec28ebff51.jpg"
+                                                            },
+                                                            "large": {
+                                                                "name": "large_https://zoo-live.rokka.io/header_half_md_2x/1d3aa3faba2faf3fba1030fc08381c3648e2f488/2244-24230-3.jpg",
+                                                                "hash": "large_2244_24230_3_ec28ebff51",
+                                                                "ext": ".jpg",
+                                                                "mime": "image/jpeg",
+                                                                "path": null,
+                                                                "width": 1000,
+                                                                "height": 360,
+                                                                "size": 83.48,
+                                                                "url": "/uploads/large_2244_24230_3_ec28ebff51.jpg"
+                                                            },
+                                                            "medium": {
+                                                                "name": "medium_https://zoo-live.rokka.io/header_half_md_2x/1d3aa3faba2faf3fba1030fc08381c3648e2f488/2244-24230-3.jpg",
+                                                                "hash": "medium_2244_24230_3_ec28ebff51",
+                                                                "ext": ".jpg",
+                                                                "mime": "image/jpeg",
+                                                                "path": null,
+                                                                "width": 750,
+                                                                "height": 270,
+                                                                "size": 49.32,
+                                                                "url": "/uploads/medium_2244_24230_3_ec28ebff51.jpg"
+                                                            },
+                                                            "small": {
+                                                                "name": "small_https://zoo-live.rokka.io/header_half_md_2x/1d3aa3faba2faf3fba1030fc08381c3648e2f488/2244-24230-3.jpg",
+                                                                "hash": "small_2244_24230_3_ec28ebff51",
+                                                                "ext": ".jpg",
+                                                                "mime": "image/jpeg",
+                                                                "path": null,
+                                                                "width": 500,
+                                                                "height": 180,
+                                                                "size": 23.5,
+                                                                "url": "/uploads/small_2244_24230_3_ec28ebff51.jpg"
+                                                            }
+                                                        }
                                                     }
                                                 }
                                             }
                                         }
                                     }
-                                }
+                                ]
                             }
-                        ]
 
-                    },
                 }),
             )
         }

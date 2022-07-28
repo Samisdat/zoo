@@ -98,6 +98,10 @@ export const WrapImage = ({align, children}: WrapImageProps)=> {
         </WrapImageStyled>
     );
 
+    return (
+        children
+    );
+
 };
 
 export const Image = ({image, align}:ImageProps) => {

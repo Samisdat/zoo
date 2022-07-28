@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_content_image_sliders",
+  "info": {
+    "displayName": "ImageSlider",
+    "icon": "images",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

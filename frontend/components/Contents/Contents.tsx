@@ -3,9 +3,11 @@ import {Image, ImageProps} from "./Image/Image";
 import {Images, ImagesProps} from "./Images/Images";
 import {Headline, HeadlineProps} from "./Headline/Headline";
 import {Text, TextProps} from "./Text/Text";
+import {ImageSlider, ImageSliderProps} from "./ImageSlider/ImageSlider";
+import {Youtube, YoutubeProps} from "./Youtube/Youtube";
 
 export interface ContentPart {
-    type: 'text' | 'headline' | 'image' | 'images';
+    type: 'text' | 'headline' | 'image' | 'images' | 'imageSlider' | 'video' | 'youtube';
 }
 
 interface ContentProps{
@@ -15,6 +17,18 @@ interface ContentProps{
 export const Contents = ({parts}:ContentProps) => {
 
     const mapContentParts = (part:ContentPart) => {
+
+        if('headline' === part.type){
+            return (
+                <Headline {...part as HeadlineProps}/>
+            );
+        }
+
+        if('text' === part.type){
+            return (
+                <Text {...part as TextProps}/>
+            );
+        }
 
         if('image' === part.type){
             return (
@@ -28,15 +42,21 @@ export const Contents = ({parts}:ContentProps) => {
             );
         }
 
-        if('headline' === part.type){
+        if('imageSlider' === part.type){
             return (
-                <Headline {...part as HeadlineProps}/>
+                <ImageSlider {...part as ImageSliderProps} />
             );
         }
 
-        if('text' === part.type){
+        if('youtube' === part.type){
             return (
-                <Text {...part as TextProps}/>
+                <Youtube {...part as YoutubeProps} />
+            );
+        }
+
+        if('video' === part.type){
+            return (
+                <Youtube {...part as YoutubeProps} />
             );
         }
 

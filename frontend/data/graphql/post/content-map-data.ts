@@ -5,6 +5,9 @@ import {TextProps} from "../../../components/Contents/Text/Text";
 import {HeadlineProps} from "../../../components/Contents/Headline/Headline";
 import {ImageProps} from "../../../components/Contents/Image/Image";
 import {ImagesProps} from "../../../components/Contents/Images/Images";
+import {ImageSliderProps} from "../../../components/Contents/ImageSlider/ImageSlider";
+import {YoutubeProps} from "../../../components/Contents/Youtube/Youtube";
+import {VideoProps} from "../../../components/Contents/Video/Video";
 
 const sizeNames = [
     'thumbnail',
@@ -86,16 +89,6 @@ export const contentMapData = (apiData: any[]):any[] =>{
 
     const content = apiData.map((part)=>{
 
-        if('ComponentContentText' === part.__typename){
-
-            const text:TextProps = {
-                type: 'text',
-                text: part.text,
-            };
-
-            return text;
-        }
-
         if('ComponentContentHeadline' === part.__typename){
 
             const headline:HeadlineProps = {
@@ -107,13 +100,19 @@ export const contentMapData = (apiData: any[]):any[] =>{
             return headline;
         }
 
+        if('ComponentContentText' === part.__typename){
+
+            const text:TextProps = {
+                type: 'text',
+                text: part.text,
+            };
+
+            return text;
+        }
+
         if('ComponentContentImage' === part.__typename){
 
-            const images = part.images.data.map(extractImage);
-
-            if(1 === images.length){
-
-                const image = images[0];
+            const image = extractImage(part.image.data);
 
                 const imageProps:ImageProps = {
                     type: 'image',
@@ -123,15 +122,66 @@ export const contentMapData = (apiData: any[]):any[] =>{
 
                 return imageProps;
 
-            }
+        }
+
+        if('ComponentContentImages' === part.__typename){
+
+            const images = part.images.data.map(extractImage);
 
             const imagesProps:ImagesProps = {
                 type: 'images',
-                align: part.align,
                 images
             };
 
             return imagesProps;
+
+        }
+
+        if('ComponentContentImageSlider' === part.__typename){
+
+            const images = part.images.data.map(extractImage);
+
+            const imagesProps:ImageSliderProps = {
+                type: 'imageSlider',
+                images
+            };
+
+            return imagesProps;
+
+        }
+
+        if('ComponentContentYoutube' === part.__typename){
+
+            const youtubeUrl: string = part.youtubeUrl;
+            const caption: string = part.caption;
+
+
+            const youtubeProps:YoutubeProps = {
+                type: 'youtube',
+                youtubeUrl,
+                caption
+            };
+
+            return youtubeProps;
+
+        }
+
+        if('ComponentContentVideo' === part.__typename){
+
+            const alternativeText: string = part.video?.data?.attributes.alternativeText || null;
+            const caption: string = part.video?.data?.attributes.caption || null
+            const copyright: string = part.video?.data?.attributes.copyright || null
+            const url: string = part.video?.data?.attributes.url || null
+
+            const videoProps:VideoProps= {
+                type: 'video',
+                alternativeText,
+                caption,
+                copyright,
+                url,
+            };
+            
+            return videoProps;
 
         }
 

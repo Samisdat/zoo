@@ -20,16 +20,5 @@ module.exports = {
       // You can define a custom glossary to be used here (see https://www.deepl.com/docs-api/managing-glossaries/)
 
     },
-  },
-  slugify: {
-    enabled: true,
-    config: {
-      contentTypes: {
-        post: {
-          field: 'slug',
-          references: 'title',
-        },
-      },
-    },
-  },
+  }
 }

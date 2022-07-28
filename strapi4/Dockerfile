@@ -1,33 +1,27 @@
-FROM node:14.20-alpine3.15
+FROM node:16.16
 
-ARG USER=strapi
-ENV HOME /home/$USER
+ARG NODE_ENV=production
 
-RUN apk update && apk upgrade
+ENV NODE_ENV=${NODE_ENV}
 
-RUN apk add --no-cache sudo
-RUN apk add --no-cache tree
-RUN apk add --no-cache python3
-RUN apk add --no-cache sqlite
-#RUN apk add --no-cache sqlite-dev
+WORKDIR /opt/
 
-# add new user
-RUN adduser -D $USER \
-        && echo "$USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USER \
-        && chmod 0440 /etc/sudoers.d/$USER
+COPY ./package.json ./
 
-#USER $USER
-WORKDIR $HOME
+#COPY ./yarn.lock ./
 
-COPY --chown=strapi . .
-RUN tree
-RUN node --version
-RUN cat package.json
-RUN yarn add sqlite3
+ENV PATH /opt/node_modules/.bin:$PATH
+
+RUN yarn config set network-timeout 600000 -g
+
 RUN yarn install
-RUN yarn run build
 
+WORKDIR /opt/app
+
+COPY ./ .
+
+RUN yarn build
 
 EXPOSE 1338
 
-CMD ["npm","start"]
+CMD ["yarn", "start"]

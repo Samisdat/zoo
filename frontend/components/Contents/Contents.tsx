@@ -16,47 +16,68 @@ interface ContentProps{
 
 export const Contents = ({parts}:ContentProps) => {
 
-    const mapContentParts = (part:ContentPart) => {
+    const mapContentParts = (part:ContentPart, index:number) => {
 
         if('headline' === part.type){
             return (
-                <Headline {...part as HeadlineProps}/>
+                <Headline
+                    key={index}
+                    {...part as HeadlineProps}
+                />
             );
         }
 
         if('text' === part.type){
             return (
-                <Text {...part as TextProps}/>
+                <Text
+                    key={index}
+                    {...part as TextProps}
+                />
             );
         }
 
         if('image' === part.type){
             return (
-                <Image {...part as ImageProps} />
+                <Image
+                    key={index}
+                    {...part as ImageProps}
+                />
             );
         }
 
         if('images' === part.type){
             return (
-                <Images {...part as ImagesProps} />
+                <Images
+                    key={index}
+                    {...part as ImagesProps}
+                />
             );
         }
 
         if('imageSlider' === part.type){
             return (
-                <ImageSlider {...part as ImageSliderProps} />
+                <ImageSlider
+                    key={index}
+                    {...part as ImageSliderProps}
+                />
             );
         }
 
         if('youtube' === part.type){
             return (
-                <Youtube {...part as YoutubeProps} />
+                <Youtube
+                    key={index}
+                    {...part as YoutubeProps}
+                />
             );
         }
 
         if('video' === part.type){
             return (
-                <Youtube {...part as YoutubeProps} />
+                <Youtube
+                    key={index}
+                    {...part as YoutubeProps}
+                />
             );
         }
 

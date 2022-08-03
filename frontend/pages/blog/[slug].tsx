@@ -12,12 +12,9 @@ import {fetchPostBySlug} from '../../data/graphql/posts';
 import {apolloClient} from '../../data/graphql/apolloClient';
 import {getPostSlugs} from '../../data/graphql/post/grahpql';
 import {Contents} from "../../components/Contents/Contents";
-import ReactPlayer from "react-player";
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const ReactMarkdown = require('react-markdown')
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const gfm = require('remark-gfm')
+import {Headline} from "../../components/Contents/Headline/Headline";
+import {styled} from "@mui/material/styles";
 
 export default function BlogPost(props) {
 
@@ -31,7 +28,6 @@ export default function BlogPost(props) {
         return (slug === post.slug);
     });
 
-    console.log(post);
 
     const breadcrumbLinks:BreadcrumbLink[] = [
         {
@@ -50,23 +46,7 @@ export default function BlogPost(props) {
             headerImage={post.headerImage}
             breadcrumb={breadcrumbLinks}
         >
-            <Large>
-                Large
-            </Large>
-            <Small>
-                Small
-            </Small>
 
-            {/*
-            <ReactPlayer
-                url={'https://www.youtube.com/watch?v=oE3uDdciBoA&t=2s'}
-                config={{
-                    youtube: {
-                        playerVars: { showinfo: 1 }
-                    }
-                }}
-            />
-            */}
             <Typography variant="subtitle1" gutterBottom component="div">
                 <Moment format="DD.MM.YYYY" date={post.date} />
             </Typography>
@@ -87,7 +67,7 @@ export async function getStaticProps(context) {
 
     const slug = context.params.slug
 
-    console.log(slug);
+    // console.log(slug);
 
     await fetchPostBySlug(slug);
 
@@ -114,7 +94,7 @@ export async function getStaticPaths() {
         }
     });
 
-    console.log(paths);
+    // console.log(paths);
 
     return {
         paths,

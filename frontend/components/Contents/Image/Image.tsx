@@ -8,7 +8,7 @@ import {CaptionStyled} from "../Caption";
 const WrapImageStyled  = styled('div')(({ theme }) => ({
     position: 'relative',
     marginBottom: theme.spacing(1),
-    width: '100%'
+    width: '100%',
 }));
 
 const WrapImageLeftStyled = styled(WrapImageStyled)(({ theme }) => ({
@@ -31,6 +31,7 @@ const ImageStyled = styled('img')(({ theme }) => ({
     width:'100%',
     height:'100%',
     display:'block',
+    marginBottom: theme.spacing(1),
 }));
 
 export interface ImageProps extends ContentPart{
@@ -83,7 +84,9 @@ export const WrapImage = ({align, children}: WrapImageProps)=> {
 
 };
 
-export const Image = ({image, align}:ImageProps) => {
+export const Image = ({image, align, type}:ImageProps) => {
+
+    console.log(type);
 
     const useImage:PhotoSize | null = image.large || image.medium || image.small;
 
@@ -92,21 +95,22 @@ export const Image = ({image, align}:ImageProps) => {
     }
 
     return (
-        <>
-            <WrapImage
-                align={align}
-            >
-                <ImageStyled
-                    src={getImagePath(useImage.src)}
-                    alt={image.alternativeText}
-                    width={useImage.width}
-                    height={useImage.height}
-                />
-
-            </WrapImage>
+        <WrapImage
+            align={align}
+        >
+            <ImageStyled
+                src={getImagePath(useImage.src)}
+                alt={image.alternativeText}
+                width={useImage.width}
+                height={useImage.height}
+            />
             <CaptionStyled>
                 {image.caption} {image.copyright}
             </CaptionStyled>
-        </>
+        </WrapImage>
     );
 }
+
+Image.defaultProps = {
+    type: 'image'
+};

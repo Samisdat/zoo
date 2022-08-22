@@ -1,5 +1,4 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import {Image} from "./Image";
 
 export default {
@@ -12,9 +11,9 @@ export default {
             }
         }
     }
-} as ComponentMeta<typeof Image>;
+};
 
-const Template: ComponentStory<typeof Image> = (args) => <Image {...args} />;
+const Template = (args) => <Image {...args} />;
 
 export const Fullsize = Template.bind({});
 

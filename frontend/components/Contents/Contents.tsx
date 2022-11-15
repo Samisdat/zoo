@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, ImageProps} from "./Image/Image";
+import {ClearStyled, Image, ImageProps} from "./Image/Image";
 import {Images, ImagesProps} from "./Images/Images";
 import {Headline, HeadlineProps} from "./Headline/Headline";
 import {Text, TextProps} from "./Text/Text";
@@ -90,6 +90,7 @@ export const Contents = ({parts}:ContentProps) => {
     return (
         <>
             {contentComponents}
+            <ClearStyled />
         </>
 
     );

@@ -18,3 +18,7 @@ export const Headline = ({headline, level}:HeadlineProps) => {
     );
 
 }
+
+Headline.defaultProps = {
+    type: 'headline'
+};

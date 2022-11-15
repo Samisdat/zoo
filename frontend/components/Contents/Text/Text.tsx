@@ -2,6 +2,7 @@ import React from 'react';
 import {ContentPart} from "../Contents";
 import Page from "../../Page/Page";
 import {styled} from "@mui/material/styles";
+import {Images} from "../Images/Images";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactMarkdown = require('react-markdown')
@@ -9,7 +10,9 @@ const ReactMarkdown = require('react-markdown')
 const gfm = require('remark-gfm')
 
 const StyledText = styled('div')(({ theme }) => ({
-
+    '& p': {
+        fontSize: theme.typography.body1.fontSize,
+    },
     '& a': {
         fontWeight: 'bold',
         textDecoration: 'none',
@@ -27,6 +30,8 @@ export interface TextProps extends ContentPart{
 
 export const Text = ({text}:TextProps) => {
 
+    console.log(text);
+
     return (
         <StyledText>
             <ReactMarkdown plugins={[gfm]}>
@@ -35,3 +40,7 @@ export const Text = ({text}:TextProps) => {
         </StyledText>
     );
 }
+
+Text.defaultProps = {
+    type: 'text'
+};

@@ -37,3 +37,7 @@ export const Images = ({images}:ImagesProps) => {
             </Grid>
     );
 }
+
+Images.defaultProps = {
+    type: 'images'
+};

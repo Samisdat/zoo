@@ -3,6 +3,7 @@ import {ContentPart} from "../Contents";
 import ReactPlayer from "react-player";
 import {styled} from "@mui/material/styles";
 import {CaptionStyled} from "../Caption";
+import {Images} from "../Images/Images";
 
 export interface YoutubeProps extends ContentPart{
     type: 'youtube',
@@ -67,3 +68,7 @@ export const Youtube = ({youtubeUrl, caption}:YoutubeProps) => {
     );
 
 }
+
+Youtube.defaultProps = {
+    type: 'youtube'
+};

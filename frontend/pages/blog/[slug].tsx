@@ -3,10 +3,8 @@ import Moment from 'react-moment';
 import {useRouter} from 'next/router';
 import {BreadcrumbLink} from 'components/Navigation/Breadcrumb';
 import Typography from '@mui/material/Typography';
-import {Large} from '../../components/viewport/Large';
-import {Small} from '../../components/viewport/Small';
 import Page from '../../components/Page/Page';
-import {Warehouse} from '../../data/warehouse/warehouse';
+import {Warehouse, WarehouseSpore} from '../../data/warehouse/warehouse';
 import {Post} from '../../data/graphql/post/post';
 import {fetchPostBySlug} from '../../data/graphql/posts';
 import {apolloClient} from '../../data/graphql/apolloClient';
@@ -14,9 +12,35 @@ import {getPostSlugs} from '../../data/graphql/post/grahpql';
 import {Contents} from "../../components/Contents/Contents";
 
 import {Headline} from "../../components/Contents/Headline/Headline";
-import {styled} from "@mui/material/styles";
 
-export default function BlogPost(props) {
+interface BlogPostProps{
+    warehouse: WarehouseSpore
+}
+
+const getBreadcrumbLinks = (currentPath: string, post: Post | undefined): BreadcrumbLink[]=>{
+
+    const breadcrumbLinks:BreadcrumbLink[] = [
+        {
+            href: '/blog',
+            title: 'Blog',
+            icon: 'blog',
+        }
+    ];
+
+    if(post){
+        breadcrumbLinks.push(
+            {
+                href: currentPath,
+                title: post.title,
+            }
+        );
+    }
+
+    return breadcrumbLinks;
+
+}
+
+export default function BlogPost(props:BlogPostProps) {
 
     Warehouse.get().hydrate(props.warehouse);
 
@@ -28,18 +52,13 @@ export default function BlogPost(props) {
         return (slug === post.slug);
     });
 
+    if(!post){
+        return (
+            <>404</>
+        );
+    }
 
-    const breadcrumbLinks:BreadcrumbLink[] = [
-        {
-            href: '/blog',
-            title: 'Blog',
-            icon: 'blog',
-        },
-        {
-            href: asPath,
-            title: post.title,
-        },
-    ];
+    const breadcrumbLinks:BreadcrumbLink[] = getBreadcrumbLinks(asPath, post);
 
     return (
         <Page
@@ -51,9 +70,11 @@ export default function BlogPost(props) {
                 <Moment format="DD.MM.YYYY" date={post.date} />
             </Typography>
 
-            <Typography variant="h1" component="h1" gutterBottom>
-                {post.title}
-            </Typography>
+            <Headline
+                type={'headline'}
+                headline={post.title}
+                level={'h1'}
+            />
 
             <Contents
                 parts={post.content}
@@ -66,8 +87,6 @@ export default function BlogPost(props) {
 export async function getStaticProps(context) {
 
     const slug = context.params.slug
-
-    // console.log(slug);
 
     await fetchPostBySlug(slug);
 
@@ -93,8 +112,6 @@ export async function getStaticPaths() {
             }
         }
     });
-
-    // console.log(paths);
 
     return {
         paths,

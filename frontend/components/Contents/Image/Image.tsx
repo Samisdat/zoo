@@ -5,6 +5,11 @@ import {getImagePath} from "../../../helper/getImagePath";
 import {styled} from "@mui/material/styles";
 import {CaptionStyled} from "../Caption";
 
+export const ClearStyled  = styled('div')(({ theme }) => ({
+    clear:'both'
+}));
+
+
 const WrapImageStyled  = styled('div')(({ theme }) => ({
     position: 'relative',
     marginBottom: theme.spacing(1),
@@ -85,8 +90,6 @@ export const WrapImage = ({align, children}: WrapImageProps)=> {
 };
 
 export const Image = ({image, align, type}:ImageProps) => {
-
-    console.log(type);
 
     const useImage:PhotoSize | null = image.large || image.medium || image.small;
 

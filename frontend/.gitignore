@@ -4,7 +4,6 @@ node_modules/
 coverage/
 .DS_Store
 .Ulysses-Group.plist
-package-lock.json
 
 # dependencies
 /node_modules

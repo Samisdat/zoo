@@ -15,7 +15,7 @@
     "@strapi/plugin-i18n": "4.2.3",
     "@strapi/plugin-users-permissions": "4.2.3",
     "@strapi/strapi": "4.2.3",
-    "sqlite3": "4.2.0",
+    "sqlite3": "^5.1.6",
     "strapi-plugin-deepl": "0.3.7",
     "strapi-plugin-import-export-entries": "^1.18.0"
   },
